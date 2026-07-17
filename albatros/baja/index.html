@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Te has dado de baja — Albatros</title>
+    <style>
+        :root {
+            --azul-profundo: #16324f;
+            --azul-marino: #1d4e79;
+            --azul-medio: #2e6da4;
+            --azul-claro: #dcebf7;
+            --azul-hielo: #eef5fb;
+            --gris-texto: #5c6b7a;
+            --gris-suave: #8a97a5;
+            --blanco: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--azul-hielo);
+            color: var(--gris-texto);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+            line-height: 1.6;
+        }
+
+        .tarjeta {
+            background: var(--blanco);
+            border: 1px solid #e3ecf4;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(22, 50, 79, 0.08);
+            max-width: 520px;
+            width: 100%;
+            padding: 48px 44px 36px;
+            text-align: center;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .logo svg { width: 30px; height: 30px; }
+
+        .logo span {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--azul-profundo);
+            letter-spacing: 0.3px;
+        }
+
+        .check {
+            width: 78px;
+            height: 78px;
+            margin: 0 auto 28px;
+            border-radius: 50%;
+            background: var(--azul-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 18px rgba(46, 109, 164, 0.18);
+        }
+
+        .check svg { width: 34px; height: 34px; }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            color: var(--azul-profundo);
+            margin-bottom: 16px;
+        }
+
+        .mensaje { font-size: 16px; margin-bottom: 12px; }
+
+        .mensaje-suave {
+            font-size: 15px;
+            color: var(--gris-suave);
+            margin-bottom: 28px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e6edf4;
+            margin: 28px 0;
+        }
+
+        .opciones { text-align: left; }
+
+        .opciones h2 {
+            font-size: 15px;
+            color: var(--azul-profundo);
+            margin-bottom: 4px;
+        }
+
+        .opciones p {
+            font-size: 14.5px;
+            margin-bottom: 22px;
+        }
+
+        .opciones a { color: var(--azul-medio); }
+
+        .boton {
+            display: inline-block;
+            background: var(--azul-marino);
+            color: var(--blanco);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 10px;
+            transition: background 0.2s ease;
+        }
+
+        .boton:hover { background: var(--azul-profundo); }
+
+        .despedida {
+            margin-top: 34px;
+            font-size: 14.5px;
+        }
+
+        .despedida .firma {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: 700;
+            color: var(--azul-marino);
+        }
+
+        footer {
+            margin-top: 26px;
+            font-size: 12.5px;
+            color: var(--gris-suave);
+        }
+
+        @media (max-width: 480px) {
+            .tarjeta { padding: 36px 24px 28px; }
+            h1 { font-size: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="tarjeta">
+        <div class="logo" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Albatros planeando sobre el mar -->
+                <path d="M2 13c4-5 8-6 12-3 1 .8 1.6 1.6 2 2.4.4-.8 1-1.6 2-2.4 4-3 8-2 12 3-4-1.5-7-1.2-9.5.8C18.5 15.4 17 17 16 19c-1-2-2.5-3.6-4.5-5.2C9 11.8 6 11.5 2 13z" fill="#1d4e79"/>
+                <path d="M6 24c3-2 6-2 9 0 .4.25.7.5 1 .8.3-.3.6-.55 1-.8 3-2 6-2 9 0-2.8-.6-5 0-6.8 1.4-1.3 1-2.4 2.1-3.2 3.4-.8-1.3-1.9-2.4-3.2-3.4C11 24 8.8 23.4 6 24z" fill="#2e6da4" opacity="0.55"/>
+            </svg>
+            <span>Albatros</span>
+        </div>
+
+        <div class="check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12.5l4.5 4.5L19 7.5" stroke="#1d4e79" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <h1>Listo, te has dado de baja</h1>
+
+        <p class="mensaje">No te enviaremos más correos. Sin dramas y sin rencores: a veces no es el momento, y lo respetamos.</p>
+
+        <p class="mensaje-suave">Si algún día quieres volver a volar con nosotros, aquí seguiremos. Siempre tendrás un puerto en Albatros.</p>
+
+        <hr>
+
+        <div class="opciones">
+            <h2>¿Solo querías menos correos?</h2>
+            <p>Escríbenos a <a href="mailto:soporte@albatros.com">soporte@albatros.com</a> y te pasamos al resumen mensual, sin más.</p>
+
+            <h2>¿Te has dado de baja sin querer?</h2>
+            <p style="margin-bottom: 0;">
+                <!-- TODO: apuntar al enlace real de resuscripción de tu plataforma de email -->
+                <a class="boton" href="#">Vuelvo a suscribirme</a>
+            </p>
+        </div>
+
+        <div class="despedida">
+            <p>Buen viento y buena mar.</p>
+            <p><span class="firma">El equipo de Albatros</span></p>
+        </div>
+
+        <footer>© 2026 Albatros · albatros.com</footer>
+    </main>
+</body>
+</html>
