@@ -53,46 +53,57 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 .wrap-estrecho{max-width:1000px;margin:0 auto}
 
 /* ============ HERO ============ */
-/* Portada clara "papel de trabajo" — deliberadamente opuesta a la portada
-   negra del Kit de Entrega, para que los dos kits no se confundan. */
-.hero{
-  background:
-    linear-gradient(180deg, rgba(212,175,55,.16), rgba(212,175,55,0) 360px),
-    repeating-linear-gradient(0deg, rgba(17,17,17,.03) 0 1px, transparent 1px 44px),
-    repeating-linear-gradient(90deg, rgba(17,17,17,.03) 0 1px, transparent 1px 44px),
-    #F8F4E9;
-  color:var(--texto);
-  border-top:7px solid var(--oro);
-  padding:64px 0 0;position:relative;overflow:hidden
-}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+/* Portada negra pero con composición propia: dos columnas, sin mapa de ondas
+   (ese es del Kit de Entrega). A la derecha, la "ficha de la oferta": una
+   tarjeta blanca tipo documento con las 7 decisiones, clicables. */
+.hero{background:var(--tinta);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--oro)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:100px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:center;position:relative;z-index:2}
 .hero-insignia{display:inline-flex;align-items:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}
 .hero-insignia .num{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--oro);color:var(--tinta);padding:5px 13px;border-radius:999px}
-.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--texto-2);margin:0}
-.hero h1{font-size:clamp(2.4rem,6.5vw,4.4rem);font-weight:800;max-width:16ch;margin-bottom:20px;color:var(--tinta)}
-.hero h1 em{font-style:normal;color:var(--tinta);background:linear-gradient(180deg,transparent 58%,rgba(212,175,55,.55) 58%);padding:0 .06em}
-.hero p{font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--tinta-2);max-width:46ch;margin-bottom:20px}
-.hero .hero-que-es{font-size:clamp(.97rem,1.6vw,1.08rem);color:var(--texto-2);max-width:60ch;margin-bottom:36px;line-height:1.7}
-.hero .hero-que-es strong{color:var(--tinta);font-weight:600}
-.hero-cruce{font-size:.88rem;color:var(--texto-2);margin-top:16px}
-.hero-cruce a{color:var(--tinta);font-weight:600;text-decoration:underline;text-underline-offset:3px}
-.hero-cruce a:hover{color:var(--ambar)}
+.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-mute);margin:0}
+.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;max-width:16ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--crema);max-width:46ch;margin-bottom:20px}
+.hero .hero-que-es{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--crema-mute);max-width:56ch;margin-bottom:34px;line-height:1.7}
+.hero .hero-que-es strong{color:var(--crema);font-weight:600}
+.hero-cruce{font-size:.88rem;color:var(--crema-mute);margin-top:16px}
+.hero-cruce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hero-cruce a:hover{color:var(--oro)}
 
-/* mapa de ruta */
-.mapa{position:relative;padding:36px 0 96px;z-index:2}
-.mapa-etiquetas{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--texto-2);margin-bottom:14px}
-.mapa svg{width:100%;height:auto;display:block;overflow:visible}
-.mapa-linea{fill:none;stroke:#CFC8B2;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:dibuja 1.6s .2s cubic-bezier(.4,0,.2,1) forwards}
-@keyframes dibuja{to{stroke-dashoffset:0}}
-.mapa-parada{opacity:0;animation:aparece .4s forwards}
-@keyframes aparece{to{opacity:1}}
-.mapa-parada circle{fill:#F8F4E9;stroke:#B9B29B;stroke-width:2.5}
-.mapa-parada.arranque circle{fill:var(--oro);stroke:var(--oro)}
-.mapa-parada text{font-family:'Space Mono',monospace;font-size:11px;fill:var(--crema-mute);text-anchor:middle}
-.mapa-parada.arranque text{fill:#96760F}
-.mapa-leyenda{display:flex;gap:24px;flex-wrap:wrap;margin-top:26px;font-size:.85rem;color:var(--texto-2)}
-.mapa-leyenda span{display:flex;align-items:center;gap:8px}
-.mapa-leyenda i{width:11px;height:11px;border-radius:50%;display:block}
+/* la ficha de la oferta */
+.hero-panel{
+  background:#fff;color:var(--texto);border-radius:var(--radio);
+  box-shadow:0 24px 60px rgba(0,0,0,.45);padding:24px 22px 18px;
+  border-top:6px solid var(--oro);
+}
+.hero-panel-cab{padding:0 10px 14px;border-bottom:1px dashed var(--papel-3);margin-bottom:10px}
+.hero-panel-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:6px}
+.hero-panel-cab b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+.hero-panel ol{list-style:none;margin:0;padding:0}
+.dec-item{
+  display:flex;gap:12px;align-items:center;width:100%;text-align:left;
+  background:none;border:none;cursor:pointer;padding:8px 10px;border-radius:10px;
+  font-family:'Figtree',sans-serif;font-size:.95rem;font-weight:500;color:var(--texto);
+  transition:background .12s ease;
+}
+.dec-item:hover{background:var(--papel-2)}
+.dec-num{
+  flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--oro);color:var(--tinta);
+  font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;display:grid;place-items:center;
+}
+.dec-item.hecho{color:var(--texto-2)}
+.dec-item.hecho .dec-num{background:var(--verde);color:#fff}
+.hero-panel-pie{
+  display:block;margin-top:10px;padding:11px 10px 4px;border-top:1px dashed var(--papel-3);
+  font-size:.87rem;color:var(--texto-2);text-decoration:none;font-weight:600;
+}
+.hero-panel-pie:hover{color:var(--violeta)}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-panel{max-width:460px}
+}
 
 .botonera{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .btn{
@@ -106,11 +117,6 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 .btn-principal:hover{background:var(--oro-claro);box-shadow:0 8px 24px rgba(212,175,55,.35)}
 .btn-fantasma{background:transparent;color:var(--crema);border:1.5px solid var(--tinta-linea)}
 .btn-fantasma:hover{border-color:var(--oro);color:#fff}
-/* variantes sobre la portada clara */
-.hero .btn-principal{background:var(--tinta);color:#fff}
-.hero .btn-principal:hover{background:var(--tinta-2);box-shadow:0 10px 26px rgba(17,17,17,.22)}
-.hero .btn-fantasma{color:var(--tinta-2);border-color:#C6BFA8}
-.hero .btn-fantasma:hover{border-color:var(--tinta);color:var(--tinta)}
 
 /* ============ BARRA STICKY ============ */
 .barra{
@@ -430,8 +436,6 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
-  .mapa-linea{stroke-dashoffset:0}
-  .mapa-parada{opacity:1}
 }
 :focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
 </style>
@@ -440,25 +444,27 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 
 <!-- ============ HERO ============ -->
 <header class="hero">
-  <div class="wrap">
-    <div class="hero-insignia"><span class="num">Kit 01 · La oferta</span><span class="hero-marca">Departamento Disruptivo</span></div>
-    <h1>Tienes una propuesta. <em>Todavía no una oferta.</em></h1>
-    <p>Te dimos el nombre y por dónde va. Eso es un punto de partida, no algo que se pueda vender todavía.</p>
-    <p class="hero-que-es">Esta página es lo que falta en medio: <strong>7 decisiones, en orden</strong>, que convierten esa propuesta en una oferta que se puede vender y entregar. Termina con alguien pagándote, no con un documento bonito. Más <strong>5 herramientas</strong> para cuando ya estés teniendo conversaciones. Con la plantilla y un ejemplo ya relleno en cada punto.</p>
-    <div class="botonera">
-      <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
-      <a href="#caja" class="btn btn-fantasma">Ver las herramientas</a>
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <div class="hero-insignia"><span class="num">Kit 01 · La oferta</span><span class="hero-marca">Departamento Disruptivo</span></div>
+      <h1>Tienes una propuesta. <em>Todavía no una oferta.</em></h1>
+      <p>Te dimos el nombre y por dónde va. Eso es un punto de partida, no algo que se pueda vender todavía.</p>
+      <p class="hero-que-es">Esta página es lo que falta en medio: <strong>7 decisiones, en orden</strong>, que convierten esa propuesta en una oferta que se puede vender y entregar. Termina con alguien pagándote, no con un documento bonito. Más <strong>5 herramientas</strong> para cuando ya estés teniendo conversaciones. Con la plantilla y un ejemplo ya relleno en cada punto.</p>
+      <div class="botonera">
+        <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
+        <a href="#caja" class="btn btn-fantasma">Ver las herramientas</a>
+      </div>
+      <p class="hero-cruce">¿Ya vendiste y toca entregarlo? Ese es el otro kit: <a href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">Kit de Entrega del High Ticket ↗</a></p>
     </div>
-    <p class="hero-cruce">¿Ya vendiste y toca entregarlo? Ese es el otro kit: <a href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">Kit de Entrega del High Ticket ↗</a></p>
 
-    <div class="mapa">
-      <div class="mapa-etiquetas"><span>◀ Aquí estás: tienes una idea</span><span>Aquí termina: alguien te pagó ▶</span></div>
-      <svg viewBox="0 0 1000 120" role="img" aria-label="Mapa del recorrido: los pasos de arranque y las herramientas de seguimiento">
-        <path class="mapa-linea" d="M 20 70 Q 180 20, 340 70 T 660 70 T 980 70"/>
-        <g id="paradas"></g>
-      </svg>
-      <div class="mapa-leyenda" id="mapaLeyenda"></div>
-    </div>
+    <aside class="hero-panel" aria-label="Las 7 decisiones de la oferta">
+      <div class="hero-panel-cab">
+        <span class="eyebrow">Tu oferta, el documento</span>
+        <b>Las 7 decisiones, en orden</b>
+      </div>
+      <ol id="panelDecisiones"></ol>
+      <a href="#caja" class="hero-panel-pie">+ 5 herramientas para cuando ya estés vendiendo →</a>
+    </aside>
   </div>
 </header>
 
@@ -1118,24 +1124,13 @@ function guardar(){
 }
 
 /* --- mapa del hero --- */
-function pintaMapa(){
-  const g = document.getElementById('paradas');
-  const total = PASOS.length + CAJA_H.length;
-  document.getElementById('mapaLeyenda').innerHTML =
-    `<span><i style="background:var(--oro)"></i> ${PASOS.length} decisiones · en orden, una detrás de otra</span>
-     <span><i style="background:var(--crema-mute)"></i> ${CAJA_H.length} herramientas · para cuando ya estés vendiendo</span>`;
-  let html = '';
-  for(let i=0;i<total;i++){
-    const t = i/(total-1);
-    const x = 20 + t*960;
-    const y = 70 - Math.sin(t*Math.PI*3)*46;
-    const arranque = i < PASOS.length;
-    html += `<g class="mapa-parada ${arranque?'arranque':''}" style="animation-delay:${0.5+i*0.06}s">
-      <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/>
-      <text x="${x.toFixed(1)}" y="${(y-16).toFixed(1)}">${arranque?(i+1):''}</text>
-    </g>`;
-  }
-  g.innerHTML = html;
+function pintaPanel(){
+  document.getElementById('panelDecisiones').innerHTML = PASOS.map((p,i)=>{
+    const ok = hechos.includes(i);
+    return `<li><button class="dec-item${ok?' hecho':''}" onclick="irAPaso(${i})">
+      <span class="dec-num">${ok?'✓':i+1}</span><span>${p.titulo}</span>
+    </button></li>`;
+  }).join('');
 }
 
 /* --- pasos --- */
@@ -1232,6 +1227,7 @@ function refresca(){
     hechos.length + ' de ' + PASOS.length + ' pasos' + (hechos.length ? ' · ' + pct + '%' : '');
   document.getElementById('contador').textContent = hechos.length + '/' + PASOS.length + ' hechos';
   document.getElementById('barraTitulo').textContent = PASOS[actual].titulo;
+  pintaPanel();
 }
 
 function irAPaso(i){
@@ -1297,7 +1293,7 @@ window.addEventListener('scroll', ()=>{
 
 /* --- arranque --- */
 document.getElementById('tituloUso').insertAdjacentHTML('afterbegin', ico('brujula','ico-titulo'));
-pintaMapa();
+pintaPanel();
 pintaPasos();
 pintaIndice();
 pintaPuntos();
