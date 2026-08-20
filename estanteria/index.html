@@ -83,13 +83,16 @@ a.kit:hover .kit-ir{color:var(--ambar)}
 .kit.contratos .kit-lomo::before{background:var(--crema-mute)}
 .kit.contratos .kit-lomo .num{background:var(--crema);color:var(--tinta)}
 
-/* en fábrica */
-.kit.fabrica{background:var(--papel-2);border-style:dashed;box-shadow:none}
-.kit.fabrica .kit-lomo{background:transparent;color:var(--texto)}
-.kit.fabrica .kit-lomo::before{background:var(--crema)}
-.kit.fabrica .kit-lomo .num{background:var(--papel-3);color:var(--texto-2)}
-.kit.fabrica .kit-lomo .frase{color:var(--texto-2)}
-.kit.fabrica .kit-ir{color:var(--texto-2);font-weight:600}
+/* firmas de los sistemas de apoyo */
+.kit.emails .kit-lomo::after{content:"";position:absolute;right:20px;top:26px;width:50px;height:34px;background:#fff;border-radius:7px;opacity:.92;
+  clip-path:polygon(0 0,100% 0,100% 100%,0 100%);box-shadow:inset 0 -22px 0 -14px var(--oro)}
+.kit.contenido .kit-lomo::after{content:"";position:absolute;right:18px;top:26px;width:54px;height:38px;
+  background:conic-gradient(from 0deg, #fff 0 25%, var(--oro) 25% 50%, #fff 50% 75%, var(--oro-claro) 75%);border-radius:8px;opacity:.92}
+.kit.ads .kit-lomo::after{content:"";position:absolute;right:20px;bottom:18px;width:50px;height:34px;
+  background:linear-gradient(to top, #fff 0, #fff 100%) 0 100%/12px 14px no-repeat,
+             linear-gradient(to top, var(--oro) 0, var(--oro) 100%) 19px 100%/12px 24px no-repeat,
+             linear-gradient(to top, var(--oro-claro) 0, var(--oro-claro) 100%) 38px 100%/12px 34px no-repeat}
+.kit.autonomia .kit-lomo::after{content:"›_";position:absolute;right:24px;top:26px;font-family:'Space Mono',monospace;font-weight:700;font-size:1.5rem;color:var(--oro)}
 .pill-estado{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--ambar);background:var(--ambar-luz);border:1px solid #F5DCA8;border-radius:999px;padding:4px 11px}
 
 .pie{padding:40px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
@@ -120,9 +123,9 @@ a.kit:hover .kit-ir{color:var(--ambar)}
 
   <section class="estante">
     <div class="estante-cab">
-      <span class="eyebrow">En la estantería</span>
-      <h2>Los kits vivos</h2>
-      <p>Listos para usar hoy. Entra al que toque según tu fase — cada uno enlaza con el siguiente.</p>
+      <span class="eyebrow">El camino</span>
+      <h2>Ármala, véndela, entrégala</h2>
+      <p>Los tres kits del viaje, en su orden — más el anexo legal. Entra al que toque según tu fase; cada uno enlaza con el siguiente.</p>
     </div>
     <div class="rejilla">
 
@@ -167,43 +170,47 @@ a.kit:hover .kit-ir{color:var(--ambar)}
 
   <section class="estante">
     <div class="estante-cab">
-      <span class="eyebrow">En la fábrica</span>
-      <h2>Los que vienen</h2>
-      <p>Ya escritos, en revisión interna. Se suman a la estantería en cuanto se aprueben.</p>
+      <span class="eyebrow">Los sistemas de apoyo</span>
+      <h2>Lo que alimenta el camino</h2>
+      <p>Contenido que capta, emails que venden solos, tráfico con reglas y la autonomía para regenerarlo todo cada mes.</p>
     </div>
     <div class="rejilla">
 
-      <div class="kit fabrica">
-        <div class="kit-lomo"><span class="num">Kit 04</span><h3>Emails</h3><div class="frase">Las secuencias que venden mientras duermes.</div></div>
+      <a class="kit emails" href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 04</span><h3>Emails</h3><div class="frase">Se escriben una vez. Venden cada día.</div></div>
         <div class="kit-cuerpo">
-          <p>8 secuencias con 31 emails + 1 SMS: welcome, nutrición, venta, post-compra, carrito, winback y más. Con la guía de montaje completa en GHL.</p>
-          <div class="kit-meta"><span class="pill-estado">En producción</span></div>
+          <p>8 secuencias con 31 emails + 1 SMS — welcome, nutrición, venta, post-compra, carrito, winback y más — con los 6 pasos de montaje en GHL: dominio, placeholders, baja, etiquetas y workflows.</p>
+          <div class="kit-meta"><span class="chip">8 secuencias</span><span class="chip">31 emails + 1 SMS</span><span class="chip">6 pasos de montaje</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
+      </a>
 
-      <div class="kit fabrica">
-        <div class="kit-lomo"><span class="num">Kit 05</span><h3>Contenido</h3><div class="frase">Tu primer mes de contenido, guionizado.</div></div>
+      <a class="kit contenido" href="https://kit-contenido-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 05</span><h3>Contenido</h3><div class="frase">Un mes de contenido, sin folio en blanco.</div></div>
         <div class="kit-cuerpo">
-          <p>Calendario editorial del mes 1, banco de 20 hooks, 20 reels y 20 carruseles guionizados, y una quincena de stories día a día.</p>
-          <div class="kit-meta"><span class="pill-estado">En producción</span></div>
+          <p>20 reels y 20 carruseles guionizados en dos versiones, la quincena de stories, el calendario del mes 1 con su mix 40/30/20/10 y el banco de hooks para el mes 2.</p>
+          <div class="kit-meta"><span class="chip">54 piezas</span><span class="chip">Calendario mes 1</span><span class="chip">20 hooks extra</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
+      </a>
 
-      <div class="kit fabrica">
+      <a class="kit ads" href="https://kit-ads-high-ticket.vercel.app" target="_blank" rel="noopener">
         <div class="kit-lomo"><span class="num">Kit 06</span><h3>Ads Meta</h3><div class="frase">Tráfico con reglas, no con corazonadas.</div></div>
         <div class="kit-cuerpo">
-          <p>Checklist técnico, estructura de campañas, audiencias, reglas de gestión y creativos para captación, venta directa y retargeting.</p>
-          <div class="kit-meta"><span class="pill-estado">En validación</span></div>
+          <p>Las 3 campañas con su orden de encendido, audiencias y exclusiones, creativos por ángulos y las reglas de gestión: kill a 2×, escalar +20%, decidir cada 3-4 días.</p>
+          <div class="kit-meta"><span class="chip">3 campañas</span><span class="chip">9 ángulos de creativo</span><span class="pill-estado">Se enciende con Bruno</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
+      </a>
 
-      <div class="kit fabrica">
-        <div class="kit-lomo"><span class="num">Kit 07</span><h3>Autonomía</h3><div class="frase">Regenera tus piezas cada mes, tú solo.</div></div>
+      <a class="kit autonomia" href="https://kit-autonomia-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 07</span><h3>Autonomía</h3><div class="frase">El mes 2 lo generas tú.</div></div>
         <div class="kit-cuerpo">
-          <p>Los prompts maestros para que regeneres tu contenido y tus secuencias cada mes con tu Claude conectado a tu GHL.</p>
-          <div class="kit-meta"><span class="pill-estado">En producción</span></div>
+          <p>Los dos prompts maestros — Contenido Mensual y Secuencias — para regenerar tus piezas cada mes con tu Claude conectado a tu GHL, en tu voz y con tus datos reales.</p>
+          <div class="kit-meta"><span class="chip">2 prompts maestros</span><span class="chip">Rutina del día 25</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
+      </a>
 
     </div>
   </section>

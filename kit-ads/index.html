@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Ads Meta High Ticket</title>
+<meta name="description" content="El pack de anuncios Meta del sistema: 3 campañas con su orden de encendido, audiencias, creativos por ángulos y reglas de gestión. Kill a 2×, escalado +20%.">
+<meta name="theme-color" content="#D4AF37">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E06%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#111111;
+  --tinta-2:#262626;
+  --papel:#FFFFFF;
+  --papel-2:#F5F4F1;
+  --papel-3:#EDEDED;
+  --texto:#1A1A1A;
+  --texto-2:#6E6B65;
+  --azul:#2563D9;
+  --azul-luz:#EAF1FE;
+  --verde:#0E8F63;
+  --verde-luz:#E6F6EF;
+  --coral:#DC3A45;
+  --coral-luz:#FDECEC;
+  --violeta:#6B4FD8;
+  --violeta-luz:#F0ECFE;
+  --ambar:#D98A00;
+  --ambar-luz:#FDF3E0;
+  --oro:#D4AF37;
+  --oro-claro:#E6C765;
+  --crema:#D8D5CB;
+  --crema-mute:#98958D;
+  --tinta-linea:#333333;
+  --radio:16px;
+  --sombra:0 1px 2px rgba(17,17,17,.06), 0 8px 24px rgba(17,17,17,.06);
+  --sombra-alta:0 2px 4px rgba(17,17,17,.08), 0 16px 40px rgba(17,17,17,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Figtree',system-ui,-apple-system,sans-serif;
+  background:var(--papel-2);
+  color:var(--texto);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.wrap{max-width:1340px;margin:0 auto;padding:0 32px}
+.wrap-estrecho{max-width:1000px;margin:0 auto}
+
+/* ============ HERO ============ */
+/* Portada negra con composición propia. La firma de este kit: el panel de
+   las 3 campañas con su orden de encendido y las reglas del pack. */
+.hero{background:var(--tinta);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--oro)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:100px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:center;position:relative;z-index:2}
+.hero-insignia{display:inline-flex;align-items:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}
+.hero-insignia .num{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--oro);color:var(--tinta);padding:5px 13px;border-radius:999px}
+.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-mute);margin:0}
+.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;max-width:16ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--crema);max-width:46ch;margin-bottom:20px}
+.hero .hero-que-es{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--crema-mute);max-width:56ch;margin-bottom:34px;line-height:1.7}
+.hero .hero-que-es strong{color:var(--crema);font-weight:600}
+.hero-cruce{font-size:.88rem;color:var(--crema-mute);margin-top:16px}
+.hero-cruce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hero-cruce a:hover{color:var(--oro)}
+
+/* el panel de campañas de la portada */
+.hero-panel{background:var(--papel-2);color:var(--texto);border-radius:var(--radio);box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+.ads-cab{display:flex;align-items:center;gap:11px;background:#fff;padding:13px 16px;border-bottom:1px solid var(--papel-3)}
+.ads-cab .avatar{width:34px;height:34px;border-radius:9px;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.78rem;flex-shrink:0}
+.ads-cab b{font-size:.95rem;display:block;line-height:1.2}
+.ads-cab small{color:var(--texto-2);font-size:.75rem}
+.ads-cuerpo{padding:16px;display:flex;flex-direction:column;gap:9px}
+.ads-fila{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--papel-3);border-radius:10px;padding:10px 13px}
+.ads-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.ads-fila.on .ads-dot{background:var(--verde)}
+.ads-fila.off .ads-dot{background:var(--crema);border:2px solid var(--crema-mute)}
+.ads-tx{flex:1;min-width:0}
+.ads-tx b{font-size:.88rem;display:block;line-height:1.25}
+.ads-tx small{color:var(--texto-2);font-size:.72rem;display:block}
+.ads-cuando{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-2);background:var(--papel-2);border:1px solid var(--papel-3);border-radius:999px;padding:4px 9px;white-space:nowrap}
+.ads-reglas{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:5px}
+.ads-reglas span{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.05em;text-transform:uppercase;color:var(--tinta);background:var(--oro);border-radius:999px;padding:4px 11px;font-weight:700}
+.ads-pie{background:#fff;border-top:1px dashed var(--papel-3);padding:11px 16px;font-size:.8rem;color:var(--texto-2);text-align:center}
+.ads-pie b{color:var(--tinta)}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-panel{max-width:440px}
+}
+
+
+.botonera{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.btn{
+  font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;
+  padding:15px 28px;border-radius:999px;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-principal{background:var(--oro);color:var(--tinta)}
+.btn-principal:hover{background:var(--oro-claro);box-shadow:0 8px 24px rgba(212,175,55,.35)}
+.btn-fantasma{background:transparent;color:var(--crema);border:1.5px solid var(--tinta-linea)}
+.btn-fantasma:hover{border-color:var(--oro);color:#fff}
+
+/* ============ BARRA STICKY ============ */
+.barra{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--papel-3);
+  padding:12px 0;display:none;
+}
+.barra.visible{display:block}
+.barra-in{display:flex;align-items:center;gap:20px}
+.barra-titulo{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.puntos{display:flex;gap:7px;flex:1;justify-content:center}
+.punto{
+  width:30px;height:30px;border-radius:50%;border:2px solid var(--papel-3);
+  background:#fff;cursor:pointer;font-family:'Space Mono',monospace;font-size:.72rem;
+  font-weight:700;color:var(--texto-2);display:grid;place-items:center;
+  transition:all .15s ease;padding:0;
+}
+.punto:hover{border-color:var(--azul);color:var(--azul)}
+.punto.actual{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.punto.hecho{background:var(--verde);border-color:var(--verde);color:#fff}
+.contador{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--texto-2);white-space:nowrap;font-weight:700}
+
+/* ============ ICONOS DE LÍNEA ============ */
+.ico-svg{width:1.1em;height:1.1em;flex-shrink:0;vertical-align:-.15em}
+.ico-titulo{width:1em;height:1em;margin-right:.42em;vertical-align:-.06em;color:var(--oro)}
+.ind-tool .ico-svg{width:17px;height:17px;opacity:.75}
+/* semáforo y marcas de estado, sin emojis */
+.luz{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:.5px}
+.luz-verde{background:var(--verde)} .luz-ambar{background:var(--ambar)} .luz-rojo{background:var(--coral)}
+.marca-si{color:var(--verde);font-weight:700}
+.marca-no{color:var(--texto-2);font-weight:700}
+
+/* ============ AVISO DE USO ============ */
+.aviso-uso{
+  background:var(--ambar-luz);border:1px solid #EFD9A6;border-left:5px solid var(--ambar);
+  border-radius:var(--radio);padding:26px 28px;margin:56px auto 0;max-width:900px;
+}
+.aviso-uso h3{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.25rem;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:center;gap:11px;color:var(--tinta);
+}
+.aviso-uso p{color:#6B4E12;font-size:.98rem;line-height:1.7;margin-bottom:12px}
+.aviso-uso p:last-child{margin-bottom:0}
+.aviso-uso strong{color:var(--tinta);font-weight:700}
+
+/* ============ SECCIONES ============ */
+.seccion{padding:72px 0}
+.seccion-cabecera{text-align:center;max-width:44ch;margin:0 auto 48px}
+.seccion-cabecera .eyebrow{color:var(--texto-2);display:block;margin-bottom:12px}
+.seccion-cabecera h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;margin-bottom:14px}
+.seccion-cabecera p{color:var(--texto-2);font-size:1.05rem}
+
+/* ============ ÍNDICE LATERAL ============ */
+.camino-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:36px;align-items:start}
+.indice{position:sticky;top:24px;background:#fff;border:1px solid var(--papel-3);border-radius:var(--radio);padding:22px 20px;box-shadow:var(--sombra);max-height:calc(100vh - 48px);overflow-y:auto}
+.indice-cab{padding-bottom:16px;border-bottom:1px solid var(--papel-3);margin-bottom:16px}
+.indice-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:10px}
+.progreso{height:7px;background:var(--papel-3);border-radius:999px;overflow:hidden;margin-bottom:9px}
+.progreso i{display:block;height:100%;background:var(--verde);border-radius:999px;transition:width .3s ease}
+.indice-contador{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--texto-2);font-weight:700}
+.ind-item{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  background:none;border:none;cursor:pointer;padding:9px 10px;border-radius:10px;
+  font-family:'Figtree',sans-serif;transition:background .12s ease;
+}
+.ind-item:hover{background:var(--papel-2)}
+.ind-item.actual{background:var(--tinta)}
+.ind-item.actual .ind-tx b{color:#fff}
+.ind-item.actual .ind-tx small{color:var(--crema-mute)}
+.ind-num{
+  flex-shrink:0;width:25px;height:25px;border-radius:50%;border:2px solid var(--papel-3);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.7rem;
+  font-weight:700;color:var(--texto-2);background:#fff;
+}
+.ind-item.actual .ind-num{background:var(--oro);border-color:var(--oro);color:var(--tinta)}
+.ind-item.hecho .ind-num{background:var(--verde);border-color:var(--verde);color:#fff}
+.ind-tx{display:block;line-height:1.3}
+.ind-tx b{display:block;font-size:.9rem;font-weight:600;color:var(--texto);margin-bottom:2px}
+.ind-tx small{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-2);letter-spacing:.04em}
+.indice-sep{
+  font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--texto-2);margin:18px 0 8px;padding-top:16px;border-top:1px solid var(--papel-3);
+}
+.ind-tool{
+  display:flex;gap:9px;align-items:center;width:100%;text-align:left;background:none;border:none;
+  cursor:pointer;padding:7px 10px;border-radius:9px;font-family:'Figtree',sans-serif;
+  font-size:.86rem;color:var(--texto-2);transition:background .12s ease,color .12s ease;
+}
+.ind-tool:hover{background:var(--violeta-luz);color:var(--violeta)}
+
+/* ============ PASO ============ */
+.paso{display:none}
+.paso.activo{display:block;animation:entra .35s ease}
+@keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.paso-cabecera{background:var(--tinta);color:#fff;border-radius:var(--radio) var(--radio) 0 0;padding:36px 36px 32px;position:relative;overflow:hidden}
+.paso-num{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.16em;color:var(--oro);font-weight:700;margin-bottom:10px}
+.paso-cabecera h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.paso-cabecera .sub{color:var(--crema);font-size:1.05rem;max-width:52ch}
+.paso-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.chip{
+  font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.06em;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  padding:7px 13px;border-radius:999px;color:var(--crema);
+}
+.paso-cuerpo{background:#fff;border-radius:0 0 var(--radio) var(--radio);padding:36px;box-shadow:var(--sombra)}
+
+/* bloques de contenido */
+.bloque{margin-bottom:28px;border-radius:14px;overflow:hidden}
+.bloque:last-child{margin-bottom:0}
+.bloque-cab{
+  display:flex;align-items:center;gap:12px;padding:15px 20px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.18rem;
+  letter-spacing:-.01em;font-weight:600;line-height:1.25;
+}
+.bloque-cab .ico{font-size:1.15rem;line-height:1}
+.b-copiar{
+  margin-left:auto;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.08em;
+  text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:999px;cursor:pointer;
+  transition:background .12s ease;
+}
+.b-copiar:hover{background:rgba(255,255,255,.32)}
+.b-copiar.ok{background:#fff;color:var(--verde);border-color:#fff}
+.bloque-cont{padding:22px 20px;font-size:.98rem;line-height:1.7}
+.bloque-cont > *:last-child{margin-bottom:0}
+.bloque-cont p{margin-bottom:14px}
+.bloque-cont ul{margin:0 0 14px;padding-left:22px}
+.bloque-cont li{margin-bottom:7px}
+.bloque-cont strong{font-weight:700;color:var(--tinta)}
+.bloque-cont a,.aviso-uso a,.aviso-legal a{
+  color:var(--azul);font-weight:600;text-decoration:underline;
+  text-underline-offset:2px;text-decoration-thickness:1.5px;
+}
+.bloque-cont a:hover,.aviso-uso a:hover,.aviso-legal a:hover{color:var(--tinta)}
+/* lista de documentos enlazados */
+.docs{list-style:none;padding:0;margin:0}
+.docs li{
+  background:#fff;border:1px solid var(--papel-3);border-radius:11px;
+  padding:13px 16px;margin-bottom:9px;display:flex;gap:12px;align-items:flex-start;
+}
+.docs li:last-child{margin-bottom:0}
+.docs .n{
+  flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--tinta);color:var(--oro);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;
+}
+.docs b{display:block;font-size:.98rem;color:var(--tinta)}
+.docs span{font-size:.9rem;color:var(--texto-2);display:block;line-height:1.55}
+/* tercer nivel: los rótulos sueltos dentro de un bloque ("Lo que incluye") */
+.bloque-cont > p > strong:only-child{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+
+.b-neutro{background:var(--papel-2);border:1px solid var(--papel-3)}
+.b-neutro .bloque-cab{background:var(--papel-3);color:var(--tinta-2)}
+
+.b-plantilla{background:var(--azul-luz);border:1px solid #C3D9FB}
+.b-plantilla .bloque-cab{background:var(--azul);color:#fff}
+.b-plantilla .bloque-cont{font-size:.95rem}
+
+.b-ejemplo{background:var(--verde-luz);border:1px solid #B8E5D2}
+.b-ejemplo .bloque-cab{background:var(--verde);color:#fff}
+
+.b-errores{background:var(--coral-luz);border:1px solid #F8C9CC}
+.b-errores .bloque-cab{background:var(--coral);color:#fff}
+
+.b-ayuda{background:var(--violeta-luz);border:1px solid #D6CBFB}
+.b-ayuda .bloque-cab{background:var(--violeta);color:#fff}
+
+.b-aviso{background:var(--ambar-luz);border:1px solid #F5DCA8}
+.b-aviso .bloque-cab{background:var(--ambar);color:#fff}
+
+/* tablas y plantillas */
+.tabla{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:14px;background:#fff;border-radius:10px;overflow:hidden}
+.tabla th{background:var(--tinta);color:#fff;text-align:left;padding:12px 14px;font-weight:600;font-size:.9rem}
+.tabla td{padding:12px 14px;border-top:1px solid var(--papel-3);vertical-align:top}
+.tabla tr:nth-child(even) td{background:var(--papel-2)}
+
+.campo{
+  background:#fff;border:1.5px dashed #A9C2F2;border-radius:9px;
+  padding:14px 16px;margin-bottom:11px;font-size:.94rem;
+}
+.campo b{display:block;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.02em;color:var(--azul);margin-bottom:6px}
+.hueco{background:#DCE9FD;color:var(--azul);padding:1px 7px;border-radius:5px;font-family:'Space Mono',monospace;font-size:.85em;font-weight:700}
+
+.mensaje{background:#fff;border-radius:12px;padding:18px 20px;border-left:4px solid var(--verde);font-size:.97rem;line-height:1.7;margin-bottom:12px}
+.mensaje .de{font-family:'Figtree',sans-serif;font-size:.85rem;letter-spacing:.02em;color:var(--verde);font-weight:700;margin-bottom:10px}
+
+.error-item{display:flex;gap:13px;margin-bottom:15px;align-items:flex-start}
+.error-item:last-child{margin-bottom:0}
+.error-x{
+  flex-shrink:0;width:23px;height:23px;border-radius:50%;background:var(--coral);
+  color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px;
+}
+.error-item b{
+  display:block;margin-bottom:3px;color:var(--tinta);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+.error-item span{font-size:.96rem;line-height:1.65;color:var(--texto-2)}
+
+/* acordeón */
+.desplegable{border:1px solid var(--papel-3);border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden}
+.desplegable summary{
+  padding:15px 18px;cursor:pointer;font-weight:600;display:flex;
+  align-items:center;gap:11px;list-style:none;
+}
+.desplegable summary::-webkit-details-marker{display:none}
+.desplegable summary::after{content:"+";margin-left:auto;font-family:'Space Mono',monospace;font-size:1.2rem;color:var(--texto-2)}
+.desplegable[open] summary::after{content:"−"}
+.desplegable summary:hover{background:var(--papel-2)}
+.desplegable .dcont{padding:0 18px 18px}
+
+/* navegación del paso */
+.paso-pie{
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  margin-top:32px;padding-top:28px;border-top:2px dashed var(--papel-3);
+}
+.btn-hecho{
+  background:#fff;border:2px solid var(--verde);color:var(--verde);
+  font-weight:700;padding:14px 24px;border-radius:999px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;font-size:.98rem;font-family:'Figtree',sans-serif;
+  transition:all .15s ease;
+}
+.btn-hecho:hover{background:var(--verde-luz)}
+.btn-hecho.marcado{background:var(--verde);color:#fff}
+.btn-nav{
+  background:var(--tinta);color:#fff;border:none;padding:14px 26px;
+  border-radius:999px;cursor:pointer;font-weight:600;font-size:.98rem;
+  font-family:'Figtree',sans-serif;margin-left:auto;
+  display:inline-flex;align-items:center;gap:9px;transition:all .15s ease;
+}
+.btn-nav:hover{background:var(--tinta-2)}
+.btn-atras{
+  background:transparent;border:1.5px solid var(--papel-3);color:var(--texto-2);
+  padding:14px 22px;border-radius:999px;cursor:pointer;font-weight:600;
+  font-family:'Figtree',sans-serif;font-size:.98rem;transition:all .15s ease;
+}
+.btn-atras:hover{border-color:var(--texto-2);color:var(--texto)}
+
+/* ============ CAJA DE HERRAMIENTAS ============ */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.tarjeta{
+  background:#fff;border-radius:var(--radio);padding:26px;cursor:pointer;
+  border:1px solid var(--papel-3);text-align:left;font-family:'Figtree',sans-serif;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.tarjeta:hover{transform:translateY(-3px);box-shadow:var(--sombra-alta)}
+.tarjeta .ico{display:block;margin-bottom:14px;color:var(--tinta)}
+.tarjeta .ico .ico-svg{width:28px;height:28px}
+.tarjeta:hover .ico{color:var(--oro-oscuro,#9A7D1F)}
+.tarjeta .eyebrow{color:var(--violeta);display:block;margin-bottom:7px}
+.tarjeta h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.tarjeta p{color:var(--texto-2);font-size:.93rem;line-height:1.55}
+
+/* ============ MODAL ============ */
+.modal{
+  position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.6);
+  backdrop-filter:blur(4px);display:none;padding:24px;overflow-y:auto;
+}
+.modal.abierto{display:block;animation:entra .2s ease}
+.modal-caja{
+  max-width:820px;margin:40px auto;background:#fff;
+  border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra-alta);
+}
+.modal-cerrar{
+  position:sticky;top:0;z-index:5;background:#fff;padding:14px 24px;
+  border-bottom:1px solid var(--papel-3);display:flex;justify-content:flex-end;
+}
+.modal-cerrar button{
+  background:var(--papel-2);border:none;width:38px;height:38px;border-radius:50%;
+  cursor:pointer;font-size:1.1rem;color:var(--texto-2);
+}
+.modal-cerrar button:hover{background:var(--papel-3)}
+
+/* ============ CIERRE ============ */
+.final{background:var(--tinta);color:#fff;border-radius:var(--radio);padding:48px 36px;text-align:center}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:14px}
+.final p{color:var(--crema);max-width:52ch;margin:0 auto 28px}
+.final-docs{max-width:640px;margin:0 auto 28px;text-align:left}
+.final-docs .docs li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.final-docs .docs .n{background:var(--oro);color:var(--tinta)}
+.final-docs .docs b{color:#fff}
+.final-docs .docs b a{color:var(--oro);text-decoration:none}
+.final-docs .docs b a:hover{text-decoration:underline}
+.final-docs .docs span{color:var(--crema-mute)}
+.final-nota{font-size:.92rem;color:var(--crema-mute)!important;max-width:none!important;margin:16px 0 0!important;line-height:1.65}
+.final-nota strong{color:#fff}
+
+.pie{padding:48px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
+.pie b{color:var(--texto)}
+.aviso-legal{
+  max-width:600px;margin:24px auto 0;font-size:.85rem;
+  background:var(--ambar-luz);border:1px solid #F5DCA8;
+  border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
+}
+
+/* el índice lateral sustituye a la barra superior en pantallas anchas */
+@media(min-width:1081px){
+  .barra{display:none!important}
+}
+@media(max-width:1080px){
+  .camino-grid{grid-template-columns:1fr;gap:0}
+  .indice{display:none}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .seccion{padding:48px 0}
+  .paso-cabecera,.paso-cuerpo{padding:26px 20px}
+  .puntos{display:none}
+  .btn-nav{margin-left:0;width:100%;justify-content:center}
+  .paso-pie{flex-direction:column;align-items:stretch}
+  .btn-hecho,.btn-atras{justify-content:center}
+  .tabla{font-size:.82rem}
+  .tabla th,.tabla td{padding:8px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <div class="hero-insignia"><span class="num">Kit 06 · Ads Meta</span><span class="hero-marca">Departamento Disruptivo</span></div>
+      <h1>Tráfico con reglas, <em>no con corazonadas.</em></h1>
+      <p>Tres campañas que trabajan como sistema — captación, venta directa y retargeting — con arranque templado de 1-3€/día por ad set y decisiones que se toman con reglas, no con el panel abierto a todas horas.</p>
+      <p class="hero-que-es">Primero, <strong>5 pasos en orden</strong>: el checklist técnico, las 3 campañas y su orden de encendido, las audiencias y exclusiones, los creativos y las reglas de gestión. Después, la caja con <strong>los creativos completos de las 3 campañas</strong>, con sus tres ángulos cada una.</p>
+      <div class="botonera">
+        <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
+        <a href="#caja" class="btn btn-fantasma">Ver los creativos</a>
+      </div>
+      <p class="hero-cruce">Los leads entran en las secuencias del <a href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 04 · Emails ↗</a> y las citas se cierran con el <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 03 · Ventas ↗</a></p>
+    </div>
+
+    <aside class="hero-panel" aria-label="El sistema de campañas de un vistazo">
+      <div class="ads-cab"><span class="avatar">06</span><div><b>El sistema · 3 campañas</b><small>arranque templado · 1-3€/día por ad set</small></div></div>
+      <div class="ads-cuerpo">
+        <div class="ads-fila on"><span class="ads-dot"></span><div class="ads-tx"><b>C1 · Captación LM</b><small>optimiza a Lead · llena lista y Pixel</small></div><span class="ads-cuando">día 0</span></div>
+        <div class="ads-fila on"><span class="ads-dot"></span><div class="ads-tx"><b>C2 · Venta LT directa</b><small>optimiza a Purchase · financia el sistema</small></div><span class="ads-cuando">con señal</span></div>
+        <div class="ads-fila off"><span class="ads-dot"></span><div class="ads-tx"><b>C3 · Retargeting</b><small>warm · el mejor coste por compra</small></div><span class="ads-cuando">con warm</span></div>
+        <div class="ads-reglas"><span>kill a 2×</span><span>escalar +20%</span><span>decidir cada 3-4 días</span></div>
+      </div>
+      <div class="ads-pie"><b>Nada se enciende</b> sin el checklist técnico cerrado.</div>
+    </aside>
+  </div>
+</header>
+
+
+<!-- ============ BARRA ============ -->
+<div class="barra" id="barra">
+  <div class="wrap barra-in">
+    <div class="barra-titulo" id="barraTitulo">Sistema</div>
+    <div class="puntos" id="puntos"></div>
+    <div class="contador" id="contador">0/5</div>
+  </div>
+</div>
+
+<!-- ============ CAMINO ============ -->
+<main>
+
+<div class="wrap">
+  <div class="aviso-uso">
+    <h3 id="tituloUso">Cómo usar esta guía</h3>
+    <p><strong>Este pack está escrito y revisado, pero nada está publicado ni ejecutado.</strong> Ninguna campaña se enciende hasta cerrar el checklist técnico del paso 1, y la estructura pasa la revisión final de Ads con Bruno (los martes) antes de subir nada a Meta. El anuncio es la parte visible; el sistema de medición y reglas es lo que lo hace rentable.</p>
+    <p><strong>Se hace en orden.</strong> Checklist técnico → campañas → audiencias → creativos → reglas de gestión. Y el encendido también tiene orden: Captación el día 0, Venta con señal de Pixel, Retargeting solo cuando el warm tenga tamaño.</p>
+    <p><strong>Las reglas duras no se negocian.</strong> Cero cifras de resultado inventadas: CPL, coste por compra y ROAS se fijan con tus datos reales, nunca antes. Prohibido "gratis" y "lanzamiento" en el copy. Urgencia solo si el cierre es real. Los leads van a tu GHL, no a otro CRM. Y si tu nicho es salud, el checklist ENCAC manda sobre cualquier copy.</p>
+    <p style="margin-bottom:0">Los únicos números fijos del pack son política, no promesas: arranque 1-3€/día por ad set, kill a 2× el objetivo y escalado del +20%. Los ejemplos siguen el caso de Valeria, como en el resto de kits.</p>
+  </div>
+</div>
+
+<section class="seccion" id="camino">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Primera parte</span>
+      <h2>Los 5 pasos del sistema</h2>
+      <p>La base técnica, las 3 campañas con su orden, las audiencias, los creativos y las reglas que sustituyen a las corazonadas. En ese orden.</p>
+    </div>
+    <div class="camino-grid">
+      <aside class="indice" id="indice">
+        <div class="indice-cab">
+          <span class="eyebrow">Tu avance</span>
+          <div class="progreso"><i id="progresoBarra" style="width:0%"></i></div>
+          <div class="indice-contador" id="indiceContador">0 de 5 pasos</div>
+        </div>
+        <nav id="indiceLista" aria-label="Los 5 pasos del sistema"></nav>
+        <div class="indice-sep">Caja de herramientas</div>
+        <nav id="indiceTools" aria-label="Las herramientas"></nav>
+      </aside>
+      <div id="pasos"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAJA ============ -->
+<section class="seccion" id="caja" style="background:#fff">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Segunda parte</span>
+      <h2>Los creativos de las 3 campañas</h2>
+      <p>Cada campaña con sus tres ángulos completos: hooks, copy en dos longitudes, headlines y brief visual. Ábrelos al llegar al paso 4.</p>
+    </div>
+    <div class="rejilla" id="rejilla"></div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="wrap">
+    <div class="final">
+      <h2>Una cosa antes de encender</h2>
+      <p>Los anuncios no arreglan un embudo roto: lo amplifican. Si el checkout falla, el tracking miente o los emails no salen, pagar tráfico solo hace el problema más caro y más visible. <strong>Por eso el checklist técnico va primero y la revisión con Bruno va última.</strong></p>
+      <p style="margin-bottom:28px">Con la base cerrada, el sistema es aburrido en el buen sentido: arranque templado, decisiones cada 3-4 días, kill a 2×, escalar +20%. Sin drama y sin panel abierto a todas horas. Lo emocionante debería ser tu negocio, no tu administrador de anuncios.</p>
+      <button class="btn btn-principal" onclick="irAPaso(0)">Ir al paso 1 →</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <p><b>Kit de Ads Meta High Ticket</b> · Departamento Disruptivo</p>
+    <p style="margin-top:6px">¿Te trabas? Ads con Bruno los martes · Sistemas GHL con María José los miércoles · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <div class="aviso-legal">
+      <b>Sobre lo legal:</b> en España, los anuncios exigen banner de consentimiento con Consent Mode v2, política de privacidad enlazada y base legal para usar tu lista como audiencia (LOPD/GDPR). Y si tu nicho es salud, el checklist ENCAC es obligatorio: sin promesas de resultados médicos, sin cifras de resultado, sin antes/después. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-caja">
+    <div class="modal-cerrar"><button onclick="cerrarModal()" aria-label="Cerrar">✕</button></div>
+    <div id="modalCont"></div>
+  </div>
+</div>
+
+<script>
+/* ==================================================================
+   CONTENIDO — para editar un texto, cámbialo aquí. No hace falta
+   tocar nada más del archivo.
+   ================================================================== */
+
+const H = (s) => s; // ayuda para leer mejor el HTML de abajo
+
+const PASOS = [
+{
+  num:"Paso 01", ico:"ajustes",
+  titulo:"El checklist técnico",
+  sub:"Pixel + CAPI, dominio verificado, eventos, UTMs, GHL y lo legal. Un anuncio sobre un tracking roto quema presupuesto sin datos fiables.",
+  chips:["Medio día","Antes de encender nada","La base de todo"],
+  queEs:H(`<p>La lista que se cierra <strong>antes</strong> de crear la primera campaña: cuenta y activos, Pixel con CAPI, dominio verificado, los 5 eventos testeados, la convención de UTMs, los workflows de GHL y el bloque legal de España.</p>`),
+  porQue:H(`<p>Meta optimiza sobre los datos que recibe. Si el Pixel cuenta doble, el evento de compra no dispara o el dominio no está verificado, el algoritmo aprende de ruido — y tú tomas decisiones sobre mentiras.</p>
+    <p>Y hay una parte que no es técnica sino legal: en España, banner de consentimiento, política de privacidad enlazada y base legal para usar tu lista como audiencia. No es opcional.</p>`),
+  plantilla:H(`<ul>
+      <li><strong>Cuenta:</strong> Business Manager operativo, cuenta publicitaria activa con pago verificado, zona horaria CET y moneda EUR (no se pueden cambiar después), página de Facebook + Instagram conectadas, acceso de agencia (no login personal).</li>
+      <li><strong>Pixel + CAPI (los dos):</strong> Pixel en TODAS las páginas; Conversions API server-side vía GHL; <strong>deduplicación</strong> con el mismo event_id en browser y server; Advanced Matching activo; Event Match Quality &gt;6.0 en el evento principal.</li>
+      <li><strong>Dominio y eventos:</strong> dominio verificado (DNS TXT); los 5 eventos testeados con Test Events: <span class="hueco">PageView</span> · <span class="hueco">ViewContent</span> · <span class="hueco">Lead</span> · <span class="hueco">InitiateCheckout</span> · <span class="hueco">Purchase</span> (con valor y EUR). Cada uno dispara una sola vez.</li>
+      <li><strong>UTMs en todos los enlaces:</strong> <code>utm_source=meta&utm_medium=paid&utm_campaign=…&utm_content=…&utm_term=…</code> — y verificado que llegan a GHL y quedan en el contacto.</li>
+      <li><strong>GHL:</strong> workflow de lead (tag → nurture → entrega del recurso) y de comprador (tag → onboarding) montados. Si usas Instant Form, valida el sync con un lead real de punta a punta — y si no es fiable, landing propia.</li>
+      <li><strong>Legal España:</strong> banner de cookies + Consent Mode v2, privacidad/aviso legal/condiciones enlazados, consentimiento para subir tu lista como audiencia.</li>
+      <li><strong>Nicho:</strong> marca la Categoría Especial si aplica (salud, finanzas, empleo, vivienda, política). Si tu nicho es salud, pasa todo el copy por el checklist ENCAC: sin promesas médicas, sin cifras de resultado, sin antes/después.</li>
+      <li><strong>A nivel de anuncio:</strong> mejoras automáticas de IA, Related Media y multi-anunciante <strong>desactivados</strong> — esconden el rendimiento real por creativo.</li>
+    </ul>`),
+  ejemplo:H(`<p>Valeria verificó su dominio, montó Pixel + CAPI desde su GHL y lanzó un lead de prueba desde el móvil con los datos de su madre (con permiso 😄): el Lead disparó una vez, llegó a GHL con sus UTMs y la secuencia de Welcome del Kit 04 se activó sola. Solo entonces pasó al paso 2. Su nicho roza salud, así que revisó sus tres ángulos contra ENCAC antes de subir nada.</p>`),
+  errores:[
+    {t:"Encender con el tracking a medias", d:"Cada día de campaña sin CAPI o con eventos dobles es presupuesto que compra datos malos. Primero se mide, luego se gasta."},
+    {t:"Instant Forms sin validar el sync", d:"Los Instant Forms no disparan el Pixel de web: si el sync con GHL falla, tus leads caen en un agujero. Un lead real de prueba, siempre."},
+    {t:"Ignorar la Categoría Especial", d:"Si tu nicho es salud o finanzas y no la marcas, Meta te tumba anuncios o la cuenta. Y el copy ENCAC no es negociable en salud."},
+    {t:"Dejar las mejoras automáticas activas", d:"Advantage+ en creativos, Related Media y multi-anunciante mezclan resultados y no sabrás qué creativo funciona de verdad."}
+  ],
+  ghl:"Los workflows de lead y comprador son los mismos del Kit 04 (Welcome y Post-compra): los anuncios no crean un sistema nuevo, alimentan el que ya tienes.",
+  ayuda:"Ads con Bruno los martes: lleva este checklist marcado y se repasa contigo antes de encender."
+},
+{
+  num:"Paso 02", ico:"tablero",
+  titulo:"Las 3 campañas y su orden",
+  sub:"Captación, Venta directa y Retargeting trabajan como sistema. Y se encienden en orden: la tercera nunca el día 0.",
+  chips:["1-3€/día por ad set","ABO en el arranque","El orden importa"],
+  queEs:H(`<p>Tres campañas que se apoyan entre sí:</p>
+    <ul style="margin-bottom:0">
+      <li><strong>Campaña 1 · Captación Lead Magnet</strong> — objetivo Leads, optimiza a Lead, destino tu landing de captación. Llena la lista y entrena el Pixel con tráfico frío barato.</li>
+      <li><strong>Campaña 2 · Venta LT directa</strong> — objetivo Ventas, optimiza a Purchase (o InitiateCheckout hasta tener volumen), destino tu checkout. Convierte frío con intención y financia el sistema.</li>
+      <li><strong>Campaña 3 · Retargeting</strong> — objetivo Ventas sobre audiencias warm. Recupera al que ya te conoce y no compró. Suele ser el mejor coste por compra.</li>
+    </ul>`),
+  porQue:H(`<p><strong>El orden de encendido no es estético:</strong> día 0 se enciende la Campaña 1; la 2 en paralelo o en cuanto el Pixel tenga señal; y la 3 <strong>nunca el día 0</strong> — sin tráfico previo sus audiencias están vacías y pagarías por impactar a nadie.</p>
+    <p>El arranque es templado a propósito: <strong>1-3€/día por ad set</strong>, estructura ABO para leer cada audiencia por separado. El presupuesto sube después, con las reglas del paso 5 — nunca "en caliente".</p>`),
+  plantilla:H(`<table class="tabla"><tr><th></th><th>C1 · Captación</th><th>C2 · Venta LT</th><th>C3 · Retargeting</th></tr>
+    <tr><td><strong>Objetivo Meta</strong></td><td>Clientes potenciales</td><td>Ventas</td><td>Ventas (warm)</td></tr>
+    <tr><td><strong>Optimiza a</strong></td><td>Lead</td><td>Purchase (o InitiateCheckout al arrancar)</td><td>Purchase</td></tr>
+    <tr><td><strong>Destino</strong></td><td>Landing de captación</td><td>Checkout de tu oferta</td><td>Checkout de tu oferta</td></tr>
+    <tr><td><strong>Presupuesto</strong></td><td>1-3€/día × 3 ad sets</td><td>1-3€/día × 3 ad sets</td><td>1-3€/día × 3 ad sets (~10-20% del total)</td></tr>
+    <tr><td><strong>Se enciende</strong></td><td><strong>Día 0</strong></td><td>En paralelo o con señal de Pixel</td><td>Solo con audiencias warm con tamaño</td></tr></table>
+    <p style="margin:12px 0 0"><strong>Nombres sugeridos:</strong> <span class="hueco">TU MARCA</span> | Captación LM | ES · <span class="hueco">TU MARCA</span> | Venta LT | ES · <span class="hueco">TU MARCA</span> | Retargeting | ES. Y los KPIs (<span class="hueco">CPL objetivo</span>, <span class="hueco">coste por compra</span>, <span class="hueco">ROAS</span>) se fijan con datos reales tras los primeros días — nunca se inventan.</p>`),
+  ejemplo:H(`<p>Valeria encendió la Campaña 1 un lunes (3 ad sets a 2€/día). El jueves, con el Pixel registrando Leads a buen ritmo, encendió la 2 optimizando a InitiateCheckout. La 3 esperó dos semanas: cuando sus visitantes web y engagers tuvieron tamaño utilizable, la encendió con un solo ad set apilado — y la desdobló en tres al mes siguiente.</p>`),
+  errores:[
+    {t:"Encender el retargeting el día 0", d:"Audiencias vacías = dinero quemado. La Campaña 3 espera a que la 1 y la 2 hayan generado visitas, interacciones y leads."},
+    {t:"Arrancar caliente", d:"50€/día el día uno no acelera el aprendizaje: lo encarece. 1-3€/día por ad set, y escalar con reglas."},
+    {t:"Optimizar a clics", d:"El clic barato atrae al que clica, no al que compra. Se optimiza a Lead o a Purchase; a Landing Page View solo como puente temporal."},
+    {t:"Inventar los KPIs el día 0", d:"El CPL objetivo sale de tus primeros días de datos reales, no de un post de alguien. Hasta entonces mandan las reglas de kill del paso 5."}
+  ],
+  ghl:"Cada campaña alimenta GHL: los leads de la C1 entran en Welcome, los compradores de la C2 y C3 en Post-compra. El sistema de emails del Kit 04 es la otra mitad de estas campañas.",
+  ayuda:"Ads con Bruno los martes."
+},
+{
+  num:"Paso 03", ico:"personas",
+  titulo:"Audiencias y exclusiones",
+  sub:"Advantage+ por defecto en frío, intereses como control, retargeting por eventos. Y la exclusión que casi todos olvidan: quien ya compró.",
+  chips:["Advantage+ en frío","3 ad sets por campaña","Excluir compradores siempre"],
+  queEs:H(`<p>El criterio de audiencias del pack: <strong>en frío, Advantage+ Audience por defecto</strong> (la audiencia como señal, no como jaula), con un ad set de <strong>intereses semilla</strong> como control y un tercero de <strong>lookalike o demografía del avatar</strong>. En retargeting, audiencias por eventos: web, interacción, vídeo y leads de GHL.</p>`),
+  porQue:H(`<p>El algoritmo de Meta encuentra compradores mejor que una lista de intereses cerrada — si le das señal limpia y margen. Por eso Advantage+ manda en frío y los intereses quedan como termómetro de nicho.</p>
+    <p>Y las exclusiones son la mitad silenciosa del rendimiento: <strong>impactar a quien ya compró es pagar dos veces</strong>, y dejar a los leads del lead magnet dentro del frío contamina la lectura — el email ya les vende sin coste de media, y el retargeting los impacta más barato y con el mensaje correcto.</p>`),
+  plantilla:H(`<p style="margin:0 0 8px"><strong>Los 3 ad sets por campaña:</strong></p>
+    <ul>
+      <li><strong>C1 (frío):</strong> AS1 Advantage+ con semilla del nicho · AS2 intereses semilla amplios (~2-5M en España) · AS3 lookalike 1-3% (si hay lista de +1.000; ideal 5.000+) o demografía del avatar.</li>
+      <li><strong>C2 (frío con intención):</strong> AS1 Advantage+ Sales · AS2 intereses de intención de compra · AS3 lookalike de valor (compradores o leads). <strong>En los tres: excluir leads del LM últimos 30 días.</strong></li>
+      <li><strong>C3 (warm):</strong> AS1 intención web (visitantes de venta 30d + abandonos de checkout 14d) · AS2 visitantes web 90d amplio · AS3 engagers IG+FB 365d + video-viewers 25% + leads de GHL sin comprar. Si el warm es pequeño: un solo ad set apilado, y desdoblar al crecer.</li>
+    </ul>
+    <p style="margin:12px 0 8px"><strong>Audiencias personalizadas a crear (una vez):</strong></p>
+    <div class="campo"><b>La lista base</b>Compradores (Pixel Purchase + tag GHL, 180d) · Leads del LM (GHL, 180d) · Visitantes página de venta (30 y 90d) · Abandonos checkout (14d) · ViewContent (90d) · Engagers IG y FB (365d) · Video-viewers 25% (365d) · Lista de clientes para lookalike (con consentimiento LOPD)</div>
+    <p style="margin:12px 0 0"><strong>Exclusiones en TODAS las campañas:</strong> compradores de tu oferta + lista de equipo. En frío, además, los leads existentes.</p>`),
+  ejemplo:H(`<p>El AS2 de la Campaña 1 de Valeria: intereses semilla de su nicho (bienestar, hábitos, productividad femenina) sumando ~3M en España, Advantage+ Placements, y excluidos sus compradores y sus leads. A las dos semanas, el AS1 (Advantage+) le traía leads un 30% más baratos: apagó el AS3 flojo y dejó el AS2 como control. El algoritmo ganó — como casi siempre que se le da señal limpia.</p>`),
+  errores:[
+    {t:"No excluir compradores", d:"Es la exclusión número uno y la que más se olvida. Pagar por impactar a quien ya compró no es solo caro: es molesto para tu mejor gente."},
+    {t:"Leads del LM dentro del frío de la C2", d:"Tu email ya les vende sin coste. Dentro del frío inflan el rendimiento aparente de creativos que no funcionan en frío puro, y escalas mentiras."},
+    {t:"Intereses como jaula", d:"Un ad set de intereses ultra-específico de 80.000 personas se agota en días. Amplio + señal le gana a estrecho + control."},
+    {t:"Lookalike sin lista suficiente", d:"Un lookalike de 200 contactos es ruido. Mínimo ~1.000 (ideal 5.000+); hasta entonces, demografía del avatar."}
+  ],
+  ghl:"Las audiencias de leads y compradores se sincronizan desde GHL (con base legal y consentimiento LOPD). Revisa que los tags del Kit 04 (lead-nuevo, cliente-lt) estén alimentando las listas.",
+  ayuda:"Ads con Bruno los martes."
+},
+{
+  num:"Paso 04", ico:"sesion",
+  titulo:"Los creativos",
+  sub:"Tres ángulos por campaña — dolor→alivio, error común, historia — con hooks de 7 palabras, dos longitudes de copy y brief visual.",
+  chips:["4-6 creativos por ad set","3 ángulos","Subtítulos siempre"],
+  queEs:H(`<p>El pack trae los creativos de las tres campañas escritos, cada campaña con <strong>3 ángulos</strong> (dolor→alivio, error común, historia/prueba) y cada ángulo con: 3 hooks de ≤7 palabras, copy principal en dos longitudes, 5 headlines, descripción de una línea y brief visual de imagen y vídeo.</p>
+    <p style="margin-bottom:0">Los tres archivos completos están en la caja de herramientas de abajo, uno por campaña, listos para rellenar con tu diccionario.</p>`),
+  porQue:H(`<p>Un ad set con un solo creativo es una apuesta; con 4-6 creativos mezclando los 3 ángulos es un experimento que aprende solo. Y el ángulo importa más que la foto: cuando un creativo se agota, se rota el ángulo, no solo la imagen.</p>
+    <p>Las reglas de copy vienen aplicadas de fábrica: prohibido "gratis" y "lanzamiento" (el recurso "se descarga", "se accede"), sin promesas de resultado, precio y garantía en la descripción de la C2/C3, y urgencia solo si el cierre es real.</p>`),
+  plantilla:H(`<ul style="margin-bottom:0">
+      <li><strong>Por ad set:</strong> 4-6 creativos mezclando los 3 ángulos, en imagen y vídeo. Un ángulo distinto por creativo — no el mismo texto con otra foto.</li>
+      <li><strong>Formatos:</strong> imagen 1080×1350 + vídeo 9:16 (y 1:1 para Feed).</li>
+      <li><strong>Vídeo:</strong> hook visual en el primer segundo y <strong>subtítulos siempre</strong>.</li>
+      <li><strong>3 hooks por creativo</strong> listos para rotar cuando llegue la fatiga.</li>
+      <li><strong>C2 y C3:</strong> precio y garantía de 14 días visibles en creativo y descripción (si tu oferta no lleva garantía, retira sus menciones — el ángulo que se apoya en ella necesitará variante).</li>
+      <li><strong>Salud:</strong> los 3 ángulos de cada campaña pasan por el checklist ENCAC antes de subir.</li>
+      <li><strong>UTMs en todos los enlaces</strong> (paso 1).</li>
+    </ul>`),
+  ejemplo:H(`<p>El ángulo A de la Campaña 1 de Valeria, relleno: hook <em>"¿Otra vez sin energía a las cinco?"</em>; copy corto: <em>"No es falta de ganas. Es falta de un punto de partida claro. Preparé la Guía del Arranque: el primer paso, sin rodeos. Descárgatela en el enlace."</em>; imagen: el mockup de la guía sobre su fondo de marca. Seis creativos por ad set: tres ángulos × imagen y vídeo.</p>`),
+  errores:[
+    {t:"Un creativo por ad set", d:"Sin variedad no hay aprendizaje. 4-6 creativos, tres ángulos, y que el algoritmo reparta."},
+    {t:"'Gratis' en el copy", d:"Devalúa el recurso y atrae al perfil equivocado. 'Descárgatela', 'accede', 'llévatela'."},
+    {t:"Vídeo sin subtítulos", d:"La mayoría ve sin sonido. Sin subtítulos, tu mejor argumento es mímica."},
+    {t:"Urgencia inventada", d:"'Última llamada' y cupos solo si son reales. La urgencia falsa te cuesta la cuenta y la reputación — misma regla que en tus emails."}
+  ],
+  ghl:"Cada creativo con sus UTMs → sabrás en GHL qué ángulo trae leads que compran, no solo leads que clican. Ese dato decide qué rotar el mes 2.",
+  ayuda:"Ads con Bruno los martes: la validación final de los creativos antes de subir es con él."
+},
+{
+  num:"Paso 05", ico:"escudo",
+  titulo:"Las reglas de gestión",
+  sub:"Kill a 2× el objetivo, escalar +20% cada 3-4 días, y la regla madre: decisiones semanales, no diarias.",
+  chips:["Ventana 72-96h","Kill a 2×","Escalar +20%"],
+  queEs:H(`<p>Las reglas que sustituyen a las corazonadas una vez el sistema está encendido: <strong>cuándo esperar, cuándo matar, cuándo escalar y qué no tocar.</strong> Son política del pack: los únicos números fijos son el arranque 1-3€/día, el kill a 2× y el escalado del +20%.</p>`),
+  porQue:H(`<p>Meta necesita salir de la fase de aprendizaje antes de que los datos signifiquen algo: <strong>50 eventos en 7 días</strong>, o gasto ≥3× el objetivo sin conversión. Decidir antes es decidir con ruido — y cada edición mayor reinicia el aprendizaje.</p>
+    <p>Y la asimetría clave: escalar amplifica lo que ya funciona, <strong>no rescata lo que no</strong>. Subir presupuesto a un ad set malo solo hace el agujero más grande.</p>`),
+  plantilla:H(`<table class="tabla"><tr><th>Situación</th><th>Acción</th></tr>
+    <tr><td>Menos de 72-96h o &lt;50 eventos</td><td><strong>Esperar.</strong> No decidir todavía</td></tr>
+    <tr><td>Gasto = 2× CPL/CPA objetivo sin conversión</td><td><strong>Pausar el creativo</strong> (el ad set entero solo si todos fallan). Antes, comprobar que no es la landing caída</td></tr>
+    <tr><td>Ad set a objetivo, estable, frecuencia OK, 3-4 días</td><td><strong>Escalar +20%</strong> — no más: subidas mayores resetean el aprendizaje</td></tr>
+    <tr><td>Ganador claro</td><td><strong>Duplicar a audiencia nueva</strong> (escalado horizontal) en vez de forzar presupuesto</td></tr>
+    <tr><td>Frecuencia ↑ + coste ↑ + CTR ↓ a la vez</td><td><strong>Creativo quemado:</strong> refrescar cada ~10 días, rotando el ángulo, no solo la foto</td></tr>
+    <tr><td>Ad set a objetivo</td><td><strong>No tocar.</strong> Solo escalar +20% cuando toque</td></tr></table>
+    <p style="margin:12px 0 0"><strong>Umbrales de frecuencia:</strong> en frío, &gt;2 = saturación; en retargeting se tolera hasta 6-9 SOLO si hay ventas. <strong>Reparto:</strong> el grueso al frío que funciona; retargeting ~10-20% del total. <strong>Revisión:</strong> cada 3-4 días en el arranque, semanal una vez estable. Nada de mirar el panel cada hora.</p>`),
+  ejemplo:H(`<p>Semana 2 de Valeria: un creativo de la C1 llevaba 2× su CPL provisional sin un lead — comprobó que la landing funcionaba y lo pausó (solo ese; los otros dos del ad set seguían a objetivo). El AS1 llevaba 4 días estable por debajo de objetivo: +20%, y una nota en el calendario para revisarlo el jueves. Total de tiempo en el panel esa semana: 40 minutos.</p>`),
+  errores:[
+    {t:"Optimizar a diario", d:"Mirar el panel cada hora produce ediciones, y cada edición reinicia el aprendizaje. Decisiones cada 3-4 días, con calendario."},
+    {t:"Matar por un mal día", d:"Un martes malo no es una tendencia. La regla de kill es de gasto acumulado sin conversión, no de humor."},
+    {t:"Escalar al 100%", d:"Doblar presupuesto resetea el aprendizaje y dispara el coste. +20% cada 3-4 días, y horizontal cuando haya ganador claro."},
+    {t:"Cambiar tres cosas a la vez", d:"Oferta, creativo y audiencia a la vez = no saber qué movió la aguja. Una variable por decisión."}
+  ],
+  ghl:"El dato que manda no está en Meta sino en GHL: leads que compran y agendan. Un CPL barato de leads que no abren emails es caro.",
+  ayuda:"Ads con Bruno los martes — el sistema entero pasa su validación final antes de encender, y las primeras semanas se revisan con él."
+}
+];
+
+const CAJA_H = [
+{
+  ico:"lupa", et:"Campaña 1 · Captación",
+  titulo:"Creativos de Captación",
+  resumen:"Tres ángulos para que el frío se registre y se lleve tu recurso: dolor→alivio, error común e historia. CTA: Descargar.",
+  cuerpo:H(`<p><strong>Objetivo:</strong> que el frío se registre y se lleve tu lead magnet. CTA del botón: <strong>Descargar</strong> o Más información. El recurso nunca se llama "gratis": se descarga, se accede, se lleva.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo A · Dolor → alivio</div><div class="bloque-cont">
+    <p><strong>Hooks (≤7 palabras):</strong> "¿Otra vez atascado con <span class="hueco">DOLOR</span>?" · "El <span class="hueco">DOLOR</span> no es tu culpa." · "Deja de arrastrar el mismo <span class="hueco">DOLOR</span>."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"¿Otra vez atascado con <span class="hueco">DOLOR</span>? No es falta de ganas. Es falta de un punto de partida claro. Preparé <span class="hueco">TU RECURSO</span>: el primer paso en <span class="hueco">TU NICHO</span>, sin rodeos. Descárgatela en el enlace. Acceso inmediato tras registrarte."</div>
+    <p><strong>Headlines:</strong> "La guía que ordena tu <span class="hueco">NICHO</span>" · "El primer paso, sin líos" · "Empieza por aquí, no por todo"…</p>
+    <p style="margin-bottom:0"><strong>Visual:</strong> imagen = mockup del recurso sobre fondo de marca, hook legible en 1s. Vídeo 15s = hook visual (0-1s) → dolor en 1ª persona (2-8s) → el recurso como atajo (8-12s) → CTA (12-15s). Subtítulos siempre.</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo B · Error común</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "El error que repite el <span class="hueco">AVATAR</span>." · "Casi nadie en <span class="hueco">NICHO</span> lo revisa." · "Haces esto y no avanzas."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"El error que repite casi todo <span class="hueco">AVATAR</span>: intentar diez cosas a la vez. Así solo se acumula ruido, no avance. En <span class="hueco">TU RECURSO</span> está el orden correcto: qué primero, qué después. Descárgatela en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Visual:</strong> split "lo que haces / lo que deberías" — caos de flechas vs una línea clara. Vídeo: el caos vs el orden, el recurso como solución.</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo C · Historia / prueba conceptual</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "Empecé igual de perdido que tú." · "Un cambio pequeño, otro resultado." · "Nadie nace sabiendo de <span class="hueco">NICHO</span>."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"Empecé igual de perdido que tú en <span class="hueco">NICHO</span>. Probando de todo, avanzando en nada. Lo que me ordenó fue tener un mapa claro del primer paso. Ese mapa es <span class="hueco">TU RECURSO</span>. Descárgatelo en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Visual:</strong> foto real tuya, mirada directa, hook en overlay sobre la imagen (nunca sobre negro). Vídeo hablado a cámara con micro-historia en 1ª persona.</p>
+  </div></div>
+  <p style="margin-bottom:0"><strong>Producción:</strong> 4-6 creativos por ad set mezclando los 3 ángulos (imagen + vídeo), un ángulo distinto por creativo, 3 hooks listos para rotar, UTMs en todo. El archivo completo (con copys largos y los 5 headlines por ángulo) viene en tu paquete.</p>`)
+},
+{
+  ico:"precio", et:"Campaña 2 · Venta directa",
+  titulo:"Creativos de Venta LT",
+  resumen:"Tres ángulos para convertir frío con intención: la oferta como atajo, el anti-curso y el anclaje de precio. Precio y garantía en la descripción.",
+  cuerpo:H(`<p><strong>Objetivo:</strong> convertir frío + intención a tu oferta de entrada. CTA del botón: <strong>Comprar</strong> o Más información. El precio y la garantía de 14 días viven en la línea de descripción — anclaje y reducción de riesgo.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo A · Dolor → alivio (la oferta como atajo)</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "¿Cansado de dar vueltas con <span class="hueco">DOLOR</span>?" · "El atajo cuesta menos que seguir igual." · "Deja de improvisar con <span class="hueco">NICHO</span>."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"¿Cansado de dar vueltas con <span class="hueco">DOLOR</span>? <span class="hueco">TU OFERTA</span> te da el paso a paso, en orden, sin relleno. <span class="hueco">PRECIO</span>, acceso inmediato y 14 días de garantía. Empieza en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Visual:</strong> portada de la oferta + badge de garantía; precio visible pero discreto.</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo B · Contraintuitivo (no necesitas otro curso)</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "Más información no es el problema." · "No necesitas otro curso más." · "El problema no es tu esfuerzo."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"No necesitas otro curso más. Necesitas orden. <span class="hueco">TU OFERTA</span> no te da horas y horas de vídeo: te da la secuencia que sí aplicas. <span class="hueco">PRECIO</span>, garantía de 14 días. Míralo en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Visual:</strong> contraste "decenas de horas tachadas" vs "1 sistema".</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo C · Anclaje de precio</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "Lo que pagarías por una cena." · "Menos de lo que crees." · "Empieza por <span class="hueco">PRECIO</span>, decide después."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"<span class="hueco">TU OFERTA</span> cuesta <span class="hueco">PRECIO</span>. Menos que una cena fuera. Acceso inmediato y 14 días de garantía: pruebas sin arriesgar. Si no encaja, te devuelvo el importe. Empieza en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Ojo:</strong> este ángulo se apoya entero en la garantía. Si tu oferta no la lleva, necesita variante — no borres la garantía y publiques el resto tal cual.</p>
+  </div></div>
+  <p style="margin-bottom:0"><strong>Reglas de esta campaña:</strong> plazas o cupos solo si hay cohorte real; prohibido "lanzamiento"; el anuncio solo habla de tu oferta de entrada — nunca del programa que viene después (esa conversación es del Kit 03).</p>`)
+},
+{
+  ico:"ruta", et:"Campaña 3 · Retargeting",
+  titulo:"Creativos de Retargeting",
+  resumen:"Para el que ya te conoce y no compró: recordatorio con garantía, mirar dentro, y el coste de no decidir. Menos presentación, más objeción.",
+  cuerpo:H(`<p><strong>Objetivo:</strong> recuperar al warm (visitó, interactuó, se registró) que no compró. Público que ya te conoce: <strong>menos presentación, más resolver la objeción</strong> y recordar la garantía.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo A · Recordatorio + objeción / garantía</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "Lo viste. Sigues pensándolo." · "¿Te frenó la misma duda?" · "Sigue ahí. Con garantía."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"Lo viste y te quedaste pensándolo. Normal. <span class="hueco">TU OFERTA</span> sigue disponible por <span class="hueco">PRECIO</span>, con 14 días de garantía. Si no encaja, te devuelvo el importe. Sin riesgo. Retómalo en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Ojo:</strong> se apoya entero en la garantía — si no la ofreces, variante obligatoria.</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo B · Mirar dentro (prueba)</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "Otros ya dieron el paso." · "Así se ve por dentro." · "No hace falta creer, mira."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"No hace falta que me creas. Míralo por dentro. Esto es lo que hay en <span class="hueco">TU OFERTA</span>, paso a paso. <span class="hueco">PRECIO</span>, con 14 días de garantía. Compruébalo en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Visual:</strong> vistazo real al contenido (índice, módulos, capturas); vídeo de screen-recording con manos y voz en 1ª persona.</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Ángulo C · El coste de no decidir</div><div class="bloque-cont">
+    <p><strong>Hooks:</strong> "Sigues pagando el no decidir." · "El coste de seguir igual." · "Por <span class="hueco">PRECIO</span>, cierras el tema."</p>
+    <div class="mensaje"><div class="de">COPY CORTO</div>"Seguir con <span class="hueco">DOLOR</span> también tiene precio: tiempo y vueltas. Por <span class="hueco">PRECIO</span> cierras el tema con <span class="hueco">TU OFERTA</span>. 14 días de garantía. Decídelo en el enlace."</div>
+    <p style="margin-bottom:0"><strong>Ojo con "última llamada":</strong> solo si hay cupo o cohorte real. La urgencia inventada en retargeting es doblemente visible — este público te conoce.</p>
+  </div></div>
+  <p style="margin-bottom:0"><strong>Producción:</strong> el warm se quema antes — stackea 4-6 creativos por ad set, rótalos, y vigila la frecuencia (paso 5). El archivo completo viene en tu paquete.</p>`)
+}
+];
+
+/* ==================================================================
+   MOTOR — no hace falta tocar nada de aquí abajo
+   ================================================================== */
+
+/* --- iconos de línea (sin emojis: regla de marca DD) --- */
+const TRAZOS = {
+  diana:     '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>',
+  ruta:      '<path d="M5 19c0-5 5-3 5-7s-4-3-4-6"/><circle cx="6" cy="5" r="2"/><circle cx="18" cy="16" r="2"/><path d="M10 19h6"/>',
+  regla:     '<rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7.5 8v3M12 8v4M16.5 8v3"/>',
+  formulario:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  acuerdo:   '<path d="M4 7h6l2 2 2-2h6"/><path d="M4 7v10h16V7"/><path d="M9 13l2 2 4-4"/>',
+  sobre:     '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/>',
+  llave:     '<circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2.5"/>',
+  filtro:    '<circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/>',
+  rayo:      '<path d="M13 2L5 13h6l-2 9 8-11h-6l2-9z"/>',
+  sesion:    '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z"/>',
+  documento: '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  tablero:   '<path d="M4 20V10M10 20V5M16 20v-8M22 20H2"/>',
+  chat:      '<path d="M20 12a7 7 0 01-7 7H8l-4 3v-4.5A7 7 0 0111 5h2a7 7 0 017 7z"/>',
+  candado:   '<rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/>',
+  salida:    '<path d="M14 4h4a2 2 0 012 2v12a2 2 0 01-2 2h-4"/><path d="M10 8l-4 4 4 4M6 12h9"/>',
+  tendencia: '<path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/>',
+  medalla:   '<circle cx="12" cy="14" r="5.5"/><path d="M9 3l1.5 5M15 3l-1.5 5"/>',
+  ajustes:   '<path d="M15.5 4a5 5 0 00-6 6.5L4 16v4h4l5.5-5.5A5 5 0 0020 8.5L17 11l-3-3z"/>',
+  personas:  '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6.5a3 3 0 010 6M17 20a6 6 0 00-1.5-4"/>',
+  lupa:      '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.2 15.2L21 21"/>',
+  bandera:   '<path d="M5 21V4"/><path d="M5 4.5h11l-2 3.5 2 3.5H5"/>',
+  caja:      '<path d="M3 8l9-4 9 4v8l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v8"/>',
+  precio:    '<path d="M20 13.5L13.5 20a2 2 0 01-2.8 0L4 13.3V4h9.3l6.7 6.7a2 2 0 010 2.8z"/><circle cx="8.5" cy="8.5" r="1.3"/>',
+  escudo:    '<path d="M12 3l7 3v5.5c0 4.2-2.9 7.6-7 8.5-4.1-.9-7-4.3-7-8.5V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/>',
+  subir:     '<path d="M12 20V5"/><path d="M6 11l6-6 6 6"/>',
+  dividir:   '<path d="M12 3v7M12 14v7"/><circle cx="12" cy="12" r="2"/><path d="M5 12h2M17 12h2"/>',
+  brujula:   '<circle cx="12" cy="12" r="8.5"/><path d="M15 9l-2 4-4 2 2-4z"/>'
+};
+function ico(n, cls){
+  const t = TRAZOS[n];
+  if(!t) return '';
+  return `<svg class="ico-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${t}</svg>`;
+}
+
+let actual = 0;
+let hechos = cargar();
+
+function cargar(){
+  try{
+    const g = localStorage.getItem('kitAds');
+    return g ? JSON.parse(g) : [];
+  }catch(e){ return []; }
+}
+function guardar(){
+  try{ localStorage.setItem('kitAds', JSON.stringify(hechos)); }catch(e){}
+}
+
+/* --- mapa del hero --- */
+function pintaPanel(){
+  const el = document.getElementById('panelDecisiones');
+  if(!el) return;
+  el.innerHTML = PASOS.map((p,i)=>{
+    const ok = hechos.includes(i);
+    return `<li><button class="dec-item${ok?' hecho':''}" onclick="irAPaso(${i})">
+      <span class="dec-num">${ok?'✓':i+1}</span><span>${p.titulo}</span>
+    </button></li>`;
+  }).join('');
+}
+
+/* --- pasos --- */
+function pintaPasos(){
+  document.getElementById('pasos').innerHTML = PASOS.map((p,i)=>`
+    <article class="paso ${i===0?'activo':''}" id="paso${i}">
+      <div class="paso-cabecera">
+        <div class="paso-num">${p.num} de ${String(PASOS.length).padStart(2,'0')}</div>
+        <h2>${ico(p.ico,"ico-titulo")}${p.titulo}</h2>
+        <p class="sub">${p.sub}</p>
+        <div class="paso-meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+      </div>
+      <div class="paso-cuerpo">
+        <div class="bloque b-neutro"><div class="bloque-cab">Qué es</div><div class="bloque-cont">${p.queEs}</div></div>
+        <div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">${p.porQue}</div></div>
+        <div class="bloque b-plantilla"><div class="bloque-cab">La plantilla · cópiala y rellénala<button class="b-copiar" onclick="copiar(this,'plantilla${i}')">Copiar</button></div><div class="bloque-cont" id="plantilla${i}">${p.plantilla}</div></div>
+        <div class="bloque b-ejemplo"><div class="bloque-cab">Un ejemplo ya relleno</div><div class="bloque-cont">${p.ejemplo}</div></div>
+        <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+          ${p.errores.map(e=>`<div class="error-item"><span class="error-x">✕</span><div><b>${e.t}</b><span>${e.d}</span></div></div>`).join('')}
+        </div></div>
+        <div class="bloque b-ayuda"><div class="bloque-cab">Dónde vive y quién te ayuda</div><div class="bloque-cont">
+          <p><strong>En GHL:</strong> ${p.ghl}</p>
+          <p style="margin-bottom:0"><strong>Si te trabas:</strong> ${p.ayuda}</p>
+        </div></div>
+        <div class="paso-pie">
+          <button class="btn-hecho" onclick="marcar(${i})" id="hecho${i}"><span>○</span> Marcar como hecho</button>
+          ${i>0?`<button class="btn-atras" onclick="irAPaso(${i-1})">← Anterior</button>`:''}
+          <button class="btn-nav" onclick="siguiente(${i})">${i<PASOS.length-1?'Siguiente paso →':'Ir a la caja de herramientas →'}</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
+/* --- copiar plantilla --- */
+function copiar(btn, id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const txt = el.innerText.trim();
+  const ok = ()=>{
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('ok');
+    setTimeout(()=>{ btn.textContent = 'Copiar'; btn.classList.remove('ok'); }, 1800);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(ok).catch(()=>respaldo(txt, ok));
+  } else { respaldo(txt, ok); }
+}
+function respaldo(txt, ok){
+  const a = document.createElement('textarea');
+  a.value = txt; a.style.position='fixed'; a.style.opacity='0';
+  document.body.appendChild(a); a.select();
+  try{ document.execCommand('copy'); ok(); }catch(e){}
+  document.body.removeChild(a);
+}
+
+/* --- índice lateral --- */
+function pintaIndice(){
+  document.getElementById('indiceLista').innerHTML = PASOS.map((p,i)=>`
+    <button class="ind-item" id="ind${i}" onclick="irAPaso(${i})">
+      <span class="ind-num">${i+1}</span>
+      <span class="ind-tx"><b>${p.titulo}</b><small>${p.chips[0]}</small></span>
+    </button>`).join('');
+  document.getElementById('indiceTools').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="ind-tool" onclick="abrirModal(${i})">${ico(c.ico)} ${c.titulo}</button>`).join('');
+}
+
+/* --- puntos de la barra --- */
+function pintaPuntos(){
+  document.getElementById('puntos').innerHTML = PASOS.map((p,i)=>
+    `<button class="punto" onclick="irAPaso(${i})" title="${p.titulo}" aria-label="Ir al paso ${i+1}: ${p.titulo}">${i+1}</button>`
+  ).join('');
+}
+
+function refresca(){
+  document.querySelectorAll('.punto').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+  });
+  PASOS.forEach((p,i)=>{
+    const b = document.getElementById('hecho'+i);
+    if(!b) return;
+    const ok = hechos.includes(i);
+    b.classList.toggle('marcado', ok);
+    b.innerHTML = ok ? '<span>✓</span> Hecho' : '<span>○</span> Marcar como hecho';
+  });
+  document.querySelectorAll('.ind-item').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+    b.querySelector('.ind-num').textContent = hechos.includes(i) ? '✓' : (i+1);
+  });
+  const pct = Math.round(hechos.length / PASOS.length * 100);
+  document.getElementById('progresoBarra').style.width = pct + '%';
+  document.getElementById('indiceContador').textContent =
+    hechos.length + ' de ' + PASOS.length + ' pasos' + (hechos.length ? ' · ' + pct + '%' : '');
+  document.getElementById('contador').textContent = hechos.length + '/' + PASOS.length + ' hechos';
+  document.getElementById('barraTitulo').textContent = PASOS[actual].titulo;
+  pintaPanel();
+}
+
+function irAPaso(i){
+  actual = i;
+  document.querySelectorAll('.paso').forEach((el,j)=>el.classList.toggle('activo', j===i));
+  refresca();
+  const y = document.getElementById('camino').offsetTop - 70;
+  window.scrollTo({top:y, behavior:'smooth'});
+}
+
+function siguiente(i){
+  if(i < PASOS.length-1){ irAPaso(i+1); }
+  else { document.getElementById('caja').scrollIntoView({behavior:'smooth'}); }
+}
+
+function marcar(i){
+  if(hechos.includes(i)) hechos = hechos.filter(x=>x!==i);
+  else hechos.push(i);
+  guardar();
+  refresca();
+}
+
+/* --- caja de herramientas --- */
+function pintaCaja(){
+  document.getElementById('rejilla').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="tarjeta" onclick="abrirModal(${i})">
+      <span class="ico">${ico(c.ico)}</span>
+      <span class="eyebrow">${c.et}</span>
+      <h3>${c.titulo}</h3>
+      <p>${c.resumen}</p>
+    </button>`).join('');
+}
+
+function abrirModal(i){
+  const c = CAJA_H[i];
+  document.getElementById('modalCont').innerHTML = `
+    <div class="paso-cabecera" style="border-radius:0">
+      <div class="paso-num">${c.et}</div>
+      <h2>${ico(c.ico,"ico-titulo")}${c.titulo}</h2>
+      <p class="sub">${c.resumen}</p>
+    </div>
+    <div class="paso-cuerpo" style="border-radius:0">${c.cuerpo}</div>`;
+  document.getElementById('modal').classList.add('abierto');
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.modal-caja').scrollIntoView();
+}
+function cerrarModal(){
+  document.getElementById('modal').classList.remove('abierto');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e=>{
+  if(e.target.id === 'modal') cerrarModal();
+});
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') cerrarModal(); });
+
+/* --- barra sticky --- */
+window.addEventListener('scroll', ()=>{
+  const camino = document.getElementById('camino');
+  const caja = document.getElementById('caja');
+  const dentro = window.scrollY > camino.offsetTop - 200 && window.scrollY < caja.offsetTop - 100;
+  document.getElementById('barra').classList.toggle('visible', dentro);
+});
+
+/* --- arranque --- */
+document.getElementById('tituloUso').insertAdjacentHTML('afterbegin', ico('brujula','ico-titulo'));
+pintaPanel();
+pintaPasos();
+pintaIndice();
+pintaPuntos();
+pintaCaja();
+refresca();
+</script>
+</body>
+</html>

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Autonomía High Ticket</title>
+<meta name="description" content="Los dos prompts maestros para regenerar tu contenido y tus secuencias cada mes con tu Claude conectado a tu GHL: en tu voz, con tus datos reales.">
+<meta name="theme-color" content="#D4AF37">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E07%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#111111;
+  --tinta-2:#262626;
+  --papel:#FFFFFF;
+  --papel-2:#F5F4F1;
+  --papel-3:#EDEDED;
+  --texto:#1A1A1A;
+  --texto-2:#6E6B65;
+  --azul:#2563D9;
+  --azul-luz:#EAF1FE;
+  --verde:#0E8F63;
+  --verde-luz:#E6F6EF;
+  --coral:#DC3A45;
+  --coral-luz:#FDECEC;
+  --violeta:#6B4FD8;
+  --violeta-luz:#F0ECFE;
+  --ambar:#D98A00;
+  --ambar-luz:#FDF3E0;
+  --oro:#D4AF37;
+  --oro-claro:#E6C765;
+  --crema:#D8D5CB;
+  --crema-mute:#98958D;
+  --tinta-linea:#333333;
+  --radio:16px;
+  --sombra:0 1px 2px rgba(17,17,17,.06), 0 8px 24px rgba(17,17,17,.06);
+  --sombra-alta:0 2px 4px rgba(17,17,17,.08), 0 16px 40px rgba(17,17,17,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Figtree',system-ui,-apple-system,sans-serif;
+  background:var(--papel-2);
+  color:var(--texto);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.wrap{max-width:1340px;margin:0 auto;padding:0 32px}
+.wrap-estrecho{max-width:1000px;margin:0 auto}
+
+/* ============ HERO ============ */
+/* Portada negra con composición propia. La firma de este kit: una consola
+   con la rutina mensual de generación. */
+.hero{background:var(--tinta);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--oro)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:100px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:center;position:relative;z-index:2}
+.hero-insignia{display:inline-flex;align-items:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}
+.hero-insignia .num{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--oro);color:var(--tinta);padding:5px 13px;border-radius:999px}
+.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-mute);margin:0}
+.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;max-width:16ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--crema);max-width:46ch;margin-bottom:20px}
+.hero .hero-que-es{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--crema-mute);max-width:56ch;margin-bottom:34px;line-height:1.7}
+.hero .hero-que-es strong{color:var(--crema);font-weight:600}
+.hero-cruce{font-size:.88rem;color:var(--crema-mute);margin-top:16px}
+.hero-cruce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hero-cruce a:hover{color:var(--oro)}
+
+/* la consola de la portada */
+.hero-panel{background:var(--papel-2);color:var(--texto);border-radius:var(--radio);box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+.term-cab{display:flex;align-items:center;gap:11px;background:#fff;padding:13px 16px;border-bottom:1px solid var(--papel-3)}
+.term-cab .avatar{width:34px;height:34px;border-radius:9px;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.78rem;flex-shrink:0}
+.term-cab b{font-size:.95rem;display:block;line-height:1.2}
+.term-cab small{color:var(--texto-2);font-size:.75rem}
+.term-cuerpo{background:var(--tinta);padding:18px 16px;display:flex;flex-direction:column;gap:10px}
+.term-linea{font-family:'Space Mono',monospace;font-size:.78rem;line-height:1.5;color:#fff}
+.term-linea .term-p{color:var(--oro);margin-right:6px}
+.term-linea.gris{color:var(--crema-mute);padding-left:18px}
+.term-linea.ok{color:#7ED8AE}
+.term-pie{background:#fff;border-top:1px dashed var(--papel-3);padding:11px 16px;font-size:.8rem;color:var(--texto-2);text-align:center}
+.term-pie b{color:var(--tinta)}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-panel{max-width:440px}
+}
+
+
+.botonera{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.btn{
+  font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;
+  padding:15px 28px;border-radius:999px;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-principal{background:var(--oro);color:var(--tinta)}
+.btn-principal:hover{background:var(--oro-claro);box-shadow:0 8px 24px rgba(212,175,55,.35)}
+.btn-fantasma{background:transparent;color:var(--crema);border:1.5px solid var(--tinta-linea)}
+.btn-fantasma:hover{border-color:var(--oro);color:#fff}
+
+/* ============ BARRA STICKY ============ */
+.barra{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--papel-3);
+  padding:12px 0;display:none;
+}
+.barra.visible{display:block}
+.barra-in{display:flex;align-items:center;gap:20px}
+.barra-titulo{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.puntos{display:flex;gap:7px;flex:1;justify-content:center}
+.punto{
+  width:30px;height:30px;border-radius:50%;border:2px solid var(--papel-3);
+  background:#fff;cursor:pointer;font-family:'Space Mono',monospace;font-size:.72rem;
+  font-weight:700;color:var(--texto-2);display:grid;place-items:center;
+  transition:all .15s ease;padding:0;
+}
+.punto:hover{border-color:var(--azul);color:var(--azul)}
+.punto.actual{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.punto.hecho{background:var(--verde);border-color:var(--verde);color:#fff}
+.contador{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--texto-2);white-space:nowrap;font-weight:700}
+
+/* ============ ICONOS DE LÍNEA ============ */
+.ico-svg{width:1.1em;height:1.1em;flex-shrink:0;vertical-align:-.15em}
+.ico-titulo{width:1em;height:1em;margin-right:.42em;vertical-align:-.06em;color:var(--oro)}
+.ind-tool .ico-svg{width:17px;height:17px;opacity:.75}
+/* semáforo y marcas de estado, sin emojis */
+.luz{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:.5px}
+.luz-verde{background:var(--verde)} .luz-ambar{background:var(--ambar)} .luz-rojo{background:var(--coral)}
+.marca-si{color:var(--verde);font-weight:700}
+.marca-no{color:var(--texto-2);font-weight:700}
+
+/* ============ AVISO DE USO ============ */
+.aviso-uso{
+  background:var(--ambar-luz);border:1px solid #EFD9A6;border-left:5px solid var(--ambar);
+  border-radius:var(--radio);padding:26px 28px;margin:56px auto 0;max-width:900px;
+}
+.aviso-uso h3{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.25rem;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:center;gap:11px;color:var(--tinta);
+}
+.aviso-uso p{color:#6B4E12;font-size:.98rem;line-height:1.7;margin-bottom:12px}
+.aviso-uso p:last-child{margin-bottom:0}
+.aviso-uso strong{color:var(--tinta);font-weight:700}
+
+/* ============ SECCIONES ============ */
+.seccion{padding:72px 0}
+.seccion-cabecera{text-align:center;max-width:44ch;margin:0 auto 48px}
+.seccion-cabecera .eyebrow{color:var(--texto-2);display:block;margin-bottom:12px}
+.seccion-cabecera h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;margin-bottom:14px}
+.seccion-cabecera p{color:var(--texto-2);font-size:1.05rem}
+
+/* ============ ÍNDICE LATERAL ============ */
+.camino-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:36px;align-items:start}
+.indice{position:sticky;top:24px;background:#fff;border:1px solid var(--papel-3);border-radius:var(--radio);padding:22px 20px;box-shadow:var(--sombra);max-height:calc(100vh - 48px);overflow-y:auto}
+.indice-cab{padding-bottom:16px;border-bottom:1px solid var(--papel-3);margin-bottom:16px}
+.indice-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:10px}
+.progreso{height:7px;background:var(--papel-3);border-radius:999px;overflow:hidden;margin-bottom:9px}
+.progreso i{display:block;height:100%;background:var(--verde);border-radius:999px;transition:width .3s ease}
+.indice-contador{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--texto-2);font-weight:700}
+.ind-item{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  background:none;border:none;cursor:pointer;padding:9px 10px;border-radius:10px;
+  font-family:'Figtree',sans-serif;transition:background .12s ease;
+}
+.ind-item:hover{background:var(--papel-2)}
+.ind-item.actual{background:var(--tinta)}
+.ind-item.actual .ind-tx b{color:#fff}
+.ind-item.actual .ind-tx small{color:var(--crema-mute)}
+.ind-num{
+  flex-shrink:0;width:25px;height:25px;border-radius:50%;border:2px solid var(--papel-3);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.7rem;
+  font-weight:700;color:var(--texto-2);background:#fff;
+}
+.ind-item.actual .ind-num{background:var(--oro);border-color:var(--oro);color:var(--tinta)}
+.ind-item.hecho .ind-num{background:var(--verde);border-color:var(--verde);color:#fff}
+.ind-tx{display:block;line-height:1.3}
+.ind-tx b{display:block;font-size:.9rem;font-weight:600;color:var(--texto);margin-bottom:2px}
+.ind-tx small{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-2);letter-spacing:.04em}
+.indice-sep{
+  font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--texto-2);margin:18px 0 8px;padding-top:16px;border-top:1px solid var(--papel-3);
+}
+.ind-tool{
+  display:flex;gap:9px;align-items:center;width:100%;text-align:left;background:none;border:none;
+  cursor:pointer;padding:7px 10px;border-radius:9px;font-family:'Figtree',sans-serif;
+  font-size:.86rem;color:var(--texto-2);transition:background .12s ease,color .12s ease;
+}
+.ind-tool:hover{background:var(--violeta-luz);color:var(--violeta)}
+
+/* ============ PASO ============ */
+.paso{display:none}
+.paso.activo{display:block;animation:entra .35s ease}
+@keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.paso-cabecera{background:var(--tinta);color:#fff;border-radius:var(--radio) var(--radio) 0 0;padding:36px 36px 32px;position:relative;overflow:hidden}
+.paso-num{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.16em;color:var(--oro);font-weight:700;margin-bottom:10px}
+.paso-cabecera h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.paso-cabecera .sub{color:var(--crema);font-size:1.05rem;max-width:52ch}
+.paso-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.chip{
+  font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.06em;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  padding:7px 13px;border-radius:999px;color:var(--crema);
+}
+.paso-cuerpo{background:#fff;border-radius:0 0 var(--radio) var(--radio);padding:36px;box-shadow:var(--sombra)}
+
+/* bloques de contenido */
+.bloque{margin-bottom:28px;border-radius:14px;overflow:hidden}
+.bloque:last-child{margin-bottom:0}
+.bloque-cab{
+  display:flex;align-items:center;gap:12px;padding:15px 20px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.18rem;
+  letter-spacing:-.01em;font-weight:600;line-height:1.25;
+}
+.bloque-cab .ico{font-size:1.15rem;line-height:1}
+.b-copiar{
+  margin-left:auto;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.08em;
+  text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:999px;cursor:pointer;
+  transition:background .12s ease;
+}
+.b-copiar:hover{background:rgba(255,255,255,.32)}
+.b-copiar.ok{background:#fff;color:var(--verde);border-color:#fff}
+.bloque-cont{padding:22px 20px;font-size:.98rem;line-height:1.7}
+.bloque-cont > *:last-child{margin-bottom:0}
+.bloque-cont p{margin-bottom:14px}
+.bloque-cont ul{margin:0 0 14px;padding-left:22px}
+.bloque-cont li{margin-bottom:7px}
+.bloque-cont strong{font-weight:700;color:var(--tinta)}
+.bloque-cont a,.aviso-uso a,.aviso-legal a{
+  color:var(--azul);font-weight:600;text-decoration:underline;
+  text-underline-offset:2px;text-decoration-thickness:1.5px;
+}
+.bloque-cont a:hover,.aviso-uso a:hover,.aviso-legal a:hover{color:var(--tinta)}
+/* lista de documentos enlazados */
+.docs{list-style:none;padding:0;margin:0}
+.docs li{
+  background:#fff;border:1px solid var(--papel-3);border-radius:11px;
+  padding:13px 16px;margin-bottom:9px;display:flex;gap:12px;align-items:flex-start;
+}
+.docs li:last-child{margin-bottom:0}
+.docs .n{
+  flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--tinta);color:var(--oro);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;
+}
+.docs b{display:block;font-size:.98rem;color:var(--tinta)}
+.docs span{font-size:.9rem;color:var(--texto-2);display:block;line-height:1.55}
+/* tercer nivel: los rótulos sueltos dentro de un bloque ("Lo que incluye") */
+.bloque-cont > p > strong:only-child{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+
+.b-neutro{background:var(--papel-2);border:1px solid var(--papel-3)}
+.b-neutro .bloque-cab{background:var(--papel-3);color:var(--tinta-2)}
+
+.b-plantilla{background:var(--azul-luz);border:1px solid #C3D9FB}
+.b-plantilla .bloque-cab{background:var(--azul);color:#fff}
+.b-plantilla .bloque-cont{font-size:.95rem}
+
+.b-ejemplo{background:var(--verde-luz);border:1px solid #B8E5D2}
+.b-ejemplo .bloque-cab{background:var(--verde);color:#fff}
+
+.b-errores{background:var(--coral-luz);border:1px solid #F8C9CC}
+.b-errores .bloque-cab{background:var(--coral);color:#fff}
+
+.b-ayuda{background:var(--violeta-luz);border:1px solid #D6CBFB}
+.b-ayuda .bloque-cab{background:var(--violeta);color:#fff}
+
+.b-aviso{background:var(--ambar-luz);border:1px solid #F5DCA8}
+.b-aviso .bloque-cab{background:var(--ambar);color:#fff}
+
+/* tablas y plantillas */
+.tabla{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:14px;background:#fff;border-radius:10px;overflow:hidden}
+.tabla th{background:var(--tinta);color:#fff;text-align:left;padding:12px 14px;font-weight:600;font-size:.9rem}
+.tabla td{padding:12px 14px;border-top:1px solid var(--papel-3);vertical-align:top}
+.tabla tr:nth-child(even) td{background:var(--papel-2)}
+
+.campo{
+  background:#fff;border:1.5px dashed #A9C2F2;border-radius:9px;
+  padding:14px 16px;margin-bottom:11px;font-size:.94rem;
+}
+.campo b{display:block;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.02em;color:var(--azul);margin-bottom:6px}
+.hueco{background:#DCE9FD;color:var(--azul);padding:1px 7px;border-radius:5px;font-family:'Space Mono',monospace;font-size:.85em;font-weight:700}
+
+.mensaje{background:#fff;border-radius:12px;padding:18px 20px;border-left:4px solid var(--verde);font-size:.97rem;line-height:1.7;margin-bottom:12px}
+.mensaje .de{font-family:'Figtree',sans-serif;font-size:.85rem;letter-spacing:.02em;color:var(--verde);font-weight:700;margin-bottom:10px}
+
+.error-item{display:flex;gap:13px;margin-bottom:15px;align-items:flex-start}
+.error-item:last-child{margin-bottom:0}
+.error-x{
+  flex-shrink:0;width:23px;height:23px;border-radius:50%;background:var(--coral);
+  color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px;
+}
+.error-item b{
+  display:block;margin-bottom:3px;color:var(--tinta);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+.error-item span{font-size:.96rem;line-height:1.65;color:var(--texto-2)}
+
+/* acordeón */
+.desplegable{border:1px solid var(--papel-3);border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden}
+.desplegable summary{
+  padding:15px 18px;cursor:pointer;font-weight:600;display:flex;
+  align-items:center;gap:11px;list-style:none;
+}
+.desplegable summary::-webkit-details-marker{display:none}
+.desplegable summary::after{content:"+";margin-left:auto;font-family:'Space Mono',monospace;font-size:1.2rem;color:var(--texto-2)}
+.desplegable[open] summary::after{content:"−"}
+.desplegable summary:hover{background:var(--papel-2)}
+.desplegable .dcont{padding:0 18px 18px}
+
+/* navegación del paso */
+.paso-pie{
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  margin-top:32px;padding-top:28px;border-top:2px dashed var(--papel-3);
+}
+.btn-hecho{
+  background:#fff;border:2px solid var(--verde);color:var(--verde);
+  font-weight:700;padding:14px 24px;border-radius:999px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;font-size:.98rem;font-family:'Figtree',sans-serif;
+  transition:all .15s ease;
+}
+.btn-hecho:hover{background:var(--verde-luz)}
+.btn-hecho.marcado{background:var(--verde);color:#fff}
+.btn-nav{
+  background:var(--tinta);color:#fff;border:none;padding:14px 26px;
+  border-radius:999px;cursor:pointer;font-weight:600;font-size:.98rem;
+  font-family:'Figtree',sans-serif;margin-left:auto;
+  display:inline-flex;align-items:center;gap:9px;transition:all .15s ease;
+}
+.btn-nav:hover{background:var(--tinta-2)}
+.btn-atras{
+  background:transparent;border:1.5px solid var(--papel-3);color:var(--texto-2);
+  padding:14px 22px;border-radius:999px;cursor:pointer;font-weight:600;
+  font-family:'Figtree',sans-serif;font-size:.98rem;transition:all .15s ease;
+}
+.btn-atras:hover{border-color:var(--texto-2);color:var(--texto)}
+
+/* ============ CAJA DE HERRAMIENTAS ============ */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.tarjeta{
+  background:#fff;border-radius:var(--radio);padding:26px;cursor:pointer;
+  border:1px solid var(--papel-3);text-align:left;font-family:'Figtree',sans-serif;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.tarjeta:hover{transform:translateY(-3px);box-shadow:var(--sombra-alta)}
+.tarjeta .ico{display:block;margin-bottom:14px;color:var(--tinta)}
+.tarjeta .ico .ico-svg{width:28px;height:28px}
+.tarjeta:hover .ico{color:var(--oro-oscuro,#9A7D1F)}
+.tarjeta .eyebrow{color:var(--violeta);display:block;margin-bottom:7px}
+.tarjeta h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.tarjeta p{color:var(--texto-2);font-size:.93rem;line-height:1.55}
+
+/* ============ MODAL ============ */
+.modal{
+  position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.6);
+  backdrop-filter:blur(4px);display:none;padding:24px;overflow-y:auto;
+}
+.modal.abierto{display:block;animation:entra .2s ease}
+.modal-caja{
+  max-width:820px;margin:40px auto;background:#fff;
+  border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra-alta);
+}
+.modal-cerrar{
+  position:sticky;top:0;z-index:5;background:#fff;padding:14px 24px;
+  border-bottom:1px solid var(--papel-3);display:flex;justify-content:flex-end;
+}
+.modal-cerrar button{
+  background:var(--papel-2);border:none;width:38px;height:38px;border-radius:50%;
+  cursor:pointer;font-size:1.1rem;color:var(--texto-2);
+}
+.modal-cerrar button:hover{background:var(--papel-3)}
+
+/* ============ CIERRE ============ */
+.final{background:var(--tinta);color:#fff;border-radius:var(--radio);padding:48px 36px;text-align:center}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:14px}
+.final p{color:var(--crema);max-width:52ch;margin:0 auto 28px}
+.final-docs{max-width:640px;margin:0 auto 28px;text-align:left}
+.final-docs .docs li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.final-docs .docs .n{background:var(--oro);color:var(--tinta)}
+.final-docs .docs b{color:#fff}
+.final-docs .docs b a{color:var(--oro);text-decoration:none}
+.final-docs .docs b a:hover{text-decoration:underline}
+.final-docs .docs span{color:var(--crema-mute)}
+.final-nota{font-size:.92rem;color:var(--crema-mute)!important;max-width:none!important;margin:16px 0 0!important;line-height:1.65}
+.final-nota strong{color:#fff}
+
+.pie{padding:48px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
+.pie b{color:var(--texto)}
+.aviso-legal{
+  max-width:600px;margin:24px auto 0;font-size:.85rem;
+  background:var(--ambar-luz);border:1px solid #F5DCA8;
+  border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
+}
+
+/* el índice lateral sustituye a la barra superior en pantallas anchas */
+@media(min-width:1081px){
+  .barra{display:none!important}
+}
+@media(max-width:1080px){
+  .camino-grid{grid-template-columns:1fr;gap:0}
+  .indice{display:none}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .seccion{padding:48px 0}
+  .paso-cabecera,.paso-cuerpo{padding:26px 20px}
+  .puntos{display:none}
+  .btn-nav{margin-left:0;width:100%;justify-content:center}
+  .paso-pie{flex-direction:column;align-items:stretch}
+  .btn-hecho,.btn-atras{justify-content:center}
+  .tabla{font-size:.82rem}
+  .tabla th,.tabla td{padding:8px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <div class="hero-insignia"><span class="num">Kit 07 · Autonomía</span><span class="hero-marca">Departamento Disruptivo</span></div>
+      <h1>El mes 2 <em>lo generas tú.</em></h1>
+      <p>Dos prompts maestros para regenerar tu contenido y tus secuencias cada mes con tu Claude conectado a tu GHL — en tu voz, con tus datos reales, sin depender de nadie.</p>
+      <p class="hero-que-es">Primero, <strong>3 pasos</strong>: tu bloque de contexto, la rutina del día 25 y el checklist de auto-revisión. Después, la caja con <strong>los dos prompts completos y copiables</strong>: el de Contenido Mensual y el de Secuencias.</p>
+      <div class="botonera">
+        <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
+        <a href="#caja" class="btn btn-fantasma">Ver los prompts</a>
+      </div>
+      <p class="hero-cruce">Lo que generes se publica con el <a href="https://kit-contenido-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 05 · Contenido ↗</a> y se monta con el <a href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 04 · Emails ↗</a></p>
+    </div>
+
+    <aside class="hero-panel" aria-label="Así se ve la rutina mensual">
+      <div class="term-cab"><span class="avatar">07</span><div><b>Tu Claude · conectado a tu GHL</b><small>acceso de solo lectura · rutina del día 25</small></div></div>
+      <div class="term-cuerpo">
+        <div class="term-linea"><span class="term-p">›</span> pega tu Prompt Maestro de Contenido</div>
+        <div class="term-linea gris">leyendo tus emails… captando tu voz real</div>
+        <div class="term-linea gris">buscando comentarios con tu KEYWORD…</div>
+        <div class="term-linea"><span class="term-p">›</span> 20 reels · 20 carruseles · stories · calendario</div>
+        <div class="term-linea ok">✓ pasada de revisión hecha · 3 [DATO PENDIENTE] para ti</div>
+      </div>
+      <div class="term-pie"><b>Claude lee; tú certificas.</b> La última puerta siempre es tuya.</div>
+    </aside>
+  </div>
+</header>
+
+
+<!-- ============ BARRA ============ -->
+<div class="barra" id="barra">
+  <div class="wrap barra-in">
+    <div class="barra-titulo" id="barraTitulo">Autonomía</div>
+    <div class="puntos" id="puntos"></div>
+    <div class="contador" id="contador">0/3</div>
+  </div>
+</div>
+
+<!-- ============ CAMINO ============ -->
+<main>
+
+<div class="wrap">
+  <div class="aviso-uso">
+    <h3 id="tituloUso">Cómo usar esta guía</h3>
+    <p><strong>Este kit empieza donde terminan los demás.</strong> El mes 1 lo publicaste con las piezas ya escritas del Kit 05 y las secuencias del Kit 04. A partir del mes 2, las regeneras tú con los dos prompts maestros de la caja, ejecutados en tu Claude conectado a tu cuenta de GoHighLevel.</p>
+    <p><strong>La conexión es de solo lectura.</strong> Claude lee tus emails para captar tu voz y tus conversaciones para ver qué keyword funcionó — pero no crea, modifica ni borra nada en tu cuenta. Los prompts se lo dejan dicho, y tú lo sabes para vigilarlo.</p>
+    <p><strong>Las reglas duras no se negocian.</strong> Cero cifras inventadas — donde falte un dato real, el prompt deja [DATO PENDIENTE] y lo resuelves tú. Prohibido "gratis" y "lanzamiento". El precio de tu oferta principal jamás por escrito. Y lo que ya funciona (una secuencia que rinde) no se toca.</p>
+    <p style="margin-bottom:0">La autonomía tiene red: el pack de cada mes se audita contigo en la revisión mensual. Generar es tuyo; el criterio se entrena acompañado.</p>
+  </div>
+</div>
+
+<section class="seccion" id="camino">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Primera parte</span>
+      <h2>Los 3 pasos</h2>
+      <p>El bloque de contexto que se rellena una vez, la rutina mensual del día 25 y la última puerta: tu checklist. Con eso, la máquina es tuya.</p>
+    </div>
+    <div class="camino-grid">
+      <aside class="indice" id="indice">
+        <div class="indice-cab">
+          <span class="eyebrow">Tu avance</span>
+          <div class="progreso"><i id="progresoBarra" style="width:0%"></i></div>
+          <div class="indice-contador" id="indiceContador">0 de 3 pasos</div>
+        </div>
+        <nav id="indiceLista" aria-label="Los 3 pasos"></nav>
+        <div class="indice-sep">Caja de herramientas</div>
+        <nav id="indiceTools" aria-label="Las herramientas"></nav>
+      </aside>
+      <div id="pasos"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAJA ============ -->
+<section class="seccion" id="caja" style="background:#fff">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Segunda parte</span>
+      <h2>Los dos prompts maestros</h2>
+      <p>Completos y copiables. El de Contenido se ejecuta cada mes; el de Secuencias, solo cuando los datos lo pidan o cambie tu oferta.</p>
+    </div>
+    <div class="rejilla" id="rejilla"></div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="wrap">
+    <div class="final">
+      <h2>Una cosa antes de empezar</h2>
+      <p>La autonomía no es que Claude escriba por ti: es que tú puedas producir tu mes entero sin esperar a nadie — con tu método, tu voz y tus datos de verdad. <strong>La herramienta genera; el criterio lo pones tú.</strong></p>
+      <p style="margin-bottom:28px">Por eso los tres pasos importan tanto como los prompts: un bloque de contexto honesto, la rutina que aprende de tus datos y el checklist que no deja pasar una cifra dudosa. Con eso, cada mes sale mejor apuntado que el anterior. Y sigue sonando a ti.</p>
+      <button class="btn btn-principal" onclick="irAPaso(0)">Ir al paso 1 →</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <p><b>Kit de Autonomía High Ticket</b> · Departamento Disruptivo</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <div class="aviso-legal">
+      <b>Sobre la conexión:</b> tu Claude accede a tu GoHighLevel en modo de solo lectura, con la conexión que montaste siguiendo tu manual. Revisa los permisos si cambias de cuenta, y recuerda: lo generado no se publica ni se activa sin pasar tu checklist. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-caja">
+    <div class="modal-cerrar"><button onclick="cerrarModal()" aria-label="Cerrar">✕</button></div>
+    <div id="modalCont"></div>
+  </div>
+</div>
+
+<script>
+/* ==================================================================
+   CONTENIDO — para editar un texto, cámbialo aquí. No hace falta
+   tocar nada más del archivo.
+   ================================================================== */
+
+const H = (s) => s; // ayuda para leer mejor el HTML de abajo
+
+const PASOS = [
+{
+  num:"Paso 01", ico:"formulario",
+  titulo:"Tu bloque de contexto",
+  sub:"Los datos que alimentan los dos prompts: marca, nicho, método, oferta, casos reales y keyword. Se rellena una vez y se guarda.",
+  chips:["30 minutos","Se rellena una vez","La materia prima"],
+  queEs:H(`<p>Los dos Prompts Maestros (los tienes completos en la caja de abajo) funcionan con <strong>un bloque de contexto que rellenas una sola vez</strong>: quién eres, a quién ayudas, cómo se llama tu método, qué vendes, qué casos reales tienes y cuál es tu keyword.</p>
+    <p style="margin-bottom:0">A partir de ahí, cada mes solo cambias dos corchetes: <code>[MES]</code> y <code>[TEMAS DEL MES]</code>.</p>`),
+  porQue:H(`<p>La calidad de lo que Claude te genere depende de la calidad de este bloque. Si el método está bien descrito y los casos son reales, el contenido sale en tu voz y con tu verdad. Si el bloque está flojo, el resultado será genérico — y lo genérico no vende high ticket.</p>
+    <p><strong>La regla de siempre:</strong> en <code>[TU HISTORIA/CASOS REALES]</code> solo entra lo que es verdad y puedes demostrar. Los prompts tienen prohibido inventar cifras; no les des tú ninguna inventada.</p>`),
+  plantilla:H(`<div class="campo"><b>El bloque (una tabla, guárdala junto a los prompts)</b>
+    <span class="hueco">TU MARCA</span> el nombre con el que publicas y envías ·
+    <span class="hueco">TU NICHO</span> a quién ayudas y con qué problema, en una frase ·
+    <span class="hueco">TU MÉTODO</span> su nombre y sus pasos o pilares, tal cual los enseñas ·
+    <span class="hueco">TU OFERTA</span> tu oferta principal en una frase, sin precio ·
+    <span class="hueco">TU PRODUCTO DE ENTRADA</span> el de ticket bajo, en una frase ·
+    <span class="hueco">TU HISTORIA/CASOS REALES</span> tu historia y casos con datos demostrables ·
+    <span class="hueco">TU KEYWORD</span> tu palabra de captación, ya validada en GHL</div>
+    <p style="margin:12px 0 0"><strong>Cuándo se actualiza:</strong> el método si evoluciona, la oferta cuando cambie, los casos cuando tengas nuevos reales. Lo demás, una vez y listo.</p>`),
+  ejemplo:H(`<p>El bloque de Valeria: marca "Energía Propia" · nicho "dueñas de negocio que terminan el día en reserva" · método "Energía Propia: registro real → sistema a medida → documentar → sostener" · oferta "acompañamiento 1:1 de 12 semanas" (sin precio) · casos: Marta y Carolina, con sus datos reales · keyword ENERGIA. Veinte minutos un domingo, y lleva tres meses generando con eso.</p>`),
+  errores:[
+    {t:"Un método sin nombre ni pasos", d:"'Ayudo con la energía' no da para 40 piezas. El prompt necesita el método con sus nombres y fases tal cual los enseñas — si no lo tienes claro, vuelve al Kit 01."},
+    {t:"Casos adornados", d:"Lo que entra en el bloque sale multiplicado en 40 piezas y 31 emails. Un adorno aquí es una mentira en todas partes."},
+    {t:"La oferta con precio", d:"El precio no viaja por escrito — tampoco aquí. La oferta se describe; la cifra se dice en la llamada (Kit 03)."}
+  ],
+  ghl:"La keyword del bloque es la misma del Kit 05 (paso 2): creada y validada en tu GHL antes de usarla en ningún prompt.",
+  ayuda:"Estrategia en el chat de soporte si dudas con el método o los casos."
+},
+{
+  num:"Paso 02", ico:"tablero",
+  titulo:"La rutina del día 25",
+  sub:"Cinco minutos de datos, dos corchetes actualizados, un prompt ejecutado. El mes siguiente queda generado antes de que empiece.",
+  chips:["Día 25 de cada mes","1-2 horas en total","A partir del mes 2"],
+  queEs:H(`<p>Tu rutina mensual de autonomía. El día 25: miras qué funcionó este mes, actualizas dos corchetes y ejecutas el Prompt Maestro de Contenido con tu Claude conectado a tu GHL. Sale el pack completo del mes siguiente: 20 reels, 20 carruseles, stories y calendario.</p>
+    <p style="margin-bottom:0">Las secuencias de email van aparte y con otro ritmo: <strong>no se regeneran cada mes porque sí</strong> — solo cuando los datos caen, cambia tu oferta o quieres probar una variante.</p>`),
+  porQue:H(`<p>El prompt no genera a ciegas: antes de escribir, Claude <strong>lee tu cuenta</strong> (solo lectura) — tus últimos emails para captar tu voz real, y tus conversaciones para ver qué publicaciones generaron comentarios con tu keyword. Los ángulos que más keyword trajeron se duplican con enfoque nuevo; los que no movieron nada, se retiran.</p>
+    <p>Es el circuito completo: publicas (Kit 05) → la keyword mide (GHL) → el prompt aprende de la medida → el mes siguiente sale mejor apuntado.</p>`),
+  plantilla:H(`<ul style="margin-bottom:0">
+      <li><strong>1 ·</strong> Entra en tu GHL y mira 5 minutos de datos reales: qué piezas generaron comentarios con keyword, qué dudas se repiten, y (si toca) aperturas y ventas de tus secuencias.</li>
+      <li><strong>2 ·</strong> Actualiza <span class="hueco">[MES]</span> y <span class="hueco">[TEMAS DEL MES]</span> — mete los ángulos ganadores. Si hay casos nuevos reales, actualiza también el bloque.</li>
+      <li><strong>3 ·</strong> Ejecuta el Prompt Maestro de Contenido en tu Claude conectado.</li>
+      <li><strong>4 ·</strong> Lee el pack entero y completa cada <span class="hueco">[DATO PENDIENTE]</span> con datos reales — o borra la frase.</li>
+      <li><strong>5 ·</strong> Pasa el checklist del paso 3, monta el calendario y graba por lotes la semana 1 antes del día 1.</li>
+      <li><strong>Secuencias (solo si toca):</strong> si una lleva un mes rindiendo por debajo, refréscala con su prompt (mismo esqueleto, texto nuevo). Si cambia tu oferta o tu garantía, regenera las afectadas ese mismo día.</li>
+    </ul>`),
+  ejemplo:H(`<p>El 25 de su tercer mes, Valeria vio en GHL que sus dos piezas de "opinión impopular" duplicaron los comentarios con ENERGIA, y que la duda repetida era "¿esto sirve si viajo mucho?". Sus [TEMAS DEL MES]: doblar el ángulo impopular y atacar la objeción de los viajes. El pack del mes 4 salió apuntando exactamente ahí.</p>`),
+  errores:[
+    {t:"Generar sin mirar los datos", d:"Sin el paso 1, el prompt repite el mes anterior. Los 5 minutos de GHL son los que hacen que cada mes mejore al anterior."},
+    {t:"Regenerar las secuencias cada mes", d:"Una secuencia que funciona no se toca. Se refresca cuando los datos caen o cambia la oferta — y respetando su esqueleto."},
+    {t:"Saltarse los [DATO PENDIENTE]", d:"El prompt deja huecos a propósito donde faltan datos reales. Publicar con uno vivo es publicar una pieza rota."},
+    {t:"Ejecutar sin la conexión a GHL", d:"Sin acceso de lectura, Claude no puede captar tu voz ni leer tus keywords: te dará plantilla, no autonomía."}
+  ],
+  ghl:"La conexión de tu Claude a tu cuenta es de solo lectura y la montaste con tu manual (bloque CONEXIÓN CLAUDE). Los prompts se lo recuerdan: leer sí, crear o borrar no.",
+  ayuda:"El pack generado se audita contigo en la revisión mensual."
+},
+{
+  num:"Paso 03", ico:"escudo",
+  titulo:"El checklist de auto-revisión",
+  sub:"Claude hace su pasada de revisión, pero la responsabilidad final es tuya. Dos minutos antes de grabar, publicar o activar nada.",
+  chips:["2 minutos por pack","Antes de publicar o activar","La última puerta"],
+  queEs:H(`<p>Los dos prompts obligan a Claude a revisar su propio trabajo contra las reglas antes de entregártelo, y a confesarte qué corrigió. Aun así, <strong>la última puerta eres tú</strong>: este checklist se pasa antes de grabar una pieza o activar una secuencia.</p>`),
+  porQue:H(`<p>Autonomía no es publicar lo primero que salga: es no depender de nadie para producir — manteniendo el listón. Las reglas de este checklist son las mismas de toda la colección: cifras reales, cero "gratis" y "lanzamiento", el precio nunca por escrito, y tu voz de verdad.</p>`),
+  plantilla:H(`<ul style="margin-bottom:0">
+      <li>Cero <span class="hueco">[DATO PENDIENTE]</span> sin resolver: dato real o frase fuera.</li>
+      <li>Cero cifras que no puedas demostrar con tus propios datos.</li>
+      <li>No aparecen "gratis" ni "lanzamiento" en ninguna pieza ni email.</li>
+      <li>Contenido: todos los CTA invitan a comentar tu keyword (nada de "link en bio"); hooks y portadas de ≤7 palabras — recuenta después de rellenar los huecos; el calendario respeta el mix 40/30/20/10.</li>
+      <li>Secuencias: todos los emails con el pie de baja y TU enlace real; ninguno revela el precio de tu oferta principal ni el detalle del siguiente paso; los merges (<code>{{contact.first_name}}</code>…) intactos; email de prueba enviado y visto en móvil.</li>
+      <li>Lo has leído en voz alta y suena a ti, no a plantilla. Si una frase no la dirías tú, reescríbela.</li>
+    </ul>`),
+  ejemplo:H(`<p>En el pack de su mes 4, Claude dejó tres [DATO PENDIENTE] (dos resultados de casos y un plazo). Valeria completó dos con datos reales y borró la frase del tercero — no tenía el dato. Después leyó en voz alta los cinco primeros reels: en dos cambió una frase que "no era suya". Doce minutos. El pack salió con su voz y sin una sola cifra dudosa.</p>`),
+  errores:[
+    {t:"Confiar la revisión entera a Claude", d:"Su pasada atrapa casi todo, pero la voz y la verdad de los datos solo las puedes certificar tú. Dos minutos, siempre."},
+    {t:"Publicar 'porque ya está hecho'", d:"Una pieza floja publicada cuesta más que una pieza retrasada un día. El checklist manda sobre el calendario."},
+    {t:"Corregir sin actualizar el bloque", d:"Si un mes corriges siempre lo mismo (un matiz del método, un caso mal contado), el error está en tu bloque de contexto. Arréglalo ahí y desaparece de todos los meses siguientes."}
+  ],
+  ghl:"Las secuencias regeneradas se montan con la guía del Kit 04 (workflows, waits y etiquetas no cambian). El contenido nuevo sigue el circuito del Kit 05.",
+  ayuda:"La revisión mensual en clínica audita el pack contigo; el checklist es para que llegues con los deberes hechos."
+}
+];
+
+const CAJA_H = [
+{
+  ico:"rayo", et:"Cada mes · día 25",
+  titulo:"Prompt Maestro de Contenido Mensual",
+  resumen:"Regenera el pack completo del mes — 20 reels, 20 carruseles, stories y calendario — en tu voz y con tus datos, leyendo tu GHL.",
+  cuerpo:H(`<p>Cópialo entero, rellena los corchetes con tu bloque de contexto y pégalo en tu Claude conectado a tu GoHighLevel. Genera el pack completo del mes siguiente y termina con su propia pasada de revisión.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">El prompt · cópialo entero<button class="b-copiar" onclick="copiar(this,'promptContenido')">Copiar</button></div><div class="bloque-cont"><div id="promptContenido" style="white-space:pre-wrap">Eres el creador de contenido orgánico de [TU MARCA], en el nicho de [TU NICHO]. Mi método propio es [TU MÉTODO]: es la columna vertebral de mi contenido, úsalo con sus nombres y sus pasos tal cual son, sin inventar pasos nuevos ni rebautizarlo. Mi oferta principal es [TU OFERTA]. Mi historia y mis casos reales son estos (usa SOLO esto como prueba, nada externo): [TU HISTORIA/CASOS REALES]. Este mes ([MES]) quiero tratar estos temas: [TEMAS DEL MES]. Mi palabra clave de captación es [TU KEYWORD].
+
+Tienes acceso de LECTURA a mi cuenta de GoHighLevel. Antes de escribir, haz dos cosas — solo leer, no crees, modifiques ni borres nada en mi cuenta:
+
+1. Revisa mis últimos emails enviados y mis conversaciones recientes para captar mi voz real y las preguntas que de verdad me hace mi audiencia.
+2. Mira qué funcionó el mes pasado: busca en mis conversaciones los comentarios y mensajes que contienen [TU KEYWORD], fíjate en qué publicaciones o temas los generaron, y en qué dudas se repiten más. Los ángulos que más keyword generaron se duplican este mes con un enfoque nuevo; los que no movieron nada se retiran del mix.
+
+Genérame el pack de contenido orgánico completo del mes, con estas cuatro piezas:
+
+A) 20 guiones de reels para grabar cara a cámara, cada uno en 2 versiones (A y B) con enfoque distinto, y cada versión con 5 hooks alternativos de 7 palabras o menos. Cada guion lleva: hook hablado, desarrollo en lenguaje oral (frases cortas, como hablo yo) y cierre con CTA.
+
+B) 20 carruseles de Instagram, cada uno en 2 versiones (A y B): portada con hook de 7 palabras o menos, de 6 a 8 slides de desarrollo con una sola frase potente por slide, y slide final con CTA.
+
+C) Stories del mes: la primera y la segunda semana guionizadas día a día (de 3 a 5 stories al día, indicando el tipo: encuesta, caja de preguntas, cara a cámara o prueba social) y la estructura semanal replicable para las semanas restantes.
+
+D) Calendario del mes: asigna cada pieza a su día, marcando el objetivo de cada una y respetando este mix: 40% captación, 30% autoridad, 20% conexión, 10% conversión.
+
+Reglas innegociables:
+1. Castellano de España (tú/vosotros, vocabulario de España; nada de neutro latino).
+2. Mi voz humana: lenguaje oral, frases cortas, tono de conversación, como escribo yo en los emails que has leído. Nada robótico ni de plantilla.
+3. UNA sola idea por pieza. Si te caben dos, corta y guarda la segunda para otra pieza.
+4. Todos los hooks, titulares y portadas: 7 palabras o menos, siempre con sus variantes.
+5. CTA de captación: invita a comentar [TU KEYWORD] en la propia publicación. PROHIBIDO 'link en bio' o mandar a la gente fuera de la plataforma.
+6. PROHIBIDO inventar cifras, porcentajes, plazos o resultados. Si un dato no está en el material que te he dado, escribe [DATO PENDIENTE] y lo relleno yo.
+7. PROHIBIDAS las palabras "gratis" y "lanzamiento" en cualquier pieza.
+8. Formato de salida listo para grabar y publicar, pieza a pieza y sin comentarios tuyos entre medias: REEL N · VERSIÓN A y B · 5 HOOKS POR VERSIÓN · GUION ORAL · CTA; CARRUSEL N · VERSIÓN A y B · PORTADA · SLIDES · CTA; STORIES · DÍA N · secuencia con tipo de story; CALENDARIO · día a día con pieza y objetivo (captación/autoridad/conexión/conversión).
+
+Paso final obligatorio antes de entregarme nada: haz tú mismo una pasada de revisión del pack completo contra las reglas 1 a 8. Si una pieza incumple una regla, corrígela antes de mostrármela.
+
+Entrega todo seguido. Al terminar, dame: (a) la lista de todos los [DATO PENDIENTE] que hayas dejado, para completarlos antes de grabar o publicar nada; (b) una línea confirmando que la pasada de revisión está hecha y qué has corregido en ella.</div></div></div>
+  <p style="margin-bottom:0"><strong>Después de ejecutarlo:</strong> completa los [DATO PENDIENTE], pasa el checklist del paso 3 y graba por lotes (Kit 05, paso 5). El pack se audita contigo en la revisión mensual.</p>`)
+},
+{
+  ico:"sobre", et:"Cuando los datos lo pidan",
+  titulo:"Prompt Maestro de Secuencias",
+  resumen:"Regenera, refresca o amplía cualquiera de tus 8 secuencias de email sin romper la estructura: mismo esqueleto, texto nuevo.",
+  cuerpo:H(`<p>Para cuando una secuencia deja de rendir, cambia tu oferta o quieres una variante (por ejemplo, pasar la venta de 5 a 9 emails). En cada uso solo cambias tres corchetes: <code>[SECUENCIA]</code>, <code>[OBJETIVO]</code> y <code>[NÚMERO]</code>.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">El prompt · cópialo entero<button class="b-copiar" onclick="copiar(this,'promptSecuencias')">Copiar</button></div><div class="bloque-cont"><div id="promptSecuencias" style="white-space:pre-wrap">Eres el redactor de las secuencias de email de [TU MARCA], en el nicho de [TU NICHO]. Mi producto de entrada es [TU PRODUCTO DE ENTRADA] y mi oferta principal es [TU OFERTA PRINCIPAL]. Mi historia y mis casos reales son estos (usa SOLO esto como prueba, nada externo): [TU HISTORIA/CASOS REALES]. Mi palabra clave de captación es [TU KEYWORD].
+
+Quiero que generes, refresques o amplíes esta secuencia: [SECUENCIA] (elige una: WELCOME, 3 emails · NUTRICIÓN, 5-7 emails · PUENTE, 1-2 emails · VENTA, 4-9 emails · POST-COMPRA, 3-5 emails · CARRITO ABANDONADO, 4 emails · WINBACK, 3 emails · COMPRADOR QUE NO AGENDA, 4 emails). Objetivo de la secuencia: [OBJETIVO]. Número de emails que quiero: [NÚMERO].
+
+Tienes acceso de LECTURA a mi cuenta de GoHighLevel — solo leer, no crees, modifiques ni borres nada en mi cuenta. Antes de escribir:
+
+1. Lee mis últimos emails enviados y mis conversaciones recientes para captar mi voz real y las preguntas que de verdad me hace mi audiencia.
+2. Si te pido REFRESCAR una secuencia que ya existe, lee primero la secuencia actual en mi cuenta y respeta su esqueleto: mismo número de emails (salvo que te pida ampliar), misma cadencia de envíos, mismos merges y placeholders tal cual están ({{contact.first_name}}, [ENLACE DE BAJA] y los demás). Renuevas el texto — asuntos, ángulos, ejemplos —, no la estructura. Lo que ya funciona no se rompe.
+
+Reglas innegociables:
+1. Castellano de España (tú/vosotros, vocabulario de España; nada de neutro latino).
+2. Mi voz humana: frases cortas, tono de conversación, como escribo yo en los emails que has leído. Nada robótico ni de plantilla.
+3. UNA sola idea por email. Si te caben dos, corta y guarda la segunda para otro email.
+4. Cada email lleva: un asunto elegido de 7 palabras o menos, 2 asuntos alternativos también de 7 palabras o menos, y un preheader de una línea.
+5. Si la secuencia es de NUTRICIÓN, respeta el 85% valor / 15% oferta: solo UN email de la secuencia puede vender; el resto aporta sin pedir nada a cambio.
+6. Si la secuencia es de VENTA o de CARRITO ABANDONADO: menciona mi garantía de 14 días, y cero urgencia falsa — si no existe una fecha límite o un cierre real, no lo inventes.
+7. Nunca escribas el precio de mi oferta principal ni expliques el detalle del siguiente paso de mi embudo: cualquier llamada se presenta como sesión de diagnóstico para ver si encaja, no como llamada de venta.
+8. PROHIBIDO inventar cifras, porcentajes, plazos o resultados. Si un dato no está en el material que te he dado, escribe [DATO PENDIENTE] y lo relleno yo.
+9. PROHIBIDAS las palabras "gratis" y "lanzamiento" en cualquier parte de la secuencia.
+10. Todos los emails terminan con este pie: "Si no quieres seguir recibiendo estos correos, puedes darte de baja aquí: [ENLACE DE BAJA]". Donde pone [ENLACE DE BAJA] pego yo el enlace de baja de MI cuenta de GoHighLevel (el trigger link de baja que creé en mi GHL, o el elemento nativo Unsubscribe al montar la plantilla). Nunca dejes un placeholder genérico (texto tipo 'unsubscribe_link' entre llaves): GoHighLevel no lo convierte en enlace y el correo saldría sin baja.
+11. Formato de salida listo para pegar en GoHighLevel, email a email y sin comentarios tuyos entre medias: EMAIL N · CUÁNDO SE ENVÍA (día exacto o wait desde el email anterior) · ASUNTO ELEGIDO · 2 VARIANTES DE ASUNTO · PREHEADER · CUERPO en párrafos cortos · CTA.
+
+Paso final obligatorio antes de entregarme nada: haz tú mismo una pasada de revisión de la secuencia completa contra las reglas 1 a 11 — mira especialmente que ningún email haya perdido el pie de baja, que no haya ninguna cifra sin respaldo y que los placeholders sigan intactos. Si un email incumple una regla, corrígelo antes de mostrármelo.
+
+Al terminar, dame tres cosas: (a) todos los [DATO PENDIENTE] que hayas dejado, para completarlos antes de montar nada; (b) la cadencia completa de la secuencia (trigger sugerido y waits entre emails) para montar el workflow en mi GoHighLevel; (c) una línea confirmando que la pasada de revisión está hecha y qué has corregido en ella.</div></div></div>
+  <div class="bloque b-aviso"><div class="bloque-cab">Cuándo usarlo (y cuándo no)</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>Sí:</strong> una secuencia lleva un mes rindiendo claramente por debajo · cambia tu oferta, tu producto de entrada o tu garantía (ese mismo día) · quieres probar una variante en un workflow aparte, comparando con datos antes de retirar la anterior.</li>
+    <li><strong>No:</strong> "porque toca" o cada mes por sistema. Una secuencia que funciona no se toca — se deja trabajar.</li>
+  </ul></div></div>
+  <p style="margin-bottom:0"><strong>Después de generar:</strong> checklist del paso 3 (pie de baja, merges, precio jamás escrito), email de prueba a tu móvil, y el montaje del workflow con la guía del Kit 04.</p>`)
+}
+];
+
+/* ==================================================================
+   MOTOR — no hace falta tocar nada de aquí abajo
+   ================================================================== */
+
+/* --- iconos de línea (sin emojis: regla de marca DD) --- */
+const TRAZOS = {
+  diana:     '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>',
+  ruta:      '<path d="M5 19c0-5 5-3 5-7s-4-3-4-6"/><circle cx="6" cy="5" r="2"/><circle cx="18" cy="16" r="2"/><path d="M10 19h6"/>',
+  regla:     '<rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7.5 8v3M12 8v4M16.5 8v3"/>',
+  formulario:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  acuerdo:   '<path d="M4 7h6l2 2 2-2h6"/><path d="M4 7v10h16V7"/><path d="M9 13l2 2 4-4"/>',
+  sobre:     '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/>',
+  llave:     '<circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2.5"/>',
+  filtro:    '<circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/>',
+  rayo:      '<path d="M13 2L5 13h6l-2 9 8-11h-6l2-9z"/>',
+  sesion:    '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z"/>',
+  documento: '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  tablero:   '<path d="M4 20V10M10 20V5M16 20v-8M22 20H2"/>',
+  chat:      '<path d="M20 12a7 7 0 01-7 7H8l-4 3v-4.5A7 7 0 0111 5h2a7 7 0 017 7z"/>',
+  candado:   '<rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/>',
+  salida:    '<path d="M14 4h4a2 2 0 012 2v12a2 2 0 01-2 2h-4"/><path d="M10 8l-4 4 4 4M6 12h9"/>',
+  tendencia: '<path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/>',
+  medalla:   '<circle cx="12" cy="14" r="5.5"/><path d="M9 3l1.5 5M15 3l-1.5 5"/>',
+  ajustes:   '<path d="M15.5 4a5 5 0 00-6 6.5L4 16v4h4l5.5-5.5A5 5 0 0020 8.5L17 11l-3-3z"/>',
+  personas:  '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6.5a3 3 0 010 6M17 20a6 6 0 00-1.5-4"/>',
+  lupa:      '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.2 15.2L21 21"/>',
+  bandera:   '<path d="M5 21V4"/><path d="M5 4.5h11l-2 3.5 2 3.5H5"/>',
+  caja:      '<path d="M3 8l9-4 9 4v8l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v8"/>',
+  precio:    '<path d="M20 13.5L13.5 20a2 2 0 01-2.8 0L4 13.3V4h9.3l6.7 6.7a2 2 0 010 2.8z"/><circle cx="8.5" cy="8.5" r="1.3"/>',
+  escudo:    '<path d="M12 3l7 3v5.5c0 4.2-2.9 7.6-7 8.5-4.1-.9-7-4.3-7-8.5V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/>',
+  subir:     '<path d="M12 20V5"/><path d="M6 11l6-6 6 6"/>',
+  dividir:   '<path d="M12 3v7M12 14v7"/><circle cx="12" cy="12" r="2"/><path d="M5 12h2M17 12h2"/>',
+  brujula:   '<circle cx="12" cy="12" r="8.5"/><path d="M15 9l-2 4-4 2 2-4z"/>'
+};
+function ico(n, cls){
+  const t = TRAZOS[n];
+  if(!t) return '';
+  return `<svg class="ico-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${t}</svg>`;
+}
+
+let actual = 0;
+let hechos = cargar();
+
+function cargar(){
+  try{
+    const g = localStorage.getItem('kitAutonomia');
+    return g ? JSON.parse(g) : [];
+  }catch(e){ return []; }
+}
+function guardar(){
+  try{ localStorage.setItem('kitAutonomia', JSON.stringify(hechos)); }catch(e){}
+}
+
+/* --- mapa del hero --- */
+function pintaPanel(){
+  const el = document.getElementById('panelDecisiones');
+  if(!el) return;
+  el.innerHTML = PASOS.map((p,i)=>{
+    const ok = hechos.includes(i);
+    return `<li><button class="dec-item${ok?' hecho':''}" onclick="irAPaso(${i})">
+      <span class="dec-num">${ok?'✓':i+1}</span><span>${p.titulo}</span>
+    </button></li>`;
+  }).join('');
+}
+
+/* --- pasos --- */
+function pintaPasos(){
+  document.getElementById('pasos').innerHTML = PASOS.map((p,i)=>`
+    <article class="paso ${i===0?'activo':''}" id="paso${i}">
+      <div class="paso-cabecera">
+        <div class="paso-num">${p.num} de ${String(PASOS.length).padStart(2,'0')}</div>
+        <h2>${ico(p.ico,"ico-titulo")}${p.titulo}</h2>
+        <p class="sub">${p.sub}</p>
+        <div class="paso-meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+      </div>
+      <div class="paso-cuerpo">
+        <div class="bloque b-neutro"><div class="bloque-cab">Qué es</div><div class="bloque-cont">${p.queEs}</div></div>
+        <div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">${p.porQue}</div></div>
+        <div class="bloque b-plantilla"><div class="bloque-cab">La plantilla · cópiala y rellénala<button class="b-copiar" onclick="copiar(this,'plantilla${i}')">Copiar</button></div><div class="bloque-cont" id="plantilla${i}">${p.plantilla}</div></div>
+        <div class="bloque b-ejemplo"><div class="bloque-cab">Un ejemplo ya relleno</div><div class="bloque-cont">${p.ejemplo}</div></div>
+        <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+          ${p.errores.map(e=>`<div class="error-item"><span class="error-x">✕</span><div><b>${e.t}</b><span>${e.d}</span></div></div>`).join('')}
+        </div></div>
+        <div class="bloque b-ayuda"><div class="bloque-cab">Dónde vive y quién te ayuda</div><div class="bloque-cont">
+          <p><strong>En GHL:</strong> ${p.ghl}</p>
+          <p style="margin-bottom:0"><strong>Si te trabas:</strong> ${p.ayuda}</p>
+        </div></div>
+        <div class="paso-pie">
+          <button class="btn-hecho" onclick="marcar(${i})" id="hecho${i}"><span>○</span> Marcar como hecho</button>
+          ${i>0?`<button class="btn-atras" onclick="irAPaso(${i-1})">← Anterior</button>`:''}
+          <button class="btn-nav" onclick="siguiente(${i})">${i<PASOS.length-1?'Siguiente paso →':'Ir a la caja de herramientas →'}</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
+/* --- copiar plantilla --- */
+function copiar(btn, id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const txt = el.innerText.trim();
+  const ok = ()=>{
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('ok');
+    setTimeout(()=>{ btn.textContent = 'Copiar'; btn.classList.remove('ok'); }, 1800);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(ok).catch(()=>respaldo(txt, ok));
+  } else { respaldo(txt, ok); }
+}
+function respaldo(txt, ok){
+  const a = document.createElement('textarea');
+  a.value = txt; a.style.position='fixed'; a.style.opacity='0';
+  document.body.appendChild(a); a.select();
+  try{ document.execCommand('copy'); ok(); }catch(e){}
+  document.body.removeChild(a);
+}
+
+/* --- índice lateral --- */
+function pintaIndice(){
+  document.getElementById('indiceLista').innerHTML = PASOS.map((p,i)=>`
+    <button class="ind-item" id="ind${i}" onclick="irAPaso(${i})">
+      <span class="ind-num">${i+1}</span>
+      <span class="ind-tx"><b>${p.titulo}</b><small>${p.chips[0]}</small></span>
+    </button>`).join('');
+  document.getElementById('indiceTools').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="ind-tool" onclick="abrirModal(${i})">${ico(c.ico)} ${c.titulo}</button>`).join('');
+}
+
+/* --- puntos de la barra --- */
+function pintaPuntos(){
+  document.getElementById('puntos').innerHTML = PASOS.map((p,i)=>
+    `<button class="punto" onclick="irAPaso(${i})" title="${p.titulo}" aria-label="Ir al paso ${i+1}: ${p.titulo}">${i+1}</button>`
+  ).join('');
+}
+
+function refresca(){
+  document.querySelectorAll('.punto').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+  });
+  PASOS.forEach((p,i)=>{
+    const b = document.getElementById('hecho'+i);
+    if(!b) return;
+    const ok = hechos.includes(i);
+    b.classList.toggle('marcado', ok);
+    b.innerHTML = ok ? '<span>✓</span> Hecho' : '<span>○</span> Marcar como hecho';
+  });
+  document.querySelectorAll('.ind-item').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+    b.querySelector('.ind-num').textContent = hechos.includes(i) ? '✓' : (i+1);
+  });
+  const pct = Math.round(hechos.length / PASOS.length * 100);
+  document.getElementById('progresoBarra').style.width = pct + '%';
+  document.getElementById('indiceContador').textContent =
+    hechos.length + ' de ' + PASOS.length + ' pasos' + (hechos.length ? ' · ' + pct + '%' : '');
+  document.getElementById('contador').textContent = hechos.length + '/' + PASOS.length + ' hechos';
+  document.getElementById('barraTitulo').textContent = PASOS[actual].titulo;
+  pintaPanel();
+}
+
+function irAPaso(i){
+  actual = i;
+  document.querySelectorAll('.paso').forEach((el,j)=>el.classList.toggle('activo', j===i));
+  refresca();
+  const y = document.getElementById('camino').offsetTop - 70;
+  window.scrollTo({top:y, behavior:'smooth'});
+}
+
+function siguiente(i){
+  if(i < PASOS.length-1){ irAPaso(i+1); }
+  else { document.getElementById('caja').scrollIntoView({behavior:'smooth'}); }
+}
+
+function marcar(i){
+  if(hechos.includes(i)) hechos = hechos.filter(x=>x!==i);
+  else hechos.push(i);
+  guardar();
+  refresca();
+}
+
+/* --- caja de herramientas --- */
+function pintaCaja(){
+  document.getElementById('rejilla').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="tarjeta" onclick="abrirModal(${i})">
+      <span class="ico">${ico(c.ico)}</span>
+      <span class="eyebrow">${c.et}</span>
+      <h3>${c.titulo}</h3>
+      <p>${c.resumen}</p>
+    </button>`).join('');
+}
+
+function abrirModal(i){
+  const c = CAJA_H[i];
+  document.getElementById('modalCont').innerHTML = `
+    <div class="paso-cabecera" style="border-radius:0">
+      <div class="paso-num">${c.et}</div>
+      <h2>${ico(c.ico,"ico-titulo")}${c.titulo}</h2>
+      <p class="sub">${c.resumen}</p>
+    </div>
+    <div class="paso-cuerpo" style="border-radius:0">${c.cuerpo}</div>`;
+  document.getElementById('modal').classList.add('abierto');
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.modal-caja').scrollIntoView();
+}
+function cerrarModal(){
+  document.getElementById('modal').classList.remove('abierto');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e=>{
+  if(e.target.id === 'modal') cerrarModal();
+});
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') cerrarModal(); });
+
+/* --- barra sticky --- */
+window.addEventListener('scroll', ()=>{
+  const camino = document.getElementById('camino');
+  const caja = document.getElementById('caja');
+  const dentro = window.scrollY > camino.offsetTop - 200 && window.scrollY < caja.offsetTop - 100;
+  document.getElementById('barra').classList.toggle('visible', dentro);
+});
+
+/* --- arranque --- */
+document.getElementById('tituloUso').insertAdjacentHTML('afterbegin', ico('brujula','ico-titulo'));
+pintaPanel();
+pintaPasos();
+pintaIndice();
+pintaPuntos();
+pintaCaja();
+refresca();
+</script>
+</body>
+</html>
