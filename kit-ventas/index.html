@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Ventas High Ticket</title>
+<meta name="description" content="Tienes la oferta. Ahora toca venderla. 5 pasos y 3 manuales para cerrar tus primeras ventas de high ticket: llamada, setting, DMs, objeciones y anti no-show.">
+<meta name="theme-color" content="#D4AF37">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E03%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#111111;
+  --tinta-2:#262626;
+  --papel:#FFFFFF;
+  --papel-2:#F5F4F1;
+  --papel-3:#EDEDED;
+  --texto:#1A1A1A;
+  --texto-2:#6E6B65;
+  --azul:#2563D9;
+  --azul-luz:#EAF1FE;
+  --verde:#0E8F63;
+  --verde-luz:#E6F6EF;
+  --coral:#DC3A45;
+  --coral-luz:#FDECEC;
+  --violeta:#6B4FD8;
+  --violeta-luz:#F0ECFE;
+  --ambar:#D98A00;
+  --ambar-luz:#FDF3E0;
+  --oro:#D4AF37;
+  --oro-claro:#E6C765;
+  --crema:#D8D5CB;
+  --crema-mute:#98958D;
+  --tinta-linea:#333333;
+  --radio:16px;
+  --sombra:0 1px 2px rgba(17,17,17,.06), 0 8px 24px rgba(17,17,17,.06);
+  --sombra-alta:0 2px 4px rgba(17,17,17,.08), 0 16px 40px rgba(17,17,17,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Figtree',system-ui,-apple-system,sans-serif;
+  background:var(--papel-2);
+  color:var(--texto);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.wrap{max-width:1340px;margin:0 auto;padding:0 32px}
+.wrap-estrecho{max-width:1000px;margin:0 auto}
+
+/* ============ HERO ============ */
+/* Portada negra con composición propia: dos columnas, sin mapa de ondas
+   (Kit de Entrega) y sin ficha-documento (Kit de la Oferta). A la derecha,
+   la firma de este kit: una conversación de DMs que termina en cita. */
+.hero{background:var(--tinta);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--oro)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:100px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:center;position:relative;z-index:2}
+.hero-insignia{display:inline-flex;align-items:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}
+.hero-insignia .num{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--oro);color:var(--tinta);padding:5px 13px;border-radius:999px}
+.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-mute);margin:0}
+.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;max-width:16ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--crema);max-width:46ch;margin-bottom:20px}
+.hero .hero-que-es{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--crema-mute);max-width:56ch;margin-bottom:34px;line-height:1.7}
+.hero .hero-que-es strong{color:var(--crema);font-weight:600}
+.hero-cruce{font-size:.88rem;color:var(--crema-mute);margin-top:16px}
+.hero-cruce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hero-cruce a:hover{color:var(--oro)}
+
+/* la conversación de la portada */
+.hero-panel{background:var(--papel-2);color:var(--texto);border-radius:var(--radio);box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+.chat-cab{display:flex;align-items:center;gap:11px;background:#fff;padding:13px 16px;border-bottom:1px solid var(--papel-3)}
+.chat-cab .avatar{width:34px;height:34px;border-radius:50%;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.72rem;flex-shrink:0}
+.chat-cab b{font-size:.95rem;display:block;line-height:1.2}
+.chat-cab small{color:var(--texto-2);font-size:.75rem}
+.chat-cuerpo{padding:16px 14px;display:flex;flex-direction:column;gap:9px}
+.burbuja{max-width:86%;padding:9px 13px;border-radius:14px;font-size:.88rem;line-height:1.45}
+.burbuja.lead{background:#fff;border:1px solid var(--papel-3);border-bottom-left-radius:4px;align-self:flex-start}
+.burbuja.tu{background:var(--tinta);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.chat-meta{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--crema-mute);align-self:center;text-align:center}
+.chat-evento{align-self:center;background:var(--verde-luz);color:var(--verde);font-weight:700;font-size:.8rem;padding:6px 14px;border-radius:999px}
+.chat-pie{background:#fff;border-top:1px dashed var(--papel-3);padding:11px 16px;font-size:.8rem;color:var(--texto-2);text-align:center}
+.chat-pie b{color:var(--tinta)}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-panel{max-width:440px}
+}
+
+.botonera{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.btn{
+  font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;
+  padding:15px 28px;border-radius:999px;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-principal{background:var(--oro);color:var(--tinta)}
+.btn-principal:hover{background:var(--oro-claro);box-shadow:0 8px 24px rgba(212,175,55,.35)}
+.btn-fantasma{background:transparent;color:var(--crema);border:1.5px solid var(--tinta-linea)}
+.btn-fantasma:hover{border-color:var(--oro);color:#fff}
+
+/* ============ BARRA STICKY ============ */
+.barra{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--papel-3);
+  padding:12px 0;display:none;
+}
+.barra.visible{display:block}
+.barra-in{display:flex;align-items:center;gap:20px}
+.barra-titulo{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.puntos{display:flex;gap:7px;flex:1;justify-content:center}
+.punto{
+  width:30px;height:30px;border-radius:50%;border:2px solid var(--papel-3);
+  background:#fff;cursor:pointer;font-family:'Space Mono',monospace;font-size:.72rem;
+  font-weight:700;color:var(--texto-2);display:grid;place-items:center;
+  transition:all .15s ease;padding:0;
+}
+.punto:hover{border-color:var(--azul);color:var(--azul)}
+.punto.actual{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.punto.hecho{background:var(--verde);border-color:var(--verde);color:#fff}
+.contador{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--texto-2);white-space:nowrap;font-weight:700}
+
+/* ============ ICONOS DE LÍNEA ============ */
+.ico-svg{width:1.1em;height:1.1em;flex-shrink:0;vertical-align:-.15em}
+.ico-titulo{width:1em;height:1em;margin-right:.42em;vertical-align:-.06em;color:var(--oro)}
+.ind-tool .ico-svg{width:17px;height:17px;opacity:.75}
+/* semáforo y marcas de estado, sin emojis */
+.luz{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:.5px}
+.luz-verde{background:var(--verde)} .luz-ambar{background:var(--ambar)} .luz-rojo{background:var(--coral)}
+.marca-si{color:var(--verde);font-weight:700}
+.marca-no{color:var(--texto-2);font-weight:700}
+
+/* ============ AVISO DE USO ============ */
+.aviso-uso{
+  background:var(--ambar-luz);border:1px solid #EFD9A6;border-left:5px solid var(--ambar);
+  border-radius:var(--radio);padding:26px 28px;margin:56px auto 0;max-width:900px;
+}
+.aviso-uso h3{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.25rem;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:center;gap:11px;color:var(--tinta);
+}
+.aviso-uso p{color:#6B4E12;font-size:.98rem;line-height:1.7;margin-bottom:12px}
+.aviso-uso p:last-child{margin-bottom:0}
+.aviso-uso strong{color:var(--tinta);font-weight:700}
+
+/* ============ SECCIONES ============ */
+.seccion{padding:72px 0}
+.seccion-cabecera{text-align:center;max-width:44ch;margin:0 auto 48px}
+.seccion-cabecera .eyebrow{color:var(--texto-2);display:block;margin-bottom:12px}
+.seccion-cabecera h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;margin-bottom:14px}
+.seccion-cabecera p{color:var(--texto-2);font-size:1.05rem}
+
+/* ============ ÍNDICE LATERAL ============ */
+.camino-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:36px;align-items:start}
+.indice{position:sticky;top:24px;background:#fff;border:1px solid var(--papel-3);border-radius:var(--radio);padding:22px 20px;box-shadow:var(--sombra);max-height:calc(100vh - 48px);overflow-y:auto}
+.indice-cab{padding-bottom:16px;border-bottom:1px solid var(--papel-3);margin-bottom:16px}
+.indice-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:10px}
+.progreso{height:7px;background:var(--papel-3);border-radius:999px;overflow:hidden;margin-bottom:9px}
+.progreso i{display:block;height:100%;background:var(--verde);border-radius:999px;transition:width .3s ease}
+.indice-contador{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--texto-2);font-weight:700}
+.ind-item{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  background:none;border:none;cursor:pointer;padding:9px 10px;border-radius:10px;
+  font-family:'Figtree',sans-serif;transition:background .12s ease;
+}
+.ind-item:hover{background:var(--papel-2)}
+.ind-item.actual{background:var(--tinta)}
+.ind-item.actual .ind-tx b{color:#fff}
+.ind-item.actual .ind-tx small{color:var(--crema-mute)}
+.ind-num{
+  flex-shrink:0;width:25px;height:25px;border-radius:50%;border:2px solid var(--papel-3);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.7rem;
+  font-weight:700;color:var(--texto-2);background:#fff;
+}
+.ind-item.actual .ind-num{background:var(--oro);border-color:var(--oro);color:var(--tinta)}
+.ind-item.hecho .ind-num{background:var(--verde);border-color:var(--verde);color:#fff}
+.ind-tx{display:block;line-height:1.3}
+.ind-tx b{display:block;font-size:.9rem;font-weight:600;color:var(--texto);margin-bottom:2px}
+.ind-tx small{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-2);letter-spacing:.04em}
+.indice-sep{
+  font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--texto-2);margin:18px 0 8px;padding-top:16px;border-top:1px solid var(--papel-3);
+}
+.ind-tool{
+  display:flex;gap:9px;align-items:center;width:100%;text-align:left;background:none;border:none;
+  cursor:pointer;padding:7px 10px;border-radius:9px;font-family:'Figtree',sans-serif;
+  font-size:.86rem;color:var(--texto-2);transition:background .12s ease,color .12s ease;
+}
+.ind-tool:hover{background:var(--violeta-luz);color:var(--violeta)}
+
+/* ============ PASO ============ */
+.paso{display:none}
+.paso.activo{display:block;animation:entra .35s ease}
+@keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.paso-cabecera{background:var(--tinta);color:#fff;border-radius:var(--radio) var(--radio) 0 0;padding:36px 36px 32px;position:relative;overflow:hidden}
+.paso-num{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.16em;color:var(--oro);font-weight:700;margin-bottom:10px}
+.paso-cabecera h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.paso-cabecera .sub{color:var(--crema);font-size:1.05rem;max-width:52ch}
+.paso-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.chip{
+  font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.06em;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  padding:7px 13px;border-radius:999px;color:var(--crema);
+}
+.paso-cuerpo{background:#fff;border-radius:0 0 var(--radio) var(--radio);padding:36px;box-shadow:var(--sombra)}
+
+/* bloques de contenido */
+.bloque{margin-bottom:28px;border-radius:14px;overflow:hidden}
+.bloque:last-child{margin-bottom:0}
+.bloque-cab{
+  display:flex;align-items:center;gap:12px;padding:15px 20px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.18rem;
+  letter-spacing:-.01em;font-weight:600;line-height:1.25;
+}
+.bloque-cab .ico{font-size:1.15rem;line-height:1}
+.b-copiar{
+  margin-left:auto;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.08em;
+  text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:999px;cursor:pointer;
+  transition:background .12s ease;
+}
+.b-copiar:hover{background:rgba(255,255,255,.32)}
+.b-copiar.ok{background:#fff;color:var(--verde);border-color:#fff}
+.bloque-cont{padding:22px 20px;font-size:.98rem;line-height:1.7}
+.bloque-cont > *:last-child{margin-bottom:0}
+.bloque-cont p{margin-bottom:14px}
+.bloque-cont ul{margin:0 0 14px;padding-left:22px}
+.bloque-cont li{margin-bottom:7px}
+.bloque-cont strong{font-weight:700;color:var(--tinta)}
+.bloque-cont a,.aviso-uso a,.aviso-legal a{
+  color:var(--azul);font-weight:600;text-decoration:underline;
+  text-underline-offset:2px;text-decoration-thickness:1.5px;
+}
+.bloque-cont a:hover,.aviso-uso a:hover,.aviso-legal a:hover{color:var(--tinta)}
+/* lista de documentos enlazados */
+.docs{list-style:none;padding:0;margin:0}
+.docs li{
+  background:#fff;border:1px solid var(--papel-3);border-radius:11px;
+  padding:13px 16px;margin-bottom:9px;display:flex;gap:12px;align-items:flex-start;
+}
+.docs li:last-child{margin-bottom:0}
+.docs .n{
+  flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--tinta);color:var(--oro);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;
+}
+.docs b{display:block;font-size:.98rem;color:var(--tinta)}
+.docs span{font-size:.9rem;color:var(--texto-2);display:block;line-height:1.55}
+/* tercer nivel: los rótulos sueltos dentro de un bloque ("Lo que incluye") */
+.bloque-cont > p > strong:only-child{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+
+.b-neutro{background:var(--papel-2);border:1px solid var(--papel-3)}
+.b-neutro .bloque-cab{background:var(--papel-3);color:var(--tinta-2)}
+
+.b-plantilla{background:var(--azul-luz);border:1px solid #C3D9FB}
+.b-plantilla .bloque-cab{background:var(--azul);color:#fff}
+.b-plantilla .bloque-cont{font-size:.95rem}
+
+.b-ejemplo{background:var(--verde-luz);border:1px solid #B8E5D2}
+.b-ejemplo .bloque-cab{background:var(--verde);color:#fff}
+
+.b-errores{background:var(--coral-luz);border:1px solid #F8C9CC}
+.b-errores .bloque-cab{background:var(--coral);color:#fff}
+
+.b-ayuda{background:var(--violeta-luz);border:1px solid #D6CBFB}
+.b-ayuda .bloque-cab{background:var(--violeta);color:#fff}
+
+.b-aviso{background:var(--ambar-luz);border:1px solid #F5DCA8}
+.b-aviso .bloque-cab{background:var(--ambar);color:#fff}
+
+/* tablas y plantillas */
+.tabla{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:14px;background:#fff;border-radius:10px;overflow:hidden}
+.tabla th{background:var(--tinta);color:#fff;text-align:left;padding:12px 14px;font-weight:600;font-size:.9rem}
+.tabla td{padding:12px 14px;border-top:1px solid var(--papel-3);vertical-align:top}
+.tabla tr:nth-child(even) td{background:var(--papel-2)}
+
+.campo{
+  background:#fff;border:1.5px dashed #A9C2F2;border-radius:9px;
+  padding:14px 16px;margin-bottom:11px;font-size:.94rem;
+}
+.campo b{display:block;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.02em;color:var(--azul);margin-bottom:6px}
+.hueco{background:#DCE9FD;color:var(--azul);padding:1px 7px;border-radius:5px;font-family:'Space Mono',monospace;font-size:.85em;font-weight:700}
+
+.mensaje{background:#fff;border-radius:12px;padding:18px 20px;border-left:4px solid var(--verde);font-size:.97rem;line-height:1.7;margin-bottom:12px}
+.mensaje .de{font-family:'Figtree',sans-serif;font-size:.85rem;letter-spacing:.02em;color:var(--verde);font-weight:700;margin-bottom:10px}
+
+.error-item{display:flex;gap:13px;margin-bottom:15px;align-items:flex-start}
+.error-item:last-child{margin-bottom:0}
+.error-x{
+  flex-shrink:0;width:23px;height:23px;border-radius:50%;background:var(--coral);
+  color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px;
+}
+.error-item b{
+  display:block;margin-bottom:3px;color:var(--tinta);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+.error-item span{font-size:.96rem;line-height:1.65;color:var(--texto-2)}
+
+/* acordeón */
+.desplegable{border:1px solid var(--papel-3);border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden}
+.desplegable summary{
+  padding:15px 18px;cursor:pointer;font-weight:600;display:flex;
+  align-items:center;gap:11px;list-style:none;
+}
+.desplegable summary::-webkit-details-marker{display:none}
+.desplegable summary::after{content:"+";margin-left:auto;font-family:'Space Mono',monospace;font-size:1.2rem;color:var(--texto-2)}
+.desplegable[open] summary::after{content:"−"}
+.desplegable summary:hover{background:var(--papel-2)}
+.desplegable .dcont{padding:0 18px 18px}
+
+/* navegación del paso */
+.paso-pie{
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  margin-top:32px;padding-top:28px;border-top:2px dashed var(--papel-3);
+}
+.btn-hecho{
+  background:#fff;border:2px solid var(--verde);color:var(--verde);
+  font-weight:700;padding:14px 24px;border-radius:999px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;font-size:.98rem;font-family:'Figtree',sans-serif;
+  transition:all .15s ease;
+}
+.btn-hecho:hover{background:var(--verde-luz)}
+.btn-hecho.marcado{background:var(--verde);color:#fff}
+.btn-nav{
+  background:var(--tinta);color:#fff;border:none;padding:14px 26px;
+  border-radius:999px;cursor:pointer;font-weight:600;font-size:.98rem;
+  font-family:'Figtree',sans-serif;margin-left:auto;
+  display:inline-flex;align-items:center;gap:9px;transition:all .15s ease;
+}
+.btn-nav:hover{background:var(--tinta-2)}
+.btn-atras{
+  background:transparent;border:1.5px solid var(--papel-3);color:var(--texto-2);
+  padding:14px 22px;border-radius:999px;cursor:pointer;font-weight:600;
+  font-family:'Figtree',sans-serif;font-size:.98rem;transition:all .15s ease;
+}
+.btn-atras:hover{border-color:var(--texto-2);color:var(--texto)}
+
+/* ============ CAJA DE HERRAMIENTAS ============ */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.tarjeta{
+  background:#fff;border-radius:var(--radio);padding:26px;cursor:pointer;
+  border:1px solid var(--papel-3);text-align:left;font-family:'Figtree',sans-serif;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.tarjeta:hover{transform:translateY(-3px);box-shadow:var(--sombra-alta)}
+.tarjeta .ico{display:block;margin-bottom:14px;color:var(--tinta)}
+.tarjeta .ico .ico-svg{width:28px;height:28px}
+.tarjeta:hover .ico{color:var(--oro-oscuro,#9A7D1F)}
+.tarjeta .eyebrow{color:var(--violeta);display:block;margin-bottom:7px}
+.tarjeta h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.tarjeta p{color:var(--texto-2);font-size:.93rem;line-height:1.55}
+
+/* ============ MODAL ============ */
+.modal{
+  position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.6);
+  backdrop-filter:blur(4px);display:none;padding:24px;overflow-y:auto;
+}
+.modal.abierto{display:block;animation:entra .2s ease}
+.modal-caja{
+  max-width:820px;margin:40px auto;background:#fff;
+  border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra-alta);
+}
+.modal-cerrar{
+  position:sticky;top:0;z-index:5;background:#fff;padding:14px 24px;
+  border-bottom:1px solid var(--papel-3);display:flex;justify-content:flex-end;
+}
+.modal-cerrar button{
+  background:var(--papel-2);border:none;width:38px;height:38px;border-radius:50%;
+  cursor:pointer;font-size:1.1rem;color:var(--texto-2);
+}
+.modal-cerrar button:hover{background:var(--papel-3)}
+
+/* ============ CIERRE ============ */
+.final{background:var(--tinta);color:#fff;border-radius:var(--radio);padding:48px 36px;text-align:center}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:14px}
+.final p{color:var(--crema);max-width:52ch;margin:0 auto 28px}
+.final-docs{max-width:640px;margin:0 auto 28px;text-align:left}
+.final-docs .docs li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.final-docs .docs .n{background:var(--oro);color:var(--tinta)}
+.final-docs .docs b{color:#fff}
+.final-docs .docs b a{color:var(--oro);text-decoration:none}
+.final-docs .docs b a:hover{text-decoration:underline}
+.final-docs .docs span{color:var(--crema-mute)}
+.final-nota{font-size:.92rem;color:var(--crema-mute)!important;max-width:none!important;margin:16px 0 0!important;line-height:1.65}
+.final-nota strong{color:#fff}
+
+.pie{padding:48px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
+.pie b{color:var(--texto)}
+.aviso-legal{
+  max-width:600px;margin:24px auto 0;font-size:.85rem;
+  background:var(--ambar-luz);border:1px solid #F5DCA8;
+  border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
+}
+
+/* el índice lateral sustituye a la barra superior en pantallas anchas */
+@media(min-width:1081px){
+  .barra{display:none!important}
+}
+@media(max-width:1080px){
+  .camino-grid{grid-template-columns:1fr;gap:0}
+  .indice{display:none}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .seccion{padding:48px 0}
+  .paso-cabecera,.paso-cuerpo{padding:26px 20px}
+  .puntos{display:none}
+  .btn-nav{margin-left:0;width:100%;justify-content:center}
+  .paso-pie{flex-direction:column;align-items:stretch}
+  .btn-hecho,.btn-atras{justify-content:center}
+  .tabla{font-size:.82rem}
+  .tabla th,.tabla td{padding:8px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <div class="hero-insignia"><span class="num">Kit 03 · Ventas</span><span class="hero-marca">Departamento Disruptivo</span></div>
+      <h1>Tienes la oferta. <em>Ahora toca venderla.</em></h1>
+      <p>Las primeras 10-20 ventas las cierras tú, en persona. No porque no puedas delegar: porque hasta que no cierres tú, no sabes qué frase compra tu cliente ni qué objeción aparece siempre.</p>
+      <p class="hero-que-es">Esta página es el mapa de esas primeras ventas: <strong>5 pasos, en orden</strong>, que van del DM a la llamada cerrada, y <strong>3 manuales de combate</strong> para cuando la conversación se tuerce: objeciones, setting y seguimiento. Con los guiones y los mensajes ya escritos en cada punto.</p>
+      <div class="botonera">
+        <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
+        <a href="#caja" class="btn btn-fantasma">Ver los manuales</a>
+      </div>
+      <p class="hero-cruce">¿Aún sin oferta cerrada? Empieza por el <a href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 01 · La Oferta ↗</a> · ¿Ya vendiste? Sigue con el <a href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 02 · La Entrega ↗</a></p>
+    </div>
+
+    <aside class="hero-panel" aria-label="Así se ve el camino: del comentario a la cita">
+      <div class="chat-cab"><span class="avatar">TÚ</span><div><b>Mensajes directos</b><small>del comentario a la cita · sin vender en el chat</small></div></div>
+      <div class="chat-cuerpo">
+        <span class="chat-meta">Comentó tu reel</span>
+        <div class="burbuja lead">Me pasa justo esto que cuentas 😅</div>
+        <div class="burbuja tu">¿Es algo que estés viviendo ahora, o más por curiosidad?</div>
+        <div class="burbuja lead">No, no… lo vivo cada semana</div>
+        <div class="burbuja tu">Esto no se ve bien por chat. ¿Nos vemos 30-40 min y miro tu caso? Si veo que puedo ayudarte, te cuento cómo; y si no, te lo digo con sinceridad.</div>
+        <span class="chat-evento">✓ Cita agendada · jueves 10:00</span>
+        <span class="chat-meta">Recordatorios 24h · 4h · 15min activados</span>
+      </div>
+      <div class="chat-pie"><b>El precio nunca viaja por escrito.</b> La cifra se dice en la llamada, en voz.</div>
+    </aside>
+  </div>
+</header>
+
+<!-- ============ BARRA ============ -->
+<div class="barra" id="barra">
+  <div class="wrap barra-in">
+    <div class="barra-titulo" id="barraTitulo">Venta</div>
+    <div class="puntos" id="puntos"></div>
+    <div class="contador" id="contador">0/5</div>
+  </div>
+</div>
+
+<!-- ============ CAMINO ============ -->
+<main>
+
+<div class="wrap">
+  <div class="aviso-uso">
+    <h3 id="tituloUso">Cómo usar esta guía</h3>
+    <p><strong>Esto no es un curso de ventas. Es el mapa de tus primeras 10-20 ventas de high ticket,</strong> con los guiones y los mensajes ya escritos. Nada de esto lo montamos por ti: te damos el material y la formación; tú lo adaptas a tu oferta real y lo pones a funcionar en tu cuenta.</p>
+    <p><strong>Se hace en orden.</strong> Los pasos 1 y 2 se preparan antes de tu primera llamada; el 3 se monta una vez en tu GHL; el 4 se hace todos los días; el 5 se dispara solo cada vez que alguien agenda. Los manuales de la caja no se leen de corrido: se abren cuando tocan.</p>
+    <p><strong>Las reglas duras no se negocian.</strong> El precio solo se dice en voz alta, dentro de la llamada — nunca por escrito. La cita es un filtro, no un premio ni un plan gratis. Cero cifras inventadas: todo resultado que menciones es tuyo, real y verificable. Y sin la palabra "gratis" ni hablar de "lanzamiento": atraen al perfil equivocado y bajan el frame.</p>
+    <p style="margin-bottom:0">Los ejemplos son todos del mismo caso, para que se siga el hilo. Adáptalo a lo tuyo: tu sector, tus plazos y tus palabras. Todo lo que aquí está escrito es para decirse en voz alta: léelo una vez en voz alta y, donde tropieces, cámbialo.</p>
+  </div>
+</div>
+
+<section class="seccion" id="camino">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Primera parte</span>
+      <h2>Los 5 pasos de venta</h2>
+      <p>Dos se preparan, uno se monta, uno se hace a diario y el último se dispara solo. Entre todos, tu agenda deja de depender de la suerte.</p>
+    </div>
+    <div class="camino-grid">
+      <aside class="indice" id="indice">
+        <div class="indice-cab">
+          <span class="eyebrow">Tu avance</span>
+          <div class="progreso"><i id="progresoBarra" style="width:0%"></i></div>
+          <div class="indice-contador" id="indiceContador">0 de 5 pasos</div>
+        </div>
+        <nav id="indiceLista" aria-label="Los 5 pasos"></nav>
+        <div class="indice-sep">Caja de herramientas</div>
+        <nav id="indiceTools" aria-label="Las herramientas"></nav>
+      </aside>
+      <div id="pasos"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAJA ============ -->
+<section class="seccion" id="caja" style="background:#fff">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Segunda parte</span>
+      <h2>Los manuales de combate</h2>
+      <p>Estos no se leen de corrido. Se abren cuando la conversación se tuerce: una objeción en la llamada, un lead que quiere cita, otro que se enfría y no responde.</p>
+    </div>
+    <div class="rejilla" id="rejilla"></div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="wrap">
+    <div class="final">
+      <h2>Una cosa antes de empezar</h2>
+      <p>Esto termina contigo diciendo una cifra en voz alta y aguantando el silencio. No con un funnel perfecto, ni con mil seguidores, ni con el guión memorizado. <strong>Si eso te da respeto, es normal: se lo da a todo el mundo la primera vez.</strong></p>
+      <p style="margin-bottom:28px">Lo que hace este kit es que llegues a ese silencio sabiendo qué preguntar, qué responder y qué callar. Porque el objetivo de cada llamada no es cobrar: es saber si esa persona es cliente para ti. Esa tranquilidad se nota. Y es la que cierra.</p>
+      <button class="btn btn-principal" onclick="irAPaso(0)">Ir al paso 1 →</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <p><b>Kit de Ventas High Ticket</b> · Departamento Disruptivo</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <div class="aviso-legal">
+      <b>Después del sí:</b> la venta no termina en el "¿entramos?". <b>El contrato se firma antes de la primera sesión, sin excepciones.</b> En ticket alto la venta se cierra por llamada, y ahí es fácil que la entrega arranque con un "después lo firmamos". No lo hagas. La plantilla, la guía y un ejemplo completo viven en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>, y la entrega entera en el <a href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">Kit de Entrega ↗</a>.
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-caja">
+    <div class="modal-cerrar"><button onclick="cerrarModal()" aria-label="Cerrar">✕</button></div>
+    <div id="modalCont"></div>
+  </div>
+</div>
+
+<script>
+/* ==================================================================
+   CONTENIDO — para editar un texto, cámbialo aquí. No hace falta
+   tocar nada más del archivo.
+   ================================================================== */
+
+const H = (s) => s; // ayuda para leer mejor el HTML de abajo
+
+const PASOS = [
+{
+  num:"Paso 01", ico:"sesion",
+  titulo:"Tu guión de llamada",
+  sub:"La estructura de la llamada que cierra: siete bloques, del hola al sí. Para interiorizar y decir con tus palabras, no para recitar.",
+  chips:["40-60 min por llamada","Antes de tu primera llamada","Lo haces tú"],
+  queEs:H(`<p>El guión completo de tu llamada de venta, en <strong>siete bloques que van en orden</strong>: apertura y marco, diagnóstico, tu método, transición al compromiso, la inversión y el silencio, objeciones y cierre.</p>
+    <p><strong>No es para leerlo palabra por palabra.</strong> Es para interiorizar la estructura y decirla con tus palabras. Léelo en voz alta dos o tres veces antes de tu primera llamada; donde tropieces, cámbialo. Si suena a folleto, no sirve.</p>
+    <p style="margin-bottom:0">Una cosa más, y es la regla que sostiene todo el kit: <strong>el precio solo existe aquí, dentro de la llamada, dicho en voz alta.</strong> Nunca se escribe antes: ni en un DM, ni en la landing, ni en un recordatorio.</p>`),
+  porQue:H(`<p>El marco del principio te cambia el papel: dejas de ser el vendedor que necesita la venta y pasas a ser el experto que selecciona. Decirle al lead que puede recibir un "no" baja su guardia y sube tu autoridad.</p>
+    <p>El diagnóstico es donde se gana o se pierde la venta: <strong>hablas el 20%, escuchas el 80%</strong>. Cuando al final le resumes su situación con sus propias palabras y te dice "sí, es exactamente eso", la venta está a medias hecha. Solo has repetido lo que él dijo. Por eso funciona.</p>
+    <p>Y después del precio, el primero que habla pierde. El 80% de los dueños pierde la venta ahí: por hablar de más.</p>`),
+  plantilla:H(`<p style="margin:0 0 8px"><strong>Antes de descolgar (5 min):</strong> tu Banco de Evidencia delante (paso 2), la nota del formulario leída (paso 3) y este recordatorio: <em>el objetivo no es cobrar, es averiguar si esta persona es cliente para ti.</em></p>
+    <div class="campo"><b>Bloque 1 · Apertura y marco (3-5 min)</b>Rompe el hielo 30 segundos y pon el marco: "Te cuento cómo vamos a hacer esto. No es una llamada para venderte nada a lo loco. Es una sesión para ver tu situación y ver si esto que hago es para ti o no lo es. Trabajo con poca gente. Te voy a hacer preguntas, algunas directas, y al final te voy a decir con honestidad una de dos cosas: o creo que puedo ayudarte y te explico qué significaría trabajar juntos, o creo que no soy la persona para ti y te lo digo a la cara. ¿Te parece bien que funcione así?" <strong>Espera el sí.</strong> Es tu primer acuerdo.</div>
+    <div class="campo"><b>Bloque 2 · Diagnóstico (20-25 min · aquí se decide)</b>Cinco preguntas madre; sobre cada respuesta, tira del hilo ("¿y eso qué te supone?" · "cuéntame más" · "¿desde cuándo?"):<br>1 · <span class="hueco">PUNTO A</span> "Cuéntame dónde estás ahora con eso. Sin adornos, como a un amigo."<br>2 · <span class="hueco">PUNTO B</span> "Si esto se resolviera del todo, ¿cómo sería tu día a día? Ponme el escenario."<br>3 · <span class="hueco">LA BRECHA</span> "¿Qué es lo que más te frena? ¿Qué es lo que más te duele de estar donde estás?" — y callas. Apunta su respuesta literal: son las palabras que usarás luego.<br>4 · <span class="hueco">INTENTOS</span> "¿Qué has probado ya? ¿Qué pasó? ¿Por qué crees que no funcionó?"<br>5 · <span class="hueco">COSTE DE NO ACTUAR</span> "Y si dentro de un año sigues exactamente igual... ¿qué? ¿Qué te supone eso?" — despacio, y silencio.<br><br><strong>Cierre del bloque, con SUS palabras:</strong> "Déjame ver si te he entendido: estás en <span class="hueco">A</span>, quieres llegar a <span class="hueco">B</span>, te frena <span class="hueco">DOLOR</span>, probaste <span class="hueco">INTENTO</span> y te juegas <span class="hueco">CONSECUENCIA</span>. ¿Es así o me he dejado algo?"</div>
+    <div class="campo"><b>Bloque 3 · Tu método (8-10 min)</b>Puente: "Lo que me cuentas es exactamente el tipo de situación con la que trabajo. Y no es casualidad que lo que probaste no funcionara: <span class="hueco">POR QUÉ FALLAN LOS INTENTOS TÍPICOS</span>." Presenta <span class="hueco">TU MÉTODO</span> en dos o tres frases, sin marketing, y ancla con uno o dos casos en modo historia, no en modo folleto. <strong>Promete el sistema, no el resultado:</strong> "No te prometo <span class="hueco">RESULTADO</span> en <span class="hueco">PLAZO</span>, porque eso depende también de ti. Lo que sí te prometo: <span class="hueco">ENTREGABLES</span> y acceso directo a mí." Y tu ventaja de dueño: "Yo no soy un vendedor que cobra y desaparece. Voy a estar contigo cada semana durante <span class="hueco">DURACIÓN</span>. Si esto sale mal, es mi problema, no solo el tuyo."</div>
+    <div class="campo"><b>Bloque 4 · Transición (2-3 min)</b>"Antes de contarte cómo sería trabajar juntos, dime con sinceridad: ¿esto que te he descrito es lo que estás buscando?" Si duda, vuelve al diagnóstico. No pases a números sin un sí emocional.</div>
+    <div class="campo"><b>Bloque 5 · La inversión y el silencio (3-5 min)</b>Primero el stack, sin adjetivos vacíos: "Trabajar conmigo incluye <span class="hueco">ENTREGABLE 1</span>, <span class="hueco">2</span>, <span class="hueco">3</span>, durante <span class="hueco">DURACIÓN</span>." Y la cifra, una vez, con voz plana: "La inversión para entrar es de <span class="hueco">PRECIO</span>." <strong>Y ahora callas.</strong> Ni "sé que es una inversión", ni "se puede fraccionar". Nada. Cuenta hasta diez por dentro. El fraccionado se ofrece <em>después</em> de que reaccione, nunca antes.</div>
+    <div class="campo"><b>Bloque 6 · Objeciones</b>No las improvises: están las 12 en el Manual de Objeciones (caja de herramientas), con la estructura aislar → validar → reencuadrar → avanzar. Tenlo abierto en otra pestaña las primeras llamadas.</div>
+    <div class="campo"><b>Bloque 7 · Cierre (3-5 min)</b>Pide la decisión, directo y tranquilo: "Yo lo tengo claro: creo que esto es para ti. ¿Lo ves tú igual? ¿Entramos?" Tres salidas: <strong>sí hoy</strong> → enlace de pago ahí mismo, en la llamada, y lo acompañas hasta que confirme · <strong>necesita algo concreto</strong> → segunda llamada con fecha y hora fijadas AHORA, nunca "ya te escribo" · <strong>no encaja</strong> → se lo dices a la cara, con cariño, y lo anotas para retomarlo. Un "no" honesto construye reputación y a veces vuelve como "sí".</div>`),
+  ejemplo:H(`<p>Valeria (coach, programa "Energía Propia", 1.980 USD) cierra así el diagnóstico con Marta:</p>
+    <p><em>"Déjame ver si te he entendido. Terminas cada día vacía, con el negocio funcionando pero tú en reserva. Quieres llegar a final de mes con energía para tu familia, no solo para tus clientas. Lo que más te frena es que cada intento de cuidarte se cae a la segunda semana. Probaste dos nutricionistas y una app, y se cayeron porque los planes no cabían en tu agenda real. Y si en un año sigues igual, me has dicho que temes acabar odiando el negocio que tú misma montaste. ¿Es así o me he dejado algo?"</em></p>
+    <p><em>"Es exactamente eso."</em></p>
+    <p>Presenta su método en dos frases: <em>"Construyo contigo un sistema de comida y movimiento diseñado alrededor de tu agenda real, lo documento por escrito y te acompaño hasta que se sostiene solo. No te enseño a comer sano: eso ya lo intentaste cuatro veces."</em> Y el precio: <em>"La inversión para entrar en Energía Propia es de mil novecientos ochenta dólares."</em> Silencio. Marta lo rompe primero: "¿Y cómo serían los pagos?" — y eso ya no es una objeción, es logística.</p>`),
+  errores:[
+    {t:"Hablar más del 20%", d:"Si al colgar sabes poco más del lead que al descolgar, has dado una charla, no has hecho un diagnóstico. Pregunta y calla."},
+    {t:"Rellenar el silencio después del precio", d:"Di la cifra y aguanta. Añadir 'pero se puede fraccionar' antes de que reaccione es justificarte, y baja el frame."},
+    {t:"Responder la primera objeción sin aislar", d:"'Aparte de esto, ¿hay algo más que te frene?' Si hay tres pegas debajo, resolver la primera no sirve de nada."},
+    {t:"Prometer el resultado en vez del sistema", d:"El resultado depende también del cliente. Promete lo que controlas: los entregables y tu presencia. Te protege y es más creíble."},
+    {t:"Terminar sin siguiente paso concreto", d:"'Ya me dices' es un no en diferido. Segunda llamada con fecha y hora en el calendario, o enlace de pago en la llamada."}
+  ],
+  ghl:"El enlace de pago se manda dentro de la llamada, desde tu cuenta. Y al colgar, apunta en tu GHL: qué frase le compró, qué objeción salió y si encajaba o no. Eso es lo que te permitirá, en unas semanas, saber a quién buscar, qué decir — y solo entonces, delegar.",
+  ayuda:"Estrategia en el chat de soporte o en una sesión de estrategia. Y tus primeras llamadas, si quieres, las repasamos grabadas."
+},
+{
+  num:"Paso 02", ico:"medalla",
+  titulo:"Tu banco de evidencia",
+  sub:"Tres casos reales, tu método en dos frases y a quién NO le sirve. La hoja que te da autoridad sin inventar nada.",
+  chips:["30 minutos","Antes de la primera llamada","Se rellena una vez"],
+  queEs:H(`<p>Una hoja que tienes delante en cada llamada, con tres cosas: <strong>tus tres mejores casos reales</strong> con un resultado concreto cada uno, <strong>tu método resumido en dos frases</strong> sin marketing, y <strong>tu condición de encaje</strong>: a quién le funciona esto y, sobre todo, a quién no.</p>
+    <p style="margin-bottom:0">Si solo tienes un caso, cuentas uno. La autoridad no viene del volumen, viene de la honestidad.</p>`),
+  porQue:H(`<p>En la llamada, la evidencia es lo que sostiene los bloques 3 y las objeciones "no te conozco" y "¿qué garantías tengo?". Sin esta hoja, en el momento de la verdad improvisas — y quien improvisa, o se queda corto o exagera.</p>
+    <p><strong>Regla dura: cero cifras inventadas.</strong> Todo resultado que menciones es tuyo, real y verificable. Si no lo tienes, no lo digas. Un caso modesto y cierto cierra más que uno espectacular y dudoso.</p>
+    <p>Y el "a quién NO" no es un adorno: es lo que te permite descualificar con criterio y decir un "no" honesto que te construye reputación.</p>`),
+  plantilla:H(`<div class="campo"><b>Caso 1</b>Quién era: <span class="hueco">NOMBRE / PERFIL</span> · Su situación al llegar: <span class="hueco">DOLOR CONCRETO</span> · Qué hicisteis: <span class="hueco">2-3 LÍNEAS</span> · Resultado medible: <span class="hueco">DATO REAL VERIFICABLE</span> · En cuánto tiempo: <span class="hueco">PLAZO</span></div>
+    <div class="campo"><b>Caso 2</b>Mismos campos. Elige un caso <em>parecido al perfil que más te escribe</em>, para poder decir "otro parecido al tuyo fue…"</div>
+    <div class="campo"><b>Caso 3</b>Mismos campos. Si aún no lo tienes, deja el hueco vacío. No lo rellenes con un caso a medias.</div>
+    <div class="campo"><b>Tu método en dos frases</b>"Lo que hago se llama <span class="hueco">NOMBRE DE TU MÉTODO</span>. En resumen: <span class="hueco">QUÉ HACES Y CÓMO, EN DOS FRASES, SIN ADJETIVOS</span>."</div>
+    <div class="campo"><b>Condición de encaje</b>Esto le funciona a gente que <span class="hueco">CONDICIÓN REAL: SITUACIÓN + DISPOSICIÓN</span>. NO le funciona a quien <span class="hueco">PERFIL QUE DESCARTAS Y POR QUÉ</span>.</div>`),
+  ejemplo:H(`<p>El banco de Valeria ("Energía Propia"):</p>
+    <ul>
+      <li><strong>Caso 1 · Marta</strong> — dueña de negocio, terminaba cada día en reserva. Sistema de comida y movimiento alrededor de su agenda real. De 0 días de energía estable a 5 por semana, medido en su registro diario. 12 semanas.</li>
+      <li><strong>Caso 2 · Carolina</strong> — consultora, tres intentos fallidos con planes genéricos. Documentamos su sistema y lo sostuvo sola. Dejó de abandonar a la segunda semana: 90 días seguidos de sistema en marcha.</li>
+      <li><strong>Caso 3</strong> — (vacío todavía; Valeria cuenta dos casos, y lo dice tal cual: "te pongo los dos que tengo, con sus números reales").</li>
+      <li><strong>Método:</strong> "Construyo contigo un sistema de comida y movimiento diseñado alrededor de tu agenda real, lo documento y te acompaño hasta que se sostiene solo."</li>
+      <li><strong>Encaje:</strong> funciona con dueñas de negocio dispuestas a registrar su semana real. NO funciona con quien busca un plan cerrado para obedecerlo sin tocarlo.</li>
+    </ul>`),
+  errores:[
+    {t:"Inventar o redondear hacia arriba", d:"Un '87%' que no puedes enseñar te revienta la confianza en la peor pregunta posible. Datos tuyos, reales, y punto."},
+    {t:"Casos sin resultado concreto", d:"'Quedó encantada' no es un caso. 'Pasó de A a B en X semanas' sí lo es. Si no hay dato, no hay caso."},
+    {t:"No tener el 'a quién NO'", d:"Sin condición de encaje aceptas a cualquiera, y los que no encajan son las devoluciones y los dolores de cabeza de dentro de dos meses."},
+    {t:"Contarlos en modo folleto", d:"En la llamada, el caso se cuenta como historia: estaba como tú, hicimos esto, pasó esto. Treinta segundos, no tres minutos."}
+  ],
+  ghl:"Guarda la hoja donde la veas durante la llamada (una nota fijada, un documento abierto). Estos mismos casos alimentan tu contenido: cada caso del banco es un reel y un carrusel del Motor de Contenido.",
+  ayuda:"Si dudas de qué caso elegir o cómo contarlo, estrategia en el chat de soporte."
+},
+{
+  num:"Paso 03", ico:"formulario",
+  titulo:"La nota de agenda",
+  sub:"Las respuestas del formulario, visibles junto a la cita. Para entrar a cada llamada con los deberes hechos.",
+  chips:["1 hora de montaje","Antes de la primera cita","Se monta una vez en GHL"],
+  queEs:H(`<p>Un circuito que montas una vez en tu GHL: cuando alguien agenda, rellena un formulario de 3-5 preguntas; sus respuestas se guardan en campos personalizados y un workflow las escribe <strong>como nota visible en su ficha</strong>. Antes de cada llamada, abres el contacto, lees la nota, y entras sabiendo su caso.</p>
+    <p style="margin-bottom:0">Es lo que te permite decir en la llamada "me he mirado tu caso" — y que sea verdad. La nota es interna: el lead solo ve el formulario al agendar; el resto ocurre por detrás.</p>`),
+  porQue:H(`<p>Estas respuestas son el Bloque 2 de tu guión medio hecho antes de descolgar: ya sabes su dolor, su objetivo, qué probó y cómo de decidido está. La llamada empieza en el minuto uno, no en el diez.</p>
+    <p>Y el formulario también filtra: quien no está dispuesto a contestar cuatro preguntas para verte, tampoco iba a estar dispuesto a trabajar en serio.</p>`),
+  plantilla:H(`<p style="margin:0 0 8px"><strong>Las preguntas del formulario</strong> (pocas y potentes, adaptadas a tu nicho):</p>
+    <ul>
+      <li>¿Qué es lo que más te está costando ahora mismo con <span class="hueco">TU TEMA</span>?</li>
+      <li>¿A dónde te gustaría llegar en <span class="hueco">PLAZO</span>?</li>
+      <li>¿Qué has probado ya para resolverlo?</li>
+      <li>Del 1 al 10, ¿cómo de decidido estás a resolver esto ahora?</li>
+      <li>(Opcional) Tu WhatsApp, si el calendario no lo pide ya.</li>
+    </ul>
+    <div class="campo"><b>Plantilla de la nota (la que compone el workflow)</b>=== CASO PARA LA SESIÓN ===<br>Dolor principal: <span class="hueco">RESPUESTA 1</span><br>A dónde quiere llegar: <span class="hueco">RESPUESTA 2</span><br>Qué ha probado: <span class="hueco">RESPUESTA 3</span><br>Nivel de decisión (1-10): <span class="hueco">RESPUESTA 4</span><br>===========================</div>
+    <p style="margin:14px 0 8px"><strong>Checklist de montaje</strong> (el plano; la ejecución es tuya, con tu formación de GHL):</p>
+    <ul style="margin-bottom:0">
+      <li>Formulario con las 3-5 preguntas creado.</li>
+      <li>Un campo personalizado por pregunta (texto largo las abiertas, número la del 1-10).</li>
+      <li>Formulario enganchado al calendario y mapeado a los campos.</li>
+      <li>Workflow: disparador "formulario enviado" (o "cita agendada") → acción "añadir nota" con la plantilla y los tokens de tus campos.</li>
+      <li>(Opcional) Notificación interna para ti: "Nueva cita cualificada — revisa la nota".</li>
+      <li>Agenda de prueba hecha: respuestas en los campos, nota bien montada, visible donde esperas.</li>
+      <li>Rutina fijada: leer la nota antes de cada llamada. 60 segundos que cambian la llamada.</li>
+    </ul>`),
+  ejemplo:H(`<p>La nota que ve Valeria al abrir la ficha de un lead, dos minutos antes de descolgar:</p>
+    <div class="mensaje"><div class="de">NOTA · CASO PARA LA SESIÓN</div>Dolor principal: "Termino los días agotada y lo pago con mi familia."<br>A dónde quiere llegar: "Energía estable sin depender de la fuerza de voluntad."<br>Qué ha probado: "Dos nutricionistas y una app. Lo dejo a la segunda semana."<br>Nivel de decisión: 9</div>
+    <p style="margin-bottom:0">Con eso, su primera frase tras el saludo es: <em>"He leído lo que me dejaste al agendar, y hay una cosa que me llamó la atención: dices que lo dejas a la segunda semana. Cuéntame qué pasa en esa segunda semana."</em> El lead nota que no es uno más en una lista.</p>`),
+  errores:[
+    {t:"Preguntar de más", d:"Ocho preguntas espantan. Tres a cinco bastan: dolor, objetivo, intentos, decisión. Lo demás sale en la llamada."},
+    {t:"No hacer la agenda de prueba", d:"Un token roto y la nota sale con huecos vacíos. Agenda tú mismo con datos ficticios y verifica el circuito completo antes de la primera cita real."},
+    {t:"Montarlo y no leerlo", d:"La nota no sirve en la ficha: sirve en tu cabeza antes de descolgar. Fija la rutina: contacto abierto, nota leída, luego la llamada."},
+    {t:"Confundirla con algo que ve el lead", d:"La nota es tuya, interna. El lead solo ve el formulario. No mandes nunca la nota ni la menciones literal."}
+  ],
+  ghl:"Las piezas: Form + Custom Fields + Calendar + Workflow (Form Submitted → Add Note). Lo montas tú en tu subcuenta siguiendo tu formación de GHL; aquí tienes el plano conceptual completo.",
+  ayuda:"Sistemas GHL con María José los miércoles. Lleva el checklist de montaje y se repasa contigo en la sesión."
+},
+{
+  num:"Paso 04", ico:"chat",
+  titulo:"Tu rutina de DMs",
+  sub:"30-45 minutos al día, a la misma hora: responder, reactivar, abrir. De ahí sale la agenda. Sin vender en el chat.",
+  chips:["30-45 min al día","Todos los días","Constancia > intensidad"],
+  queEs:H(`<p>Un bloque diario fijo con tres tareas, en este orden: <strong>1)</strong> responder el 100% del inbound (quien te escribió, comentó o reaccionó — los más calientes, primero y todos), <strong>2)</strong> reactivar conversaciones que quedaron en el aire, <strong>3)</strong> abrir conversaciones nuevas con gente que encaja con tu avatar — pocas y buenas, con un detalle real de la persona.</p>
+    <p style="margin-bottom:0"><strong>La regla de oro: en el DM no se vende.</strong> Ni pitch, ni precio, ni link de compra a la primera. El DM abre conversación y, cuando hay encaje, invita a la sesión. La venta se cierra en la llamada (paso 1).</p>`),
+  porQue:H(`<p>Las primeras ventas no llegan solas: llegan de hablar con gente todos los días. Es mejor un número pequeño constante que cien conversaciones un lunes y cero el resto de la semana.</p>
+    <p>La gente huele el "hola, te vendo algo" a un kilómetro y cierra la puerta. Por eso la apertura conecta en vez de vender: una sola pregunta fácil, un detalle real, cero enlaces. Y por eso el precio jamás viaja por escrito: escribirlo convierte la decisión en "¿me lo puedo permitir?" antes de que exista la conversación.</p>`),
+  plantilla:H(`<p style="margin:0 0 8px"><strong>Aperturas según el origen</strong> (una pregunta, cero pitch, termina preguntando):</p>
+    <div class="mensaje"><div class="de">A · COMENTÓ TU CONTENIDO</div>"¡Ey! Vi que te quedaste con lo de <span class="hueco">TEMA DEL POST</span>. ¿Es algo que estés viviendo ahora con <span class="hueco">TU TEMA</span>, o más por curiosidad?"</div>
+    <div class="mensaje"><div class="de">B · RESPONDIÓ A UNA HISTORIA</div>"Gracias por responder 🙌. ¿Cómo lo llevas tú con <span class="hueco">TEMA</span>?"</div>
+    <div class="mensaje"><div class="de">C · SALIENTE EN FRÍO (con contexto real, nunca copiar-pegar)</div>"Hola <span class="hueco">NOMBRE</span>, te vi comentando en <span class="hueco">REFERENTE</span> sobre <span class="hueco">TEMA</span> y me sentí identificado. ¿Estás metido en esto o empezando?"</div>
+    <div class="mensaje"><div class="de">D · REFERIDO</div>"Hola <span class="hueco">NOMBRE</span>, me pasó tu contacto <span class="hueco">QUIEN REFIERE</span>, dice que andas dándole vueltas a <span class="hueco">TEMA</span>. ¿Te viene bien que te escriba por aquí?"</div>
+    <p style="margin:14px 0 8px"><strong>De "hola" a detectar encaje</strong> — dos o tres preguntas naturales, sin interrogar:</p>
+    <ul><li>"¿Y qué es lo que más te está costando ahora con eso?"</li><li>"¿Desde cuándo le das vueltas?"</li><li>"¿Has probado algo para resolverlo?"</li></ul>
+    <div class="mensaje"><div class="de">LA INVITACIÓN (solo cuando hay dolor real + encaje)</div>"Oye, por lo que me cuentas creo que te puedo ayudar de verdad con esto. Lo que hago con gente en tu situación no se explica bien por chat. ¿Te parece si nos vemos 30-40 min en una <span class="hueco">NOMBRE DE TU SESIÓN</span>? Miramos tu caso a fondo y, si veo que puedo ayudarte, te cuento cómo; y si no, te lo digo con sinceridad. ¿Te encaja?" → y el enlace de tu calendario.</div>
+    <p style="margin:12px 0 0"><strong>Prohibido en la invitación:</strong> "te doy un plan", "una hoja de ruta", "gratis", el precio, y contar cómo es tu programa por dentro. Todo eso se ve dentro de la sesión.</p>`),
+  ejemplo:H(`<p>Conversación real de manual (Valeria, con alguien que comentó su reel del "modo reserva"):</p>
+    <div class="mensaje"><div class="de">VALERIA</div>"¡Ey! Vi tu comentario en lo del modo reserva. ¿Es algo que estés viviendo ahora o más por curiosidad?"</div>
+    <div class="mensaje"><div class="de">LEAD</div>"No, no… es mi semana entera 😅"</div>
+    <div class="mensaje"><div class="de">VALERIA</div>"Uf, te entiendo. ¿Qué es lo que más te está costando? ¿Llegar con energía al final del día, o más el tema de sostener hábitos?"</div>
+    <div class="mensaje"><div class="de">LEAD</div>"Sostenerlos. Empiezo bien y a la segunda semana lo dejo."</div>
+    <div class="mensaje"><div class="de">VALERIA</div>"Eso que cuentas tiene arreglo, pero no se ve bien por chat. ¿Te parece si nos vemos 30-40 min en una sesión de valoración? Miro tu caso y, si veo que puedo ayudarte, te cuento cómo; y si no, te lo digo con sinceridad. ¿Te encaja?"</div>
+    <p style="margin-bottom:0">Fíjate en lo que NO hay: ni precio, ni programa, ni "gratis", ni un enlace antes de tiempo.</p>`),
+  errores:[
+    {t:"Vender en el chat", d:"El pitch o el precio por DM matan la conversación. El DM abre; la sesión cierra. Siempre."},
+    {t:"Copiar y pegar en masa", d:"Cien mensajes iguales son spam con tu cara. Pocas conversaciones al día, cada una con un detalle real de la persona."},
+    {t:"Prometer un plan gratis para que agende", d:"La sesión es un filtro, no una entrega. 'Te digo cómo hacerlo paso a paso' atrae curiosos y revienta el frame de la llamada."},
+    {t:"Dejar conversaciones con encaje en el aire", d:"Si la pelota queda en su tejado y no vuelve, la recoges tú (los mensajes exactos están en Follow-ups, en la caja)."},
+    {t:"Intensidad de lunes", d:"Cien el lunes y cero el resto pierde contra cinco cada día. Misma franja, todos los días, protegida en tu calendario."}
+  ],
+  ghl:"Cero conversaciones con encaje sin registrar: nombre, origen, dolor detectado y en qué punto quedó. Al final del bloque apunta tres números: conversaciones nuevas, movidas a sesión, agendadas. Eso te dirá qué está funcionando.",
+  ayuda:"Estrategia en el chat de soporte. Y si un tipo de apertura no te responde nadie, tráela a una sesión y se afina."
+},
+{
+  num:"Paso 05", ico:"candado",
+  titulo:"El escudo anti no-show",
+  sub:"Vídeo de gracias + recordatorios 24h / 4h / 15min. Para que quien agenda, llegue — y llegue caliente.",
+  chips:["1 hora de montaje","En cuanto alguien agende","Se automatiza en GHL"],
+  queEs:H(`<p>Dos piezas que trabajan juntas. <strong>Uno:</strong> un vídeo de 30-45 segundos, grabado con el móvil una sola vez, que el lead recibe justo después de agendar. Deja de ser "una llamada con un desconocido de internet" y pasa a ser "una cita con esa persona que me habló en vídeo". <strong>Dos:</strong> tres recordatorios automáticos — 24 horas, 4 horas y 15 minutos antes — en WhatsApp y/o email.</p>
+    <p style="margin-bottom:0">Los dos mantienen el marco de la sesión (ver su caso, ver si encajáis) y ninguno menciona precio, programa ni la palabra "gratis".</p>`),
+  porQue:H(`<p>Una cita agendada no es una cita asegurada: entre la reserva y la llamada, la vida se le echa encima. El combo cara en vídeo + recordatorios cálidos es lo que de verdad tumba el no-show.</p>
+    <p>Y el recordatorio de 24h pide una reconfirmación real (un 👍). Quien no confirma es tu señal para un toque personal a mano: un no-show avisado con tiempo es un hueco que recuperas.</p>`),
+  plantilla:H(`<p style="margin:0 0 8px"><strong>El vídeo (30-45s, móvil en vertical, luz de frente, mirando a cámara).</strong> Cinco piezas — apréndete el orden, no el texto:</p>
+    <ul>
+      <li><strong>1 · Saludo + gracias</strong> (0-8s): "Gracias por reservar tu hueco. Que hayas dado este paso ya me dice que vas en serio."</li>
+      <li><strong>2 · Qué es la sesión</strong> (8-20s): "No es para venderte nada a lo loco. Es para ver dónde estás, a dónde quieres llegar, y decidir juntos si esto es para ti."</li>
+      <li><strong>3 · Cómo llegar preparado</strong> (20-33s): "Sitio tranquilo, 40 minutos para ti, y ven pensando qué te gustaría que cambiara de verdad."</li>
+      <li><strong>4 · Compromiso mutuo</strong> (33-40s): "Yo llego con tu caso mirado. Te he reservado ese hueco solo a ti: si no vas a poder, avísame y lo movemos."</li>
+      <li><strong>5 · Cierre cálido</strong> (40-45s): "Tengo ganas de conocerte. ¡Un abrazo!"</li>
+    </ul>
+    <p style="margin:14px 0 8px"><strong>Los tres recordatorios (versión WhatsApp; el email, algo más largo y con enlace de baja):</strong></p>
+    <div class="mensaje"><div class="de">−24 HORAS · reconfirmar</div>"¡Hola <span class="hueco">NOMBRE</span>! Soy <span class="hueco">TU NOMBRE</span>. Te escribo para confirmar nuestra <span class="hueco">SESIÓN</span> de mañana <span class="hueco">FECHA</span> a las <span class="hueco">HORA</span>. Tengo el hueco reservado para ti y me he mirado tu caso 🙌. ¿Me confirmas que sigues pudiendo? Con un 👍 me vale."</div>
+    <div class="mensaje"><div class="de">−4 HORAS · modo "hoy es el día"</div>"<span class="hueco">NOMBRE</span>, en unas horas nos vemos (<span class="hueco">HORA</span>) 🙌. Un consejo: búscate 40 min tranquilo, sin interrupciones. Ven pensando en qué te gustaría que cambiara de verdad. ¡Ahora hablamos!"</div>
+    <div class="mensaje"><div class="de">−15 MINUTOS · que abra el enlace</div>"¡<span class="hueco">NOMBRE</span>, empezamos en 15 min! Este es el enlace: <span class="hueco">LINK DE LA REUNIÓN</span>. Te espero puntual 🙌."</div>`),
+  ejemplo:H(`<p>La versión ultra-corta del vídeo de Valeria (27 segundos, grabado en su cocina, a la primera):</p>
+    <p><em>"¡Hola! Soy Valeria. Gracias por reservar tu hueco — eso ya me dice que vas en serio. Te cuento rápido: esta sesión es para ver tu caso, dónde estás con tu energía y a dónde quieres llegar, y decidir juntos si esto es para ti. Ven a un sitio tranquilo, con 40 minutos, y con ganas de contarme tu situación de verdad. Yo llego con tu caso mirado. Solo te pido que estés. Nos vemos. ¡Un abrazo!"</em></p>
+    <p style="margin-bottom:0">Desde que lo envía junto a la confirmación, sus no-shows son la excepción, no la norma.</p>`),
+  errores:[
+    {t:"Un vídeo largo o leído", d:"Más de 45 segundos y se pierde el efecto. Y si se nota leído, no hay cercanía. Apréndete el orden de las 5 piezas y dilo con tus palabras."},
+    {t:"Meter el precio o el programa en un recordatorio", d:"Rompería el frame antes de la llamada. Los recordatorios reconfirman y preparan; no venden."},
+    {t:"Solo email cuando tu avatar vive en WhatsApp", d:"Elige el canal según tu gente. Si dudas: WhatsApp convierte más; el email de 24h da seriedad. Puedes usar los dos."},
+    {t:"Emails sin enlace de baja", d:"El enlace de baja es obligatorio en todos los emails (lo genera tu cuenta). Sin él incumples RGPD y hundes tu entregabilidad."},
+    {t:"Ignorar al que no confirma el 👍", d:"Esa es justo la señal. Toque personal a mano, y si no puede, mueves la cita y recuperas el hueco."}
+  ],
+  ghl:"Disparador: cita agendada. Tres envíos programados hacia atrás desde la hora de la cita (−24h, −4h, −15min) con tokens de fecha y hora del calendario. El vídeo va en el primer mensaje de confirmación, antes de los recordatorios. Y activa la palabra de baja para SMS/WhatsApp en tu location.",
+  ayuda:"Sistemas GHL con María José los miércoles para el workflow. El vídeo lo grabas hoy: móvil, ventana de frente, tres intentos y te quedas con el segundo."
+}
+];
+
+const CAJA_H = [
+{
+  ico:"escudo", et:"Cuando te pongan una pega",
+  titulo:"Manual de objeciones",
+  resumen:"Las 12 objeciones de siempre, con la estructura aislar → validar → reencuadrar → avanzar. Y huecos para las de tu nicho.",
+  cuerpo:H(`<p>Las mismas objeciones aparecen una y otra vez. Cuando las tienes mapeadas dejan de darte miedo: sabes que van a llegar y sabes qué contestar. <strong>Ten este manual abierto en tus primeras llamadas.</strong> No pasa nada por mirarlo.</p>
+  <div class="bloque b-neutro"><div class="bloque-cab">El marco · aplica a las 12</div><div class="bloque-cont">
+    <p><strong>1 · Aislar.</strong> "Buena pregunta. Aparte de esto, ¿hay algo más que te frene, o si resolvemos esto entrarías?" Si hay más cosas debajo, sácalas todas antes de responder ninguna: resolver la objeción de fachada no sirve.</p>
+    <p><strong>2 · Validar.</strong> Nunca discutas de frente. Primero dale la razón en algo: "Te entiendo perfectamente." / "Tiene todo el sentido que lo pienses."</p>
+    <p><strong>3 · Reencuadrar.</strong> Cambia el ángulo: que vea lo mismo desde otro sitio.</p>
+    <p><strong>4 · Avanzar.</strong> Termina siempre con una pregunta que devuelva la decisión. Nunca cierres una objeción con un punto: ciérrala con "?".</p>
+    <p style="margin-bottom:0"><strong>Regla de oro:</strong> la objeción casi nunca es lo que dice. "Es caro" suele ser "no veo el valor" o "no me fío". Descubre cuál de las dos es antes de responder.</p>
+  </div></div>
+  <details class="desplegable"><summary>1 · "Es caro" / "No me lo esperaba tan alto"</summary><div class="dcont"><p><strong>Qué hay debajo:</strong> o no ve el valor, o no se fía del resultado.</p><p><strong>Aísla la raíz:</strong> "¿Es caro comparado con qué exactamente? ¿O es más bien que todavía no ves claro que vaya a funcionar en tu caso?"</p><p><strong>Reencuadres:</strong> si compara precios — "Comparado con lo barato, sí, cuesta más. Pero eso ya lo probaste, y por eso estamos hablando: lo barato te ha salido caro." Si duda del resultado — vuelves a la evidencia. Y el coste de no actuar: "¿Cuánto te está costando NO resolver esto? Antes me dijiste que si seguías igual un año, te jugabas eso. También tiene precio; solo que no lo ves en una factura."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si el dinero no fuera el tema, ¿lo harías? Entonces el tema no es si vale la pena, es cómo hacerlo posible. Vamos a verlo."</p></div></details>
+  <details class="desplegable"><summary>2 · "Me lo tengo que pensar"</summary><div class="dcont"><p><strong>Qué hay debajo:</strong> casi nunca es tiempo. Es una objeción oculta que no ha dicho.</p><p><strong>Saca la verdad:</strong> "Déjame ayudarte a pensarlo aquí, que para eso estoy. Cuando alguien dice que lo tiene que pensar, normalmente es una de tres: el dinero, el tiempo, o que no termina de fiarse de que le funcione. ¿Cuál de las tres es? Sé sincero, que no pasa nada."</p><p style="margin-bottom:0"><strong>Nunca aceptes el "me lo pienso" a la primera.</strong> No por presionar: quien se lo piensa solo casi siempre se enfría y no vuelve. Le haces un favor sacándolo ahora. Si insiste: "¿Qué información concreta te falta para decidir? Si te la puedo dar ahora, mejor que darle vueltas solo el fin de semana."</p></div></details>
+  <details class="desplegable"><summary>3 · "Lo tengo que hablar con mi pareja / socio"</summary><div class="dcont"><p><strong>Primero:</strong> "¿Si por ti fuera, lo harías? ¿Sí? Eso me deja tranquilo: a ti te encaja. Entonces lo que necesitamos es que tenga la misma información que tú, no tu resumen de memoria."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "¿Y si hacemos una llamada corta los tres y le resuelvo las dudas directamente? ¿Cuándo os viene bien, hoy o mañana?" — Fecha y hora concretas AHORA. Un "ya te digo" es un no.</p></div></details>
+  <details class="desplegable"><summary>4 · "No tengo el dinero ahora mismo"</summary><div class="dcont"><p><strong>Distingue:</strong> "¿Es que no tienes forma de reunirlo de ninguna manera, o es un dinero que sí tienes pero te da respeto ponerlo en esto?"</p><p><strong>Si es prioridad:</strong> "Todos encontramos el dinero para lo que decidimos que es importante. La pregunta real es si esto lo es para ti ahora. Si lo es, vemos cómo. Si no, mejor no lo hagas."</p><p><strong>Facilidades (solo aquí, nunca antes):</strong> "Si el problema es tenerlo todo de golpe, tengo forma de fraccionarlo. ¿Te ayudaría?"</p><p style="margin-bottom:0"><strong>Regla:</strong> nunca bajes el precio para salvar esta objeción. Ofreces fraccionar, no rebajar.</p></div></details>
+  <details class="desplegable"><summary>5 · "Ya probé algo parecido y no funcionó"</summary><div class="dcont"><p><strong>Es un regalo:</strong> te dice qué NO volver a prometer. "Cuéntame qué probaste y qué pasó exactamente. […] ¿Ves? Eso falló por esa razón concreta, no porque tú no valgas. Lo que yo hago es distinto justo en ese punto: …"</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si te garantizo que no vas a repetir ese error concreto, ¿te quedarías más tranquilo para entrar?"</p></div></details>
+  <details class="desplegable"><summary>6 · "No tengo tiempo para esto ahora"</summary><div class="dcont"><p><strong>Reencuadra la paradoja:</strong> "Precisamente está diseñado para gente ocupada: son unas horas a la semana, no volver a estudiar una carrera. Y fíjate: no tienes tiempo justamente porque no has resuelto esto. Cuando lo resuelvas, recuperas tiempo, no lo pierdes."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si te enseño que con esa dedicación a la semana basta, ¿el tiempo dejaría de ser el problema?"</p></div></details>
+  <details class="desplegable"><summary>7 · "No te conozco / no sé si fiarme"</summary><div class="dcont"><p><strong>Valida de verdad:</strong> "Me parece de lo más lógico. Yo tampoco le daría dinero a alguien de quien no me fío. Que lo digas me da buena espina."</p><p><strong>Dale con qué fiarse:</strong> tus casos del Banco de Evidencia, y esto: "Yo no desaparezco después de cobrar. Voy a estar contigo cada semana, dando la cara. Eso me obliga a que te vaya bien."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "¿Qué necesitarías ver o saber para quedarte tranquilo del todo?"</p></div></details>
+  <details class="desplegable"><summary>8 · "¿Y si no me funciona? ¿Qué garantías tengo?"</summary><div class="dcont"><p><strong>Con garantía (14 días por defecto):</strong> "Si en 14 días ves que esto no es para ti, me lo dices y te devuelvo tu dinero. Riesgo cero para ti; el riesgo me lo quedo yo."</p><p><strong>Sin garantía:</strong> "No te vendo con garantía de devolución, y te explico por qué honestamente. Lo que sí te doy: mis casos reales y mi presencia semanal. Yo pongo la cara cada semana; ese es mi aval."</p><p style="margin-bottom:0"><strong>Y siempre:</strong> "Esto no funciona solo: funciona si haces tu parte. ¿Estás dispuesto a ponerla? Entonces no hay riesgo real, hay decisión."</p></div></details>
+  <details class="desplegable"><summary>9 · "Quiero mirar otras opciones antes"</summary><div class="dcont"><p><strong>Ayúdale a comparar bien:</strong> "Para que compares manzanas con manzanas, esto es en lo que soy diferente: … Y ojo: mientras comparas, sigues sin resolver lo tuyo, y eso también corre."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "¿Qué es exactamente lo que quieres comparar? A lo mejor te lo aclaro ahora y te ahorro la vuelta."</p></div></details>
+  <details class="desplegable"><summary>10 · "Ahora no es buen momento"</summary><div class="dcont"><p><strong>Casi siempre es miedo disfrazado de calendario.</strong> "El 'buen momento' no llega solo. La gente que resuelve esto no esperó al momento perfecto: decidió que el momento era ahora. ¿Qué tendría que cambiar para que fuera buen momento? Porque igual eso que esperas es justo lo que esto resuelve."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si no es ahora, ¿cuándo exactamente? Ponme una fecha." Si no la pone, es un no disfrazado — y se lo dices con cariño.</p></div></details>
+  <details class="desplegable"><summary>11 · "Mándame la información y me lo miro"</summary><div class="dcont"><p><strong>El PDF no cierra:</strong> "Te lo puedo mandar, pero te seré sincero: un documento no te resuelve lo que te resuelvo yo ahora en dos minutos. Lo que importa es si esto encaja con tu caso, y eso lo estamos viendo justo ahora. ¿Qué es lo que quieres mirar con calma?"</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si te resuelvo esa duda ahora mismo, ¿decidirías hoy, o aun así necesitas el documento?"</p></div></details>
+  <details class="desplegable"><summary>12 · "Lo consulto con la almohada / decido mañana"</summary><div class="dcont"><p><strong>Quiere salir de la tensión:</strong> "Solo una cosa antes de colgar, porque quiero serte útil: mañana, cuando lo pienses solo, van a volver todas las dudas y no vas a tener a nadie que te las responda. Y lo más probable es que la vida te coma y esto se quede en 'ya lo haré'. Que es justo lo que te ha traído hasta aquí."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "¿Hay alguna duda concreta que, si te la resuelvo ahora, decidirías hoy? ¿Cuál es? Vamos a por ella."</p></div></details>
+  <div class="bloque b-plantilla" style="margin-top:16px"><div class="bloque-cab">Huecos para tu nicho</div><div class="bloque-cont"><p>En tus primeras 10-20 llamadas vas a oír una o dos objeciones específicas de tu nicho que no están arriba. Apúntalas literal y prepárales respuesta con el mismo marco:</p><div class="campo"><b>Objeción de tu nicho 1</b>Qué hay debajo: <span class="hueco">___</span> · Validar: <span class="hueco">___</span> · Reencuadrar: <span class="hueco">___</span> · Avanzar: <span class="hueco">___</span></div><div class="campo"><b>Objeción de tu nicho 2</b>Qué hay debajo: <span class="hueco">___</span> · Validar: <span class="hueco">___</span> · Reencuadrar: <span class="hueco">___</span> · Avanzar: <span class="hueco">___</span></div></div></div>
+  <div class="bloque b-errores"><div class="bloque-cab">Lo que nunca haces con una objeción</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Discutir de frente</b><span>Primero validas, siempre. Sin excepción.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Disculparte por tu precio</b><span>Ni con palabras ni con el tono.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Bajar el precio para salvar la venta</b><span>Ofreces fraccionar; no rebajas.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Aceptar el primer "me lo pienso"</b><span>Sacas la objeción real, con cariño.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Cerrar con un punto</b><span>Toda respuesta termina con una pregunta.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Mandar "toda la info" para que decida solo</b><span>Lo que importa se resuelve en la llamada.</span></div></div>
+  </div></div>`)
+},
+{
+  ico:"filtro", et:"Del comentario a la cita",
+  titulo:"Manual de setting",
+  resumen:"Las 7 partes que convierten una interacción en una cita agendada y cualificada. La cita es un filtro, no un premio.",
+  cuerpo:H(`<p><strong>El setting</strong> es convertir a alguien que interactúa contigo (un comentario, un DM, una respuesta a una historia) en una persona que agenda una sesión <strong>y llega cualificada</strong>. Bien hecho, llegas a la llamada con gente que encaja y quiere estar ahí. Mal hecho, te pasas el día en llamadas con curiosos.</p>
+  <p>Ojo: "setting" es palabra interna, para ti. El lead <strong>nunca</strong> ve esa palabra ni ninguna jerga de ventas. Para él es una conversación normal y una sesión para ver su caso.</p>
+  <div class="bloque b-neutro"><div class="bloque-cab">Parte 1 · La mentalidad del filtro</div><div class="bloque-cont"><p><strong>No mendigas citas, seleccionas.</strong> Tu tiempo en sesión es limitado; agendas con quien encaja y va en serio.</p><p><strong>La sesión no es un plan gratis.</strong> El valor que regalas está en tu contenido, antes. La sesión es para ver su situación y decidir, los dos, si tiene sentido trabajar juntos.</p><p style="margin-bottom:0"><strong>Un "no" temprano es una victoria.</strong> Descualificar a quien no encaja te ahorra una llamada perdida. Filtrar es ganar. La actitud, en una frase (para ti): "Miramos tu caso, y si encajas, te cuento cómo sería; si no, te lo digo a la cara."</p></div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Parte 2 · De dónde salen las conversaciones</div><div class="bloque-cont"><p>De más caliente a más fría: <strong>inbound directo</strong> (te escriben ellos: prioridad y respuesta rápida) · <strong>comentarios en tu contenido</strong> · <strong>respuestas a historias</strong> · <strong>interacción con tu contenido de venta suave</strong> (guardó, compartió, preguntó) · <strong>salientes cualificados</strong> (tú inicias, con gente que encaja con tu avatar).</p><p style="margin-bottom:0">Cada fuente pide una apertura distinta: no trates igual a quien te escribió que a quien comentó un reel hace tres días. Las aperturas exactas están en el paso 4.</p></div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Parte 3 · La apertura no invasiva</div><div class="bloque-cont"><p style="margin-bottom:0">El primer mensaje <strong>no vende</strong>: una sola pregunta fácil de contestar, un detalle real de la persona (que no parezca plantilla), cero enlaces, cero pitch, cero precio. Y termina preguntando, para que haya con qué seguir. Si responde, cualificas; si no, entra el seguimiento suave (manual de Follow-ups).</p></div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Parte 4 · Cualificación · el lead se gana la cita</div><div class="bloque-cont"><p>Antes de ofrecer la sesión, averiguas — con conversación, no interrogatorio — cuatro cosas:</p>
+    <ul>
+      <li><strong>¿Tiene el problema que resuelves?</strong> "¿Qué es lo que más te está costando ahora mismo con eso?"</li>
+      <li><strong>¿Quiere resolverlo de verdad?</strong> "¿Es algo que quieras cambiar ya, o de momento lo vas llevando?"</li>
+      <li><strong>¿Es tu perfil?</strong> "¿Estás ya metido en esto o empezando? ¿Cómo lo llevas hoy?"</li>
+      <li><strong>¿Puede decidir y actuar?</strong> "Si encontraras la forma correcta de resolverlo, ¿te pondrías en serio?"</li>
+    </ul>
+    <p><strong>Muy importante: al cualificar NO desvelas el paso 2.</strong> Ni que tienes un programa, ni cuánto dura, ni qué incluye, ni cuánto cuesta. El programa se ve dentro de la sesión.</p>
+    <p style="margin-bottom:0"><strong>Si no cualifica</strong>, descualificas con elegancia y sin cerrar la puerta: "Por lo que me cuentas, igual todavía no es tu momento para algo así. Sígueme por aquí, que subo cosas que te pueden servir, y cuando cambie eso, hablamos sin problema." Descualificar bien te protege la agenda y te da reputación de que no vendes a cualquiera.</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Parte 5 · La invitación (el frame del filtro)</div><div class="bloque-cont"><p>"Oye, por lo que me cuentas creo que te puedo ayudar de verdad con esto. Pero esto no se ve bien por chat. Lo que te propongo: nos vemos 30-40 minutos, miro tu caso a fondo, y si veo que encajas y que puedo ayudarte, te cuento cómo sería; y si no, te lo digo con sinceridad. Trabajo con poca gente, así que las miro una a una. ¿Te encaja verlo?"</p><p>Ese mensaje enmarca como filtro, da la posibilidad del no, mete escasez honesta y no promete un plan.</p><p style="margin-bottom:0"><strong>Prohibido en la invitación:</strong> "te doy un plan / una hoja de ruta / te digo cómo hacerlo paso a paso", la palabra "gratis", el precio, el nombre del programa o cómo funciona por dentro, y prometer que sale con la solución. La sesión es selección, no entrega.</p></div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Parte 6 · El agendado (que la cita cuente)</div><div class="bloque-cont"><p>Al calendario <strong>en el momento</strong>, sin dejar que se enfríe: "Aquí tienes mi calendario, elige el hueco que mejor te venga. En cuanto reserves te llega la confirmación con todo."</p><p>Y los tres requisitos, con naturalidad: <strong>que rellene el formulario</strong> ("al reservar te pido cuatro cosas rápidas, para llegar yo con los deberes hechos sobre tu caso") · <strong>que ponga bien su WhatsApp</strong> (para los recordatorios) · <strong>que reserve pensando que va a estar</strong>: "Reserva solo si de verdad vas a estar, que el hueco se lo quito a otra persona."</p><p style="margin-bottom:0">Ese último matiz es puro filtro: sube el compromiso y baja el no-show.</p></div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Parte 7 · Registro y traspaso a la sesión</div><div class="bloque-cont"><p>La cita agendada no es el final del setting: el final es dejarlo todo listo para que la sesión salga bien.</p><ul style="margin-bottom:0">
+    <li>Registra en tu GHL: etiqueta, origen, dolor detectado, en qué punto está.</li>
+    <li>Verifica que la nota del formulario está visible en la ficha (paso 3 del kit).</li>
+    <li>Activa el escudo anti no-show: recordatorios disparados y vídeo de gracias enviado (paso 5).</li>
+    <li>Antes de la llamada, léete la nota. Que note que no eres uno más.</li>
+  </ul></div></div>
+  <div class="bloque b-aviso"><div class="bloque-cab">La línea roja de las 7 partes</div><div class="bloque-cont"><p style="margin-bottom:0">Nunca, en ninguna parte del setting, el lead ve: <strong>el precio, cómo es tu programa por dentro, la palabra "gratis", jerga de ventas, ni la promesa de un plan.</strong> Todo eso vive dentro de la sesión. Antes, solo el primer paso.</p></div></div>`)
+},
+{
+  ico:"tendencia", et:"Cuando no agenda o no responde",
+  titulo:"Follow-ups",
+  resumen:"Track A (dijo sí y no agenda) y Track B (dejó de responder), con cadencia día 0 · 1 · 3 · 5 · despedida. Mensajes listos.",
+  cuerpo:H(`<p>La mayoría de las ventas están en el seguimiento. La gente no contesta por mil motivos que no tienen que ver contigo: se lió, se le pasó, estaba en el metro. Si abandonas al primer silencio, dejas ventas sobre la mesa; si persigues como un pesado, quemas el contacto. El equilibrio: <strong>tocar con cadencia, aportando, sin sonar necesitado.</strong></p>
+  <p><strong>Reglas de todos los mensajes:</strong> cero precio, cero pitch, cero "gratis", nunca el programa por escrito. Cada toque aporta algo o pregunta algo; ninguno repite "¿sigues ahí?" en seco. Y siempre por el canal donde empezó la conversación.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Track A · Dijo que sí a la sesión pero no agenda</div><div class="bloque-cont">
+    <div class="mensaje"><div class="de">DÍA 0 · un par de horas después</div>"¡Genial <span class="hueco">NOMBRE</span>! Te dejo el enlace para que cojas tu hueco antes de que se llenen los de esta semana: <span class="hueco">CALENDARIO</span>. Cuando reserves, avísame y te confirmo yo también 🙌."</div>
+    <div class="mensaje"><div class="de">DÍA 1</div>"Ey <span class="hueco">NOMBRE</span>, ¿pudiste echarle un ojo al calendario? Si te lío con las horas, dime qué días te van mejor y te busco hueco a mano."</div>
+    <div class="mensaje"><div class="de">DÍA 3</div>"<span class="hueco">NOMBRE</span>, no quiero agobiarte 😅. Solo que sé que si esto no lo pones en agenda, la vida se come el hueco y seguimos igual dentro de tres meses. ¿Lo cerramos? Aquí lo tienes: <span class="hueco">CALENDARIO</span>."</div>
+    <div class="mensaje"><div class="de">DÍA 5</div>"Oye <span class="hueco">NOMBRE</span>, aún tengo un par de huecos esta semana y luego se me complica la agenda un tiempo. Si sigues queriendo mirar tu caso, ahora es buen momento. ¿Te reservo yo uno y me confirmas?"</div>
+    <div class="mensaje"><div class="de">DESPEDIDA (breakup)</div>"<span class="hueco">NOMBRE</span>, te dejo tranquilo, que no quiero ser pesado. Entiendo que igual no es el momento, y está perfecto. Cuando lo sea, me escribes y lo vemos sin problema. Sigo por aquí subiendo cosas que te pueden servir. Un abrazo 🙌."</div>
+    <p style="margin-bottom:0">El breakup funciona porque cierra sin presión: al quitar la tensión, muchos contestan justo ahí.</p>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Track B · Dejó de responder a mitad de conversación</div><div class="bloque-cont">
+    <div class="mensaje"><div class="de">DÍA 0 · unas horas después</div>"<span class="hueco">NOMBRE</span>, se me quedó a medias la conversación 😅. Te preguntaba por lo de <span class="hueco">TEMA</span>, ¿cómo lo llevas al final?"</div>
+    <div class="mensaje"><div class="de">DÍA 1 · el mensaje clave: aporta sin pedir</div>"Por cierto <span class="hueco">NOMBRE</span>, se me ocurrió una cosa que igual te ayuda con lo que comentabas: <span class="hueco">UN TIP ÚTIL DE VERDAD</span>. Pruébalo y me cuentas."</div>
+    <div class="mensaje"><div class="de">DÍA 3</div>"Ey <span class="hueco">NOMBRE</span>, ¿te sirvió lo que te comenté? Tengo curiosidad por saber en qué punto andas."</div>
+    <div class="mensaje"><div class="de">DÍA 5 · humor y permiso para el no</div>"<span class="hueco">NOMBRE</span>, ¿te pillo liado o simplemente no es tu momento con esto? Dímelo con sinceridad, y así sé si seguir dándote la brasa o dejarte en paz jajaja."</div>
+    <div class="mensaje"><div class="de">DESPEDIDA (breakup)</div>"Nada <span class="hueco">NOMBRE</span>, lo dejo aquí para no incordiar. Si en algún momento quieres retomar lo de <span class="hueco">TEMA</span>, me escribes y encantado. Sigo por aquí. ¡Un abrazo!"</div>
+  </div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Si no respondió ni a la apertura</div><div class="bloque-cont"><p>Dos toques máximo y a otra cosa:</p>
+    <div class="mensaje"><div class="de">TOQUE 1 · a las 24-48h</div>"<span class="hueco">NOMBRE</span>, igual se te coló mi mensaje entre mil 😅. Te preguntaba por lo de <span class="hueco">TEMA</span>, ¿te resuena?"</div>
+    <div class="mensaje"><div class="de">TOQUE 2 · y último, 3-4 días después</div>"Te dejo en paz <span class="hueco">NOMBRE</span> 🙌. Si algún día te apetece hablar de <span class="hueco">TEMA</span>, aquí estoy. Un abrazo."</div>
+    <p style="margin-bottom:0">Si tras esto no contesta, lo anotas y lo sueltas. Perseguir a quien no levanta la mano quema tu energía y tu reputación.</p>
+  </div></div>
+  <div class="bloque b-errores"><div class="bloque-cab">Cadencia y sentido común</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Diez toques en una franja</b><span>Un toque por franja: día 0, +1, +2, +2. Deja respirar.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>"¿Sigues ahí?" en seco</b><span>Cada mensaje aporta o pregunta. Siempre.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No cortar a tiempo</b><span>El breakup no es un fracaso: es profesionalidad. Y suele traer respuestas.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Seguimiento sin registro</b><span>Etiqueta en tu GHL en qué track está cada uno y en qué toque va. El que hoy no contesta a veces es un "ahora no": en unos meses vuelve.</span></div></div>
+  </div></div>`)
+}
+];
+
+/* ==================================================================
+   MOTOR — no hace falta tocar nada de aquí abajo
+   ================================================================== */
+
+/* --- iconos de línea (sin emojis: regla de marca DD) --- */
+const TRAZOS = {
+  diana:     '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>',
+  ruta:      '<path d="M5 19c0-5 5-3 5-7s-4-3-4-6"/><circle cx="6" cy="5" r="2"/><circle cx="18" cy="16" r="2"/><path d="M10 19h6"/>',
+  regla:     '<rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7.5 8v3M12 8v4M16.5 8v3"/>',
+  formulario:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  acuerdo:   '<path d="M4 7h6l2 2 2-2h6"/><path d="M4 7v10h16V7"/><path d="M9 13l2 2 4-4"/>',
+  sobre:     '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/>',
+  llave:     '<circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2.5"/>',
+  filtro:    '<circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/>',
+  rayo:      '<path d="M13 2L5 13h6l-2 9 8-11h-6l2-9z"/>',
+  sesion:    '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z"/>',
+  documento: '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  tablero:   '<path d="M4 20V10M10 20V5M16 20v-8M22 20H2"/>',
+  chat:      '<path d="M20 12a7 7 0 01-7 7H8l-4 3v-4.5A7 7 0 0111 5h2a7 7 0 017 7z"/>',
+  candado:   '<rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/>',
+  salida:    '<path d="M14 4h4a2 2 0 012 2v12a2 2 0 01-2 2h-4"/><path d="M10 8l-4 4 4 4M6 12h9"/>',
+  tendencia: '<path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/>',
+  medalla:   '<circle cx="12" cy="14" r="5.5"/><path d="M9 3l1.5 5M15 3l-1.5 5"/>',
+  ajustes:   '<path d="M15.5 4a5 5 0 00-6 6.5L4 16v4h4l5.5-5.5A5 5 0 0020 8.5L17 11l-3-3z"/>',
+  personas:  '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6.5a3 3 0 010 6M17 20a6 6 0 00-1.5-4"/>',
+  lupa:      '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.2 15.2L21 21"/>',
+  bandera:   '<path d="M5 21V4"/><path d="M5 4.5h11l-2 3.5 2 3.5H5"/>',
+  caja:      '<path d="M3 8l9-4 9 4v8l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v8"/>',
+  precio:    '<path d="M20 13.5L13.5 20a2 2 0 01-2.8 0L4 13.3V4h9.3l6.7 6.7a2 2 0 010 2.8z"/><circle cx="8.5" cy="8.5" r="1.3"/>',
+  escudo:    '<path d="M12 3l7 3v5.5c0 4.2-2.9 7.6-7 8.5-4.1-.9-7-4.3-7-8.5V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/>',
+  subir:     '<path d="M12 20V5"/><path d="M6 11l6-6 6 6"/>',
+  dividir:   '<path d="M12 3v7M12 14v7"/><circle cx="12" cy="12" r="2"/><path d="M5 12h2M17 12h2"/>',
+  brujula:   '<circle cx="12" cy="12" r="8.5"/><path d="M15 9l-2 4-4 2 2-4z"/>'
+};
+function ico(n, cls){
+  const t = TRAZOS[n];
+  if(!t) return '';
+  return `<svg class="ico-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${t}</svg>`;
+}
+
+let actual = 0;
+let hechos = cargar();
+
+function cargar(){
+  try{
+    const g = localStorage.getItem('kitVentas');
+    return g ? JSON.parse(g) : [];
+  }catch(e){ return []; }
+}
+function guardar(){
+  try{ localStorage.setItem('kitVentas', JSON.stringify(hechos)); }catch(e){}
+}
+
+/* --- mapa del hero --- */
+function pintaPanel(){
+  const el = document.getElementById('panelDecisiones');
+  if(!el) return;
+  el.innerHTML = PASOS.map((p,i)=>{
+    const ok = hechos.includes(i);
+    return `<li><button class="dec-item${ok?' hecho':''}" onclick="irAPaso(${i})">
+      <span class="dec-num">${ok?'✓':i+1}</span><span>${p.titulo}</span>
+    </button></li>`;
+  }).join('');
+}
+
+/* --- pasos --- */
+function pintaPasos(){
+  document.getElementById('pasos').innerHTML = PASOS.map((p,i)=>`
+    <article class="paso ${i===0?'activo':''}" id="paso${i}">
+      <div class="paso-cabecera">
+        <div class="paso-num">${p.num} de ${String(PASOS.length).padStart(2,'0')}</div>
+        <h2>${ico(p.ico,"ico-titulo")}${p.titulo}</h2>
+        <p class="sub">${p.sub}</p>
+        <div class="paso-meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+      </div>
+      <div class="paso-cuerpo">
+        <div class="bloque b-neutro"><div class="bloque-cab">Qué es</div><div class="bloque-cont">${p.queEs}</div></div>
+        <div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">${p.porQue}</div></div>
+        <div class="bloque b-plantilla"><div class="bloque-cab">La plantilla · cópiala y rellénala<button class="b-copiar" onclick="copiar(this,'plantilla${i}')">Copiar</button></div><div class="bloque-cont" id="plantilla${i}">${p.plantilla}</div></div>
+        <div class="bloque b-ejemplo"><div class="bloque-cab">Un ejemplo ya relleno</div><div class="bloque-cont">${p.ejemplo}</div></div>
+        <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+          ${p.errores.map(e=>`<div class="error-item"><span class="error-x">✕</span><div><b>${e.t}</b><span>${e.d}</span></div></div>`).join('')}
+        </div></div>
+        <div class="bloque b-ayuda"><div class="bloque-cab">Dónde vive y quién te ayuda</div><div class="bloque-cont">
+          <p><strong>En GHL:</strong> ${p.ghl}</p>
+          <p style="margin-bottom:0"><strong>Si te trabas:</strong> ${p.ayuda}</p>
+        </div></div>
+        <div class="paso-pie">
+          <button class="btn-hecho" onclick="marcar(${i})" id="hecho${i}"><span>○</span> Marcar como hecho</button>
+          ${i>0?`<button class="btn-atras" onclick="irAPaso(${i-1})">← Anterior</button>`:''}
+          <button class="btn-nav" onclick="siguiente(${i})">${i<PASOS.length-1?'Siguiente paso →':'Ir a la caja de herramientas →'}</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
+/* --- copiar plantilla --- */
+function copiar(btn, id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const txt = el.innerText.trim();
+  const ok = ()=>{
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('ok');
+    setTimeout(()=>{ btn.textContent = 'Copiar'; btn.classList.remove('ok'); }, 1800);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(ok).catch(()=>respaldo(txt, ok));
+  } else { respaldo(txt, ok); }
+}
+function respaldo(txt, ok){
+  const a = document.createElement('textarea');
+  a.value = txt; a.style.position='fixed'; a.style.opacity='0';
+  document.body.appendChild(a); a.select();
+  try{ document.execCommand('copy'); ok(); }catch(e){}
+  document.body.removeChild(a);
+}
+
+/* --- índice lateral --- */
+function pintaIndice(){
+  document.getElementById('indiceLista').innerHTML = PASOS.map((p,i)=>`
+    <button class="ind-item" id="ind${i}" onclick="irAPaso(${i})">
+      <span class="ind-num">${i+1}</span>
+      <span class="ind-tx"><b>${p.titulo}</b><small>${p.chips[0]}</small></span>
+    </button>`).join('');
+  document.getElementById('indiceTools').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="ind-tool" onclick="abrirModal(${i})">${ico(c.ico)} ${c.titulo}</button>`).join('');
+}
+
+/* --- puntos de la barra --- */
+function pintaPuntos(){
+  document.getElementById('puntos').innerHTML = PASOS.map((p,i)=>
+    `<button class="punto" onclick="irAPaso(${i})" title="${p.titulo}" aria-label="Ir al paso ${i+1}: ${p.titulo}">${i+1}</button>`
+  ).join('');
+}
+
+function refresca(){
+  document.querySelectorAll('.punto').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+  });
+  PASOS.forEach((p,i)=>{
+    const b = document.getElementById('hecho'+i);
+    if(!b) return;
+    const ok = hechos.includes(i);
+    b.classList.toggle('marcado', ok);
+    b.innerHTML = ok ? '<span>✓</span> Hecho' : '<span>○</span> Marcar como hecho';
+  });
+  document.querySelectorAll('.ind-item').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+    b.querySelector('.ind-num').textContent = hechos.includes(i) ? '✓' : (i+1);
+  });
+  const pct = Math.round(hechos.length / PASOS.length * 100);
+  document.getElementById('progresoBarra').style.width = pct + '%';
+  document.getElementById('indiceContador').textContent =
+    hechos.length + ' de ' + PASOS.length + ' pasos' + (hechos.length ? ' · ' + pct + '%' : '');
+  document.getElementById('contador').textContent = hechos.length + '/' + PASOS.length + ' hechos';
+  document.getElementById('barraTitulo').textContent = PASOS[actual].titulo;
+  pintaPanel();
+}
+
+function irAPaso(i){
+  actual = i;
+  document.querySelectorAll('.paso').forEach((el,j)=>el.classList.toggle('activo', j===i));
+  refresca();
+  const y = document.getElementById('camino').offsetTop - 70;
+  window.scrollTo({top:y, behavior:'smooth'});
+}
+
+function siguiente(i){
+  if(i < PASOS.length-1){ irAPaso(i+1); }
+  else { document.getElementById('caja').scrollIntoView({behavior:'smooth'}); }
+}
+
+function marcar(i){
+  if(hechos.includes(i)) hechos = hechos.filter(x=>x!==i);
+  else hechos.push(i);
+  guardar();
+  refresca();
+}
+
+/* --- caja de herramientas --- */
+function pintaCaja(){
+  document.getElementById('rejilla').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="tarjeta" onclick="abrirModal(${i})">
+      <span class="ico">${ico(c.ico)}</span>
+      <span class="eyebrow">${c.et}</span>
+      <h3>${c.titulo}</h3>
+      <p>${c.resumen}</p>
+    </button>`).join('');
+}
+
+function abrirModal(i){
+  const c = CAJA_H[i];
+  document.getElementById('modalCont').innerHTML = `
+    <div class="paso-cabecera" style="border-radius:0">
+      <div class="paso-num">${c.et}</div>
+      <h2>${ico(c.ico,"ico-titulo")}${c.titulo}</h2>
+      <p class="sub">${c.resumen}</p>
+    </div>
+    <div class="paso-cuerpo" style="border-radius:0">${c.cuerpo}</div>`;
+  document.getElementById('modal').classList.add('abierto');
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.modal-caja').scrollIntoView();
+}
+function cerrarModal(){
+  document.getElementById('modal').classList.remove('abierto');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e=>{
+  if(e.target.id === 'modal') cerrarModal();
+});
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') cerrarModal(); });
+
+/* --- barra sticky --- */
+window.addEventListener('scroll', ()=>{
+  const camino = document.getElementById('camino');
+  const caja = document.getElementById('caja');
+  const dentro = window.scrollY > camino.offsetTop - 200 && window.scrollY < caja.offsetTop - 100;
+  document.getElementById('barra').classList.toggle('visible', dentro);
+});
+
+/* --- arranque --- */
+document.getElementById('tituloUso').insertAdjacentHTML('afterbegin', ico('brujula','ico-titulo'));
+pintaPanel();
+pintaPasos();
+pintaIndice();
+pintaPuntos();
+pintaCaja();
+refresca();
+</script>
+</body>
+</html>
