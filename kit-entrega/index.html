@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Entrega del High Ticket</title>
+<meta name="description" content="Vendiste tu programa high ticket. Esto es lo que haces para entregarlo, desde que te pagan hasta que tu cliente termina: 7 pasos y 12 herramientas.">
+<meta name="theme-color" content="#D4AF37">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E02%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#111111;
+  --tinta-2:#262626;
+  --papel:#FFFFFF;
+  --papel-2:#F5F4F1;
+  --papel-3:#EDEDED;
+  --texto:#1A1A1A;
+  --texto-2:#6E6B65;
+  --azul:#2563D9;
+  --azul-luz:#EAF1FE;
+  --verde:#0E8F63;
+  --verde-luz:#E6F6EF;
+  --coral:#DC3A45;
+  --coral-luz:#FDECEC;
+  --violeta:#6B4FD8;
+  --violeta-luz:#F0ECFE;
+  --ambar:#D98A00;
+  --ambar-luz:#FDF3E0;
+  --oro:#D4AF37;
+  --oro-claro:#E6C765;
+  --crema:#D8D5CB;
+  --crema-mute:#98958D;
+  --tinta-linea:#333333;
+  --radio:16px;
+  --sombra:0 1px 2px rgba(17,17,17,.06), 0 8px 24px rgba(17,17,17,.06);
+  --sombra-alta:0 2px 4px rgba(17,17,17,.08), 0 16px 40px rgba(17,17,17,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Figtree',system-ui,-apple-system,sans-serif;
+  background:var(--papel-2);
+  color:var(--texto);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.wrap{max-width:1340px;margin:0 auto;padding:0 32px}
+.wrap-estrecho{max-width:1000px;margin:0 auto}
+
+/* ============ HERO ============ */
+.hero{background:var(--tinta);color:#fff;padding:72px 0 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+.hero-insignia{display:inline-flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.hero-insignia .num{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--oro);color:var(--tinta);padding:5px 13px;border-radius:999px}
+.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-mute)}
+.hero-insignia .hero-marca{margin:0}
+.hero-cruce{font-size:.88rem;color:var(--crema-mute);margin-top:16px}
+.hero-cruce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hero-cruce a:hover{color:var(--oro)}
+.hero h1{font-size:clamp(2.4rem,6.5vw,4.4rem);font-weight:800;max-width:16ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p{font-size:clamp(1.05rem,2.2vw,1.3rem);color:var(--crema);max-width:46ch;margin-bottom:20px}
+.hero .hero-que-es{font-size:clamp(.97rem,1.6vw,1.08rem);color:var(--crema-mute);max-width:60ch;margin-bottom:36px;line-height:1.7}
+.hero .hero-que-es strong{color:var(--crema);font-weight:600}
+
+/* mapa de ruta */
+.mapa{position:relative;padding:36px 0 96px;z-index:2}
+.mapa-etiquetas{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--crema-mute);margin-bottom:14px}
+.mapa svg{width:100%;height:auto;display:block;overflow:visible}
+.mapa-linea{fill:none;stroke:var(--tinta-linea);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:dibuja 1.6s .2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes dibuja{to{stroke-dashoffset:0}}
+.mapa-parada{opacity:0;animation:aparece .4s forwards}
+@keyframes aparece{to{opacity:1}}
+.mapa-parada circle{fill:var(--tinta);stroke:var(--crema-mute);stroke-width:2.5}
+.mapa-parada.arranque circle{fill:var(--oro);stroke:var(--oro)}
+.mapa-parada text{font-family:'Space Mono',monospace;font-size:11px;fill:var(--crema-mute);text-anchor:middle}
+.mapa-parada.arranque text{fill:var(--oro)}
+.mapa-leyenda{display:flex;gap:24px;flex-wrap:wrap;margin-top:26px;font-size:.85rem;color:var(--crema-mute)}
+.mapa-leyenda span{display:flex;align-items:center;gap:8px}
+.mapa-leyenda i{width:11px;height:11px;border-radius:50%;display:block}
+
+.botonera{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.btn{
+  font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;
+  padding:15px 28px;border-radius:999px;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-principal{background:var(--oro);color:var(--tinta)}
+.btn-principal:hover{background:var(--oro-claro);box-shadow:0 8px 24px rgba(212,175,55,.35)}
+.btn-fantasma{background:transparent;color:var(--crema);border:1.5px solid var(--tinta-linea)}
+.btn-fantasma:hover{border-color:var(--oro);color:#fff}
+
+/* ============ BARRA STICKY ============ */
+.barra{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--papel-3);
+  padding:12px 0;display:none;
+}
+.barra.visible{display:block}
+.barra-in{display:flex;align-items:center;gap:20px}
+.barra-titulo{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.puntos{display:flex;gap:7px;flex:1;justify-content:center}
+.punto{
+  width:30px;height:30px;border-radius:50%;border:2px solid var(--papel-3);
+  background:#fff;cursor:pointer;font-family:'Space Mono',monospace;font-size:.72rem;
+  font-weight:700;color:var(--texto-2);display:grid;place-items:center;
+  transition:all .15s ease;padding:0;
+}
+.punto:hover{border-color:var(--azul);color:var(--azul)}
+.punto.actual{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.punto.hecho{background:var(--verde);border-color:var(--verde);color:#fff}
+.contador{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--texto-2);white-space:nowrap;font-weight:700}
+
+/* ============ ICONOS DE LÍNEA ============ */
+.ico-svg{width:1.1em;height:1.1em;flex-shrink:0;vertical-align:-.15em}
+.ico-titulo{width:1em;height:1em;margin-right:.42em;vertical-align:-.06em;color:var(--oro)}
+.ind-tool .ico-svg{width:17px;height:17px;opacity:.75}
+/* semáforo y marcas de estado, sin emojis */
+.luz{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:.5px}
+.luz-verde{background:var(--verde)} .luz-ambar{background:var(--ambar)} .luz-rojo{background:var(--coral)}
+.marca-si{color:var(--verde);font-weight:700}
+.marca-no{color:var(--texto-2);font-weight:700}
+
+/* ============ AVISO DE USO ============ */
+.aviso-uso{
+  background:var(--ambar-luz);border:1px solid #EFD9A6;border-left:5px solid var(--ambar);
+  border-radius:var(--radio);padding:26px 28px;margin:56px auto 0;max-width:900px;
+}
+.aviso-uso h3{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.25rem;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:center;gap:11px;color:var(--tinta);
+}
+.aviso-uso p{color:#6B4E12;font-size:.98rem;line-height:1.7;margin-bottom:12px}
+.aviso-uso p:last-child{margin-bottom:0}
+.aviso-uso strong{color:var(--tinta);font-weight:700}
+
+/* ============ SECCIONES ============ */
+.seccion{padding:72px 0}
+.seccion-cabecera{text-align:center;max-width:44ch;margin:0 auto 48px}
+.seccion-cabecera .eyebrow{color:var(--texto-2);display:block;margin-bottom:12px}
+.seccion-cabecera h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;margin-bottom:14px}
+.seccion-cabecera p{color:var(--texto-2);font-size:1.05rem}
+
+/* ============ ÍNDICE LATERAL ============ */
+.camino-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:36px;align-items:start}
+.indice{position:sticky;top:24px;background:#fff;border:1px solid var(--papel-3);border-radius:var(--radio);padding:22px 20px;box-shadow:var(--sombra);max-height:calc(100vh - 48px);overflow-y:auto}
+.indice-cab{padding-bottom:16px;border-bottom:1px solid var(--papel-3);margin-bottom:16px}
+.indice-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:10px}
+.progreso{height:7px;background:var(--papel-3);border-radius:999px;overflow:hidden;margin-bottom:9px}
+.progreso i{display:block;height:100%;background:var(--verde);border-radius:999px;transition:width .3s ease}
+.indice-contador{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--texto-2);font-weight:700}
+.ind-item{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  background:none;border:none;cursor:pointer;padding:9px 10px;border-radius:10px;
+  font-family:'Figtree',sans-serif;transition:background .12s ease;
+}
+.ind-item:hover{background:var(--papel-2)}
+.ind-item.actual{background:var(--tinta)}
+.ind-item.actual .ind-tx b{color:#fff}
+.ind-item.actual .ind-tx small{color:var(--crema-mute)}
+.ind-num{
+  flex-shrink:0;width:25px;height:25px;border-radius:50%;border:2px solid var(--papel-3);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.7rem;
+  font-weight:700;color:var(--texto-2);background:#fff;
+}
+.ind-item.actual .ind-num{background:var(--oro);border-color:var(--oro);color:var(--tinta)}
+.ind-item.hecho .ind-num{background:var(--verde);border-color:var(--verde);color:#fff}
+.ind-tx{display:block;line-height:1.3}
+.ind-tx b{display:block;font-size:.9rem;font-weight:600;color:var(--texto);margin-bottom:2px}
+.ind-tx small{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-2);letter-spacing:.04em}
+.indice-sep{
+  font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--texto-2);margin:18px 0 8px;padding-top:16px;border-top:1px solid var(--papel-3);
+}
+.ind-tool{
+  display:flex;gap:9px;align-items:center;width:100%;text-align:left;background:none;border:none;
+  cursor:pointer;padding:7px 10px;border-radius:9px;font-family:'Figtree',sans-serif;
+  font-size:.86rem;color:var(--texto-2);transition:background .12s ease,color .12s ease;
+}
+.ind-tool:hover{background:var(--violeta-luz);color:var(--violeta)}
+
+/* ============ PASO ============ */
+.paso{display:none}
+.paso.activo{display:block;animation:entra .35s ease}
+@keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.paso-cabecera{background:var(--tinta);color:#fff;border-radius:var(--radio) var(--radio) 0 0;padding:36px 36px 32px;position:relative;overflow:hidden}
+.paso-num{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.16em;color:var(--oro);font-weight:700;margin-bottom:10px}
+.paso-cabecera h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.paso-cabecera .sub{color:var(--crema);font-size:1.05rem;max-width:52ch}
+.paso-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.chip{
+  font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.06em;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  padding:7px 13px;border-radius:999px;color:var(--crema);
+}
+.paso-cuerpo{background:#fff;border-radius:0 0 var(--radio) var(--radio);padding:36px;box-shadow:var(--sombra)}
+
+/* bloques de contenido */
+.bloque{margin-bottom:28px;border-radius:14px;overflow:hidden}
+.bloque:last-child{margin-bottom:0}
+.bloque-cab{
+  display:flex;align-items:center;gap:12px;padding:15px 20px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.18rem;
+  letter-spacing:-.01em;font-weight:600;line-height:1.25;
+}
+.bloque-cab .ico{font-size:1.15rem;line-height:1}
+.b-copiar{
+  margin-left:auto;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.08em;
+  text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:999px;cursor:pointer;
+  transition:background .12s ease;
+}
+.b-copiar:hover{background:rgba(255,255,255,.32)}
+.b-copiar.ok{background:#fff;color:var(--verde);border-color:#fff}
+.bloque-cont{padding:22px 20px;font-size:.98rem;line-height:1.7}
+.bloque-cont > *:last-child{margin-bottom:0}
+.bloque-cont p{margin-bottom:14px}
+.bloque-cont ul{margin:0 0 14px;padding-left:22px}
+.bloque-cont li{margin-bottom:7px}
+.bloque-cont strong{font-weight:700;color:var(--tinta)}
+.bloque-cont a,.aviso-uso a,.aviso-legal a{
+  color:var(--azul);font-weight:600;text-decoration:underline;
+  text-underline-offset:2px;text-decoration-thickness:1.5px;
+}
+.bloque-cont a:hover,.aviso-uso a:hover,.aviso-legal a:hover{color:var(--tinta)}
+/* lista de documentos enlazados */
+.docs{list-style:none;padding:0;margin:0}
+.docs li{
+  background:#fff;border:1px solid var(--papel-3);border-radius:11px;
+  padding:13px 16px;margin-bottom:9px;display:flex;gap:12px;align-items:flex-start;
+}
+.docs li:last-child{margin-bottom:0}
+.docs .n{
+  flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--tinta);color:var(--oro);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;
+}
+.docs b{display:block;font-size:.98rem;color:var(--tinta)}
+.docs span{font-size:.9rem;color:var(--texto-2);display:block;line-height:1.55}
+/* tercer nivel: los rótulos sueltos dentro de un bloque ("Lo que incluye") */
+.bloque-cont > p > strong:only-child{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+
+.b-neutro{background:var(--papel-2);border:1px solid var(--papel-3)}
+.b-neutro .bloque-cab{background:var(--papel-3);color:var(--tinta-2)}
+
+.b-plantilla{background:var(--azul-luz);border:1px solid #C3D9FB}
+.b-plantilla .bloque-cab{background:var(--azul);color:#fff}
+.b-plantilla .bloque-cont{font-size:.95rem}
+
+.b-ejemplo{background:var(--verde-luz);border:1px solid #B8E5D2}
+.b-ejemplo .bloque-cab{background:var(--verde);color:#fff}
+
+.b-errores{background:var(--coral-luz);border:1px solid #F8C9CC}
+.b-errores .bloque-cab{background:var(--coral);color:#fff}
+
+.b-ayuda{background:var(--violeta-luz);border:1px solid #D6CBFB}
+.b-ayuda .bloque-cab{background:var(--violeta);color:#fff}
+
+.b-aviso{background:var(--ambar-luz);border:1px solid #F5DCA8}
+.b-aviso .bloque-cab{background:var(--ambar);color:#fff}
+
+/* tablas y plantillas */
+.tabla{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:14px;background:#fff;border-radius:10px;overflow:hidden}
+.tabla th{background:var(--tinta);color:#fff;text-align:left;padding:12px 14px;font-weight:600;font-size:.9rem}
+.tabla td{padding:12px 14px;border-top:1px solid var(--papel-3);vertical-align:top}
+.tabla tr:nth-child(even) td{background:var(--papel-2)}
+
+.campo{
+  background:#fff;border:1.5px dashed #A9C2F2;border-radius:9px;
+  padding:14px 16px;margin-bottom:11px;font-size:.94rem;
+}
+.campo b{display:block;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.02em;color:var(--azul);margin-bottom:6px}
+.hueco{background:#DCE9FD;color:var(--azul);padding:1px 7px;border-radius:5px;font-family:'Space Mono',monospace;font-size:.85em;font-weight:700}
+
+.mensaje{background:#fff;border-radius:12px;padding:18px 20px;border-left:4px solid var(--verde);font-size:.97rem;line-height:1.7;margin-bottom:12px}
+.mensaje .de{font-family:'Figtree',sans-serif;font-size:.85rem;letter-spacing:.02em;color:var(--verde);font-weight:700;margin-bottom:10px}
+
+.error-item{display:flex;gap:13px;margin-bottom:15px;align-items:flex-start}
+.error-item:last-child{margin-bottom:0}
+.error-x{
+  flex-shrink:0;width:23px;height:23px;border-radius:50%;background:var(--coral);
+  color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px;
+}
+.error-item b{
+  display:block;margin-bottom:3px;color:var(--tinta);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+.error-item span{font-size:.96rem;line-height:1.65;color:var(--texto-2)}
+
+/* acordeón */
+.desplegable{border:1px solid var(--papel-3);border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden}
+.desplegable summary{
+  padding:15px 18px;cursor:pointer;font-weight:600;display:flex;
+  align-items:center;gap:11px;list-style:none;
+}
+.desplegable summary::-webkit-details-marker{display:none}
+.desplegable summary::after{content:"+";margin-left:auto;font-family:'Space Mono',monospace;font-size:1.2rem;color:var(--texto-2)}
+.desplegable[open] summary::after{content:"−"}
+.desplegable summary:hover{background:var(--papel-2)}
+.desplegable .dcont{padding:0 18px 18px}
+
+/* navegación del paso */
+.paso-pie{
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  margin-top:32px;padding-top:28px;border-top:2px dashed var(--papel-3);
+}
+.btn-hecho{
+  background:#fff;border:2px solid var(--verde);color:var(--verde);
+  font-weight:700;padding:14px 24px;border-radius:999px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;font-size:.98rem;font-family:'Figtree',sans-serif;
+  transition:all .15s ease;
+}
+.btn-hecho:hover{background:var(--verde-luz)}
+.btn-hecho.marcado{background:var(--verde);color:#fff}
+.btn-nav{
+  background:var(--tinta);color:#fff;border:none;padding:14px 26px;
+  border-radius:999px;cursor:pointer;font-weight:600;font-size:.98rem;
+  font-family:'Figtree',sans-serif;margin-left:auto;
+  display:inline-flex;align-items:center;gap:9px;transition:all .15s ease;
+}
+.btn-nav:hover{background:var(--tinta-2)}
+.btn-atras{
+  background:transparent;border:1.5px solid var(--papel-3);color:var(--texto-2);
+  padding:14px 22px;border-radius:999px;cursor:pointer;font-weight:600;
+  font-family:'Figtree',sans-serif;font-size:.98rem;transition:all .15s ease;
+}
+.btn-atras:hover{border-color:var(--texto-2);color:var(--texto)}
+
+/* ============ CAJA DE HERRAMIENTAS ============ */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.tarjeta{
+  background:#fff;border-radius:var(--radio);padding:26px;cursor:pointer;
+  border:1px solid var(--papel-3);text-align:left;font-family:'Figtree',sans-serif;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.tarjeta:hover{transform:translateY(-3px);box-shadow:var(--sombra-alta)}
+.tarjeta .ico{display:block;margin-bottom:14px;color:var(--tinta)}
+.tarjeta .ico .ico-svg{width:28px;height:28px}
+.tarjeta:hover .ico{color:var(--oro-oscuro,#9A7D1F)}
+.tarjeta .eyebrow{color:var(--violeta);display:block;margin-bottom:7px}
+.tarjeta h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.tarjeta p{color:var(--texto-2);font-size:.93rem;line-height:1.55}
+
+/* ============ MODAL ============ */
+.modal{
+  position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.6);
+  backdrop-filter:blur(4px);display:none;padding:24px;overflow-y:auto;
+}
+.modal.abierto{display:block;animation:entra .2s ease}
+.modal-caja{
+  max-width:820px;margin:40px auto;background:#fff;
+  border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra-alta);
+}
+.modal-cerrar{
+  position:sticky;top:0;z-index:5;background:#fff;padding:14px 24px;
+  border-bottom:1px solid var(--papel-3);display:flex;justify-content:flex-end;
+}
+.modal-cerrar button{
+  background:var(--papel-2);border:none;width:38px;height:38px;border-radius:50%;
+  cursor:pointer;font-size:1.1rem;color:var(--texto-2);
+}
+.modal-cerrar button:hover{background:var(--papel-3)}
+
+/* ============ CIERRE ============ */
+.final{background:var(--tinta);color:#fff;border-radius:var(--radio);padding:48px 36px;text-align:center}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:14px}
+.final p{color:var(--crema);max-width:52ch;margin:0 auto 28px}
+.final-docs{max-width:640px;margin:0 auto 28px;text-align:left}
+.final-docs .docs li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.final-docs .docs .n{background:var(--oro);color:var(--tinta)}
+.final-docs .docs b{color:#fff}
+.final-docs .docs b a{color:var(--oro);text-decoration:none}
+.final-docs .docs b a:hover{text-decoration:underline}
+.final-docs .docs span{color:var(--crema-mute)}
+.final-nota{font-size:.92rem;color:var(--crema-mute)!important;max-width:none!important;margin:16px 0 0!important;line-height:1.65}
+.final-nota strong{color:#fff}
+
+.pie{padding:48px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
+.pie b{color:var(--texto)}
+.aviso-legal{
+  max-width:600px;margin:24px auto 0;font-size:.85rem;
+  background:var(--ambar-luz);border:1px solid #F5DCA8;
+  border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
+}
+
+/* el índice lateral sustituye a la barra superior en pantallas anchas */
+@media(min-width:1081px){
+  .barra{display:none!important}
+}
+@media(max-width:1080px){
+  .camino-grid{grid-template-columns:1fr;gap:0}
+  .indice{display:none}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .seccion{padding:48px 0}
+  .paso-cabecera,.paso-cuerpo{padding:26px 20px}
+  .puntos{display:none}
+  .btn-nav{margin-left:0;width:100%;justify-content:center}
+  .paso-pie{flex-direction:column;align-items:stretch}
+  .btn-hecho,.btn-atras{justify-content:center}
+  .tabla{font-size:.82rem}
+  .tabla th,.tabla td{padding:8px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .mapa-linea{stroke-dashoffset:0}
+  .mapa-parada{opacity:1}
+}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-insignia"><span class="num">Kit 02 · La entrega</span><span class="hero-marca">Departamento Disruptivo</span></div>
+    <h1>Vendiste. <em>¿Y ahora qué?</em></h1>
+    <p>Ya vendiste tu programa high ticket. Vender era la mitad; la otra mitad es entregarlo, y ahí es donde casi nadie tiene un sistema.</p>
+    <p class="hero-que-es">Esta página es esa mitad. Un camino con principio y final que cubre desde el momento en que alguien te paga hasta que termina el programa contigo: <strong>7 pasos que haces una vez</strong>, antes de la primera sesión, y <strong>12 herramientas</strong> que abres cuando toca cada una. Con la plantilla y un ejemplo ya relleno en cada punto, para que no empieces del folio en blanco.</p>
+    <div class="botonera">
+      <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
+      <a href="#caja" class="btn btn-fantasma">Ver todo lo que incluye</a>
+    </div>
+    <p class="hero-cruce">La venta que te trajo hasta aquí se cierra con el <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 03 · Ventas ↗</a> · Toda la colección, en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a></p>
+
+    <div class="mapa">
+      <div class="mapa-etiquetas"><span>◀ Aquí estás: acaba de pagarte</span><span>Aquí termina: terminó bien ▶</span></div>
+      <svg viewBox="0 0 1000 120" role="img" aria-label="Mapa del recorrido: los pasos de arranque y las herramientas de seguimiento">
+        <path class="mapa-linea" d="M 20 70 Q 180 20, 340 70 T 660 70 T 980 70"/>
+        <g id="paradas"></g>
+      </svg>
+      <div class="mapa-leyenda" id="mapaLeyenda"></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ BARRA ============ -->
+<div class="barra" id="barra">
+  <div class="wrap barra-in">
+    <div class="barra-titulo" id="barraTitulo">Arranque</div>
+    <div class="puntos" id="puntos"></div>
+    <div class="contador" id="contador">0/7</div>
+  </div>
+</div>
+
+<!-- ============ CAMINO ============ -->
+<main>
+
+<div class="wrap">
+  <div class="aviso-uso">
+    <h3 id="tituloUso">Cómo usar esta guía</h3>
+    <p><strong>Esto es una guía genérica, no un manual cerrado.</strong> Está escrita sobre un acompañamiento individual de doce semanas porque es donde empieza casi todo el mundo, y todos los ejemplos salen de ese mismo caso para que se entienda el hilo.</p>
+    <p><strong>Adáptala a tu oferta high ticket.</strong> Tu programa no dura lo mismo, no tiene las mismas fases y no promete lo mismo. Cambia los plazos, quita lo que no aplique, añade lo tuyo y reescribe las plantillas con tus palabras. Están para que no empieces del folio en blanco, no para respetarlas al pie de la letra.</p>
+    <p>Si tu modelo no es el individual —grupal, híbrido, consultoría, empresas o programas muy cortos o muy largos— abre la herramienta <strong>Adaptarlo a tu modelo</strong>: ahí está qué cambia en cada caso.</p>
+    <p style="margin-bottom:0">Lo único que no cambiaría es el <strong>orden</strong> y las cinco cosas que aparecen al final de esa herramienta, en "lo que nunca cambia". El resto es tuyo.</p>
+  </div>
+</div>
+
+<section class="seccion" id="camino">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Primera parte</span>
+      <h2>Los 7 pasos de arranque</h2>
+      <p>Estos se hacen una vez, en orden, antes de la primera sesión con tu cliente. Te llevan una tarde y evitan casi todos los problemas que vienen después.</p>
+    </div>
+    <div class="camino-grid">
+      <aside class="indice" id="indice">
+        <div class="indice-cab">
+          <span class="eyebrow">Tu avance</span>
+          <div class="progreso"><i id="progresoBarra" style="width:0%"></i></div>
+          <div class="indice-contador" id="indiceContador">0 de 7 pasos</div>
+        </div>
+        <nav id="indiceLista" aria-label="Los 7 pasos de arranque"></nav>
+        <div class="indice-sep">Caja de herramientas</div>
+        <nav id="indiceTools" aria-label="Las 9 herramientas"></nav>
+      </aside>
+      <div id="pasos"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAJA ============ -->
+<section class="seccion" id="caja" style="background:#fff">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Segunda parte</span>
+      <h2>La caja de herramientas</h2>
+      <p>Esto no se hace de una vez. Se consulta cuando toca: una es de antes de cobrar, otra de la primera semana, y el resto van saliendo durante el programa. Ábrelo cuando lo necesites.</p>
+    </div>
+    <div class="rejilla" id="rejilla"></div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="wrap">
+    <div class="final">
+      <h2>Una cosa antes de empezar</h2>
+      <p>Este kit es <strong>proceso</strong>. Lo que tiene efectos legales —el contrato, el permiso de imagen para los testimonios, las devoluciones y el plazo de arrepentimiento— cambia según el país y va aparte, en el <strong>Kit de Contratos</strong>. Son tres documentos y ya los tienes.</p>
+      <div class="final-docs">
+        <ul class="docs">
+          <li><span class="n">1</span><div><b><a href="https://drive.google.com/file/d/13sKAWOcM6V3gHa0pFA52H6yBnqPIU1jM/view" target="_blank" rel="noopener">Plantilla de contrato ↗</a></b><span>El documento que editas y envías. Cada hueco lleva encima una línea que te dice qué escribir.</span></div></li>
+          <li><span class="n">2</span><div><b><a href="https://drive.google.com/file/d/13FInRNvLMryXwBg0n8tkOP8n6yAunaBW/view" target="_blank" rel="noopener">Guía de cómo hacer tu contrato ↗</a></b><span>El manual: doce decisiones que tomas antes de rellenar nada, qué cambia según el país de tu cliente, ejemplos por rubro y un checklist para antes de enviar.</span></div></li>
+          <li><span class="n">3</span><div><b><a href="https://drive.google.com/file/d/1qAtZ3s46Sxsqsr97QYA0fXHZnfYLybj5/view" target="_blank" rel="noopener">Ejemplo ya completado ↗</a></b><span>Cómo queda el contrato relleno, con un caso ficticio de principio a fin.</span></div></li>
+        </ul>
+        <p class="final-nota">Empieza por la guía, no por la plantilla. Y ojo con esto: <strong>lo prepara un equipo de marketing, no abogados.</strong> Sirve para llegar a tu abogado con casi todo hecho y pagar solo la revisión. Una revisión por país y lo reutilizas con todos tus clientes de ahí.</p>
+      </div>
+      <button class="btn btn-principal" onclick="irAPaso(0)">Ir al paso 1 →</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <p><b>Kit de Entrega del High Ticket</b> · Departamento Disruptivo</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <div class="aviso-legal">
+      <b>Sobre lo legal:</b> las plantillas de este kit son operativas, no jurídicas. Todo lo que tenga efectos legales (contrato de acompañamiento, cesión de derechos de imagen, política de devoluciones, facturación) depende de tu país y debe revisarlo un profesional habilitado. Eso vive en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>, que tampoco lo escribieron abogados: sirve para llegar a uno con el trabajo casi hecho. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-caja">
+    <div class="modal-cerrar"><button onclick="cerrarModal()" aria-label="Cerrar">✕</button></div>
+    <div id="modalCont"></div>
+  </div>
+</div>
+
+<script>
+/* ==================================================================
+   CONTENIDO — para editar un texto, cámbialo aquí. No hace falta
+   tocar nada más del archivo.
+   ================================================================== */
+
+const H = (s) => s; // ayuda para leer mejor el HTML de abajo
+
+const PASOS = [
+{
+  num:"Paso 01", ico:"diana",
+  titulo:"Traductor de alcance",
+  sub:"Qué incluye tu programa y qué no. El documento que evita casi todas las discusiones.",
+  chips:["15 minutos","Antes de la sesión 1","Lo haces tú"],
+  queEs:H(`<p>Una tabla de dos columnas: <strong>lo que incluye</strong> tu programa y <strong>lo que no incluye</strong>.</p>
+    <p><strong>Si al abrir ese apartado solo encuentras un nombre y una idea, todavía no tienes una oferta:</strong> empieza por el <a href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">Kit de la Oferta High Ticket ↗</a> y vuelve aquí cuando la tengas cerrada. Este paso no funciona sin eso.</p>
+    <p>No lo inventas. Lo sacas de tu plan de estrategia, en tu portal de cliente: abre el apartado <strong>Oferta</strong>. Ahí ya está definido qué compone tu programa. Este documento solo lo traduce a algo que tu cliente entiende y que tú puedes defender.</p>
+    <p style="margin-bottom:0"><strong>Y no se queda aquí:</strong> esto es exactamente lo que va en las cláusulas de <em>qué incluye</em> y <em>qué no incluye</em> de tu contrato. Si lo escribes bien una vez, lo tienes hecho para los dos sitios. La plantilla está en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>.</p>`),
+  porQue:H(`<p>Casi todos los conflictos nacen del mismo sitio: el cliente creía que algo estaba incluido y tú creías que no. No es mala fe de nadie. Es que nunca se escribió.</p>
+    <p>Cuando el alcance está escrito y entregado el primer día, la conversación difícil de la semana ocho deja de existir, porque ya la tuviste en la semana uno cuando nadie estaba molesto.</p>
+    <p>La columna de "no incluye" incomoda al principio. Es la que más te va a proteger.</p>`),
+  plantilla:H(`<div class="campo"><b>Encabezado</b>Programa <span class="hueco">NOMBRE</span> · Cliente <span class="hueco">NOMBRE</span> · Duración <span class="hueco">X SEMANAS</span>, del <span class="hueco">FECHA</span> al <span class="hueco">FECHA</span></div>
+    <p style="margin:18px 0 8px"><strong>Lo que incluye</strong></p>
+    <table class="tabla"><tr><th>Qué</th><th>Cuánto</th><th>Cómo se entrega</th></tr>
+    <tr><td>Sesiones de trabajo</td><td>Número y frecuencia</td><td>Videollamada, presencial, grabación</td></tr>
+    <tr><td>Acceso a materiales</td><td>Cuáles</td><td>Dónde viven</td></tr>
+    <tr><td>Soporte entre sesiones</td><td>Qué tipo y cuánto</td><td>Por qué canal</td></tr>
+    <tr><td>Revisiones</td><td>Cuántas</td><td>En qué formato</td></tr></table>
+    <p style="margin:18px 0 8px"><strong>Lo que NO incluye</strong></p>
+    <table class="tabla"><tr><th>Qué no</th><th>Por qué lo aclaro</th><th>Si lo necesita...</th></tr>
+    <tr><td>Lo que la gente da por hecho</td><td>Razón en una línea</td><td>Se cotiza aparte o se deriva</td></tr>
+    <tr><td>Soporte fuera de horario</td><td></td><td></td></tr>
+    <tr><td>Trabajo que ejecuto yo en su lugar</td><td></td><td></td></tr></table>
+    <p style="margin:18px 0 8px"><strong>Qué necesito de ti</strong></p>
+    <p>Dos o tres compromisos concretos del cliente para que el programa funcione.</p>
+    <div class="campo" style="margin-top:18px"><b>Cuántas plazas abro</b>Cuántas personas puedo llevar a la vez sin bajar la calidad: <span class="hueco">NÚMERO</span>. Y cuántas entradas nuevas acepto al mes: <span class="hueco">NÚMERO</span>.</div>
+    <p style="margin-bottom:0">Este número no se enseña al cliente, pero decidirlo ahora es lo que evita que dentro de tres meses estés entregando peor de lo que vendiste. Si no tienes ni idea de por dónde va, la herramienta <strong>Delegar la entrega</strong> trae una calculadora para sacarlo.</p>`),
+  ejemplo:H(`<p><strong>Despacho en Orden</strong> · Ricardo Salas, despacho de arquitectura de 6 personas · 12 semanas</p>
+    <p style="margin:16px 0 8px"><strong>Incluye</strong></p>
+    <table class="tabla"><tr><th>Qué</th><th>Cuánto</th><th>Cómo</th></tr>
+    <tr><td>Sesiones 1:1</td><td>12 de 60 min, una por semana</td><td>Videollamada con grabación</td></tr>
+    <tr><td>Auditoría inicial</td><td>1, en la semana 1</td><td>Documento + sesión de revisión</td></tr>
+    <tr><td>Plantillas de procesos</td><td>Las 9 del sistema</td><td>Carpeta compartida, permanente</td></tr>
+    <tr><td>Soporte entre sesiones</td><td>Ilimitado, respuesta en 24 h laborables</td><td>WhatsApp</td></tr>
+    <tr><td>Revisión de manuales</td><td>Hasta 4</td><td>Comentarios escritos en 48 h</td></tr></table>
+    <p style="margin:16px 0 8px"><strong>No incluye</strong></p>
+    <table class="tabla"><tr><th>Qué no</th><th>Por qué</th><th>Alternativa</th></tr>
+    <tr><td>Redactar yo tus manuales</td><td>Si no salen de tu equipo, no se sostienen</td><td>Te acompaño a redactarlos</td></tr>
+    <tr><td>Formación al equipo entero</td><td>El programa es contigo, el dueño</td><td>Sesión grupal aparte, se cotiza</td></tr>
+    <tr><td>Instalar software</td><td>No soy consultora técnica</td><td>Te digo qué necesitas, lo instala tu proveedor</td></tr>
+    <tr><td>Asesoría laboral o fiscal</td><td>No es mi campo</td><td>Te derivo con un profesional</td></tr>
+    <tr><td>Sesiones en fin de semana</td><td>Necesito sostener el ritmo 12 semanas</td><td>Reprogramamos dentro del horario</td></tr></table>`),
+  errores:[
+    {t:"Diseñar el programa otra vez en vez de traducirlo",d:"Abres el documento en blanco, te entusiasmas y añades cosas que no vendiste. Ahora entregas más de lo que cobraste. Abre tu plan de estrategia y trabaja desde ahí."},
+    {t:"Dejar vacía la columna de \"no incluye\"",d:"Da miedo, parece antipático. Es al revés: el cliente que sabe dónde están los bordes confía más, porque entiende que hay un método detrás."},
+    {t:"Escribirlo en lenguaje de vendedor",d:"\"Transformación integral de tu operación\" no es un alcance. \"12 sesiones de 60 minutos, una por semana\" sí. Aquí se escribe en unidades contables."},
+    {t:"Prometer resultados en vez de entregables",d:"Tú controlas lo que entregas, no lo que el cliente hace con ello. El resultado va en el paso 3, como objetivo compartido y medible."},
+    {t:"No ponerle fecha de inicio y de fin",d:"Sin fechas el programa se estira. El cliente que \"pausa\" en la semana 5 y vuelve nueve meses después es un problema que empieza aquí."},
+    {t:"No decidir cuántas plazas tienes",d:"Es la decisión que casi nadie toma el primer día y la que explica casi todas las entregas que se degradan. Vender la plaza número nueve cuando tu techo real son siete no te hace ganar más: te hace entregar peor a los nueve."}
+  ],
+  ghl:"Súbelo como documento adjunto al contacto y adjúntalo al mensaje de bienvenida automatizado.",
+  ayuda:"Estrategia y alcance → chat de soporte o sesión de estrategia."
+},
+{
+  num:"Paso 02", ico:"ruta",
+  titulo:"Plan de trabajo por fases",
+  sub:"La ruta que va a recorrer tu cliente. Por fases con criterio de salida, nunca por semanas sueltas.",
+  chips:["30 minutos","Antes de la sesión 1","Lo haces tú"],
+  queEs:H(`<p>La ruta de tu cliente organizada en <strong>fases con criterio de salida</strong>.</p>
+    <p>Una fase termina cuando se cumple algo, no cuando pasa el tiempo. Eso hace que el plan sirva igual para 8 semanas o para 12 meses, y que puedas moverlo sin romperlo cuando un cliente va más lento.</p>`),
+  porQue:H(`<p>Es el documento que tu cliente mira cuando duda si está avanzando. Y vas a dudar tú también: en la semana 6 de cualquier acompañamiento llega el momento de "¿estamos donde deberíamos?". Sin plan escrito, eso se responde con sensaciones.</p>
+    <p>Además es tu defensa cuando quiere saltarse pasos. "Eso está en la fase 3 y estamos en la 2 porque todavía no se cumple X" es una respuesta que se sostiene.</p>`),
+  plantilla:H(`<div class="campo"><b>Por cada fase</b>
+    <ul style="margin-top:8px;margin-bottom:0">
+    <li><strong>Nombre de la fase</strong></li>
+    <li><strong>Duración estimada</strong> — en semanas o sesiones</li>
+    <li><strong>Objetivo</strong> — qué tiene que ser verdad al terminarla</li>
+    <li><strong>Qué hago yo</strong> — tu trabajo en esta fase</li>
+    <li><strong>Qué hace el cliente</strong> — su trabajo</li>
+    <li><strong>Entregables</strong> — lo tangible que queda</li>
+    <li><strong>Criterio de salida</strong> — el hecho concreto que dice "esta fase terminó"</li>
+    <li><strong>Riesgo típico</strong> — dónde se atasca la gente aquí</li>
+    </ul></div>
+    <p>Entre tres y cinco fases es lo habitual. Menos de tres suele significar que no has estructurado. Más de seis, que estás troceando de más.</p>
+    <div class="campo"><b>Un momento que hay que poner en el calendario</b>Si tu oferta tiene garantía, marca una <strong>revisión conjunta unos días antes de que venza</strong>. No es un trámite: es la última oportunidad de ajustar el plan mientras todavía se puede, en vez de enterarte cuando ya te piden la devolución. Los plazos de garantía y el de arrepentimiento legal, que es otro y cambia por país, están en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>.</div>
+    <p style="margin-bottom:0">Este plan es también el <strong>anexo del contrato</strong>: la plantilla lo pide como documento aparte con el plan de trabajo y el calendario. Otra cosa que escribes una vez y sirve dos veces.</p>`),
+  ejemplo:H(`<p><strong>Despacho en Orden · 4 fases en 12 semanas</strong></p>
+    <table class="tabla"><tr><th>Fase</th><th>Objetivo</th><th>Criterio de salida</th><th>Riesgo</th></tr>
+    <tr><td><b>1. Ver el desorden</b><br>Sem. 1-2</td><td>Que sepa en qué se le va el tiempo y qué decisiones pasan por él</td><td>Registro de 10 días completo y 3 áreas críticas aceptadas</td><td>No anota, o anota solo lo que le deja bien</td></tr>
+    <tr><td><b>2. Sacar lo que no es tuyo</b><br>Sem. 3-6</td><td>Que las 3 áreas críticas tengan un responsable que no sea él</td><td>Las 3 áreas con responsable y 2 semanas de funcionamiento real</td><td>Retoma el control a la primera equivocación del equipo</td></tr>
+    <tr><td><b>3. Escribirlo</b><br>Sem. 7-10</td><td>Que cada área tenga su proceso escrito y probado</td><td>Cada manual ejecutado una vez por quien no lo escribió</td><td>Manuales de 40 páginas que nadie lee</td></tr>
+    <tr><td><b>4. Sostenerlo</b><br>Sem. 11-12</td><td>Que el sistema siga vivo cuando yo no esté</td><td>Dirige la reunión de revisión completa sin apoyo</td><td>Relajarse porque "ya casi está"</td></tr></table>`),
+  errores:[
+    {t:"Planificar por semanas en vez de por fases",d:"\"Semana 4: delegación\" se rompe en cuanto el cliente se va de viaje. \"Fase 2, que termina cuando las 3 áreas tienen responsable\" aguanta cualquier calendario."},
+    {t:"Criterios de salida que no se pueden verificar",d:"\"Ya entiende la importancia de delegar\" no es un criterio. Si no puedes responder sí o no, no es criterio."},
+    {t:"No escribir el riesgo de cada fase",d:"Tú ya sabes dónde se cae la gente porque lo has visto. Ponerlo por escrito prepara al cliente y te da autoridad cuando pasa exactamente eso."},
+    {t:"Meter todo el contenido en el plan",d:"Esto es la ruta, no el temario. Si pasa de dos páginas, estás escribiendo el curso."},
+    {t:"Hacerlo solo",d:"Repásalo con el cliente en la sesión 1 y deja que ajuste algo pequeño. Un plan que él tocó es un plan que él defiende."}
+  ],
+  ghl:"Cada fase va a ser una etapa de tu pipeline de entrega. Guarda este documento: lo vas a necesitar en la herramienta 3 de la caja.",
+  ayuda:"Diseño del programa → chat de soporte o sesión de estrategia."
+},
+{
+  num:"Paso 03", ico:"regla",
+  titulo:"Objetivo y métricas",
+  sub:"Dónde está hoy tu cliente, dónde quiere estar, y cómo van a saberlo los dos cuando llegue.",
+  chips:["20 minutos","En la sesión 1","Con el cliente delante"],
+  queEs:H(`<p>Tres cosas por escrito: <strong>punto de partida medido</strong>, meta, y método de medición.</p>
+    <p>Se rellena en la primera sesión, con el cliente delante. Se vuelve a medir a mitad de programa y al cierre, siempre con el mismo método.</p>`),
+  porQue:H(`<p><strong>Sin punto de partida no hay caso de éxito.</strong> Dentro de tres meses vas a querer contar lo que lograste con este cliente. Si no mediste el día uno, tu testimonio será "estoy muy contento, es increíble". Eso no vende. "Pasé de 18 interrupciones diarias a 4" sí vende.</p>
+    <p>Y hay una razón menos obvia: medir cambia la conversación. Cuando en la semana 7 diga "no siento que esté avanzando", vas a poder poner el número al lado. A veces le dará la razón y tendrás que corregir. A veces se la quitará y le devolverás la perspectiva. Las dos cosas sirven.</p>`),
+  plantilla:H(`<div class="campo"><b>Objetivo en una frase</b>Lo que queremos que sea verdad al terminar. Concreto. Del cliente, no tuyo.</div>
+    <div class="campo"><b>Métrica principal</b>Qué medimos · Cómo se mide (método exacto, igual las tres veces) · Cuánto es hoy · Cuánto queremos al cierre</div>
+    <div class="campo"><b>Métricas de apoyo</b>Máximo dos. Mismo formato.</div>
+    <div class="campo"><b>Señales cualitativas</b>Una frase textual del cliente sobre su situación de hoy, entre comillas y con fecha. Y una situación concreta que hoy le pasa y no quiere que le pase.</div>
+    <div class="campo"><b>Qué NO depende de mí</b>Factores fuera de tu control que pueden mover el resultado. Se dicen ahora, no al final.</div>`),
+  ejemplo:H(`<p><strong>Objetivo:</strong> que Ricardo pueda estar dos semanas fuera del despacho sin que se paren los proyectos.</p>
+    <table class="tabla"><tr><th>Métrica</th><th>Cómo se mide</th><th>Hoy</th><th>Meta</th></tr>
+    <tr><td><b>Interrupciones diarias que requieren su decisión</b></td><td>Registro manual durante 10 días laborables, mismo método las tres veces</td><td>18 al día</td><td>Menos de 5</td></tr>
+    <tr><td>Horas semanales en tareas operativas</td><td>Registro de las mismas 2 semanas</td><td>22 h</td><td>Menos de 8 h</td></tr>
+    <tr><td>Procesos documentados</td><td>Conteo directo</td><td>0</td><td>3</td></tr></table>
+    <div class="mensaje"><div class="de">Señal cualitativa · 5 de marzo</div>"No puedo irme ni un jueves sin que me llamen cuatro veces."</div>
+    <p style="margin-top:14px"><strong>Qué no depende de mí:</strong> si contrata o despide gente durante el programa, los números se mueven por razones ajenas. Lo anotaremos si pasa.</p>`),
+  errores:[
+    {t:"No medir el día uno",d:"Es el error caro. En la semana 12 no puedes reconstruir cómo estaba en la semana 1: ni él se acuerda, y su memoria ya está contaminada por el progreso. Mide antes de tocar nada, aunque la medición sea tosca."},
+    {t:"Elegir una métrica que el cliente no controla",d:"Si mides facturación en un negocio muy estacional, vas a quedar mal por razones que no son tuyas. Mide lo más cerca posible de lo que sí mueve tu trabajo."},
+    {t:"Cinco métricas",d:"Una principal y dos de apoyo, máximo. Con cinco no mides nada, solo llenas una tabla."},
+    {t:"Cambiar el método a mitad",d:"Si mediste con registro manual en marzo, mide con registro manual en mayo. El número solo significa algo comparado consigo mismo."},
+    {t:"Saltarse la frase textual del día uno",d:"Es el material más potente que vas a tener para el testimonio final. Anótala literal, entre comillas, con fecha."},
+    {t:"Prometer la meta como garantía",d:"La meta es un objetivo compartido. Lo que garantizas son los entregables del paso 1."}
+  ],
+  ghl:"Crea campos personalizados en el contacto: valor inicial, valor a mitad, valor final. Así puedes filtrar y ver de un vistazo qué clientes están moviendo la aguja.",
+  ayuda:"Elección de métrica → chat de soporte o sesión de estrategia. Montaje de los campos → María José, Clínica de Sistemas (miércoles)."
+},
+{
+  num:"Paso 04", ico:"formulario",
+  titulo:"Formulario de intake",
+  sub:"El cuestionario que rellena tu cliente entre que paga y la primera sesión.",
+  chips:["40 minutos","Se monta una vez","Se reutiliza siempre"],
+  queEs:H(`<p>Un formulario de GHL que se envía solo al confirmarse el pago y que tu cliente rellena antes de la primera sesión.</p>
+    <p><strong>Se monta igual que tu quiz de cualificación</strong>, ese que ya sabes hacer. La única diferencia es cuándo se dispara: el quiz se activa cuando alguien deja su correo, y este cuando alguien te paga.</p>`),
+  porQue:H(`<p>La primera sesión de un acompañamiento high ticket no puede gastarse en preguntas básicas. Si dedicas 45 minutos a averiguar cosas que el cliente podía haberte escrito, has quemado el momento en el que más ganas tenía de empezar.</p>
+    <p>Con intake llegas a la sesión 1 sabiendo su situación, y puedes decirle cosas de su propio negocio que él no había ordenado nunca. Ese es el momento en el que un cliente deja de dudar si valía lo que pagó.</p>
+    <p>Y hay un tercer efecto: el que no rellena el intake tampoco va a hacer las tareas. Te da una señal de compromiso antes de que hayas invertido tiempo.</p>`),
+  plantilla:H(`<p><strong>Bloque A · Identificación</strong> — igual para todos</p>
+    <ul><li>Nombre y cómo prefiere que le llames</li><li>Correo, teléfono y país</li><li>Zona horaria</li><li>Franja horaria que le va mejor</li></ul>
+    <p><strong>Bloque B · Situación actual</strong></p>
+    <ul><li>Describe tu situación hoy en 5 líneas, sin adornar</li><li>¿Qué es lo que más te frustra ahora mismo?</li><li>¿Qué has intentado ya y por qué no funcionó?</li><li>Del 1 al 10, ¿cuánto te está afectando?</li></ul>
+    <p><strong>Bloque C · Objetivo</strong></p>
+    <ul><li>Si esto sale perfecto, ¿qué es distinto dentro de <span class="hueco">DURACIÓN</span>?</li><li>¿Cómo sabrás que llegaste? Algo que se pueda comprobar</li><li>¿Qué pasa si no lo resuelves este año?</li></ul>
+    <p><strong>Bloque D · Condiciones reales</strong></p>
+    <ul><li>¿Cuántas horas por semana puedes dedicarle de verdad? No las que te gustaría</li><li>¿Quién más tiene que estar de acuerdo para que las cosas cambien?</li><li>¿Hay algo en los próximos meses que vaya a comerte tiempo?</li><li>¿Hay algo que deba saber y no te haya preguntado?</li></ul>
+    <p><strong>Bloque E · Tu especialidad</strong> — de 4 a 6 preguntas propias de tu campo</p>`),
+  ejemplo:H(`<p>El bloque E de Marina, para su programa de organización de despachos:</p>
+    <div class="mensaje"><div class="de">Preguntas propias</div>
+    <ol style="padding-left:20px"><li>¿Cuántas personas trabajan en el despacho y qué hace cada una?</li>
+    <li>¿Qué decisiones pasan hoy obligatoriamente por ti, aunque sean pequeñas?</li>
+    <li>¿Qué pasa en el despacho un día que tú no estás?</li>
+    <li>¿Qué herramientas usan hoy para organizar el trabajo? Aunque sea WhatsApp y papel</li>
+    <li>¿Hay alguien en el equipo con quien tengas un conflicto abierto?</li>
+    <li>¿Has intentado delegar antes? ¿Qué pasó?</li></ol></div>
+    <p style="margin-top:14px">Fíjate en la 5 y la 6. Son incómodas, y son las que más información dan. Las preguntas cómodas dan respuestas cómodas.</p>`),
+  errores:[
+    {t:"Un formulario de 40 preguntas",d:"Nadie lo rellena, o lo rellena mal. Entre 18 y 22 es donde la gente responde con calidad."},
+    {t:"Preguntas de sí o no",d:"\"¿Estás motivado?\" no sirve de nada. \"¿Qué has intentado ya y por qué no funcionó?\" te da media sesión de diagnóstico gratis."},
+    {t:"Mandarlo y no leerlo",d:"Suena absurdo y pasa constantemente. Léelo entero el día antes de la sesión 1 y llega con dos o tres observaciones preparadas."},
+    {t:"No preguntar por el tiempo real disponible",d:"Es la pregunta que evita que diseñes un plan de 6 horas semanales para alguien que tiene 2. Esa respuesta debe condicionar tu plan, no ser un dato decorativo."},
+    {t:"Hacerlo en Google Forms",d:"Funciona, pero las respuestas quedan fuera de tu CRM y no disparan nada. En GHL alimenta el contacto y arranca el flujo de bienvenida solo."},
+    {t:"No poner fecha límite",d:"\"Rellénalo cuando puedas\" significa que llega diez minutos antes de la sesión. Pide 48 horas de margen."}
+  ],
+  ghl:"<strong>Antes de montarlo desde cero, pregunta.</strong> Existe una plantilla interna de formulario de onboarding de cliente nuevo que se puede transferir a tu cuenta; puede que la tuya ya la tenga o puede que no, porque las plantillas se pasan a mano según lo que va necesitando cada uno. Pídela en la Clínica de Sistemas y te ahorras el montaje: solo tendrías que adaptar las preguntas del bloque E. Si no la tienes: Formularios → crear formulario, un campo por pregunta. Después, un flujo que lo envíe al confirmarse el pago, recuerde a los 3 días y avise si a los 5 sigue sin rellenar. Truco: que el enlace para reservar la sesión 1 solo se envíe después del intake. Así deja de ser opcional en la práctica.",
+  ayuda:"Montaje del formulario y del flujo → María José, Clínica de Sistemas (miércoles por la tarde, jueves bajo pedido)."
+},
+{
+  num:"Paso 05", ico:"acuerdo",
+  titulo:"Acuerdo de trabajo",
+  sub:"Las reglas del juego: por dónde se habla, en qué horario, qué pasa si alguien falla.",
+  chips:["20 minutos","Se lee en voz alta en la sesión 1","No es el contrato"],
+  queEs:H(`<p>Una página que se lee en dos minutos y se consulta durante los tres meses siguientes: canales, horarios, tiempos de respuesta, política de reprogramación.</p>
+    <p><strong>No es el contrato.</strong> El contrato es un documento legal y va aparte, en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>. Esto es la convivencia: se lee, no se firma.</p>
+    <p style="margin-bottom:0">Los dos se hacen a la vez y no dicen lo mismo. Si aquí escribes que respondes en 24 horas laborables y el contrato dice otra cosa, gana el contrato y tú quedas mal. Repásalos juntos una vez.</p>`),
+  porQue:H(`<p>El cliente high ticket llega con una expectativa que nadie ha explicitado: que estás disponible. Pagó mucho, y muchos traducen eso a "puedo escribirle un domingo a las once".</p>
+    <p>Si no pones el marco tú, lo pone él. Y corregirlo después se siente como quitarle algo. Puesto el primer día, en cambio, se lee como profesionalidad.</p>
+    <p>Esto es crítico si tus clientes están en otro país. Un mensaje a las 9 de la mañana en Ciudad de México te llega a las 5 de la tarde en Madrid, y nadie se ha portado mal: simplemente nadie lo habló.</p>`),
+  plantilla:H(`<div class="campo"><b>Por dónde hablamos</b>Canal oficial · Qué canales no uso para trabajar · Por qué (queda registrado y no se pierde nada)</div>
+    <div class="campo"><b>Horario y respuesta</b>Mi horario y mi zona horaria · Tu zona horaria · La diferencia en horas entre los dos · En cuánto respondo · Qué pasa fuera de horario</div>
+    <div class="campo"><b>Las sesiones</b>Día y hora fijos · Duración · Dónde · Puntualidad · Con cuánto avisar para reprogramar · Cuántas se pueden mover · Qué pasa si no avisa y no aparece · Grabaciones</div>
+    <div class="campo"><b>Entre sesiones</b>Cómo se acuerdan las tareas · Qué pasa si llega sin hacerlas · Revisiones incluidas y plazo</div>
+    <div class="campo"><b>Si algo se tuerce</b>Si yo no puedo continuar · Si tú desapareces · Si algo no te está funcionando</div>
+    <div class="campo"><b>Confidencialidad</b>Lo que me cuentas no sale de aquí. Si quiero usar tu caso, te lo pido por escrito.</div>`),
+  ejemplo:H(`<div class="mensaje"><div class="de">Cómo trabajamos juntos · Despacho en Orden</div>
+    <p><strong>Canal oficial:</strong> WhatsApp. No trabajo por Instagram, LinkedIn ni llamadas sin cita.</p>
+    <p><strong>Horarios:</strong> lunes a viernes de 9:00 a 18:00, hora de Madrid. Tú estás en Ciudad de México: hay 7 horas de diferencia, cuando tú desayunas yo estoy terminando la tarde. Respondo en 24 horas laborables. Los mensajes del viernes por la tarde los contesto el lunes.</p>
+    <p><strong>Sesiones:</strong> martes a las 9:00 hora de México, 60 minutos. Empiezo a la hora: si llegas a las 9:15, terminamos a las 10:00 igual. Avísame con 24 horas para mover una, puedes mover hasta 2 en las 12 semanas. Si no avisas y no apareces, la sesión cuenta como dada.</p>
+    <p><strong>Si desapareces:</strong> te escribo tres veces en 10 días. Sin respuesta, dejo la plaza en pausa y hablamos de cómo retomar.</p>
+    <p style="margin-bottom:0"><strong>Si algo no funciona:</strong> dímelo en la sesión. En la semana 3 casi todo se arregla; en la semana 11, casi nada.</p></div>`),
+  errores:[
+    {t:"No poner las dos zonas horarias",d:"Con clientes en otro país es la fuente número uno de fricción tonta. Escribe las dos ciudades y la diferencia en horas, en letra."},
+    {t:"Prometer disponibilidad total",d:"\"Escríbeme cuando quieras\" se siente generoso el día uno y te destruye la semana cinco. Y empeora el resultado del cliente, porque le quita el músculo de resolver solo."},
+    {t:"No definir qué pasa con el no-show",d:"Es la política que más te va a doler no tener escrita. Escríbela antes de necesitarla."},
+    {t:"Redactarlo en tono legal",d:"Este documento se lee, no se firma. Escríbelo como hablas. Lo legal va en el contrato."},
+    {t:"Enviarlo y no repasarlo",d:"El documento enviado por correo no existe. Léelo en voz alta con el cliente en los primeros cinco minutos de la sesión 1."},
+    {t:"Escribirlo y no cumplirlo tú",d:"Si pusiste que no respondes fines de semana y respondes el sábado, el documento acaba de perder toda su fuerza."}
+  ],
+  ghl:"Adjúntalo al mensaje de bienvenida. Y replica la política de reprogramación en la configuración de tu calendario, para que el sistema la aplique solo.",
+  ayuda:"Redacción y límites → chat de soporte o sesión de estrategia. Configuración del calendario → María José."
+},
+{
+  num:"Paso 06", ico:"sobre",
+  titulo:"Bienvenida y mapa del programa",
+  sub:"El primer mensaje después de pagar, y una página donde tu cliente ve el programa entero.",
+  chips:["30 minutos","Se automatiza","Dentro de las 48 h"],
+  queEs:H(`<p>Un mensaje que se envía solo en las primeras 24 horas tras el pago, y un mapa de una página con las fases, las fechas clave y dónde está cada cosa.</p>`),
+  porQue:H(`<p>Existe un fenómeno constante en las ventas high ticket: <strong>el bajón de las 48 horas</strong>. El cliente firma con euforia, pasan dos días, y aparece la duda. "¿He hecho bien? Es mucho dinero. ¿Y si no funciona?"</p>
+    <p>Si en esas 48 horas no recibe nada, la duda crece sola. Si recibe una bienvenida ordenada con un mapa claro y una primera acción sencilla, la duda se convierte en ganas de empezar.</p>
+    <p>Esto no es cortesía. Es prevención de arrepentimiento.</p>`),
+  plantilla:H(`<div class="campo"><b>Asunto</b>Bienvenido a <span class="hueco">PROGRAMA</span> — esto es lo que pasa ahora</div>
+    <div class="campo"><b>Apertura</b>Una frase que conecte con lo que él quiere lograr. No con lo que tú vendes.</div>
+    <div class="campo"><b>Lo primero, para que no tengas que preguntar</b>Fecha de inicio · Frecuencia, día y hora en SU zona horaria · Duración y número de fases · Canal oficial</div>
+    <div class="campo"><b>Lo único que necesito de ti esta semana</b>Tres cosas como máximo, y que la primera sea fácil: rellenar el formulario, reservar la sesión 1, leer el acuerdo de trabajo.</div>
+    <div class="campo"><b>Cierre</b>"Nada más. No hace falta que prepares nada ni que estudies nada."</div>
+    <div class="campo"><b>Y anuncia la victoria rápida</b>Una línea diciendo qué va a conseguir en esta primera semana: <span class="hueco">LOGRO DE LOS 7 DÍAS</span>. La eliges una vez con la herramienta <strong>La victoria rápida</strong> y sirve para todos tus clientes.</div>
+    <p style="margin-top:18px"><strong>Y el mapa, aparte:</strong> una tabla con fase, cuándo, qué vamos a hacer y qué tendrás al terminarla. Más los momentos clave con fecha exacta y dónde vive cada cosa.</p>`),
+  ejemplo:H(`<div class="mensaje"><div class="de">Correo de bienvenida</div>
+    <p>Hola Ricardo,</p>
+    <p>Ya estás dentro. En doce semanas quiero que puedas irte dos semanas y que el despacho siga andando sin ti; a partir de aquí eso deja de ser una idea y pasa a ser un plan con fechas.</p>
+    <p><strong>Lo primero, para que no tengas que preguntar nada:</strong></p>
+    <ul><li>Empezamos el martes 3 de marzo.</li><li>Nos vemos todos los martes a las 9:00, hora de Ciudad de México.</li><li>Son 12 semanas en 4 fases. Te dejo el mapa abajo.</li><li>Todo lo nuestro va por WhatsApp.</li></ul>
+    <p><strong>Lo único que necesito de ti esta semana:</strong></p>
+    <ol style="padding-left:20px"><li>Rellenar este formulario. Son 15 minutos y de ahí sale tu plan.</li><li>Reservar la primera sesión.</li><li>Leer "Cómo trabajamos juntos", adjunto. Dos minutos.</li></ol>
+    <p style="margin-bottom:0">Nada más. No prepares nada, no estudies nada. La primera semana solo vamos a mirar.</p></div>
+    <table class="tabla" style="margin-top:16px"><tr><th>Fase</th><th>Cuándo</th><th>Qué haremos</th><th>Qué tendrás</th></tr>
+    <tr><td>Ver el desorden</td><td>Sem. 1-2</td><td>Medir en qué se te va el día</td><td>Auditoría con tus 3 cuellos de botella</td></tr>
+    <tr><td>Sacar lo que no es tuyo</td><td>Sem. 3-6</td><td>Repartir esas áreas en tu equipo</td><td>Mapa de responsabilidades</td></tr>
+    <tr><td>Escribirlo</td><td>Sem. 7-10</td><td>Que cada área tenga su proceso</td><td>3 manuales</td></tr>
+    <tr><td>Sostenerlo</td><td>Sem. 11-12</td><td>Montar el ritmo que lo mantiene</td><td>Calendario e informe</td></tr></table>`),
+  errores:[
+    {t:"Tardar más de 48 horas",d:"Es la ventana. Pasada, ya estás apagando dudas en vez de generando impulso."},
+    {t:"Pedir cinco cosas en el primer mensaje",d:"Tres como máximo, y que la primera sea fácil. Un cliente que completa la primera acción entra en modo \"esto ya empezó\"."},
+    {t:"Un mensaje que habla de ti",d:"\"Llevo 10 años ayudando a despachos\" no le sirve de nada ahora. Ya te compró. Háblale de lo que va a pasar la semana que viene."},
+    {t:"No dar el mapa",d:"El cliente que no ve el recorrido completo pregunta constantemente \"¿y después qué?\". El mapa contesta esa pregunta antes de que exista."},
+    {t:"Mandarlo a mano cada vez",d:"Automatízalo el primer día. Se te va a olvidar exactamente el día que estés más ocupado, que es cuando peor sienta."},
+    {t:"Fechas exactas para todo el mapa",d:"Fecha exacta a los momentos clave, rangos a las fases. Si das doce fechas exactas, la primera que se mueva te obliga a rehacer el documento."}
+  ],
+  ghl:"Un solo flujo disparado por pago confirmado: correo de bienvenida con el mapa adjunto, aviso corto por el canal oficial, recordatorio a los 3 días si no rellenó el intake, y tarea interna a los 5.",
+  ayuda:"Montaje del flujo → María José. Redacción del mensaje → chat de soporte o sesión de estrategia."
+},
+{
+  num:"Paso 07", ico:"llave",
+  titulo:"Checklist de accesos",
+  sub:"Qué necesitas tú de tu cliente y qué necesita él de ti, con el permiso correcto en cada caso.",
+  chips:["10 minutos","El documento más corto","El que más tiempo ahorra"],
+  queEs:H(`<p>Una lista con casillas: lo que necesitas de tu cliente, lo que le das tú, y qué nivel de permiso lleva cada cosa.</p>`),
+  porQue:H(`<p>Parece un detalle administrativo. No lo es: es una de las fugas de tiempo más comunes y más tontas del acompañamiento.</p>
+    <p>Alguien comparte una carpeta pero deja el permiso mal. La otra persona no puede abrirla, escribe. Pasan 24 horas hasta que se responde. Se vuelve a compartir, mal otra vez. Se pierden tres días en algo que no tiene nada que ver con el valor que estás entregando.</p>
+    <p>Y peor: eso pasa en la primera semana, justo cuando tu cliente está decidiendo si esto está bien organizado o no.</p>`),
+  plantilla:H(`<div class="campo"><b>Lo que necesito de ti</b>Qué · Para qué · Qué permiso hace falta (editor, comentarista o lector) · Casilla</div>
+    <div class="campo"><b>Lo que te doy yo</b>Carpeta del programa · Enlace fijo de las sesiones · Canal de mensajes · Materiales</div>
+    <div class="campo"><b>Al terminar el programa</b>Qué accesos libero yo y cuándo · Qué se queda contigo · Hasta cuándo están las grabaciones</div>
+    <p style="margin-top:18px"><strong>Y estas instrucciones, que van dentro del documento:</strong></p>
+    <ul><li>Comparte por correo añadiendo la dirección concreta, no por enlace suelto.</li><li>Comprueba el nivel de permiso: si tengo que escribir dentro, necesito ser editor.</li><li>Verifica tú mismo abriéndolo desde una ventana privada del navegador.</li><li>Si tu cuenta es de empresa, puede bloquear compartir con externos. Pruébalo antes de darlo por hecho.</li><li>Avísame por el canal oficial cuando lo compartas.</li></ul>`),
+  ejemplo:H(`<table class="tabla"><tr><th>Necesito de ti</th><th>Para qué</th><th>Permiso</th><th></th></tr>
+    <tr><td>Carpeta con los procedimientos actuales del despacho</td><td>Ver qué hay escrito ya, aunque esté a medias</td><td>Comentarista</td><td><span class="marca-si">Sí</span></td></tr>
+    <tr><td>Organigrama con funciones</td><td>Saber quién puede asumir qué</td><td>Lector</td><td><span class="marca-si">Sí</span></td></tr>
+    <tr><td>Lectura del gestor de proyectos</td><td>Ver el flujo real de trabajo</td><td>Lector</td><td><span class="marca-no">Aún no</span></td></tr>
+    <tr><td>Registro de interrupciones de 10 días</td><td>Es la medición inicial</td><td>Editor</td><td><span class="marca-no">Aún no</span></td></tr></table>
+    <table class="tabla" style="margin-top:12px"><tr><th>Te doy yo</th><th>Dónde</th><th></th></tr>
+    <tr><td>Carpeta del programa con materiales y grabaciones</td><td>Enlace compartido</td><td><span class="marca-si">Sí</span></td></tr>
+    <tr><td>Enlace fijo de las sesiones</td><td>Siempre el mismo</td><td><span class="marca-si">Sí</span></td></tr>
+    <tr><td>Las 9 plantillas de proceso</td><td>Subcarpeta "Plantillas"</td><td><span class="marca-si">Sí</span></td></tr></table>`),
+  errores:[
+    {t:"Compartir y no verificar",d:"Ábrelo desde una ventana privada. Treinta segundos. Es la diferencia entre que funcione y que no."},
+    {t:"Dar permiso de lectura cuando hace falta edición",d:"Piensa qué vas a hacer dentro del documento antes de elegir el permiso."},
+    {t:"No decir para qué necesitas cada acceso",d:"El cliente que no entiende por qué le pides entrar en algo suyo se pone incómodo, y con razón. Una línea de motivo lo resuelve."},
+    {t:"Pedirlo todo el primer día",d:"Pide solo lo de la fase 1. Lo de la fase 3 se pide cuando llegue la fase 3."},
+    {t:"No cerrar accesos al terminar",d:"Quedarte con acceso a información de alguien que ya no es cliente te expone sin ninguna ventaja. Libéralo y díselo: es una señal de seriedad que se recuerda."},
+    {t:"Asumir que su herramienta funciona como la tuya",d:"Muchas cuentas corporativas bloquean compartir con externos por defecto. Si tu cliente trabaja en una empresa mediana, dalo por probable."}
+  ],
+  ghl:"Como tarea dentro del flujo de arranque, con las casillas pendientes visibles en la ficha del contacto. No des el arranque por hecho hasta que esté todo marcado.",
+  ayuda:"Permisos de herramientas externas → María José."
+}
+];
+
+const CAJA_H = [
+{
+  ico:"filtro", et:"Antes de cobrar", titulo:"A quién no aceptar",
+  resumen:"El filtro que se aplica antes de que te paguen. Evita más problemas de entrega que todos los pasos juntos.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p>El resto del kit empieza cuando alguien ya te pagó. Esta herramienta es lo único que va antes, y es la que más disgustos ahorra.</p>
+    <p><strong>Casi ningún problema de entrega es un problema de método.</strong> Cuando alguien no avanza, casi siempre se decidió mucho antes: en la llamada de venta, cuando aceptaste a una persona que no estaba en condiciones de hacer el trabajo.</p>
+    <p>Ese cliente te cuesta tres veces. Te ocupa una plaza que tiene tu techo. Te consume más horas que dos clientes buenos juntos, porque hay que empujarlo. Y al final no tienes ni testimonio ni recomendación: tienes un caso que no puedes contar y alguien que dirá que no le funcionó.</p>
+    <p style="margin-bottom:0">Decir que no a tiempo es una decisión de entrega, no de ventas.</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Señales para no aceptar</div><div class="bloque-cont">
+    <p>Una sola no descarta a nadie. Dos ya es conversación. Tres es un no.</p>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Busca un milagro</b><span>Quiere el resultado sin hacer el trabajo. Se detecta preguntando qué está dispuesto a dejar de hacer: si no hay nada, no hay sitio para lo nuevo.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Le ahoga pagarlo</b><span>Si el pago le deja sin margen, la presión entra en el programa desde la semana uno y todo se convierte en una exigencia de resultados inmediatos. Es incómodo de preguntar y hay que preguntarlo.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Paga a escondidas de alguien</b><span>De su pareja, de su socio, de su equipo. Lo que se hace a escondidas se abandona en cuanto hay tensión, y tú te enteras cuando ya no responde.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Espera resultados en dos semanas</b><span>Si su expectativa de plazo y la tuya no coinciden en la llamada, no van a coincidir nunca. Se dice el plazo real en voz alta y se comprueba que lo acepta.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No está dispuesto a cambiar nada de su entorno</b><span>Quiere resultados distintos sin tocar su agenda, su equipo ni sus hábitos. Ahí no hay programa que funcione.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Ya pasó por otros tres y todos eran malos</b><span>Puede ser mala suerte. También puede ser que el patrón sea él. Pregunta qué hizo él en cada uno de esos intentos, no qué hicieron ellos.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No decide él</b><span>Si cada cosa tiene que aprobarla otra persona que no está en la llamada, esa persona tiene que estar en la llamada.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Las cinco preguntas que lo revelan</div><div class="bloque-cont">
+    <p>Van al final de la llamada de venta, cuando ya hay interés. No son un examen: son la última comprobación antes de aceptar el dinero.</p>
+    <div class="campo"><b>1 · Tiempo real</b>¿Cuántas horas por semana puedes dedicarle de verdad? No las que te gustaría.</div>
+    <div class="campo"><b>2 · Qué sueltas</b>Para meter esto en tu semana, ¿qué vas a dejar de hacer?</div>
+    <div class="campo"><b>3 · Intentos anteriores</b>¿Qué has probado ya para resolver esto? ¿Qué hiciste tú en aquello y qué pasó?</div>
+    <div class="campo"><b>4 · Quién más decide</b>¿Hay alguien más que tenga que estar de acuerdo para que esto avance?</div>
+    <div class="campo" style="margin-bottom:0"><b>5 · Plazo</b>Esto son <span class="hueco">X SEMANAS</span> y los primeros resultados se ven hacia <span class="hueco">MOMENTO</span>. ¿Te encaja ese ritmo?</div>
+    <p style="margin:16px 0 0">Las respuestas se guardan. Si aceptas a alguien con señales, escribe cuáles: dentro de tres meses vas a querer saber si tu instinto acertaba.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Cómo se dice que no</div><div class="bloque-cont">
+    <p>Un no bien dicho deja mejor recuerdo que un sí a medias, y muchas veces vuelve más adelante o te manda a otra persona.</p>
+    <div class="mensaje"><div class="de">No es el momento</div>"Te voy a ser sincera: creo que ahora mismo no es tu momento para esto, y prefiero decírtelo antes que cobrarte.<br><br>Por lo que me cuentas, tienes <span class="hueco">SITUACIÓN</span> por delante, y este programa pide unas horas a la semana que ahora no tienes. Si entras así, vas a pagar por algo que no vas a poder aprovechar.<br><br>Lo que sí haría ahora es <span class="hueco">ALTERNATIVA</span>. Y cuando <span class="hueco">CONDICIÓN</span>, me escribes y lo retomamos."</div>
+    <div class="mensaje" style="margin-bottom:0"><div class="de">No es el problema que yo resuelvo</div>"Lo que necesitas no es lo que yo hago. Te podría acompañar igualmente y seguramente sacarías algo, pero no sería lo que más te ayuda.<br><br>Lo tuyo es <span class="hueco">OTRO CAMPO</span>. Te paso con alguien que se dedica a eso."</div></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Aceptar porque necesitas la venta</b><span>Es humano y es carísimo. Ese cliente te va a costar más horas de las que te da y te va a bloquear la plaza que necesitabas para el bueno.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Ver las señales y entrar igual "a ver si con este sí"</b><span>Si las viste y las anotaste, ya sabes cómo termina. El programa no cambia a las personas que no quieren cambiar.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No preguntar por el dinero</b><span>Da vergüenza y es la señal que más pesa. No preguntas cuánto gana: preguntas si pagarlo le deja sin aire.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Decir que no sin alternativa</b><span>El no a secas se recuerda mal. El no con una salida se recuerda como criterio.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No dejarlo por escrito</b><span>Si no registras a quién rechazaste y por qué, no puedes aprender de tu propio criterio.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Un caso concreto que no sabes si aceptar → chat de soporte o sesión de estrategia.</p></div></div>`)
+},
+{
+  ico:"rayo", et:"Primeros 7 días", titulo:"La victoria rápida",
+  resumen:"Lo que tu cliente tiene que conseguir en la primera semana. Es lo que decide si el programa entero va a funcionar.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p><strong>La gente no abandona porque el programa no le sirva. Abandona porque no puede seguir el ritmo.</strong> Se le acumulan tareas, siente que va atrasada, y en vez de decirlo desaparece. Cuando eso pasa, casi siempre empezó la primera semana.</p>
+    <p>Al revés funciona igual de fuerte. Alguien que consigue algo real en los primeros días entra en otro estado: deja de preguntarse si hizo bien en pagar y empieza a preguntarse qué viene después. Ese cambio no se recupera más tarde; o pasa al principio o ya no pasa.</p>
+    <p style="margin-bottom:0">Por eso la primera semana no es para enseñar mucho. Es para que consiga una cosa.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Qué tiene que cumplir</div><div class="bloque-cont">
+    <p>Una victoria rápida sirve solo si cumple las cuatro:</p>
+    <table class="tabla"><tr><th>Condición</th><th>Por qué</th></tr>
+    <tr><td><b>Se consigue en menos de 7 días</b></td><td>Más allá, la euforia de la compra ya se apagó</td></tr>
+    <tr><td><b>Depende solo de tu cliente</b></td><td>Si necesita que su equipo, su pareja o un proveedor colaboren, no la controla y puede fallar por algo ajeno</td></tr>
+    <tr><td><b>Se ve</b></td><td>Tiene que poder enseñarla, contarla o señalarla. Lo que no se ve, no cuenta como victoria</td></tr>
+    <tr><td><b>Le resolvería algo aunque el programa parara ahí</b></td><td>Es la prueba de que no es una tarea de calentamiento, sino valor real</td></tr></table>
+    <div class="campo" style="margin-top:16px"><b>Escríbela así</b>En los primeros 7 días, mi cliente va a conseguir <span class="hueco">LOGRO CONCRETO</span>, que se comprueba porque <span class="hueco">PRUEBA VISIBLE</span>.</div>
+    <p style="margin-bottom:0">Es la misma para todos tus clientes. Se decide una vez, igual que el resto de los pasos de arranque.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Ejemplo</div><div class="bloque-cont">
+    <p>El programa de Marina dura 12 semanas y el resultado grande —que Ricardo pueda irse dos semanas— llega al final. Si la primera semana solo hubiera medición, Ricardo pasaría siete días anotando interrupciones sin ver nada a cambio.</p>
+    <div class="mensaje"><div class="de">Su victoria rápida</div>En los primeros 7 días, Ricardo deja de revisar los presupuestos por debajo de 500 €. Se comprueba porque esa semana firmó cuatro sin mirarlos y no pasó nada.</div>
+    <p style="margin-top:14px">Fíjate en lo que hace bien: es pequeña, la decide él solo, se nota el mismo viernes, y le devuelve tiempo aunque el programa se acabara ahí. Además prepara lo que viene: es la primera prueba de que delegar no rompe el despacho.</p>
+    <p style="margin-bottom:0"><strong>Y no choca con la medición.</strong> El registro de interrupciones sigue haciéndose esa semana; lo que cambia es que además se lleva algo.</p></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">La primera semana se entrega menos, no más</div><div class="bloque-cont">
+    <p>El impulso natural es cargar la primera semana: mandar todos los materiales, dar los accesos, abrir el temario. Se hace por generosidad y sale mal.</p>
+    <p style="margin-bottom:0">Tu cliente acaba de pagar mucho y está mirando si esto tiene orden. Diez cosas el primer día se leen como desorden. Una cosa clara y conseguida se lee como método. <strong>El material completo puede esperar a la semana dos.</strong></p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Confundirla con una tarea fácil</b><span>Rellenar un documento no es una victoria. Tiene que cambiar algo de su día.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Dejarla para cuando "estén los cimientos"</b><span>Es el error más común en programas serios: primero diagnóstico, luego estrategia, y la primera cosa que el cliente nota llega en la semana cinco. Para entonces ya dudó dos veces.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Que dependa de ti</b><span>Si la victoria es algo que entregas tú, el mérito es tuyo. Tiene que hacerla él: eso es lo que le convence de que puede.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No nombrarla</b><span>Si no le dices "esto es lo que vas a conseguir esta semana", lo consigue y no se entera. Se anuncia antes y se celebra después, por su nombre.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Una distinta para cada cliente</b><span>Se decide una vez para tu programa. Si cada cliente lleva una inventada sobre la marcha, ninguna está pensada.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Elegir cuál es la victoria rápida de tu programa → chat de soporte o sesión de estrategia.</p></div></div>`)
+},
+{
+  ico:"sesion", et:"Cada sesión", titulo:"Guion de sesión",
+  resumen:"Cinco bloques con tiempo asignado, iguales en todas las sesiones. Para que ninguna se te vaya de las manos.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p>Las sesiones sin estructura se van por donde el cliente esté más emocional ese día. Sales de 60 minutos con la sensación de haber hablado mucho y no haber decidido nada. Y el cliente sale igual, aunque no lo diga.</p>
+    <p>La estructura fija garantiza que siempre se revisa lo anterior y que siempre se cierra con un compromiso concreto. Y te libera la cabeza: cuando la forma está resuelta, dedicas toda tu atención al contenido.</p>
+    <p>Un cliente high ticket nota la diferencia entre una conversación y una sesión. Está pagando por lo segundo.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">La estructura · 60 minutos</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Bloque</th><th>Tiempo</th><th>Qué pasa</th></tr>
+    <tr><td><b>1. Apertura</b></td><td>5 min</td><td>"¿Cómo llegas hoy?" Una pregunta y escuchas. Sirve para calibrar: si llega saturado, la sesión pide otro ritmo.</td></tr>
+    <tr><td><b>2. Revisión</b></td><td>10 min</td><td>Las tareas de la última sesión, una por una. Lo hecho: qué pasó. Lo no hecho: qué lo impidió, sin reproche y sin dejarlo pasar.</td></tr>
+    <tr><td><b>3. Trabajo</b></td><td>30 min</td><td>El tema de hoy según la fase. Aquí entra tu especialidad. Si lleva 10 minutos hablando sin avanzar, reconduce.</td></tr>
+    <tr><td><b>4. Compromisos</b></td><td>10 min</td><td>Qué se decidió, dicho en voz alta. Qué va a hacer antes de la próxima, con fecha. Máximo 3 tareas, y que las diga él.</td></tr>
+    <tr><td><b>5. Cierre</b></td><td>5 min</td><td>Confirmar próxima sesión. "¿Te llevas algo que no habíamos previsto?"</td></tr></table></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">Variaciones</div><div class="bloque-cont">
+    <p><strong>Sesión 1:</strong> apertura más larga para repasar el acuerdo de trabajo en voz alta. En vez de revisión, puesta en común del intake y del mapa. La primera tarea debe ser fácil y visible: se busca una victoria rápida, no profundidad.</p>
+    <p style="margin-bottom:0"><strong>Sesión grupal:</strong> ronda de máximo 1 minuto por persona. Revisas 2 o 3 casos, no todos, y rotas quién. Cada uno escribe su compromiso en el chat. <strong>Regla de oro:</strong> el caso individual que pasa de 10 minutos se saca de la sesión grupal, o los demás pagan por escuchar el problema de uno.</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Saltarse la revisión</b><span>Es el bloque que más se sacrifica cuando hay prisa y el que sostiene todo. Si nunca revisas, las tareas dejan de hacerse en tres semanas.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Dejar que la apertura se coma la sesión</b><span>Cinco minutos. Si necesita más, nómbralo: "veo que hoy vienes cargado, dame cinco minutos más aquí y ajustamos el resto".</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Cerrar sin tareas concretas</b><span>"Le voy a dar una vuelta" no es una tarea. Necesita verbo, objeto y fecha.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Más de tres tareas</b><span>Con cinco no hace ninguna y encima llega a la siguiente sesión sintiéndose mal.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Decirlas tú</b><span>Pregunta "¿con qué te quedas y qué vas a hacer antes del martes?". Lo que se dice en voz propia se cumple más.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No anotar lo no hecho</b><span>Una tarea sin hacer es un dato. Tres veces la misma tarea sin hacer es el diagnóstico. Solo lo ves si lo registras.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Conducción de sesiones y clientes difíciles → chat de soporte o sesión de estrategia.</p></div></div>`)
+},
+{
+  ico:"documento", et:"Después de cada sesión", titulo:"Acta de sesión",
+  resumen:"El resumen que envías el mismo día. Lo genera DD Notetaker y tú lo curas en dos minutos.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p><strong>Es tu prueba de valor entregado.</strong> Un acompañamiento deja poco rastro físico: son conversaciones. Al cabo de tres meses tu cliente recuerda una sensación difusa. Doce actas en su bandeja son doce pruebas de que se hizo un trabajo serio.</p>
+    <p>Elimina el "yo entendí otra cosa". Y sostiene la renovación: releer sus actas de las semanas 1 y 2 va a convencerle más que cualquier argumento tuyo.</p>
+    <p style="margin-bottom:0">Además, doce actas son la materia prima del informe de cierre. Con actas, ese informe se escribe en media hora. Sin ellas, lo escribes de memoria y sale flojo.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Cómo grabar con DD Notetaker</div><div class="bloque-cont">
+    <p>Lo tienes incluido en tu programa. Entras por el menú <strong>Llamadas</strong> de tu Centro de Mando, o directamente en <a href="https://notetaker.departamentodisruptivo.com/" target="_blank" rel="noopener">notetaker.departamentodisruptivo.com ↗</a>, que es también donde instalas la extensión. Dos formas de grabar:</p>
+    <p><strong>Google Meet, con la extensión de Chrome.</strong> Grabas desde tu propia pestaña pulsando "Grabar" dentro de la llamada. No entra ningún invitado extra ni hay sala de espera.</p>
+    <p><strong>Zoom u otras, con el asistente visible.</strong> Entra un participante llamado "DD Notetaker" y el anfitrión lo admite. Si el anfitrión es tu cliente, avísale antes o no lo dejará entrar.</p>
+    <p style="margin-bottom:0"><strong>Avisa siempre de que grabas.</strong> Está en tu acuerdo de trabajo y se dice también en voz alta. En varios países el consentimiento es obligatorio.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Qué hace la herramienta y qué pones tú</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>DD Notetaker lo hace solo</th><th>Tú tienes que...</th></tr>
+    <tr><td>Grabación completa y buscable</td><td>Enviarla si la incluyes en tu programa</td></tr>
+    <tr><td>Transcripción en castellano</td><td>Nada</td></tr>
+    <tr><td>Resumen con las decisiones tomadas</td><td>Quitar lo que no sea decisión firme</td></tr>
+    <tr><td>Tareas asignadas por responsable</td><td>Recortar a tres como máximo y poner fecha</td></tr>
+    <tr><td>—</td><td><b>Escribir el bloque personal</b></td></tr></table>
+    <p style="margin-bottom:0"><strong>El bloque personal no lo delegues nunca.</strong> Es el que el cliente lee dos veces. Sin él, el acta se convierte en un informe automático y se nota a la primera.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Ejemplo · Sesión 5</div><div class="bloque-cont">
+    <div class="mensaje"><div class="de">Despacho en Orden · Sesión 5 · 31 de marzo</div>
+    <p><strong>Dónde estamos:</strong> Fase 2 de 4 — Sacar lo que no es tuyo</p>
+    <p><strong>De qué hablamos.</strong> Repasamos la conversación con Marta, que salió mejor de lo esperado: aceptó llevar los presupuestos por debajo de 2.000 €. El resto del equipo todavía no lo sabe. Trabajamos cómo comunicar el cambio para que se lea como una decisión de estructura y no como algo improvisado.</p>
+    <p><strong>Lo que decidimos.</strong> La comunicación se hace en la reunión del lunes, en persona. Esta semana no revisas ningún presupuesto por debajo de 2.000 €.</p>
+    <p><strong>Tus tareas para el martes 7:</strong> comunicar el cambio con el guion que preparamos · no revisar presupuestos bajo 2.000 € en toda la semana · anotar cada vez que sientas el impulso de revisarlos igualmente.</p>
+    <p style="margin-bottom:0"><strong>Una cosa que quiero que te lleves.</strong> Hoy dijiste que lo que te cuesta no es soltar el trabajo, es la conversación con tu equipo. Eso es el verdadero cuello de botella y es lo que vamos a trabajar en las próximas tres sesiones.</p></div>
+    <p style="margin:14px 0 0">El resumen y las tareas te vienen ya escritos y muy parecidos a esto. Lo que no viene es el último bloque. Esa frase la escribiste tú, y es la que el cliente va a recordar.</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Enviar el resumen del panel tal cual</b><span>Se nota. Recoge cosas irrelevantes, a veces malinterpreta un matiz y le falta la parte humana.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Aceptar las cinco tareas que propone</b><span>Recoge todo lo que sonó a compromiso durante la llamada. Recórtalo a tres.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Dejarlo para el fin de semana</b><span>El acta del viernes que llega el lunes ya no sirve: tu cliente lleva tres días sin saber qué tenía que hacer.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Un acta de dos páginas</b><span>Cabe en una pantalla del móvil o no cabe en la vida de tu cliente.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No guardarlas</b><span>Guárdalas todas en la ficha del contacto. En la semana 12 lo vas a agradecer.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Grabar sin avisar</b><span>Con la extensión no aparece ningún invitado, así que tu cliente puede no darse cuenta. Precisamente por eso hay que decirlo.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">DD Notetaker o automatizar el envío del acta → María José, Clínica de Sistemas, miércoles por la tarde y jueves bajo pedido.</p></div></div>`)
+},
+{
+  ico:"tablero", et:"El sistema completo", titulo:"Pipeline de entrega en GHL",
+  resumen:"Dónde vas a ver en qué punto está cada cliente y quién se está enfriando. Si solo montas una cosa del kit, monta esta.",
+  cuerpo:H(`<div class="bloque b-aviso"><div class="bloque-cab">Empecemos por lo importante: esto no lo tienes</div><div class="bloque-cont">
+    <p>Abre tu GHL y mira tus pipelines. Casi con toda seguridad tienes uno llamado <strong>"llamada agendada"</strong>, con ocho etapas que empiezan en <em>llamada agendada</em> y terminan en <em>Compra</em>.</p>
+    <p>Fíjate en dónde termina. Termina en la venta.</p>
+    <p>Eso no es un defecto de tu cuenta: todo lo que te hemos montado hasta ahora sirve para conseguir clientes. Captar, cualificar, agendar, vender, entregar el acceso. Y funciona.</p>
+    <p style="margin-bottom:0">Lo que no existe todavía, ni en tu cuenta ni en la de casi nadie, es la capa siguiente: <strong>qué pasa con esa persona durante los meses que dura su programa.</strong> Ese es el hueco. No vienes a configurar un pipeline de entrega: vienes a crearlo. Se tarda una hora.</p></div></div>
+
+    <div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p>Con dos clientes te apañas de memoria. Con cinco, no.</p>
+    <p>El cliente que se pierde no avisa. No reclama, no se queja, no pide devolución. Simplemente deja de responder, y cuando te das cuenta lleva cuatro semanas fuera y siente que tiró el dinero. Ese cliente no renueva y no te da testimonio.</p>
+    <p style="margin-bottom:0">En un negocio high ticket, donde la mayor parte del crecimiento viene de casos de éxito y recomendaciones, perder a esa persona cuesta mucho más que la venta que no hiciste. Y llevarlo en una hoja de cálculo aparte no cuenta: todo lo que vive fuera de GHL se desactualiza.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Qué haces tú y qué se te monta</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Paso</th><th>Quién</th></tr>
+    <tr><td>1. Crear el pipeline y sus etapas</td><td><b>Tú.</b> Diez minutos, y conviene que lo hagas tú porque las etapas son tus fases</td></tr>
+    <tr><td>2. Crear los campos personalizados</td><td><b>Tú.</b> Otros diez minutos</td></tr>
+    <tr><td>3. El semáforo</td><td><b>Tú</b>, es un campo más</td></tr>
+    <tr><td>4. Los flujos automáticos</td><td><b>Con el equipo</b>, en la Clínica de Sistemas</td></tr></table>
+    <p style="margin-bottom:0">Haz los pasos 1 a 3 esta semana y llévate el 4 a la clínica con los deberes hechos. Con el pipeline creado, montar los automatismos es cuestión de una sesión.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Paso 1 y 2 · Las etapas</div><div class="bloque-cont">
+    <p>Oportunidades → Pipelines. <strong>Antes de crear uno nuevo, mira los que ya tienes.</strong> Es probable que aparezca uno llamado <em>Gestión de clientes</em> con cuatro etapas —Nuevo Cliente, Onboarding, Entregando Servicio, Upsell/Renovación—. Ese es el que trae GoHighLevel de fábrica y casi nadie llega a usarlo. Si está ahí y está vacío, <strong>renómbralo a Entrega y amplíalo</strong> con la tabla de abajo, en vez de crear un segundo: acabar con dos pipelines de entrega es peor que no tener ninguno. Si no está, créalo tú. En los dos casos, aparte del de ventas, siempre.</p>
+    <table class="tabla"><tr><th>#</th><th>Etapa</th><th>Se sale cuando</th></tr>
+    <tr><td>1</td><td>Pago confirmado</td><td>Se envía la bienvenida</td></tr>
+    <tr><td>2</td><td>Onboarding</td><td>Intake relleno y accesos completos</td></tr>
+    <tr><td>3</td><td>Programa iniciado</td><td>Se cumple el criterio de salida de la fase 1</td></tr>
+    <tr><td>4-7</td><td><b>Una etapa por cada una de tus fases</b></td><td>Criterio de salida cumplido</td></tr>
+    <tr><td>8</td><td>Cierre en curso</td><td>Informe entregado y sesión de cierre hecha</td></tr>
+    <tr><td>9</td><td>Cerrado — con testimonio</td><td>—</td></tr>
+    <tr><td>10</td><td>Cerrado — sin testimonio</td><td>—</td></tr>
+    <tr><td>11</td><td>En pausa / en riesgo</td><td>Se reactiva o se cierra</td></tr></table>
+    <p><strong>El cliente se mueve por criterio cumplido, no por calendario.</strong> Si ya es la semana 6 pero no cumplió el criterio de la fase 2, sigue en la fase 2. Eso es justo lo que necesitas ver.</p>
+    <p><strong>Dónde encaja con lo que ya tienes:</strong> cuando alguien llega a <em>Compra</em> en tu pipeline de ventas, esa misma persona entra en <em>Pago confirmado</em> aquí. Ahí se enganchan los dos.</p>
+    <p style="margin-bottom:0">Separar "cerrado con testimonio" de "cerrado sin testimonio" te da de un vistazo tu porcentaje real de casos capitalizados. Suele ser un número incómodo la primera vez que lo miras.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Paso 2 · Campos personalizados</div><div class="bloque-cont">
+    <ul><li>Fecha de inicio y fecha de fin prevista</li><li>Fase actual</li><li>Métrica principal: valor inicial, a mitad y final</li><li>Fecha de última sesión realizada</li><li>Fecha de último contacto</li><li>Sesiones consumidas y totales</li><li>Estado de pago</li><li>Semáforo</li></ul>
+    <p style="margin-bottom:0">Es probable que ya tengas decenas de campos, casi todos capturados de tu quiz. Esos son de leads; estos son de clientes de pago. Ponles un prefijo común, algo como <span class="hueco">Entrega —</span>, para poder filtrarlos sin bucear entre cien campos.</p></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">Paso 3 · El semáforo</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Color</th><th>Cuándo</th><th>Qué haces</th></tr>
+    <tr><td><span class="luz luz-verde"></span><b>Verde</b></td><td>Asistió a la última sesión, hizo al menos 2 de 3 tareas y respondió en los últimos 7 días</td><td>Nada especial. Sigue el ciclo</td></tr>
+    <tr><td><span class="luz luz-ambar"></span><b>Ámbar</b></td><td>Faltó una sesión · no hizo tareas dos veces seguidas · 10 días sin responder · cuota vencida</td><td>Mensaje personal en 48 h. <b>Tuyo, escrito para él</b>, sin reproche. Nunca automático</td></tr>
+    <tr><td><span class="luz luz-rojo"></span><b>Rojo</b></td><td>Dos o más de las de ámbar, o 20 días sin contacto, o dos sesiones seguidas perdidas</td><td>Llamada, no mensaje. Tres intentos en 10 días por canales distintos. Después, conversación formal sobre continuar o pausar — ver la herramienta <b>Pausa, salida y recuperación</b></td></tr></table></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Ejemplo · un tablero en la semana 7</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Cliente</th><th>Etapa</th><th>Sesiones</th><th>Semáforo</th><th>Acción</th></tr>
+    <tr><td>Ricardo</td><td>Fase 3</td><td>7/12</td><td><span class="luz luz-verde"></span></td><td>Ninguna</td></tr>
+    <tr><td>Carmen</td><td>Fase 2</td><td>5/12</td><td><span class="luz luz-ambar"></span></td><td>Mensaje personal hoy. Segunda vez sin tareas</td></tr>
+    <tr><td>Javier</td><td>En riesgo</td><td>3/12</td><td><span class="luz luz-rojo"></span></td><td>Llamada. Tercer intento</td></tr>
+    <tr><td>Nuria</td><td>Onboarding</td><td>0/12</td><td><span class="luz luz-verde"></span></td><td>Falta el intake, vence mañana</td></tr>
+    <tr><td>Tomás</td><td>Cerrado sin testimonio</td><td>12/12</td><td>—</td><td>Pedir testimonio, se pasó</td></tr></table>
+    <p style="margin-bottom:0">De un vistazo se ven tres cosas que sin tablero no se verían: Carmen se está enfriando, Javier está casi perdido, y Tomás terminó contento y nadie le pidió el testimonio. Las tres se arreglan hoy.</p></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">Paso 4 · Los tres flujos (esto a la clínica)</div><div class="bloque-cont">
+    <p><strong>1. Recordatorio de sesión</strong> — 24 horas antes y 1 hora antes.</p>
+    <p><strong>2. Detector de silencio</strong> — si la fecha de último contacto pasa de 10 días, cambia el semáforo a ámbar y te crea una tarea. A los 20, a rojo. Es el más valioso: la diferencia entre enterarte al día 10 o al día 40.</p>
+    <p><strong>3. Enganche con ventas</strong> — cuando alguien llega a <em>Compra</em> en el pipeline de ventas, se crea la oportunidad en <em>Pago confirmado</em> del de Entrega.</p>
+    <p style="margin-bottom:0"><strong>Aviso sobre los flujos que ya tienes.</strong> Es muy probable que en tu cuenta haya automatizaciones que vinieron con las plantillas y siguen en borrador. Algunas tienen avisos naranjas: una etiqueta sin seleccionar, o un paso que apunta a una integración que no está conectada. <strong>No las publiques sin revisarlas.</strong> Un flujo con un paso roto se ejecuta a medias y hace más daño que no tenerlo.</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Usar el pipeline de ventas para la entrega</b><span>Se mezclan las cifras y las automatizaciones de venta se disparan sobre gente que ya compró.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Etapas genéricas en inglés</b><span>New Lead, Contacted, Proposal Sent es lo que sale cuando no sabes qué poner. Si te ves tentado, vuelve al paso 2 del arranque: el problema no es el pipeline, es que las fases no están definidas.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Mover por calendario</b><span>Si no cumplió el criterio, no se mueve. Ver a alguien atascado tres semanas en la misma fase es información, no un fallo.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Semáforo por intuición</b><span>El criterio tiene que ser una fecha o un conteo. Si depende de cómo te cayó su último mensaje, el tablero miente.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Responder al ámbar con un automatismo</b><span>Un recordatorio automático a alguien que se está enfriando le confirma que es un número en una lista, y acelera justo lo que querías evitar.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Llevar el seguimiento solo con etiquetas</b><span>Etiquetas de qué compró cada uno más la lista de miembros de tu curso te dice <b>qué</b> compró alguien, no <b>en qué punto está</b>. Solo una de las dos cosas te avisa cuando alguien se está yendo.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Montarlo perfecto antes de usarlo</b><span>Un pipeline básico funcionando vale infinitamente más que uno perfecto sin terminar.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Es lo que más montaje técnico tiene. Los pasos 1 a 3 hazlos tú. El paso 4 llévalo a la <strong>Clínica de Sistemas con María José</strong> —miércoles por la tarde, jueves bajo pedido— con tus fases ya definidas. Con eso hecho, se resuelve en una sesión.</p></div></div>`)
+},
+{
+  ico:"chat", et:"Cuando toca escribir", titulo:"Plantillas de comunicación",
+  resumen:"Los mensajes difíciles ya escritos: no-shows, silencios, chequeo de mitad, cuotas vencidas.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p>Los mensajes difíciles se escriben mal cuando se escriben en caliente. El cliente que no aparece te molesta; el que lleva tres semanas en silencio te preocupa. Si escribes desde ahí, sale un mensaje pasivo-agresivo o uno suplicante. Ninguno funciona.</p>
+    <p style="margin-bottom:0">Con la plantilla delante adaptas dos frases y envías. La emoción se queda fuera y el mensaje hace su trabajo.</p></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">La regla que gobierna todas</div><div class="bloque-cont">
+    <p style="margin-bottom:0"><strong>Verde se automatiza. Ámbar y rojo se escriben a mano.</strong> Nadie espera calidez de un recordatorio de cita. Pero el mensaje a alguien que se está enfriando tiene que sonar a persona, o le confirmas que es un número en una lista y aceleras justo lo que querías evitar. Están escritas en "tú" neutro, sin regionalismos, para que funcionen igual en cualquier país.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Automatizables</div><div class="bloque-cont">
+    <div class="mensaje" style="border-left-color:var(--azul)"><div class="de" style="color:var(--azul)">Recordatorio · 24 h antes</div>Hola <span class="hueco">NOMBRE</span>, mañana <span class="hueco">DÍA</span> a las <span class="hueco">HORA</span> tenemos sesión. Enlace: <span class="hueco">ENLACE</span>. Para llegar preparado: <span class="hueco">TAREA PENDIENTE</span>. Nos vemos.</div>
+    <div class="mensaje" style="border-left-color:var(--azul)"><div class="de" style="color:var(--azul)">Recordatorio · 1 h antes</div><span class="hueco">NOMBRE</span>, en una hora nos vemos: <span class="hueco">ENLACE</span></div>
+    <div class="mensaje" style="border-left-color:var(--azul);margin-bottom:0"><div class="de" style="color:var(--azul)">Fin de fase</div><span class="hueco">NOMBRE</span>, cerramos la fase <span class="hueco">N</span>. Lo que has conseguido: <span class="hueco">LOGRO</span>. Lo que viene ahora: <span class="hueco">FASE SIGUIENTE</span>, y el foco cambia a <span class="hueco">ENFOQUE</span>. Buen trabajo. Seguimos.</div></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">A mano, siempre</div><div class="bloque-cont">
+    <div class="mensaje"><div class="de">No-show · mismo día</div>Hola <span class="hueco">NOMBRE</span>, te esperé hoy en la sesión y no llegaste. Doy por hecho que se te complicó el día.<br><br>Te dejo dos huecos para recuperarla esta semana: <span class="hueco">OPCIÓN 1</span> o <span class="hueco">OPCIÓN 2</span>. Dime cuál te sirve.<br><br>Si estás pasando por una semana difícil, dímelo también. Se puede reorganizar.
+    <p style="margin:12px 0 0;font-size:.88rem;color:var(--texto-2)">No preguntes "¿qué pasó?" en el primer mensaje. Suena a examen. Ofrece salida y deja la puerta abierta.</p></div>
+    <div class="mensaje"><div class="de">Segunda falta seguida · mejor por voz</div><span class="hueco">NOMBRE</span>, es la segunda que se cae y prefiero que hablemos.<br><br>No es por las sesiones: quiero entender si es tema de agenda, si algo del programa no te está sirviendo, o si es otro momento el que no acompaña. Cualquiera de las tres tiene solución, pero necesito saber cuál es.<br><br>¿Te viene bien una llamada corta <span class="hueco">DÍA</span> a las <span class="hueco">HORA</span>?</div>
+    <div class="mensaje"><div class="de">Silencio de 10 días · ámbar</div>Hola <span class="hueco">NOMBRE</span>, hace unos días que no sé de ti y quería preguntarte directamente: ¿cómo vas?<br><br>No es un recordatorio automático. Si te has atascado con <span class="hueco">TAREA CONCRETA</span>, es normal y es justo lo que trabajamos. Si es otra cosa, cuéntame.
+    <p style="margin:12px 0 0;font-size:.88rem;color:var(--texto-2)">Menciona la tarea concreta. Es lo que demuestra que estás mirando su caso y no mandando lo mismo a doce personas.</p></div>
+    <div class="mensaje"><div class="de">Silencio de 20 días · rojo</div><span class="hueco">NOMBRE</span>, te he llamado y no logro localizarte. Te escribo para que quede claro dónde estamos.<br><br>Tu programa está en pausa desde <span class="hueco">FECHA</span>. Quedan <span class="hueco">X</span> sesiones y termina el <span class="hueco">FECHA FIN</span>.<br><br>Tres opciones: retomamos esta semana, lo pausamos formalmente con nueva fecha de arranque, o hablamos de cerrarlo aquí. Cualquiera me parece bien; lo que no quiero es dejarlo sin decidir.<br><br>Dime algo antes del <span class="hueco">FECHA</span> y lo resolvemos.
+    <p style="margin:12px 0 0;font-size:.88rem;color:var(--texto-2)">Da tres salidas y pone fecha. El cliente en silencio suele estarlo por vergüenza, no por desinterés: darle una salida digna es lo que le permite volver.</p></div>
+    <div class="mensaje"><div class="de">Chequeo de mitad de programa</div><span class="hueco">NOMBRE</span>, estamos en la mitad. Antes de seguir quiero parar un momento y preguntarte tres cosas:<br><br>1. ¿Qué está funcionando mejor de lo que esperabas?<br>2. ¿Qué te está costando más?<br>3. Si pudieras cambiar una cosa de cómo trabajamos, ¿cuál sería?<br><br>Respóndeme con lo que se te ocurra, aunque sea incómodo. Estamos a tiempo de ajustar; al final del programa ya no.
+    <p style="margin:12px 0 0;font-size:.88rem;color:var(--texto-2)">Este mensaje salva programas. Casi nadie lo manda.</p></div>
+    <div class="mensaje"><div class="de">Tarea sin hacer por segunda vez</div><span class="hueco">NOMBRE</span>, he visto que <span class="hueco">TAREA</span> se ha quedado pendiente otra vez. No te lo digo como reproche: creo que ahí hay información.<br><br>Cuando algo se queda dos veces, casi nunca es falta de tiempo. Suele ser que no está claro cómo empezar, o que hay algo de fondo que lo frena.<br><br>Lo miramos el <span class="hueco">DÍA</span> en la sesión, pero si quieres adelantarme por dónde va, mejor.</div>
+    <div class="mensaje"><div class="de">Cuota de pago vencida</div>Hola <span class="hueco">NOMBRE</span>, me avisa el sistema de que la cuota del <span class="hueco">FECHA</span> no ha pasado. Suele ser cosa del banco o de la tarjeta.<br><br>Aquí tienes el enlace para regularizarlo: <span class="hueco">ENLACE</span>.<br><br>Si es otra cosa, dímelo con confianza y lo hablamos.
+    <p style="margin:12px 0 0;font-size:.88rem;color:var(--texto-2)">Neutro y con salida. La mayoría son incidencias técnicas, y tratar a alguien como moroso por un fallo de tarjeta hace un daño desproporcionado.</p></div>
+    <div class="mensaje" style="margin-bottom:0"><div class="de">Aviso de última sesión</div><span class="hueco">NOMBRE</span>, la próxima es la última sesión del programa.<br><br>Va a ser distinta: repasamos el camino completo, te entrego el informe con tus números de inicio y de cierre, y vemos qué necesitas para sostenerlo por tu cuenta.<br><br>Ven con esta pregunta pensada: ¿qué es distinto hoy respecto a <span class="hueco">FECHA DE INICIO</span>?</div>
+    </div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Automatizar el ámbar y el rojo</b><span>El error más caro de esta lista.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Escribir en caliente</b><span>Si el mensaje te sale con retintín, no lo mandes. Usa la plantilla, cambia dos frases, envía.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Preguntar "¿qué pasó?" al primer fallo</b><span>La primera vez, ofrece solución. La segunda, ya sí toca conversación.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No mandar el chequeo de mitad</b><span>Da miedo preguntar qué no funciona. Por eso hay que hacerlo: el problema existe lo preguntes o no, y solo puedes arreglar el que conoces.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Perseguir sin poner fecha</b><span>El cliente en silencio necesita una decisión, no cinco recordatorios.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Copiar la plantilla tal cual</b><span>Son un esqueleto. Métele tu forma de hablar y un dato concreto de su caso en cada una.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Montaje de flujos y plantillas rápidas → María José. Cómo abordar a un cliente concreto que se está enfriando → chat de soporte o sesión de estrategia.</p></div></div>`)
+},
+{
+  ico:"candado", et:"Cuando te piden de más", titulo:"Registro de cambios de alcance",
+  resumen:"Una línea cada vez que te piden algo que no prometiste. No es para decir que no: es para ver el acumulado.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p>Ninguna petición fuera de alcance rompe un programa. Lo que rompe un programa es la número doce.</p>
+    <p>El patrón es siempre igual. Semana 3: "oye, ¿podrías echarle un ojo a esto también?". Dices que sí, es pequeño y quieres quedar bien. Semana 5: otra cosita. Semana 8: ya estás haciendo un trabajo que no vendiste, en tiempo que no cobraste. Y cuando por fin dices que no, tu cliente se sorprende con toda la razón, porque llevabas dos meses diciendo que sí.</p>
+    <p>Ese cliente no se enfada por lo que le negaste. Se enfada por el cambio de regla.</p>
+    <p style="margin-bottom:0"><strong>Y tiene un segundo uso, más útil todavía:</strong> al terminar el programa, mira el registro. Si tres clientes seguidos pidieron lo mismo, eso no es una petición fuera de alcance. Es tu próximo producto.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Una tabla para todos tus clientes</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Fecha</th><th>Cliente</th><th>Qué pidió</th><th>¿En alcance?</th><th>Decisión</th><th>Coste</th><th>¿Por escrito?</th></tr>
+    <tr><td></td><td></td><td></td><td>Sí / No / Zona gris</td><td>Incluido / Cotizado / Derivado / Rechazado</td><td>horas</td><td>Sí / No</td></tr></table>
+    <p style="margin-top:16px"><strong>Las cuatro decisiones posibles</strong></p>
+    <p><strong>Incluido como cortesía.</strong> Vale la pena si es pequeño, ocurre una vez y refuerza la relación. Pero <strong>dilo en voz alta</strong>: "esto no entra en el programa, lo hago esta vez porque es rápido y te desbloquea". Si no lo nombras, pasa a ser parte de lo esperado.</p>
+    <p><strong>Cotizado aparte.</strong> Lo correcto cuando es trabajo real. No tiene por qué ser incómodo.</p>
+    <p><strong>Derivado.</strong> Cuando no es tu campo. Decir "esto no lo hago yo, te paso con alguien que sí" <strong>suma autoridad</strong>. El profesional que lo hace todo parece que no hace nada bien.</p>
+    <p style="margin-bottom:0"><strong>Rechazado.</strong> Cuando comprometería el programa. Se explica el motivo, sin justificarse de más.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Ejemplo · un trimestre de Marina</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Fecha</th><th>Cliente</th><th>Qué pidió</th><th>Decisión</th><th>Coste</th></tr>
+    <tr><td>12 mar</td><td>Ricardo</td><td>Revisar un contrato con un proveedor</td><td>Derivado a abogado</td><td>0 h</td></tr>
+    <tr><td>24 mar</td><td>Carmen</td><td>Una sesión extra esa semana</td><td>Incluido, dicho en voz alta</td><td>1 h</td></tr>
+    <tr><td>2 abr</td><td>Ricardo</td><td>Formación de 2 h a su equipo</td><td>Cotizado — aceptó, 800 €</td><td>2 h</td></tr>
+    <tr><td>9 abr</td><td>Javier</td><td>Que redacte yo sus manuales</td><td>Rechazado, explicando por qué</td><td>0 h</td></tr>
+    <tr><td>15 abr</td><td>Carmen</td><td>Otra sesión extra</td><td>Cotizado — es la segunda vez</td><td>0 h</td></tr>
+    <tr><td>28 abr</td><td>Nuria</td><td>Formación al equipo</td><td>Cotizado — aceptó</td><td>2 h</td></tr></table>
+    <p style="margin-top:14px"><strong>Lo que ve Marina al cerrar el trimestre:</strong></p>
+    <ul style="margin-bottom:0"><li>Ha regalado 3 horas. Poco. Está bien.</li><li><strong>Dos clientes distintos pidieron formación al equipo y los dos pagaron.</strong> Eso no es una petición fuera de alcance: es un producto que existe y que ella no está vendiendo. Es la información más valiosa de la tabla.</li><li>Con Carmen tuvo que cotizar la segunda vez porque la primera fue gratis. Si hubiera dicho el coste ya en la primera, no habría habido tensión.</li></ul></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">Cómo se dice en el momento</div><div class="bloque-cont">
+    <p><strong>Es pequeño y lo vas a hacer igual:</strong> "Eso no entra en el programa, pero es rápido y te desbloquea. Lo hago esta vez."</p>
+    <p><strong>Es trabajo real:</strong> "Eso es un trabajo aparte, no está dentro del acompañamiento. Si te interesa, te paso lo que costaría por separado."</p>
+    <p><strong>No es tu campo:</strong> "Eso no lo hago yo. Te paso con alguien que se dedica a esto."</p>
+    <p style="margin-bottom:0"><strong>Iría contra el método:</strong> "Podría hacerlo, pero te haría un flaco favor. El sentido de que lo escriba tu equipo es que después funcione sin ti. Si lo escribo yo, en tres meses estás igual."</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>No registrar los pequeños</b><span>Son precisamente los que hay que registrar. Los grandes se ven venir; los pequeños se acumulan sin que nadie lo note.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Decir que sí sin nombrarlo</b><span>El favor silencioso se convierte en expectativa. Regala si quieres, pero di que estás regalando.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Decir que no sin alternativa</b><span>"No" a secas suena a puerta cerrada. "No, pero esto otro sí" mantiene la relación intacta.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Justificarte demasiado</b><span>Una frase de motivo basta. Tres párrafos suenan a culpa, y eso invita a insistir.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No revisar el registro</b><span>La tabla sin leer no sirve de nada. Míralo al cerrar cada cliente: ahí está tu próxima oferta.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Cómo plantear un no a un cliente concreto → chat de soporte o sesión de estrategia.</p></div></div>`)
+},
+{
+  ico:"salida", et:"Cuando se rompe", titulo:"Pausa, salida y recuperación",
+  resumen:"Qué haces cuando alguien se para o se va: cómo se pausa, qué le preguntas al salir y cuándo se le vuelve a escribir.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p>El semáforo rojo del pipeline termina en una conversación: continuar o pausar. Esta herramienta es lo que pasa después, y casi nadie lo tiene escrito.</p>
+    <p>Sin política de pausa, cada caso se negocia desde cero y siempre en el peor momento: cuando ya hay incomodidad por los dos lados. El resultado habitual es un cliente en el limbo, ni dentro ni fuera, ocupando una plaza durante meses.</p>
+    <p style="margin-bottom:0"><strong>Y hay algo que vale más que todo lo anterior:</strong> si no preguntas por qué se fue, nunca vas a saber por qué se va la gente. La mayoría de los que entregan high ticket no tienen ni un solo dato sobre esto, y por eso repiten el mismo fallo con el cliente siguiente.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Política de pausa · escríbela antes de necesitarla</div><div class="bloque-cont">
+    <div class="campo"><b>Cuándo se puede pausar</b>Motivos que aceptas: <span class="hueco">EJ. ENFERMEDAD, DUELO, UNA CRISIS EN SU NEGOCIO</span>. Y los que no: simplemente ir con retraso no es motivo de pausa, es motivo de sesión.</div>
+    <div class="campo"><b>Cuánto dura</b>Máximo <span class="hueco">X SEMANAS</span>. Con fecha de vuelta puesta el día que se pausa, no "ya te aviso".</div>
+    <div class="campo"><b>Cuántas veces</b>Una por programa. La segunda pausa no es una pausa, es un final.</div>
+    <div class="campo"><b>Qué pasa con las sesiones y el pago</b>Qué ocurre con las sesiones que quedan, con las cuotas pendientes y con el acceso a los materiales durante la pausa.</div>
+    <div class="campo" style="margin-bottom:0"><b>Qué pasa si no vuelve en la fecha</b>Se cierra el programa y se le dice, con lo que se lleva y lo que queda liberado. Sin fecha de caducidad, la pausa es un abandono lento.</div>
+    <p style="margin:16px 0 0">Va en el acuerdo de trabajo del paso 5, en el apartado "si algo se tuerce". Escribirla cuando ya tienes a alguien parado es escribirla mal.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Cómo se cierra bien</div><div class="bloque-cont">
+    <p>Un cierre anticipado bien hecho protege dos cosas: que no hable mal de ti y que pueda volver. Los dos se pierden si desaparece sin que nadie lo nombre.</p>
+    <div class="mensaje"><div class="de">Cerrar sin culpa</div>"He estado dándole vueltas y creo que lo honesto es que paremos aquí.<br><br>No es un reproche: este no es tu momento y forzarlo no te va a ayudar. Lo que hemos hecho hasta ahora se queda contigo: <span class="hueco">LO CONSEGUIDO</span>, y los materiales siguen siendo tuyos.<br><br>Te dejo por escrito lo que quedaba pendiente, por si lo retomas por tu cuenta o conmigo más adelante.<br><br>Y te pido una cosa: dime con sinceridad qué falló. Me sirve de verdad."</div>
+    <p style="margin:14px 0 0;font-size:.9rem;color:var(--texto-2)">Entrega el informe de cierre igual, aunque sea a mitad. Un cliente que se va con un documento de lo que consiguió se va de otra manera que uno que se va en silencio.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Las tres preguntas de salida</div><div class="bloque-cont">
+    <p>Se mandan a todo el que se va antes de tiempo, y también a quien termina. Son tres, se responden en dos minutos, y son el material más útil que vas a tener para mejorar tu programa.</p>
+    <ol style="padding-left:20px"><li><strong>¿En qué momento notaste por primera vez que esto no iba a funcionar para ti?</strong> Es la pregunta clave: te da la semana exacta donde se rompe tu programa. Si tres personas te dicen la misma, ahí tienes el arreglo.</li>
+    <li><strong>¿Qué esperabas que fuera y no fue?</strong> Casi siempre apunta a algo que prometiste sin querer en la venta.</li>
+    <li><strong>¿Qué tendría que haber pasado para que siguieras?</strong> A veces es algo que podías haber hecho y no viste.</li></ol>
+    <p style="margin-bottom:0"><strong>Pregunta también a los que sí terminaron</strong>, y sobre todo a los que terminaron sin el resultado esperado. Suelen dar la información más incómoda y más útil.</p></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Recuperación · a los 60 días, una sola vez</div><div class="bloque-cont">
+    <p>Al que se fue no se le persigue. Se le escribe una vez, dos meses después, cuando ya no hay incomodidad ni por su parte ni por la tuya.</p>
+    <div class="mensaje" style="margin-bottom:0"><div class="de">Mensaje de recuperación · 60 días</div>Hola <span class="hueco">NOMBRE</span>, hace un par de meses que lo dejamos y me acordé de ti porque <span class="hueco">MOTIVO REAL Y CONCRETO</span>.<br><br>No te escribo para venderte nada. Solo para saber cómo va aquello de <span class="hueco">SU TEMA</span>.<br><br>Si en algún momento quieres retomarlo, sabes dónde estoy.</div>
+    <p style="margin:14px 0 0"><strong>El motivo tiene que ser de verdad.</strong> Un artículo que le venía bien, un caso parecido al suyo, algo que cambió en su sector. Un "¿cómo vas?" sin motivo se lee como lo que es.</p>
+    <p style="margin-bottom:0">Si no responde, se acabó. Un segundo mensaje convierte una puerta abierta en una molestia.</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Dejar que desaparezca sin cerrar</b><span>El que se va sin conversación se queda con la versión peor de lo que pasó, y esa es la que cuenta si alguien le pregunta por ti.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Pausas sin fecha de vuelta</b><span>"Ya te aviso" significa nunca, con la plaza ocupada mientras tanto.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No preguntar por miedo a la respuesta</b><span>La respuesta existe la preguntes o no. La diferencia es si la sabes tú o solo la sabe él.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Discutir la respuesta</b><span>Si te dice algo injusto, no lo corrijas. Diste las gracias y lo anotas. En el momento en que te justificas, dejas de recibir información sincera.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Recuperar demasiado pronto</b><span>A las dos semanas todavía duele. A los dos meses ya es otra conversación.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No leer las respuestas juntas</b><span>Una salida es una anécdota. Cinco salidas leídas seguidas son el mapa de dónde se rompe tu programa.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Cómo plantear un cierre anticipado o leer lo que salga de las encuestas → chat de soporte o sesión de estrategia. Automatizar el envío de las preguntas de salida → María José.</p></div></div>`)
+},
+{
+  ico:"tendencia", et:"Al terminar", titulo:"Informe de cierre",
+  resumen:"El antes y el después con números. Es lo que sostiene la renovación y lo que convierte a tu cliente en caso de éxito.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p><strong>Para tu cliente:</strong> el progreso se vive de forma borrosa. Uno se acostumbra a su nueva normalidad y olvida cómo estaba. El que en la semana 12 dice "no sé si ha cambiado tanto" es el mismo que en la semana 1 no podía irse un jueves sin cuatro llamadas. El informe le devuelve la perspectiva, con sus propios números y sus propias frases.</p>
+    <p><strong>Para ti:</strong> es el documento que sostiene la renovación. Nadie renueva por un argumento; se renueva viendo lo que ya funcionó.</p>
+    <p style="margin-bottom:0"><strong>Y para tu negocio:</strong> es la materia prima del caso de éxito. El testimonio que pides después de que tu cliente ha visto sus números es incomparablemente mejor que el que pides en frío.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Las siete partes</div><div class="bloque-cont">
+    <div class="campo"><b>1. De dónde partimos</b>Su situación del día uno en 3 o 4 líneas · Su cita literal del primer día · Los números de partida</div>
+    <div class="campo"><b>2. Dónde estás hoy</b>Tabla con inicio, mitad, cierre y porcentaje de cambio · "Lo que ya no te pasa": situaciones concretas del día uno que hoy no ocurren</div>
+    <div class="campo"><b>3. Qué hicimos</b>Una fila por fase: qué trabajamos y qué quedó · Sesiones realizadas · Entregables en su poder</div>
+    <div class="campo"><b>4. El momento que lo cambió</b>El punto de inflexión, sacado de las actas. Es la parte que tu cliente va a recordar y a contar a otros</div>
+    <div class="campo"><b>5. Lo que queda pendiente</b>Honestidad siempre. Lo que no se llegó a hacer y por qué</div>
+    <div class="campo"><b>6. Cómo sostenerlo</b>Su ritmo de revisión · Señales de alarma · Qué hacer si vuelve a pasar</div>
+    <div class="campo" style="margin-bottom:0"><b>7. Qué viene ahora</b>Si hay siguiente paso, aquí</div></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Ejemplo · extracto</div><div class="bloque-cont">
+    <p><strong>De dónde partimos.</strong> El 3 de marzo, todas las decisiones del despacho pasaban por ti, incluidos los presupuestos de 800 euros. Trabajabas 22 horas semanales en tareas que no requerían a un socio. No había ningún proceso escrito.</p>
+    <div class="mensaje"><div class="de">Tus palabras del primer día</div>"No puedo irme ni un jueves sin que me llamen cuatro veces."</div>
+    <table class="tabla" style="margin-top:14px"><tr><th>Métrica</th><th>Inicio</th><th>Mitad</th><th>Cierre</th><th>Cambio</th></tr>
+    <tr><td>Interrupciones diarias</td><td>18</td><td>11</td><td>4</td><td><b>−78 %</b></td></tr>
+    <tr><td>Horas semanales en operativa</td><td>22</td><td>14</td><td>7</td><td><b>−68 %</b></td></tr>
+    <tr><td>Procesos documentados</td><td>0</td><td>1</td><td>3</td><td><b>+3</b></td></tr></table>
+    <p style="margin-top:14px"><strong>Lo que ya no te pasa.</strong> No revisas ningún presupuesto por debajo de 2.000 €, y no lo has hecho en siete semanas. Estuviste cuatro días fuera en abril y recibiste una sola llamada.</p>
+    <p><strong>El momento que lo cambió.</strong> La sesión 5. Dijiste que lo que te costaba no era soltar el trabajo, era la conversación con tu equipo. A partir de ahí el programa dejó de ser sobre organización y pasó a ser sobre cómo comunicas las decisiones. Todo lo que funcionó después salió de ese cambio de enfoque.</p>
+    <p style="margin-bottom:0"><strong>Lo que queda pendiente.</strong> La captación de nuevos clientes sigue dependiendo enteramente de ti. Lo dejamos fuera a propósito: con tres procesos ya andando, meter un cuarto habría diluido los otros.</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Escribirlo de memoria</b><span>Sin actas ni mediciones sale genérico y suena a plantilla. La calidad de este documento se decidió en la semana 1, cuando mediste.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Ocultar lo pendiente</b><span>Es contraintuitivo, pero ese apartado es el que más credibilidad te da. El informe donde todo salió perfecto no se cree.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Solo números o solo sensaciones</b><span>Los números sin la cita del día uno son fríos. La cita sin números es un testimonio flojo. Juntos convencen.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Enviarlo por correo y ya</b><span>Se repasa en voz alta en la sesión de cierre. Ahí es donde tu cliente reacciona y dice la frase que después vas a usar como testimonio. Por correo, esa frase no existe.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Saltarse el punto de inflexión</b><span>Es lo que contará cuando alguien le pregunte qué tal fue. Si tú lo nombras, controlas cómo se cuenta tu trabajo.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No dejar el plan de sostenimiento</b><span>El cliente que se deshace tres meses después no te recomienda. Diez líneas protegen el resultado y tu reputación.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Cómo contar los resultados → chat de soporte o sesión de estrategia.</p></div></div>`)
+},
+{
+  ico:"medalla", et:"La última sesión", titulo:"Cierre, testimonio y renovación",
+  resumen:"Las tres cosas que pasan al final y van juntas, porque ocurren en el mismo momento.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">
+    <p>La mayoría de los acompañamientos terminan con una sesión simpática, un "muchas gracias por todo" y silencio. Ese final desperdicia lo más valioso que tienes: <strong>un cliente satisfecho justo en el momento de mayor satisfacción.</strong></p>
+    <p>Ese momento dura poco. Dos semanas después ya está en otra cosa, el recuerdo se aplana y el testimonio que te dé será tibio. La renovación que no propusiste no se propone sola.</p>
+    <p style="margin-bottom:0">Un programa bien cerrado te deja tres activos: un caso de éxito con números, un testimonio grabado y una conversación abierta sobre lo siguiente.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Parte 1 · La sesión de cierre (60 min)</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Bloque</th><th>Tiempo</th><th>Qué pasa</th></tr>
+    <tr><td>Apertura distinta</td><td>5 min</td><td>"¿Qué es distinto hoy respecto a <span class="hueco">FECHA INICIO</span>?" Deja que conteste sin interrumpir y anota literal. <b>Esa frase es tu testimonio</b>, y sale mejor así que preguntándola directamente.</td></tr>
+    <tr><td>Repaso del informe</td><td>20 min</td><td>Recórrelo con él. Lee en voz alta su cita del primer día. Enseña la tabla de números.</td></tr>
+    <tr><td>Lo pendiente</td><td>10 min</td><td>Lo honesto de lo que no se hizo. De aquí nace sola la conversación de qué viene después.</td></tr>
+    <tr><td>Cómo lo sostiene solo</td><td>10 min</td><td>Ritmo de revisión, señales de alarma, qué hacer si algo se tuerce.</td></tr>
+    <tr><td>Qué viene ahora</td><td>10 min</td><td>Ver parte 3.</td></tr>
+    <tr><td>Cierre y petición</td><td>5 min</td><td>Testimonio y accesos.</td></tr></table></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Parte 2 · El testimonio</div><div class="bloque-cont">
+    <p><strong>Se pide en la misma sesión, después de repasar el informe.</strong> Ese es el pico. Cada día que pasa pierde fuerza.</p>
+    <div class="mensaje"><div class="de">Cómo pedirlo</div>"Una cosa antes de terminar. Cuando alguien como tú está decidiendo si meterse en algo así, lo que más le ayuda no es lo que yo cuente, es lo que cuente alguien que ya pasó por ello.<br><br>¿Te importaría grabarme dos o tres minutos contando cómo estabas y cómo estás? Lo podemos hacer ahora mismo, aquí, y ya está."</div>
+    <p style="margin-top:14px"><strong>Ahora mismo, en la llamada.</strong> El testimonio que se queda "para cuando tengas un rato" no llega nunca. Ya estás grabando: solo hay que decirle que empiece.</p>
+    <p><strong>Las cuatro preguntas</strong>, en este orden:</p>
+    <ol style="padding-left:20px"><li>¿Cómo estabas antes de empezar? ¿Qué te preocupaba?</li>
+    <li><strong>¿Qué te hizo dudar antes de decidirte?</strong> ← la más valiosa: responde la objeción real de tus futuros clientes</li>
+    <li>¿Qué es distinto ahora? Dame algo concreto.</li>
+    <li>¿A quién se lo recomendarías y a quién no?</li></ol>
+    <p><strong>No lo montes sin preguntar.</strong> Hay una plantilla interna de formulario de solicitud de testimonio, y otra de feedback después de una sesión. Puede que tu cuenta ya las tenga y puede que no, porque se transfieren a mano. Pregunta en la Clínica de Sistemas antes de crearlas.</p>
+    <p style="margin-bottom:0"><strong>El permiso va aparte.</strong> Necesitas autorización por escrito para usar su imagen, su nombre o su voz. Eso no es un mensaje de WhatsApp: es un documento y cambia según el país. Está en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>, en la cláusula de imagen. Si ya lo firmaste al empezar el programa, compruébalo antes de publicar nada: es una de las cláusulas que más se olvidan. Y si no, pídelo el mismo día.</p></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">Parte 3 · La renovación</div><div class="bloque-cont">
+    <p><strong>No se vende: se ofrece a partir de lo pendiente.</strong> El apartado 5 del informe ya dejó por escrito qué falta. La conversación sale sola de ahí.</p>
+    <div class="mensaje" style="border-left-color:var(--ambar)"><div class="de" style="color:var(--ambar)">Cómo se plantea</div>"Mirando lo que queda pendiente: la captación sigue dependiendo entera de ti.<br><br>Tienes dos caminos. Uno: consolidas esto seis meses por tu cuenta, es una opción legítima y la recomendaría si quisieras asentar. Dos: seguimos con <span class="hueco">SIGUIENTE PROGRAMA</span>, que va exactamente a eso.<br><br>No hace falta que decidas hoy. Piénsalo y hablamos la semana que viene."</div>
+    <table class="tabla" style="margin-top:14px"><tr><th>Si tu cliente...</th><th>Ofrécele</th></tr>
+    <tr><td>Consiguió el resultado y quiere más</td><td>El siguiente escalón</td></tr>
+    <tr><td>Consiguió el resultado y quiere asentar</td><td>Mantenimiento ligero: una sesión al mes</td></tr>
+    <tr><td>No consiguió el resultado</td><td><b>Nada, todavía.</b> Entiende primero por qué. Vender más a quien no obtuvo resultados destruye tu reputación</td></tr></table>
+    <p style="margin:14px 0 0"><strong>El seguimiento:</strong> siete días después, un mensaje. Uno solo. "¿Has podido pensar en lo que hablamos? Sin prisa, solo que no se quede en el aire." Si no responde, se cierra ahí.</p></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Terminar sin sesión de cierre</b><span>Una última sesión normal desperdicia el momento entero.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Pedir el testimonio por correo días después</b><span>Se pide en la llamada, grabando. Después es tibio o no llega.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No preguntar por la duda inicial</b><span>Es la pregunta que más vende: tus futuros clientes tienen esa misma duda y necesitan oír que alguien la tuvo y la superó.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Vender la renovación antes de repasar el informe</b><span>Primero ve sus resultados, después escucha la propuesta. Al revés suena a que la sesión de cierre era una excusa comercial.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Vender a quien no obtuvo resultados</b><span>Es la decisión que separa un negocio que dura de uno que quema clientes. Puede que la siguiente venta correcta sea a la tercera persona a la que te recomiende, no a él.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No cerrar los accesos</b><span>Libera los que te dio en la semana siguiente y díselo. Es la última impresión que dejas.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Cómo plantear la renovación sin que suene forzado → chat de soporte o sesión de estrategia. Automatizar el seguimiento de los 7 días → María José.</p></div></div>`)
+},
+{
+  ico:"ajustes", et:"Anexo", titulo:"Adaptarlo a tu modelo",
+  resumen:"Qué cambia si vendes grupal, híbrido, consultoría, programas largos o trabajas con empresas.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">Cómo leer esto</div><div class="bloque-cont">
+    <p style="margin-bottom:0">El kit está escrito pensando en un acompañamiento individual, porque es donde empieza casi todo el mundo. Si tu modelo es otro, el proceso no cambia: cambian tres o cuatro documentos.</p></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">Antes que nada: ¿tu programa termina o continúa?</div><div class="bloque-cont">
+    <p>Es la decisión que ordena todo lo demás y casi nadie la toma a propósito. Se hereda del primer cliente y ya no se revisa.</p>
+    <table class="tabla"><tr><th></th><th>Programa que termina</th><th>Algo recurrente</th></tr>
+    <tr><td><b>Cuándo tiene sentido</b></td><td>El cliente viene con un problema concreto que se resuelve y se acaba</td><td>El cliente necesita sostener algo en el tiempo, no arreglarlo una vez</td></tr>
+    <tr><td><b>Qué lo sostiene</b></td><td>Que se vea el final. Avanzar hacia una fecha es lo que mantiene el ritmo</td><td>Que siga habiendo motivo para estar. Cuanto más tiempo lleva alguien, más te cuesta retenerlo</td></tr>
+    <tr><td><b>Qué mides</b></td><td>Cuántos terminan y cuántos terminan bien</td><td>Cuántos siguen mes a mes</td></tr>
+    <tr><td><b>El final</b></td><td>Se gradúa: se va con el sistema funcionando solo</td><td>No hay final, y por eso hace falta una razón nueva cada mes</td></tr></table>
+    <p><strong>Este kit está escrito para el primero.</strong> Un programa que termina bien es el que te deja un caso de éxito con números, un testimonio y una recomendación. Terminar no es perder al cliente.</p>
+    <p style="margin-bottom:0"><strong>Si lo tuyo es lo segundo</strong>, todo lo del kit sirve igual, pero el informe de cierre pasa a ser un repaso cada tres meses y necesitas una pieza más que aquí no está: una razón para seguir que no dependa de acumular contenido. Pregúntalo en el chat de soporte antes de montarlo, porque lo recurrente mal diseñado se cae solo a los dos meses.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Programa grupal</div><div class="bloque-cont">
+    <ul><li><strong>Alcance:</strong> añade explícitamente qué NO incluye atención individual. Es la expectativa que más se cuela en los grupales.</li>
+    <li><strong>Intake:</strong> mismo formulario, pero úsalo también para agrupar. Dos o tres personas con el mismo atasco es la sesión temática del mes.</li>
+    <li><strong>Sesión:</strong> usa la variación grupal. El caso individual que pasa de 10 minutos se saca de la sesión.</li>
+    <li><strong>Acta:</strong> una sola para el grupo, más los compromisos que cada uno escribe en el chat.</li>
+    <li><strong>Pipeline:</strong> una oportunidad por persona, no por grupo. En grupales la gente se pierde en silencio y con más facilidad, porque nadie nota que faltó.</li>
+    <li><strong>Informe de cierre:</strong> individual igualmente. Es lo que hace que un grupal se sienta personalizado.</li></ul>
+    <p style="margin-bottom:0"><strong>Añade:</strong> normas de convivencia del grupo (confidencialidad, no vender entre miembros, cómo se pide turno).</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Híbrido</div><div class="bloque-cont">
+    <p>Todo lo del grupal, más:</p>
+    <ul style="margin-bottom:0"><li><strong>Alcance:</strong> deja clarísimo cuántas sesiones individuales entran y con qué caducidad. Sin caducidad, la gente acumula seis para el último mes y no puedes atenderlas.</li>
+    <li><strong>Pipeline:</strong> dos campos más, sesiones individuales consumidas y disponibles.</li>
+    <li><strong>Semáforo:</strong> no usar las individuales disponibles es señal de ámbar, aunque asista al grupal.</li></ul></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Consultoría o servicio que ejecutas tú</div><div class="bloque-cont">
+    <p>Aquí no acompañas: entregas trabajo terminado. Cambia bastante.</p>
+    <ul><li><strong>Alcance:</strong> es lo más importante de todo el kit para ti. Especifica el número de revisiones incluidas. Es la fuente número uno de conflictos en servicios ejecutados.</li>
+    <li><strong>Fases:</strong> son hitos de entrega, no de aprendizaje. El criterio de salida es la aprobación del cliente, y necesita plazo: "si no hay respuesta en 5 días laborables, se da por aprobado". Sin esa cláusula, un cliente lento te bloquea el proyecto entero.</li>
+    <li><strong>Acta:</strong> pasa a ser reporte de avance con lo entregado, lo aprobado y lo bloqueado.</li>
+    <li><strong>Cambios de alcance:</strong> para ti no es un registro interno, es tu principal herramienta de rentabilidad. Sin esto, los servicios ejecutados pierden dinero en silencio.</li></ul>
+    <p style="margin-bottom:0"><strong>Añade:</strong> acta de aprobación de entregable, con confirmación escrita.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Programas de más de 6 meses, y de menos de 8 semanas</div><div class="bloque-cont">
+    <p><strong>Más de 6 meses:</strong> divide en bloques trimestrales con su propio mini-cierre. Mide la métrica cada trimestre. Añade una conversación de continuidad a mitad: en programas largos el desenganche llega hacia el mes cuatro.</p>
+    <p style="margin-bottom:0"><strong>Menos de 8 semanas:</strong> simplifica o el proceso pesa más que el contenido. Fusiona alcance y mapa en un documento, dos fases en vez de cuatro, acta solo en sesiones impares, sin medición de mitad. <strong>El pipeline sí, entero.</strong> Eso no se recorta nunca.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Si tu cliente es una empresa</div><div class="bloque-cont">
+    <ul style="margin-bottom:0"><li><strong>Intake:</strong> rellénalo con más de una persona. La versión del dueño y la del equipo casi nunca coinciden, y esa diferencia es información.</li>
+    <li><strong>Acuerdo:</strong> define quién decide y quién solo opina. Sin eso, cada entregable pasa por cuatro opiniones y ninguna decisión.</li>
+    <li><strong>Métricas:</strong> que las apruebe quien firma el cheque, no solo tu interlocutor del día a día.</li>
+    <li><strong>Informe:</strong> hazlo presentable para alguien que no estuvo en las sesiones. Probablemente lo lea un jefe que no te conoce.</li></ul></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Lo que nunca cambia</div><div class="bloque-cont">
+    <p>Sea cual sea tu modelo, tu país o tu producto:</p>
+    <ol style="padding-left:20px;margin-bottom:0"><li>Se define el alcance por escrito antes de empezar.</li>
+    <li>Se mide el punto de partida antes de tocar nada.</li>
+    <li>Queda constancia escrita de cada sesión o entrega.</li>
+    <li>Hay un sistema que te avisa cuando alguien se está enfriando.</li>
+    <li>Se cierra con informe, testimonio y una conversación sobre lo siguiente.</li></ol></div></div>`)
+},
+{
+  ico:"personas", et:"Anexo", titulo:"Delegar la entrega",
+  resumen:"Para cuando la entrega te esté quitando tiempo de vender. Suele pasar entre el cliente 5 y el 8.",
+  cuerpo:H(`<div class="bloque b-aviso"><div class="bloque-cab">No leas esto todavía</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Si acabas de cerrar tu primera venta, esto no te toca. Vuelve cuando tengas cinco o seis clientes andando a la vez.</p></div></div>
+
+    <div class="bloque b-neutro"><div class="bloque-cab">Cuándo toca delegar</div><div class="bloque-cont">
+    <p>Tres señales. Con dos ya vas tarde:</p>
+    <ol style="padding-left:20px;margin-bottom:0"><li>Dedicas más de la mitad de tu semana a entregar y menos de un tercio a conseguir clientes nuevos.</li>
+    <li>Has rechazado clientes por falta de agenda, no por falta de encaje.</li>
+    <li>Se te están escapando cosas: actas que no envías, semáforos en ámbar que no atiendes.</li></ol></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Calculadora de capacidad</div><div class="bloque-cont">
+    <p>Suma lo que te cuesta <strong>un cliente al mes</strong>, de verdad:</p>
+    <table class="tabla"><tr><th>Concepto</th><th>Horas/mes</th></tr>
+    <tr><td>Sesiones</td><td>nº al mes × duración</td></tr>
+    <tr><td>Preparación (15 min por sesión)</td><td></td></tr>
+    <tr><td>Actas (10 min por sesión, con DD Notetaker)</td><td></td></tr>
+    <tr><td>Mensajes entre sesiones</td><td></td></tr>
+    <tr><td>Revisiones de entregables</td><td></td></tr>
+    <tr><td>Seguimiento y pipeline</td><td>0,5</td></tr></table>
+    <p><strong>Tu techo real</strong> = (horas semanales que quieres dedicar a entrega × 4) ÷ total por cliente. <strong>Y déjate un margen, más o menos una quinta parte:</strong> siempre hay una crisis, un cliente que necesita el doble, una semana rota. No es un dato de nadie, es una regla del pulgar; ajústala con tus propios meses cuando los tengas.</p>
+    <div class="mensaje" style="margin-bottom:0"><div class="de">Ejemplo</div>Marina: 4 sesiones (4 h) + preparación (1 h) + actas (0,7 h) + mensajes (1,5 h) + revisiones (1 h) + seguimiento (0,5 h) = <strong>8,7 h por cliente al mes.</strong><br><br>Quiere dedicar 20 h semanales a entrega → 80 h al mes → 9 clientes. Menos el margen → <strong>techo real: 7 clientes simultáneos.</strong><br><br>Ese número le dice cuándo dejar de vender o cuándo contratar, con un dato en vez de con una sensación.</div></div></div>
+
+    <div class="bloque b-ejemplo"><div class="bloque-cab">Qué se delega, y en este orden</div><div class="bloque-cont">
+    <table class="tabla"><tr><th>Orden</th><th>Qué</th></tr>
+    <tr><td>1º</td><td><b>Administrativo</b> — recordatorios, agendas, accesos, envío de materiales. Riesgo cero</td></tr>
+    <tr><td>2º</td><td><b>Actas y seguimiento</b> — generar el acta, actualizar el pipeline, vigilar el semáforo. Tú sigues escribiendo el bloque personal</td></tr>
+    <tr><td>3º</td><td><b>Onboarding</b> — bienvenida, intake, accesos, arranque técnico</td></tr>
+    <tr><td>4º</td><td><b>Sesiones de contenido estandarizado</b> — solo cuando la persona lleve meses y conozca el método</td></tr>
+    <tr><td><b>Nunca</b></td><td>La sesión de cierre, la conversación de renovación y el cliente en rojo. Esos son tuyos siempre</td></tr></table></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">El SOP de entrega</div><div class="bloque-cont">
+    <p>El manual de tu propio proceso. Se escribe una vez y se actualiza cuando algo cambia.</p>
+    <ol style="padding-left:20px"><li>Qué pasa cuando entra un cliente nuevo, paso a paso, con quién hace cada cosa</li>
+    <li>El ciclo semanal: qué se hace antes, durante y después de cada sesión, con plazos</li>
+    <li>El pipeline: qué significa cada etapa y quién mueve a quién</li>
+    <li>El semáforo: criterios exactos y qué hace cada persona en cada color</li>
+    <li>Qué se escala a ti: la lista de situaciones que nadie decide sin ti</li>
+    <li>Plantillas: dónde están y cuál se usa cuándo</li></ol>
+    <p style="margin-bottom:0"><strong>La forma más rápida de escribirlo:</strong> grábate haciendo el proceso una vez con <a href="https://notetaker.departamentodisruptivo.com/" target="_blank" rel="noopener">DD Notetaker ↗</a> y ordena la transcripción. Empezar del folio en blanco es lo que hace que este documento nunca se escriba.</p></div></div>
+
+    <div class="bloque b-plantilla"><div class="bloque-cab">Ficha del rol de apoyo</div><div class="bloque-cont">
+    <div class="campo"><b>No hace</b>No decide cambios de alcance · No negocia precios ni renovaciones · No atiende clientes en rojo · No hace la sesión de cierre</div>
+    <div class="campo"><b>Escala a ti cuando</b>Un cliente pide algo fuera de alcance · Alguien pasa a ámbar dos veces en un mes · Alguien menciona irse, pausar o pedir devolución · Cualquier tema de dinero</div>
+    <div class="campo"><b>Cómo se mide su trabajo</b>Actas enviadas en 24 h · Ámbares atendidos en 48 h · Pipeline actualizado, revisión semanal</div>
+    <div class="campo" style="margin-bottom:0"><b>Sus primeros 30 días</b>Semana 1: observa sesiones y lee el SOP · Semana 2: hace actas con tu revisión · Semana 3: lleva el pipeline con tu revisión · Semana 4: opera solo, con revisión semanal</div></div></div>
+
+    <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>Delegar sin SOP</b><span>Estás delegando improvisación. Sale distinto cada vez y concluyes que "nadie lo hace como yo".</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Empezar por las sesiones</b><span>Es lo último que se delega. Empieza por lo administrativo, donde un error no cuesta nada.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Delegar el cliente en riesgo</b><span>Necesita ver que le atiende quien le vendió. Delegar justo ahí es lo que lo termina de perder.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>No definir qué se escala</b><span>Sin esa lista, o te consultan todo y no has delegado nada, o no te consultan nada y te enteras tarde.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Contratar antes de calcular</b><span>A veces el problema no es que necesites a alguien: es que tres clientes consumen el triple de lo previsto porque nunca les pusiste el alcance por escrito.</span></div></div>
+    </div></div>
+
+    <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
+    <p style="margin-bottom:0">Diseño del rol → chat de soporte o sesión de estrategia. Automatizaciones que reduzcan la carga antes de contratar a nadie → María José.</p></div></div>`)
+}
+];
+
+/* ==================================================================
+   MOTOR — no hace falta tocar nada de aquí abajo
+   ================================================================== */
+
+/* --- iconos de línea (sin emojis: regla de marca DD) --- */
+const TRAZOS = {
+  diana:     '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>',
+  ruta:      '<path d="M5 19c0-5 5-3 5-7s-4-3-4-6"/><circle cx="6" cy="5" r="2"/><circle cx="18" cy="16" r="2"/><path d="M10 19h6"/>',
+  regla:     '<rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7.5 8v3M12 8v4M16.5 8v3"/>',
+  formulario:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  acuerdo:   '<path d="M4 7h6l2 2 2-2h6"/><path d="M4 7v10h16V7"/><path d="M9 13l2 2 4-4"/>',
+  sobre:     '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/>',
+  llave:     '<circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2.5"/>',
+  filtro:    '<circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/>',
+  rayo:      '<path d="M13 2L5 13h6l-2 9 8-11h-6l2-9z"/>',
+  sesion:    '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z"/>',
+  documento: '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  tablero:   '<path d="M4 20V10M10 20V5M16 20v-8M22 20H2"/>',
+  chat:      '<path d="M20 12a7 7 0 01-7 7H8l-4 3v-4.5A7 7 0 0111 5h2a7 7 0 017 7z"/>',
+  candado:   '<rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/>',
+  salida:    '<path d="M14 4h4a2 2 0 012 2v12a2 2 0 01-2 2h-4"/><path d="M10 8l-4 4 4 4M6 12h9"/>',
+  tendencia: '<path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/>',
+  medalla:   '<circle cx="12" cy="14" r="5.5"/><path d="M9 3l1.5 5M15 3l-1.5 5"/>',
+  ajustes:   '<path d="M15.5 4a5 5 0 00-6 6.5L4 16v4h4l5.5-5.5A5 5 0 0020 8.5L17 11l-3-3z"/>',
+  personas:  '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6.5a3 3 0 010 6M17 20a6 6 0 00-1.5-4"/>',
+  brujula:   '<circle cx="12" cy="12" r="8.5"/><path d="M15 9l-2 4-4 2 2-4z"/>'
+};
+function ico(n, cls){
+  const t = TRAZOS[n];
+  if(!t) return '';
+  return `<svg class="ico-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${t}</svg>`;
+}
+
+let actual = 0;
+let hechos = cargar();
+
+function cargar(){
+  try{
+    const g = localStorage.getItem('kitEntrega');
+    return g ? JSON.parse(g) : [];
+  }catch(e){ return []; }
+}
+function guardar(){
+  try{ localStorage.setItem('kitEntrega', JSON.stringify(hechos)); }catch(e){}
+}
+
+/* --- mapa del hero --- */
+function pintaMapa(){
+  const g = document.getElementById('paradas');
+  const total = PASOS.length + CAJA_H.length;
+  document.getElementById('mapaLeyenda').innerHTML =
+    `<span><i style="background:var(--oro)"></i> ${PASOS.length} pasos de arranque · antes de la primera sesión</span>
+     <span><i style="background:var(--crema-mute)"></i> ${CAJA_H.length} herramientas · para cada momento del programa</span>`;
+  let html = '';
+  for(let i=0;i<total;i++){
+    const t = i/(total-1);
+    const x = 20 + t*960;
+    const y = 70 - Math.sin(t*Math.PI*3)*46;
+    const arranque = i < PASOS.length;
+    html += `<g class="mapa-parada ${arranque?'arranque':''}" style="animation-delay:${0.5+i*0.06}s">
+      <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/>
+      <text x="${x.toFixed(1)}" y="${(y-16).toFixed(1)}">${arranque?(i+1):''}</text>
+    </g>`;
+  }
+  g.innerHTML = html;
+}
+
+/* --- pasos --- */
+function pintaPasos(){
+  document.getElementById('pasos').innerHTML = PASOS.map((p,i)=>`
+    <article class="paso ${i===0?'activo':''}" id="paso${i}">
+      <div class="paso-cabecera">
+        <div class="paso-num">${p.num} de ${String(PASOS.length).padStart(2,'0')}</div>
+        <h2>${ico(p.ico,"ico-titulo")}${p.titulo}</h2>
+        <p class="sub">${p.sub}</p>
+        <div class="paso-meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+      </div>
+      <div class="paso-cuerpo">
+        <div class="bloque b-neutro"><div class="bloque-cab">Qué es</div><div class="bloque-cont">${p.queEs}</div></div>
+        <div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">${p.porQue}</div></div>
+        <div class="bloque b-plantilla"><div class="bloque-cab">La plantilla · cópiala y rellénala<button class="b-copiar" onclick="copiar(this,'plantilla${i}')">Copiar</button></div><div class="bloque-cont" id="plantilla${i}">${p.plantilla}</div></div>
+        <div class="bloque b-ejemplo"><div class="bloque-cab">Un ejemplo ya relleno</div><div class="bloque-cont">${p.ejemplo}</div></div>
+        <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+          ${p.errores.map(e=>`<div class="error-item"><span class="error-x">✕</span><div><b>${e.t}</b><span>${e.d}</span></div></div>`).join('')}
+        </div></div>
+        <div class="bloque b-ayuda"><div class="bloque-cab">Dónde vive y quién te ayuda</div><div class="bloque-cont">
+          <p><strong>En GHL:</strong> ${p.ghl}</p>
+          <p style="margin-bottom:0"><strong>Si te trabas:</strong> ${p.ayuda}</p>
+        </div></div>
+        <div class="paso-pie">
+          <button class="btn-hecho" onclick="marcar(${i})" id="hecho${i}"><span>○</span> Marcar como hecho</button>
+          ${i>0?`<button class="btn-atras" onclick="irAPaso(${i-1})">← Anterior</button>`:''}
+          <button class="btn-nav" onclick="siguiente(${i})">${i<PASOS.length-1?'Siguiente paso →':'Ir a la caja de herramientas →'}</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
+/* --- copiar plantilla --- */
+function copiar(btn, id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const txt = el.innerText.trim();
+  const ok = ()=>{
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('ok');
+    setTimeout(()=>{ btn.textContent = 'Copiar'; btn.classList.remove('ok'); }, 1800);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(ok).catch(()=>respaldo(txt, ok));
+  } else { respaldo(txt, ok); }
+}
+function respaldo(txt, ok){
+  const a = document.createElement('textarea');
+  a.value = txt; a.style.position='fixed'; a.style.opacity='0';
+  document.body.appendChild(a); a.select();
+  try{ document.execCommand('copy'); ok(); }catch(e){}
+  document.body.removeChild(a);
+}
+
+/* --- índice lateral --- */
+function pintaIndice(){
+  document.getElementById('indiceLista').innerHTML = PASOS.map((p,i)=>`
+    <button class="ind-item" id="ind${i}" onclick="irAPaso(${i})">
+      <span class="ind-num">${i+1}</span>
+      <span class="ind-tx"><b>${p.titulo}</b><small>${p.chips[0]}</small></span>
+    </button>`).join('');
+  document.getElementById('indiceTools').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="ind-tool" onclick="abrirModal(${i})">${ico(c.ico)} ${c.titulo}</button>`).join('');
+}
+
+/* --- puntos de la barra --- */
+function pintaPuntos(){
+  document.getElementById('puntos').innerHTML = PASOS.map((p,i)=>
+    `<button class="punto" onclick="irAPaso(${i})" title="${p.titulo}" aria-label="Ir al paso ${i+1}: ${p.titulo}">${i+1}</button>`
+  ).join('');
+}
+
+function refresca(){
+  document.querySelectorAll('.punto').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+  });
+  PASOS.forEach((p,i)=>{
+    const b = document.getElementById('hecho'+i);
+    if(!b) return;
+    const ok = hechos.includes(i);
+    b.classList.toggle('marcado', ok);
+    b.innerHTML = ok ? '<span>✓</span> Hecho' : '<span>○</span> Marcar como hecho';
+  });
+  document.querySelectorAll('.ind-item').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+    b.querySelector('.ind-num').textContent = hechos.includes(i) ? '✓' : (i+1);
+  });
+  const pct = Math.round(hechos.length / PASOS.length * 100);
+  document.getElementById('progresoBarra').style.width = pct + '%';
+  document.getElementById('indiceContador').textContent =
+    hechos.length + ' de ' + PASOS.length + ' pasos' + (hechos.length ? ' · ' + pct + '%' : '');
+  document.getElementById('contador').textContent = hechos.length + '/' + PASOS.length + ' hechos';
+  document.getElementById('barraTitulo').textContent = PASOS[actual].titulo;
+}
+
+function irAPaso(i){
+  actual = i;
+  document.querySelectorAll('.paso').forEach((el,j)=>el.classList.toggle('activo', j===i));
+  refresca();
+  const y = document.getElementById('camino').offsetTop - 70;
+  window.scrollTo({top:y, behavior:'smooth'});
+}
+
+function siguiente(i){
+  if(i < PASOS.length-1){ irAPaso(i+1); }
+  else { document.getElementById('caja').scrollIntoView({behavior:'smooth'}); }
+}
+
+function marcar(i){
+  if(hechos.includes(i)) hechos = hechos.filter(x=>x!==i);
+  else hechos.push(i);
+  guardar();
+  refresca();
+}
+
+/* --- caja de herramientas --- */
+function pintaCaja(){
+  document.getElementById('rejilla').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="tarjeta" onclick="abrirModal(${i})">
+      <span class="ico">${ico(c.ico)}</span>
+      <span class="eyebrow">${c.et}</span>
+      <h3>${c.titulo}</h3>
+      <p>${c.resumen}</p>
+    </button>`).join('');
+}
+
+function abrirModal(i){
+  const c = CAJA_H[i];
+  document.getElementById('modalCont').innerHTML = `
+    <div class="paso-cabecera" style="border-radius:0">
+      <div class="paso-num">${c.et}</div>
+      <h2>${ico(c.ico,"ico-titulo")}${c.titulo}</h2>
+      <p class="sub">${c.resumen}</p>
+    </div>
+    <div class="paso-cuerpo" style="border-radius:0">${c.cuerpo}</div>`;
+  document.getElementById('modal').classList.add('abierto');
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.modal-caja').scrollIntoView();
+}
+function cerrarModal(){
+  document.getElementById('modal').classList.remove('abierto');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e=>{
+  if(e.target.id === 'modal') cerrarModal();
+});
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') cerrarModal(); });
+
+/* --- barra sticky --- */
+window.addEventListener('scroll', ()=>{
+  const camino = document.getElementById('camino');
+  const caja = document.getElementById('caja');
+  const dentro = window.scrollY > camino.offsetTop - 200 && window.scrollY < caja.offsetTop - 100;
+  document.getElementById('barra').classList.toggle('visible', dentro);
+});
+
+/* --- arranque --- */
+document.getElementById('tituloUso').insertAdjacentHTML('afterbegin', ico('brujula','ico-titulo'));
+pintaMapa();
+pintaPasos();
+pintaIndice();
+pintaPuntos();
+pintaCaja();
+refresca();
+</script>
+</body>
+</html>
