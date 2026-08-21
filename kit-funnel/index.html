@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Funnel High Ticket</title>
+<meta name="description" content="Las 7 páginas del embudo — captación, venta con checkout, OTOs, downsells y gracias — con la escalera oficial de precios, el cableado en GHL y el checklist de lanzamiento.">
+<meta name="theme-color" content="#D4AF37">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E08%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#111111;
+  --tinta-2:#262626;
+  --papel:#FFFFFF;
+  --papel-2:#F5F4F1;
+  --papel-3:#EDEDED;
+  --texto:#1A1A1A;
+  --texto-2:#6E6B65;
+  --azul:#2563D9;
+  --azul-luz:#EAF1FE;
+  --verde:#0E8F63;
+  --verde-luz:#E6F6EF;
+  --coral:#DC3A45;
+  --coral-luz:#FDECEC;
+  --violeta:#6B4FD8;
+  --violeta-luz:#F0ECFE;
+  --ambar:#D98A00;
+  --ambar-luz:#FDF3E0;
+  --oro:#D4AF37;
+  --oro-claro:#E6C765;
+  --crema:#D8D5CB;
+  --crema-mute:#98958D;
+  --tinta-linea:#333333;
+  --radio:16px;
+  --sombra:0 1px 2px rgba(17,17,17,.06), 0 8px 24px rgba(17,17,17,.06);
+  --sombra-alta:0 2px 4px rgba(17,17,17,.08), 0 16px 40px rgba(17,17,17,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Figtree',system-ui,-apple-system,sans-serif;
+  background:var(--papel-2);
+  color:var(--texto);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.wrap{max-width:1340px;margin:0 auto;padding:0 32px}
+.wrap-estrecho{max-width:1000px;margin:0 auto}
+
+/* ============ HERO ============ */
+/* Portada negra con composición propia. La firma de este kit: la escalera
+   del funnel con sus 7 paradas y la escalera oficial de precios. */
+.hero{background:var(--tinta);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--oro)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:100px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:center;position:relative;z-index:2}
+.hero-insignia{display:inline-flex;align-items:center;gap:12px;margin-bottom:30px;flex-wrap:wrap}
+.hero-insignia .num{font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--oro);color:var(--tinta);padding:5px 13px;border-radius:999px}
+.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-mute);margin:0}
+.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);font-weight:800;max-width:16ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--crema);max-width:46ch;margin-bottom:20px}
+.hero .hero-que-es{font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--crema-mute);max-width:56ch;margin-bottom:34px;line-height:1.7}
+.hero .hero-que-es strong{color:var(--crema);font-weight:600}
+.hero-cruce{font-size:.88rem;color:var(--crema-mute);margin-top:16px}
+.hero-cruce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.hero-cruce a:hover{color:var(--oro)}
+
+/* la escalera del funnel en la portada */
+.hero-panel{background:var(--papel-2);color:var(--texto);border-radius:var(--radio);box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
+.fun-cab{display:flex;align-items:center;gap:11px;background:#fff;padding:13px 16px;border-bottom:1px solid var(--papel-3)}
+.fun-cab .avatar{width:34px;height:34px;border-radius:9px;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.78rem;flex-shrink:0}
+.fun-cab b{font-size:.95rem;display:block;line-height:1.2}
+.fun-cab small{color:var(--texto-2);font-size:.72rem}
+.fun-cuerpo{padding:14px 16px;display:flex;flex-direction:column;gap:7px}
+.fun-fila{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--papel-3);border-radius:9px;padding:8px 12px}
+.fun-fila.lt{border-left:4px solid var(--oro)}
+.fun-fila.ds{margin-left:22px;background:var(--papel-2);border-style:dashed}
+.fun-fila.fin{border-left:4px solid var(--verde)}
+.fun-num{width:22px;height:22px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.66rem;font-weight:700;flex-shrink:0}
+.fun-fila.ds .fun-num{background:var(--crema-mute)}
+.fun-fila.fin .fun-num{background:var(--verde)}
+.fun-tx{flex:1;font-size:.85rem;font-weight:600;min-width:0}
+.fun-p{font-family:'Space Mono',monospace;font-size:.66rem;font-weight:700;color:var(--tinta);background:var(--oro);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.fun-fila.ds .fun-p{background:var(--crema);color:var(--tinta-2)}
+.fun-fila.fin .fun-p{background:var(--verde-luz);color:var(--verde)}
+.fun-fila:first-child .fun-p{background:var(--papel-3);color:var(--texto-2)}
+.fun-pie{background:#fff;border-top:1px dashed var(--papel-3);padding:11px 16px;font-size:.8rem;color:var(--texto-2);text-align:center}
+.fun-pie b{color:var(--tinta)}
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-panel{max-width:440px}
+}
+
+
+.botonera{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.btn{
+  font-family:'Figtree',sans-serif;font-size:1rem;font-weight:600;
+  padding:15px 28px;border-radius:999px;border:none;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-principal{background:var(--oro);color:var(--tinta)}
+.btn-principal:hover{background:var(--oro-claro);box-shadow:0 8px 24px rgba(212,175,55,.35)}
+.btn-fantasma{background:transparent;color:var(--crema);border:1.5px solid var(--tinta-linea)}
+.btn-fantasma:hover{border-color:var(--oro);color:#fff}
+
+/* ============ BARRA STICKY ============ */
+.barra{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--papel-3);
+  padding:12px 0;display:none;
+}
+.barra.visible{display:block}
+.barra-in{display:flex;align-items:center;gap:20px}
+.barra-titulo{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.puntos{display:flex;gap:7px;flex:1;justify-content:center}
+.punto{
+  width:30px;height:30px;border-radius:50%;border:2px solid var(--papel-3);
+  background:#fff;cursor:pointer;font-family:'Space Mono',monospace;font-size:.72rem;
+  font-weight:700;color:var(--texto-2);display:grid;place-items:center;
+  transition:all .15s ease;padding:0;
+}
+.punto:hover{border-color:var(--azul);color:var(--azul)}
+.punto.actual{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.punto.hecho{background:var(--verde);border-color:var(--verde);color:#fff}
+.contador{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--texto-2);white-space:nowrap;font-weight:700}
+
+/* ============ ICONOS DE LÍNEA ============ */
+.ico-svg{width:1.1em;height:1.1em;flex-shrink:0;vertical-align:-.15em}
+.ico-titulo{width:1em;height:1em;margin-right:.42em;vertical-align:-.06em;color:var(--oro)}
+.ind-tool .ico-svg{width:17px;height:17px;opacity:.75}
+/* semáforo y marcas de estado, sin emojis */
+.luz{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:7px;vertical-align:.5px}
+.luz-verde{background:var(--verde)} .luz-ambar{background:var(--ambar)} .luz-rojo{background:var(--coral)}
+.marca-si{color:var(--verde);font-weight:700}
+.marca-no{color:var(--texto-2);font-weight:700}
+
+/* ============ AVISO DE USO ============ */
+.aviso-uso{
+  background:var(--ambar-luz);border:1px solid #EFD9A6;border-left:5px solid var(--ambar);
+  border-radius:var(--radio);padding:26px 28px;margin:56px auto 0;max-width:900px;
+}
+.aviso-uso h3{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.25rem;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:12px;display:flex;align-items:center;gap:11px;color:var(--tinta);
+}
+.aviso-uso p{color:#6B4E12;font-size:.98rem;line-height:1.7;margin-bottom:12px}
+.aviso-uso p:last-child{margin-bottom:0}
+.aviso-uso strong{color:var(--tinta);font-weight:700}
+
+/* ============ SECCIONES ============ */
+.seccion{padding:72px 0}
+.seccion-cabecera{text-align:center;max-width:44ch;margin:0 auto 48px}
+.seccion-cabecera .eyebrow{color:var(--texto-2);display:block;margin-bottom:12px}
+.seccion-cabecera h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;margin-bottom:14px}
+.seccion-cabecera p{color:var(--texto-2);font-size:1.05rem}
+
+/* ============ ÍNDICE LATERAL ============ */
+.camino-grid{display:grid;grid-template-columns:300px minmax(0,1fr);gap:36px;align-items:start}
+.indice{position:sticky;top:24px;background:#fff;border:1px solid var(--papel-3);border-radius:var(--radio);padding:22px 20px;box-shadow:var(--sombra);max-height:calc(100vh - 48px);overflow-y:auto}
+.indice-cab{padding-bottom:16px;border-bottom:1px solid var(--papel-3);margin-bottom:16px}
+.indice-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:10px}
+.progreso{height:7px;background:var(--papel-3);border-radius:999px;overflow:hidden;margin-bottom:9px}
+.progreso i{display:block;height:100%;background:var(--verde);border-radius:999px;transition:width .3s ease}
+.indice-contador{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--texto-2);font-weight:700}
+.ind-item{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;
+  background:none;border:none;cursor:pointer;padding:9px 10px;border-radius:10px;
+  font-family:'Figtree',sans-serif;transition:background .12s ease;
+}
+.ind-item:hover{background:var(--papel-2)}
+.ind-item.actual{background:var(--tinta)}
+.ind-item.actual .ind-tx b{color:#fff}
+.ind-item.actual .ind-tx small{color:var(--crema-mute)}
+.ind-num{
+  flex-shrink:0;width:25px;height:25px;border-radius:50%;border:2px solid var(--papel-3);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.7rem;
+  font-weight:700;color:var(--texto-2);background:#fff;
+}
+.ind-item.actual .ind-num{background:var(--oro);border-color:var(--oro);color:var(--tinta)}
+.ind-item.hecho .ind-num{background:var(--verde);border-color:var(--verde);color:#fff}
+.ind-tx{display:block;line-height:1.3}
+.ind-tx b{display:block;font-size:.9rem;font-weight:600;color:var(--texto);margin-bottom:2px}
+.ind-tx small{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-2);letter-spacing:.04em}
+.indice-sep{
+  font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;color:var(--texto-2);margin:18px 0 8px;padding-top:16px;border-top:1px solid var(--papel-3);
+}
+.ind-tool{
+  display:flex;gap:9px;align-items:center;width:100%;text-align:left;background:none;border:none;
+  cursor:pointer;padding:7px 10px;border-radius:9px;font-family:'Figtree',sans-serif;
+  font-size:.86rem;color:var(--texto-2);transition:background .12s ease,color .12s ease;
+}
+.ind-tool:hover{background:var(--violeta-luz);color:var(--violeta)}
+
+/* ============ PASO ============ */
+.paso{display:none}
+.paso.activo{display:block;animation:entra .35s ease}
+@keyframes entra{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.paso-cabecera{background:var(--tinta);color:#fff;border-radius:var(--radio) var(--radio) 0 0;padding:36px 36px 32px;position:relative;overflow:hidden}
+.paso-num{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.16em;color:var(--oro);font-weight:700;margin-bottom:10px}
+.paso-cabecera h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.paso-cabecera .sub{color:var(--crema);font-size:1.05rem;max-width:52ch}
+.paso-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.chip{
+  font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.06em;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  padding:7px 13px;border-radius:999px;color:var(--crema);
+}
+.paso-cuerpo{background:#fff;border-radius:0 0 var(--radio) var(--radio);padding:36px;box-shadow:var(--sombra)}
+
+/* bloques de contenido */
+.bloque{margin-bottom:28px;border-radius:14px;overflow:hidden}
+.bloque:last-child{margin-bottom:0}
+.bloque-cab{
+  display:flex;align-items:center;gap:12px;padding:15px 20px;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.18rem;
+  letter-spacing:-.01em;font-weight:600;line-height:1.25;
+}
+.bloque-cab .ico{font-size:1.15rem;line-height:1}
+.b-copiar{
+  margin-left:auto;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  color:#fff;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.08em;
+  text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:999px;cursor:pointer;
+  transition:background .12s ease;
+}
+.b-copiar:hover{background:rgba(255,255,255,.32)}
+.b-copiar.ok{background:#fff;color:var(--verde);border-color:#fff}
+.bloque-cont{padding:22px 20px;font-size:.98rem;line-height:1.7}
+.bloque-cont > *:last-child{margin-bottom:0}
+.bloque-cont p{margin-bottom:14px}
+.bloque-cont ul{margin:0 0 14px;padding-left:22px}
+.bloque-cont li{margin-bottom:7px}
+.bloque-cont strong{font-weight:700;color:var(--tinta)}
+.bloque-cont a,.aviso-uso a,.aviso-legal a{
+  color:var(--azul);font-weight:600;text-decoration:underline;
+  text-underline-offset:2px;text-decoration-thickness:1.5px;
+}
+.bloque-cont a:hover,.aviso-uso a:hover,.aviso-legal a:hover{color:var(--tinta)}
+/* lista de documentos enlazados */
+.docs{list-style:none;padding:0;margin:0}
+.docs li{
+  background:#fff;border:1px solid var(--papel-3);border-radius:11px;
+  padding:13px 16px;margin-bottom:9px;display:flex;gap:12px;align-items:flex-start;
+}
+.docs li:last-child{margin-bottom:0}
+.docs .n{
+  flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--tinta);color:var(--oro);
+  display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:.72rem;font-weight:700;
+}
+.docs b{display:block;font-size:.98rem;color:var(--tinta)}
+.docs span{font-size:.9rem;color:var(--texto-2);display:block;line-height:1.55}
+/* tercer nivel: los rótulos sueltos dentro de un bloque ("Lo que incluye") */
+.bloque-cont > p > strong:only-child{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+
+.b-neutro{background:var(--papel-2);border:1px solid var(--papel-3)}
+.b-neutro .bloque-cab{background:var(--papel-3);color:var(--tinta-2)}
+
+.b-plantilla{background:var(--azul-luz);border:1px solid #C3D9FB}
+.b-plantilla .bloque-cab{background:var(--azul);color:#fff}
+.b-plantilla .bloque-cont{font-size:.95rem}
+
+.b-ejemplo{background:var(--verde-luz);border:1px solid #B8E5D2}
+.b-ejemplo .bloque-cab{background:var(--verde);color:#fff}
+
+.b-errores{background:var(--coral-luz);border:1px solid #F8C9CC}
+.b-errores .bloque-cab{background:var(--coral);color:#fff}
+
+.b-ayuda{background:var(--violeta-luz);border:1px solid #D6CBFB}
+.b-ayuda .bloque-cab{background:var(--violeta);color:#fff}
+
+.b-aviso{background:var(--ambar-luz);border:1px solid #F5DCA8}
+.b-aviso .bloque-cab{background:var(--ambar);color:#fff}
+
+/* tablas y plantillas */
+.tabla{width:100%;border-collapse:collapse;font-size:.9rem;margin-bottom:14px;background:#fff;border-radius:10px;overflow:hidden}
+.tabla th{background:var(--tinta);color:#fff;text-align:left;padding:12px 14px;font-weight:600;font-size:.9rem}
+.tabla td{padding:12px 14px;border-top:1px solid var(--papel-3);vertical-align:top}
+.tabla tr:nth-child(even) td{background:var(--papel-2)}
+
+.campo{
+  background:#fff;border:1.5px dashed #A9C2F2;border-radius:9px;
+  padding:14px 16px;margin-bottom:11px;font-size:.94rem;
+}
+.campo b{display:block;font-family:'Figtree',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.02em;color:var(--azul);margin-bottom:6px}
+.hueco{background:#DCE9FD;color:var(--azul);padding:1px 7px;border-radius:5px;font-family:'Space Mono',monospace;font-size:.85em;font-weight:700}
+
+.mensaje{background:#fff;border-radius:12px;padding:18px 20px;border-left:4px solid var(--verde);font-size:.97rem;line-height:1.7;margin-bottom:12px}
+.mensaje .de{font-family:'Figtree',sans-serif;font-size:.85rem;letter-spacing:.02em;color:var(--verde);font-weight:700;margin-bottom:10px}
+
+.error-item{display:flex;gap:13px;margin-bottom:15px;align-items:flex-start}
+.error-item:last-child{margin-bottom:0}
+.error-x{
+  flex-shrink:0;width:23px;height:23px;border-radius:50%;background:var(--coral);
+  color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:2px;
+}
+.error-item b{
+  display:block;margin-bottom:3px;color:var(--tinta);
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.02rem;
+  font-weight:600;letter-spacing:-.01em;
+}
+.error-item span{font-size:.96rem;line-height:1.65;color:var(--texto-2)}
+
+/* acordeón */
+.desplegable{border:1px solid var(--papel-3);border-radius:12px;margin-bottom:12px;background:#fff;overflow:hidden}
+.desplegable summary{
+  padding:15px 18px;cursor:pointer;font-weight:600;display:flex;
+  align-items:center;gap:11px;list-style:none;
+}
+.desplegable summary::-webkit-details-marker{display:none}
+.desplegable summary::after{content:"+";margin-left:auto;font-family:'Space Mono',monospace;font-size:1.2rem;color:var(--texto-2)}
+.desplegable[open] summary::after{content:"−"}
+.desplegable summary:hover{background:var(--papel-2)}
+.desplegable .dcont{padding:0 18px 18px}
+
+/* navegación del paso */
+.paso-pie{
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  margin-top:32px;padding-top:28px;border-top:2px dashed var(--papel-3);
+}
+.btn-hecho{
+  background:#fff;border:2px solid var(--verde);color:var(--verde);
+  font-weight:700;padding:14px 24px;border-radius:999px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:10px;font-size:.98rem;font-family:'Figtree',sans-serif;
+  transition:all .15s ease;
+}
+.btn-hecho:hover{background:var(--verde-luz)}
+.btn-hecho.marcado{background:var(--verde);color:#fff}
+.btn-nav{
+  background:var(--tinta);color:#fff;border:none;padding:14px 26px;
+  border-radius:999px;cursor:pointer;font-weight:600;font-size:.98rem;
+  font-family:'Figtree',sans-serif;margin-left:auto;
+  display:inline-flex;align-items:center;gap:9px;transition:all .15s ease;
+}
+.btn-nav:hover{background:var(--tinta-2)}
+.btn-atras{
+  background:transparent;border:1.5px solid var(--papel-3);color:var(--texto-2);
+  padding:14px 22px;border-radius:999px;cursor:pointer;font-weight:600;
+  font-family:'Figtree',sans-serif;font-size:.98rem;transition:all .15s ease;
+}
+.btn-atras:hover{border-color:var(--texto-2);color:var(--texto)}
+
+/* ============ CAJA DE HERRAMIENTAS ============ */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.tarjeta{
+  background:#fff;border-radius:var(--radio);padding:26px;cursor:pointer;
+  border:1px solid var(--papel-3);text-align:left;font-family:'Figtree',sans-serif;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.tarjeta:hover{transform:translateY(-3px);box-shadow:var(--sombra-alta)}
+.tarjeta .ico{display:block;margin-bottom:14px;color:var(--tinta)}
+.tarjeta .ico .ico-svg{width:28px;height:28px}
+.tarjeta:hover .ico{color:var(--oro-oscuro,#9A7D1F)}
+.tarjeta .eyebrow{color:var(--violeta);display:block;margin-bottom:7px}
+.tarjeta h3{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.tarjeta p{color:var(--texto-2);font-size:.93rem;line-height:1.55}
+
+/* ============ MODAL ============ */
+.modal{
+  position:fixed;inset:0;z-index:100;background:rgba(17,17,17,.6);
+  backdrop-filter:blur(4px);display:none;padding:24px;overflow-y:auto;
+}
+.modal.abierto{display:block;animation:entra .2s ease}
+.modal-caja{
+  max-width:820px;margin:40px auto;background:#fff;
+  border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra-alta);
+}
+.modal-cerrar{
+  position:sticky;top:0;z-index:5;background:#fff;padding:14px 24px;
+  border-bottom:1px solid var(--papel-3);display:flex;justify-content:flex-end;
+}
+.modal-cerrar button{
+  background:var(--papel-2);border:none;width:38px;height:38px;border-radius:50%;
+  cursor:pointer;font-size:1.1rem;color:var(--texto-2);
+}
+.modal-cerrar button:hover{background:var(--papel-3)}
+
+/* ============ CIERRE ============ */
+.final{background:var(--tinta);color:#fff;border-radius:var(--radio);padding:48px 36px;text-align:center}
+.final h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:14px}
+.final p{color:var(--crema);max-width:52ch;margin:0 auto 28px}
+.final-docs{max-width:640px;margin:0 auto 28px;text-align:left}
+.final-docs .docs li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.final-docs .docs .n{background:var(--oro);color:var(--tinta)}
+.final-docs .docs b{color:#fff}
+.final-docs .docs b a{color:var(--oro);text-decoration:none}
+.final-docs .docs b a:hover{text-decoration:underline}
+.final-docs .docs span{color:var(--crema-mute)}
+.final-nota{font-size:.92rem;color:var(--crema-mute)!important;max-width:none!important;margin:16px 0 0!important;line-height:1.65}
+.final-nota strong{color:#fff}
+
+.pie{padding:48px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
+.pie b{color:var(--texto)}
+.aviso-legal{
+  max-width:600px;margin:24px auto 0;font-size:.85rem;
+  background:var(--ambar-luz);border:1px solid #F5DCA8;
+  border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
+}
+
+/* el índice lateral sustituye a la barra superior en pantallas anchas */
+@media(min-width:1081px){
+  .barra{display:none!important}
+}
+@media(max-width:1080px){
+  .camino-grid{grid-template-columns:1fr;gap:0}
+  .indice{display:none}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .seccion{padding:48px 0}
+  .paso-cabecera,.paso-cuerpo{padding:26px 20px}
+  .puntos{display:none}
+  .btn-nav{margin-left:0;width:100%;justify-content:center}
+  .paso-pie{flex-direction:column;align-items:stretch}
+  .btn-hecho,.btn-atras{justify-content:center}
+  .tabla{font-size:.82rem}
+  .tabla th,.tabla td{padding:8px 9px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <div class="hero-insignia"><span class="num">Kit 08 · Funnel</span><span class="hero-marca">Departamento Disruptivo</span></div>
+      <h1>Del clic al cliente, <em>sin fugas.</em></h1>
+      <p>Las 7 páginas de tu embudo — de la captación a la página de gracias — ya diseñadas, con el copy plantilla, la escalera oficial de precios y cada disparo conectado a tu sistema.</p>
+      <p class="hero-que-es">Primero, <strong>6 pasos en orden</strong>: el mapa, la config de marca, la captación, la venta con su checkout, el pasillo de OTOs y la página de gracias con el puente. Después, la caja con <strong>el cableado en GHL, el checklist de lanzamiento, las reglas y el preview navegable</strong>.</p>
+      <div class="botonera">
+        <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
+        <a href="https://dd-funnel-preview-dwy.vercel.app" target="_blank" rel="noopener" class="btn btn-fantasma">Recorrer el preview ↗</a>
+      </div>
+      <p class="hero-cruce">El funnel dispara las secuencias del <a href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 04 ↗</a>, recibe el tráfico del <a href="https://kit-ads-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 06 ↗</a> y siembra la llamada del <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 03 ↗</a></p>
+    </div>
+
+    <aside class="hero-panel" aria-label="El recorrido del funnel de un vistazo">
+      <div class="fun-cab"><span class="avatar">08</span><div><b>El recorrido · 7 páginas</b><small>escalera oficial · el HT nunca con precio escrito</small></div></div>
+      <div class="fun-cuerpo">
+        <div class="fun-fila"><span class="fun-num">1</span><span class="fun-tx">Captación del recurso</span><span class="fun-p">opt-in</span></div>
+        <div class="fun-fila lt"><span class="fun-num">2</span><span class="fun-tx">Venta del producto de entrada</span><span class="fun-p">12-17€</span></div>
+        <div class="fun-fila"><span class="fun-num">3</span><span class="fun-tx">OTO 1 · el acelerador</span><span class="fun-p">147€</span></div>
+        <div class="fun-fila ds"><span class="fun-num">4</span><span class="fun-tx">↳ Downsell · esencial</span><span class="fun-p">97€</span></div>
+        <div class="fun-fila"><span class="fun-num">5</span><span class="fun-tx">OTO 2 · la plantilla</span><span class="fun-p">87€</span></div>
+        <div class="fun-fila ds"><span class="fun-num">6</span><span class="fun-tx">↳ Downsell · exprés</span><span class="fun-p">37€</span></div>
+        <div class="fun-fila fin"><span class="fun-num">7</span><span class="fun-tx">Gracias → sesión de estrategia</span><span class="fun-p">sin precio</span></div>
+      </div>
+      <div class="fun-pie"><b>El bump +19€, siempre desmarcado.</b> Y declinar, en gris — nunca un botón.</div>
+    </aside>
+  </div>
+</header>
+
+
+<!-- ============ BARRA ============ -->
+<div class="barra" id="barra">
+  <div class="wrap barra-in">
+    <div class="barra-titulo" id="barraTitulo">Funnel</div>
+    <div class="puntos" id="puntos"></div>
+    <div class="contador" id="contador">0/6</div>
+  </div>
+</div>
+
+<!-- ============ CAMINO ============ -->
+<main>
+
+<div class="wrap">
+  <div class="aviso-uso">
+    <h3 id="tituloUso">Cómo usar esta guía</h3>
+    <p><strong>Las páginas ya están diseñadas y escritas.</strong> El copy plantilla, el orden de las secciones y el recorrido completo los tienes en el <a href="https://dd-funnel-preview-dwy.vercel.app" target="_blank" rel="noopener">preview navegable ↗</a>, tal y como lo verá tu cliente. Este kit es para montarlo en tu GHL: la estructura, el cableado y las pruebas. Lo montas tú, con tu formación de GHL; el visual de referencia ya lo tienes hecho.</p>
+    <p><strong>Se hace en orden.</strong> El mapa y la config de marca antes de tocar ninguna página; las páginas en el orden del recorrido; y nada recibe tráfico hasta pasar el checklist de lanzamiento de la caja.</p>
+    <p><strong>Las reglas duras no se negocian.</strong> La escalera de precios es oficial y no se toca (el único rango es el producto de entrada: 12-17€). El precio de tu oferta principal jamás aparece por escrito. El order bump va desmarcado. Declinar es un enlace gris, nunca un botón. Urgencia solo verdadera, prueba social solo real, y cero "gratis" ni "lanzamiento".</p>
+    <p style="margin-bottom:0">Los ejemplos siguen el caso de Valeria ("Energía Propia"), como en toda la colección. Y el funnel no vive solo: dispara tus secuencias (Kit 04), recibe tu tráfico (Kit 06) y siembra tu llamada (Kit 03).</p>
+  </div>
+</div>
+
+<section class="seccion" id="camino">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Primera parte</span>
+      <h2>Los 6 pasos del funnel</h2>
+      <p>El mapa, la marca, y las páginas en el orden del recorrido: captación, venta, pasillo y gracias. Cada paso desmonta una pieza del preview.</p>
+    </div>
+    <div class="camino-grid">
+      <aside class="indice" id="indice">
+        <div class="indice-cab">
+          <span class="eyebrow">Tu avance</span>
+          <div class="progreso"><i id="progresoBarra" style="width:0%"></i></div>
+          <div class="indice-contador" id="indiceContador">0 de 6 pasos</div>
+        </div>
+        <nav id="indiceLista" aria-label="Los 6 pasos del funnel"></nav>
+        <div class="indice-sep">Caja de herramientas</div>
+        <nav id="indiceTools" aria-label="Las herramientas"></nav>
+      </aside>
+      <div id="pasos"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAJA ============ -->
+<section class="seccion" id="caja" style="background:#fff">
+  <div class="wrap">
+    <div class="seccion-cabecera">
+      <span class="eyebrow">Segunda parte</span>
+      <h2>El cableado y las pruebas</h2>
+      <p>La parte invisible: qué dispara qué en GHL, el recorrido de prueba antes de mandar tráfico, las líneas rojas y el preview de referencia.</p>
+    </div>
+    <div class="rejilla" id="rejilla"></div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="wrap">
+    <div class="final">
+      <h2>Una cosa antes de empezar</h2>
+      <p>Un funnel no es una página bonita: es un circuito. La captación firma promesas que cumplen tus emails, el checkout entrena a tus anuncios, y la página de gracias siembra la llamada donde de verdad se gana el high ticket. <strong>Si una pieza está desconectada, todas cobran menos.</strong></p>
+      <p style="margin-bottom:28px">Por eso el orden del kit es el que es: primero el mapa, luego la marca, luego las páginas, y al final el recorrido de prueba completo — tú, desde tu móvil, como si fueras tu cliente. Cuando ese recorrido salga limpio, abre el grifo. Y deja que el circuito haga su trabajo.</p>
+      <button class="btn btn-principal" onclick="irAPaso(0)">Ir al paso 1 →</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <p><b>Kit de Funnel High Ticket</b> · Departamento Disruptivo</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <div class="aviso-legal">
+      <b>Sobre lo legal:</b> antes del primer visitante, tu funnel necesita política de privacidad y términos enlazados de verdad, email de soporte visible, banner de consentimiento si mandas tráfico de pago, y el order bump desmarcado (en la UE no es opcional). Y la garantía debe decir lo mismo en la página, el checkout, los emails y el contrato — que vive en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-caja">
+    <div class="modal-cerrar"><button onclick="cerrarModal()" aria-label="Cerrar">✕</button></div>
+    <div id="modalCont"></div>
+  </div>
+</div>
+
+<script>
+/* ==================================================================
+   CONTENIDO — para editar un texto, cámbialo aquí. No hace falta
+   tocar nada más del archivo.
+   ================================================================== */
+
+const H = (s) => s; // ayuda para leer mejor el HTML de abajo
+
+const PASOS = [
+{
+  num:"Paso 01", ico:"ruta",
+  titulo:"El mapa de las 7 páginas",
+  sub:"De la captación a la página de gracias, con la escalera oficial de precios. Antes de montar nada, entiende el recorrido entero.",
+  chips:["El plano general","Antes de montar nada","La escalera no se toca"],
+  queEs:H(`<p>Tu funnel son <strong>7 páginas encadenadas</strong>: la captación del recurso (LM) → la página de venta del producto de entrada (LT) con checkout embebido → el pasillo post-compra (OTO 1 → downsell 1 → OTO 2 → downsell 2) → la página de gracias, que confirma, entrega y tiende el puente hacia trabajar contigo.</p>
+    <p style="margin-bottom:0">Puedes recorrerlo entero, tal y como lo verá tu cliente, en el <a href="https://dd-funnel-preview-dwy.vercel.app" target="_blank" rel="noopener">preview navegable ↗</a>. Cada paso de este kit desmonta una de esas páginas.</p>`),
+  porQue:H(`<p>El funnel funciona como sistema, no como páginas sueltas: la captación alimenta tus secuencias, el checkout entrena tu Pixel, los OTOs suben el ticket medio con la misma tarjeta, y la página de gracias siembra la llamada que cierras con tu guión del Kit 03.</p>
+    <p><strong>La escalera de precios es oficial y no se toca:</strong> producto de entrada en el rango 12-17€, OTO 1 a 147€ (su downsell a 97€), OTO 2 a 87€ (su downsell a 37€) y el order bump de +19€ en el checkout. Y la regla que manda sobre todas: <strong>el precio de tu oferta principal jamás aparece escrito</strong> — en la página de gracias se invita a una sesión, nunca se vende con cifra.</p>`),
+  plantilla:H(`<table class="tabla"><tr><th>#</th><th>Página</th><th>Trabajo</th><th>Sale hacia</th></tr>
+    <tr><td>1</td><td><strong>Captación (LM)</strong></td><td>Convertir el clic en contacto: nombre + email a cambio del recurso</td><td>Página del LT (y secuencia Welcome)</td></tr>
+    <tr><td>2</td><td><strong>Venta del LT</strong></td><td>Vender el producto de entrada · rango <span class="hueco">12-17€</span> · checkout embebido con bump +19€</td><td>OTO 1</td></tr>
+    <tr><td>3</td><td><strong>OTO 1 · el acelerador</strong> (147€)</td><td>Sumar al pedido con 1 clic, misma tarjeta</td><td>Sí → OTO 2 · No → Downsell 1</td></tr>
+    <tr><td>4</td><td><strong>Downsell 1 · esencial</strong> (97€)</td><td>La versión recortada del acelerador</td><td>OTO 2</td></tr>
+    <tr><td>5</td><td><strong>OTO 2 · la plantilla</strong> (87€)</td><td>Segundo complemento, mismo patrón</td><td>Sí → Gracias · No → Downsell 2</td></tr>
+    <tr><td>6</td><td><strong>Downsell 2 · exprés</strong> (37€)</td><td>Última oferta del pasillo</td><td>Gracias</td></tr>
+    <tr><td>7</td><td><strong>Gracias</strong></td><td>Confirmar, entregar, y tender el puente a la sesión de estrategia</td><td>Tu calendario</td></tr></table>`),
+  ejemplo:H(`<p>El funnel de Valeria: su Guía del Arranque como LM → el Sistema Energía Propia a 17€ con bump de las plantillas de registro (+19€) → el Acelerador (sus casos comentados en vídeo) a 147€ → y en la página de gracias, el puente hacia su acompañamiento 1:1 — sin cifra, con el formulario de 3 preguntas y su calendario. La primera compradora que agendó desde ahí llegó a la llamada ya sabiendo su método: la venta del Kit 03 empezó en el funnel.</p>`),
+  errores:[
+    {t:"Tocar la escalera de precios", d:"Los precios del pasillo son política del sistema, calibrados entre sí (147 → 97, 87 → 37). Cambiar uno descuadra los demás. Lo único con rango es el LT: 12-17€."},
+    {t:"Escribir el precio del high ticket", d:"Ni en la página de gracias, ni en un FAQ, ni en el vídeo. La cifra se dice en la llamada (Kit 03). Escribirla antes mata la sesión."},
+    {t:"Montar páginas sueltas", d:"Una landing bonita sin secuencias detrás ni Pixel delante es un folleto. El funnel se monta entero y se prueba entero (caja de herramientas)."},
+    {t:"Saltarse los downsells", d:"El que dice no al OTO de 147€ dice sí al de 97€ más veces de lo que crees. El pasillo completo existe porque funciona como conjunto."}
+  ],
+  ghl:"Las 7 páginas se montan en el builder de funnels de tu GHL, en este orden y con estos nombres, dentro de un solo funnel. El detalle técnico de cada una, en los pasos siguientes.",
+  ayuda:"Sistemas GHL con María José los miércoles. Lleva el mapa y se monta contigo la estructura vacía en una sesión."
+},
+{
+  num:"Paso 02", ico:"ajustes",
+  titulo:"La config de marca",
+  sub:"Cinco datos imprescindibles y seis de apoyo. Se rellenan una vez y las 7 páginas se visten con tu marca.",
+  chips:["20 minutos","Antes de tocar el copy","Un solo lugar"],
+  queEs:H(`<p>Todo el funnel es white-label: los textos llevan huecos de marca que se rellenan <strong>una sola vez, en un solo sitio</strong>, y se aplican a las 7 páginas. Nada de cambiar el nombre del negocio página a página.</p>
+    <p style="margin-bottom:0">Son <strong>5 imprescindibles</strong> (negocio, color de acción, logo, nicho, avatar) y <strong>6 de apoyo</strong> para que el copy lea coherente (fundador, gran resultado, dolor central, enemigo común y los nombres de tus ofertas).</p>`),
+  porQue:H(`<p>El color de acción es <strong>uno solo</strong> — el de los botones y acentos. Un funnel con tres colores de CTA es un funnel donde no se sabe dónde pulsar. Y el "gran resultado" y el "dolor central" se repiten por todas las páginas: si los defines bien aquí, el funnel entero habla el mismo idioma; si los improvisas página a página, se nota.</p>
+    <p>Estos datos ya los tienes: salen de tu Kit 01 (avatar, promesa, dolor) y de tu Kit 05 (diccionario). Este paso es copiarlos, no inventarlos.</p>`),
+  plantilla:H(`<div class="campo"><b>Los 5 imprescindibles</b>
+    <span class="hueco">nombre_negocio</span> tu marca · <span class="hueco">color_primario</span> el HEX de tus botones y acentos (uno solo) ·
+    <span class="hueco">logo</span> URL del logo (o el nombre en texto) · <span class="hueco">nicho</span> tu sector ·
+    <span class="hueco">avatar</span> tu cliente ideal, en su lenguaje</div>
+    <div class="campo"><b>El soporte de copy</b>
+    <span class="hueco">nombre_fundador</span> y <span class="hueco">cargo</span> · <span class="hueco">gran_resultado</span> lo que consigue tu cliente ·
+    <span class="hueco">dolor_central</span> su dolor principal · <span class="hueco">enemigo_comun</span> la falsa creencia del mercado ·
+    nombres de tus ofertas: <span class="hueco">recurso LM</span>, <span class="hueco">producto LT</span>, <span class="hueco">complementos OTO/DS</span> — y tu oferta principal descrita como "trabajar contigo", <strong>sin nombre comercial rimbombante y sin precio</strong></div>
+    <p style="margin:12px 0 0"><strong>Urgencia:</strong> hay un hueco para la frase de urgencia del LT ("cuando se completa el grupo, esta página se cierra"). Solo se usa si es verdad — cohorte, cupo o fecha real. Sin cohorte real, se deja vacío.</p>`),
+  ejemplo:H(`<p>La config de Valeria: negocio "Energía Propia" · color #C2571B (su terracota — uno, no tres) · nicho "energía y hábitos" · avatar "dueña de negocio que termina el día en reserva" · gran_resultado "energía estable sin fuerza de voluntad" · dolor_central "rendir de día y pagarlo de noche" · enemigo_comun "la creencia de que es cuestión de disciplina". Veinte minutos, y las 7 páginas dejaron de decir "[tu sector]".</p>`),
+  errores:[
+    {t:"Tres colores de acción", d:"El color primario es el del CTA. Si compite con otros, el ojo no sabe dónde ir. Uno."},
+    {t:"Un avatar distinto al del Kit 01", d:"Si tu funnel habla a un avatar y tu contenido a otro, el lead llega confundido. Misma fuente: tu Kit 01."},
+    {t:"Urgencia de relleno", d:"El hueco de urgencia vacío es correcto si no hay cohorte. Rellenarlo 'porque vende' te cuesta la credibilidad de todo lo demás."},
+    {t:"Nombrar el high ticket como producto", d:"Tu oferta principal se describe como 'trabajar contigo mano a mano'. Sin empaquetarla, sin precio: el empaquetado es de la llamada."}
+  ],
+  ghl:"En el builder de GHL: los colores y fuentes se fijan en los ajustes del funnel (no por página), el logo en la cabecera de cada plantilla, y los textos de marca con buscar-reemplazar antes de publicar.",
+  ayuda:"Los datos salen de tus Kits 01 y 05. Si el gran_resultado no está claro, el problema no es del funnel: vuelve al Kit 01."
+},
+{
+  num:"Paso 03", ico:"formulario",
+  titulo:"La página de captación",
+  sub:"Un hook, dos campos y ninguna distracción. Convierte el clic del anuncio o la keyword en un contacto dentro de tu sistema.",
+  chips:["1-2 horas","La puerta de entrada","Alimenta Welcome"],
+  queEs:H(`<p>La primera página: entrega tu recurso de captación a cambio de <strong>nombre y email</strong>. Su anatomía, de arriba abajo: marca compacta → píldora de contexto ("guía práctica para tu avatar") → <strong>hook de 7 palabras o menos</strong> → subtítulo con la promesa → tarjeta de opt-in con dos campos → fila de confianza ("lectura de 8 minutos · aplicable hoy") → los 3 puntos de "qué te llevas" → tu mini-historia → footer legal.</p>`),
+  porQue:H(`<p>Cada elemento que añadas por encima de esto resta: la página tiene un solo trabajo y cualquier menú, enlace o bloque extra es una salida. Por eso no hay navegación.</p>
+    <p>Y el opt-in promete dos cosas que hay que cumplir: "acceso inmediato, directo a tu bandeja" (eso lo hace tu secuencia de Welcome — Kit 04) y "sin spam, te das de baja en un clic" (eso lo hace tu enlace de baja — que ya montaste). El funnel firma cheques que cobran tus emails.</p>`),
+  plantilla:H(`<ul>
+      <li><strong>Hook — tres fórmulas probadas (elige y testea):</strong> "5 claves para <span class="hueco">GRAN RESULTADO</span>" · "El atajo hacia <span class="hueco">GRAN RESULTADO</span>" · "<span class="hueco">GRAN RESULTADO</span> sin morir en el intento". Siempre ≤7 palabras.</li>
+      <li><strong>La tarjeta de opt-in:</strong> "Dime a dónde te la envío" · nombre + mejor correo · botón "Envíamela ahora" · debajo: "Sin spam. Te das de baja cuando quieras, en un clic."</li>
+      <li><strong>Los 3 puntos de valor:</strong> el error silencioso que mantiene el dolor · el primer paso concreto sin herramientas caras · cómo medir en 7 días que vas bien.</li>
+      <li><strong>Tu mini-historia:</strong> antes (la frustración con el dolor) → punto de inflexión → después. En primera persona, real, sin humo.</li>
+      <li><strong>Nunca en esta página:</strong> la palabra "gratis" (el recurso "se descarga", "te lo envío"), precios de nada, menú de navegación.</li>
+    </ul>`),
+  ejemplo:H(`<p>La captación de Valeria: píldora "Guía práctica para dueñas de negocio" · hook "El atajo hacia tu energía estable" · opt-in de dos campos · fila de confianza "Lectura de 8 minutos · Aplicable hoy" · y su historia: "Monté un negocio que funcionaba y un cuerpo que no. Esta guía es lo que me sacó de ahí, sin humo." Quien llega desde un reel con la keyword ENERGIA aterriza aquí — y el mensaje es el mismo que el del reel.</p>`),
+  errores:[
+    {t:"Pedir más de dos campos", d:"Cada campo extra tira conversión. El teléfono y las preguntas van después — en el agendado (Kit 03), donde sí filtran."},
+    {t:"'Gratis' en el copy", d:"Misma regla que en todo el sistema: devalúa y atrae al perfil equivocado. 'Te la envío', 'descárgatela'."},
+    {t:"Prometer y no entregar al instante", d:"El email de entrega (Welcome 01) sale al momento o la promesa de 'acceso inmediato' es mentira. Prueba el circuito antes de mandar tráfico."},
+    {t:"Un hook distinto al del anuncio", d:"El lead pulsa por una promesa; si la landing dice otra cosa, se va. Anuncio (Kit 06), keyword (Kit 05) y landing dicen lo mismo."}
+  ],
+  ghl:"Página en el builder + formulario de GHL mapeado a contacto → dispara la etiqueta lead-nuevo → arranca Welcome (Kit 04). El evento Lead del Pixel se dispara aquí (Kit 06). Tras el opt-in, la página envía al LT.",
+  ayuda:"Sistemas GHL con María José los miércoles."
+},
+{
+  num:"Paso 04", ico:"precio",
+  titulo:"La página de venta y el checkout",
+  sub:"Doce secciones en un orden que no es casual, y el checkout embebido de 2 pasos con su order bump — desmarcado, siempre.",
+  chips:["Media jornada","La página que cobra","Bump +19€ desmarcado"],
+  queEs:H(`<p>La página larga que vende tu producto de entrada. Sus <strong>12 secciones, en orden</strong>: barra de confianza (sin precio) → hero con vídeo de 3 min → el dolor en primera persona → los 4 errores con su coste → antes/después → tu método con nombre propio (3 fases + pilares) → el stack de valor (el ancla, antes del precio) → <strong>precio + checkout embebido</strong> → "¿por qué tan barato?" → garantía de 14 días con nombre propio → prueba social real → FAQ de 6 + cierre + posdata. Con CTA fijo que aparece al pasar el hero.</p>`),
+  porQue:H(`<p>El orden es psicología aplicada: el dolor abre, los errores explican por qué no es su culpa, el método da la esperanza con mecanismo, el stack ancla el valor (155€ de ejemplo) <em>antes</em> de mostrar el precio (12-17€), y la garantía + la posdata cierran al que duda.</p>
+    <p><strong>El checkout va embebido en la misma página</strong> — no un enlace a otra parte — en 2 pasos: primero datos, luego tarjeta. Así, quien abandona en el paso 2 ya te dejó su email: la secuencia de Carrito (Kit 04) existe exactamente para él. Y el <strong>order bump de +19€ va desmarcado por defecto</strong>: pre-marcarlo es ilegal en la UE, además de romper la confianza en el peor momento posible.</p>`),
+  plantilla:H(`<ul>
+      <li><strong>Barra superior:</strong> "Acceso inmediato · Para <span class="hueco">AVATAR</span> · Pago único y seguro" — confianza sin cifra.</li>
+      <li><strong>Hooks del hero:</strong> "El sistema para <span class="hueco">GRAN RESULTADO</span>" · "Deja de improvisar. Empieza a repetir." · "<span class="hueco">GRAN RESULTADO</span>, paso a paso".</li>
+      <li><strong>El stack (antes del precio):</strong> método en 3 fases + plantillas + checklist + casos, cada pieza con su valor orientativo, y el total como ancla.</li>
+      <li><strong>El checkout GHL de 2 pasos:</strong> paso 1 nombre + email · paso 2 tarjeta + bump desmarcado ("se añade a este mismo pago, tu tarjeta no se cobra dos veces") + total visible + "🔒 pago cifrado".</li>
+      <li><strong>La garantía con nombre:</strong> "Aplícalo sin riesgo" — 14 días, sin formularios, tu palabra basta.</li>
+      <li><strong>Prueba social:</strong> solo real — vídeo &gt; captura &gt; texto. Los huecos se quedan vacíos hasta tener casos; nunca se inventan.</li>
+      <li><strong>La posdata:</strong> "Lo barato no es el precio: es lo que te ahorras en meses de prueba y error."</li>
+    </ul>`),
+  ejemplo:H(`<p>El "¿por qué tan barato?" de Valeria, tal cual: <em>"No es generosidad, es estrategia. Prefiero que muchas entren, apliquen y vean que esto funciona de verdad. Si a ti te va bien, las dos ganamos."</em> Y su bump: las plantillas de registro semanales (+19€), desmarcado, con una línea de descripción. Una de cada cuatro compradoras lo marca — sin que nadie se sienta engañada.</p>`),
+  errores:[
+    {t:"El bump pre-marcado", d:"Ilegal en la UE y letal para la confianza. Desmarcado, con descripción clara. Siempre."},
+    {t:"El precio antes del stack", d:"Sin ancla, 17€ es un número; tras el stack, es un regalo. El orden de las secciones no se baraja."},
+    {t:"Testimonios de relleno", d:"Los huecos de prueba social se quedan vacíos hasta que haya casos reales. Un testimonio inventado puede tumbar el funnel entero — y algo más que el funnel."},
+    {t:"Checkout en página aparte", d:"Cada salto pierde gente y rompe el evento InitiateCheckout → Carrito. Embebido, 2 pasos, misma página."},
+    {t:"Urgencia falsa en la venta", d:"'Se cierra esta noche' con checkout evergreen: la misma regla de siempre. Si no cierra, no lo digas — la posdata vende sin mentir."}
+  ],
+  ghl:"Order form de GHL con el producto LT + bump como complemento. Eventos: ViewContent al cargar, InitiateCheckout al paso 1, Purchase al pagar (Kit 06). La compra dispara cliente-lt → Post-compra; el checkout sin compra → Carrito (Kit 04). Al pagar, la página envía al OTO 1.",
+  ayuda:"Sistemas GHL con María José los miércoles para el order form y el bump."
+},
+{
+  num:"Paso 05", ico:"subir",
+  titulo:"El pasillo de OTOs y downsells",
+  sub:"Cuatro páginas después del pago: 147 → 97 y 87 → 37, con un clic y la misma tarjeta. El que declina, declina en gris.",
+  chips:["2-3 horas","Sube el ticket medio","1 clic, misma tarjeta"],
+  queEs:H(`<p>Justo después de pagar el LT, el comprador entra en un pasillo de <strong>dos ofertas con sus dos versiones reducidas</strong>: el acelerador a 147€ (si declina → versión esencial a 97€) y la plantilla a 87€ (si declina → versión exprés a 37€). Cada página añade al pedido <strong>con un solo clic y la misma tarjeta</strong> — sin volver a meter datos.</p>
+    <p style="margin-bottom:0">La anatomía de cada OTO: reconocimiento de la compra ("✓ Pedido confirmado… antes de entrar, lee esto") → hook → vídeo de 2 min → la oferta con su stack → ancla → precio → botón de 1 clic → <strong>el enlace de declinar en gris</strong> → prueba social → 3 FAQs.</p>`),
+  porQue:H(`<p>El momento de mayor confianza es el minuto después de comprar: el pasillo existe porque ahí un sí es fácil y honesto. Pero el diseño protege al comprador: el hero <strong>primero confirma su compra</strong> (nadie debe dudar de si su pago entró), la garantía de 14 días cubre todo el pedido, y declinar es <strong>un enlace de texto gris, nunca un botón</strong> — visible, pero sin gritar.</p>
+    <p>Dos reglas de oro del pasillo: la urgencia de página ("esta condición existe únicamente en esta página") es <strong>verdadera por construcción</strong> — el OTO no vuelve a aparecer, así que puedes decirla; y ninguna página menciona lo que viene después — cada oferta se juzga sola.</p>`),
+  plantilla:H(`<ul>
+      <li><strong>Hero de continuidad:</strong> "✓ Pedido confirmado. Tu compra ya está en camino a tu correo. Antes de entrar, lee esto…"</li>
+      <li><strong>Hooks del OTO:</strong> "Multiplica lo que acabas de conseguir" · "Da el salto que faltaba" · "Haz que funcione el doble de rápido".</li>
+      <li><strong>El botón:</strong> "Añadir a mi pedido · 1 clic". <strong>El declinar:</strong> "No gracias, accedo al sistema básico" — texto gris, nunca botón.</li>
+      <li><strong>La urgencia legítima:</strong> "⏳ Esta condición existe únicamente en esta página. Si sales, no vuelve a aparecer."</li>
+      <li><strong>El downsell:</strong> mismo patrón, versión "esencial"/"exprés" de la misma oferta — no una oferta nueva que confunda.</li>
+      <li><strong>FAQ fija del pasillo:</strong> "¿Se cobra otra vez mi tarjeta?" → "Un solo clic, misma tarjeta, un pago, todo junto."</li>
+    </ul>`),
+  ejemplo:H(`<p>El OTO 1 de Valeria: el Acelerador (sus 12 casos comentados en vídeo, fase a fase) a 147€. Quien declina ve la versión Esencial — solo los 4 casos clave — a 97€. Su OTO 2: el pack de plantillas listas a 87€, con la exprés a 37€. El pasillo entero son 4 páginas sin navegación, sin footer con enlaces y sin una sola mención al acompañamiento — ese vive en la página siguiente.</p>`),
+  errores:[
+    {t:"El declinar como botón", d:"Dos botones compitiendo confunden y cabrean. El no es un enlace gris: está, se ve, no grita."},
+    {t:"No confirmar la compra arriba", d:"Si el comprador duda de si su pago entró, no lee tu OTO: busca su email. La primera línea siempre confirma."},
+    {t:"Vender el OTO al que aún no compró", d:"El pasillo solo existe tras el Purchase. Enseñar el OTO antes del pago rompe el 1-clic y la lógica entera."},
+    {t:"Mencionar la siguiente oferta", d:"'Y después verás otra cosa' mata la decisión presente. Cada página del pasillo es un universo cerrado."},
+    {t:"Downsell con oferta nueva", d:"El downsell es la versión reducida de lo mismo, no otra idea. Menos piezas, menos precio, misma promesa."}
+  ],
+  ghl:"Páginas de upsell del funnel de GHL con 1-click upsell activado sobre el pago del order form. Los eventos Purchase adicionales suman valor al pedido (Kit 06). Recorrido: OTO1 → sí: OTO2 / no: DS1 → OTO2 → sí: Gracias / no: DS2 → Gracias.",
+  ayuda:"Sistemas GHL con María José los miércoles — el 1-click upsell es lo más delicado del montaje; pruébalo con una compra de test antes de nada."
+},
+{
+  num:"Paso 06", ico:"sesion",
+  titulo:"La página de gracias y el puente",
+  sub:"Primero mata el remordimiento: confirma, entrega, regala. Después tiende el puente hacia trabajar contigo — sin precio, jamás.",
+  chips:["2 horas","Donde nace la llamada","Conecta con el Kit 03"],
+  queEs:H(`<p>La última página tiene dos bloques con dos trabajos distintos. <strong>Bloque A — la entrega:</strong> confirmación grande ("Pago confirmado. Ya es tuyo."), los 3 pasos para empezar (abre tu correo → entra a tu área → haz esto hoy), y un <strong>bonus no prometido</strong> — el acto inesperado que convierte compradores en fans.</p>
+    <p style="margin-bottom:0"><strong>Bloque B — el puente:</strong> "esto que acabas de conseguir es la primera pieza" → vídeo de cómo sería trabajar contigo → casos reales del acompañamiento → garantía → <strong>formulario de 3 preguntas</strong> → tu calendario embebido. Sin una sola cifra.</p>`),
+  porQue:H(`<p>El orden de los bloques importa: primero se asegura la compra que ya ocurrió (remordimiento muerto, acceso claro, regalo inesperado) y solo después se abre la puerta siguiente. Un puente antes de la confirmación huele a "ya me estás vendiendo otra cosa".</p>
+    <p>Y aquí se conecta todo el sistema: las 3 preguntas del formulario son <strong>tu nota de agenda</strong> (Kit 03, paso 3) — llegas a la llamada con el caso leído; la reserva dispara <strong>cita-agendada</strong> y el <strong>escudo anti no-show</strong> (Kit 03, paso 5); y el comprador que se va sin agendar cae en la secuencia <strong>"Comprador que no agenda"</strong> (Kit 04). Esta página no cierra el funnel: abre tu agenda.</p>`),
+  plantilla:H(`<ul>
+      <li><strong>Confirmación:</strong> "Pago confirmado. Ya es tuyo." + "Tu <span class="hueco">PRODUCTO</span> está activo. Revisa tu correo."</li>
+      <li><strong>Los 3 pasos:</strong> 1 · Abre tu correo (mira spam/promociones) · 2 · Entra a tu área y crea tu contraseña · 3 · <strong>Haz esto hoy</strong>: abre la Fase 1 y completa el primer paso en 10 minutos.</li>
+      <li><strong>El bonus:</strong> "Un extra que no esperabas" — algo real que no venía en la oferta. Pequeño y verdadero gana a grande y prometido.</li>
+      <li><strong>El puente:</strong> "Lo que tienes es el mapa. Si quieres el sistema implementado contigo, mano a mano, mira este vídeo y vemos si tiene sentido dar el siguiente paso juntos."</li>
+      <li><strong>Las 3 preguntas:</strong> ¿tu situación ahora? · ¿qué quieres conseguir en 90 días? · ¿estás listo/a para ponerte con ayuda?</li>
+      <li><strong>El botón del formulario:</strong> "Ver horas disponibles" → aparece el calendario. La cita se llama <span class="hueco">sesión de estrategia / valoración</span> — nunca "llamada de venta".</li>
+    </ul>`),
+  ejemplo:H(`<p>El bloque B de Valeria: su vídeo de 90 segundos grabado con el móvil ("esto que tienes es el mapa; si quieres que lo montemos juntas, cuéntame tu caso"), las 3 preguntas, y su calendario. Quien agenda recibe al instante su vídeo de gracias y los recordatorios 24h/4h/15min. Cuando descuelga, Valeria ya leyó la nota: <em>"He visto lo que escribiste al reservar…"</em> — el Bloque 2 de su guión, medio hecho.</p>`),
+  errores:[
+    {t:"El puente antes de la confirmación", d:"Vender antes de entregar huele a encerrona. Bloque A completo primero, siempre."},
+    {t:"Una cifra en el bloque B", d:"El precio del acompañamiento no existe por escrito. Ni en el vídeo, ni en un FAQ, ni 'desde X€'. La cifra vive en la llamada (Kit 03, Bloque 5)."},
+    {t:"Agenda sin formulario", d:"Un calendario a pelo llena tu agenda de curiosos. Las 3 preguntas son el filtro y tu nota de agenda: sin ellas, llegas a ciegas."},
+    {t:"Prometer el bonus en la venta", d:"Si lo prometes, es un entregable; si no lo prometes, es un regalo. El efecto psicológico vive en la sorpresa."},
+    {t:"Olvidar al que no agenda", d:"La mayoría no agenda a la primera. Para eso existe la secuencia 08 del Kit 04 — verifica que el tag y el trigger están conectados."}
+  ],
+  ghl:"El formulario de 3 preguntas → campos personalizados → workflow que compone la nota de agenda (Kit 03, paso 3). La reserva dispara cita-agendada + el pack anti no-show. El calendario es el widget nativo de GHL embebido.",
+  ayuda:"Sistemas GHL con María José los miércoles. Y el guión de la llamada que nace aquí es el Kit 03 entero."
+}
+];
+
+const CAJA_H = [
+{
+  ico:"llave", et:"La parte invisible",
+  titulo:"El cableado en GHL",
+  resumen:"Qué dispara qué: etiquetas, secuencias, eventos del Pixel y la nota de agenda, página por página. El funnel visible es la mitad.",
+  cuerpo:H(`<p>Cada página del funnel tiene una parte visible (el copy) y una invisible (lo que dispara). Esta ficha es el mapa de la invisible — todo se monta en tu GHL con las guías de los otros kits.</p>
+  <div class="bloque b-neutro"><div class="bloque-cab">Qué dispara cada página</div><div class="bloque-cont"><table class="tabla">
+    <tr><th>Página</th><th>Etiqueta / acción</th><th>Arranca</th><th>Evento Pixel</th></tr>
+    <tr><td>Captación (opt-in)</td><td><code>lead-nuevo</code></td><td>Secuencia Welcome (Kit 04)</td><td>Lead</td></tr>
+    <tr><td>Venta LT (carga)</td><td>—</td><td>—</td><td>ViewContent</td></tr>
+    <tr><td>Checkout · paso 1</td><td>contacto con email</td><td>(si no compra) Carrito abandonado</td><td>InitiateCheckout</td></tr>
+    <tr><td>Checkout · pago</td><td><code>cliente-lt</code></td><td>Post-compra · corta Welcome/Nutrición/Venta</td><td>Purchase (con valor)</td></tr>
+    <tr><td>OTOs / downsells</td><td>añade al pedido</td><td>—</td><td>Purchase adicional</td></tr>
+    <tr><td>Gracias · formulario</td><td>campos personalizados</td><td>Workflow de la nota de agenda (Kit 03)</td><td>—</td></tr>
+    <tr><td>Gracias · reserva</td><td><code>cita-agendada</code></td><td>Anti no-show (Kit 03) · corta secuencia 08</td><td>Schedule (opcional)</td></tr>
+  </table></div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Los cimientos (de otros kits, aquí se conectan)</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>Dominio propio</strong> para el funnel, verificado también en Meta (Kit 06, paso 1).</li>
+    <li><strong>Pixel + CAPI en las 7 páginas</strong>, con deduplicación (Kit 06, paso 1). Sin esto, tus campañas aprenden de ruido.</li>
+    <li><strong>Las 6 etiquetas</strong> creadas antes de conectar nada (Kit 04, paso 4).</li>
+    <li><strong>Las 8 secuencias montadas</strong> — el funnel las dispara, no las sustituye (Kit 04, paso 5).</li>
+    <li><strong>UTMs en todos los enlaces de entrada</strong> (anuncios y keyword → landing), para saber qué trae compradores y no solo clics.</li>
+  </ul></div></div>
+  <p style="margin-bottom:0"><strong>La keyword conecta el contenido:</strong> quien comenta tu keyword (Kit 05) recibe por DM el enlace a esta captación. Anuncio, keyword y landing cuentan la misma promesa con las mismas palabras.</p>`)
+},
+{
+  ico:"escudo", et:"Antes de mandar tráfico",
+  titulo:"El checklist de lanzamiento",
+  resumen:"El recorrido de prueba de punta a punta: opt-in falso, compra de test, bump, pasillo, tags, secuencias, eventos y móvil.",
+  cuerpo:H(`<p>El funnel no se lanza cuando las páginas están bonitas: se lanza cuando <strong>un recorrido de prueba completo</strong> sale limpio. Hazlo tú mismo, desde el móvil, como si fueras tu cliente.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">El recorrido de prueba</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>1 · Opt-in de prueba</strong> con un email tuyo: ¿llega el Welcome 01 al instante? ¿Se puso lead-nuevo? ¿Disparó Lead una sola vez?</li>
+    <li><strong>2 · Checkout paso 1 sin pagar:</strong> espera — ¿arranca la secuencia de Carrito (+1h)? ¿InitiateCheckout disparó?</li>
+    <li><strong>3 · Compra de test</strong> (modo test de tu pasarela): ¿Purchase con valor correcto? ¿cliente-lt puesto? ¿Post-compra arrancó y la secuencia de Venta se cortó?</li>
+    <li><strong>4 · El bump:</strong> márcalo — ¿el total sube? ¿el producto se añade al pedido?</li>
+    <li><strong>5 · El pasillo entero:</strong> acepta un OTO (¿un solo cargo, mismo método?) y declina otro (¿te lleva al downsell, no a gracias?).</li>
+    <li><strong>6 · La página de gracias:</strong> rellena las 3 preguntas — ¿se compuso la nota de agenda? Reserva — ¿cita-agendada + recordatorios armados?</li>
+    <li><strong>7 · Sin agendar:</strong> con otro contacto de test, compra y no agendes — ¿arranca la secuencia 08 a los ~2 días de terminar Post-compra?</li>
+    <li><strong>8 · La baja:</strong> púlsala en un email recibido — ¿desuscribe de verdad?</li>
+    <li><strong>9 · Todo el recorrido, en el móvil:</strong> botones pulsables, checkout cómodo, vídeos que cargan.</li>
+  </ul></div></div>
+  <div class="bloque b-aviso"><div class="bloque-cab">Lo legal, antes del primer visitante</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li>Política de privacidad y términos <strong>enlazados de verdad</strong> en el footer (no un "#").</li>
+    <li>Banner de consentimiento con Consent Mode v2 si mandas tráfico de pago (Kit 06).</li>
+    <li>Email de soporte real y visible.</li>
+    <li>El order bump desmarcado (ya lo está por diseño — no lo "optimices").</li>
+    <li>La garantía que anuncian las páginas coincide con la del checkout, los emails y el contrato.</li>
+  </ul></div></div>
+  <p style="margin-bottom:0">Si los 9 puntos del recorrido salen limpios, abre el grifo: keyword primero (tráfico templado), anuncios después (Kit 06, con su propio orden de encendido).</p>`)
+},
+{
+  ico:"candado", et:"Lo que no se negocia",
+  titulo:"Las reglas del funnel",
+  resumen:"Las líneas rojas de las 7 páginas, en una ficha: la escalera, el precio del HT, el bump, el declinar, la urgencia y la prueba social.",
+  cuerpo:H(`<p>Las mismas reglas duras del sistema entero, aplicadas al funnel. Si un cambio de copy choca con una de estas, gana la regla.</p>
+  <div class="bloque b-errores"><div class="bloque-cab">Las líneas rojas</div><div class="bloque-cont">
+    <div class="error-item"><span class="error-x">✕</span><div><b>La escalera de precios no se toca</b><span>LT 12-17€ · OTO1 147 → DS1 97 · OTO2 87 → DS2 37 · bump +19€. Es política del sistema, calibrada en conjunto.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>El precio del high ticket jamás por escrito</b><span>En ninguna de las 7 páginas, en ningún vídeo, en ningún FAQ. La cifra vive en la llamada (Kit 03).</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>El order bump, desmarcado</b><span>Pre-marcarlo es ilegal en la UE. Y aunque no lo fuera: rompe la confianza en el momento exacto en que más la necesitas.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Declinar es un enlace gris, nunca un botón</b><span>El no está visible y disponible — sin gritar. Dos botones compitiendo confunden.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Urgencia solo verdadera</b><span>La de página del OTO es cierta por construcción. La de cohorte, solo con cohorte real. Sin cierre real, la frase de urgencia se queda vacía.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Prueba social real o hueco vacío</b><span>Vídeo &gt; captura &gt; texto, siempre de clientes reales. Un testimonio inventado puede tumbar mucho más que el funnel.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Cero "gratis", cero "lanzamiento"</b><span>El recurso "se descarga" o "te lo envío". La misma regla de contenido, emails y ads.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>La garantía dice lo mismo en todas partes</b><span>14 días por defecto — idéntica en la página, el checkout, los emails y el contrato. Si tu oferta no la lleva, se retira de los cuatro sitios a la vez.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Hooks de 7 palabras o menos</b><span>Cada página trae sus 3 variantes listas. Después de rellenar los huecos, recuenta.</span></div></div>
+  </div></div>
+  <p style="margin-bottom:0">Estas reglas ya vienen aplicadas en el preview y en las plantillas. Tu trabajo no es recordarlas: es <strong>no deshacerlas</strong> al personalizar.</p>`)
+},
+{
+  ico:"lupa", et:"La referencia visual",
+  titulo:"El preview navegable",
+  resumen:"El funnel entero, clicable de punta a punta, tal y como lo verá tu cliente. Qué mirar en cada página mientras montas la tuya.",
+  cuerpo:H(`<p>El <a href="https://dd-funnel-preview-dwy.vercel.app" target="_blank" rel="noopener"><strong>preview navegable ↗</strong></a> es tu referencia mientras montas: el recorrido completo, con el copy plantilla, los huecos de marca marcados y los avisos de "sustituir por prueba real" donde tocan. Recórrelo una vez entero antes de montar, y página a página mientras montas.</p>
+  <div class="bloque b-neutro"><div class="bloque-cab">Qué mirar en cada parada</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>Captación:</strong> la tarjeta de opt-in con dos campos y la fila de confianza. Fíjate en lo que NO hay: menú, enlaces, distracciones.</li>
+    <li><strong>Venta del LT:</strong> el orden de las 12 secciones y el checkout embebido en 2 pasos — juega con el bump y mira cómo cambia el total.</li>
+    <li><strong>OTO 1:</strong> el hero de continuidad y el declinar en gris. Pulsa "no gracias" para ver el downsell.</li>
+    <li><strong>Downsells:</strong> misma oferta, versión reducida — no una idea nueva.</li>
+    <li><strong>Gracias:</strong> el orden de los dos bloques, el formulario de 3 preguntas y cómo aparece el calendario al enviarlo.</li>
+  </ul></div></div>
+  <p><strong>Los avisos amarillos del preview</strong> ("Sustituir: prueba social real", "Sustituir: historia del fundador") son la lista de deberes de contenido propio: todo lo demás es plantilla; eso es lo que solo puedes poner tú.</p>
+  <p style="margin-bottom:0"><em>El preview simula el checkout y los saltos entre páginas — no cobra ni guarda datos. Tu funnel real se monta en tu GHL con el cableado de la primera ficha de esta caja.</em></p>`)
+}
+];
+
+/* ==================================================================
+   MOTOR — no hace falta tocar nada de aquí abajo
+   ================================================================== */
+
+/* --- iconos de línea (sin emojis: regla de marca DD) --- */
+const TRAZOS = {
+  diana:     '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/>',
+  ruta:      '<path d="M5 19c0-5 5-3 5-7s-4-3-4-6"/><circle cx="6" cy="5" r="2"/><circle cx="18" cy="16" r="2"/><path d="M10 19h6"/>',
+  regla:     '<rect x="3" y="8" width="18" height="8" rx="1.5"/><path d="M7.5 8v3M12 8v4M16.5 8v3"/>',
+  formulario:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+  acuerdo:   '<path d="M4 7h6l2 2 2-2h6"/><path d="M4 7v10h16V7"/><path d="M9 13l2 2 4-4"/>',
+  sobre:     '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/>',
+  llave:     '<circle cx="8" cy="12" r="4"/><path d="M12 12h9M18 12v3M15.5 12v2.5"/>',
+  filtro:    '<circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/>',
+  rayo:      '<path d="M13 2L5 13h6l-2 9 8-11h-6l2-9z"/>',
+  sesion:    '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z"/>',
+  documento: '<path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  tablero:   '<path d="M4 20V10M10 20V5M16 20v-8M22 20H2"/>',
+  chat:      '<path d="M20 12a7 7 0 01-7 7H8l-4 3v-4.5A7 7 0 0111 5h2a7 7 0 017 7z"/>',
+  candado:   '<rect x="4.5" y="10" width="15" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/>',
+  salida:    '<path d="M14 4h4a2 2 0 012 2v12a2 2 0 01-2 2h-4"/><path d="M10 8l-4 4 4 4M6 12h9"/>',
+  tendencia: '<path d="M4 19V5M4 19h16"/><path d="M7 15l4-4 3 3 5-6"/>',
+  medalla:   '<circle cx="12" cy="14" r="5.5"/><path d="M9 3l1.5 5M15 3l-1.5 5"/>',
+  ajustes:   '<path d="M15.5 4a5 5 0 00-6 6.5L4 16v4h4l5.5-5.5A5 5 0 0020 8.5L17 11l-3-3z"/>',
+  personas:  '<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0112 0"/><path d="M16 6.5a3 3 0 010 6M17 20a6 6 0 00-1.5-4"/>',
+  lupa:      '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.2 15.2L21 21"/>',
+  bandera:   '<path d="M5 21V4"/><path d="M5 4.5h11l-2 3.5 2 3.5H5"/>',
+  caja:      '<path d="M3 8l9-4 9 4v8l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v8"/>',
+  precio:    '<path d="M20 13.5L13.5 20a2 2 0 01-2.8 0L4 13.3V4h9.3l6.7 6.7a2 2 0 010 2.8z"/><circle cx="8.5" cy="8.5" r="1.3"/>',
+  escudo:    '<path d="M12 3l7 3v5.5c0 4.2-2.9 7.6-7 8.5-4.1-.9-7-4.3-7-8.5V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.6"/>',
+  subir:     '<path d="M12 20V5"/><path d="M6 11l6-6 6 6"/>',
+  dividir:   '<path d="M12 3v7M12 14v7"/><circle cx="12" cy="12" r="2"/><path d="M5 12h2M17 12h2"/>',
+  brujula:   '<circle cx="12" cy="12" r="8.5"/><path d="M15 9l-2 4-4 2 2-4z"/>'
+};
+function ico(n, cls){
+  const t = TRAZOS[n];
+  if(!t) return '';
+  return `<svg class="ico-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${t}</svg>`;
+}
+
+let actual = 0;
+let hechos = cargar();
+
+function cargar(){
+  try{
+    const g = localStorage.getItem('kitFunnel');
+    return g ? JSON.parse(g) : [];
+  }catch(e){ return []; }
+}
+function guardar(){
+  try{ localStorage.setItem('kitFunnel', JSON.stringify(hechos)); }catch(e){}
+}
+
+/* --- mapa del hero --- */
+function pintaPanel(){
+  const el = document.getElementById('panelDecisiones');
+  if(!el) return;
+  el.innerHTML = PASOS.map((p,i)=>{
+    const ok = hechos.includes(i);
+    return `<li><button class="dec-item${ok?' hecho':''}" onclick="irAPaso(${i})">
+      <span class="dec-num">${ok?'✓':i+1}</span><span>${p.titulo}</span>
+    </button></li>`;
+  }).join('');
+}
+
+/* --- pasos --- */
+function pintaPasos(){
+  document.getElementById('pasos').innerHTML = PASOS.map((p,i)=>`
+    <article class="paso ${i===0?'activo':''}" id="paso${i}">
+      <div class="paso-cabecera">
+        <div class="paso-num">${p.num} de ${String(PASOS.length).padStart(2,'0')}</div>
+        <h2>${ico(p.ico,"ico-titulo")}${p.titulo}</h2>
+        <p class="sub">${p.sub}</p>
+        <div class="paso-meta">${p.chips.map(c=>`<span class="chip">${c}</span>`).join('')}</div>
+      </div>
+      <div class="paso-cuerpo">
+        <div class="bloque b-neutro"><div class="bloque-cab">Qué es</div><div class="bloque-cont">${p.queEs}</div></div>
+        <div class="bloque b-neutro"><div class="bloque-cab">Por qué importa</div><div class="bloque-cont">${p.porQue}</div></div>
+        <div class="bloque b-plantilla"><div class="bloque-cab">La plantilla · cópiala y rellénala<button class="b-copiar" onclick="copiar(this,'plantilla${i}')">Copiar</button></div><div class="bloque-cont" id="plantilla${i}">${p.plantilla}</div></div>
+        <div class="bloque b-ejemplo"><div class="bloque-cab">Un ejemplo ya relleno</div><div class="bloque-cont">${p.ejemplo}</div></div>
+        <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
+          ${p.errores.map(e=>`<div class="error-item"><span class="error-x">✕</span><div><b>${e.t}</b><span>${e.d}</span></div></div>`).join('')}
+        </div></div>
+        <div class="bloque b-ayuda"><div class="bloque-cab">Dónde vive y quién te ayuda</div><div class="bloque-cont">
+          <p><strong>En GHL:</strong> ${p.ghl}</p>
+          <p style="margin-bottom:0"><strong>Si te trabas:</strong> ${p.ayuda}</p>
+        </div></div>
+        <div class="paso-pie">
+          <button class="btn-hecho" onclick="marcar(${i})" id="hecho${i}"><span>○</span> Marcar como hecho</button>
+          ${i>0?`<button class="btn-atras" onclick="irAPaso(${i-1})">← Anterior</button>`:''}
+          <button class="btn-nav" onclick="siguiente(${i})">${i<PASOS.length-1?'Siguiente paso →':'Ir a la caja de herramientas →'}</button>
+        </div>
+      </div>
+    </article>`).join('');
+}
+
+/* --- copiar plantilla --- */
+function copiar(btn, id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const txt = el.innerText.trim();
+  const ok = ()=>{
+    btn.textContent = '✓ Copiado';
+    btn.classList.add('ok');
+    setTimeout(()=>{ btn.textContent = 'Copiar'; btn.classList.remove('ok'); }, 1800);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(ok).catch(()=>respaldo(txt, ok));
+  } else { respaldo(txt, ok); }
+}
+function respaldo(txt, ok){
+  const a = document.createElement('textarea');
+  a.value = txt; a.style.position='fixed'; a.style.opacity='0';
+  document.body.appendChild(a); a.select();
+  try{ document.execCommand('copy'); ok(); }catch(e){}
+  document.body.removeChild(a);
+}
+
+/* --- índice lateral --- */
+function pintaIndice(){
+  document.getElementById('indiceLista').innerHTML = PASOS.map((p,i)=>`
+    <button class="ind-item" id="ind${i}" onclick="irAPaso(${i})">
+      <span class="ind-num">${i+1}</span>
+      <span class="ind-tx"><b>${p.titulo}</b><small>${p.chips[0]}</small></span>
+    </button>`).join('');
+  document.getElementById('indiceTools').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="ind-tool" onclick="abrirModal(${i})">${ico(c.ico)} ${c.titulo}</button>`).join('');
+}
+
+/* --- puntos de la barra --- */
+function pintaPuntos(){
+  document.getElementById('puntos').innerHTML = PASOS.map((p,i)=>
+    `<button class="punto" onclick="irAPaso(${i})" title="${p.titulo}" aria-label="Ir al paso ${i+1}: ${p.titulo}">${i+1}</button>`
+  ).join('');
+}
+
+function refresca(){
+  document.querySelectorAll('.punto').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+  });
+  PASOS.forEach((p,i)=>{
+    const b = document.getElementById('hecho'+i);
+    if(!b) return;
+    const ok = hechos.includes(i);
+    b.classList.toggle('marcado', ok);
+    b.innerHTML = ok ? '<span>✓</span> Hecho' : '<span>○</span> Marcar como hecho';
+  });
+  document.querySelectorAll('.ind-item').forEach((b,i)=>{
+    b.classList.toggle('actual', i===actual);
+    b.classList.toggle('hecho', hechos.includes(i));
+    b.querySelector('.ind-num').textContent = hechos.includes(i) ? '✓' : (i+1);
+  });
+  const pct = Math.round(hechos.length / PASOS.length * 100);
+  document.getElementById('progresoBarra').style.width = pct + '%';
+  document.getElementById('indiceContador').textContent =
+    hechos.length + ' de ' + PASOS.length + ' pasos' + (hechos.length ? ' · ' + pct + '%' : '');
+  document.getElementById('contador').textContent = hechos.length + '/' + PASOS.length + ' hechos';
+  document.getElementById('barraTitulo').textContent = PASOS[actual].titulo;
+  pintaPanel();
+}
+
+function irAPaso(i){
+  actual = i;
+  document.querySelectorAll('.paso').forEach((el,j)=>el.classList.toggle('activo', j===i));
+  refresca();
+  const y = document.getElementById('camino').offsetTop - 70;
+  window.scrollTo({top:y, behavior:'smooth'});
+}
+
+function siguiente(i){
+  if(i < PASOS.length-1){ irAPaso(i+1); }
+  else { document.getElementById('caja').scrollIntoView({behavior:'smooth'}); }
+}
+
+function marcar(i){
+  if(hechos.includes(i)) hechos = hechos.filter(x=>x!==i);
+  else hechos.push(i);
+  guardar();
+  refresca();
+}
+
+/* --- caja de herramientas --- */
+function pintaCaja(){
+  document.getElementById('rejilla').innerHTML = CAJA_H.map((c,i)=>`
+    <button class="tarjeta" onclick="abrirModal(${i})">
+      <span class="ico">${ico(c.ico)}</span>
+      <span class="eyebrow">${c.et}</span>
+      <h3>${c.titulo}</h3>
+      <p>${c.resumen}</p>
+    </button>`).join('');
+}
+
+function abrirModal(i){
+  const c = CAJA_H[i];
+  document.getElementById('modalCont').innerHTML = `
+    <div class="paso-cabecera" style="border-radius:0">
+      <div class="paso-num">${c.et}</div>
+      <h2>${ico(c.ico,"ico-titulo")}${c.titulo}</h2>
+      <p class="sub">${c.resumen}</p>
+    </div>
+    <div class="paso-cuerpo" style="border-radius:0">${c.cuerpo}</div>`;
+  document.getElementById('modal').classList.add('abierto');
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.modal-caja').scrollIntoView();
+}
+function cerrarModal(){
+  document.getElementById('modal').classList.remove('abierto');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal').addEventListener('click', e=>{
+  if(e.target.id === 'modal') cerrarModal();
+});
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') cerrarModal(); });
+
+/* --- barra sticky --- */
+window.addEventListener('scroll', ()=>{
+  const camino = document.getElementById('camino');
+  const caja = document.getElementById('caja');
+  const dentro = window.scrollY > camino.offsetTop - 200 && window.scrollY < caja.offsetTop - 100;
+  document.getElementById('barra').classList.toggle('visible', dentro);
+});
+
+/* --- arranque --- */
+document.getElementById('tituloUso').insertAdjacentHTML('afterbegin', ico('brujula','ico-titulo'));
+pintaPanel();
+pintaPasos();
+pintaIndice();
+pintaPuntos();
+pintaCaja();
+refresca();
+</script>
+</body>
+</html>
