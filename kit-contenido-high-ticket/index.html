@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de Contenido High Ticket</title>
 <meta name="description" content="Tu primer mes de contenido, guionizado: 20 reels, 20 carruseles y una quincena de stories con calendario, keyword y banco de hooks.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit de Contenido High Ticket">
+<meta property="og:description" content="Tu primer mes de contenido, guionizado: 20 reels, 20 carruseles y una quincena de stories con calendario, keyword y banco de hooks.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kit-contenido-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E05%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -408,6 +414,27 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
 }
 
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
+
 /* el índice lateral sustituye a la barra superior en pantallas anchas */
 @media(min-width:1081px){
   .barra{display:none!important}
@@ -455,11 +482,11 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
       <div class="cal-cuerpo">
         <div class="cal-sem"><span class="cal-tag">Sem 1</span><span class="cal-d v"></span><span class="cal-d a"></span><span class="cal-d v"></span><span class="cal-d c"></span><span class="cal-d v"></span><small>presentarte</small></div>
         <div class="cal-sem"><span class="cal-tag">Sem 2</span><span class="cal-d a"></span><span class="cal-d v"></span><span class="cal-d a"></span><span class="cal-d c"></span><span class="cal-d v"></span><small>tu método</small></div>
-        <div class="cal-sem"><span class="cal-tag">Sem 3</span><span class="cal-d a"></span><span class="cal-d v"></span><span class="cal-d s"></span><span class="cal-d s"></span><span class="cal-d v"></span><small>primeras ventas</small></div>
+        <div class="cal-sem"><span class="cal-tag">Sem 3</span><span class="cal-d a"></span><span class="cal-d v"></span><span class="cal-d s"></span><span class="cal-d a"></span><span class="cal-d v"></span><small>el primer empujón</small></div>
         <div class="cal-sem"><span class="cal-tag">Sem 4</span><span class="cal-d c"></span><span class="cal-d v"></span><span class="cal-d a"></span><span class="cal-d c"></span><span class="cal-d s"></span><small>cierre y oferta</small></div>
         <div class="cal-leyenda"><span><i class="v"></i> valor</span><span><i class="a"></i> autoridad</span><span><i class="c"></i> conexión</span><span><i class="s"></i> venta</span></div>
       </div>
-      <div class="cal-pie"><b>La venta, los días 13, 14 y 20.</b> Antes, te la tienes que ganar.</div>
+      <div class="cal-pie"><b>La venta, los días 13 y 20 — una por semana.</b> Antes, te la tienes que ganar.</div>
     </aside>
   </div>
 </header>
@@ -482,7 +509,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <h3 id="tituloUso">Cómo usar esta guía</h3>
     <p><strong>Las piezas ya están escritas. Este kit es para adaptarlas y publicarlas en orden.</strong> Todo es white-label con huecos <code>{{así}}</code>: rellenas tu diccionario una vez, haces buscar-reemplazar pieza a pieza, eliges versión A o B y sigues el calendario. Nada está atado a una marca concreta.</p>
     <p><strong>Se hace en orden.</strong> El diccionario y la keyword van antes que cualquier publicación; el calendario manda sobre qué sale cada día; la producción se hace por lotes semanales, no pieza a pieza cada mañana.</p>
-    <p><strong>Las reglas duras no se negocian.</strong> Ningún <code>{{placeholder}}</code> vivo llega a publicarse. Cero cifras inventadas: si el dato no es real y verificable, la frase se borra. Prohibido "gratis" y "lanzamiento". Y todo CTA es "Comenta {{KEYWORD}}" — con el flujo validado en GHL antes; nunca "link en bio".</p>
+    <p><strong>Las reglas duras no se negocian.</strong> Ningún <code>{{placeholder}}</code> vivo llega a publicarse. Cero cifras inventadas: si el dato no es real y verificable, la frase se borra. La palabra "lanzamiento" jamás en un CTA (di oferta, sistema o "abro plazas") y en vez de "gratis", "te lo paso" o "sin coste". Cero anglicismos. Y todo CTA es "Comenta {{KEYWORD}}" — con el flujo validado en GHL antes; nunca "link en bio". Máximo un empujón de venta por semana.</p>
     <p style="margin-bottom:0">Los ejemplos siguen el caso de Valeria ("Energía Propia"), como en el resto de kits. Adáptalo a lo tuyo: tu sector, tus palabras, tus casos reales.</p>
   </div>
 </div>
@@ -577,7 +604,13 @@ const PASOS = [
     <span class="hueco">enemigo_comun</span> el factor externo que le bloquea · <span class="hueco">error_comun</span> el fallo típico del nicho ·
     <span class="hueco">paso_1 / paso_2 / paso_3</span> las fases de tu método · <span class="hueco">concepto</span> una idea clave que enseñas ·
     <span class="hueco">caso_nombre / caso_frase / caso_situacion / caso_resultado</span> un caso real (con permiso; la cifra, solo si es verificable) ·
-    <span class="hueco">handle</span> tu usuario · <span class="hueco">KEYWORD</span> la palabra del CTA (paso 2)</div>`),
+    <span class="hueco">handle</span> tu usuario · <span class="hueco">KEYWORD</span> la palabra del CTA (paso 2)</div>
+    <p style="margin:14px 0 8px"><strong>De dónde salen las palabras del diccionario</strong> (la sesión de 45 minutos que lo alimenta todo):</p>
+    <ul style="margin-bottom:0">
+      <li><strong>Tu historia de conversión</strong> (el caso que mejor cuenta lo que haces) y <strong>tu historia de origen</strong> (por qué te dedicas a esto).</li>
+      <li><strong>El avatar de verdad:</strong> no "mujer 35-50" sino cómo habla, qué frase dice cuando se queja, qué ha probado. Sale de audios y mensajes reales de tus clientes.</li>
+      <li><strong>Las 3 columnas de palabras de tu audiencia:</strong> (1) términos técnicos de tu nicho · (2) palabras de su vida diaria · (3) palabras que despiertan curiosidad. <strong>Todo buen hook combina 1-2 palabras de cada columna</strong> — es el método generativo detrás del banco del mes 2.</li>
+    </ul>`),
   ejemplo:H(`<p>El diccionario de Valeria: nicho "energía y hábitos" · avatar "dueña de negocio que termina el día en reserva" · resultado_deseado "energía estable sin fuerza de voluntad" · metodo "Energía Propia" · error_comun "empezar un plan perfecto en lunes" · caso_nombre "Marta" · caso_frase "llego a la noche vacía y lo pago con mi familia" — literal de un audio suyo, con permiso.</p>`),
   errores:[
     {t:"Publicar con un hueco vivo", d:"El {{avatar}} sin sustituir es el error más visible que existe: sale en pantalla, en tu feed, para siempre. Busca el símbolo {{ antes de publicar. Siempre."},
@@ -596,13 +629,16 @@ const PASOS = [
     <p style="margin-bottom:0">Nunca "link en bio", nunca "haz clic aquí", nunca una URL escrita en el slide.</p>`),
   porQue:H(`<p>Un CTA que pide comentar una palabra <strong>sin flujo detrás quema al que comenta</strong>: la persona hace su parte y no recibe nada. Por eso la validación en GHL es obligatoria antes de publicar, no un detalle.</p>
     <p>Y alternar la keyword entre piezas te dice de dónde viene cada contacto: es tu atribución orgánica sin herramientas raras.</p>`),
-  plantilla:H(`<ul style="margin-bottom:0">
-      <li>Elige una palabra <strong>corta, en mayúsculas, memorable, de una sola palabra</strong> (evita tildes si tu automatización las trata raro).</li>
-      <li><strong>Valida el flujo en GHL antes de publicar:</strong> el workflow que responde al comentario existe, está publicado y lo has probado comentando tú.</li>
-      <li><strong>Alterna la keyword</strong> entre piezas (una por pieza de venta, una por lead magnet) y anótalas para no repetir.</li>
+  plantilla:H(`<ul>
+      <li>Elige una palabra <strong>corta, en mayúsculas, memorable, de una sola palabra</strong> (evita tildes si tu automatización las trata raro). <strong>Una keyword por oferta</strong> — no una distinta cada semana — y que dé contexto por sí sola: el DM se abre horas o días después del comentario, y "ENERGIA" se entiende sola; "SI" no.</li>
+      <li><strong>Valida el flujo en GHL antes de publicar:</strong> el workflow que responde al comentario existe, está <strong>publicado</strong> (no en borrador) y lo has probado comentando tú desde otra cuenta.</li>
+      <li><strong>Alterna la keyword</strong> entre ofertas (una para el lead magnet, otra para tu producto de entrada) y anótalas para no repetir.</li>
       <li>Cada pieza del kit trae la nota recordatoria: "Validar {{KEYWORD}} en GHL antes de publicar". Hazle caso.</li>
       <li>El sticker de enlace en stories solo con audiencia caliente; por defecto, keyword → DM.</li>
-    </ul>`),
+    </ul>
+    <div class="campo"><b>El chequeo de 7 puntos antes de estrenar una keyword</b>1 · Workflow en estado <em>Published</em>, no borrador · 2 · El canal de Instagram conectado y sano en tu location · 3 · Probado de verdad: comentas desde otra cuenta y el DM llega · 4 · El tag que pone el workflow se llama exactamente como esperan tus secuencias (lead-nuevo) · 5 · El email de entrega probado en tu propio correo · 6 · La lista/segmento de destino creada · 7 · El CTA de la pieza dice EXACTAMENTE la palabra que filtra el workflow (ni plural, ni variante).</div>
+    <div class="campo"><b>Si tu flujo se montó antes del 26-jul-2026</b>Verifícalo aunque "siempre haya funcionado": hay un fallo conocido de esa época (G11) por el que el webhook entrante ejecuta sin contacto y todas las acciones salen "Skipped" — la keyword parece viva pero no entrega nada. Un comentario de prueba desde otra cuenta te lo confirma en un minuto.</div>
+    <p style="margin:12px 0 0"><strong>Y la línea roja del high ticket:</strong> la automatización entrega recursos y vende tu producto de entrada. <strong>Tu programa alto jamás se vende con un enlace automático:</strong> si la pieza apunta al programa, el CTA sigue siendo "Comenta X" — pero al que comenta le escribes TÚ, a mano, y la conversación termina en llamada (Kit 03), no en un checkout.</p>`),
   ejemplo:H(`<p>Valeria usa ENERGIA para el lead magnet y ARRANQUE para su oferta de entrada. Antes de estrenar cada una, comentó ella misma desde otra cuenta y comprobó que el DM llegaba con el enlace correcto. En su hoja apunta: keyword → pieza → cuántos comentarios → cuántos leads. Así sabe qué ángulo repetir el mes que viene.</p>`),
   errores:[
     {t:"Publicar con la keyword sin flujo", d:"Comentarios que no reciben respuesta son leads quemados y confianza rota. El flujo primero, la pieza después."},
@@ -615,23 +651,27 @@ const PASOS = [
 {
   num:"Paso 03", ico:"tablero",
   titulo:"El calendario del mes 1",
-  sub:"Las 40 piezas ya están asignadas a su día, con el mix 40% valor · 30% autoridad · 20% conexión · 10% venta. Tu trabajo es seguir el orden.",
-  chips:["2 piezas/día · L-V","4 semanas montadas","La venta, al final"],
-  queEs:H(`<p>Un calendario día a día para el mes 1: <strong>1 reel + 1 carrusel de lunes a viernes</strong>, con cada pieza en su día y su categoría. Si publicas las 40 piezas una vez, el mix 40/30/20/10 se cumple solo.</p>
-    <p style="margin-bottom:0">La venta está <strong>concentrada en la segunda mitad del mes</strong> (días 13, 14 y 20), después de haber construido valor y confianza. Las semanas 1 y 2 no llevan venta directa, a propósito.</p>`),
+  sub:"Las 40 piezas ya están asignadas a su día, con las 4 misiones repartidas: atraer, posicionar, conectar y — solo una vez por semana — vender.",
+  chips:["Mes 1: 1+1 al día · L-V","Estándar DWY: 2+2 al día","1 venta por semana, máximo"],
+  queEs:H(`<p>Un calendario día a día para el mes 1: <strong>1 reel + 1 carrusel de lunes a viernes</strong>, con cada pieza en su día y su misión. Cada pieza del paquete cumple una de las <strong>4 misiones</strong> del sistema: <em>atraer</em> (valor), <em>posicionar</em> (autoridad), <em>conectar</em> (tu historia) o <em>convertir</em> (venta).</p>
+    <p><strong>El mes 1 es la rampa, no el techo.</strong> El estándar DWY de crucero son <strong>2 carruseles + 2 reels al día</strong> (el carrusel es la columna vertebral; el reel, el complemento). Arrancas a la mitad para que la calidad no se caiga mientras aprendes el lote semanal; cuando la rutina ruede sola, sube hacia el estándar.</p>
+    <p style="margin-bottom:0">La venta está <strong>concentrada al final y racionada: los días 13 y 20</strong> — reel y carrusel del mismo ángulo, el mismo día, cuentan como UN empujón. Las semanas 1 y 2 no llevan venta directa, a propósito.</p>`),
   porQue:H(`<p>El orden es el mensaje: valor y autoridad "prestan" antes de pedir; la conexión construye el puente "yo estuve donde tú estás"; y la venta solo entra cuando ya te has ganado el derecho. Vender el día 1 a una audiencia fría es quemar las 39 piezas siguientes.</p>
-    <p>Y la frecuencia es una variable, no una regla: si publicas 1 pieza al día, salta filas manteniendo el orden y el mes se estira a ~8 semanas. El mix se mantiene igual. <strong>Más vale menos piezas buenas que muchas mediocres.</strong></p>`),
+    <p><strong>Y la regla del racionamiento es dura: máximo 1 contenido de conversión por semana.</strong> El error típico es la codicia — 3-6 piezas de venta a la semana — y lo que quema no es la venta en sí: es la buena voluntad de la audiencia, que tarda meses en construirse y semanas en gastarse. Con ~1 por semana ganas a lo grande.</p>
+    <p><strong>El reparto se adapta a tu tamaño de cuenta.</strong> La referencia semanal por nivel: cuenta que empieza y nadie conoce → 4 atraer / 2 conectar / 1 posicionar / 0 convertir (las primeras semanas ni una); cuenta media → 3/2/1/1; cuenta con audiencia caliente → 2/2/2/1. El calendario del paquete está calibrado para el nivel medio; si estás empezando de cero, retrasa la primera venta al día 20.</p>
+    <p style="margin-bottom:0">Y la frecuencia es una variable, no una regla: si publicas 1 pieza al día, salta filas manteniendo el orden y el mes se estira a ~8 semanas. El mix se mantiene igual. <strong>Más vale menos piezas buenas que muchas mediocres.</strong></p>`),
   plantilla:H(`<table class="tabla"><tr><th>Semana</th><th>Foco</th><th>Piezas clave</th></tr>
     <tr><td><strong>1</strong> · días 1-5</td><td>Construir valor y presentarte</td><td>reel-01 El error que te frena · carrusel-15 Mi historia · reel-09 Opinión impopular · carrusel-01 La salida del cobarde…</td></tr>
     <tr><td><strong>2</strong> · días 6-10</td><td>Profundizar método y confianza</td><td>reel-10 Mi método en 60 segundos · carrusel-03 El mapa de mi método · reel-16 El día que casi lo dejo…</td></tr>
-    <tr><td><strong>3</strong> · días 11-15</td><td>Primeras aperturas de venta</td><td>reel-19 Caso real (venta) · carrusel-19 Caso real (venta) · reel-06 El paso que todos se saltan…</td></tr>
-    <tr><td><strong>4</strong> · días 16-20</td><td>Cerrar el mes con conexión y oferta</td><td>reel-20 Qué es mi oferta (venta) · carrusel-20 Dentro de mi oferta (venta) · reel-18 Por qué hago esto…</td></tr></table>
+    <tr><td><strong>3</strong> · días 11-15</td><td>El empujón 1 · el caso real</td><td><strong>Día 13:</strong> reel-19 + carrusel-19 Caso real (venta, mismo ángulo, un solo empujón) · reel-06 El paso que todos se saltan…</td></tr>
+    <tr><td><strong>4</strong> · días 16-20</td><td>El empujón 2 · la oferta</td><td><strong>Día 20:</strong> reel-20 Qué es mi oferta + carrusel-20 Dentro de mi oferta (venta) · reel-18 Por qué hago esto…</td></tr></table>
     <p style="margin:12px 0 0"><strong>Fines de semana:</strong> descanso de publicación programada. Stories, responder comentarios y repostear la mejor pieza de la semana. El día a día completo, con las 40 piezas y la versión sugerida de cada una, está en tu paquete (<code>calendario-mes1.md</code>).</p>`),
-  ejemplo:H(`<p>Día 3 del calendario de Valeria: reel-02 en versión B ("Cómo conseguir energía estable sin vivir a base de café", narrado con la historia de Marta) + carrusel-09 en versión B (su opinión impopular sobre los planes perfectos). Ninguna de las dos vende: la primera venta de su mes cae el día 13, con el caso real.</p>`),
+  ejemplo:H(`<p>Día 3 del calendario de Valeria: reel-02 en versión B ("Cómo conseguir energía estable sin vivir a base de café", narrado con la historia de Marta) + carrusel-09 en versión B (su opinión impopular sobre los planes perfectos). Ninguna de las dos vende: la primera venta de su mes cae el día 13, con el caso real — y la segunda, el día 20. Una por semana, nunca más.</p>`),
   errores:[
     {t:"Vender la semana 1", d:"El calendario retrasa la venta a propósito. Adelantarla rompe la reciprocidad que hace que la venta del día 13 funcione."},
+    {t:"Más de una venta por semana", d:"La codicia (3-6 piezas de conversión semanales) quema la buena voluntad de la audiencia — el activo que más tarda en reconstruirse. Ración: una."},
     {t:"Publicar en desorden", d:"Las piezas se apoyan entre sí (el método del día 6 prepara el caso del día 13). Si reduces frecuencia, salta filas — pero mantén el orden."},
-    {t:"Doblar volumen bajando calidad", d:"El techo son 2 reels + 2 carruseles al día con 3-4 h entre piezas. Pero si al subir volumen baja la calidad, baja el volumen."}
+    {t:"Doblar volumen bajando calidad", d:"El estándar de crucero son 2 reels + 2 carruseles al día con 3-4 h entre piezas. Pero si al subir volumen baja la calidad, baja el volumen: la rampa existe para eso."}
   ],
   ghl:"Programa la semana entera de una vez y deja el fin de semana para conversación. Cada pieza de venta con su keyword ya validada (paso 2).",
   ayuda:"El calendario completo día a día viene en tu paquete del portal."
@@ -647,13 +687,15 @@ const PASOS = [
       <li><strong>Versión B — "El Narrado":</strong> afilado y premium, cierra en círculo, apoyado en una escena o historia con frase textual. Para construir confianza y para audiencia más fría.</li>
     </ul>`),
   porQue:H(`<p>El mismo concepto rinde distinto según el objetivo del día: <strong>A para reach y provocación, B para confianza y venta suave.</strong> El calendario trae una versión sugerida por pieza, pero es orientativa: el criterio es tuyo.</p>
-    <p>Y las dos versiones comparten las reglas que ya vienen aplicadas: hooks de 7 palabras o menos que no repiten la primera frase hablada, una sola idea por pieza, y el último slide del carrusel como punch con metáfora — no como resumen.</p>`),
+    <p>Y las dos versiones comparten las reglas que ya vienen aplicadas: titulares cortos que no repiten la primera frase hablada, una sola idea por pieza, y el último slide del carrusel como punch con metáfora — no como resumen.</p>`),
   plantilla:H(`<p style="margin:0 0 8px"><strong>Anatomía de cada pieza</strong> (lo que encontrarás al abrir cualquier archivo):</p>
     <ul>
-      <li><strong>Reel:</strong> 5 hooks alternativos (texto en pantalla, ≤7 palabras) · versión A con estructura gancho → desarrollo → giro → CTA · versión B con escena → frase textual → giro → moraleja → CTA · nota de rodaje · CTA con keyword.</li>
+      <li><strong>Reel:</strong> 5 titulares alternativos para el texto en pantalla (5-7 palabras cada uno) · versión A con estructura gancho → desarrollo → giro → CTA · versión B con escena → frase textual → giro → moraleja → CTA · nota de rodaje · CTA con keyword.</li>
       <li><strong>Carrusel:</strong> versión A y B slide a slide (8-10 slides, una frase potente por slide) · recap final con metáfora · CTA + brief visual.</li>
     </ul>
-    <div class="campo"><b>Cómo elegir en 10 segundos</b>¿El objetivo del día es alcance o sacudir? → <span class="hueco">A</span> · ¿Es confianza, conexión o venta? → <span class="hueco">B</span> · ¿La audiencia es fría? → <span class="hueco">B</span> · ¿Ya te conocen y quieres reacción? → <span class="hueco">A</span></div>`),
+    <div class="campo"><b>El método de los 5 hooks (la regla de casa de cada reel)</b>En los primeros 3-5 segundos, el reel engancha por <strong>cinco canales a la vez</strong>, y los cinco se revisan antes de publicar: <strong>1 · visual</strong> (algo que se mueve o llama la vista) · <strong>2 · hablado</strong> (tu primera frase, hasta 12 palabras) · <strong>3 · escrito</strong> (el texto en pantalla, 5-7 palabras, que NO repite lo hablado) · <strong>4 · audio</strong> (sonido o música que corta el scroll) · <strong>5 · caption</strong> (la primera línea del texto de la publicación). <strong>Si te faltan dos o más canales, la pieza vuelve a edición.</strong> No es un consejo: es el filtro.</div>
+    <div class="campo"><b>Cómo elegir en 10 segundos</b>¿El objetivo del día es alcance o sacudir? → <span class="hueco">A</span> · ¿Es confianza, conexión o venta? → <span class="hueco">B</span> · ¿La audiencia es fría? → <span class="hueco">B</span> · ¿Ya te conocen y quieres reacción? → <span class="hueco">A</span></div>
+    <p style="margin:12px 0 0"><strong>Regla de reutilización:</strong> el CTA fuerte vive en el caption, no dentro del vídeo. Di el CTA al final si quieres — pero grábalo como toma aparte: un reel sin CTA incrustado sirve después para anuncios y para otra keyword sin regrabar nada.</p>`),
   ejemplo:H(`<p>El reel-01 de Valeria, mismo concepto, dos piezas distintas. Versión A: <em>"La mayoría de dueñas que veo no tienen un problema de esfuerzo. Tienen un problema de orden."</em> — directo, sin historia. Versión B: <em>"Hace poco Marta me escribió una frase que no se me olvida…"</em> — la misma idea, contada desde el caso. A para el martes de reach; B para el jueves de confianza.</p>`),
   errores:[
     {t:"Publicar siempre la A", d:"Todo directo, todo el mes, agota. La B es la que construye la confianza que la venta del día 13 necesita."},
@@ -668,13 +710,13 @@ const PASOS = [
   titulo:"Producción por lotes",
   sub:"La semana 1 grabada antes del día 1. Grabar 5 reels en una tarde cuesta menos que grabar uno cada mañana.",
   chips:["Media jornada por semana","Antes del día 1","Grabar > improvisar"],
-  queEs:H(`<p>La rutina de producción que hace el kit sostenible: <strong>un bloque semanal</strong> donde rellenas, grabas y programas la semana siguiente entera. Nada de decidir cada mañana qué publicar.</p>`),
+  queEs:H(`<p>La rutina de producción que hace el kit sostenible: <strong>un bloque semanal fijo</strong> donde rellenas, grabas y programas la semana siguiente entera. Nada de decidir cada mañana qué publicar. La referencia de la casa: la sesión de lotes va <strong>en un día fijo (los lunes, en el sistema DD)</strong> y, con práctica, de una hora salen 7-10 piezas.</p>`),
   porQue:H(`<p>La constancia gana a la intensidad — igual que en los DMs del Kit 03. El calendario solo funciona si las piezas existen antes de su día; si grabas el reel del lunes el lunes, el primer imprevisto rompe el mes.</p>
     <p>Y grabar por lotes tiene un efecto secundario bueno: a la tercera toma seguida ya no miras la cámara con miedo.</p>`),
   plantilla:H(`<ul style="margin-bottom:0">
       <li><strong>1 ·</strong> Elige las 10 piezas de la semana en el calendario (5 reels + 5 carruseles).</li>
       <li><strong>2 ·</strong> Rellena los placeholders de las 10 (buscar-reemplazar con tu diccionario) y elige versión A o B de cada una.</li>
-      <li><strong>3 ·</strong> Revisa la regla de cada pieza: hook ≤7 palabras, una idea, cero "gratis", cero "lanzamiento", CTA con keyword validada.</li>
+      <li><strong>3 ·</strong> Revisa la regla de cada pieza: texto en pantalla de 5-7 palabras y primera frase hablada de hasta 12 (que no se repiten entre sí), los 5 canales del hook cubiertos, una sola idea, cero anglicismos (tips, hack, mindset → fuera), "lanzamiento" jamás en el CTA (di oferta / sistema / plazas), y CTA con keyword validada.</li>
       <li><strong>4 ·</strong> Graba los 5 reels seguidos (misma luz, misma ropa opcional, notas de rodaje del archivo a mano).</li>
       <li><strong>5 ·</strong> Monta los 5 carruseles con su brief visual.</li>
       <li><strong>6 ·</strong> Programa todo y apunta cada keyword usada.</li>
@@ -682,10 +724,11 @@ const PASOS = [
   ejemplo:H(`<p>Valeria bloquea el viernes de 15 a 19h: una hora de rellenar y revisar, dos de grabar (5 reels, unas 3 tomas cada uno), una de montar carruseles y programar. El lunes a las 7:00 su semana ya está en el aire y ella está entregando, no editando.</p>`),
   errores:[
     {t:"Producir el día de publicar", d:"Un imprevisto y el calendario se cae. El lote semanal es el seguro del sistema."},
-    {t:"Saltarse la revisión de reglas", d:"El hook de 9 palabras o el 'gratis' que se cuela se corrigen en el paso 3 del lote, no en los comentarios de la pieza publicada."},
+    {t:"Saltarse la revisión de reglas", d:"El titular de 9 palabras, el canal de hook que falta o el anglicismo que se cuela se corrigen en el paso 3 del lote, no en los comentarios de la pieza publicada."},
+    {t:"Publicar 'porque toca' una pieza que no pasa el filtro", d:"La revisión es un semáforo, no un trámite: si una pieza no engancha ni a ti al releerla, se reescribe o se cae. Publicar relleno cuesta más caro que saltarse un día."},
     {t:"Perfeccionismo de tomas", d:"Tres tomas y te quedas con la segunda. La pieza publicada a tiempo gana a la perfecta sin publicar."}
   ],
-  ghl:"Los comentarios con keyword de cada pieza alimentan tus flujos (paso 2) y tu revisión mensual: qué ángulos generaron keyword se duplican el mes 2; los que no, se retiran.",
+  ghl:"Los comentarios con keyword de cada pieza alimentan tus flujos (paso 2) y tu revisión mensual: qué ángulos generaron keyword se duplican el mes 2; los que no, se retiran. Y el mes 2 no son 40 piezas nuevas desde cero: primero se repesca — tu top 10 del mes por clics al perfil se rehace con otro ángulo, y una pieza buena se puede repostear tal cual pasados 2 meses. Reciclar lo que funcionó gana a estrenar a ciegas.",
   ayuda:"Para el mes 2 en adelante: el Kit 07 · Autonomía trae el prompt maestro que te regenera el pack entero con tus datos."
 }
 ];
@@ -694,8 +737,9 @@ const CAJA_H = [
 {
   ico:"sesion", et:"20 guiones cara a cámara",
   titulo:"Los 20 reels",
-  resumen:"Cada uno con 5 hooks, versión A y B completas, nota de rodaje y CTA. 8 de valor, 6 de autoridad, 4 de conexión, 2 de venta.",
-  cuerpo:H(`<p>Veinte conceptos de reel, cada uno en su archivo con: <strong>5 hooks alternativos</strong> (texto en pantalla, ≤7 palabras), <strong>versión A "El Directo"</strong> (gancho → desarrollo → giro → CTA), <strong>versión B "El Narrado"</strong> (escena → frase textual → giro → moraleja → CTA), nota de rodaje y CTA con keyword.</p>
+  resumen:"Cada uno con 5 titulares, versión A y B completas, nota de rodaje y CTA. 8 de valor, 6 de autoridad, 4 de conexión, 2 de venta.",
+  cuerpo:H(`<p>Veinte conceptos de reel, cada uno en su archivo con: <strong>5 titulares alternativos</strong> para el texto en pantalla (5-7 palabras cada uno), <strong>versión A "El Directo"</strong> (gancho → desarrollo → giro → CTA), <strong>versión B "El Narrado"</strong> (escena → frase textual → giro → moraleja → CTA), nota de rodaje y CTA con keyword.</p>
+  <p><strong>Al grabar, recuerda el método de los 5 hooks</strong> (paso 4): en los primeros 3-5 segundos el reel engancha por cinco canales a la vez — visual, hablado (≤12 palabras), escrito (el titular, que no repite lo hablado), audio y caption. Si faltan dos o más, vuelve a edición.</p>
   <div class="bloque b-neutro"><div class="bloque-cab">Valor (8)</div><div class="bloque-cont"><ul style="margin-bottom:0">
     <li><strong>01</strong> · El error que te mantiene en el mismo sitio</li>
     <li><strong>02</strong> · Cómo conseguir {{resultado_deseado}} sin {{dolor}}</li>
@@ -760,14 +804,20 @@ const CAJA_H = [
     <li><strong>19</strong> · Caso real: cómo {{caso_nombre}} salió de {{caso_situacion}}</li>
     <li><strong>20</strong> · Todo lo que hay dentro de {{oferta_lt}}</li>
   </ul></div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Las dos recetas y las 4 reglas del CTA</div><div class="bloque-cont">
+    <p>Cada carrusel del paquete sigue una de las <strong>dos recetas de la casa</strong>: la de <em>crecimiento</em> (su objetivo son guardados y compartidos — no lleva oferta, el CTA pide guardar o compartir) y la de <em>venta</em> (su objetivo es el comentario con keyword → DM → tu landing). No las mezcles: un carrusel de crecimiento con CTA de venta pierde en las dos ligas.</p>
+    <p style="margin-bottom:0"><strong>Las 4 reglas de todo CTA:</strong> 1 · <em>Gánatelo</em> — el CTA solo funciona si los slides anteriores dieron valor de verdad · 2 · <em>Haz puente</em> — una frase conecta el contenido con lo que pides ("si esto te pasa, tengo algo para ti") · 3 · <em>Una sola acción</em> — pedir guardar Y comentar Y compartir es no pedir nada · 4 · <em>Acorde al tipo</em> — crecimiento pide guardar; venta pide la keyword.</p>
+  </div></div>
   <p style="margin-bottom:0"><em>Regla que ya viene aplicada: el último slide es un punch con metáfora que se pueda repetir en voz alta — si el slide final resume, la pieza se olvida. Archivos en tu paquete, carpeta <code>carruseles/</code>.</em></p>`)
 },
 {
   ico:"personas", et:"14 días guionizados",
   titulo:"La quincena de stories",
   resumen:"De \"¿quién eres?\" a \"quiero tu oferta\" en 14 días, con 5-12 stories diarias guionizadas y las 3 ventas en los días 7, 12 y 14.",
-  cuerpo:H(`<p>Una <strong>línea de contenido de 14 días</strong> — no 14 posts sueltos. Cada día es una tanda de 5-12 stories con hook, desarrollo, conectores orales entre stories, stickers funcionales y un CTA de cierre.</p>
-  <p>El objetivo no es vender cada día: es transmitir <strong>en orden los 5 significados</strong> que hacen que alguien compre: el problema existe → es MÍO → esta persona sabe resolverlo → es posible → esta solución es única. Por eso las 3 ventas caen en los días 7, 12 y 14, no antes.</p>
+  cuerpo:H(`<p>Una <strong>línea de contenido de 14 días</strong> — no 14 posts sueltos. Cada día es una tanda de stories con hook, desarrollo, conectores orales entre stories, stickers funcionales y un CTA de cierre. <strong>Las tandas largas se parten en series de 4-5 stories</strong>, cada serie con su propio gancho: si las vistas caen a mitad de tanda, corta ahí y reinicia con gancho nuevo al día siguiente.</p>
+  <p>El objetivo no es vender cada día: es transmitir <strong>en orden los 5 significados</strong> que hacen que alguien compre: el problema existe → es MÍO → esta persona sabe resolverlo → es posible → esta solución es única. En el sistema DD, este calentamiento por stories es <strong>responsable del 90% del éxito de una venta orgánica</strong> — el funnel solo recoge lo que las stories sembraron. Por eso las 3 ventas caen en los días 7, 12 y 14, no antes.</p>
+  <p><strong>La quincena es el punto medio de un rango, no una cifra mágica:</strong> el mismo arco se ha ejecutado comprimido en 5-7 días (hay caso real validado en 7) y estirado hasta 90 para ofertas grandes. Si tu audiencia ya está caliente, comprime; si estás construyendo desde cero, estira. Lo que no se toca es el ORDEN de los 5 significados.</p>
+  <p><strong>Y esto es una campaña, no tu ritmo de crucero:</strong> la concentración de 3 ventas en la segunda semana es propia de un calentamiento puntual. Al volver al día a día, vuelve la regla del feed: máximo un empujón de venta por semana.</p>
   <div class="bloque b-neutro"><div class="bloque-cab">El mapa de la quincena</div><div class="bloque-cont"><table class="tabla"><tr><th>Día</th><th>Objetivo</th><th>CTA de cierre</th></tr>
     <tr><td>01</td><td>Conexión · abrir la línea</td><td>Responder a la story</td></tr>
     <tr><td>02</td><td>Valor · el error que casi nadie ve</td><td>Guardar / responder</td></tr>
@@ -785,7 +835,7 @@ const CAJA_H = [
     <tr><td><strong>14</strong></td><td><strong>Venta blanda 3 / cierre → oferta o cita</strong></td><td><strong>Comenta {{KEYWORD}} / agenda</strong></td></tr></table></div></div>
   <p><strong>La notación de los guiones:</strong> <code>[VE]</code> qué se ve · <code>[TXT]</code> texto en pantalla (≤2 líneas, centrado) · <code>[VOZ]</code> lo que dices · <code>[STICKER]</code> encuesta, slider, caja o quiz · <code>↓</code> conector oral hacia la siguiente story.</p>
   <div class="bloque b-errores"><div class="bloque-cab">El checklist de cada día (antes de publicar)</div><div class="bloque-cont">
-    <div class="error-item"><span class="error-x">✕</span><div><b>Story 1 que no decide en 1 segundo</b><span>El hook abre con curiosidad, nunca con venta.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Story 1 que no decide en 1 segundo</b><span>La primera story determina el 30-50% de las vistas de toda la tanda. Abre con curiosidad, nunca con venta — y nunca la desperdicies en un "buenos días".</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Slides sueltos sin arco</b><span>Conectores orales entre stories: conversación, no lista.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Días sin encarnación</b><span>Al menos 1 mockup/captura anonimizada o voz a cámara; mostrar, no contar.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Anécdotas inventadas</b><span>Los días 03 y 08 llevan huecos {{anecdota}} que rellenas con algo real y universalizable.</span></div></div>
@@ -806,11 +856,14 @@ const CAJA_H = [
   <div class="bloque b-aviso"><div class="bloque-cab">Notas de uso</div><div class="bloque-cont"><ul style="margin-bottom:0">
     <li><strong>Negatividad primero, alivio después:</strong> el hook puede sonar duro; el desarrollo motiva y quita culpa. Nunca dejes al lector solo con el golpe.</li>
     <li><strong>Acusa, no describas:</strong> "{{error_comun}} es la salida del cobarde" gana a "4 errores de {{nicho}}".</li>
-    <li><strong>≤7 palabras</strong> para reel y slide 1; los largos, como caption o slide 2.</li>
+    <li><strong>5-7 palabras</strong> para el texto en pantalla del reel y el slide 1; <strong>hasta 12</strong> la versión hablada; los largos, como caption o slide 2.</li>
+    <li><strong>Cero anglicismos:</strong> tips, hack, mindset y familia se sustituyen por su versión en castellano. Es marca de la casa.</li>
+    <li><strong>Cero cifras inventadas:</strong> si el hook pide un número y no lo tienes real, usa el marcador <code>[CIFRA REAL]</code> hasta tenerlo — o borra la frase. Nunca lo rellenes "de memoria".</li>
     <li><strong>Un hook = un lector.</strong> Si combinas dos en una pieza, que apelen a lectores distintos.</li>
-    <li><strong>CTA siempre con keyword validada.</strong> Nunca "link en bio".</li>
+    <li><strong>CTA siempre con keyword validada.</strong> Nunca "link en bio". Y "lanzamiento" jamás en un CTA: di oferta, sistema o "abro plazas".</li>
   </ul></div></div>
-  <p style="margin-bottom:0"><em>Y para no escribir el mes 2 a mano: el Kit 07 · Autonomía trae el prompt maestro que regenera el pack completo con tus datos y tu voz.</em></p>`)
+  <div class="bloque b-neutro"><div class="bloque-cab">Cómo generar hooks nuevos cuando el banco se agote</div><div class="bloque-cont"><p style="margin-bottom:0">El método generativo es el de las <strong>3 columnas del paso 1</strong>: una palabra técnica de tu nicho + una palabra de la vida diaria de tu avatar + una de curiosidad, combinadas en una frase de 5-7 palabras. Y antes de estrenar un hook nuevo, pásale el semáforo: ¿es específico (no genérico)? ¿toca una emoción real? ¿está escrito desde el lector (tú/tu) y no desde ti (yo/mi método)? ¿suena a persona y no a plantilla de IA? Si dudas en dos o más, reescríbelo.</p></div></div>
+  <p style="margin-bottom:0"><em>Y para no escribir el mes 2 a mano: primero recicla (tu top 10 del mes por clics al perfil se rehace con otro ángulo; lo muy bueno se repostea pasados 2 meses), y el Kit 07 · Autonomía trae el prompt maestro que regenera el pack completo con tus datos y tu voz.</em></p>`)
 }
 ];
 
@@ -1046,6 +1099,216 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>

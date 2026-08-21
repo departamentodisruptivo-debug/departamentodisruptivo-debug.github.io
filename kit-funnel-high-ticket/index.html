@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de Funnel High Ticket</title>
 <meta name="description" content="Las 7 páginas del embudo — captación, venta con checkout, OTOs, downsells y gracias — con la escalera oficial de precios, el cableado en GHL y el checklist de lanzamiento.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit de Funnel High Ticket">
+<meta property="og:description" content="Las 7 páginas del embudo — captación, venta con checkout, OTOs, downsells y gracias — con la escalera oficial de precios, el cableado en GHL y el checklist de lanzamiento.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kit-funnel-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E08%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -408,6 +414,27 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
 }
 
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
+
 /* el índice lateral sustituye a la barra superior en pantallas anchas */
 @media(min-width:1081px){
   .barra{display:none!important}
@@ -567,11 +594,15 @@ const PASOS = [
   titulo:"El mapa de las 7 páginas",
   sub:"De la captación a la página de gracias, con la escalera oficial de precios. Antes de montar nada, entiende el recorrido entero.",
   chips:["El plano general","Antes de montar nada","La escalera no se toca"],
-  queEs:H(`<p>Tu funnel son <strong>7 páginas encadenadas</strong>: la captación del recurso (LM) → la página de venta del producto de entrada (LT) con checkout embebido → el pasillo post-compra (OTO 1 → downsell 1 → OTO 2 → downsell 2) → la página de gracias, que confirma, entrega y tiende el puente hacia trabajar contigo.</p>
+  queEs:H(`<p>Antes del mapa, <strong>el paso 0 — y es obligatorio: el roadmap de tu programa.</strong> Sin él, el producto de entrada no tiene sentido, porque el LT no es una idea suelta: es un trozo de tu programa grande convertido en producto. Primero se dibuja el camino completo; luego se recorta la pieza.</p>
+    <p>Con el roadmap hecho, tu funnel son <strong>7 páginas encadenadas</strong>: la captación del recurso (LM) → la página de venta del producto de entrada (LT) con checkout embebido → el pasillo post-compra (OTO 1 → downsell 1 → OTO 2 → downsell 2) → la página de gracias, que confirma, entrega y tiende el puente hacia trabajar contigo.</p>
     <p style="margin-bottom:0">Puedes recorrerlo entero, tal y como lo verá tu cliente, en el <a href="https://dd-funnel-preview-dwy.vercel.app" target="_blank" rel="noopener">preview navegable ↗</a>. Cada paso de este kit desmonta una de esas páginas.</p>`),
   porQue:H(`<p>El funnel funciona como sistema, no como páginas sueltas: la captación alimenta tus secuencias, el checkout entrena tu Pixel, los OTOs suben el ticket medio con la misma tarjeta, y la página de gracias siembra la llamada que cierras con tu guión del Kit 03.</p>
-    <p><strong>La escalera de precios es oficial y no se toca:</strong> producto de entrada en el rango 12-17€, OTO 1 a 147€ (su downsell a 97€), OTO 2 a 87€ (su downsell a 37€) y el order bump de +19€ en el checkout. Y la regla que manda sobre todas: <strong>el precio de tu oferta principal jamás aparece escrito</strong> — en la página de gracias se invita a una sesión, nunca se vende con cifra.</p>`),
-  plantilla:H(`<table class="tabla"><tr><th>#</th><th>Página</th><th>Trabajo</th><th>Sale hacia</th></tr>
+    <p><strong>La escalera de precios es oficial y no se toca:</strong> producto de entrada en el rango 12-17€, OTO 1 a 147€ (su downsell a 97€), OTO 2 a 87€ (su downsell a 37€) y el order bump de +19€ en el checkout. Y la regla que manda sobre todas: <strong>el precio de tu oferta principal jamás aparece escrito</strong> — en la página de gracias se invita a una sesión, nunca se vende con cifra.</p>
+    <p style="margin-bottom:0"><strong>El objetivo económico del conjunto:</strong> que el valor medio de pedido (LT + bump + OTOs) supere los ~70€. Ese es el número que hace viable escalar con anuncios (Kit 06): por debajo, cada comprador te cuesta más de lo que deja. No se persigue subiendo precios — la escalera es fija —: se persigue montando bien el pasillo entero, que para eso existe.</p>`),
+  plantilla:H(`<div class="campo"><b>Paso 0 · El roadmap (antes de tocar ninguna página)</b>1 · Escribe los pasos que recorre un cliente dentro de tu programa grande, de principio a fin. · 2 · Clasifica cada paso por temperatura: FRÍO (necesario pero nadie lo desea), TEMPLADO (interesa), CALIENTE (lo quieren YA — suele haber solo 2 o 3). · 3 · <strong>Tu LT sale de un paso CALIENTE:</strong> se vende lo que arde, no lo más importante. Lo importante lo aprenderán dentro. · 4 · Los OTOs salen de los pasos que aceleran o facilitan ese mismo resultado.</div>
+    <div class="campo"><b>¿Es tu momento para este funnel?</b>El filtro de encaje honesto: funciona de maravilla si ya tienes una oferta alta validada (≥1.000€), algo de audiencia (~1.000 personas que te siguen o una lista) y facturación en marcha. Si aún no estás ahí, no es "no": es "todavía" — primero keyword + orgánico (Kit 05) y tus primeras ventas por llamada (Kit 03), y el funnel cuando haya materia prima.</div>
+    <table class="tabla"><tr><th>#</th><th>Página</th><th>Trabajo</th><th>Sale hacia</th></tr>
     <tr><td>1</td><td><strong>Captación (LM)</strong></td><td>Convertir el clic en contacto: nombre + email a cambio del recurso</td><td>Página del LT (y secuencia Welcome)</td></tr>
     <tr><td>2</td><td><strong>Venta del LT</strong></td><td>Vender el producto de entrada · rango <span class="hueco">12-17€</span> · checkout embebido con bump +19€</td><td>OTO 1</td></tr>
     <tr><td>3</td><td><strong>OTO 1 · el acelerador</strong> (147€)</td><td>Sumar al pedido con 1 clic, misma tarjeta</td><td>Sí → OTO 2 · No → Downsell 1</td></tr>
@@ -584,7 +615,9 @@ const PASOS = [
     {t:"Tocar la escalera de precios", d:"Los precios del pasillo son política del sistema, calibrados entre sí (147 → 97, 87 → 37). Cambiar uno descuadra los demás. Lo único con rango es el LT: 12-17€."},
     {t:"Escribir el precio del high ticket", d:"Ni en la página de gracias, ni en un FAQ, ni en el vídeo. La cifra se dice en la llamada (Kit 03). Escribirla antes mata la sesión."},
     {t:"Montar páginas sueltas", d:"Una landing bonita sin secuencias detrás ni Pixel delante es un folleto. El funnel se monta entero y se prueba entero (caja de herramientas)."},
-    {t:"Saltarse los downsells", d:"El que dice no al OTO de 147€ dice sí al de 97€ más veces de lo que crees. El pasillo completo existe porque funciona como conjunto."}
+    {t:"Saltarse los downsells", d:"El que dice no al OTO de 147€ dice sí al de 97€ más veces de lo que crees. El pasillo completo existe porque funciona como conjunto."},
+    {t:"Montar el funnel sin el roadmap", d:"Es el error de raíz: un LT elegido 'porque suena bien' en vez de recortado de un paso caliente de tu programa. Sin roadmap, todo lo demás está bien montado sobre el tema equivocado."},
+    {t:"Montar las 7 páginas 'a la vez'", d:"Se montan en el orden del recorrido y se perfecciona UNA a la vez. Siete páginas al 60% convierten peor que tres al 100% y las demás en cola. Lo simple escala; lo aparatoso se cae."}
   ],
   ghl:"Las 7 páginas se montan en el builder de funnels de tu GHL, en este orden y con estos nombres, dentro de un solo funnel. El detalle técnico de cada una, en los pasos siguientes.",
   ayuda:"Sistemas GHL con María José los miércoles. Lleva el mapa y se monta contigo la estructura vacía en una sesión."
@@ -631,7 +664,9 @@ const PASOS = [
       <li><strong>Los 3 puntos de valor:</strong> el error silencioso que mantiene el dolor · el primer paso concreto sin herramientas caras · cómo medir en 7 días que vas bien.</li>
       <li><strong>Tu mini-historia:</strong> antes (la frustración con el dolor) → punto de inflexión → después. En primera persona, real, sin humo.</li>
       <li><strong>Nunca en esta página:</strong> la palabra "gratis" (el recurso "se descarga", "te lo envío"), precios de nada, menú de navegación.</li>
-    </ul>`),
+    </ul>
+    <div class="campo"><b>Y el recurso en sí — las 4 reglas del lead magnet que convierte</b>1 · <strong>Problema estrecho:</strong> resuelve UNA cosa concreta… que al resolverse deja a la vista el problema mayor (el que resuelve tu programa). · 2 · <strong>Consumo en menos de 10 minutos:</strong> lo que no se consume no genera confianza. Formatos que sí: guía corta, plantilla, checklist, hoja de cálculo. Formatos que no: ebook de 60 páginas, mini-curso, webinar grabado. · 3 · <strong>Aplicable hoy:</strong> que en la primera tarde ya haya hecho algo con él. · 4 · <strong>Caducidad:</strong> refréscalo cada 3-6 meses — un LM agotado se nota en que el coste por lead sube sin que nada más haya cambiado.</div>
+    <p style="margin:12px 0 0"><strong>Qué debe medir esta página:</strong> de visita a contacto, la referencia sana es el 40-50%. Por debajo del 30%, el problema es el hook o la promesa — no el tráfico.</p>`),
   ejemplo:H(`<p>La captación de Valeria: píldora "Guía práctica para dueñas de negocio" · hook "El atajo hacia tu energía estable" · opt-in de dos campos · fila de confianza "Lectura de 8 minutos · Aplicable hoy" · y su historia: "Monté un negocio que funcionaba y un cuerpo que no. Esta guía es lo que me sacó de ahí, sin humo." Quien llega desde un reel con la keyword ENERGIA aterriza aquí — y el mensaje es el mismo que el del reel.</p>`),
   errores:[
     {t:"Pedir más de dos campos", d:"Cada campo extra tira conversión. El teléfono y las preguntas van después — en el agendado (Kit 03), donde sí filtran."},
@@ -658,7 +693,9 @@ const PASOS = [
       <li><strong>La garantía con nombre:</strong> "Aplícalo sin riesgo" — 14 días, sin formularios, tu palabra basta.</li>
       <li><strong>Prueba social:</strong> solo real — vídeo &gt; captura &gt; texto. Los huecos se quedan vacíos hasta tener casos; nunca se inventan.</li>
       <li><strong>La posdata:</strong> "Lo barato no es el precio: es lo que te ahorras en meses de prueba y error."</li>
-    </ul>`),
+    </ul>
+    <div class="campo"><b>La variante corta (checkout-only, 7 bloques) — y cuándo usar cada una</b>Existe una versión reducida y legítima: titular → subtítulo → imagen del producto → "esto es lo que te llevas" → checkout → garantía + 3 FAQs → testimonios. <strong>El criterio:</strong> si el tráfico llega ya pre-vendido (un anuncio que cuenta la historia, una keyword tras una quincena de calentamiento), la corta convierte igual con la mitad de fricción — el low ticket se compra como un "sí obvio", sin gran narrativa. Si el tráfico llega frío o templado, la larga de 12 secciones hace el trabajo que el anuncio no hizo. Empieza con la larga; testea la corta cuando tus anuncios ya vendan solos.</div>
+    <p style="margin:12px 0 0"><strong>Dos instrumentos de esta página:</strong> a los 60 segundos de visita, un mini-sondeo de una pregunta ("¿Hay algo que te impide comprar hoy?") — las respuestas son tu lista de objeciones reales, oro para los emails y los anuncios. Y el número de parada: <strong>si la página convierte al ~10% de sus visitas, no la toques más — escala el tráfico.</strong> Optimizar lo que ya funciona es la forma elegante de romperlo.</p>`),
   ejemplo:H(`<p>El "¿por qué tan barato?" de Valeria, tal cual: <em>"No es generosidad, es estrategia. Prefiero que muchas entren, apliquen y vean que esto funciona de verdad. Si a ti te va bien, las dos ganamos."</em> Y su bump: las plantillas de registro semanales (+19€), desmarcado, con una línea de descripción. Una de cada cuatro compradoras lo marca — sin que nadie se sienta engañada.</p>`),
   errores:[
     {t:"El bump pre-marcado", d:"Ilegal en la UE y letal para la confianza. Desmarcado, con descripción clara. Siempre."},
@@ -684,7 +721,7 @@ const PASOS = [
       <li><strong>Hooks del OTO:</strong> "Multiplica lo que acabas de conseguir" · "Da el salto que faltaba" · "Haz que funcione el doble de rápido".</li>
       <li><strong>El botón:</strong> "Añadir a mi pedido · 1 clic". <strong>El declinar:</strong> "No gracias, accedo al sistema básico" — texto gris, nunca botón.</li>
       <li><strong>La urgencia legítima:</strong> "⏳ Esta condición existe únicamente en esta página. Si sales, no vuelve a aparecer."</li>
-      <li><strong>El downsell:</strong> mismo patrón, versión "esencial"/"exprés" de la misma oferta — no una oferta nueva que confunda.</li>
+      <li><strong>El downsell:</strong> mismo patrón, versión "esencial"/"exprés". <strong>La regla de fondo: cambia el PRODUCTO, nunca solo el número.</strong> Un downsell que es "lo mismo pero más barato" enseña al cliente que tus precios se negocian — y devalúa al que sí pagó el completo. Por eso la página del downsell lleva su tabla de "Sí incluye / No incluye": menos piezas, menos precio, misma promesa. (Otras dos formas válidas de bajar el escalón sin bajar el precio: el plan de pagos — lo acepta entre el 40 y el 60% de los que declinaron el pago único — y "más tiempo para lograrlo" con acompañamiento más ligero.)</li>
       <li><strong>FAQ fija del pasillo:</strong> "¿Se cobra otra vez mi tarjeta?" → "Un solo clic, misma tarjeta, un pago, todo junto."</li>
     </ul>`),
   ejemplo:H(`<p>El OTO 1 de Valeria: el Acelerador (sus 12 casos comentados en vídeo, fase a fase) a 147€. Quien declina ve la versión Esencial — solo los 4 casos clave — a 97€. Su OTO 2: el pack de plantillas listas a 87€, con la exprés a 37€. El pasillo entero son 4 páginas sin navegación, sin footer con enlaces y sin una sola mención al acompañamiento — ese vive en la página siguiente.</p>`),
@@ -706,10 +743,12 @@ const PASOS = [
   queEs:H(`<p>La última página tiene dos bloques con dos trabajos distintos. <strong>Bloque A — la entrega:</strong> confirmación grande ("Pago confirmado. Ya es tuyo."), los 3 pasos para empezar (abre tu correo → entra a tu área → haz esto hoy), y un <strong>bonus no prometido</strong> — el acto inesperado que convierte compradores en fans.</p>
     <p style="margin-bottom:0"><strong>Bloque B — el puente:</strong> "esto que acabas de conseguir es la primera pieza" → vídeo de cómo sería trabajar contigo → casos reales del acompañamiento → garantía → <strong>formulario de 3 preguntas</strong> → tu calendario embebido. Sin una sola cifra.</p>`),
   porQue:H(`<p>El orden de los bloques importa: primero se asegura la compra que ya ocurrió (remordimiento muerto, acceso claro, regalo inesperado) y solo después se abre la puerta siguiente. Un puente antes de la confirmación huele a "ya me estás vendiendo otra cosa".</p>
-    <p>Y aquí se conecta todo el sistema: las 3 preguntas del formulario son <strong>tu nota de agenda</strong> (Kit 03, paso 3) — llegas a la llamada con el caso leído; la reserva dispara <strong>cita-agendada</strong> y el <strong>escudo anti no-show</strong> (Kit 03, paso 5); y el comprador que se va sin agendar cae en la secuencia <strong>"Comprador que no agenda"</strong> (Kit 04). Esta página no cierra el funnel: abre tu agenda.</p>`),
+    <p>Y aquí se conecta todo el sistema: las 3 preguntas del formulario son <strong>tu nota de agenda</strong> (Kit 03, paso 3) — llegas a la llamada con el caso leído; la reserva dispara <strong>cita-agendada</strong> y el <strong>escudo anti no-show</strong> (Kit 03, paso 5); y el comprador que se va sin agendar cae en la secuencia <strong>"Comprador que no agenda"</strong> (Kit 04). Esta página no cierra el funnel: abre tu agenda.</p>
+    <p style="margin-bottom:0"><strong>Y no lo olvides: el calendario siembra la cita, pero la venta alta sigue siendo humana.</strong> En cuanto entra una reserva con su nota, la conversación la abres tú, a mano — un mensaje personal antes de la llamada marca la diferencia entre "agendé con un sistema" y "voy a hablar con esta persona". El high ticket nunca se vende con un enlace automático; el funnel solo te pone la conversación en bandeja.</p>`),
   plantilla:H(`<ul>
       <li><strong>Confirmación:</strong> "Pago confirmado. Ya es tuyo." + "Tu <span class="hueco">PRODUCTO</span> está activo. Revisa tu correo."</li>
       <li><strong>Los 3 pasos:</strong> 1 · Abre tu correo (mira spam/promociones) · 2 · Entra a tu área y crea tu contraseña · 3 · <strong>Haz esto hoy</strong>: abre la Fase 1 y completa el primer paso en 10 minutos.</li>
+      <li><strong>La entrega, también EN la página:</strong> siempre que tu producto lo permita, el acceso o el recurso se entrega aquí mismo, además del correo — es el patrón validado del sistema: cero fricción, cero "¿dónde está mi compra?", y el email queda como respaldo, no como única puerta.</li>
       <li><strong>El bonus:</strong> "Un extra que no esperabas" — algo real que no venía en la oferta. Pequeño y verdadero gana a grande y prometido.</li>
       <li><strong>El puente:</strong> "Lo que tienes es el mapa. Si quieres el sistema implementado contigo, mano a mano, mira este vídeo y vemos si tiene sentido dar el siguiente paso juntos."</li>
       <li><strong>Las 3 preguntas:</strong> ¿tu situación ahora? · ¿qué quieres conseguir en 90 días? · ¿estás listo/a para ponerte con ayuda?</li>
@@ -776,6 +815,13 @@ const CAJA_H = [
     <li>El order bump desmarcado (ya lo está por diseño — no lo "optimices").</li>
     <li>La garantía que anuncian las páginas coincide con la del checkout, los emails y el contrato.</li>
   </ul></div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Qué debe medir cada página (los números de referencia)</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>Captación:</strong> visita → contacto, 40-50% sano (menos del 30% = revisa hook y promesa).</li>
+    <li><strong>Del DM de la keyword al email:</strong> 60-80%; si baja del 50%, ajusta el copy del DM o la keyword.</li>
+    <li><strong>De la lista al checkout:</strong> 5-15% de los que reciben la secuencia en la primera semana.</li>
+    <li><strong>Página de venta:</strong> ~10% de conversión = no la toques más, escala el tráfico.</li>
+    <li><strong>El del conjunto, que manda sobre todos:</strong> valor medio de pedido (LT + bump + OTOs) por encima de ~70€ — es lo que hace rentable comprar tráfico.</li>
+  </ul></div></div>
   <p style="margin-bottom:0">Si los 9 puntos del recorrido salen limpios, abre el grifo: keyword primero (tráfico templado), anuncios después (Kit 06, con su propio orden de encendido).</p>`)
 },
 {
@@ -791,7 +837,8 @@ const CAJA_H = [
     <div class="error-item"><span class="error-x">✕</span><div><b>Urgencia solo verdadera</b><span>La de página del OTO es cierta por construcción. La de cohorte, solo con cohorte real. Sin cierre real, la frase de urgencia se queda vacía.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Prueba social real o hueco vacío</b><span>Vídeo &gt; captura &gt; texto, siempre de clientes reales. Un testimonio inventado puede tumbar mucho más que el funnel.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Cero "gratis", cero "lanzamiento"</b><span>El recurso "se descarga" o "te lo envío". La misma regla de contenido, emails y ads.</span></div></div>
-    <div class="error-item"><span class="error-x">✕</span><div><b>La garantía dice lo mismo en todas partes</b><span>14 días por defecto — idéntica en la página, el checkout, los emails y el contrato. Si tu oferta no la lleva, se retira de los cuatro sitios a la vez.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>El downsell cambia el producto, no el precio del mismo</b><span>"Lo mismo pero más barato" enseña que tus precios se negocian. La versión reducida quita piezas (con su tabla de Sí incluye / No incluye), ofrece plan de pagos, o da más tiempo — nunca es un descuento disfrazado.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>La garantía dice lo mismo en todas partes</b><span>14 días por defecto (salvo excepción pactada en tu oferta — entonces la excepción, en los cuatro sitios) — idéntica en la página, el checkout, los emails y el contrato. Y con nombre propio: "Aplícalo sin riesgo" se recuerda; "garantía de devolución" es ruido invisible.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Hooks de 7 palabras o menos</b><span>Cada página trae sus 3 variantes listas. Después de rellenar los huecos, recuenta.</span></div></div>
   </div></div>
   <p style="margin-bottom:0">Estas reglas ya vienen aplicadas en el preview y en las plantillas. Tu trabajo no es recordarlas: es <strong>no deshacerlas</strong> al personalizar.</p>`)
@@ -1045,6 +1092,216 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>

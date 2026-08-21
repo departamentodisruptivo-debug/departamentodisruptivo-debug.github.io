@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de la Oferta High Ticket</title>
 <meta name="description" content="Tienes una propuesta, no una oferta. Siete decisiones en orden para convertirla en algo que se pueda vender y entregar.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit de la Oferta High Ticket">
+<meta property="og:description" content="Tienes una propuesta, no una oferta. Siete decisiones en orden para convertirla en algo que se pueda vender y entregar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kit-oferta-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E01%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -438,6 +444,26 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   *{animation:none!important;transition:none!important}
 }
 :focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
 </style>
 </head>
 <body>
@@ -762,13 +788,17 @@ const PASOS = [
     <tr><td><b>Total de horas por cliente</b></td><td></td></tr></table>
     <p style="margin:14px 0 0">Ese total, multiplicado por lo que quieres ganar por hora de tu tiempo, te da el <strong>suelo</strong>. Por debajo de ahí no es una oferta, es un problema.</p>
     <p style="margin:18px 0 8px"><strong>Referencia 2 · Lo que le vale resolverlo</strong></p>
-    <div class="campo" style="margin-bottom:0"><b>Del paso 1</b>Ya escribiste qué le cuesta el problema. Ponlo en números si se puede: <span class="hueco">COSTE ANUAL DEL PROBLEMA</span>. Tu precio tiene que ser claramente menor que eso, o no hay decisión posible.</div>
+    <div class="campo"><b>Del paso 1</b>Ya escribiste qué le cuesta el problema. Ponlo en números si se puede: <span class="hueco">COSTE ANUAL DEL PROBLEMA</span>. Tu precio tiene que ser claramente menor que eso, o no hay decisión posible.</div>
+    <div class="campo" style="margin-bottom:0"><b>La brújula del valor (para subirlo, no para justificarte)</b>El valor percibido de una oferta se mueve con cuatro palancas: <strong>(resultado soñado × probabilidad de conseguirlo) dividido entre (tiempo que tarda × esfuerzo que exige)</strong>. Antes de tocar el precio, mira si puedes subir las dos de arriba (una promesa más concreta, más prueba de que funciona) o bajar las dos de abajo (resultados antes, menos fricción). Cada palanca que muevas te deja subir el número sin que el cliente sienta que paga más: siente que recibe más.</div>
+    <p style="margin:18px 0 8px"><strong>Dos reglas de la casa sobre el número</strong></p>
+    <div class="campo"><b>El precio sube con la demanda, no con las ganas</b>Primero genera demanda; cuando tengas un problema de capacidad (más gente queriendo entrar que plazas), entonces sube. Subir sin demanda es fantasía; no subir con lista de espera es dejar dinero y posicionamiento en la mesa (la herramienta "Cuándo subir el precio" tiene la receta).</div>
+    <div class="campo" style="margin-bottom:0"><b>El precio no se negocia. Nunca</b>Fraccionar sí; negociar no. Quien te regatea y gana te pierde el respeto — y el cliente que entró con descuento es estadísticamente el que menos se implica y antes se va. Si el número te da miedo, arréglalo antes de la llamada; en la llamada, el número es el número.</div>
     <p style="margin:18px 0 8px"><strong>Cómo se paga</strong></p>
     <div class="campo"><b>Pago único</b>Siempre el más barato de los dos. Es lo que premia decidir de una vez.</div>
     <div class="campo"><b>A plazos</b>Cuántas cuotas y de cuánto. El total a plazos es mayor que el pago único, y se dice. <strong>Que la última cuota venza antes de que termines de entregar.</strong></div>
     <div class="campo" style="margin-bottom:0"><b>Qué pasa si deja de pagar</b>Decídelo ahora, por escrito. Es la política que más te va a doler no tener.</div>
     <p style="margin:18px 0 8px"><strong>La garantía</strong></p>
-    <div class="campo" style="margin-bottom:0"><b>Tres piezas</b>Plazo corto · condiciones que se puedan comprobar (hizo las tareas, asistió a las sesiones) · y una <strong>revisión conjunta unos días antes de que venza</strong>, que es lo que convierte una devolución en un ajuste a tiempo.</div>`),
+    <div class="campo" style="margin-bottom:0"><b>Cuatro piezas</b>Plazo corto · condiciones que se puedan comprobar (hizo las tareas, asistió a las sesiones) · una <strong>revisión conjunta unos días antes de que venza</strong>, que es lo que convierte una devolución en un ajuste a tiempo · y un <strong>nombre propio</strong> ("Garantía de arranque", "Aplícalo sin riesgo"): una garantía genérica es ruido invisible que nadie recuerda; una con nombre se convierte en argumento.</div>`),
   ejemplo:H(`<p><strong>Cómo llegó Marina a su número</strong></p>
     <table class="tabla"><tr><th>Referencia</th><th>Qué le salió</th></tr>
     <tr><td>Lo que le cuesta entregarlo</td><td>12 sesiones (12 h) + preparación (3 h) + revisiones y mensajes (8 h) + auditoría e informe (5 h) = <b>28 horas por cliente</b></td></tr>
@@ -846,9 +876,12 @@ const PASOS = [
     <div class="campo"><b>2 · El mensaje</b>Corto y sin venta encubierta. No "¿te puedo hacer una pregunta?": di lo que es.</div>
     <div class="campo"><b>3 · La conversación</b>Escuchas primero. Preguntas por su situación, confirmas que el problema del paso 1 es el suyo, y solo entonces cuentas la oferta. Si su problema no es ese, no fuerces: has aprendido algo.</div>
     <div class="campo"><b>4 · El precio, dicho entero y en silencio</b>Se dice el número y se calla. El silencio incomoda tres segundos y es donde se decide todo. Si lo rellenas tú, te rebajas solo.</div>
-    <div class="campo" style="margin-bottom:0"><b>5 · El registro</b>Después de cada conversación, dos líneas: qué le pareció, dónde dudó y qué palabras usó él para describir su problema. Eso es material de venta para las siguientes.</div>
+    <div class="campo"><b>5 · El registro</b>Después de cada conversación, dos líneas: qué le pareció, dónde dudó y qué palabras usó él para describir su problema. Eso es material de venta para las siguientes.</div>
+    <div class="campo" style="margin-bottom:0"><b>6 · El documento de oferta (para el final de la llamada)</b>Un documento de 2-3 páginas — no más — que apila lo que incluye: los entregables, la estructura del acompañamiento, el proceso, los bonos y la garantía. <strong>No se manda antes de la llamada</strong> (eso sería vender por escrito): se enseña al final, cuando ya hay un sí emocional, para que la decisión tenga dónde apoyarse — y para la conversación con el socio o la pareja, que la tendrá sin ti delante. El precio, aun ahí, se dice en voz: el documento lo confirma después del acuerdo, no lo revela.</div>
+    <p style="margin:18px 0 8px"><strong>Antes de la primera conversación, el mínimo de oferta completo</strong></p>
+    <p style="margin-bottom:0">Chequeo rápido: ¿tienes 3-5 elementos de tu método que nadie más ofrece igual (tus mecanismos propios)? ¿Una garantía o un bono que le quite el riesgo al que duda? ¿La hoja de entregables clara? Si te falta alguno, es una tarde de trabajo — y multiplica el resto.</p>
     <p style="margin:18px 0 8px"><strong>Cuántas hacen falta</strong></p>
-    <p style="margin-bottom:0">Cinco conversaciones te dicen bastante. Diez te dicen casi todo. Si después de cinco nadie ha comprado, no hace falta seguir: ve a la herramienta <strong>Cinco llamadas sin cerrar</strong> y corrige antes de gastar las otras cinco.</p>`),
+    <p style="margin-bottom:0">Cinco conversaciones te dicen bastante. Diez te dicen casi todo. Si después de cinco nadie ha comprado, no hace falta seguir: ve a la herramienta <strong>Cinco llamadas sin cerrar</strong> y corrige antes de gastar las otras cinco. Y cuando pases de estas primeras validaciones a vender en serio, cada llamada se hace con el guión completo del <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 03 · Ventas ↗</a>.</p>`),
   ejemplo:H(`<div class="mensaje"><div class="de">El mensaje que usó Marina</div>Hola <span class="hueco">NOMBRE</span>, te escribo por algo concreto.<br><br>He montado un programa de tres meses para dueños de despachos que están en el punto en el que todo pasa por ellos y no pueden coger más trabajo. Me acordé de ti por lo que me contaste hace unos meses.<br><br>¿Te viene bien que te lo cuente en veinte minutos esta semana? Si no es tu momento me lo dices sin problema, no pasa nada.</div>
     <p style="margin-top:16px">Funciona porque dice lo que es desde la primera línea, se apoya en algo que él dijo de verdad, pide poco tiempo y da salida. No hay ni una palabra de venta.</p>
     <p style="margin:18px 0 8px"><strong>Lo que le pasó de verdad</strong></p>
@@ -913,7 +946,7 @@ const CAJA_H = [
     </div></div>
 
     <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
-    <p style="margin-bottom:0">Una objeción concreta que se te repite y no sabes qué la produce → chat de soporte o sesión de estrategia.</p></div></div>`)
+    <p style="margin-bottom:0">Una objeción concreta que se te repite y no sabes qué la produce → chat de soporte o sesión de estrategia. Y ojo con la diferencia: esta tabla te dice qué <em>arreglar en la oferta</em>; qué <em>responder en vivo, dentro de la llamada</em>, con la fórmula y las 12 resueltas, está en el <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Manual de Objeciones del Kit 03 ↗</a>.</p></div></div>`)
 },
 {
   ico:"tendencia", et:"Cuando algo no cuadra", titulo:"Cinco llamadas sin cerrar",
@@ -951,7 +984,7 @@ const CAJA_H = [
     </div></div>
 
     <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
-    <p style="margin-bottom:0">Repasar tus cinco conversaciones y decidir qué tocar → chat de soporte o sesión de estrategia. Lleva las notas que apuntaste después de cada una.</p></div></div>`)
+    <p style="margin-bottom:0">Repasar tus cinco conversaciones y decidir qué tocar → chat de soporte o sesión de estrategia. Lleva las notas que apuntaste después de cada una. Y si lo que falla no es la oferta sino la conversación en sí (el diagnóstico, el silencio, el cierre), el entrenamiento completo de la llamada es el <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 03 · Ventas ↗</a>.</p></div></div>`)
 },
 {
   ico:"subir", et:"Cuando ya funciona", titulo:"Cuándo subir el precio",
@@ -1299,6 +1332,216 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>

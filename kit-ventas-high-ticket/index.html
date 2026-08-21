@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de Ventas High Ticket</title>
-<meta name="description" content="Tienes la oferta. Ahora toca venderla. 5 pasos y 3 manuales para cerrar tus primeras ventas de high ticket: llamada, setting, DMs, objeciones y anti no-show.">
+<meta name="description" content="Tienes la oferta. Ahora toca venderla. 5 pasos y 4 manuales para cerrar tus primeras ventas de high ticket: llamada, setting, DMs, objeciones y anti no-show.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit de Ventas High Ticket">
+<meta property="og:description" content="Tienes la oferta. Ahora toca venderla. 5 pasos y 4 manuales para cerrar tus primeras ventas de high ticket: llamada, setting, DMs, objeciones y anti no-show.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kit-ventas-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E03%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -401,6 +407,27 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
 }
 
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
+
 /* el índice lateral sustituye a la barra superior en pantallas anchas */
 @media(min-width:1081px){
   .barra{display:none!important}
@@ -435,12 +462,12 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
       <div class="hero-insignia"><span class="num">Kit 03 · Ventas</span><span class="hero-marca">Departamento Disruptivo</span></div>
       <h1>Tienes la oferta. <em>Ahora toca venderla.</em></h1>
       <p>Las primeras 10-20 ventas las cierras tú, en persona. No porque no puedas delegar: porque hasta que no cierres tú, no sabes qué frase compra tu cliente ni qué objeción aparece siempre.</p>
-      <p class="hero-que-es">Esta página es el mapa de esas primeras ventas: <strong>5 pasos, en orden</strong>, que van del DM a la llamada cerrada, y <strong>3 manuales de combate</strong> para cuando la conversación se tuerce: objeciones, setting y seguimiento. Con los guiones y los mensajes ya escritos en cada punto.</p>
+      <p class="hero-que-es">Esta página es el mapa de esas primeras ventas: <strong>5 pasos, en orden</strong>, que van del DM a la llamada cerrada, y <strong>4 manuales de combate</strong> para cuando la conversación se tuerce: objeciones, setting, seguimiento y tu cuadro de mando. Con los guiones y los mensajes ya escritos en cada punto.</p>
       <div class="botonera">
         <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
         <a href="#caja" class="btn btn-fantasma">Ver los manuales</a>
       </div>
-      <p class="hero-cruce">¿Aún sin oferta cerrada? Empieza por el <a href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 01 · La Oferta ↗</a> · ¿Ya vendiste? Sigue con el <a href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 02 · La Entrega ↗</a></p>
+      <p class="hero-cruce">¿Aún sin oferta cerrada? Empieza por el <a href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 01 · La Oferta ↗</a> · ¿Ya vendiste? Sigue con el <a href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 02 · La Entrega ↗</a> · Toda la colección, en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a></p>
     </div>
 
     <aside class="hero-panel" aria-label="Así se ve el camino: del comentario a la cita">
@@ -557,30 +584,32 @@ const PASOS = [
 {
   num:"Paso 01", ico:"sesion",
   titulo:"Tu guión de llamada",
-  sub:"La estructura de la llamada que cierra: siete bloques, del hola al sí. Para interiorizar y decir con tus palabras, no para recitar.",
-  chips:["40-60 min por llamada","Antes de tu primera llamada","Lo haces tú"],
-  queEs:H(`<p>El guión completo de tu llamada de venta, en <strong>siete bloques que van en orden</strong>: apertura y marco, diagnóstico, tu método, transición al compromiso, la inversión y el silencio, objeciones y cierre.</p>
-    <p><strong>No es para leerlo palabra por palabra.</strong> Es para interiorizar la estructura y decirla con tus palabras. Léelo en voz alta dos o tres veces antes de tu primera llamada; donde tropieces, cámbialo. Si suena a folleto, no sirve.</p>
-    <p style="margin-bottom:0">Una cosa más, y es la regla que sostiene todo el kit: <strong>el precio solo existe aquí, dentro de la llamada, dicho en voz alta.</strong> Nunca se escribe antes: ni en un DM, ni en la landing, ni en un recordatorio.</p>`),
+  sub:"Las 6 fases del método, con sus tiempos: 45 minutos donde 30 son de escucha. Un andamio para interiorizar, no un guión para recitar.",
+  chips:["45-60 min por llamada","30 min son de escucha","Lo haces tú"],
+  queEs:H(`<p>La estructura completa de tu llamada de venta, en <strong>6 fases con su tiempo repartido</strong>: apertura y marco (2-3 min), diagnóstico (30 min — el corazón), transición, tu método (5 min), el chequeo de temperatura (3 min) y la inversión con su silencio (3 min). Después, si aparecen, las objeciones (manual en la caja) y el cierre.</p>
+    <p><strong>No es para leerlo palabra por palabra: el método rechaza el guión rígido.</strong> Es un andamio: interioriza la estructura, dila con tus palabras, y cuando la domines vuela solo. Léelo en voz alta dos o tres veces antes de tu primera llamada; donde tropieces, cámbialo. Si suena a folleto, no sirve.</p>
+    <p style="margin-bottom:0">Una cosa más, y es la regla que sostiene todo el kit: <strong>el precio solo existe aquí, dentro de la llamada, dicho en voz alta.</strong> Nunca se escribe antes: ni en un DM, ni en la landing, ni en un recordatorio. Y nunca se dice sin haber diagnosticado a fondo: <em>un doctor no prescribe sin diagnosticar</em>.</p>`),
   porQue:H(`<p>El marco del principio te cambia el papel: dejas de ser el vendedor que necesita la venta y pasas a ser el experto que selecciona. Decirle al lead que puede recibir un "no" baja su guardia y sube tu autoridad.</p>
-    <p>El diagnóstico es donde se gana o se pierde la venta: <strong>hablas el 20%, escuchas el 80%</strong>. Cuando al final le resumes su situación con sus propias palabras y te dice "sí, es exactamente eso", la venta está a medias hecha. Solo has repetido lo que él dijo. Por eso funciona.</p>
-    <p>Y después del precio, el primero que habla pierde. El 80% de los dueños pierde la venta ahí: por hablar de más.</p>`),
-  plantilla:H(`<p style="margin:0 0 8px"><strong>Antes de descolgar (5 min):</strong> tu Banco de Evidencia delante (paso 2), la nota del formulario leída (paso 3) y este recordatorio: <em>el objetivo no es cobrar, es averiguar si esta persona es cliente para ti.</em></p>
-    <div class="campo"><b>Bloque 1 · Apertura y marco (3-5 min)</b>Rompe el hielo 30 segundos y pon el marco: "Te cuento cómo vamos a hacer esto. No es una llamada para venderte nada a lo loco. Es una sesión para ver tu situación y ver si esto que hago es para ti o no lo es. Trabajo con poca gente. Te voy a hacer preguntas, algunas directas, y al final te voy a decir con honestidad una de dos cosas: o creo que puedo ayudarte y te explico qué significaría trabajar juntos, o creo que no soy la persona para ti y te lo digo a la cara. ¿Te parece bien que funcione así?" <strong>Espera el sí.</strong> Es tu primer acuerdo.</div>
-    <div class="campo"><b>Bloque 2 · Diagnóstico (20-25 min · aquí se decide)</b>Cinco preguntas madre; sobre cada respuesta, tira del hilo ("¿y eso qué te supone?" · "cuéntame más" · "¿desde cuándo?"):<br>1 · <span class="hueco">PUNTO A</span> "Cuéntame dónde estás ahora con eso. Sin adornos, como a un amigo."<br>2 · <span class="hueco">PUNTO B</span> "Si esto se resolviera del todo, ¿cómo sería tu día a día? Ponme el escenario."<br>3 · <span class="hueco">LA BRECHA</span> "¿Qué es lo que más te frena? ¿Qué es lo que más te duele de estar donde estás?" — y callas. Apunta su respuesta literal: son las palabras que usarás luego.<br>4 · <span class="hueco">INTENTOS</span> "¿Qué has probado ya? ¿Qué pasó? ¿Por qué crees que no funcionó?"<br>5 · <span class="hueco">COSTE DE NO ACTUAR</span> "Y si dentro de un año sigues exactamente igual... ¿qué? ¿Qué te supone eso?" — despacio, y silencio.<br><br><strong>Cierre del bloque, con SUS palabras:</strong> "Déjame ver si te he entendido: estás en <span class="hueco">A</span>, quieres llegar a <span class="hueco">B</span>, te frena <span class="hueco">DOLOR</span>, probaste <span class="hueco">INTENTO</span> y te juegas <span class="hueco">CONSECUENCIA</span>. ¿Es así o me he dejado algo?"</div>
-    <div class="campo"><b>Bloque 3 · Tu método (8-10 min)</b>Puente: "Lo que me cuentas es exactamente el tipo de situación con la que trabajo. Y no es casualidad que lo que probaste no funcionara: <span class="hueco">POR QUÉ FALLAN LOS INTENTOS TÍPICOS</span>." Presenta <span class="hueco">TU MÉTODO</span> en dos o tres frases, sin marketing, y ancla con uno o dos casos en modo historia, no en modo folleto. <strong>Promete el sistema, no el resultado:</strong> "No te prometo <span class="hueco">RESULTADO</span> en <span class="hueco">PLAZO</span>, porque eso depende también de ti. Lo que sí te prometo: <span class="hueco">ENTREGABLES</span> y acceso directo a mí." Y tu ventaja de dueño: "Yo no soy un vendedor que cobra y desaparece. Voy a estar contigo cada semana durante <span class="hueco">DURACIÓN</span>. Si esto sale mal, es mi problema, no solo el tuyo."</div>
-    <div class="campo"><b>Bloque 4 · Transición (2-3 min)</b>"Antes de contarte cómo sería trabajar juntos, dime con sinceridad: ¿esto que te he descrito es lo que estás buscando?" Si duda, vuelve al diagnóstico. No pases a números sin un sí emocional.</div>
-    <div class="campo"><b>Bloque 5 · La inversión y el silencio (3-5 min)</b>Primero el stack, sin adjetivos vacíos: "Trabajar conmigo incluye <span class="hueco">ENTREGABLE 1</span>, <span class="hueco">2</span>, <span class="hueco">3</span>, durante <span class="hueco">DURACIÓN</span>." Y la cifra, una vez, con voz plana: "La inversión para entrar es de <span class="hueco">PRECIO</span>." <strong>Y ahora callas.</strong> Ni "sé que es una inversión", ni "se puede fraccionar". Nada. Cuenta hasta diez por dentro. El fraccionado se ofrece <em>después</em> de que reaccione, nunca antes.</div>
-    <div class="campo"><b>Bloque 6 · Objeciones</b>No las improvises: están las 12 en el Manual de Objeciones (caja de herramientas), con la estructura aislar → validar → reencuadrar → avanzar. Tenlo abierto en otra pestaña las primeras llamadas.</div>
-    <div class="campo"><b>Bloque 7 · Cierre (3-5 min)</b>Pide la decisión, directo y tranquilo: "Yo lo tengo claro: creo que esto es para ti. ¿Lo ves tú igual? ¿Entramos?" Tres salidas: <strong>sí hoy</strong> → enlace de pago ahí mismo, en la llamada, y lo acompañas hasta que confirme · <strong>necesita algo concreto</strong> → segunda llamada con fecha y hora fijadas AHORA, nunca "ya te escribo" · <strong>no encaja</strong> → se lo dices a la cara, con cariño, y lo anotas para retomarlo. Un "no" honesto construye reputación y a veces vuelve como "sí".</div>`),
+    <p>El diagnóstico es donde se gana o se pierde la venta: <strong>hablas el 20%, escuchas el 80%, y encontrar el problema real es el 80% de todo en ventas</strong>. Cuando al final le resumes su situación con sus propias palabras y te dice "sí, es exactamente eso", la venta está a medias hecha. Solo has repetido lo que él dijo. Por eso funciona. Y por eso <strong>el 80% de los cierres de los mejores llegan sin objeciones</strong>: la objeción es casi siempre síntoma de un diagnóstico incompleto, no un paso obligatorio.</p>
+    <p>Y después del precio, el primero que habla pierde. Está medido: <strong>sostener el silencio 8 segundos tras la pregunta final sube las ventas un tercio</strong>. La mayoría lo rompe a los 2 o 3, por hablar de más.</p>`),
+  plantilla:H(`<p style="margin:0 0 8px"><strong>Antes de descolgar (5 min): el bosquejo a mano.</strong> Tu Banco de Evidencia delante (paso 2), la nota del formulario leída (paso 3), y en un papel: <strong>1 objetivo</strong> de la llamada (cerrar / no cerrar / cualificar), <strong>3 objetivos secundarios</strong> y <strong>3 preguntas por cada uno</strong>. Escribirlo a mano antes de cada llamada no es opcional: es lo que convierte el diagnóstico en preparación y no en improvisación. Y este recordatorio: <em>el objetivo no es cobrar, es averiguar si esta persona es cliente para ti.</em></p>
+    <div class="campo"><b>Fase 1 · Apertura y marco (2-3 min)</b>Rompe el hielo 30 segundos y pon el marco: "Te cuento cómo vamos a hacer esto. No es una llamada para venderte nada a lo loco. Es una sesión para ver tu situación y ver si esto que hago es para ti o no lo es. Trabajo con poca gente. Te voy a hacer preguntas, algunas directas, y al final te voy a decir con honestidad una de dos cosas: o creo que puedo ayudarte y te explico qué significaría trabajar juntos, o creo que no soy la persona para ti y te lo digo a la cara. ¿Te parece bien que funcione así?" <strong>Espera el sí.</strong> Es tu primer acuerdo.</div>
+    <div class="campo"><b>Fase 2 · Diagnóstico (30 min · aquí se decide la venta)</b>Cinco preguntas madre; sobre cada respuesta, tira del hilo ("¿y eso qué te supone?" · "cuéntame más" · "¿desde cuándo?"):<br>1 · <span class="hueco">PUNTO A</span> "Cuéntame dónde estás ahora con eso. Sin adornos, como a un amigo."<br>2 · <span class="hueco">PUNTO B</span> "Si esto se resolviera del todo, ¿cómo sería tu día a día? Ponme el escenario."<br>3 · <span class="hueco">LA BRECHA</span> "¿Qué es lo que más te frena? ¿Qué es lo que más te duele de estar donde estás?" — y callas. Apunta su respuesta literal: son las palabras que usarás luego.<br>4 · <span class="hueco">INTENTOS</span> "¿Qué has probado ya? ¿Qué pasó? ¿Por qué crees que no funcionó?"<br>5 · <span class="hueco">COSTE DE NO ACTUAR</span> "Y si dentro de un año sigues exactamente igual... ¿qué? ¿Qué te supone eso?" — despacio, y silencio.<br><br><strong>Regla del número:</strong> no avances hasta haber puesto <em>una cifra concreta</em> al problema (qué le cuesta al mes, cuántas horas, cuántos clientes) y otra al objetivo. Sin número no hay brecha; sin brecha no hay decisión.<br><br><strong>Cierre de la fase, con SUS palabras:</strong> "Déjame ver si te he entendido: estás en <span class="hueco">A</span>, quieres llegar a <span class="hueco">B</span>, te frena <span class="hueco">DOLOR</span>, probaste <span class="hueco">INTENTO</span> y te juegas <span class="hueco">CONSECUENCIA</span>. ¿Es así o me he dejado algo?"</div>
+    <div class="campo"><b>Fase 3 · Transición (1-2 min)</b>Pide permiso para presentar, sin prisa: "Por lo que me cuentas, esto es exactamente el tipo de situación con la que trabajo. ¿Quieres que te cuente cómo lo trabajaría contigo?" Si duda, vuelve al diagnóstico. No presentes nada sin un sí.</div>
+    <div class="campo"><b>Fase 4 · Tu método (5 min · máximo)</b>Primero el porqué: "No es casualidad que lo que probaste no funcionara: <span class="hueco">POR QUÉ FALLAN LOS INTENTOS TÍPICOS</span>." Presenta <span class="hueco">TU MÉTODO</span> en dos o tres frases, sin marketing, y ancla con uno o dos casos en modo historia, no en modo folleto. <strong>Promete el sistema, no el resultado:</strong> "No te prometo <span class="hueco">RESULTADO</span> en <span class="hueco">PLAZO</span>, porque eso depende también de ti. Lo que sí te prometo: <span class="hueco">ENTREGABLES</span> y acceso directo a mí." Y tu ventaja de dueño: "Yo no soy un vendedor que cobra y desaparece. Voy a estar contigo cada semana durante <span class="hueco">DURACIÓN</span>. Si esto sale mal, es mi problema, no solo el tuyo." <strong>Cinco minutos bastan:</strong> si el diagnóstico fue bueno, el pitch es corto.</div>
+    <div class="campo"><b>Fase 5 · El chequeo de temperatura (3 min · antes del precio, siempre)</b>Cuatro preguntas, del 1 al 10, antes de decir una sola cifra:<br>1 · "Del 1 al 10, ¿cuánto confías en que <em>este proceso</em> puede llevarte de <span class="hueco">A</span> a <span class="hueco">B</span>?"<br>2 · "Del 1 al 10, ¿cuánto confías en <em>mí</em> para acompañarte?"<br>3 · "Del 1 al 10, ¿cuánto confías en <em>ti</em> para hacer tu parte?"<br>4 · "¿Hay algo externo — pareja, socio, agenda — que te impediría empezar si decides que sí?"<br><strong>La regla del 8:</strong> con un 8 o más en las tres primeras y sin impedimentos, pasas al precio. Con menos de 8, NO pases al precio: pregunta "¿qué falta para que eso sea un 9?" y vuelve a la fase que haga falta. Presentar precio a un 6 es regalar la objeción.</div>
+    <div class="campo"><b>Fase 6 · La inversión y el silencio (3 min)</b>Primero el stack, sin adjetivos vacíos: "Trabajar conmigo incluye <span class="hueco">ENTREGABLE 1</span>, <span class="hueco">2</span>, <span class="hueco">3</span>, durante <span class="hueco">DURACIÓN</span>." Y la cifra, una vez, con voz plana: "La inversión para entrar es de <span class="hueco">PRECIO</span>." <strong>Y ahora callas: 5 segundos como mínimo, y si aguantas 8, mejor</strong> — está medido que sostener 8 segundos tras la pregunta final sube las ventas un tercio. El silencio se sostiene desde el diafragma, con la cara tranquila; puede estirarse hasta el minuto si hace falta. Ni "sé que es una inversión", ni "se puede fraccionar". Nada. El fraccionado se ofrece <em>después</em> de que reaccione, nunca antes.</div>
+    <div class="campo"><b>Y después · objeciones y cierre</b>Si aparece una pega, al Manual de Objeciones (caja de herramientas): aislar, transferir la presión, no responder de frente, tono calmado. Tenlo abierto las primeras llamadas. Y el cierre, directo y tranquilo: "Yo lo tengo claro: creo que esto es para ti. ¿Lo ves tú igual? ¿Entramos?" Tres salidas: <strong>sí hoy</strong> → enlace de pago ahí mismo, en la llamada, y lo acompañas hasta que confirme · <strong>necesita algo concreto</strong> → segunda llamada con fecha y hora fijadas AHORA, nunca "ya te escribo" · <strong>no encaja</strong> → se lo dices a la cara, con cariño, y lo anotas. Un "no" honesto construye reputación y a veces vuelve como "sí". <strong>Jamás cierres a un mal cliente:</strong> cerrar a alguien que se arrepiente al día siguiente es una devolución, una mala reseña y energía perdida. El objetivo no es la venta: es la retención.</div>`),
   ejemplo:H(`<p>Valeria (coach, programa "Energía Propia", 1.980 USD) cierra así el diagnóstico con Marta:</p>
     <p><em>"Déjame ver si te he entendido. Terminas cada día vacía, con el negocio funcionando pero tú en reserva. Quieres llegar a final de mes con energía para tu familia, no solo para tus clientas. Lo que más te frena es que cada intento de cuidarte se cae a la segunda semana. Probaste dos nutricionistas y una app, y se cayeron porque los planes no cabían en tu agenda real. Y si en un año sigues igual, me has dicho que temes acabar odiando el negocio que tú misma montaste. ¿Es así o me he dejado algo?"</em></p>
     <p><em>"Es exactamente eso."</em></p>
-    <p>Presenta su método en dos frases: <em>"Construyo contigo un sistema de comida y movimiento diseñado alrededor de tu agenda real, lo documento por escrito y te acompaño hasta que se sostiene solo. No te enseño a comer sano: eso ya lo intentaste cuatro veces."</em> Y el precio: <em>"La inversión para entrar en Energía Propia es de mil novecientos ochenta dólares."</em> Silencio. Marta lo rompe primero: "¿Y cómo serían los pagos?" — y eso ya no es una objeción, es logística.</p>`),
+    <p>Presenta su método en dos frases: <em>"Construyo contigo un sistema de comida y movimiento diseñado alrededor de tu agenda real, lo documento por escrito y te acompaño hasta que se sostiene solo. No te enseño a comer sano: eso ya lo intentaste cuatro veces."</em></p>
+    <p>Antes del precio, el chequeo: <em>"Del 1 al 10, ¿cuánto confías en que este camino te saca del modo reserva?" — "Un 9." — "¿Y en ti, para hacer tu parte?" — "Un 8, siendo honesta."</em> Solo entonces: <em>"La inversión para entrar en Energía Propia es de mil novecientos ochenta dólares."</em> Silencio — Valeria cuenta los segundos por dentro. Marta lo rompe primero: "¿Y cómo serían los pagos?" — y eso ya no es una objeción, es logística.</p>`),
   errores:[
     {t:"Hablar más del 20%", d:"Si al colgar sabes poco más del lead que al descolgar, has dado una charla, no has hecho un diagnóstico. Pregunta y calla."},
-    {t:"Rellenar el silencio después del precio", d:"Di la cifra y aguanta. Añadir 'pero se puede fraccionar' antes de que reaccione es justificarte, y baja el frame."},
-    {t:"Responder la primera objeción sin aislar", d:"'Aparte de esto, ¿hay algo más que te frene?' Si hay tres pegas debajo, resolver la primera no sirve de nada."},
+    {t:"Decir el precio sin chequeo de temperatura", d:"Presentar la cifra a alguien que va por un 6 es fabricar la objeción tú mismo. Primero el 8, luego el precio."},
+    {t:"Rellenar el silencio después del precio", d:"Di la cifra y aguanta 5-8 segundos como mínimo. Añadir 'pero se puede fraccionar' antes de que reaccione es justificarte, y baja el frame."},
+    {t:"Arrancar con emoción de vendedor", d:"El entusiasmo exagerado del minuto uno delata al que viene a vender. Tono de médico: cálido, tranquilo, sin prisa. Y sin hablar rápido: la velocidad transmite nervios."},
     {t:"Prometer el resultado en vez del sistema", d:"El resultado depende también del cliente. Promete lo que controlas: los entregables y tu presencia. Te protege y es más creíble."},
     {t:"Terminar sin siguiente paso concreto", d:"'Ya me dices' es un no en diferido. Segunda llamada con fecha y hora en el calendario, o enlace de pago en la llamada."}
   ],
@@ -624,16 +653,17 @@ const PASOS = [
   titulo:"La nota de agenda",
   sub:"Las respuestas del formulario, visibles junto a la cita. Para entrar a cada llamada con los deberes hechos.",
   chips:["1 hora de montaje","Antes de la primera cita","Se monta una vez en GHL"],
-  queEs:H(`<p>Un circuito que montas una vez en tu GHL: cuando alguien agenda, rellena un formulario de 3-5 preguntas; sus respuestas se guardan en campos personalizados y un workflow las escribe <strong>como nota visible en su ficha</strong>. Antes de cada llamada, abres el contacto, lees la nota, y entras sabiendo su caso.</p>
+  queEs:H(`<p>Un circuito que montas una vez en tu GHL: cuando alguien agenda, rellena un formulario de 4-6 preguntas — <strong>que se conteste en 2 minutos como máximo</strong> —; sus respuestas se guardan en campos personalizados y un workflow las escribe <strong>como nota visible en su ficha</strong>. Antes de cada llamada, abres el contacto, lees la nota, y entras sabiendo su caso.</p>
     <p style="margin-bottom:0">Es lo que te permite decir en la llamada "me he mirado tu caso" — y que sea verdad. La nota es interna: el lead solo ve el formulario al agendar; el resto ocurre por detrás.</p>`),
   porQue:H(`<p>Estas respuestas son el Bloque 2 de tu guión medio hecho antes de descolgar: ya sabes su dolor, su objetivo, qué probó y cómo de decidido está. La llamada empieza en el minuto uno, no en el diez.</p>
     <p>Y el formulario también filtra: quien no está dispuesto a contestar cuatro preguntas para verte, tampoco iba a estar dispuesto a trabajar en serio.</p>`),
-  plantilla:H(`<p style="margin:0 0 8px"><strong>Las preguntas del formulario</strong> (pocas y potentes, adaptadas a tu nicho):</p>
+  plantilla:H(`<p style="margin:0 0 8px"><strong>Las preguntas del formulario</strong> (pocas y potentes, adaptadas a tu nicho — la referencia validada son 6 preguntas que se contestan en menos de 2 minutos):</p>
     <ul>
       <li>¿Qué es lo que más te está costando ahora mismo con <span class="hueco">TU TEMA</span>?</li>
       <li>¿A dónde te gustaría llegar en <span class="hueco">PLAZO</span>?</li>
       <li>¿Qué has probado ya para resolverlo?</li>
       <li>Del 1 al 10, ¿cómo de decidido estás a resolver esto ahora?</li>
+      <li>¿Es una decisión que tomas tú, o la tomáis entre dos (pareja, socio)?</li>
       <li>(Opcional) Tu WhatsApp, si el calendario no lo pide ya.</li>
     </ul>
     <div class="campo"><b>Plantilla de la nota (la que compone el workflow)</b>=== CASO PARA LA SESIÓN ===<br>Dolor principal: <span class="hueco">RESPUESTA 1</span><br>A dónde quiere llegar: <span class="hueco">RESPUESTA 2</span><br>Qué ha probado: <span class="hueco">RESPUESTA 3</span><br>Nivel de decisión (1-10): <span class="hueco">RESPUESTA 4</span><br>===========================</div>
@@ -662,17 +692,21 @@ const PASOS = [
 {
   num:"Paso 04", ico:"chat",
   titulo:"Tu rutina de DMs",
-  sub:"30-45 minutos al día, a la misma hora: responder, reactivar, abrir. De ahí sale la agenda. Sin vender en el chat.",
-  chips:["30-45 min al día","Todos los días","Constancia > intensidad"],
-  queEs:H(`<p>Un bloque diario fijo con tres tareas, en este orden: <strong>1)</strong> responder el 100% del inbound (quien te escribió, comentó o reaccionó — los más calientes, primero y todos), <strong>2)</strong> reactivar conversaciones que quedaron en el aire, <strong>3)</strong> abrir conversaciones nuevas con gente que encaja con tu avatar — pocas y buenas, con un detalle real de la persona.</p>
+  sub:"30-45 minutos al día, a la misma hora: responder, reactivar, abrir. Mínimo 5 conversaciones nuevas, techo de 50 mensajes. Sin vender en el chat.",
+  chips:["30-45 min al día, todos los días","Mín. 5 nuevas · máx. 50 mensajes","Constancia > intensidad"],
+  queEs:H(`<p>Un bloque diario fijo con tres tareas, en este orden: <strong>1)</strong> responder el 100% del inbound (quien te escribió, comentó o reaccionó — los más calientes, primero y todos), <strong>2)</strong> reactivar conversaciones que quedaron en el aire, <strong>3)</strong> abrir conversaciones nuevas con gente que encaja con tu avatar — con un detalle real de la persona.</p>
+    <p><strong>El volumen tiene números, para que sea auditable:</strong> mínimo <strong>5 conversaciones nuevas al día</strong> — por debajo de eso, no hay rutina, hay azar — y techo de <strong>50 mensajes al día en total</strong>: más es spam con tu cara, y además te juegas la cuenta.</p>
     <p style="margin-bottom:0"><strong>La regla de oro: en el DM no se vende.</strong> Ni pitch, ni precio, ni link de compra a la primera. El DM abre conversación y, cuando hay encaje, invita a la sesión. La venta se cierra en la llamada (paso 1).</p>`),
   porQue:H(`<p>Las primeras ventas no llegan solas: llegan de hablar con gente todos los días. Es mejor un número pequeño constante que cien conversaciones un lunes y cero el resto de la semana.</p>
-    <p>La gente huele el "hola, te vendo algo" a un kilómetro y cierra la puerta. Por eso la apertura conecta en vez de vender: una sola pregunta fácil, un detalle real, cero enlaces. Y por eso el precio jamás viaja por escrito: escribirlo convierte la decisión en "¿me lo puedo permitir?" antes de que exista la conversación.</p>`),
+    <p>La gente huele el "hola, te vendo algo" a un kilómetro y cierra la puerta. Por eso la apertura conecta en vez de vender: una sola pregunta fácil, un detalle real, cero enlaces. Y por eso el precio jamás viaja por escrito: escribirlo convierte la decisión en "¿me lo puedo permitir?" antes de que exista la conversación.</p>
+    <p style="margin-bottom:0">Y en el chat, <strong>lo simple gana</strong>: un flujo de dos mensajes directos supera a uno de diez con mil ramas. Cada mensaje de más antes de la invitación es una puerta por la que se escapa gente.</p>`),
   plantilla:H(`<p style="margin:0 0 8px"><strong>Aperturas según el origen</strong> (una pregunta, cero pitch, termina preguntando):</p>
     <div class="mensaje"><div class="de">A · COMENTÓ TU CONTENIDO</div>"¡Ey! Vi que te quedaste con lo de <span class="hueco">TEMA DEL POST</span>. ¿Es algo que estés viviendo ahora con <span class="hueco">TU TEMA</span>, o más por curiosidad?"</div>
     <div class="mensaje"><div class="de">B · RESPONDIÓ A UNA HISTORIA</div>"Gracias por responder 🙌. ¿Cómo lo llevas tú con <span class="hueco">TEMA</span>?"</div>
-    <div class="mensaje"><div class="de">C · SALIENTE EN FRÍO (con contexto real, nunca copiar-pegar)</div>"Hola <span class="hueco">NOMBRE</span>, te vi comentando en <span class="hueco">REFERENTE</span> sobre <span class="hueco">TEMA</span> y me sentí identificado. ¿Estás metido en esto o empezando?"</div>
-    <div class="mensaje"><div class="de">D · REFERIDO</div>"Hola <span class="hueco">NOMBRE</span>, me pasó tu contacto <span class="hueco">QUIEN REFIERE</span>, dice que andas dándole vueltas a <span class="hueco">TEMA</span>. ¿Te viene bien que te escriba por aquí?"</div>
+    <div class="mensaje"><div class="de">C · DIO LIKE A TU VÍDEO (tres variantes probadas, elige una)</div>1 · "Gracias por darle like al vídeo. Si me permites preguntar, ¿cómo resonó contigo?"<br>2 · "Vi que le diste like al vídeo. Solo curiosidad: ¿necesitas ayuda con <span class="hueco">LO QUE RESUELVE TU VÍDEO</span>?"<br>3 · "Gracias por el like. Te escribo porque me da curiosidad si el vídeo resonó contigo porque necesitas ayuda con <span class="hueco">TEMA</span>."</div>
+    <div class="mensaje"><div class="de">D · SALIENTE EN FRÍO (con contexto real, nunca copiar-pegar)</div>"Hola <span class="hueco">NOMBRE</span>, te vi comentando en <span class="hueco">REFERENTE</span> sobre <span class="hueco">TEMA</span> y me sentí identificado. ¿Estás metido en esto o empezando?"</div>
+    <div class="mensaje"><div class="de">E · REFERIDO</div>"Hola <span class="hueco">NOMBRE</span>, me pasó tu contacto <span class="hueco">QUIEN REFIERE</span>, dice que andas dándole vueltas a <span class="hueco">TEMA</span>. ¿Te viene bien que te escriba por aquí?"</div>
+    <div class="mensaje"><div class="de">F · TIENES SU TELÉFONO (compró tu producto de entrada o lo dejó en un formulario)</div>La llamada gana al DM. Marco de atención al cliente, no de venta: "Te llamo porque compraste <span class="hueco">TU PRODUCTO</span> y quiero asegurarme de que le estás sacando partido. ¿Cómo lo llevas?" — escuchas, ayudas de verdad, y solo si hay dolor real giras a la invitación. Si no contesta, <strong>segunda llamada inmediata</strong> (double dial): multiplica la probabilidad de que lo coja.</div>
     <p style="margin:14px 0 8px"><strong>De "hola" a detectar encaje</strong> — dos o tres preguntas naturales, sin interrogar:</p>
     <ul><li>"¿Y qué es lo que más te está costando ahora con eso?"</li><li>"¿Desde cuándo le das vueltas?"</li><li>"¿Has probado algo para resolverlo?"</li></ul>
     <div class="mensaje"><div class="de">LA INVITACIÓN (solo cuando hay dolor real + encaje)</div>"Oye, por lo que me cuentas creo que te puedo ayudar de verdad con esto. Lo que hago con gente en tu situación no se explica bien por chat. ¿Te parece si nos vemos 30-40 min en una <span class="hueco">NOMBRE DE TU SESIÓN</span>? Miramos tu caso a fondo y, si veo que puedo ayudarte, te cuento cómo; y si no, te lo digo con sinceridad. ¿Te encaja?" → y el enlace de tu calendario.</div>
@@ -701,8 +735,9 @@ const PASOS = [
   chips:["1 hora de montaje","En cuanto alguien agende","Se automatiza en GHL"],
   queEs:H(`<p>Dos piezas que trabajan juntas. <strong>Uno:</strong> un vídeo de 30-45 segundos, grabado con el móvil una sola vez, que el lead recibe justo después de agendar. Deja de ser "una llamada con un desconocido de internet" y pasa a ser "una cita con esa persona que me habló en vídeo". <strong>Dos:</strong> tres recordatorios automáticos — 24 horas, 4 horas y 15 minutos antes — en WhatsApp y/o email.</p>
     <p style="margin-bottom:0">Los dos mantienen el marco de la sesión (ver su caso, ver si encajáis) y ninguno menciona precio, programa ni la palabra "gratis".</p>`),
-  porQue:H(`<p>Una cita agendada no es una cita asegurada: entre la reserva y la llamada, la vida se le echa encima. El combo cara en vídeo + recordatorios cálidos es lo que de verdad tumba el no-show.</p>
-    <p>Y el recordatorio de 24h pide una reconfirmación real (un 👍). Quien no confirma es tu señal para un toque personal a mano: un no-show avisado con tiempo es un hueco que recuperas.</p>`),
+  porQue:H(`<p>Porque <strong>la venta se cierra entre la reserva y la llamada.</strong> Ese tramo — confirmación, vídeo, recordatorios — es el flujo más importante de todo tu sistema de ventas: la persona llega a la sesión habiendo visto tu cara, un caso real y, si lo tienes, tu vídeo de presentación. Llega templada, no fría. Por eso en la confirmación, junto al vídeo, van también <strong>un caso de éxito tuyo</strong> (del Banco de Evidencia) y tu <strong>VSL</strong> si existe.</p>
+    <p>Una cita agendada no es una cita asegurada: entre la reserva y la llamada, la vida se le echa encima. El combo cara en vídeo + recordatorios cálidos es lo que de verdad tumba el no-show.</p>
+    <p style="margin-bottom:0">Y el recordatorio de 24h pide una reconfirmación real (un 👍). Quien no confirma es tu señal para un toque personal a mano: un no-show avisado con tiempo es un hueco que recuperas.</p>`),
   plantilla:H(`<p style="margin:0 0 8px"><strong>El vídeo (30-45s, móvil en vertical, luz de frente, mirando a cámara).</strong> Cinco piezas — apréndete el orden, no el texto:</p>
     <ul>
       <li><strong>1 · Saludo + gracias</strong> (0-8s): "Gracias por reservar tu hueco. Que hayas dado este paso ya me dice que vas en serio."</li>
@@ -725,7 +760,7 @@ const PASOS = [
     {t:"Emails sin enlace de baja", d:"El enlace de baja es obligatorio en todos los emails (lo genera tu cuenta). Sin él incumples RGPD y hundes tu entregabilidad."},
     {t:"Ignorar al que no confirma el 👍", d:"Esa es justo la señal. Toque personal a mano, y si no puede, mueves la cita y recuperas el hueco."}
   ],
-  ghl:"Disparador: cita agendada. Tres envíos programados hacia atrás desde la hora de la cita (−24h, −4h, −15min) con tokens de fecha y hora del calendario. El vídeo va en el primer mensaje de confirmación, antes de los recordatorios. Y activa la palabra de baja para SMS/WhatsApp en tu location.",
+  ghl:"Disparador: cita agendada. Tres envíos programados hacia atrás desde la hora de la cita (−24h, −4h, −15min) con tokens de fecha y hora del calendario. El vídeo va en el primer mensaje de confirmación, antes de los recordatorios. Y activa la palabra de baja para SMS/WhatsApp en tu location. Ojo si usas WhatsApp: los mensajes salientes automáticos van como plantillas que Meta aprueba antes (categoría Utility; las variables no pueden abrir ni cerrar el texto; los emojis pueden reclasificarla a Marketing y tumbarla). La aprobación tarda de minutos a 24h — pídela antes de tu primera cita real.",
   ayuda:"Sistemas GHL con María José los miércoles para el workflow. El vídeo lo grabas hoy: móvil, ventana de frente, tres intentos y te quedas con el segundo."
 }
 ];
@@ -734,14 +769,19 @@ const CAJA_H = [
 {
   ico:"escudo", et:"Cuando te pongan una pega",
   titulo:"Manual de objeciones",
-  resumen:"Las 12 objeciones de siempre, con la estructura aislar → validar → reencuadrar → avanzar. Y huecos para las de tu nicho.",
+  resumen:"La fórmula del método (aislar, transferir la presión, no responder de frente, tono calmado), las 12 de siempre resueltas y los 2 cierres universales.",
   cuerpo:H(`<p>Las mismas objeciones aparecen una y otra vez. Cuando las tienes mapeadas dejan de darte miedo: sabes que van a llegar y sabes qué contestar. <strong>Ten este manual abierto en tus primeras llamadas.</strong> No pasa nada por mirarlo.</p>
-  <div class="bloque b-neutro"><div class="bloque-cab">El marco · aplica a las 12</div><div class="bloque-cont">
+  <p>Y antes de nada, el dato que reordena todo: <strong>el 80% de los cierres de los mejores llegan sin objeciones</strong>, o solo con logística. Si en tus llamadas llueven pegas, el problema casi nunca está aquí: está en el diagnóstico (paso 1). Este manual es el paracaídas, no el plan de vuelo.</p>
+  <div class="bloque b-neutro"><div class="bloque-cab">La fórmula · aplica a todas</div><div class="bloque-cont">
     <p><strong>1 · Aislar.</strong> "Buena pregunta. Aparte de esto, ¿hay algo más que te frene, o si resolvemos esto entrarías?" Si hay más cosas debajo, sácalas todas antes de responder ninguna: resolver la objeción de fachada no sirve.</p>
-    <p><strong>2 · Validar.</strong> Nunca discutas de frente. Primero dale la razón en algo: "Te entiendo perfectamente." / "Tiene todo el sentido que lo pienses."</p>
-    <p><strong>3 · Reencuadrar.</strong> Cambia el ángulo: que vea lo mismo desde otro sitio.</p>
-    <p><strong>4 · Avanzar.</strong> Termina siempre con una pregunta que devuelva la decisión. Nunca cierres una objeción con un punto: ciérrala con "?".</p>
-    <p style="margin-bottom:0"><strong>Regla de oro:</strong> la objeción casi nunca es lo que dice. "Es caro" suele ser "no veo el valor" o "no me fío". Descubre cuál de las dos es antes de responder.</p>
+    <p><strong>2 · Transferir la presión.</strong> La objeción no es tuya: devuélvesela con una pregunta. "¿Caro comparado con qué?" · "¿Qué necesitarías ver para quedarte tranquilo?" El que pregunta dirige; el que se justifica pierde.</p>
+    <p><strong>3 · No responder de frente.</strong> La objeción casi nunca es lo que dice: "es caro" suele ser "no veo el valor" o "no me fío". Descubre qué hay debajo antes de contestar nada — responder literal a la objeción literal es pelearte con una cortina de humo.</p>
+    <p><strong>4 · Tono calmado, casi con humor.</strong> El mismo tono cálido del resto de la llamada, jamás defensivo. Si tu voz cambia cuando llega la pega, la pega gana.</p>
+    <p style="margin-bottom:0"><strong>Y siempre: avanzar.</strong> Termina con una pregunta que devuelva la decisión. Nunca cierres una objeción con un punto: ciérrala con "?".</p>
+  </div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">El mapa real: solo hay 5</div><div class="bloque-cont">
+    <p>Debajo de todas las variantes solo viven <strong>cinco objeciones de verdad: dinero, tiempo, miedo/confianza, pareja o socio, y logística</strong>. Y dos de las más frecuentes — "me lo tengo que pensar" y "lo hablo con mi pareja" — son <strong>pantallas de humo</strong> que casi siempre desembocan en dinero, miedo o logística. Tu trabajo no es responder la frase: es averiguar cuál de las cinco es.</p>
+    <p style="margin-bottom:0"><strong>Los 2 cierres universales</strong> (para cuando no sabes cuál aplicar): <em>"Dime una cosa, ¿cuál es tu principal preocupación?"</em> — y silencio: la respuesta ES la objeción real. Y el cierre del porqué: cuando la razón para no entrar es el propio problema ("estoy muy liado", "no me lo puedo permitir"), <em>"Pues creo que eso que me dices es exactamente la razón por la que deberías hacerlo — llevas así <span class="hueco">TIEMPO</span> y solo ha ido a más. ¿Hasta cuándo?"</em></p>
   </div></div>
   <details class="desplegable"><summary>1 · "Es caro" / "No me lo esperaba tan alto"</summary><div class="dcont"><p><strong>Qué hay debajo:</strong> o no ve el valor, o no se fía del resultado.</p><p><strong>Aísla la raíz:</strong> "¿Es caro comparado con qué exactamente? ¿O es más bien que todavía no ves claro que vaya a funcionar en tu caso?"</p><p><strong>Reencuadres:</strong> si compara precios — "Comparado con lo barato, sí, cuesta más. Pero eso ya lo probaste, y por eso estamos hablando: lo barato te ha salido caro." Si duda del resultado — vuelves a la evidencia. Y el coste de no actuar: "¿Cuánto te está costando NO resolver esto? Antes me dijiste que si seguías igual un año, te jugabas eso. También tiene precio; solo que no lo ves en una factura."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si el dinero no fuera el tema, ¿lo harías? Entonces el tema no es si vale la pena, es cómo hacerlo posible. Vamos a verlo."</p></div></details>
   <details class="desplegable"><summary>2 · "Me lo tengo que pensar"</summary><div class="dcont"><p><strong>Qué hay debajo:</strong> casi nunca es tiempo. Es una objeción oculta que no ha dicho.</p><p><strong>Saca la verdad:</strong> "Déjame ayudarte a pensarlo aquí, que para eso estoy. Cuando alguien dice que lo tiene que pensar, normalmente es una de tres: el dinero, el tiempo, o que no termina de fiarse de que le funcione. ¿Cuál de las tres es? Sé sincero, que no pasa nada."</p><p style="margin-bottom:0"><strong>Nunca aceptes el "me lo pienso" a la primera.</strong> No por presionar: quien se lo piensa solo casi siempre se enfría y no vuelve. Le haces un favor sacándolo ahora. Si insiste: "¿Qué información concreta te falta para decidir? Si te la puedo dar ahora, mejor que darle vueltas solo el fin de semana."</p></div></details>
@@ -755,9 +795,10 @@ const CAJA_H = [
   <details class="desplegable"><summary>10 · "Ahora no es buen momento"</summary><div class="dcont"><p><strong>Casi siempre es miedo disfrazado de calendario.</strong> "El 'buen momento' no llega solo. La gente que resuelve esto no esperó al momento perfecto: decidió que el momento era ahora. ¿Qué tendría que cambiar para que fuera buen momento? Porque igual eso que esperas es justo lo que esto resuelve."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si no es ahora, ¿cuándo exactamente? Ponme una fecha." Si no la pone, es un no disfrazado — y se lo dices con cariño.</p></div></details>
   <details class="desplegable"><summary>11 · "Mándame la información y me lo miro"</summary><div class="dcont"><p><strong>El PDF no cierra:</strong> "Te lo puedo mandar, pero te seré sincero: un documento no te resuelve lo que te resuelvo yo ahora en dos minutos. Lo que importa es si esto encaja con tu caso, y eso lo estamos viendo justo ahora. ¿Qué es lo que quieres mirar con calma?"</p><p style="margin-bottom:0"><strong>Avanza:</strong> "Si te resuelvo esa duda ahora mismo, ¿decidirías hoy, o aun así necesitas el documento?"</p></div></details>
   <details class="desplegable"><summary>12 · "Lo consulto con la almohada / decido mañana"</summary><div class="dcont"><p><strong>Quiere salir de la tensión:</strong> "Solo una cosa antes de colgar, porque quiero serte útil: mañana, cuando lo pienses solo, van a volver todas las dudas y no vas a tener a nadie que te las responda. Y lo más probable es que la vida te coma y esto se quede en 'ya lo haré'. Que es justo lo que te ha traído hasta aquí."</p><p style="margin-bottom:0"><strong>Avanza:</strong> "¿Hay alguna duda concreta que, si te la resuelvo ahora, decidirías hoy? ¿Cuál es? Vamos a por ella."</p></div></details>
+  <div class="bloque b-neutro" style="margin-top:16px"><div class="bloque-cab">Si quieres ir más hondo</div><div class="bloque-cont"><p style="margin-bottom:0">El método completo trae una biblioteca de <strong>18 objeciones con role-play palabra a palabra en español</strong> — incluye las incómodas que aquí no caben: "esto es una estafa", "hay opciones más baratas", "quiero un reembolso", "eres muy joven", "no es para mí". Está en tu formación de ventas DD; aquí tienes las 12 que más salen. Si una de las 18 raras te aparece dos veces, pídela en el chat de soporte y se te prepara con este mismo marco.</p></div></div>
   <div class="bloque b-plantilla" style="margin-top:16px"><div class="bloque-cab">Huecos para tu nicho</div><div class="bloque-cont"><p>En tus primeras 10-20 llamadas vas a oír una o dos objeciones específicas de tu nicho que no están arriba. Apúntalas literal y prepárales respuesta con el mismo marco:</p><div class="campo"><b>Objeción de tu nicho 1</b>Qué hay debajo: <span class="hueco">___</span> · Validar: <span class="hueco">___</span> · Reencuadrar: <span class="hueco">___</span> · Avanzar: <span class="hueco">___</span></div><div class="campo"><b>Objeción de tu nicho 2</b>Qué hay debajo: <span class="hueco">___</span> · Validar: <span class="hueco">___</span> · Reencuadrar: <span class="hueco">___</span> · Avanzar: <span class="hueco">___</span></div></div></div>
   <div class="bloque b-errores"><div class="bloque-cab">Lo que nunca haces con una objeción</div><div class="bloque-cont">
-    <div class="error-item"><span class="error-x">✕</span><div><b>Discutir de frente</b><span>Primero validas, siempre. Sin excepción.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Discutir de frente</b><span>La pega se recibe con calma y se devuelve con una pregunta. Nunca con un contraataque.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Disculparte por tu precio</b><span>Ni con palabras ni con el tono.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Bajar el precio para salvar la venta</b><span>Ofreces fraccionar; no rebajas.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Aceptar el primer "me lo pienso"</b><span>Sacas la objeción real, con cariño.</span></div></div>
@@ -786,6 +827,9 @@ const CAJA_H = [
   </div></div>
   <div class="bloque b-plantilla"><div class="bloque-cab">Parte 5 · La invitación (el frame del filtro)</div><div class="bloque-cont"><p>"Oye, por lo que me cuentas creo que te puedo ayudar de verdad con esto. Pero esto no se ve bien por chat. Lo que te propongo: nos vemos 30-40 minutos, miro tu caso a fondo, y si veo que encajas y que puedo ayudarte, te cuento cómo sería; y si no, te lo digo con sinceridad. Trabajo con poca gente, así que las miro una a una. ¿Te encaja verlo?"</p><p>Ese mensaje enmarca como filtro, da la posibilidad del no, mete escasez honesta y no promete un plan.</p><p style="margin-bottom:0"><strong>Prohibido en la invitación:</strong> "te doy un plan / una hoja de ruta / te digo cómo hacerlo paso a paso", la palabra "gratis", el precio, el nombre del programa o cómo funciona por dentro, y prometer que sale con la solución. La sesión es selección, no entrega.</p></div></div>
   <div class="bloque b-neutro"><div class="bloque-cab">Parte 6 · El agendado (que la cita cuente)</div><div class="bloque-cont"><p>Al calendario <strong>en el momento</strong>, sin dejar que se enfríe: "Aquí tienes mi calendario, elige el hueco que mejor te venga. En cuanto reserves te llega la confirmación con todo."</p><p>Y los tres requisitos, con naturalidad: <strong>que rellene el formulario</strong> ("al reservar te pido cuatro cosas rápidas, para llegar yo con los deberes hechos sobre tu caso") · <strong>que ponga bien su WhatsApp</strong> (para los recordatorios) · <strong>que reserve pensando que va a estar</strong>: "Reserva solo si de verdad vas a estar, que el hueco se lo quito a otra persona."</p><p style="margin-bottom:0">Ese último matiz es puro filtro: sube el compromiso y baja el no-show.</p></div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">Parte 6½ · La llamada corta previa (triage)</div><div class="bloque-cont"><p>Cuando el volumen crezca (o cuando notes que llegan curiosos a la sesión larga), mete un escalón: una <strong>llamada de 10-15 minutos</strong> antes de dar acceso a la sesión de 45-60.</p>
+    <p><strong>El orden importa y es contraintuitivo: primero vender la consulta, segundo cualificar.</strong> El objetivo nº1 del triage es que la persona QUIERA la sesión larga (le cuentas qué va a sacar de ella); solo después, y ya con la cita en el aire, cualificas: confirma su problema y su objetivo, cuánto tiempo lleva siguiéndote, si decide ella o deciden dos, y si tiene 4-5 horas a la semana para trabajar en esto.</p>
+    <p style="margin-bottom:0"><strong>La escala financiera, solo si dudas:</strong> si intuyes que no podría entrar, pregunta sin cifras: "Del 1 al 10, si esto te encaja, ¿cómo de viable sería para ti hacer una inversión seria ahora?" Por debajo de 7, no agendas la sesión larga: le das contenido y lo dejas madurar. Nunca preguntes "¿cuánto puedes pagar?" — eso rompe el frame y no lo necesitas.</p></div></div>
   <div class="bloque b-neutro"><div class="bloque-cab">Parte 7 · Registro y traspaso a la sesión</div><div class="bloque-cont"><p>La cita agendada no es el final del setting: el final es dejarlo todo listo para que la sesión salga bien.</p><ul style="margin-bottom:0">
     <li>Registra en tu GHL: etiqueta, origen, dolor detectado, en qué punto está.</li>
     <li>Verifica que la nota del formulario está visible en la ficha (paso 3 del kit).</li>
@@ -799,9 +843,10 @@ const CAJA_H = [
   titulo:"Follow-ups",
   resumen:"Track A (dijo sí y no agenda) y Track B (dejó de responder), con cadencia día 0 · 1 · 3 · 5 · despedida. Mensajes listos.",
   cuerpo:H(`<p>La mayoría de las ventas están en el seguimiento. La gente no contesta por mil motivos que no tienen que ver contigo: se lió, se le pasó, estaba en el metro. Si abandonas al primer silencio, dejas ventas sobre la mesa; si persigues como un pesado, quemas el contacto. El equilibrio: <strong>tocar con cadencia, aportando, sin sonar necesitado.</strong></p>
+  <p><strong>La regla de la velocidad, antes que ninguna otra:</strong> al interés se responde en caliente. Si alguien dice sí a la sesión, el enlace sale <strong>en los primeros 5 minutos</strong> — no "luego te lo paso". Está medido: un seguimiento a los 3 minutos recaptura al 30-40% de los que se habrían enfriado. Cada hora que dejas pasar, el sí se evapora.</p>
   <p><strong>Reglas de todos los mensajes:</strong> cero precio, cero pitch, cero "gratis", nunca el programa por escrito. Cada toque aporta algo o pregunta algo; ninguno repite "¿sigues ahí?" en seco. Y siempre por el canal donde empezó la conversación.</p>
   <div class="bloque b-plantilla"><div class="bloque-cab">Track A · Dijo que sí a la sesión pero no agenda</div><div class="bloque-cont">
-    <div class="mensaje"><div class="de">DÍA 0 · un par de horas después</div>"¡Genial <span class="hueco">NOMBRE</span>! Te dejo el enlace para que cojas tu hueco antes de que se llenen los de esta semana: <span class="hueco">CALENDARIO</span>. Cuando reserves, avísame y te confirmo yo también 🙌."</div>
+    <div class="mensaje"><div class="de">MINUTO 0-5 · en caliente, siempre</div>"¡Genial <span class="hueco">NOMBRE</span>! Te dejo el enlace para que cojas tu hueco antes de que se llenen los de esta semana: <span class="hueco">CALENDARIO</span>. Cuando reserves, avísame y te confirmo yo también 🙌."</div>
     <div class="mensaje"><div class="de">DÍA 1</div>"Ey <span class="hueco">NOMBRE</span>, ¿pudiste echarle un ojo al calendario? Si te lío con las horas, dime qué días te van mejor y te busco hueco a mano."</div>
     <div class="mensaje"><div class="de">DÍA 3</div>"<span class="hueco">NOMBRE</span>, no quiero agobiarte 😅. Solo que sé que si esto no lo pones en agenda, la vida se come el hueco y seguimos igual dentro de tres meses. ¿Lo cerramos? Aquí lo tienes: <span class="hueco">CALENDARIO</span>."</div>
     <div class="mensaje"><div class="de">DÍA 5</div>"Oye <span class="hueco">NOMBRE</span>, aún tengo un par de huecos esta semana y luego se me complica la agenda un tiempo. Si sigues queriendo mirar tu caso, ahora es buen momento. ¿Te reservo yo uno y me confirmas?"</div>
@@ -824,8 +869,37 @@ const CAJA_H = [
     <div class="error-item"><span class="error-x">✕</span><div><b>Diez toques en una franja</b><span>Un toque por franja: día 0, +1, +2, +2. Deja respirar.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>"¿Sigues ahí?" en seco</b><span>Cada mensaje aporta o pregunta. Siempre.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>No cortar a tiempo</b><span>El breakup no es un fracaso: es profesionalidad. Y suele traer respuestas.</span></div></div>
+    <div class="error-item"><span class="error-x">✕</span><div><b>Confundir el breakup con un adiós</b><span>El breakup cierra el ciclo corto, no la relación. En ticket alto los cierres se cocinan durante 4-6 meses: pasa el contacto a ritmo mensual (un toque de valor al mes, sin pedir nada) y muchos "ahora no" vuelven solos como "ahora sí".</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Seguimiento sin registro</b><span>Etiqueta en tu GHL en qué track está cada uno y en qué toque va. El que hoy no contesta a veces es un "ahora no": en unos meses vuelve.</span></div></div>
   </div></div>`)
+},
+{
+  ico:"tablero", et:"Tus números y tu entrenamiento",
+  titulo:"El cuadro de mando",
+  resumen:"Qué medir cada día, qué número es normal y cómo se entrena el músculo: registro diario, role-play y análisis de llamadas.",
+  cuerpo:H(`<p>Vender sin medir es conducir de noche sin faros. Este manual te da tres cosas: <strong>el registro de cada día</strong> (2 minutos), <strong>los números de referencia</strong> para saber si vas bien, y <strong>el entrenamiento</strong> que convierte tus llamadas en una habilidad y no en una lotería.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">El registro del final del día · 2 minutos<button class="b-copiar" onclick="copiar(this,'eodVentas')">Copiar</button></div><div class="bloque-cont" id="eodVentas">
+    <div class="campo"><b>Cada día, al cerrar el bloque de ventas</b>Conversaciones nuevas abiertas: <span class="hueco">Nº</span> · Movidas a sesión: <span class="hueco">Nº</span> · Citas agendadas: <span class="hueco">Nº</span> · Llamadas hechas: <span class="hueco">Nº</span> · Cierres: <span class="hueco">Nº</span> · La objeción del día: <span class="hueco">CUÁL Y QUÉ RESPONDISTE</span> · La frase que mejor funcionó: <span class="hueco">LITERAL</span></div>
+    <p style="margin-bottom:0">Ese registro, a los 30 días, vale más que cualquier curso: te dice qué apertura llena tu agenda, qué objeción se repite y qué frase compra tu cliente. Es la materia prima para delegar, algún día, sin morir en el intento.</p>
+  </div></div>
+  <div class="bloque b-neutro"><div class="bloque-cab">Los números de referencia</div><div class="bloque-cont">
+    <ul style="margin-bottom:0">
+      <li><strong>Volumen que sostiene una agenda sana:</strong> el techo profesional de referencia son ~15 llamadas de venta por semana (60 al mes). Tú, arrancando, no las tendrás — el número te sirve para saber cuánta agenda cabe sin que la calidad caiga.</li>
+      <li><strong>Close rate en frío: 40-50% es lo esperable</strong> cuando el diagnóstico se hace bien. Se calcula de llamada hecha a cierre cobrado — un depósito no es un cierre.</li>
+      <li><strong>El KPI que manda no es el porcentaje: es la producción.</strong> Mejor 10 llamadas con 4 cierres que 3 llamadas con 2. No protejas tu porcentaje evitando llamadas difíciles: eso es vanidad, no ventas.</li>
+      <li><strong>Show-up:</strong> si con el escudo del paso 5 se te caen más de 2 de cada 10 citas, algo falla en el setting (llegan curiosos) o en la confirmación. Revisa antes de culpar a la suerte.</li>
+    </ul>
+  </div></div>
+  <div class="bloque b-plantilla"><div class="bloque-cab">El entrenamiento · así se construye el músculo</div><div class="bloque-cont">
+    <ul>
+      <li><strong>Un role-play al día</strong> mientras estés en tus primeras 20 ventas: 10 minutos, con tu pareja, un colega u otro dueño del programa haciendo de cliente difícil. Y cambia de compañero: cada persona te ataca distinto, y eso es justo lo que entrena.</li>
+      <li><strong>Ensaya el triage aparte:</strong> son músculos distintos — el triage vende la sesión; la sesión vende el programa. 5 minutos de simulacro de triage valen oro.</li>
+      <li><strong>Escucha llamadas como quien escucha la radio:</strong> tus propias llamadas grabadas (con permiso) camino del gimnasio o en el coche. Oírte con distancia enseña más que cualquier feedback: descubrirás que hablas más de lo que crees y que el silencio era más corto de lo que parecía.</li>
+      <li><strong>La repetición es el método:</strong> el guión no se aprende leyéndolo, se aprende diciéndolo. Voz alta, cada día, hasta que las fases salgan solas y puedas escuchar de verdad en vez de pensar en qué toca.</li>
+    </ul>
+    <p style="margin-bottom:0"><strong>Los tres antipatrones que delatan al novato</strong> (grábate y búscalos): emoción exagerada al arrancar — el entusiasmo de vendedor huele a comisión; hablar rápido — la velocidad transmite nervios, el experto va despacio; y justificar el valor antes de que te lo pidan — si explicas por qué "sí lo vale" sin que nadie lo haya cuestionado, acabas de cuestionarlo tú.</p>
+  </div></div>
+  <div class="bloque b-ayuda"><div class="bloque-cab">Con quién se entrena esto</div><div class="bloque-cont"><p style="margin-bottom:0">Tus primeras llamadas, si quieres, se repasan grabadas en tus sesiones de estrategia. Y el registro diario llévalo contigo a tu revisión mensual: con números delante, el consejo que recibes es cirugía y no opinión.</p></div></div>`)
 }
 ];
 
@@ -1061,6 +1135,216 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>

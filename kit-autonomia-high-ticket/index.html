@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de Autonomía High Ticket</title>
 <meta name="description" content="Los dos prompts maestros para regenerar tu contenido y tus secuencias cada mes con tu Claude conectado a tu GHL: en tu voz, con tus datos reales.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit de Autonomía High Ticket">
+<meta property="og:description" content="Los dos prompts maestros para regenerar tu contenido y tus secuencias cada mes con tu Claude conectado a tu GHL: en tu voz, con tus datos reales.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kit-autonomia-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E07%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -400,6 +406,27 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
 }
 
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
+
 /* el índice lateral sustituye a la barra superior en pantallas anchas */
 @media(min-width:1081px){
   .barra{display:none!important}
@@ -434,7 +461,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
       <div class="hero-insignia"><span class="num">Kit 07 · Autonomía</span><span class="hero-marca">Departamento Disruptivo</span></div>
       <h1>El mes 2 <em>lo generas tú.</em></h1>
       <p>Dos prompts maestros para regenerar tu contenido y tus secuencias cada mes con tu Claude conectado a tu GHL — en tu voz, con tus datos reales, sin depender de nadie.</p>
-      <p class="hero-que-es">Primero, <strong>3 pasos</strong>: tu bloque de contexto, la rutina del día 25 y el checklist de auto-revisión. Después, la caja con <strong>los dos prompts completos y copiables</strong>: el de Contenido Mensual y el de Secuencias.</p>
+      <p class="hero-que-es">Primero, <strong>3 pasos</strong>: tu bloque de contexto, la rutina de fin de mes y el checklist de auto-revisión. Después, la caja con <strong>los dos prompts completos y copiables</strong>: el de Contenido Mensual y el de Secuencias.</p>
       <div class="botonera">
         <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
         <a href="#caja" class="btn btn-fantasma">Ver los prompts</a>
@@ -443,7 +470,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     </div>
 
     <aside class="hero-panel" aria-label="Así se ve la rutina mensual">
-      <div class="term-cab"><span class="avatar">07</span><div><b>Tu Claude · conectado a tu GHL</b><small>acceso de solo lectura · rutina del día 25</small></div></div>
+      <div class="term-cab"><span class="avatar">07</span><div><b>Tu Claude · conectado a tu GHL</b><small>leer sí, tocar no · rutina de fin de mes</small></div></div>
       <div class="term-cuerpo">
         <div class="term-linea"><span class="term-p">›</span> pega tu Prompt Maestro de Contenido</div>
         <div class="term-linea gris">leyendo tus emails… captando tu voz real</div>
@@ -473,8 +500,8 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   <div class="aviso-uso">
     <h3 id="tituloUso">Cómo usar esta guía</h3>
     <p><strong>Este kit empieza donde terminan los demás.</strong> El mes 1 lo publicaste con las piezas ya escritas del Kit 05 y las secuencias del Kit 04. A partir del mes 2, las regeneras tú con los dos prompts maestros de la caja, ejecutados en tu Claude conectado a tu cuenta de GoHighLevel.</p>
-    <p><strong>La conexión es de solo lectura.</strong> Claude lee tus emails para captar tu voz y tus conversaciones para ver qué keyword funcionó — pero no crea, modifica ni borra nada en tu cuenta. Los prompts se lo dejan dicho, y tú lo sabes para vigilarlo.</p>
-    <p><strong>Las reglas duras no se negocian.</strong> Cero cifras inventadas — donde falte un dato real, el prompt deja [DATO PENDIENTE] y lo resuelves tú. Prohibido "gratis" y "lanzamiento". El precio de tu oferta principal jamás por escrito. Y lo que ya funciona (una secuencia que rinde) no se toca.</p>
+    <p><strong>La regla de la conexión: leer sí, tocar no.</strong> Claude trabaja con tus datos (tus emails para captar tu voz, tus conversaciones para ver qué keyword funcionó) — pero no se le encarga crear, modificar ni borrar nada en tu cuenta. Los prompts se lo dejan dicho, y el límite real lo pones tú: la conexión se monta con una clave de API de tu GHL, que es una llave de verdad y se cuida como una contraseña.</p>
+    <p><strong>Las reglas duras no se negocian.</strong> Cero cifras inventadas — donde falte un dato real, el prompt deja [DATO PENDIENTE] y lo resuelves tú. "Lanzamiento" jamás en un CTA y "gratis" fuera del vocabulario. El precio de tu oferta principal jamás por escrito. Y la frontera de la autonomía: el contenido nuevo es tuyo; la estrategia entregada (escalera, funnel, secuencias que rinden, reglas duras) no se cambia por cuenta propia — se propone en tu revisión mensual y se decide ahí.</p>
     <p style="margin-bottom:0">La autonomía tiene red: el pack de cada mes se audita contigo en la revisión mensual. Generar es tuyo; el criterio se entrena acompañado.</p>
   </div>
 </div>
@@ -484,7 +511,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <div class="seccion-cabecera">
       <span class="eyebrow">Primera parte</span>
       <h2>Los 3 pasos</h2>
-      <p>El bloque de contexto que se rellena una vez, la rutina mensual del día 25 y la última puerta: tu checklist. Con eso, la máquina es tuya.</p>
+      <p>El bloque de contexto que se rellena una vez, la rutina de fin de mes y la última puerta: tu checklist. Con eso, la máquina es tuya.</p>
     </div>
     <div class="camino-grid">
       <aside class="indice" id="indice">
@@ -531,7 +558,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <p><b>Kit de Autonomía High Ticket</b> · Departamento Disruptivo</p>
     <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
     <div class="aviso-legal">
-      <b>Sobre la conexión:</b> tu Claude accede a tu GoHighLevel en modo de solo lectura, con la conexión que montaste siguiendo tu manual. Revisa los permisos si cambias de cuenta, y recuerda: lo generado no se publica ni se activa sin pasar tu checklist. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
+      <b>Sobre la conexión:</b> tu Claude accede a tu GoHighLevel con una clave de API de tu location — una llave real: guárdala como una contraseña, revócala si dudas, y encárgale solo lecturas. Lo generado no se publica ni se activa sin pasar tu checklist. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
     </div>
   </div>
 </footer>
@@ -581,12 +608,13 @@ const PASOS = [
 },
 {
   num:"Paso 02", ico:"tablero",
-  titulo:"La rutina del día 25",
+  titulo:"La rutina de fin de mes",
   sub:"Cinco minutos de datos, dos corchetes actualizados, un prompt ejecutado. El mes siguiente queda generado antes de que empiece.",
-  chips:["Día 25 de cada mes","1-2 horas en total","A partir del mes 2"],
-  queEs:H(`<p>Tu rutina mensual de autonomía. El día 25: miras qué funcionó este mes, actualizas dos corchetes y ejecutas el Prompt Maestro de Contenido con tu Claude conectado a tu GHL. Sale el pack completo del mes siguiente: 20 reels, 20 carruseles, stories y calendario.</p>
+  chips:["Última semana de cada mes","1-2 horas en total","A partir del mes 2"],
+  queEs:H(`<p>Tu rutina mensual de autonomía, en la última semana de cada mes (elige un día fijo y respétalo: la constancia es lo que la convierte en rutina). Miras qué funcionó este mes, actualizas dos corchetes y ejecutas el Prompt Maestro de Contenido. Sale el pack completo del mes siguiente: 20 reels, 20 carruseles, stories y calendario.</p>
+    <p><strong>Es tu mitad del ciclo mensual del sistema:</strong> la otra mitad es la revisión con tu equipo DD, que cada mes mira el rendimiento de tus envíos y flujos, te propone al menos 3 pruebas A/B y actualiza al menos 1 automatización. Llega a esa revisión con tu pack generado y tus datos mirados, y la hora rinde el doble.</p>
     <p style="margin-bottom:0">Las secuencias de email van aparte y con otro ritmo: <strong>no se regeneran cada mes porque sí</strong> — solo cuando los datos caen, cambia tu oferta o quieres probar una variante.</p>`),
-  porQue:H(`<p>El prompt no genera a ciegas: antes de escribir, Claude <strong>lee tu cuenta</strong> (solo lectura) — tus últimos emails para captar tu voz real, y tus conversaciones para ver qué publicaciones generaron comentarios con tu keyword. Los ángulos que más keyword trajeron se duplican con enfoque nuevo; los que no movieron nada, se retiran.</p>
+  porQue:H(`<p>El prompt no genera a ciegas: antes de escribir, Claude trabaja con <strong>tus datos reales</strong> — tus últimos emails para captar tu voz, y qué publicaciones generaron comentarios con tu keyword. Los ángulos que más keyword trajeron se duplican con enfoque nuevo; los que no movieron nada, se retiran.</p>
     <p>Es el circuito completo: publicas (Kit 05) → la keyword mide (GHL) → el prompt aprende de la medida → el mes siguiente sale mejor apuntado.</p>`),
   plantilla:H(`<ul style="margin-bottom:0">
       <li><strong>1 ·</strong> Entra en tu GHL y mira 5 minutos de datos reales: qué piezas generaron comentarios con keyword, qué dudas se repiten, y (si toca) aperturas y ventas de tus secuencias.</li>
@@ -601,9 +629,9 @@ const PASOS = [
     {t:"Generar sin mirar los datos", d:"Sin el paso 1, el prompt repite el mes anterior. Los 5 minutos de GHL son los que hacen que cada mes mejore al anterior."},
     {t:"Regenerar las secuencias cada mes", d:"Una secuencia que funciona no se toca. Se refresca cuando los datos caen o cambia la oferta — y respetando su esqueleto."},
     {t:"Saltarse los [DATO PENDIENTE]", d:"El prompt deja huecos a propósito donde faltan datos reales. Publicar con uno vivo es publicar una pieza rota."},
-    {t:"Ejecutar sin la conexión a GHL", d:"Sin acceso de lectura, Claude no puede captar tu voz ni leer tus keywords: te dará plantilla, no autonomía."}
+    {t:"Ejecutar sin datos reales", d:"Si aún no tienes la conexión montada, no pasa nada: copia a mano tus 3 últimos emails y tus piezas con más keyword y pégalos en el prompt. Lo que no funciona es ejecutar en vacío: sin tus datos, Claude te dará plantilla, no autonomía."}
   ],
-  ghl:"La conexión de tu Claude a tu cuenta es de solo lectura y la montaste con tu manual (bloque CONEXIÓN CLAUDE). Los prompts se lo recuerdan: leer sí, crear o borrar no.",
+  ghl:"La conexión de tu Claude a tu cuenta se monta con una clave de API de tu location (Settings → API Keys) siguiendo la guía de tu portal. Ojo: una clave de API es una llave de verdad — trátala como una contraseña, no la pegues donde no toca y revócala ante cualquier duda. Y la regla de uso es tuya, no de la máquina: a Claude se le pide LEER (emails, conversaciones, datos), nunca crear, cambiar ni borrar nada en tu cuenta. Los prompts se lo recuerdan; el límite real lo pones tú no encargándole escrituras.",
   ayuda:"El pack generado se audita contigo en la revisión mensual."
 },
 {
@@ -612,12 +640,14 @@ const PASOS = [
   sub:"Claude hace su pasada de revisión, pero la responsabilidad final es tuya. Dos minutos antes de grabar, publicar o activar nada.",
   chips:["2 minutos por pack","Antes de publicar o activar","La última puerta"],
   queEs:H(`<p>Los dos prompts obligan a Claude a revisar su propio trabajo contra las reglas antes de entregártelo, y a confesarte qué corrigió. Aun así, <strong>la última puerta eres tú</strong>: este checklist se pasa antes de grabar una pieza o activar una secuencia.</p>`),
-  porQue:H(`<p>Autonomía no es publicar lo primero que salga: es no depender de nadie para producir — manteniendo el listón. Las reglas de este checklist son las mismas de toda la colección: cifras reales, cero "gratis" y "lanzamiento", el precio nunca por escrito, y tu voz de verdad.</p>`),
+  porQue:H(`<p>Autonomía no es publicar lo primero que salga: es no depender de nadie para producir — manteniendo el listón. Las reglas de este checklist son las mismas de toda la colección: cifras reales, el precio nunca por escrito, y tu voz de verdad.</p>
+    <p style="margin-bottom:0"><strong>Y la frontera de la autonomía, clara desde ya:</strong> lo que generas tú solo es CONTENIDO nuevo — piezas, copys, variantes. Lo que es <em>estrategia entregada</em> — tu escalera de precios, la estructura del funnel, una secuencia que rinde, las reglas duras — <strong>no se cambia por cuenta propia, ni tuya ni de Claude</strong>. Es la regla maestra del sistema entero: los cambios sobre lo entregado se proponen en tu revisión mensual, se deciden, y entonces se ejecutan. La autonomía es para producir más, no para desmontar lo que funciona.</p>`),
   plantilla:H(`<ul style="margin-bottom:0">
       <li>Cero <span class="hueco">[DATO PENDIENTE]</span> sin resolver: dato real o frase fuera.</li>
       <li>Cero cifras que no puedas demostrar con tus propios datos.</li>
-      <li>No aparecen "gratis" ni "lanzamiento" en ninguna pieza ni email.</li>
-      <li>Contenido: todos los CTA invitan a comentar tu keyword (nada de "link en bio"); hooks y portadas de ≤7 palabras — recuenta después de rellenar los huecos; el calendario respeta el mix 40/30/20/10.</li>
+      <li>"Lanzamiento" no aparece en ningún CTA (di oferta, sistema o "abro plazas") y "gratis" está sustituida por "te lo paso" / "sin coste".</li>
+      <li><strong>Guardarraíles de IA, siempre:</strong> prohibidos los testimonios, identidades, edades, profesiones, resultados y afirmaciones de salud inventados; nada de clonar cara o voz de nadie sin consentimiento; y cualquier parámetro, precio o límite de una herramienta se verifica antes de darlo por bueno.</li>
+      <li>Contenido: todos los CTA invitan a comentar tu keyword (nada de "link en bio"); texto en pantalla de 5-7 palabras y hablado de hasta 12 — recuenta después de rellenar los huecos; los 5 canales del hook cubiertos; máximo un empujón de venta por semana; cero anglicismos.</li>
       <li>Secuencias: todos los emails con el pie de baja y TU enlace real; ninguno revela el precio de tu oferta principal ni el detalle del siguiente paso; los merges (<code>{{contact.first_name}}</code>…) intactos; email de prueba enviado y visto en móvil.</li>
       <li>Lo has leído en voz alta y suena a ti, no a plantilla. Si una frase no la dirías tú, reescríbela.</li>
     </ul>`),
@@ -627,14 +657,14 @@ const PASOS = [
     {t:"Publicar 'porque ya está hecho'", d:"Una pieza floja publicada cuesta más que una pieza retrasada un día. El checklist manda sobre el calendario."},
     {t:"Corregir sin actualizar el bloque", d:"Si un mes corriges siempre lo mismo (un matiz del método, un caso mal contado), el error está en tu bloque de contexto. Arréglalo ahí y desaparece de todos los meses siguientes."}
   ],
-  ghl:"Las secuencias regeneradas se montan con la guía del Kit 04 (workflows, waits y etiquetas no cambian). El contenido nuevo sigue el circuito del Kit 05.",
-  ayuda:"La revisión mensual en clínica audita el pack contigo; el checklist es para que llegues con los deberes hechos."
+  ghl:"Las secuencias regeneradas se montan con la guía del Kit 04 (workflows, waits y etiquetas no cambian). El contenido nuevo sigue el circuito del Kit 05. Y un truco profesional: pídele al prompt 3 variantes de las piezas clave, publica solo la ganadora y guarda las otras como reserva de reciclaje — generar de más y filtrar fuerte gana a generar justo.",
+  ayuda:"Tu revisión mensual audita el pack contigo; el checklist es para que llegues con los deberes hechos."
 }
 ];
 
 const CAJA_H = [
 {
-  ico:"rayo", et:"Cada mes · día 25",
+  ico:"rayo", et:"Cada mes · última semana",
   titulo:"Prompt Maestro de Contenido Mensual",
   resumen:"Regenera el pack completo del mes — 20 reels, 20 carruseles, stories y calendario — en tu voz y con tus datos, leyendo tu GHL.",
   cuerpo:H(`<p>Cópialo entero, rellena los corchetes con tu bloque de contexto y pégalo en tu Claude conectado a tu GoHighLevel. Genera el pack completo del mes siguiente y termina con su propia pasada de revisión.</p>
@@ -662,7 +692,7 @@ Reglas innegociables:
 4. Todos los hooks, titulares y portadas: 7 palabras o menos, siempre con sus variantes.
 5. CTA de captación: invita a comentar [TU KEYWORD] en la propia publicación. PROHIBIDO 'link en bio' o mandar a la gente fuera de la plataforma.
 6. PROHIBIDO inventar cifras, porcentajes, plazos o resultados. Si un dato no está en el material que te he dado, escribe [DATO PENDIENTE] y lo relleno yo.
-7. PROHIBIDAS las palabras "gratis" y "lanzamiento" en cualquier pieza.
+7. PROHIBIDA la palabra "lanzamiento" en cualquier CTA (usa: oferta, sistema, "abro plazas") y evita "gratis" (usa: "te lo paso", "sin coste"). Cero anglicismos: tips, hack, mindset y similares se dicen en castellano.
 8. Formato de salida listo para grabar y publicar, pieza a pieza y sin comentarios tuyos entre medias: REEL N · VERSIÓN A y B · 5 HOOKS POR VERSIÓN · GUION ORAL · CTA; CARRUSEL N · VERSIÓN A y B · PORTADA · SLIDES · CTA; STORIES · DÍA N · secuencia con tipo de story; CALENDARIO · día a día con pieza y objetivo (captación/autoridad/conexión/conversión).
 
 Paso final obligatorio antes de entregarme nada: haz tú mismo una pasada de revisión del pack completo contra las reglas 1 a 8. Si una pieza incumple una regla, corrígela antes de mostrármela.
@@ -693,7 +723,7 @@ Reglas innegociables:
 6. Si la secuencia es de VENTA o de CARRITO ABANDONADO: menciona mi garantía de 14 días, y cero urgencia falsa — si no existe una fecha límite o un cierre real, no lo inventes.
 7. Nunca escribas el precio de mi oferta principal ni expliques el detalle del siguiente paso de mi embudo: cualquier llamada se presenta como sesión de diagnóstico para ver si encaja, no como llamada de venta.
 8. PROHIBIDO inventar cifras, porcentajes, plazos o resultados. Si un dato no está en el material que te he dado, escribe [DATO PENDIENTE] y lo relleno yo.
-9. PROHIBIDAS las palabras "gratis" y "lanzamiento" en cualquier parte de la secuencia.
+9. PROHIBIDA la palabra "lanzamiento" en cualquier CTA (usa: oferta, sistema, "abro plazas") y evita "gratis" (usa: "te lo paso", "sin coste").
 10. Todos los emails terminan con este pie: "Si no quieres seguir recibiendo estos correos, puedes darte de baja aquí: [ENLACE DE BAJA]". Donde pone [ENLACE DE BAJA] pego yo el enlace de baja de MI cuenta de GoHighLevel (el trigger link de baja que creé en mi GHL, o el elemento nativo Unsubscribe al montar la plantilla). Nunca dejes un placeholder genérico (texto tipo 'unsubscribe_link' entre llaves): GoHighLevel no lo convierte en enlace y el correo saldría sin baja.
 11. Formato de salida listo para pegar en GoHighLevel, email a email y sin comentarios tuyos entre medias: EMAIL N · CUÁNDO SE ENVÍA (día exacto o wait desde el email anterior) · ASUNTO ELEGIDO · 2 VARIANTES DE ASUNTO · PREHEADER · CUERPO en párrafos cortos · CTA.
 
@@ -940,6 +970,216 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>

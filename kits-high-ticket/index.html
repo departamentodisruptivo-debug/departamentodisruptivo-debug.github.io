@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los Kits del High Ticket</title>
+<meta name="description" content="La colección de kits del high ticket de Departamento Disruptivo: arma tu oferta, véndela, entrégala. Cada kit es una página con plantillas y ejemplos listos.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Los Kits del High Ticket">
+<meta property="og:description" content="La colección de kits del high ticket de Departamento Disruptivo: arma tu oferta, véndela, entrégala. Cada kit es una página con plantillas y ejemplos listos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kits-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
+<meta name="theme-color" content="#D4AF37">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Crect x='10' y='14' width='10' height='36' rx='2' fill='%23D4AF37'/%3E%3Crect x='24' y='14' width='10' height='36' rx='2' fill='%23E6C765'/%3E%3Crect x='38' y='20' width='10' height='30' rx='2' transform='rotate(8 43 35)' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#111111; --tinta-2:#262626; --papel:#FFFFFF; --papel-2:#F5F4F1; --papel-3:#EDEDED;
+  --texto:#1A1A1A; --texto-2:#6E6B65; --oro:#D4AF37; --oro-claro:#E6C765;
+  --verde:#0E8F63; --verde-luz:#E6F6EF; --violeta:#6B4FD8; --ambar:#D98A00; --ambar-luz:#FDF3E0;
+  --crema:#D8D5CB; --crema-mute:#98958D; --tinta-linea:#333333;
+  --radio:16px;
+  --sombra:0 1px 2px rgba(17,17,17,.06), 0 8px 24px rgba(17,17,17,.06);
+  --sombra-alta:0 2px 4px rgba(17,17,17,.08), 0 16px 40px rgba(17,17,17,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',system-ui,-apple-system,sans-serif;background:var(--papel-2);color:var(--texto);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
+.eyebrow{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+
+/* ============ PORTADA ============ */
+.hero{background:var(--tinta);color:#fff;padding:76px 0 120px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--oro)}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:100px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
+.hero .wrap{position:relative;z-index:2}
+.hero-marca{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crema-mute);margin-bottom:26px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.2rem);font-weight:800;max-width:18ch;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--oro)}
+.hero p{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--crema);max-width:52ch}
+
+/* el viaje */
+.viaje{margin-top:52px;display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+.viaje-tramo{flex:1;min-width:200px;display:flex;align-items:center;gap:0}
+.viaje-caja{flex:1;border:1.5px solid var(--tinta-linea);border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.04)}
+.viaje-caja .fase{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--oro);font-weight:700;display:block;margin-bottom:4px}
+.viaje-caja b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.1rem;font-weight:700;display:block}
+.viaje-caja small{color:var(--crema-mute);font-size:.82rem;line-height:1.45;display:block;margin-top:3px}
+.btn-empieza{display:inline-flex;align-items:center;gap:10px;background:var(--oro);color:var(--tinta);font-weight:700;font-size:1.02rem;padding:15px 30px;border-radius:999px;text-decoration:none;margin-top:26px;transition:background .12s ease,box-shadow .12s ease}
+.btn-empieza:hover{background:var(--oro-claro);box-shadow:0 8px 24px rgba(212,175,55,.35)}
+.chip.cuando{background:rgba(212,175,55,.15);border-color:rgba(212,175,55,.5);color:#8A6D1F;font-weight:700}
+.viaje-flecha{color:var(--oro);font-size:1.4rem;padding:0 12px;align-self:center}
+@media(max-width:840px){.viaje{flex-direction:column}.viaje-flecha{transform:rotate(90deg);padding:6px 0;text-align:center}}
+
+/* ============ ESTANTES ============ */
+main{padding:8px 0 90px}
+.estante{margin-top:52px}
+.estante-cab{margin-bottom:22px}
+.estante-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:8px}
+.estante-cab h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:800}
+.estante-cab p{color:var(--texto-2);margin-top:6px;max-width:64ch}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+
+.kit{
+  display:flex;flex-direction:column;background:#fff;border:1px solid var(--papel-3);
+  border-radius:var(--radio);overflow:hidden;text-decoration:none;color:var(--texto);
+  transition:transform .15s ease, box-shadow .15s ease;box-shadow:var(--sombra);
+}
+a.kit:hover{transform:translateY(-4px);box-shadow:var(--sombra-alta)}
+.kit-lomo{background:var(--tinta);color:#fff;padding:20px 22px;position:relative}
+.kit-lomo::before{content:"";position:absolute;top:0;left:0;bottom:0;width:6px;background:var(--oro)}
+.kit-lomo .num{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:var(--oro);color:var(--tinta);padding:4px 11px;border-radius:999px}
+.kit-lomo h3{font-size:1.45rem;font-weight:800;margin-top:12px}
+.kit-lomo .frase{color:var(--crema);font-size:.92rem;margin-top:2px}
+.kit-cuerpo{padding:18px 22px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.kit-cuerpo p{font-size:.95rem;color:var(--texto-2);line-height:1.6;flex:1}
+.kit-meta{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.05em;background:var(--papel-2);border:1px solid var(--papel-3);padding:5px 11px;border-radius:999px;color:var(--texto-2);white-space:nowrap}
+.kit-ir{font-weight:700;font-size:.95rem;color:var(--tinta);display:flex;align-items:center;gap:8px}
+a.kit:hover .kit-ir{color:var(--ambar)}
+
+/* variantes por kit vivo: la firma en el lomo */
+.kit.oferta .kit-lomo::after{content:"";position:absolute;right:20px;top:22px;width:44px;height:56px;background:#fff;border-radius:6px;opacity:.92;box-shadow:inset 0 6px 0 var(--oro)}
+.kit.ventas .kit-lomo::after{content:"";position:absolute;right:20px;top:26px;width:52px;height:20px;background:#fff;border-radius:10px 10px 10px 3px;opacity:.92}
+.kit.ventas .kit-lomo .burbuja2{position:absolute;right:34px;top:52px;width:38px;height:16px;background:var(--oro);border-radius:8px 8px 3px 8px}
+.kit.entrega .kit-lomo::after{content:"";position:absolute;right:16px;top:34px;width:64px;height:26px;
+  background:radial-gradient(circle at 6px 6px, var(--oro) 4px, transparent 5px) 0 0/16px 16px;opacity:.95}
+.kit.contratos .kit-lomo::before{background:var(--crema-mute)}
+.kit.contratos .kit-lomo .num{background:var(--crema);color:var(--tinta)}
+
+/* firmas de los sistemas de apoyo */
+.kit.emails .kit-lomo::after{content:"";position:absolute;right:20px;top:26px;width:50px;height:34px;background:#fff;border-radius:7px;opacity:.92;
+  clip-path:polygon(0 0,100% 0,100% 100%,0 100%);box-shadow:inset 0 -22px 0 -14px var(--oro)}
+.kit.contenido .kit-lomo::after{content:"";position:absolute;right:18px;top:26px;width:54px;height:38px;
+  background:conic-gradient(from 0deg, #fff 0 25%, var(--oro) 25% 50%, #fff 50% 75%, var(--oro-claro) 75%);border-radius:8px;opacity:.92}
+.kit.ads .kit-lomo::after{content:"";position:absolute;right:20px;bottom:18px;width:50px;height:34px;
+  background:linear-gradient(to top, #fff 0, #fff 100%) 0 100%/12px 14px no-repeat,
+             linear-gradient(to top, var(--oro) 0, var(--oro) 100%) 19px 100%/12px 24px no-repeat,
+             linear-gradient(to top, var(--oro-claro) 0, var(--oro-claro) 100%) 38px 100%/12px 34px no-repeat}
+.kit.autonomia .kit-lomo::after{content:"›_";position:absolute;right:24px;top:26px;font-family:'Space Mono',monospace;font-weight:700;font-size:1.5rem;color:var(--oro)}
+.kit.funnel .kit-lomo::after{content:"";position:absolute;right:18px;top:24px;width:56px;height:40px;
+  background:linear-gradient(#fff,#fff) top center/56px 9px no-repeat,
+             linear-gradient(var(--oro),var(--oro)) center/40px 9px no-repeat,
+             linear-gradient(var(--oro-claro),var(--oro-claro)) bottom center/24px 9px no-repeat}
+.pill-estado{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--ambar);background:var(--ambar-luz);border:1px solid #F5DCA8;border-radius:999px;padding:4px 11px}
+
+.pie{padding:40px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
+.pie b{color:var(--texto)}
+@media(max-width:720px){.wrap{padding:0 18px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+:focus-visible{outline:3px solid var(--oro);outline-offset:3px;border-radius:4px}
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-marca">Departamento Disruptivo · La colección</div>
+    <h1>Los Kits del <em>High Ticket</em></h1>
+    <p>Todo el camino de tu programa, por orden y sin folio en blanco: arma la oferta, véndela, entrégala. Cada kit es una página con los pasos, las plantillas y un ejemplo ya relleno en cada punto.</p>
+
+    <div class="viaje" aria-label="El orden del camino">
+      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Fase 1 · Kit 01</span><b>Ármala</b><small>De propuesta a oferta que se puede vender.</small></div><span class="viaje-flecha">→</span></div>
+      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Fase 2 · Kit 03</span><b>Véndela</b><small>Del DM a la llamada cerrada.</small></div><span class="viaje-flecha">→</span></div>
+      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Fase 3 · Kit 02</span><b>Entrégala</b><small>De que te paguen a que termine bien.</small></div></div>
+    </div>
+    <a class="btn-empieza" href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">¿Primera vez aquí? Empieza por el Kit 01 →</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <section class="estante">
+    <div class="estante-cab">
+      <span class="eyebrow">El camino</span>
+      <h2>Ármala, véndela, entrégala</h2>
+      <p>Los tres kits del viaje, en su orden — más el anexo legal. Entra al que toque según tu fase; cada uno enlaza con el siguiente.</p>
+    </div>
+    <div class="rejilla">
+
+      <a class="kit oferta" href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 01</span><h3>La Oferta</h3><div class="frase">Tienes una propuesta. Todavía no una oferta.</div></div>
+        <div class="kit-cuerpo">
+          <p>Las 7 decisiones, en orden, que convierten tu propuesta en una oferta que se puede vender y entregar. Termina con alguien pagándote, no con un documento bonito.</p>
+          <div class="kit-meta"><span class="chip cuando">Semana 1 · tu primer paso</span><span class="chip">7 decisiones</span><span class="chip">5 herramientas</span><span class="chip">Una tarde</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit ventas" href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 03</span><h3>Ventas</h3><div class="frase">Tienes la oferta. Ahora toca venderla.</div><span class="burbuja2"></span></div>
+        <div class="kit-cuerpo">
+          <p>El mapa de tus primeras 10-20 ventas: guión de llamada, banco de evidencia, nota de agenda, rutina de DMs y escudo anti no-show. Más los manuales de objeciones, setting, follow-ups y tu cuadro de mando.</p>
+          <div class="kit-meta"><span class="chip cuando">En cuanto la oferta esté</span><span class="chip">5 pasos</span><span class="chip">4 manuales</span><span class="chip">12 objeciones resueltas</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit entrega" href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 02</span><h3>La Entrega</h3><div class="frase">Vendiste. ¿Y ahora qué?</div></div>
+        <div class="kit-cuerpo">
+          <p>Desde que alguien te paga hasta que termina el programa contigo: 7 pasos que haces una vez antes de la primera sesión, y una herramienta para cada momento del camino.</p>
+          <div class="kit-meta"><span class="chip cuando">Con tu primera venta</span><span class="chip">7 pasos</span><span class="chip">12 herramientas</span><span class="chip">Antes de la sesión 1</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit contratos" href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Anexo</span><h3>Kit de Contratos</h3><div class="frase">El papeleo del sí, antes de la sesión 1.</div></div>
+        <div class="kit-cuerpo">
+          <p>Plantilla de contrato, guía de uso por país y un ejemplo completo ya relleno. Para llegar a tu abogado con el 90% del trabajo hecho. Se firma antes de la primera sesión, sin excepciones.</p>
+          <div class="kit-meta"><span class="chip cuando">Se firma antes de la sesión 1</span><span class="chip">3 documentos</span><span class="chip">En Google Drive</span></div>
+          <span class="kit-ir">Abrir en Drive →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="estante">
+    <div class="estante-cab">
+      <span class="eyebrow">Los sistemas de apoyo</span>
+      <h2>Lo que alimenta el camino</h2>
+      <p>Contenido que capta, emails que venden solos, tráfico con reglas y la autonomía para regenerarlo todo cada mes.</p>
+    </div>
+    <div class="rejilla">
+
+      <a class="kit emails" href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 04</span><h3>Emails</h3><div class="frase">Se escriben una vez. Venden cada día.</div></div>
+        <div class="kit-cuerpo">
+          <p>8 secuencias con 31 emails + 1 SMS — welcome, nutrición, venta, post-compra, carrito, winback y más — con los 6 pasos de montaje en GHL, la newsletter semanal y la salud de tu lista.</p>
+          <div class="kit-meta"><span class="chip cuando">Mes 1 · con tu captación viva</span><span class="chip">8 secuencias</span><span class="chip">31 emails + 1 SMS</span><span class="chip">+ newsletter semanal</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit contenido" href="https://kit-contenido-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 05</span><h3>Contenido</h3><div class="frase">Un mes de contenido, sin folio en blanco.</div></div>
+        <div class="kit-cuerpo">
+          <p>20 reels y 20 carruseles guionizados en dos versiones, la quincena de stories, el calendario del mes 1 con sus 4 misiones (y una sola venta por semana) y el banco de hooks para el mes 2.</p>
+          <div class="kit-meta"><span class="chip cuando">Mes 1 · desde el día 1</span><span class="chip">54 piezas</span><span class="chip">Calendario mes 1</span><span class="chip">20 hooks extra</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit ads" href="https://kit-ads-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 06</span><h3>Ads Meta</h3><div class="frase">Tráfico con reglas, no con corazonadas.</div></div>
+        <div class="kit-cuerpo">
+          <p>Las 3 campañas con su orden de encendido, audiencias y exclusiones, creativos por ángulos y las reglas de gestión: presupuesto con suelo real, kill con regla, escalar +20%, decidir cada 3-4 días.</p>
+          <div class="kit-meta"><span class="chip cuando">Cuando el orgánico ruede</span><span class="chip">3 campañas</span><span class="chip">9 ángulos de creativo</span><span class="pill-estado">Se enciende con Bruno</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit funnel" href="https://kit-funnel-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 08</span><h3>Funnel</h3><div class="frase">Del clic al cliente, sin fugas.</div></div>
+        <div class="kit-cuerpo">
+          <p>Las 7 páginas del embudo — captación, venta con checkout, OTOs, downsells y gracias — con la escalera oficial de precios, el cableado en GHL, el checklist de lanzamiento y el preview navegable.</p>
+          <div class="kit-meta"><span class="chip cuando">Mes 1-2 · el esqueleto</span><span class="chip">7 páginas</span><span class="chip">Escalera oficial</span><span class="chip">Preview navegable</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit autonomia" href="https://kit-autonomia-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 07</span><h3>Autonomía</h3><div class="frase">El mes 2 lo generas tú.</div></div>
+        <div class="kit-cuerpo">
+          <p>Los dos prompts maestros — Contenido Mensual y Secuencias — para regenerar tus piezas cada mes con tu Claude, en tu voz y con tus datos reales — y la frontera clara de qué cambias tú solo y qué se decide en tu revisión mensual.</p>
+          <div class="kit-meta"><span class="chip cuando">Mes 2+ · cuando todo ruede</span><span class="chip">2 prompts maestros</span><span class="chip">Rutina de fin de mes</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <p><b>Los Kits del High Ticket</b> · Departamento Disruptivo</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+  </div>
+</footer>
+
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
+</script>
+</body>
+</html>

@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de Entrega del High Ticket</title>
 <meta name="description" content="Vendiste tu programa high ticket. Esto es lo que haces para entregarlo, desde que te pagan hasta que tu cliente termina: 7 pasos y 12 herramientas.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit de Entrega del High Ticket">
+<meta property="og:description" content="Vendiste tu programa high ticket. Esto es lo que haces para entregarlo, desde que te pagan hasta que tu cliente termina: 7 pasos y 12 herramientas.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kit-entrega-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E02%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -419,6 +425,26 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   .mapa-parada{opacity:1}
 }
 :focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:4px}
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
 </style>
 </head>
 <body>
@@ -762,7 +788,8 @@ const PASOS = [
     <div class="campo"><b>Lo único que necesito de ti esta semana</b>Tres cosas como máximo, y que la primera sea fácil: rellenar el formulario, reservar la sesión 1, leer el acuerdo de trabajo.</div>
     <div class="campo"><b>Cierre</b>"Nada más. No hace falta que prepares nada ni que estudies nada."</div>
     <div class="campo"><b>Y anuncia la victoria rápida</b>Una línea diciendo qué va a conseguir en esta primera semana: <span class="hueco">LOGRO DE LOS 7 DÍAS</span>. La eliges una vez con la herramienta <strong>La victoria rápida</strong> y sirve para todos tus clientes.</div>
-    <p style="margin-top:18px"><strong>Y el mapa, aparte:</strong> una tabla con fase, cuándo, qué vamos a hacer y qué tendrás al terminarla. Más los momentos clave con fecha exacta y dónde vive cada cosa.</p>`),
+    <p style="margin-top:18px"><strong>Y el mapa, aparte:</strong> una tabla con fase, cuándo, qué vamos a hacer y qué tendrás al terminarla. Más los momentos clave con fecha exacta y dónde vive cada cosa.</p>
+    <div class="campo" style="margin-top:16px"><b>El contrato de salida de los primeros 30 días</b>Define — una vez, para tu programa — la lista de cosas con las que TODO cliente tuyo sale de su primer mes: <span class="hueco">ENTREGABLE 1</span> · <span class="hueco">ENTREGABLE 2</span> · <span class="hueco">ENTREGABLE 3</span> (p. ej.: su diagnóstico documentado, su plan por fases firmado y su primera victoria conseguida). Es tu control de calidad interno y tu mejor frase de venta: "en 30 días sales con esto, sí o sí". Lo que no se define, no se entrega — se improvisa.</div>`),
   ejemplo:H(`<div class="mensaje"><div class="de">Correo de bienvenida</div>
     <p>Hola Ricardo,</p>
     <p>Ya estás dentro. En doce semanas quiero que puedas irte dos semanas y que el despacho siga andando sin ti; a partir de aquí eso deja de ser una idea y pasa a ser un plan con fechas.</p>
@@ -880,7 +907,7 @@ const CAJA_H = [
     <div class="bloque b-plantilla"><div class="bloque-cab">Qué tiene que cumplir</div><div class="bloque-cont">
     <p>Una victoria rápida sirve solo si cumple las cuatro:</p>
     <table class="tabla"><tr><th>Condición</th><th>Por qué</th></tr>
-    <tr><td><b>Se consigue en menos de 7 días</b></td><td>Más allá, la euforia de la compra ya se apagó</td></tr>
+    <tr><td><b>Se consigue en menos de 7 días — lo ideal, en las primeras 48-72 horas</b></td><td>Más allá, la euforia de la compra ya se apagó. Los programas que retienen de verdad ponen la primera victoria a dos o tres días de la firma</td></tr>
     <tr><td><b>Depende solo de tu cliente</b></td><td>Si necesita que su equipo, su pareja o un proveedor colaboren, no la controla y puede fallar por algo ajeno</td></tr>
     <tr><td><b>Se ve</b></td><td>Tiene que poder enseñarla, contarla o señalarla. Lo que no se ve, no cuenta como victoria</td></tr>
     <tr><td><b>Le resolvería algo aunque el programa parara ahí</b></td><td>Es la prueba de que no es una tarea de calentamiento, sino valor real</td></tr></table>
@@ -904,6 +931,15 @@ const CAJA_H = [
     <div class="error-item"><span class="error-x">✕</span><div><b>No nombrarla</b><span>Si no le dices "esto es lo que vas a conseguir esta semana", lo consigue y no se entera. Se anuncia antes y se celebra después, por su nombre.</span></div></div>
     <div class="error-item"><span class="error-x">✕</span><div><b>Una distinta para cada cliente</b><span>Se decide una vez para tu programa. Si cada cliente lleva una inventada sobre la marcha, ninguna está pensada.</span></div></div>
     </div></div>
+
+    <div class="bloque b-neutro"><div class="bloque-cab">El mapa completo de la retención (los 4 momentos donde se fuga la gente)</div><div class="bloque-cont">
+    <p>La victoria rápida cubre el primero, pero la fuga de clientes tiene <strong>cuatro puertas conocidas</strong>, y conviene vigilarlas todas:</p>
+    <table class="tabla"><tr><th>Momento</th><th>Qué pasa</th><th>Qué lo tapa</th></tr>
+    <tr><td><b>Días 7-14 del arranque</b></td><td>La euforia baja y aún no hay resultado</td><td>La victoria rápida + un toque personal tuyo justo esa semana</td></tr>
+    <tr><td><b>La fricción del día a día</b></td><td>Se acumulan tareas, siente que va atrasado, deja de venir</td><td>Menos deberes y más celebración de avance; preguntar "¿dónde te atascaste?" antes de mandar más material</td></tr>
+    <tr><td><b>El reingreso tras una pausa</b></td><td>Volvió de vacaciones o de un pico de trabajo y le da vergüenza reaparecer</td><td>Tú das el primer paso, sin reproche: "retomamos donde lo dejamos, esta semana toca solo esto"</td></tr>
+    <tr><td><b>La renovación</b></td><td>Termina y no hay siguiente escalón claro</td><td>La herramienta de Cierre, testimonio y renovación</td></tr></table>
+    <p style="margin-bottom:0"><strong>Y la regla de los hitos:</strong> los objetivos intermedios se ponen a un +20% de donde el cliente está hoy — no donde "debería" estar. Hitos alcanzables encadenados retienen más que una meta heroica lejana: cada hito cumplido es una renovación emocional del contrato.</p></div></div>
 
     <div class="bloque b-ayuda"><div class="bloque-cab">Si te trabas</div><div class="bloque-cont">
     <p style="margin-bottom:0">Elegir cuál es la victoria rápida de tu programa → chat de soporte o sesión de estrategia.</p></div></div>`)
@@ -1181,6 +1217,17 @@ const CAJA_H = [
     <div class="mensaje" style="margin-bottom:0"><div class="de">Mensaje de recuperación · 60 días</div>Hola <span class="hueco">NOMBRE</span>, hace un par de meses que lo dejamos y me acordé de ti porque <span class="hueco">MOTIVO REAL Y CONCRETO</span>.<br><br>No te escribo para venderte nada. Solo para saber cómo va aquello de <span class="hueco">SU TEMA</span>.<br><br>Si en algún momento quieres retomarlo, sabes dónde estoy.</div>
     <p style="margin:14px 0 0"><strong>El motivo tiene que ser de verdad.</strong> Un artículo que le venía bien, un caso parecido al suyo, algo que cambió en su sector. Un "¿cómo vas?" sin motivo se lee como lo que es.</p>
     <p style="margin-bottom:0">Si no responde, se acabó. Un segundo mensaje convierte una puerta abierta en una molestia.</p></div></div>
+
+    <div class="bloque b-aviso"><div class="bloque-cab">El caso duro · impago o cliente que te falta al respeto</div><div class="bloque-cont">
+    <p>Tarde o temprano llega: la cuota que no entra, o el cliente que grita, exige fuera de horario o trata mal. Para ese día, un protocolo de cinco movimientos — en orden, sin saltarse ninguno:</p>
+    <ol style="padding-left:20px">
+    <li><strong>Valida sin tragarte el marco.</strong> "Entiendo que estés frustrado" no es darle la razón: es bajar la temperatura para poder hablar.</li>
+    <li><strong>Saca la conversación del calor.</strong> Del chat al email, o a una llamada agendada mañana: por escrito y en frío, todo el mundo es más razonable.</li>
+    <li><strong>Haz algo inesperado y generoso — una vez.</strong> Un gesto que no debías (una sesión extra, una prórroga corta) desarma al que venía a pelear. Una vez: si lo repites, es la nueva norma.</li>
+    <li><strong>Documenta todo.</strong> Fechas, mensajes, acuerdos, impagos. No por paranoia: porque la memoria de los conflictos siempre miente, y el contrato solo te protege con papeles.</li>
+    <li><strong>Y si nada cambia, desapégate y ejecuta lo firmado.</strong> Pausa del servicio por impago (está en tu acuerdo del paso 5), o cierre anticipado con el mensaje de la izquierda. <strong>Que alguien te haya pagado no lo convierte en tu jefe</strong> — y retener a un cliente que te desgasta le sale caro a todos tus demás clientes, que reciben a un peor tú.</li>
+    </ol>
+    <p style="margin-bottom:0"><strong>La regla de oro del impago:</strong> el trabajo pendiente se pausa cuando el pago se para — con aviso amable y por escrito, nunca como castigo sorpresa. Seguir entregando "para no molestar" mientras se acumulan cuotas es el error que más caro se paga.</p></div></div>
 
     <div class="bloque b-errores"><div class="bloque-cab">Errores comunes</div><div class="bloque-cont">
     <div class="error-item"><span class="error-x">✕</span><div><b>Dejar que desaparezca sin cerrar</b><span>El que se va sin conversación se queda con la versión peor de lo que pasó, y esa es la que cuenta si alguien le pregunta por ti.</span></div></div>
@@ -1635,6 +1682,216 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>

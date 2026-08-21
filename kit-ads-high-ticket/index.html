@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit de Ads Meta High Ticket</title>
-<meta name="description" content="El pack de anuncios Meta del sistema: 3 campañas con su orden de encendido, audiencias, creativos por ángulos y reglas de gestión. Kill a 2×, escalado +20%.">
+<meta name="description" content="El pack de anuncios Meta del sistema: 3 campañas con su orden de encendido, audiencias, creativos por ángulos y reglas de gestión. Presupuesto mínimo real, kill con regla, escalado +20%.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit de Ads Meta High Ticket">
+<meta property="og:description" content="El pack de anuncios Meta del sistema: 3 campañas con su orden de encendido, audiencias, creativos por ángulos y reglas de gestión. Presupuesto mínimo real, kill con regla, escalado +20%.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kit-ads-high-ticket.vercel.app">
+<meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3E06%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -406,6 +412,27 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   border-radius:12px;padding:16px 20px;text-align:left;color:#7A5200;
 }
 
+/* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
+.gl{
+  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #C9A733;padding:0 1px;
+}
+.gl:hover,.gl:focus-visible{background:#FBF3DA}
+.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
+.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+.b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
+#glTip{
+  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+  background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
+  font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
+  display:none;pointer-events:none;
+}
+#glTip b{
+  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
+}
+#glTip.visible{display:block}
+
 /* el índice lateral sustituye a la barra superior en pantallas anchas */
 @media(min-width:1081px){
   .barra{display:none!important}
@@ -439,7 +466,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <div class="hero-txt">
       <div class="hero-insignia"><span class="num">Kit 06 · Ads Meta</span><span class="hero-marca">Departamento Disruptivo</span></div>
       <h1>Tráfico con reglas, <em>no con corazonadas.</em></h1>
-      <p>Tres campañas que trabajan como sistema — captación, venta directa y retargeting — con arranque templado de 1-3€/día por ad set y decisiones que se toman con reglas, no con el panel abierto a todas horas.</p>
+      <p>Tres campañas que trabajan como sistema — captación, venta directa y retargeting — con presupuesto de verdad (mínimo 10-20€/día por ad set) y decisiones que se toman con reglas, no con el panel abierto a todas horas.</p>
       <p class="hero-que-es">Primero, <strong>5 pasos en orden</strong>: el checklist técnico, las 3 campañas y su orden de encendido, las audiencias y exclusiones, los creativos y las reglas de gestión. Después, la caja con <strong>los creativos completos de las 3 campañas</strong>, con sus tres ángulos cada una.</p>
       <div class="botonera">
         <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
@@ -449,12 +476,12 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     </div>
 
     <aside class="hero-panel" aria-label="El sistema de campañas de un vistazo">
-      <div class="ads-cab"><span class="avatar">06</span><div><b>El sistema · 3 campañas</b><small>arranque templado · 1-3€/día por ad set</small></div></div>
+      <div class="ads-cab"><span class="avatar">06</span><div><b>El sistema · 3 campañas</b><small>CBO · mín. 10-20€/día por ad set</small></div></div>
       <div class="ads-cuerpo">
         <div class="ads-fila on"><span class="ads-dot"></span><div class="ads-tx"><b>C1 · Captación LM</b><small>optimiza a Lead · llena lista y Pixel</small></div><span class="ads-cuando">día 0</span></div>
         <div class="ads-fila on"><span class="ads-dot"></span><div class="ads-tx"><b>C2 · Venta LT directa</b><small>optimiza a Purchase · financia el sistema</small></div><span class="ads-cuando">con señal</span></div>
         <div class="ads-fila off"><span class="ads-dot"></span><div class="ads-tx"><b>C3 · Retargeting</b><small>warm · el mejor coste por compra</small></div><span class="ads-cuando">con warm</span></div>
-        <div class="ads-reglas"><span>kill a 2×</span><span>escalar +20%</span><span>decidir cada 3-4 días</span></div>
+        <div class="ads-reglas"><span>kill: 1× AOV / 3× CPL</span><span>escalar +20%</span><span>decidir cada 3-4 días</span></div>
       </div>
       <div class="ads-pie"><b>Nada se enciende</b> sin el checklist técnico cerrado.</div>
     </aside>
@@ -480,7 +507,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <p><strong>Este pack está escrito y revisado, pero nada está publicado ni ejecutado.</strong> Ninguna campaña se enciende hasta cerrar el checklist técnico del paso 1, y la estructura pasa la revisión final de Ads con Bruno (los martes) antes de subir nada a Meta. El anuncio es la parte visible; el sistema de medición y reglas es lo que lo hace rentable.</p>
     <p><strong>Se hace en orden.</strong> Checklist técnico → campañas → audiencias → creativos → reglas de gestión. Y el encendido también tiene orden: Captación el día 0, Venta con señal de Pixel, Retargeting solo cuando el warm tenga tamaño.</p>
     <p><strong>Las reglas duras no se negocian.</strong> Cero cifras de resultado inventadas: CPL, coste por compra y ROAS se fijan con tus datos reales, nunca antes. Prohibido "gratis" y "lanzamiento" en el copy. Urgencia solo si el cierre es real. Los leads van a tu GHL, no a otro CRM. Y si tu nicho es salud, el checklist ENCAC manda sobre cualquier copy.</p>
-    <p style="margin-bottom:0">Los únicos números fijos del pack son política, no promesas: arranque 1-3€/día por ad set, kill a 2× el objetivo y escalado del +20%. Los ejemplos siguen el caso de Valeria, como en el resto de kits.</p>
+    <p style="margin-bottom:0">Los números fijos del pack son política, no promesas: suelo de 10-20€/día por ad set (menos no compra datos, solo gasto), kill a 1× el valor de pedido en venta y 3× el CPL objetivo en captación, y escalado del +20%. Los ejemplos siguen el caso de Valeria, como en el resto de kits.</p>
   </div>
 </div>
 
@@ -524,7 +551,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <div class="final">
       <h2>Una cosa antes de encender</h2>
       <p>Los anuncios no arreglan un embudo roto: lo amplifican. Si el checkout falla, el tracking miente o los emails no salen, pagar tráfico solo hace el problema más caro y más visible. <strong>Por eso el checklist técnico va primero y la revisión con Bruno va última.</strong></p>
-      <p style="margin-bottom:28px">Con la base cerrada, el sistema es aburrido en el buen sentido: arranque templado, decisiones cada 3-4 días, kill a 2×, escalar +20%. Sin drama y sin panel abierto a todas horas. Lo emocionante debería ser tu negocio, no tu administrador de anuncios.</p>
+      <p style="margin-bottom:28px">Con la base cerrada, el sistema es aburrido en el buen sentido: presupuesto con suelo, decisiones cada 3-4 días, kill con regla, escalar +20%. Sin drama y sin panel abierto a todas horas. Lo emocionante debería ser tu negocio, no tu administrador de anuncios.</p>
       <button class="btn btn-principal" onclick="irAPaso(0)">Ir al paso 1 →</button>
     </div>
   </div>
@@ -569,10 +596,10 @@ const PASOS = [
       <li><strong>Cuenta:</strong> Business Manager operativo, cuenta publicitaria activa con pago verificado, zona horaria CET y moneda EUR (no se pueden cambiar después), página de Facebook + Instagram conectadas, acceso de agencia (no login personal).</li>
       <li><strong>Pixel + CAPI (los dos):</strong> Pixel en TODAS las páginas; Conversions API server-side vía GHL; <strong>deduplicación</strong> con el mismo event_id en browser y server; Advanced Matching activo; Event Match Quality &gt;6.0 en el evento principal.</li>
       <li><strong>Dominio y eventos:</strong> dominio verificado (DNS TXT); los 5 eventos testeados con Test Events: <span class="hueco">PageView</span> · <span class="hueco">ViewContent</span> · <span class="hueco">Lead</span> · <span class="hueco">InitiateCheckout</span> · <span class="hueco">Purchase</span> (con valor y EUR). Cada uno dispara una sola vez.</li>
-      <li><strong>UTMs en todos los enlaces:</strong> <code>utm_source=meta&utm_medium=paid&utm_campaign=…&utm_content=…&utm_term=…</code> — y verificado que llegan a GHL y quedan en el contacto.</li>
+      <li><strong>UTMs en todos los enlaces:</strong> <code>utm_source=meta&utm_medium=paid&utm_campaign=…&utm_content=…&utm_term=…</code> — y verificado que llegan a GHL y quedan en el contacto. El destino del anuncio es siempre la URL final: nunca un acortador ni un redirector intermedio (las cadenas de redirección tumban anuncios).</li>
       <li><strong>GHL:</strong> workflow de lead (tag → nurture → entrega del recurso) y de comprador (tag → onboarding) montados. Si usas Instant Form, valida el sync con un lead real de punta a punta — y si no es fiable, landing propia.</li>
       <li><strong>Legal España:</strong> banner de cookies + Consent Mode v2, privacidad/aviso legal/condiciones enlazados, consentimiento para subir tu lista como audiencia.</li>
-      <li><strong>Nicho:</strong> marca la Categoría Especial si aplica (salud, finanzas, empleo, vivienda, política). Si tu nicho es salud, pasa todo el copy por el checklist ENCAC: sin promesas médicas, sin cifras de resultado, sin antes/después.</li>
+      <li><strong>Nicho:</strong> marca la Categoría Especial si aplica (salud, finanzas, empleo, vivienda, política). Si tu nicho es salud, todo el copy pasa el checklist ENCAC — sin promesas médicas, sin cifras de resultado, sin antes/después — <strong>y además la revisión humana obligatoria del equipo de ads (Bruno) antes de subir</strong>. Las dos cosas, no una.</li>
       <li><strong>A nivel de anuncio:</strong> mejoras automáticas de IA, Related Media y multi-anunciante <strong>desactivados</strong> — esconden el rendimiento real por creativo.</li>
     </ul>`),
   ejemplo:H(`<p>Valeria verificó su dominio, montó Pixel + CAPI desde su GHL y lanzó un lead de prueba desde el móvil con los datos de su madre (con permiso 😄): el Lead disparó una vez, llegó a GHL con sus UTMs y la secuencia de Welcome del Kit 04 se activó sola. Solo entonces pasó al paso 2. Su nicho roza salud, así que revisó sus tres ángulos contra ENCAC antes de subir nada.</p>`),
@@ -588,8 +615,8 @@ const PASOS = [
 {
   num:"Paso 02", ico:"tablero",
   titulo:"Las 3 campañas y su orden",
-  sub:"Captación, Venta directa y Retargeting trabajan como sistema. Y se encienden en orden: la tercera nunca el día 0.",
-  chips:["1-3€/día por ad set","ABO en el arranque","El orden importa"],
+  sub:"Captación, Venta directa y Retargeting trabajan como sistema. Se encienden en orden — y con presupuesto de verdad: por debajo del mínimo no hay datos, solo gasto.",
+  chips:["Mín. 10-20€/día por ad set","CBO + Advantage+","El orden importa"],
   queEs:H(`<p>Tres campañas que se apoyan entre sí:</p>
     <ul style="margin-bottom:0">
       <li><strong>Campaña 1 · Captación Lead Magnet</strong> — objetivo Leads, optimiza a Lead, destino tu landing de captación. Llena la lista y entrena el Pixel con tráfico frío barato.</li>
@@ -597,20 +624,29 @@ const PASOS = [
       <li><strong>Campaña 3 · Retargeting</strong> — objetivo Ventas sobre audiencias warm. Recupera al que ya te conoce y no compró. Suele ser el mejor coste por compra.</li>
     </ul>`),
   porQue:H(`<p><strong>El orden de encendido no es estético:</strong> día 0 se enciende la Campaña 1; la 2 en paralelo o en cuanto el Pixel tenga señal; y la 3 <strong>nunca el día 0</strong> — sin tráfico previo sus audiencias están vacías y pagarías por impactar a nadie.</p>
-    <p>El arranque es templado a propósito: <strong>1-3€/día por ad set</strong>, estructura ABO para leer cada audiencia por separado. El presupuesto sube después, con las reglas del paso 5 — nunca "en caliente".</p>`),
+    <p><strong>El presupuesto tiene un suelo, y es regla de la casa: 10-20€/día por ad set, nunca menos.</strong> Con 2€/día no compras resultados baratos: compras la incapacidad de distinguir qué creativo funciona — los datos llegan tan despacio que decides a ciegas durante semanas. La cuenta completa arranca en el rango 30-150€/día según tu bolsillo; si hoy no puedes sostener el mínimo, mejor keyword y orgánico (Kit 05) hasta poder — es la vía honesta.</p>
+    <p><strong>La estructura es CBO</strong> (presupuesto a nivel de campaña, con Advantage+): le das a Meta la señal y el margen, y él reparte entre los ad sets. El ABO (presupuesto por ad set) queda para un solo caso: tests puros de creativos donde necesitas forzar gasto idéntico en cada variante.</p>
+    <p style="margin-bottom:0">Y el marco económico que da sentido a todo: <strong>la Campaña 2 existe para que tu producto de entrada financie el gasto en anuncios.</strong> El objetivo no es comprar leads: es comprar CLIENTES — gente que ya te ha pagado algo — a coste cero neto. Esa es la señal que entrena al algoritmo para encontrarte más compradores.</p>`),
   plantilla:H(`<table class="tabla"><tr><th></th><th>C1 · Captación</th><th>C2 · Venta LT</th><th>C3 · Retargeting</th></tr>
     <tr><td><strong>Objetivo Meta</strong></td><td>Clientes potenciales</td><td>Ventas</td><td>Ventas (warm)</td></tr>
     <tr><td><strong>Optimiza a</strong></td><td>Lead</td><td>Purchase (o InitiateCheckout al arrancar)</td><td>Purchase</td></tr>
     <tr><td><strong>Destino</strong></td><td>Landing de captación</td><td>Checkout de tu oferta</td><td>Checkout de tu oferta</td></tr>
-    <tr><td><strong>Presupuesto</strong></td><td>1-3€/día × 3 ad sets</td><td>1-3€/día × 3 ad sets</td><td>1-3€/día × 3 ad sets (~10-20% del total)</td></tr>
+    <tr><td><strong>Presupuesto</strong></td><td>CBO · desde 30-60€/día por campaña (≥10-20€/día por ad set)</td><td>CBO · desde 30-60€/día por campaña</td><td>~10-20% del total</td></tr>
     <tr><td><strong>Se enciende</strong></td><td><strong>Día 0</strong></td><td>En paralelo o con señal de Pixel</td><td>Solo con audiencias warm con tamaño</td></tr></table>
-    <p style="margin:12px 0 0"><strong>Nombres sugeridos:</strong> <span class="hueco">TU MARCA</span> | Captación LM | ES · <span class="hueco">TU MARCA</span> | Venta LT | ES · <span class="hueco">TU MARCA</span> | Retargeting | ES. Y los KPIs (<span class="hueco">CPL objetivo</span>, <span class="hueco">coste por compra</span>, <span class="hueco">ROAS</span>) se fijan con datos reales tras los primeros días — nunca se inventan.</p>`),
-  ejemplo:H(`<p>Valeria encendió la Campaña 1 un lunes (3 ad sets a 2€/día). El jueves, con el Pixel registrando Leads a buen ritmo, encendió la 2 optimizando a InitiateCheckout. La 3 esperó dos semanas: cuando sus visitantes web y engagers tuvieron tamaño utilizable, la encendió con un solo ad set apilado — y la desdobló en tres al mes siguiente.</p>`),
+    <p style="margin:12px 0 8px"><strong>La nomenclatura es obligatoria, no estética</strong> — el sistema de vigilancia (paso 5) lee los nombres para casar cada campaña contra el plan:</p>
+    <ul>
+      <li><strong>Campaña:</strong> <span class="hueco">MARCA</span>-<span class="hueco">FUNNEL</span>-<span class="hueco">OBJETIVO</span> → <em>VAL-LM-Leads</em> · <em>VAL-LT-Ventas</em> · <em>VAL-RTG-Ventas</em></li>
+      <li><strong>Ad set:</strong> <span class="hueco">TIPO</span>-<span class="hueco">AUDIENCIA</span>-<span class="hueco">PRESUPUESTO</span> → <em>ADV-Amplio-20</em> · <em>INT-Bienestar-15</em></li>
+      <li><strong>Anuncio:</strong> <span class="hueco">CONCEPTO</span>-<span class="hueco">HOOK</span>-<span class="hueco">ITERACIÓN</span> → <em>DolorAlivio-H1-v1</em></li>
+    </ul>
+    <p style="margin:12px 0 0">Y los KPIs (<span class="hueco">CPL objetivo</span>, <span class="hueco">coste por compra</span>, <span class="hueco">ROAS</span>) se fijan con datos reales tras los primeros días — nunca se inventan. <strong>Marco de expectativas honesto:</strong> el montaje tipo son 3 días (diagnóstico y setup → creativos y landing → encendido), la primera decisión seria se toma en el día 7-10, y un lanzamiento acompañado de referencia contempla 3.000-5.000€ de inversión total en ~9 semanas con retorno objetivo de 3-6×. Ajusta la escala a tu caja, no al revés.</p>`),
+  ejemplo:H(`<p>Valeria encendió la Campaña 1 un lunes: CBO a 45€/día con sus 3 ad sets (VAL-LM-Leads). El jueves, con el Pixel registrando Leads a buen ritmo, encendió la 2 optimizando a InitiateCheckout. La 3 esperó dos semanas: cuando sus visitantes web y engagers tuvieron tamaño utilizable, la encendió con un solo ad set apilado — y la desdobló en tres al mes siguiente.</p>`),
   errores:[
     {t:"Encender el retargeting el día 0", d:"Audiencias vacías = dinero quemado. La Campaña 3 espera a que la 1 y la 2 hayan generado visitas, interacciones y leads."},
-    {t:"Arrancar caliente", d:"50€/día el día uno no acelera el aprendizaje: lo encarece. 1-3€/día por ad set, y escalar con reglas."},
+    {t:"Arrancar por debajo del mínimo", d:"1-3€/día por ad set no es prudencia: es pagar por no aprender nada. El suelo son 10-20€/día por ad set — y si no llega la caja, orgánico hasta que llegue."},
     {t:"Optimizar a clics", d:"El clic barato atrae al que clica, no al que compra. Se optimiza a Lead o a Purchase; a Landing Page View solo como puente temporal."},
-    {t:"Inventar los KPIs el día 0", d:"El CPL objetivo sale de tus primeros días de datos reales, no de un post de alguien. Hasta entonces mandan las reglas de kill del paso 5."}
+    {t:"Inventar los KPIs el día 0", d:"El CPL objetivo sale de tus primeros días de datos reales, no de un post de alguien. Hasta entonces mandan las reglas de kill del paso 5."},
+    {t:"Bautizar las campañas a tu manera", d:"Sin la nomenclatura, la vigilancia automática no puede leer tus campañas ni compararlas con el plan. El nombre es parte del sistema."}
   ],
   ghl:"Cada campaña alimenta GHL: los leads de la C1 entran en Welcome, los compradores de la C2 y C3 en Post-compra. El sistema de emails del Kit 04 es la otra mitad de estas campañas.",
   ayuda:"Ads con Bruno los martes."
@@ -625,21 +661,22 @@ const PASOS = [
     <p>Y las exclusiones son la mitad silenciosa del rendimiento: <strong>impactar a quien ya compró es pagar dos veces</strong>, y dejar a los leads del lead magnet dentro del frío contamina la lectura — el email ya les vende sin coste de media, y el retargeting los impacta más barato y con el mensaje correcto.</p>`),
   plantilla:H(`<p style="margin:0 0 8px"><strong>Los 3 ad sets por campaña:</strong></p>
     <ul>
-      <li><strong>C1 (frío):</strong> AS1 Advantage+ con semilla del nicho · AS2 intereses semilla amplios (~2-5M en España) · AS3 lookalike 1-3% (si hay lista de +1.000; ideal 5.000+) o demografía del avatar.</li>
-      <li><strong>C2 (frío con intención):</strong> AS1 Advantage+ Sales · AS2 intereses de intención de compra · AS3 lookalike de valor (compradores o leads). <strong>En los tres: excluir leads del LM últimos 30 días.</strong></li>
+      <li><strong>C1 (frío):</strong> AS1 Advantage+ con semilla del nicho · AS2 intereses semilla amplios (~2-5M en España) · AS3 lookalike 1-3% sobre tu lista de compradores (cuando exista con volumen) o demografía del avatar. <strong>Toda audiencia fría debe rondar los 2M como mínimo (ideal 4-5M):</strong> por debajo, se agota en días y el algoritmo no tiene dónde buscar.</li>
+      <li><strong>C2 (frío con intención):</strong> AS1 Advantage+ Sales · AS2 intereses de intención de compra · AS3 lookalike de valor (compradores).</li>
       <li><strong>C3 (warm):</strong> AS1 intención web (visitantes de venta 30d + abandonos de checkout 14d) · AS2 visitantes web 90d amplio · AS3 engagers IG+FB 365d + video-viewers 25% + leads de GHL sin comprar. Si el warm es pequeño: un solo ad set apilado, y desdoblar al crecer.</li>
     </ul>
     <p style="margin:12px 0 8px"><strong>Audiencias personalizadas a crear (una vez):</strong></p>
     <div class="campo"><b>La lista base</b>Compradores (Pixel Purchase + tag GHL, 180d) · Leads del LM (GHL, 180d) · Visitantes página de venta (30 y 90d) · Abandonos checkout (14d) · ViewContent (90d) · Engagers IG y FB (365d) · Video-viewers 25% (365d) · Lista de clientes para lookalike (con consentimiento LOPD)</div>
-    <p style="margin:12px 0 0"><strong>Exclusiones en TODAS las campañas:</strong> compradores de tu oferta + lista de equipo. En frío, además, los leads existentes.</p>`),
+    <p style="margin:12px 0 8px"><strong>Las exclusiones estándar del frío (C1 y C2), completas:</strong> compradores + lista de clientes + <strong>visitantes web de los últimos 180 días</strong> + <strong>engagers de los últimos 365 días</strong> + leads existentes. El frío tiene que ser frío de verdad: cualquier persona templada que se cuele infla el rendimiento aparente y te hace escalar creativos que en frío puro no funcionan. Los templados ya tienen su casa: la C3.</p>
+    <p style="margin:12px 0 0"><strong>Y el matiz de Advantage+ que casi nadie cuenta:</strong> por defecto en frío, sí — pero <strong>cuando estés testeando</strong> (qué audiencia gana, qué creativo gana), apágalo y usa audiencias guardadas: si Meta expande la audiencia por su cuenta durante un test, nunca sabrás qué ganó de verdad. Primero se testea con control; se le suelta la correa después.</p>`),
   ejemplo:H(`<p>El AS2 de la Campaña 1 de Valeria: intereses semilla de su nicho (bienestar, hábitos, productividad femenina) sumando ~3M en España, Advantage+ Placements, y excluidos sus compradores y sus leads. A las dos semanas, el AS1 (Advantage+) le traía leads un 30% más baratos: apagó el AS3 flojo y dejó el AS2 como control. El algoritmo ganó — como casi siempre que se le da señal limpia.</p>`),
   errores:[
     {t:"No excluir compradores", d:"Es la exclusión número uno y la que más se olvida. Pagar por impactar a quien ya compró no es solo caro: es molesto para tu mejor gente."},
     {t:"Leads del LM dentro del frío de la C2", d:"Tu email ya les vende sin coste. Dentro del frío inflan el rendimiento aparente de creativos que no funcionan en frío puro, y escalas mentiras."},
-    {t:"Intereses como jaula", d:"Un ad set de intereses ultra-específico de 80.000 personas se agota en días. Amplio + señal le gana a estrecho + control."},
-    {t:"Lookalike sin lista suficiente", d:"Un lookalike de 200 contactos es ruido. Mínimo ~1.000 (ideal 5.000+); hasta entonces, demografía del avatar."}
+    {t:"Intereses como jaula", d:"Un ad set de intereses ultra-específico de 80.000 personas se agota en días. Toda audiencia fría ronda los 2M+ (ideal 4-5M). Amplio + señal le gana a estrecho + control."},
+    {t:"Lookalike sobre curiosos", d:"El lookalike se construye sobre COMPRADORES, no sobre leads ni seguidores: Meta clona lo que le enseñas. Hasta tener lista de compradores con volumen, demografía del avatar. Y el orden de construcción es: warm primero, retargeting después, lookalike después, frío puro al final."}
   ],
-  ghl:"Las audiencias de leads y compradores se sincronizan desde GHL (con base legal y consentimiento LOPD). Revisa que los tags del Kit 04 (lead-nuevo, cliente-lt) estén alimentando las listas.",
+  ghl:"Las audiencias de leads y compradores se sincronizan desde GHL (con base legal y consentimiento LOPD). Revisa que los tags del Kit 04 (lead-nuevo, cliente-lt) estén alimentando las listas. Y el contenido del retargeting sale de tus llamadas: los PORQUÉ NO — las razones reales por las que la gente no compra — son el mejor creativo warm. Los 4 tipos que rotan en la C3: oferta especial, manejo de objeción, confianza (testimonio), urgencia verdadera.",
   ayuda:"Ads con Bruno los martes."
 },
 {
@@ -657,9 +694,12 @@ const PASOS = [
       <li><strong>Vídeo:</strong> hook visual en el primer segundo y <strong>subtítulos siempre</strong>.</li>
       <li><strong>3 hooks por creativo</strong> listos para rotar cuando llegue la fatiga.</li>
       <li><strong>C2 y C3:</strong> precio y garantía de 14 días visibles en creativo y descripción (si tu oferta no lleva garantía, retira sus menciones — el ángulo que se apoya en ella necesitará variante).</li>
-      <li><strong>Salud:</strong> los 3 ángulos de cada campaña pasan por el checklist ENCAC antes de subir.</li>
+      <li><strong>Salud:</strong> los 3 ángulos de cada campaña pasan por el checklist ENCAC antes de subir — y por la revisión de Bruno.</li>
       <li><strong>UTMs en todos los enlaces</strong> (paso 1).</li>
-    </ul>`),
+      <li><strong>Al testear:</strong> máximo 3 anuncios por test (más variantes reparten tan poco gasto que ninguna concluye), cambiando UNA variable entre ellas; nunca un ad set con un solo anuncio (mínimo 2).</li>
+    </ul>
+    <div class="campo"><b>Cómo diagnosticar un creativo que no rinde (por aislamiento)</b>¿No tocan "Ver más"? → el problema es el <strong>hook</strong>: cambia el primer segundo y el titular. · ¿Leen pero no clican al enlace? → el problema es el <strong>deseo</strong>: la promesa no es lo bastante concreta. · ¿Clican y no convierten? → el problema ya no es el anuncio: es la <strong>landing o la oferta</strong>. Cambiar la foto cuando el problema es el deseo es no cambiar nada.</div>
+    <p style="margin:12px 0 0"><strong>El ritmo, para calibrar expectativas:</strong> arrancando, 4-6 creativos por ad set con rotación a ~10 días es suficiente. Cuando esto escale en serio, el ritmo profesional de referencia son 10-30 creativos nuevos por semana — por eso el reciclaje de contenido orgánico (Kit 05, sin CTA incrustado) importa tanto: es tu fábrica de creativos ya validados.</p>`),
   ejemplo:H(`<p>El ángulo A de la Campaña 1 de Valeria, relleno: hook <em>"¿Otra vez sin energía a las cinco?"</em>; copy corto: <em>"No es falta de ganas. Es falta de un punto de partida claro. Preparé la Guía del Arranque: el primer paso, sin rodeos. Descárgatela en el enlace."</em>; imagen: el mockup de la guía sobre su fondo de marca. Seis creativos por ad set: tres ángulos × imagen y vídeo.</p>`),
   errores:[
     {t:"Un creativo por ad set", d:"Sin variedad no hay aprendizaje. 4-6 creativos, tres ángulos, y que el algoritmo reparta."},
@@ -673,27 +713,33 @@ const PASOS = [
 {
   num:"Paso 05", ico:"escudo",
   titulo:"Las reglas de gestión",
-  sub:"Kill a 2× el objetivo, escalar +20% cada 3-4 días, y la regla madre: decisiones semanales, no diarias.",
-  chips:["Ventana 72-96h","Kill a 2×","Escalar +20%"],
-  queEs:H(`<p>Las reglas que sustituyen a las corazonadas una vez el sistema está encendido: <strong>cuándo esperar, cuándo matar, cuándo escalar y qué no tocar.</strong> Son política del pack: los únicos números fijos son el arranque 1-3€/día, el kill a 2× y el escalado del +20%.</p>`),
+  sub:"Kill a 1× el valor de pedido (o 3× el CPL objetivo), escalar +20% tras 2-3 días estables, y la regla madre: decisiones con calendario, no con ansiedad.",
+  chips:["Ventana 72-96h","Kill: 1× AOV / 3× CPL","Escalar +20% o más ad sets"],
+  queEs:H(`<p>Las reglas que sustituyen a las corazonadas una vez el sistema está encendido: <strong>cuándo esperar, cuándo matar, cuándo escalar y qué no tocar.</strong> Son política del pack: los números fijos son el suelo de 10-20€/día por ad set, las reglas de kill (1× AOV en venta, 3× CPL en captación) y el escalado del +20%.</p>`),
   porQue:H(`<p>Meta necesita salir de la fase de aprendizaje antes de que los datos signifiquen algo: <strong>50 eventos en 7 días</strong>, o gasto ≥3× el objetivo sin conversión. Decidir antes es decidir con ruido — y cada edición mayor reinicia el aprendizaje.</p>
     <p>Y la asimetría clave: escalar amplifica lo que ya funciona, <strong>no rescata lo que no</strong>. Subir presupuesto a un ad set malo solo hace el agujero más grande.</p>`),
   plantilla:H(`<table class="tabla"><tr><th>Situación</th><th>Acción</th></tr>
     <tr><td>Menos de 72-96h o &lt;50 eventos</td><td><strong>Esperar.</strong> No decidir todavía</td></tr>
-    <tr><td>Gasto = 2× CPL/CPA objetivo sin conversión</td><td><strong>Pausar el creativo</strong> (el ad set entero solo si todos fallan). Antes, comprobar que no es la landing caída</td></tr>
-    <tr><td>Ad set a objetivo, estable, frecuencia OK, 3-4 días</td><td><strong>Escalar +20%</strong> — no más: subidas mayores resetean el aprendizaje</td></tr>
+    <tr><td><strong>Campaña de venta (C2/C3):</strong> un anuncio gasta 1× tu valor medio de pedido sin una compra</td><td><strong>Kill del anuncio.</strong> Es la regla por defecto; deja correr hasta 2× solo si vas sobrado de caja y el CPP viene bajando</td></tr>
+    <tr><td><strong>Captación (C1):</strong> un anuncio gasta 3× tu CPL objetivo sin un lead</td><td><strong>Pausar el creativo</strong> (el ad set entero solo si todos fallan). Antes, comprobar que no es la landing caída</td></tr>
+    <tr><td>Ad set a objetivo, estable, frecuencia OK, <strong>2-3 días</strong></td><td><strong>Escalar +20%</strong> — no más: subidas mayores resetean el aprendizaje</td></tr>
+    <tr><td>Quieres gastar más de lo que el +20% permite</td><td><strong>No fuerces el ad set: crea ad sets nuevos</strong> (audiencias o ángulos nuevos). Es la vía DD de escalar sin romper. Techo: 10 ad sets nuevos por día</td></tr>
     <tr><td>Ganador claro</td><td><strong>Duplicar a audiencia nueva</strong> (escalado horizontal) en vez de forzar presupuesto</td></tr>
-    <tr><td>Frecuencia ↑ + coste ↑ + CTR ↓ a la vez</td><td><strong>Creativo quemado:</strong> refrescar cada ~10 días, rotando el ángulo, no solo la foto</td></tr>
+    <tr><td>Frecuencia ↑ + coste ↑ + CTR ↓ a la vez</td><td><strong>Creativo quemado:</strong> refrescar cada ~10 días, rotando el ángulo, no solo la foto — con una campaña paralela testeando ángulos nuevos para que nunca te pille sin relevo</td></tr>
+    <tr><td>El retargeting va bien</td><td><strong>No se escala el retargeting:</strong> escala el frío, y el warm crece solo detrás</td></tr>
     <tr><td>Ad set a objetivo</td><td><strong>No tocar.</strong> Solo escalar +20% cuando toque</td></tr></table>
-    <p style="margin:12px 0 0"><strong>Umbrales de frecuencia:</strong> en frío, &gt;2 = saturación; en retargeting se tolera hasta 6-9 SOLO si hay ventas. <strong>Reparto:</strong> el grueso al frío que funciona; retargeting ~10-20% del total. <strong>Revisión:</strong> cada 3-4 días en el arranque, semanal una vez estable. Nada de mirar el panel cada hora.</p>`),
-  ejemplo:H(`<p>Semana 2 de Valeria: un creativo de la C1 llevaba 2× su CPL provisional sin un lead — comprobó que la landing funcionaba y lo pausó (solo ese; los otros dos del ad set seguían a objetivo). El AS1 llevaba 4 días estable por debajo de objetivo: +20%, y una nota en el calendario para revisarlo el jueves. Total de tiempo en el panel esa semana: 40 minutos.</p>`),
+    <p style="margin:12px 0 8px"><strong>Umbrales de frecuencia:</strong> en frío, &gt;2 = saturación; en retargeting se tolera hasta 6-9 SOLO si hay ventas. Y la lectura fina: <strong>frecuencia 7 con cero resultados no es saturación — es que el mensaje no resuena.</strong> No refresques la foto: cambia el ángulo o revisa la oferta.</p>
+    <p style="margin:12px 0 8px"><strong>Lecturas de referencia:</strong> CTR saliente ≥1% en frío es sano. Y la que manda sobre todas: si tu valor medio de pedido (con bump y OTOs) no llega a ~50-75€, el escalado con ads no se sostiene — el problema no está en Meta, está en el stack (revisa el Kit 08).</p>
+    <p style="margin:12px 0 0"><strong>Reparto:</strong> el grueso al frío que funciona; retargeting ~10-20% del total. <strong>Revisión:</strong> cada 3-4 días en el arranque, semanal una vez estable. Nada de mirar el panel cada hora.</p>`),
+  ejemplo:H(`<p>Semana 2 de Valeria: un creativo de la C1 llevaba 3× su CPL provisional sin un lead — comprobó que la landing funcionaba y lo pausó (solo ese; los otros dos del ad set seguían a objetivo). El AS1 llevaba 3 días estable por debajo de objetivo: +20%, y una nota en el calendario para revisarlo el jueves. Total de tiempo en el panel esa semana: 40 minutos.</p>`),
   errores:[
     {t:"Optimizar a diario", d:"Mirar el panel cada hora produce ediciones, y cada edición reinicia el aprendizaje. Decisiones cada 3-4 días, con calendario."},
-    {t:"Matar por un mal día", d:"Un martes malo no es una tendencia. La regla de kill es de gasto acumulado sin conversión, no de humor."},
-    {t:"Escalar al 100%", d:"Doblar presupuesto resetea el aprendizaje y dispara el coste. +20% cada 3-4 días, y horizontal cuando haya ganador claro."},
+    {t:"Matar por un mal día", d:"Un martes malo no es una tendencia. La regla de kill es de gasto acumulado sin conversión (1× AOV / 3× CPL), no de humor."},
+    {t:"Apagar anuncios demasiado pronto", d:"Pausar antes de que la regla de kill se cumpla es matar anuncios que iban a funcionar. La regla corta por los dos lados: ni dejar sangrar, ni ejecutar antes de tiempo."},
+    {t:"Escalar al 100%", d:"Doblar presupuesto resetea el aprendizaje y dispara el coste. +20% tras 2-3 días estables — o más ad sets, que es la vía que no rompe nada."},
     {t:"Cambiar tres cosas a la vez", d:"Oferta, creativo y audiencia a la vez = no saber qué movió la aguja. Una variable por decisión."}
   ],
-  ghl:"El dato que manda no está en Meta sino en GHL: leads que compran y agendan. Un CPL barato de leads que no abren emails es caro.",
+  ghl:"El dato que manda no está en Meta sino en GHL: leads que compran y agendan. Un CPL barato de leads que no abren emails es caro. Y no estás vigilando solo: el Centinela de Ads de DD pasa cada mañana 14 comprobaciones automáticas por las cuentas y avisa al equipo — con mención directa a Bruno — si aparece algo crítico. Por eso la nomenclatura del paso 2 es obligatoria: es el idioma que el Centinela lee. Silenciar una alerta nunca la arregla; los avisos vuelven a los 30 días si la causa sigue viva.",
   ayuda:"Ads con Bruno los martes — el sistema entero pasa su validación final antes de encender, y las primeras semanas se revisan con él."
 }
 ];
@@ -1000,6 +1046,216 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
+   copiar tal cual a cualquier página de la colección.
+   ================================================================== */
+(function(){
+const DEFS = {
+  "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
+  "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
+  "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
+  "embudo":"El recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "funnel":"El embudo: el recorrido de páginas por el que pasa una persona desde que te descubre hasta que compra.",
+  "landing":"Página con un único objetivo (captar un email, vender un producto), sin menús ni distracciones.",
+  "checkout":"La página o el paso donde se mete la tarjeta y se paga.",
+  "order bump":"Casilla en el checkout que añade un pequeño extra al pedido con un clic, justo antes de pagar. Por ley va desmarcada.",
+  "bump":"El order bump: casilla en el checkout que añade un pequeño extra al pedido con un clic. Por ley va desmarcada.",
+  "oto":"One Time Offer: oferta que aparece una sola vez, justo después de una compra, y no se vuelve a ver.",
+  "upsell":"Oferta adicional que se hace a quien acaba de comprar, para ampliar su pedido.",
+  "downsell":"Versión más pequeña (otro producto reducido, nunca el mismo más barato) que se ofrece a quien dijo no a la oferta anterior.",
+  "high ticket":"Producto o programa de precio alto (miles de euros) que se vende con conversación, no con un botón de compra.",
+  "low ticket":"Producto de entrada de precio pequeño que convierte a un desconocido en cliente de pago.",
+  "cta":"Call To Action: la llamada a la acción. El botón o la frase que dice qué hacer ahora («Reserva tu plaza», «Comenta GUÍA»).",
+  "hook":"El gancho: los primeros segundos o la primera frase de una pieza. Su único trabajo es que la persona se quede.",
+  "keyword":"Palabra que tu audiencia comenta en una publicación para recibir algo automático por DM (por ejemplo «GUÍA»).",
+  "dm":"Mensaje directo (privado) en Instagram u otra red.",
+  "workflow":"Automatización en GHL: una cadena de «si pasa esto, haz esto» (llega un formulario → se envía un email).",
+  "ghl":"GoHighLevel: la plataforma donde viven tus contactos, tus emails, tus calendarios y tus automatizaciones.",
+  "crm":"El archivo vivo de tus contactos: quién es cada persona, de dónde vino y en qué punto está contigo.",
+  "pixel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "píxel":"Código de Meta instalado en tu web que registra qué hace la gente (visitar, comprar) para que tus anuncios aprendan.",
+  "capi":"Conversions API: el «segundo cable» que manda esos mismos eventos a Meta desde el servidor, para no perder datos.",
+  "retargeting":"Anuncios dirigidos solo a gente que ya te conoce: visitó tu web, vio tus vídeos o ya es tu lead.",
+  "lookalike":"Audiencia «similar»: Meta busca gente parecida a tus mejores clientes o compradores.",
+  "cbo":"Presupuesto a nivel de campaña: Meta reparte el dinero entre tus conjuntos de anuncios automáticamente.",
+  "abo":"Presupuesto a nivel de conjunto de anuncios: tú fijas cuánto gasta cada uno.",
+  "ad set":"Conjunto de anuncios: el nivel de la campaña donde se elige la audiencia y el presupuesto.",
+  "ads":"Anuncios de pago (en Meta: Facebook e Instagram).",
+  "creativo":"La pieza del anuncio en sí: el vídeo o la imagen, con su texto.",
+  "cpl":"Coste por lead: cuánto te cuesta conseguir cada contacto con tus anuncios.",
+  "aov":"Valor medio de pedido: lo que gasta de media cada comprador en tu funnel, sumando bump y OTOs.",
+  "roas":"Retorno del gasto en anuncios: por cada euro invertido, cuántos vuelven.",
+  "ctr":"Porcentaje de personas que ven tu anuncio y hacen clic.",
+  "frecuencia":"Cuántas veces de media ha visto tu anuncio la misma persona.",
+  "utm":"Etiquetas que se añaden a un enlace para saber de dónde vino cada visita y cada compra.",
+  "spf":"Registro técnico de tu dominio que demuestra que tus emails los envías tú. Sin él, acabas en spam.",
+  "dkim":"Firma técnica de tu dominio que demuestra que tus emails no han sido manipulados. Sin ella, acabas en spam.",
+  "dmarc":"Regla técnica de tu dominio que dice qué hacer con los emails que no pasan SPF/DKIM. Completa el trío anti-spam.",
+  "entregabilidad":"La capacidad de tus emails de llegar a la bandeja de entrada (y no a spam).",
+  "open rate":"Porcentaje de personas que abren un email.",
+  "broadcast":"Email puntual que se envía a la lista un día concreto (lo contrario de una secuencia automática).",
+  "secuencia":"Serie de emails automáticos que se envían solos, en orden, cuando alguien hace algo (comprar, apuntarse).",
+  "tag":"Etiqueta invisible que se pone a un contacto en el CRM («cliente-lt», «cita-agendada») para clasificarlo y disparar automatizaciones.",
+  "no-show":"Persona que agenda una llamada y no se presenta.",
+  "closer":"Vendedor especializado en cerrar la venta dentro de la llamada.",
+  "setting":"Preparar la venta: convertir conversaciones (DMs, comentarios) en citas agendadas y cualificadas.",
+  "setter":"La persona que hace el setting: convierte conversaciones en citas agendadas y cualificadas.",
+  "triage":"Llamada corta previa (10-15 minutos) para ver si tiene sentido agendar la sesión larga.",
+  "discovery":"La fase de la llamada en la que preguntas y escuchas para entender el caso. Es donde se gana la venta.",
+  "pipeline":"Tu lista de oportunidades vivas: cada persona con conversación de venta abierta y en qué punto está.",
+  "follow-up":"Seguimiento: los mensajes que envías después, cuando alguien no responde o no termina de decidirse.",
+  "split test":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "test a/b":"Publicar dos versiones cambiando una sola cosa, para medir cuál funciona mejor.",
+  "learning phase":"Fase de aprendizaje: los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocarla la reinicia.",
+  "fase de aprendizaje":"Los primeros días de una campaña, cuando Meta aún está aprendiendo a quién mostrar tu anuncio. Tocar la campaña la reinicia.",
+  "evergreen":"Que funciona igual cualquier día del año, sin depender de fechas ni lanzamientos.",
+  "vsl":"Video Sales Letter: vídeo que presenta y vende tu oferta.",
+  "stories":"Historias de Instagram: publicaciones que desaparecen a las 24 horas.",
+  "reel":"Vídeo corto vertical de Instagram.",
+  "carrusel":"Publicación de Instagram con varias imágenes que se deslizan.",
+  "caption":"El texto que acompaña a una publicación de Instagram.",
+  "engagement":"Interacción real de la gente con tu contenido: me gusta, comentarios, guardados, compartidos.",
+  "kpi":"Indicador clave: el número que te dice si algo está funcionando.",
+  "benchmark":"Valor de referencia: el número «normal» contra el que comparas el tuyo.",
+  "frame":"El marco de la conversación: quién selecciona a quién. Se cuida en cada mensaje para no sonar al vendedor que necesita la venta.",
+  "inbound":"Lo que llega solo: gente que te escribe o comenta por iniciativa propia.",
+  "outbound":"Lo que inicias tú: conversaciones con personas que encajan con tu cliente ideal.",
+  "avatar":"Tu cliente ideal, descrito con detalle: quién es, qué le duele, qué quiere.",
+  "nicho":"El grupo concreto de personas al que sirves.",
+  "stack":"La pila de todo lo que incluye tu oferta, enumerada pieza a pieza.",
+  "token":"Comodín que GHL sustituye por el dato real de cada contacto ({{nombre}}, {{fecha de la cita}}).",
+  "location":"Tu subcuenta de GHL: el espacio donde viven tus contactos, calendarios y automatizaciones.",
+  "deduplicación":"Evitar que un mismo evento se cuente dos veces cuando llega por el pixel y por la API a la vez.",
+  "advantage+":"Modo automático de Meta: la máquina elige la audiencia y las ubicaciones por ti.",
+  "consent mode":"Sistema que respeta lo que el visitante aceptó en el banner de cookies antes de medir nada.",
+  "rgpd":"El reglamento europeo de protección de datos: pide consentimiento para escribir y baja visible en todos los emails.",
+  "encac":"Normas españolas de publicidad sanitaria/estética. Si tu nicho es salud, tus anuncios pasan este filtro con revisión humana.",
+  "business manager":"El panel de Meta donde viven tus cuentas publicitarias, tus páginas y tus píxeles.",
+  "take rate":"Porcentaje de compradores que aceptan una oferta adicional (bump u OTO).",
+  "churn":"Fuga de clientes: los que se van, no renuevan o dejan de usar lo que compraron.",
+  "onboarding":"El arranque de un cliente nuevo: sus primeras semanas, desde la firma hasta que el sistema rueda.",
+  "copy":"El texto de venta: las palabras de tus páginas, emails y anuncios.",
+  "prompt":"La instrucción que le escribes a una IA para que genere algo.",
+  "megaprompt":"Prompt largo y estructurado, con contexto, reglas y formato de salida, que produce resultados consistentes.",
+  "winback":"Secuencia para recuperar a quienes llevan tiempo sin abrir tus emails.",
+  "carrito abandonado":"Cuando alguien empieza a pagar y no termina. Una secuencia automática lo recupera.",
+  "welcome":"La secuencia de bienvenida: los primeros emails que recibe alguien al apuntarse a tu lista.",
+  "live":"Directo: una emisión en vivo en Instagram u otra red.",
+  "bio":"La descripción de tu perfil de Instagram (y el enlace que la acompaña).",
+  "webinar":"Clase o presentación en directo por internet, normalmente con una oferta al final.",
+  "api":"Puerta de conexión entre dos programas para intercambiar datos automáticamente.",
+  "role-play":"Ensayo de la llamada con otra persona haciendo de cliente.",
+  "close rate":"Porcentaje de llamadas que terminan en venta.",
+  "show-up":"Porcentaje de citas agendadas en las que la persona de verdad se presenta.",
+  "double dial":"Llamar dos veces seguidas: la segunda llamada inmediata multiplica la probabilidad de que contesten.",
+  "double opt-in":"Alta en dos pasos: la persona se apunta y además confirma desde un email.",
+  "hard bounce":"Email que rebota definitivamente porque la dirección no existe. Se saca de la lista.",
+  "blacklist":"Lista negra de remitentes marcados como spam por los proveedores de correo.",
+  "feed":"La pantalla principal de Instagram donde van apareciendo las publicaciones.",
+  "escalado":"Subir el presupuesto de una campaña que funciona, sin romper su aprendizaje.",
+  "conversión":"El momento en que alguien hace lo que la página pide: comprar, apuntarse, agendar.",
+  "tráfico":"Las visitas: la gente que llega a tu página, venga de donde venga.",
+  "orgánico":"Todo lo que llega sin pagar anuncios: contenido, perfil, boca a boca.",
+  "audiencia fría":"Gente que todavía no te conoce de nada.",
+  "tráfico frío":"Visitas de gente que todavía no te conoce de nada.",
+  "cohorte":"Grupo que empieza a la vez en un programa con fechas fijas de inicio y cierre.",
+  "temperature check":"Chequeo de temperatura: preguntas del 1 al 10, antes del precio, para medir si la persona está lista.",
+  "sla":"Compromiso de tiempo máximo de respuesta ante una incidencia.",
+  "placements":"Las ubicaciones donde se muestra un anuncio: feed, stories, reels…",
+  "anglicismo":"Palabra tomada del inglés («tips», «hack», «mindset»). En el copy DD se sustituyen por su versión en castellano."
+};
+const CLAVES = Object.keys(DEFS).sort((a,b)=>b.length-a.length);
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escRe = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const RE = new RegExp('(^|[^\\p{L}\\p{N}-])(' + CLAVES.map(escRe).join('|') + ')((?:e?s)?)(?![\\p{L}\\p{N}-])','giu');
+function defDe(palabra){
+  const p = palabra.toLowerCase();
+  if(DEFS[p]) return [p, DEFS[p]];
+  if(p.endsWith('es') && DEFS[p.slice(0,-2)]) return [p.slice(0,-2), DEFS[p.slice(0,-2)]];
+  if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
+  return null;
+}
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+function glosariza(raiz){
+  if(!raiz || !raiz.querySelectorAll) return;
+  const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
+    if(!n.nodeValue || n.nodeValue.length < 3) return NodeFilter.FILTER_REJECT;
+    const p = n.parentElement;
+    if(!p || p.closest(NO_TOCAR)) return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  const nodos = [];
+  while(walker.nextNode()) nodos.push(walker.currentNode);
+  const visto = new Map();
+  nodos.forEach(n=>{
+    const tx = n.nodeValue;
+    RE.lastIndex = 0;
+    if(!RE.test(tx)) return;
+    const zona = n.parentElement.closest('.bloque,.desplegable,.paso-cabecera,.aviso-uso,.final,.tarjeta,.hero-txt,.hero-panel,.seccion-cabecera,.pie,.dcont,.aviso-legal') || raiz;
+    let set = visto.get(zona); if(!set){ set = new Set(); visto.set(zona, set); }
+    RE.lastIndex = 0;
+    let html = '', ultimo = 0, m, alguno = false;
+    while((m = RE.exec(tx))){
+      const cruda = m[2] + m[3];
+      const res = defDe(cruda);
+      if(!res || set.has(res[0])) continue;
+      set.add(res[0]);
+      html += esc(tx.slice(ultimo, m.index)) + esc(m[1]) +
+        '<span class="gl" tabindex="0" data-gl="' + esc(res[0]) + '">' + esc(cruda) + '</span>';
+      ultimo = m.index + m[0].length;
+      alguno = true;
+    }
+    if(!alguno) return;
+    html += esc(tx.slice(ultimo));
+    const tpl = document.createElement('template');
+    tpl.innerHTML = html;
+    n.parentNode.replaceChild(tpl.content, n);
+  });
+}
+/* la ventanita */
+const tip = document.createElement('div');
+tip.id = 'glTip'; tip.setAttribute('role','tooltip');
+document.body.appendChild(tip);
+let fijado = null;
+function muestra(el){
+  const res = defDe(el.dataset.gl || el.textContent);
+  if(!res) return;
+  tip.innerHTML = '<b>' + esc(res[0]) + '</b>' + esc(res[1]);
+  tip.classList.add('visible');
+  const r = el.getBoundingClientRect();
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = Math.min(Math.max(8, r.left + r.width/2 - tw/2), window.innerWidth - tw - 8);
+  let y = r.top - th - 10;
+  if(y < 8) y = r.bottom + 10;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function oculta(){ tip.classList.remove('visible'); fijado = null; }
+document.addEventListener('mouseover', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('mouseout', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g && !fijado) oculta(); });
+document.addEventListener('click', e=>{
+  const g = e.target.closest && e.target.closest('.gl');
+  if(g){ if(fijado === g){ oculta(); } else { fijado = g; muestra(g); } }
+  else if(fijado){ oculta(); }
+});
+document.addEventListener('focusin', e=>{ const g = e.target.closest && e.target.closest('.gl'); if(g) muestra(g); });
+document.addEventListener('focusout', ()=>{ if(!fijado) oculta(); });
+window.addEventListener('scroll', ()=>{ tip.classList.remove('visible'); }, {passive:true});
+/* contenido que se pinta después (los manuales al abrirse) */
+let ocupado = false;
+const obs = new MutationObserver(muts=>{
+  if(ocupado) return;
+  ocupado = true; obs.disconnect();
+  muts.forEach(mu=>mu.addedNodes.forEach(nd=>{ if(nd.nodeType === 1 && nd.id !== 'glTip') glosariza(nd); }));
+  obs.observe(document.body, {childList:true, subtree:true});
+  ocupado = false;
+});
+glosariza(document.body);
+obs.observe(document.body, {childList:true, subtree:true});
+})();
 </script>
 </body>
 </html>
