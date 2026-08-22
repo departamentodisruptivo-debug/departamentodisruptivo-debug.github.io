@@ -558,7 +558,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 <footer class="pie">
   <div class="wrap">
     <p><b>Kit de Emails High Ticket</b> · Departamento Disruptivo</p>
-    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas con tu coach de GHL los miércoles · Ads con tu coach de Meta Ads los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
     <div class="aviso-legal">
       <b>Sobre lo legal:</b> todo email comercial necesita <b>enlace de baja funcional</b> e <b>identidad del remitente</b> en el pie (RGPD), y el SMS necesita su palabra de baja activa. Este kit te deja ambos montados en los pasos 3 y 6 — no actives nada sin esa parte cerrada. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
     </div>
@@ -603,7 +603,7 @@ const PASOS = [
     {t:"Emojis y acortadores", d:"Emojis en asunto y enlaces acortados de terceros son señales clásicas de spam. Fuera."}
   ],
   ghl:"Configuración de dominio y email en tu subcuenta (Settings → Email Services / Domains). Lo montas tú siguiendo tu formación de GHL.",
-  ayuda:"Sistemas GHL con María José los miércoles."
+  ayuda:"Sistemas con tu coach de GHL los miércoles."
 },
 {
   num:"Paso 02", ico:"regla",
@@ -656,7 +656,7 @@ const PASOS = [
     {t:"Pie sin identidad del remitente", d:"El RGPD exige identificar quién envía. La {{direccion_postal}} no es decorativa."}
   ],
   ghl:"Trigger Links en Marketing; opt-out keywords en Settings → Phone Numbers. Verifica la baja con un contacto de prueba antes de activar nada.",
-  ayuda:"Sistemas GHL con María José los miércoles."
+  ayuda:"Sistemas con tu coach de GHL los miércoles."
 },
 {
   num:"Paso 04", ico:"bandera",
@@ -679,7 +679,7 @@ const PASOS = [
     {t:"Etiquetar a mano lo que puede ser automático", d:"cliente-lt y cita-agendada las pone el sistema (compra / reserva). Solo invitar-cita es tuya."}
   ],
   ghl:"Contacts → Tags (o al vuelo en cada workflow). Créalas antes de montar los workflows del paso 5 para poder seleccionarlas en las condiciones.",
-  ayuda:"Sistemas GHL con María José los miércoles."
+  ayuda:"Sistemas con tu coach de GHL los miércoles."
 },
 {
   num:"Paso 05", ico:"ajustes",
@@ -713,7 +713,7 @@ const PASOS = [
     {t:"Emails de venta que mencionan el siguiente paso", d:"Los emails de Venta solo hablan del producto de entrada. Es intencional: no añadas menciones a otras ofertas ni al programa."}
   ],
   ghl:"Automation → Workflows. Un workflow por secuencia, con el nombre de su carpeta (01-welcome, 02-nutricion…) para encontrarlos rápido. Los waits del carrito se cuentan desde el abandono.",
-  ayuda:"Sistemas GHL con María José los miércoles: lleva el mapa de este paso y se montan contigo los dos primeros."
+  ayuda:"Sistemas con tu coach de GHL los miércoles: lleva el mapa de este paso y se montan contigo los dos primeros."
 },
 {
   num:"Paso 06", ico:"acuerdo",
@@ -1147,6 +1147,7 @@ refresca();
    ================================================================== */
 (function(){
 const DEFS = {
+  "coach":"La persona del equipo que te acompaña en un área concreta: tu coach de GHL para sistemas y montaje, tu coach de Meta Ads para anuncios.",
   "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
   "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
   "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",

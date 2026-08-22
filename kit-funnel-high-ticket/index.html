@@ -566,7 +566,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 <footer class="pie">
   <div class="wrap">
     <p><b>Kit de Funnel High Ticket</b> · Departamento Disruptivo</p>
-    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas con tu coach de GHL los miércoles · Ads con tu coach de Meta Ads los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
     <div class="aviso-legal">
       <b>Sobre lo legal:</b> antes del primer visitante, tu funnel necesita política de privacidad y términos enlazados de verdad, email de soporte visible, banner de consentimiento si mandas tráfico de pago, y el order bump desmarcado (en la UE no es opcional). Y la garantía debe decir lo mismo en la página, el checkout, los emails y el contrato — que vive en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>. Toda la colección de kits vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a>.
     </div>
@@ -620,7 +620,7 @@ const PASOS = [
     {t:"Montar las 7 páginas 'a la vez'", d:"Se montan en el orden del recorrido y se perfecciona UNA a la vez. Siete páginas al 60% convierten peor que tres al 100% y las demás en cola. Lo simple escala; lo aparatoso se cae."}
   ],
   ghl:"Las 7 páginas se montan en el builder de funnels de tu GHL, en este orden y con estos nombres, dentro de un solo funnel. El detalle técnico de cada una, en los pasos siguientes.",
-  ayuda:"Sistemas GHL con María José los miércoles. Lleva el mapa y se monta contigo la estructura vacía en una sesión."
+  ayuda:"Sistemas con tu coach de GHL los miércoles. Lleva el mapa y se monta contigo la estructura vacía en una sesión."
 },
 {
   num:"Paso 02", ico:"ajustes",
@@ -675,7 +675,7 @@ const PASOS = [
     {t:"Un hook distinto al del anuncio", d:"El lead pulsa por una promesa; si la landing dice otra cosa, se va. Anuncio (Kit 06), keyword (Kit 05) y landing dicen lo mismo."}
   ],
   ghl:"Página en el builder + formulario de GHL mapeado a contacto → dispara la etiqueta lead-nuevo → arranca Welcome (Kit 04). El evento Lead del Pixel se dispara aquí (Kit 06). Tras el opt-in, la página envía al LT.",
-  ayuda:"Sistemas GHL con María José los miércoles."
+  ayuda:"Sistemas con tu coach de GHL los miércoles."
 },
 {
   num:"Paso 04", ico:"precio",
@@ -705,7 +705,7 @@ const PASOS = [
     {t:"Urgencia falsa en la venta", d:"'Se cierra esta noche' con checkout evergreen: la misma regla de siempre. Si no cierra, no lo digas — la posdata vende sin mentir."}
   ],
   ghl:"Order form de GHL con el producto LT + bump como complemento. Eventos: ViewContent al cargar, InitiateCheckout al paso 1, Purchase al pagar (Kit 06). La compra dispara cliente-lt → Post-compra; el checkout sin compra → Carrito (Kit 04). Al pagar, la página envía al OTO 1.",
-  ayuda:"Sistemas GHL con María José los miércoles para el order form y el bump."
+  ayuda:"Sistemas con tu coach de GHL los miércoles para el order form y el bump."
 },
 {
   num:"Paso 05", ico:"subir",
@@ -733,7 +733,7 @@ const PASOS = [
     {t:"Downsell con oferta nueva", d:"El downsell es la versión reducida de lo mismo, no otra idea. Menos piezas, menos precio, misma promesa."}
   ],
   ghl:"Páginas de upsell del funnel de GHL con 1-click upsell activado sobre el pago del order form. Los eventos Purchase adicionales suman valor al pedido (Kit 06). Recorrido: OTO1 → sí: OTO2 / no: DS1 → OTO2 → sí: Gracias / no: DS2 → Gracias.",
-  ayuda:"Sistemas GHL con María José los miércoles — el 1-click upsell es lo más delicado del montaje; pruébalo con una compra de test antes de nada."
+  ayuda:"Sistemas con tu coach de GHL los miércoles — el 1-click upsell es lo más delicado del montaje; pruébalo con una compra de test antes de nada."
 },
 {
   num:"Paso 06", ico:"sesion",
@@ -763,7 +763,7 @@ const PASOS = [
     {t:"Olvidar al que no agenda", d:"La mayoría no agenda a la primera. Para eso existe la secuencia 08 del Kit 04 — verifica que el tag y el trigger están conectados."}
   ],
   ghl:"El formulario de 3 preguntas → campos personalizados → workflow que compone la nota de agenda (Kit 03, paso 3). La reserva dispara cita-agendada + el pack anti no-show. El calendario es el widget nativo de GHL embebido.",
-  ayuda:"Sistemas GHL con María José los miércoles. Y el guión de la llamada que nace aquí es el Kit 03 entero."
+  ayuda:"Sistemas con tu coach de GHL los miércoles. Y el guión de la llamada que nace aquí es el Kit 03 entero."
 }
 ];
 
@@ -1101,6 +1101,7 @@ refresca();
    ================================================================== */
 (function(){
 const DEFS = {
+  "coach":"La persona del equipo que te acompaña en un área concreta: tu coach de GHL para sistemas y montaje, tu coach de Meta Ads para anuncios.",
   "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
   "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
   "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",

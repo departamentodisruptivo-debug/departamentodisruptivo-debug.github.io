@@ -558,7 +558,7 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 <footer class="pie">
   <div class="wrap">
     <p><b>Kit de Ventas High Ticket</b> · Departamento Disruptivo</p>
-    <p style="margin-top:6px">¿Te trabas? Sistemas GHL con María José los miércoles · Ads con Bruno los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas con tu coach de GHL los miércoles · Ads con tu coach de Meta Ads los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
     <div class="aviso-legal">
       <b>Después del sí:</b> la venta no termina en el "¿entramos?". <b>El contrato se firma antes de la primera sesión, sin excepciones.</b> En ticket alto la venta se cierra por llamada, y ahí es fácil que la entrega arranque con un "después lo firmamos". No lo hagas. La plantilla, la guía y un ejemplo completo viven en el <a href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">Kit de Contratos ↗</a>, y la entrega entera en el <a href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">Kit de Entrega ↗</a>.
     </div>
@@ -687,7 +687,7 @@ const PASOS = [
     {t:"Confundirla con algo que ve el lead", d:"La nota es tuya, interna. El lead solo ve el formulario. No mandes nunca la nota ni la menciones literal."}
   ],
   ghl:"Las piezas: Form + Custom Fields + Calendar + Workflow (Form Submitted → Add Note). Lo montas tú en tu subcuenta siguiendo tu formación de GHL; aquí tienes el plano conceptual completo.",
-  ayuda:"Sistemas GHL con María José los miércoles. Lleva el checklist de montaje y se repasa contigo en la sesión."
+  ayuda:"Sistemas con tu coach de GHL los miércoles. Lleva el checklist de montaje y se repasa contigo en la sesión."
 },
 {
   num:"Paso 04", ico:"chat",
@@ -761,7 +761,7 @@ const PASOS = [
     {t:"Ignorar al que no confirma el 👍", d:"Esa es justo la señal. Toque personal a mano, y si no puede, mueves la cita y recuperas el hueco."}
   ],
   ghl:"Disparador: cita agendada. Tres envíos programados hacia atrás desde la hora de la cita (−24h, −4h, −15min) con tokens de fecha y hora del calendario. El vídeo va en el primer mensaje de confirmación, antes de los recordatorios. Y activa la palabra de baja para SMS/WhatsApp en tu location. Ojo si usas WhatsApp: los mensajes salientes automáticos van como plantillas que Meta aprueba antes (categoría Utility; las variables no pueden abrir ni cerrar el texto; los emojis pueden reclasificarla a Marketing y tumbarla). La aprobación tarda de minutos a 24h — pídela antes de tu primera cita real.",
-  ayuda:"Sistemas GHL con María José los miércoles para el workflow. El vídeo lo grabas hoy: móvil, ventana de frente, tres intentos y te quedas con el segundo."
+  ayuda:"Sistemas con tu coach de GHL los miércoles para el workflow. El vídeo lo grabas hoy: móvil, ventana de frente, tres intentos y te quedas con el segundo."
 }
 ];
 
@@ -1144,6 +1144,7 @@ refresca();
    ================================================================== */
 (function(){
 const DEFS = {
+  "coach":"La persona del equipo que te acompaña en un área concreta: tu coach de GHL para sistemas y montaje, tu coach de Meta Ads para anuncios.",
   "lead":"Persona interesada que te ha dejado su contacto o ha interactuado contigo, pero que todavía no es cliente.",
   "lead magnet":"Recurso útil y breve (una guía, una plantilla) que regalas a cambio del email de la persona.",
   "opt-in":"El momento (y la página) en que alguien te deja su email a cambio de algo. Literalmente, «optar por entrar» en tu lista.",
