@@ -408,25 +408,29 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 }
 
 /* ============ GLOSARIO (palabras con definición al pasar el mouse) ============ */
-.gl{
-  font-weight:700;color:#8A6D1F;cursor:help;border-radius:3px;
-  border-bottom:2px dotted #C9A733;padding:0 1px;
+/* verde azulado propio del diccionario: no se usa en enlaces ni en la marca,
+   para que se distinga de un enlace de un vistazo */
+span.gl{
+  font-weight:700;color:#0E7490;cursor:help;border-radius:3px;
+  border-bottom:2px dotted #2BB3CE;padding:0 1px;
 }
-.gl:hover,.gl:focus-visible{background:#FBF3DA}
-.paso-cabecera .gl,.final .gl,.hero .gl{color:var(--oro-claro);border-bottom-color:var(--oro)}
-.paso-cabecera .gl:hover,.final .gl:hover,.hero .gl:hover{background:rgba(212,175,55,.18)}
+span.gl:hover,span.gl:focus-visible{background:#E3F5F9}
+.paso-cabecera span.gl,.final span.gl,.hero span.gl{color:#7DD7E8;border-bottom-color:#4FC3DB}
+.paso-cabecera span.gl:hover,.final span.gl:hover,.hero span.gl:hover{background:rgba(79,195,219,.16)}
 .b-plantilla .bloque-cab .gl,.b-ejemplo .bloque-cab .gl,.b-errores .bloque-cab .gl,.b-ayuda .bloque-cab .gl,.b-aviso .bloque-cab .gl{color:#fff;border-bottom-color:rgba(255,255,255,.7)}
-#glTip{
-  position:fixed;z-index:400;max-width:min(330px,calc(100vw - 28px));
+#glTip,#dgTip{
+  position:fixed;z-index:400;max-width:min(340px,calc(100vw - 28px));
   background:var(--tinta);color:#EDEAE0;border-radius:12px;padding:13px 16px;
   font-size:.87rem;line-height:1.55;box-shadow:0 12px 36px rgba(17,17,17,.35);
   display:none;pointer-events:none;
 }
-#glTip b{
-  display:block;color:var(--oro);font-family:'Space Mono',monospace;
+#glTip b,#dgTip b{
+  display:block;font-family:'Space Mono',monospace;
   font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
 }
-#glTip.visible{display:block}
+#glTip b{color:#7DD7E8}
+#dgTip b{color:var(--oro)}
+#glTip.visible,#dgTip.visible{display:block}
 
 /* ============ EXTRAS: diagrama, aparición y calculadoras ============ */
 .diagrama{padding:8px 0 0}
@@ -447,6 +451,14 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 .dg-rama{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-2);align-self:center;flex-shrink:0;max-width:90px;text-align:center;line-height:1.4}
 .dg-nota{margin-top:14px;font-size:.87rem;color:var(--texto-2);line-height:1.6}
 .dg-nota strong{color:var(--tinta)}
+/* cuadros tocables del diagrama: al tocar, ventanita con la explicación */
+.dg-nodo[data-mas],.dg-tl span[data-mas]{cursor:pointer;position:relative;transition:transform .15s ease,box-shadow .15s ease}
+.dg-nodo[data-mas]:hover,.dg-tl span[data-mas]:hover{transform:translateY(-2px);box-shadow:var(--sombra)}
+.dg-nodo[data-mas]::after,.dg-tl span[data-mas]::after{
+  content:"+";position:absolute;top:5px;right:6px;width:16px;height:16px;border-radius:50%;
+  background:var(--oro);color:var(--tinta);font-weight:700;font-size:.74rem;line-height:16px;text-align:center;
+}
+.dg-pista{margin-top:13px;font-family:'Space Mono',monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--crema-mute);text-align:center}
 .dg-tl{display:flex;gap:6px;flex-wrap:wrap}
 .dg-tl span{border-radius:9px;padding:10px 9px;text-align:center;background:var(--papel-2);border:1px solid var(--papel-3);min-width:96px}
 .dg-tl b{display:block;font-size:.8rem;color:var(--tinta);line-height:1.3}
@@ -568,28 +580,29 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
     <div class="dg-caja">
       <div class="dg-cab"><span class="eyebrow">El sistema de un vistazo</span><b>Por dónde viaja cada contacto</b></div>
       <div class="dg-fila">
-        <div class="dg-nodo"><b>Opt-in</b><small>etiqueta lead-nuevo</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Alguien te deja su email a cambio de tu recurso (desde la keyword, un anuncio o tu funnel). En ese momento el sistema le pone la etiqueta lead-nuevo y todo lo demás arranca solo."><b>Opt-in</b><small>etiqueta lead-nuevo</small></div>
         <span class="dg-flecha">→</span>
-        <div class="dg-nodo"><b>01 Welcome</b><small>3 emails</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Los tres primeros emails: entregar el recurso al instante, contar tu enfoque y presentar tu producto de entrada. Es la primera impresión de tu casa — y sale sin que muevas un dedo."><b>01 Welcome</b><small>3 emails</small></div>
         <span class="dg-rama">¿no compra?</span>
-        <div class="dg-nodo"><b>02 Nutrición</b><small>6 emails · 85/15</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Seis emails, uno cada dos días, que construyen relación y responden objeciones. La proporción es 85% aportar / 15% ofrecer: la gente compra a quien le estuvo ayudando mientras decidía."><b>02 Nutrición</b><small>6 emails · 85/15</small></div>
         <span class="dg-flecha">→</span>
-        <div class="dg-nodo"><b>04 Venta</b><small>5 días · cierre real</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Cinco días de campaña con fecha de cierre verdadera. Solo se activa si de verdad cierras: la urgencia inventada quema la confianza de toda la lista."><b>04 Venta</b><small>5 días · cierre real</small></div>
       </div>
       <div class="dg-fila">
         <span class="dg-rama">¿compra?</span>
-        <div class="dg-nodo"><b>05 Post-compra</b><small>que entre y no abandone</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Justo después de pagar: que tu cliente entre, dé el primer paso y no se quede a mitad. Aquí no se vende nada — es puro acompañamiento."><b>05 Post-compra</b><small>que entre y no abandone</small></div>
         <span class="dg-rama">¿no agenda?</span>
-        <div class="dg-nodo"><b>08 No agenda</b><small>del producto a la sesión</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Para el comprador que no reservó su sesión: cuatro emails que lo invitan a la conversación de encaje — sin precio y sin presión."><b>08 No agenda</b><small>del producto a la sesión</small></div>
         <span class="dg-flecha">→</span>
-        <div class="dg-nodo oro"><b>La llamada</b><small>se cierra con el Kit 02</small></div>
+        <div class="dg-nodo oro" tabindex="0" data-mas="El final del recorrido no es un email: es una conversación contigo. Todo lo que pasa en esa llamada — el guión, las objeciones, el cierre — está en el Kit 02 · Ventas."><b>La llamada</b><small>se cierra con el Kit 02</small></div>
       </div>
       <div class="dg-fila">
-        <div class="dg-nodo"><b>06 Carrito</b><small>si el pago quedó a medias · arranca a los 30 min</small></div>
-        <div class="dg-nodo"><b>07 Winback</b><small>a los 60 días de silencio · limpia la lista</small></div>
-        <div class="dg-nodo"><b>03 Puente</b><small>solo a quien levanta la mano</small></div>
-        <div class="dg-nodo oro"><b>Newsletter</b><small>1×/semana · el latido de todo</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Si alguien empieza a pagar y no termina, este flujo lo recupera: el primer email sale a los 30 minutos, cuando la intención aún está caliente."><b>06 Carrito</b><small>si el pago quedó a medias · arranca a los 30 min</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="A los 60 días sin abrir nada, tres emails intentan recuperar al contacto. Si no reacciona, se le deja de enviar: proteger tu reputación de envío vale más que una lista grande."><b>07 Winback</b><small>a los 60 días de silencio · limpia la lista</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Nunca se envía una promoción a toda la lista: este par de emails pide permiso, y solo quien levanta la mano recibe la invitación."><b>03 Puente</b><small>solo a quien levanta la mano</small></div>
+        <div class="dg-nodo oro" tabindex="0" data-mas="Tu email vivo de cada semana, el mismo día, a toda la lista activa. Es el latido que mantiene caliente todo lo demás — regla de la casa: todo cliente la tiene."><b>Newsletter</b><small>1×/semana · el latido de todo</small></div>
       </div>
+      <p class="dg-pista">Toca cualquier cuadro y te cuento esa parte en detalle</p>
       <p class="dg-nota"><strong>Quien compra o agenda sale de su secuencia al instante</strong> — nadie recibe un email de venta de algo que ya compró. Cada caja de este mapa tiene su ficha exacta en la caja de herramientas de abajo.</p>
     </div>
   </div>
@@ -1273,6 +1286,36 @@ window.calcAov = function(){
 if(document.getElementById('scOut')) calcSuelo();
 if(document.getElementById('caOut')) calcAds();
 if(document.getElementById('cfOut')) calcAov();
+/* los cuadros del diagrama: toca uno y sale su explicación */
+var dgTip = document.createElement('div'); dgTip.id = 'dgTip'; document.body.appendChild(dgTip);
+var dgFijo = null;
+function dgEsc(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function dgMuestra(el){
+  var b = el.querySelector('b');
+  dgTip.innerHTML = '<b>' + dgEsc(b ? b.textContent : 'Detalle') + '</b>' + dgEsc(el.getAttribute('data-mas'));
+  dgTip.classList.add('visible');
+  var r = el.getBoundingClientRect(), tw = dgTip.offsetWidth, th = dgTip.offsetHeight;
+  var x = Math.min(Math.max(8, r.left + r.width / 2 - tw / 2), window.innerWidth - tw - 8);
+  var y = r.top - th - 10; if(y < 8) y = r.bottom + 10;
+  dgTip.style.left = x + 'px'; dgTip.style.top = y + 'px';
+}
+function dgOculta(){ dgTip.classList.remove('visible'); dgFijo = null; }
+document.addEventListener('click', function(e){
+  if(e.target.closest && e.target.closest('.gl')) return;
+  var n = e.target.closest && e.target.closest('[data-mas]');
+  if(n){ if(dgFijo === n){ dgOculta(); } else { dgFijo = n; dgMuestra(n); } }
+  else if(dgFijo){ dgOculta(); }
+});
+document.addEventListener('mouseover', function(e){
+  if(e.target.closest && e.target.closest('.gl')) return;
+  var n = e.target.closest && e.target.closest('[data-mas]');
+  if(n && !dgFijo) dgMuestra(n);
+});
+document.addEventListener('mouseout', function(e){
+  var n = e.target.closest && e.target.closest('[data-mas]');
+  if(n && !dgFijo) dgOculta();
+});
+window.addEventListener('scroll', function(){ if(!dgFijo) dgTip.classList.remove('visible'); }, {passive:true});
 })();
 </script>
 <script>
