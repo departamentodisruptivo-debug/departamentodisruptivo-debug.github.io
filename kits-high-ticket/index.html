@@ -229,7 +229,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
     <div class="estante-cab">
       <span class="eyebrow">El camino</span>
       <h2>Ármala, véndela, entrégala</h2>
-      <p>Los tres kits del viaje, en su orden — más el anexo legal. Entra al que toque según tu fase; cada uno enlaza con el siguiente.</p>
+      <p>Los tres kits del viaje, en su orden, más el anexo legal. Entra al que toque según tu fase; cada uno enlaza con el siguiente.</p>
     </div>
     <div class="rejilla">
 
@@ -283,7 +283,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
       <a class="kit emails" href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">
         <div class="kit-lomo"><span class="num">Kit 04</span><h3>Emails</h3><div class="frase">Se escriben una vez. Venden cada día.</div></div>
         <div class="kit-cuerpo">
-          <p>8 secuencias con 31 emails + 1 SMS — welcome, nutrición, venta, post-compra, carrito, winback y más — con los 6 pasos de montaje en GHL, la newsletter semanal y la salud de tu lista.</p>
+          <p>8 secuencias con 31 emails + 1 SMS (welcome, nutrición, venta, post-compra, carrito, winback y más) con los 6 pasos de montaje en GHL, la newsletter semanal y la salud de tu lista.</p>
           <div class="kit-meta"><span class="chip cuando">Mes 1 · con tu captación viva</span><span class="chip">8 secuencias</span><span class="chip">31 emails + 1 SMS</span><span class="chip">+ newsletter semanal</span></div>
           <span class="kit-ir">Entrar al kit →</span>
         </div>
@@ -310,7 +310,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
       <a class="kit funnel" href="https://kit-funnel-high-ticket.vercel.app" target="_blank" rel="noopener">
         <div class="kit-lomo"><span class="num">Kit 07</span><h3>Funnel</h3><div class="frase">Del clic al cliente, sin fugas.</div></div>
         <div class="kit-cuerpo">
-          <p>Las 7 páginas del embudo — captación, venta con checkout, OTOs, downsells y gracias — con la escalera oficial de precios, el cableado en GHL, el checklist de lanzamiento y el preview navegable.</p>
+          <p>Las 7 páginas del embudo (captación, venta con checkout, OTOs, downsells y gracias) con la escalera oficial de precios, el cableado en GHL, el checklist de lanzamiento y el preview navegable.</p>
           <div class="kit-meta"><span class="chip cuando">Mes 1-2 · el esqueleto</span><span class="chip">7 páginas</span><span class="chip">Escalera oficial</span><span class="chip">Preview navegable</span></div>
           <span class="kit-ir">Entrar al kit →</span>
         </div>
@@ -319,7 +319,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
       <a class="kit autonomia" href="https://kit-autonomia-high-ticket.vercel.app" target="_blank" rel="noopener">
         <div class="kit-lomo"><span class="num">Kit 08</span><h3>Autonomía</h3><div class="frase">Ya lo tienes todo. Y no se agota.</div></div>
         <div class="kit-cuerpo">
-          <p>Los dos prompts maestros — Contenido Mensual y Secuencias — para que, cuando quieras piezas nuevas, salgan en minutos — a tu ritmo, sin fechas — con tu Claude, en tu voz y con tus datos reales — y la frontera clara de qué cambias tú solo y qué se decide en tu revisión mensual.</p>
+          <p>Los dos prompts maestros (Contenido Mensual y Secuencias) para que, cuando quieras piezas nuevas, salgan en minutos (a tu ritmo, sin fechas) con tu Claude, en tu voz y con tus datos reales, y la frontera clara de qué cambias tú solo y qué se decide en tu revisión mensual.</p>
           <div class="kit-meta"><span class="chip cuando">Cuando agotes tu primer pack</span><span class="chip">2 prompts maestros</span><span class="chip">Rutina del siguiente pack</span></div>
           <span class="kit-ir">Entrar al kit →</span>
         </div>
@@ -340,7 +340,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 
 <script>
 /* ==================================================================
-   GLOSARIO DD — resalta palabras técnicas y muestra su significado
+   GLOSARIO DD, resalta palabras técnicas y muestra su significado
    al pasar el mouse (o al tocarlas en el móvil). Autónomo: se puede
    copiar tal cual a cualquier página de la colección.
    ================================================================== */
@@ -551,7 +551,7 @@ obs.observe(document.body, {childList:true, subtree:true});
 </script>
 <script>
 /* ==================================================================
-   EXTRAS DD — aparición al hacer scroll y calculadoras.
+   EXTRAS DD, aparición al hacer scroll y calculadoras.
    Autónomo: se puede copiar tal cual a cualquier página.
    ================================================================== */
 (function(){
@@ -568,14 +568,14 @@ window.calcSuelo = function(){
   var h = num('scHoras'), t = num('scTarifa');
   if(h <= 0 || t <= 0){ pinta('scOut','Rellena las horas por cliente y lo que vale tu hora, y te digo tu suelo.'); return; }
   var s = Math.round(h * t);
-  pinta('scOut','Tu suelo: <b>' + s.toLocaleString('es-ES') + ' €</b> por cliente. Por debajo de eso no es una oferta: es un problema. Tu precio final debe quedar claramente por encima — el suelo es el mínimo, no la meta.');
+  pinta('scOut','Tu suelo: <b>' + s.toLocaleString('es-ES') + ' €</b> por cliente. Por debajo de eso no es una oferta: es un problema. Tu precio final debe quedar claramente por encima, el suelo es el mínimo, no la meta.');
 };
 window.calcAds = function(){
   var cpl = num('caCpl'), leads = num('caLeads');
   if(cpl <= 0 || leads <= 0){ pinta('caOut','Rellena tu CPL objetivo y los leads que quieres al día, y te digo el presupuesto.'); return; }
   var p = Math.round(cpl * leads);
   if(p < 30){
-    pinta('caOut','La cuenta da <b>' + p.toLocaleString('es-ES') + ' €/día</b> — pero el suelo del sistema son <b>30-60 €/día por campaña</b> (10-20 € por ad set). Arranca en 30 €/día como mínimo, o sigue con orgánico hasta poder sostenerlo.');
+    pinta('caOut','La cuenta da <b>' + p.toLocaleString('es-ES') + ' €/día</b>, pero el suelo del sistema son <b>30-60 €/día por campaña</b> (10-20 € por ad set). Arranca en 30 €/día como mínimo, o sigue con orgánico hasta poder sostenerlo.');
   } else {
     pinta('caOut','Para ' + leads + ' leads/día a ' + cpl + ' € de CPL necesitas <b>' + p.toLocaleString('es-ES') + ' €/día</b> de presupuesto de campaña. Reparte respetando el mínimo por ad set (10-20 €/día) y no lo toques hasta salir de la fase de aprendizaje.');
   }
@@ -586,9 +586,9 @@ window.calcAov = function(){
   var aov = lt + 19 * (b / 100) + 147 * (o1 / 100) + 87 * (o2 / 100);
   var txt = aov.toFixed(2).replace('.', ',');
   if(aov >= 70){
-    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b> — <b style="color:var(--verde)">por encima del objetivo de ~70 €</b>: el escalado con anuncios se sostiene. (Los downsells suman por encima de esta cuenta.)');
+    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b>, <b style="color:var(--verde)">por encima del objetivo de ~70 €</b>: el escalado con anuncios se sostiene. (Los downsells suman por encima de esta cuenta.)');
   } else {
-    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b> — <b style="color:var(--coral)">por debajo del objetivo de ~70 €</b>: monta el pasillo entero y sube las tasas del bump y los OTOs antes de comprar tráfico. Los downsells suman por encima de esta cuenta.');
+    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b>, <b style="color:var(--coral)">por debajo del objetivo de ~70 €</b>: monta el pasillo entero y sube las tasas del bump y los OTOs antes de comprar tráfico. Los downsells suman por encima de esta cuenta.');
   }
 };
 if(document.getElementById('scOut')) calcSuelo();
