@@ -433,6 +433,60 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 }
 #glTip.visible{display:block}
 
+/* ============ EXTRAS: diagrama, aparición y calculadoras ============ */
+.diagrama{padding:8px 0 0}
+.diagrama .wrap{max-width:1000px}
+.dg-caja{background:#fff;border:1px solid var(--papel-3);border-radius:var(--radio);padding:26px 28px;box-shadow:var(--sombra);margin-top:34px}
+.dg-cab{margin-bottom:18px}
+.dg-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:6px}
+.dg-cab b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+.dg-fila{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.dg-fila + .dg-fila{margin-top:12px}
+.dg-nodo{flex:1;min-width:118px;background:var(--papel-2);border:1px solid var(--papel-3);border-radius:11px;padding:12px 13px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.dg-nodo b{display:block;font-size:.92rem;color:var(--tinta);line-height:1.3;margin-bottom:3px}
+.dg-nodo small{font-size:.76rem;color:var(--texto-2);line-height:1.4;display:block}
+.dg-nodo.oro{background:var(--tinta);border-color:var(--tinta)}
+.dg-nodo.oro b{color:var(--oro)}
+.dg-nodo.oro small{color:var(--crema)}
+.dg-flecha{align-self:center;color:var(--crema-mute);font-weight:700;font-size:1.05rem;flex-shrink:0}
+.dg-rama{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-2);align-self:center;flex-shrink:0;max-width:90px;text-align:center;line-height:1.4}
+.dg-nota{margin-top:14px;font-size:.87rem;color:var(--texto-2);line-height:1.6}
+.dg-nota strong{color:var(--tinta)}
+.dg-tl{display:flex;gap:6px;flex-wrap:wrap}
+.dg-tl span{border-radius:9px;padding:10px 9px;text-align:center;background:var(--papel-2);border:1px solid var(--papel-3);min-width:96px}
+.dg-tl b{display:block;font-size:.8rem;color:var(--tinta);line-height:1.3}
+.dg-tl i{font-style:normal;font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-2)}
+.dg-tl .foco{background:var(--tinta);border-color:var(--tinta)}
+.dg-tl .foco b{color:var(--oro)}
+.dg-tl .foco i{color:var(--crema)}
+/* aparición al hacer scroll */
+.rev{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.rev.rev-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rev{opacity:1!important;transform:none!important}}
+/* portada animada: los elementos del panel entran escalonados */
+@keyframes dgEntra{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.chat-cuerpo>*,.flujo-cuerpo>*,.cal-cuerpo>*,.ads-cuerpo>*,.term-cuerpo>*,.fun-cuerpo>*,.hero-panel ol>li{animation:dgEntra .45s ease backwards}
+.chat-cuerpo>:nth-child(1),.flujo-cuerpo>:nth-child(1),.cal-cuerpo>:nth-child(1),.ads-cuerpo>:nth-child(1),.term-cuerpo>:nth-child(1),.fun-cuerpo>:nth-child(1),.hero-panel ol>li:nth-child(1){animation-delay:.30s}
+.chat-cuerpo>:nth-child(2),.flujo-cuerpo>:nth-child(2),.cal-cuerpo>:nth-child(2),.ads-cuerpo>:nth-child(2),.term-cuerpo>:nth-child(2),.fun-cuerpo>:nth-child(2),.hero-panel ol>li:nth-child(2){animation-delay:.44s}
+.chat-cuerpo>:nth-child(3),.flujo-cuerpo>:nth-child(3),.cal-cuerpo>:nth-child(3),.ads-cuerpo>:nth-child(3),.term-cuerpo>:nth-child(3),.fun-cuerpo>:nth-child(3),.hero-panel ol>li:nth-child(3){animation-delay:.58s}
+.chat-cuerpo>:nth-child(4),.flujo-cuerpo>:nth-child(4),.cal-cuerpo>:nth-child(4),.ads-cuerpo>:nth-child(4),.term-cuerpo>:nth-child(4),.fun-cuerpo>:nth-child(4),.hero-panel ol>li:nth-child(4){animation-delay:.72s}
+.chat-cuerpo>:nth-child(5),.flujo-cuerpo>:nth-child(5),.cal-cuerpo>:nth-child(5),.ads-cuerpo>:nth-child(5),.term-cuerpo>:nth-child(5),.fun-cuerpo>:nth-child(5),.hero-panel ol>li:nth-child(5){animation-delay:.86s}
+.chat-cuerpo>:nth-child(6),.flujo-cuerpo>:nth-child(6),.cal-cuerpo>:nth-child(6),.ads-cuerpo>:nth-child(6),.term-cuerpo>:nth-child(6),.fun-cuerpo>:nth-child(6),.hero-panel ol>li:nth-child(6){animation-delay:1.00s}
+.chat-cuerpo>:nth-child(7),.flujo-cuerpo>:nth-child(7),.cal-cuerpo>:nth-child(7),.ads-cuerpo>:nth-child(7),.term-cuerpo>:nth-child(7),.fun-cuerpo>:nth-child(7),.hero-panel ol>li:nth-child(7){animation-delay:1.14s}
+.chat-cuerpo>:nth-child(n+8),.flujo-cuerpo>:nth-child(n+8),.cal-cuerpo>:nth-child(n+8),.ads-cuerpo>:nth-child(n+8),.term-cuerpo>:nth-child(n+8),.fun-cuerpo>:nth-child(n+8),.hero-panel ol>li:nth-child(n+8){animation-delay:1.28s}
+/* checklist para anotar fuera de la página */
+ul.lista-check{list-style:none;padding-left:2px}
+ul.lista-check li{position:relative;padding-left:31px;margin-bottom:10px}
+ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px;height:17px;border:2px solid var(--crema-mute);border-radius:4px;background:#fff}
+/* calculadoras */
+.calc{background:#fff;border:1.5px dashed var(--oro);border-radius:12px;padding:16px 18px;margin:16px 0}
+.calc b.calc-t{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:10px}
+.calc label{display:inline-flex;flex-direction:column;gap:4px;font-size:.78rem;font-weight:600;color:var(--texto-2);margin:0 14px 10px 0}
+.calc input{font-family:'Space Mono',monospace;font-size:1rem;padding:8px 10px;border:1.5px solid var(--papel-3);border-radius:8px;width:120px;background:var(--papel-2)}
+.calc input:focus{outline:2px solid var(--oro);background:#fff}
+.calc .calc-r{margin-top:4px;font-size:.95rem;background:var(--papel-2);border-radius:9px;padding:11px 14px;line-height:1.6}
+.calc .calc-r b{color:var(--tinta)}
+
 /* el índice lateral sustituye a la barra superior en pantallas anchas */
 @media(min-width:1081px){
   .barra{display:none!important}
@@ -510,6 +564,32 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <p style="margin-bottom:0">Los números fijos del pack son política, no promesas: suelo de 10-20€/día por ad set (menos no compra datos, solo gasto), kill a 1× el valor de pedido en venta y 3× el CPL objetivo en captación, y escalado del +20%. Los ejemplos siguen el caso de Valeria, como en el resto de kits.</p>
   </div>
 </div>
+
+<!-- DIAGRAMA -->
+<section class="diagrama" aria-label="El sistema de un vistazo">
+  <div class="wrap">
+    <div class="dg-caja">
+      <div class="dg-cab"><span class="eyebrow">El sistema de un vistazo</span><b>Las 3 campañas trabajan en cadena</b></div>
+      <div class="dg-fila">
+        <div class="dg-nodo"><b>C1 · Captación</b><small>frío · se enciende el día 0 · llena la lista y entrena el Pixel</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo"><b>Tu lista de leads</b><small>entra en las secuencias del Kit 04</small></div>
+        <div class="dg-nodo"><b>C2 · Venta LT</b><small>frío con intención · financia el sistema comprando CLIENTES</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo"><b>Compradores</b><small>la mejor señal para el algoritmo</small></div>
+      </div>
+      <div class="dg-fila">
+        <span class="dg-rama">visitas + interacciones de ambas</span>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo oro"><b>C3 · Retargeting</b><small>solo warm · 10-20% del presupuesto · nunca el día 0 · su creativo son los PORQUÉ NO</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo"><b>GHL mide</b><small>qué lead compra y agenda — el dato que manda no está en Meta</small></div>
+      </div>
+      <p class="dg-nota"><strong>El orden de encendido es parte del sistema:</strong> C1 el día 0, C2 con señal de Pixel, C3 solo cuando el warm tiene tamaño. Y todo sobre el checklist técnico del paso 1 — un anuncio sobre tracking roto compra datos malos.</p>
+    </div>
+  </div>
+</section>
+<!-- /DIAGRAMA -->
 
 <section class="seccion" id="camino">
   <div class="wrap">
@@ -592,7 +672,7 @@ const PASOS = [
   queEs:H(`<p>La lista que se cierra <strong>antes</strong> de crear la primera campaña: cuenta y activos, Pixel con CAPI, dominio verificado, los 5 eventos testeados, la convención de UTMs, los workflows de GHL y el bloque legal de España.</p>`),
   porQue:H(`<p>Meta optimiza sobre los datos que recibe. Si el Pixel cuenta doble, el evento de compra no dispara o el dominio no está verificado, el algoritmo aprende de ruido — y tú tomas decisiones sobre mentiras.</p>
     <p>Y hay una parte que no es técnica sino legal: en España, banner de consentimiento, política de privacidad enlazada y base legal para usar tu lista como audiencia. No es opcional.</p>`),
-  plantilla:H(`<ul>
+  plantilla:H(`<ul class="lista-check">
       <li><strong>Cuenta:</strong> Business Manager operativo, cuenta publicitaria activa con pago verificado, zona horaria CET y moneda EUR (no se pueden cambiar después), página de Facebook + Instagram conectadas, acceso de agencia (no login personal).</li>
       <li><strong>Pixel + CAPI (los dos):</strong> Pixel en TODAS las páginas; Conversions API server-side vía GHL; <strong>deduplicación</strong> con el mismo event_id en browser y server; Advanced Matching activo; Event Match Quality &gt;6.0 en el evento principal.</li>
       <li><strong>Dominio y eventos:</strong> dominio verificado (DNS TXT); los 5 eventos testeados con Test Events: <span class="hueco">PageView</span> · <span class="hueco">ViewContent</span> · <span class="hueco">Lead</span> · <span class="hueco">InitiateCheckout</span> · <span class="hueco">Purchase</span> (con valor y EUR). Cada uno dispara una sola vez.</li>
@@ -601,7 +681,8 @@ const PASOS = [
       <li><strong>Legal España:</strong> banner de cookies + Consent Mode v2, privacidad/aviso legal/condiciones enlazados, consentimiento para subir tu lista como audiencia.</li>
       <li><strong>Nicho:</strong> marca la Categoría Especial si aplica (salud, finanzas, empleo, vivienda, política). Si tu nicho es salud, todo el copy pasa el checklist ENCAC — sin promesas médicas, sin cifras de resultado, sin antes/después — <strong>y además la revisión humana obligatoria del equipo de ads (tu coach de Meta Ads) antes de subir</strong>. Las dos cosas, no una.</li>
       <li><strong>A nivel de anuncio:</strong> mejoras automáticas de IA, Related Media y multi-anunciante <strong>desactivados</strong> — esconden el rendimiento real por creativo.</li>
-    </ul>`),
+    </ul>
+    <p style="margin:4px 0 0;font-size:.88rem;color:#6E6B65"><em>Las casillas se marcan fuera de la página: copia el checklist con el botón de arriba a tus notas o a papel, y llévalo tachado a la revisión con tu coach de Meta Ads.</em></p>`),
   ejemplo:H(`<p>Valeria verificó su dominio, montó Pixel + CAPI desde su GHL y lanzó un lead de prueba desde el móvil con los datos de su madre (con permiso 😄): el Lead disparó una vez, llegó a GHL con sus UTMs y la secuencia de Welcome del Kit 04 se activó sola. Solo entonces pasó al paso 2. Su nicho roza salud, así que revisó sus tres ángulos contra ENCAC antes de subir nada.</p>`),
   errores:[
     {t:"Encender con el tracking a medias", d:"Cada día de campaña sin CAPI o con eventos dobles es presupuesto que compra datos malos. Primero se mide, luego se gasta."},
@@ -633,6 +714,11 @@ const PASOS = [
     <tr><td><strong>Destino</strong></td><td>Landing de captación</td><td>Checkout de tu oferta</td><td>Checkout de tu oferta</td></tr>
     <tr><td><strong>Presupuesto</strong></td><td>CBO · desde 30-60€/día por campaña (≥10-20€/día por ad set)</td><td>CBO · desde 30-60€/día por campaña</td><td>~10-20% del total</td></tr>
     <tr><td><strong>Se enciende</strong></td><td><strong>Día 0</strong></td><td>En paralelo o con señal de Pixel</td><td>Solo con audiencias warm con tamaño</td></tr></table>
+    <div class="calc"><b class="calc-t">Tu presupuesto de arranque, en números</b>
+      <label>Tu CPL objetivo (€)<input id="caCpl" type="number" min="0" step="0.5" oninput="calcAds()"></label>
+      <label>Leads que quieres al día<input id="caLeads" type="number" min="0" oninput="calcAds()"></label>
+      <div class="calc-r" id="caOut"></div>
+    </div>
     <p style="margin:12px 0 8px"><strong>La nomenclatura es obligatoria, no estética</strong> — el sistema de vigilancia (paso 5) lee los nombres para casar cada campaña contra el plan:</p>
     <ul>
       <li><strong>Campaña:</strong> <span class="hueco">MARCA</span>-<span class="hueco">FUNNEL</span>-<span class="hueco">OBJETIVO</span> → <em>VAL-LM-Leads</em> · <em>VAL-LT-Ventas</em> · <em>VAL-RTG-Ventas</em></li>
@@ -1046,6 +1132,53 @@ pintaIndice();
 pintaPuntos();
 pintaCaja();
 refresca();
+</script>
+<script>
+/* ==================================================================
+   EXTRAS DD — aparición al hacer scroll y calculadoras.
+   Autónomo: se puede copiar tal cual a cualquier página.
+   ================================================================== */
+(function(){
+var els = document.querySelectorAll('.dg-caja,.tarjeta,.seccion-cabecera,.aviso-uso,.final,.estante-cab,a.kit');
+if('IntersectionObserver' in window && els.length){
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('rev-in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(function(el){ el.classList.add('rev'); io.observe(el); });
+}
+function num(id){ var el = document.getElementById(id); if(!el) return 0; var v = parseFloat(String(el.value).replace(',','.')); return isNaN(v) ? 0 : v; }
+function pinta(id, html){ var el = document.getElementById(id); if(el) el.innerHTML = html; }
+window.calcSuelo = function(){
+  var h = num('scHoras'), t = num('scTarifa');
+  if(h <= 0 || t <= 0){ pinta('scOut','Rellena las horas por cliente y lo que vale tu hora, y te digo tu suelo.'); return; }
+  var s = Math.round(h * t);
+  pinta('scOut','Tu suelo: <b>' + s.toLocaleString('es-ES') + ' €</b> por cliente. Por debajo de eso no es una oferta: es un problema. Tu precio final debe quedar claramente por encima — el suelo es el mínimo, no la meta.');
+};
+window.calcAds = function(){
+  var cpl = num('caCpl'), leads = num('caLeads');
+  if(cpl <= 0 || leads <= 0){ pinta('caOut','Rellena tu CPL objetivo y los leads que quieres al día, y te digo el presupuesto.'); return; }
+  var p = Math.round(cpl * leads);
+  if(p < 30){
+    pinta('caOut','La cuenta da <b>' + p.toLocaleString('es-ES') + ' €/día</b> — pero el suelo del sistema son <b>30-60 €/día por campaña</b> (10-20 € por ad set). Arranca en 30 €/día como mínimo, o sigue con orgánico hasta poder sostenerlo.');
+  } else {
+    pinta('caOut','Para ' + leads + ' leads/día a ' + cpl + ' € de CPL necesitas <b>' + p.toLocaleString('es-ES') + ' €/día</b> de presupuesto de campaña. Reparte respetando el mínimo por ad set (10-20 €/día) y no lo toques hasta salir de la fase de aprendizaje.');
+  }
+};
+window.calcAov = function(){
+  var lt = num('cfLt'), b = num('cfBump'), o1 = num('cfOto1'), o2 = num('cfOto2');
+  if(lt <= 0){ pinta('cfOut','Pon el precio de tu producto de entrada y te calculo el valor medio de pedido.'); return; }
+  var aov = lt + 19 * (b / 100) + 147 * (o1 / 100) + 87 * (o2 / 100);
+  var txt = aov.toFixed(2).replace('.', ',');
+  if(aov >= 70){
+    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b> — <b style="color:var(--verde)">por encima del objetivo de ~70 €</b>: el escalado con anuncios se sostiene. (Los downsells suman por encima de esta cuenta.)');
+  } else {
+    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b> — <b style="color:var(--coral)">por debajo del objetivo de ~70 €</b>: monta el pasillo entero y sube las tasas del bump y los OTOs antes de comprar tráfico. Los downsells suman por encima de esta cuenta.');
+  }
+};
+if(document.getElementById('scOut')) calcSuelo();
+if(document.getElementById('caOut')) calcAds();
+if(document.getElementById('cfOut')) calcAov();
+})();
 </script>
 <script>
 /* ==================================================================

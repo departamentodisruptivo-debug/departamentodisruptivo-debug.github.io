@@ -445,6 +445,59 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
   font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;
 }
 #glTip.visible{display:block}
+/* ============ EXTRAS: diagrama, aparición y calculadoras ============ */
+.diagrama{padding:8px 0 0}
+.diagrama .wrap{max-width:1000px}
+.dg-caja{background:#fff;border:1px solid var(--papel-3);border-radius:var(--radio);padding:26px 28px;box-shadow:var(--sombra);margin-top:34px}
+.dg-cab{margin-bottom:18px}
+.dg-cab .eyebrow{color:var(--texto-2);display:block;margin-bottom:6px}
+.dg-cab b{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+.dg-fila{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.dg-fila + .dg-fila{margin-top:12px}
+.dg-nodo{flex:1;min-width:118px;background:var(--papel-2);border:1px solid var(--papel-3);border-radius:11px;padding:12px 13px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.dg-nodo b{display:block;font-size:.92rem;color:var(--tinta);line-height:1.3;margin-bottom:3px}
+.dg-nodo small{font-size:.76rem;color:var(--texto-2);line-height:1.4;display:block}
+.dg-nodo.oro{background:var(--tinta);border-color:var(--tinta)}
+.dg-nodo.oro b{color:var(--oro)}
+.dg-nodo.oro small{color:var(--crema)}
+.dg-flecha{align-self:center;color:var(--crema-mute);font-weight:700;font-size:1.05rem;flex-shrink:0}
+.dg-rama{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-2);align-self:center;flex-shrink:0;max-width:90px;text-align:center;line-height:1.4}
+.dg-nota{margin-top:14px;font-size:.87rem;color:var(--texto-2);line-height:1.6}
+.dg-nota strong{color:var(--tinta)}
+.dg-tl{display:flex;gap:6px;flex-wrap:wrap}
+.dg-tl span{border-radius:9px;padding:10px 9px;text-align:center;background:var(--papel-2);border:1px solid var(--papel-3);min-width:96px}
+.dg-tl b{display:block;font-size:.8rem;color:var(--tinta);line-height:1.3}
+.dg-tl i{font-style:normal;font-family:'Space Mono',monospace;font-size:.66rem;color:var(--texto-2)}
+.dg-tl .foco{background:var(--tinta);border-color:var(--tinta)}
+.dg-tl .foco b{color:var(--oro)}
+.dg-tl .foco i{color:var(--crema)}
+/* aparición al hacer scroll */
+.rev{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.rev.rev-in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rev{opacity:1!important;transform:none!important}}
+/* portada animada: los elementos del panel entran escalonados */
+@keyframes dgEntra{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.chat-cuerpo>*,.flujo-cuerpo>*,.cal-cuerpo>*,.ads-cuerpo>*,.term-cuerpo>*,.fun-cuerpo>*,.hero-panel ol>li{animation:dgEntra .45s ease backwards}
+.chat-cuerpo>:nth-child(1),.flujo-cuerpo>:nth-child(1),.cal-cuerpo>:nth-child(1),.ads-cuerpo>:nth-child(1),.term-cuerpo>:nth-child(1),.fun-cuerpo>:nth-child(1),.hero-panel ol>li:nth-child(1){animation-delay:.30s}
+.chat-cuerpo>:nth-child(2),.flujo-cuerpo>:nth-child(2),.cal-cuerpo>:nth-child(2),.ads-cuerpo>:nth-child(2),.term-cuerpo>:nth-child(2),.fun-cuerpo>:nth-child(2),.hero-panel ol>li:nth-child(2){animation-delay:.44s}
+.chat-cuerpo>:nth-child(3),.flujo-cuerpo>:nth-child(3),.cal-cuerpo>:nth-child(3),.ads-cuerpo>:nth-child(3),.term-cuerpo>:nth-child(3),.fun-cuerpo>:nth-child(3),.hero-panel ol>li:nth-child(3){animation-delay:.58s}
+.chat-cuerpo>:nth-child(4),.flujo-cuerpo>:nth-child(4),.cal-cuerpo>:nth-child(4),.ads-cuerpo>:nth-child(4),.term-cuerpo>:nth-child(4),.fun-cuerpo>:nth-child(4),.hero-panel ol>li:nth-child(4){animation-delay:.72s}
+.chat-cuerpo>:nth-child(5),.flujo-cuerpo>:nth-child(5),.cal-cuerpo>:nth-child(5),.ads-cuerpo>:nth-child(5),.term-cuerpo>:nth-child(5),.fun-cuerpo>:nth-child(5),.hero-panel ol>li:nth-child(5){animation-delay:.86s}
+.chat-cuerpo>:nth-child(6),.flujo-cuerpo>:nth-child(6),.cal-cuerpo>:nth-child(6),.ads-cuerpo>:nth-child(6),.term-cuerpo>:nth-child(6),.fun-cuerpo>:nth-child(6),.hero-panel ol>li:nth-child(6){animation-delay:1.00s}
+.chat-cuerpo>:nth-child(7),.flujo-cuerpo>:nth-child(7),.cal-cuerpo>:nth-child(7),.ads-cuerpo>:nth-child(7),.term-cuerpo>:nth-child(7),.fun-cuerpo>:nth-child(7),.hero-panel ol>li:nth-child(7){animation-delay:1.14s}
+.chat-cuerpo>:nth-child(n+8),.flujo-cuerpo>:nth-child(n+8),.cal-cuerpo>:nth-child(n+8),.ads-cuerpo>:nth-child(n+8),.term-cuerpo>:nth-child(n+8),.fun-cuerpo>:nth-child(n+8),.hero-panel ol>li:nth-child(n+8){animation-delay:1.28s}
+/* checklist para anotar fuera de la página */
+ul.lista-check{list-style:none;padding-left:2px}
+ul.lista-check li{position:relative;padding-left:31px;margin-bottom:10px}
+ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px;height:17px;border:2px solid var(--crema-mute);border-radius:4px;background:#fff}
+/* calculadoras */
+.calc{background:#fff;border:1.5px dashed var(--oro);border-radius:12px;padding:16px 18px;margin:16px 0}
+.calc b.calc-t{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:10px}
+.calc label{display:inline-flex;flex-direction:column;gap:4px;font-size:.78rem;font-weight:600;color:var(--texto-2);margin:0 14px 10px 0}
+.calc input{font-family:'Space Mono',monospace;font-size:1rem;padding:8px 10px;border:1.5px solid var(--papel-3);border-radius:8px;width:120px;background:var(--papel-2)}
+.calc input:focus{outline:2px solid var(--oro);background:#fff}
+.calc .calc-r{margin-top:4px;font-size:.95rem;background:var(--papel-2);border-radius:9px;padding:11px 14px;line-height:1.6}
+.calc .calc-r b{color:var(--tinta)}
 </style>
 </head>
 <body>
@@ -494,6 +547,28 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
     <p style="margin-bottom:0">Lo único que no cambiaría es el <strong>orden</strong> y las cinco cosas que aparecen al final de esa herramienta, en "lo que nunca cambia". El resto es tuyo.</p>
   </div>
 </div>
+<section class="diagrama" aria-label="El sistema de un vistazo">
+  <div class="wrap">
+    <div class="dg-caja">
+      <div class="dg-cab"><span class="eyebrow">El sistema de un vistazo</span><b>La vida de un cliente dentro de tu programa</b></div>
+      <div class="dg-fila">
+        <div class="dg-nodo"><b>Te paga</b><small>contrato firmado antes de la sesión 1</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo"><b>&lt;48 h · Bienvenida</b><small>mapa claro + una sola tarea fácil</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo"><b>Semana 1 · La victoria</b><small>algo real conseguido en 2-7 días</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo"><b>Las sesiones</b><small>mismo guion, mismo ritmo, acta después</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo"><b>Cierre + informe</b><small>el antes y el después, con números</small></div>
+        <span class="dg-flecha">→</span>
+        <div class="dg-nodo oro"><b>Renovación</b><small>o testimonio — nunca un final en silencio</small></div>
+      </div>
+      <p class="dg-nota"><strong>Las 4 puertas por donde se fuga la gente</strong> — los días 7-14, la fricción del día a día, el reingreso tras una pausa y la renovación — tienen cada una su herramienta en la caja de abajo.</p>
+    </div>
+  </div>
+</section>
+
 
 <section class="seccion" id="camino">
   <div class="wrap">
@@ -827,7 +902,8 @@ const PASOS = [
     <div class="campo"><b>Lo que te doy yo</b>Carpeta del programa · Enlace fijo de las sesiones · Canal de mensajes · Materiales</div>
     <div class="campo"><b>Al terminar el programa</b>Qué accesos libero yo y cuándo · Qué se queda contigo · Hasta cuándo están las grabaciones</div>
     <p style="margin-top:18px"><strong>Y estas instrucciones, que van dentro del documento:</strong></p>
-    <ul><li>Comparte por correo añadiendo la dirección concreta, no por enlace suelto.</li><li>Comprueba el nivel de permiso: si tengo que escribir dentro, necesito ser editor.</li><li>Verifica tú mismo abriéndolo desde una ventana privada del navegador.</li><li>Si tu cuenta es de empresa, puede bloquear compartir con externos. Pruébalo antes de darlo por hecho.</li><li>Avísame por el canal oficial cuando lo compartas.</li></ul>`),
+    <ul class="lista-check"><li>Comparte por correo añadiendo la dirección concreta, no por enlace suelto.</li><li>Comprueba el nivel de permiso: si tengo que escribir dentro, necesito ser editor.</li><li>Verifica tú mismo abriéndolo desde una ventana privada del navegador.</li><li>Si tu cuenta es de empresa, puede bloquear compartir con externos. Pruébalo antes de darlo por hecho.</li><li>Avísame por el canal oficial cuando lo compartas.</li></ul>
+    <p style="margin:4px 0 0;font-size:.88rem;color:#6E6B65"><em>Las casillas se marcan en el documento que le compartes a tu cliente, no en esta página: cópialas con el botón de arriba.</em></p>`),
   ejemplo:H(`<table class="tabla"><tr><th>Necesito de ti</th><th>Para qué</th><th>Permiso</th><th></th></tr>
     <tr><td>Carpeta con los procedimientos actuales del despacho</td><td>Ver qué hay escrito ya, aunque esté a medias</td><td>Comentarista</td><td><span class="marca-si">Sí</span></td></tr>
     <tr><td>Organigrama con funciones</td><td>Saber quién puede asumir qué</td><td>Lector</td><td><span class="marca-si">Sí</span></td></tr>
@@ -1892,6 +1968,53 @@ const obs = new MutationObserver(muts=>{
 });
 glosariza(document.body);
 obs.observe(document.body, {childList:true, subtree:true});
+})();
+</script>
+<script>
+/* ==================================================================
+   EXTRAS DD — aparición al hacer scroll y calculadoras.
+   Autónomo: se puede copiar tal cual a cualquier página.
+   ================================================================== */
+(function(){
+var els = document.querySelectorAll('.dg-caja,.tarjeta,.seccion-cabecera,.aviso-uso,.final,.estante-cab,a.kit');
+if('IntersectionObserver' in window && els.length){
+  var io = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('rev-in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(function(el){ el.classList.add('rev'); io.observe(el); });
+}
+function num(id){ var el = document.getElementById(id); if(!el) return 0; var v = parseFloat(String(el.value).replace(',','.')); return isNaN(v) ? 0 : v; }
+function pinta(id, html){ var el = document.getElementById(id); if(el) el.innerHTML = html; }
+window.calcSuelo = function(){
+  var h = num('scHoras'), t = num('scTarifa');
+  if(h <= 0 || t <= 0){ pinta('scOut','Rellena las horas por cliente y lo que vale tu hora, y te digo tu suelo.'); return; }
+  var s = Math.round(h * t);
+  pinta('scOut','Tu suelo: <b>' + s.toLocaleString('es-ES') + ' €</b> por cliente. Por debajo de eso no es una oferta: es un problema. Tu precio final debe quedar claramente por encima — el suelo es el mínimo, no la meta.');
+};
+window.calcAds = function(){
+  var cpl = num('caCpl'), leads = num('caLeads');
+  if(cpl <= 0 || leads <= 0){ pinta('caOut','Rellena tu CPL objetivo y los leads que quieres al día, y te digo el presupuesto.'); return; }
+  var p = Math.round(cpl * leads);
+  if(p < 30){
+    pinta('caOut','La cuenta da <b>' + p.toLocaleString('es-ES') + ' €/día</b> — pero el suelo del sistema son <b>30-60 €/día por campaña</b> (10-20 € por ad set). Arranca en 30 €/día como mínimo, o sigue con orgánico hasta poder sostenerlo.');
+  } else {
+    pinta('caOut','Para ' + leads + ' leads/día a ' + cpl + ' € de CPL necesitas <b>' + p.toLocaleString('es-ES') + ' €/día</b> de presupuesto de campaña. Reparte respetando el mínimo por ad set (10-20 €/día) y no lo toques hasta salir de la fase de aprendizaje.');
+  }
+};
+window.calcAov = function(){
+  var lt = num('cfLt'), b = num('cfBump'), o1 = num('cfOto1'), o2 = num('cfOto2');
+  if(lt <= 0){ pinta('cfOut','Pon el precio de tu producto de entrada y te calculo el valor medio de pedido.'); return; }
+  var aov = lt + 19 * (b / 100) + 147 * (o1 / 100) + 87 * (o2 / 100);
+  var txt = aov.toFixed(2).replace('.', ',');
+  if(aov >= 70){
+    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b> — <b style="color:var(--verde)">por encima del objetivo de ~70 €</b>: el escalado con anuncios se sostiene. (Los downsells suman por encima de esta cuenta.)');
+  } else {
+    pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b> — <b style="color:var(--coral)">por debajo del objetivo de ~70 €</b>: monta el pasillo entero y sube las tasas del bump y los OTOs antes de comprar tráfico. Los downsells suman por encima de esta cuenta.');
+  }
+};
+if(document.getElementById('scOut')) calcSuelo();
+if(document.getElementById('caOut')) calcAds();
+if(document.getElementById('cfOut')) calcAov();
 })();
 </script>
 </body>
