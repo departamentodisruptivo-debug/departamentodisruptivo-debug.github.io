@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Los Kits del High Ticket</title>
-<meta name="description" content="La colección de kits del high ticket de Departamento Disruptivo: arma tu oferta, véndela, entrégala. Cada kit es una página con plantillas y ejemplos listos.">
+<title>Los Kits del Low Ticket</title>
+<meta name="description" content="La colección del low ticket de Departamento Disruptivo: crea tu producto de entrada de 12-17 € en el taller y elige su formato con números claros: guía, vídeo, masterclass, audio o plantillas.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="Los Kits del High Ticket">
-<meta property="og:description" content="La colección de kits del high ticket de Departamento Disruptivo: arma tu oferta, véndela, entrégala. Cada kit es una página con plantillas y ejemplos listos.">
+<meta property="og:title" content="Los Kits del Low Ticket">
+<meta property="og:description" content="La colección del low ticket de Departamento Disruptivo: crea tu producto de entrada de 12-17 € en el taller y elige su formato con números claros: guía, vídeo, masterclass, audio o plantillas.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kits-high-ticket.vercel.app">
+<meta property="og:url" content="https://kits-low-ticket.vercel.app">
 <meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Crect x='10' y='14' width='10' height='36' rx='2' fill='%23D4AF37'/%3E%3Crect x='24' y='14' width='10' height='36' rx='2' fill='%23E6C765'/%3E%3Crect x='38' y='20' width='10' height='30' rx='2' transform='rotate(8 43 35)' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111111'/%3E%3Crect x='10' y='14' width='10' height='36' rx='2' fill='%23D4AF37'/%3E%3Crect x='25' y='19' width='22' height='31' rx='3' transform='rotate(6 36 34)' fill='%23fff'/%3E%3Crect x='42' y='12' width='14' height='10' rx='3' transform='rotate(8 49 17)' fill='%23E6C765'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -201,6 +201,19 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 .calc input:focus{outline:2px solid var(--oro);background:#fff}
 .calc .calc-r{margin-top:4px;font-size:.95rem;background:var(--papel-2);border-radius:9px;padding:11px 14px;line-height:1.6}
 .calc .calc-r b{color:var(--tinta)}
+/* lo propio de la estantería low ticket */
+.hero::before{background:repeating-linear-gradient(-45deg,var(--oro) 0 12px,#A8862B 12px 24px)}
+.kit.formato .kit-lomo .num{background:#fff;color:var(--tinta)}
+.kit.formato .kit-lomo::before{background:repeating-linear-gradient(-45deg,var(--oro) 0 6px,rgba(0,0,0,0) 6px 12px)}
+.fmt-bloque{background:var(--papel-2);border:1px solid var(--papel-3);border-radius:10px;padding:12px 14px}
+.fmt-bloque b{display:block;font-size:.72rem;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--texto-2);margin-bottom:6px}
+.fmt-bloque ul{margin:0;padding-left:18px}
+.fmt-bloque li{font-size:.88rem;color:var(--texto-2);line-height:1.55;margin-bottom:4px}
+.fmt-error{font-size:.88rem;color:#B23B2E;background:#FBEBE9;border:1px solid #F3CFCA;border-radius:10px;padding:10px 14px;line-height:1.5}
+.combo{grid-column:1/-1;background:#fff;border:1.5px dashed var(--oro);border-radius:var(--radio);padding:20px 24px;box-shadow:var(--sombra)}
+.combo b.combo-t{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.1rem;display:block;margin-bottom:6px}
+.combo p{color:var(--texto-2);font-size:.95rem;line-height:1.6;margin:0}
+.pie a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .viaje-tramo{animation:dgEntra .5s ease backwards}
 .viaje-tramo:nth-child(1){animation-delay:.25s}
 .viaje-tramo:nth-child(2){animation-delay:.45s}
@@ -213,15 +226,15 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 <header class="hero">
   <div class="wrap">
     <div class="hero-marca">Departamento Disruptivo · La colección</div>
-    <h1>Los Kits del <em>High Ticket</em></h1>
-    <p>Todo el camino de tu programa, por orden y sin folio en blanco: arma la oferta, véndela, entrégala. Cada kit es una página con los pasos, las plantillas y un ejemplo ya relleno en cada punto.</p>
+    <h1>Los Kits del <em>Low Ticket</em></h1>
+    <p>Todo lo de tu producto de entrada de 12-17 €, en un sitio: el taller que lo crea desde cero, las opciones de formato con sus números claros y las piezas del sistema que lo venden y lo entregan.</p>
 
     <div class="viaje" aria-label="El orden del camino">
-      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Fase 1 · Kit 01</span><b>Ármala</b><small>De propuesta a oferta que se puede vender.</small></div><span class="viaje-flecha">→</span></div>
-      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Fase 2 · Kit 02</span><b>Véndela</b><small>Del DM a la llamada cerrada.</small></div><span class="viaje-flecha">→</span></div>
-      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Fase 3 · Kit 03</span><b>Entrégala</b><small>De que te paguen a que termine bien.</small></div></div>
+      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Paso 1 · La victoria</span><b>Elígela</b><small>Un paso de tu método que la gente ya busca.</small></div><span class="viaje-flecha">→</span></div>
+      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Paso 2 · El taller</span><b>Créalo</b><small>Formato, esqueleto, borrador con Claude y diseño.</small></div><span class="viaje-flecha">→</span></div>
+      <div class="viaje-tramo"><div class="viaje-caja"><span class="fase">Paso 3 · El sistema</span><b>Véndelo</b><small>El funnel lo vende; los emails lo entregan.</small></div></div>
     </div>
-    <a class="btn-empieza" href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">¿Primera vez aquí? Empieza por el Kit 01 →</a>
+    <a class="btn-empieza" href="https://kit-producto-low-ticket.vercel.app" target="_blank" rel="noopener">¿Primera vez aquí? Entra al taller →</a>
   </div>
 </header>
 
@@ -230,45 +243,27 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 
   <section class="estante">
     <div class="estante-cab">
-      <span class="eyebrow">El camino</span>
-      <h2>Ármala, véndela, entrégala</h2>
-      <p>Los tres kits del viaje, en su orden, más el anexo legal. Entra al que toque según tu fase; cada uno enlaza con el siguiente.</p>
+      <span class="eyebrow">El taller</span>
+      <h2>Aquí se construye</h2>
+      <p>Un solo kit lo hace todo: de tu método a un producto cobrando. Y al lado, la colección del programa principal, que es donde tu low ticket empuja.</p>
     </div>
     <div class="rejilla">
 
-      <a class="kit oferta" href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 01</span><h3>La Oferta</h3><div class="frase">Tienes una propuesta. Todavía no una oferta.</div></div>
+      <a class="kit lowticket" href="https://kit-producto-low-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Taller</span><h3>Crea tu Low Ticket</h3><div class="frase">De tu método a un producto a la venta.</div></div>
         <div class="kit-cuerpo">
-          <p>Las 7 decisiones, en orden, que convierten tu propuesta en una oferta que se puede vender y entregar. Termina con alguien pagándote, no con un documento bonito.</p>
-          <div class="kit-meta"><span class="chip cuando">Semana 1 · tu primer paso</span><span class="chip">7 decisiones</span><span class="chip">5 herramientas</span><span class="chip">Una tarde</span></div>
-          <span class="kit-ir">Entrar al kit →</span>
+          <p>Los 5 pasos para crearlo desde cero: qué es (y qué no), la primera victoria, el formato y el esqueleto, el borrador con Claude y el remate con nombre, diseño y precio. Con el Prompt del Borrador, el esqueleto copiable, el checklist de calidad y la receta de Canva.</p>
+          <div class="kit-meta"><span class="chip cuando">Empieza aquí</span><span class="chip">5 pasos</span><span class="chip">Prompt del Borrador</span><span class="chip">Una semana de ratos</span></div>
+          <span class="kit-ir">Entrar al taller →</span>
         </div>
       </a>
 
-      <a class="kit ventas" href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 02</span><h3>Ventas</h3><div class="frase">Tienes la oferta. Ahora toca venderla.</div><span class="burbuja2"></span></div>
+      <a class="kit contratos" href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">La otra estantería</span><h3>Los Kits del High Ticket</h3><div class="frase">El camino de tu programa principal.</div></div>
         <div class="kit-cuerpo">
-          <p>El mapa de tus primeras 10-20 ventas: guión de llamada, banco de evidencia, nota de agenda, rutina de DMs y escudo anti no-show. Más los manuales de objeciones, setting, follow-ups y tu cuadro de mando.</p>
-          <div class="kit-meta"><span class="chip cuando">En cuanto la oferta esté</span><span class="chip">5 pasos</span><span class="chip">4 manuales</span><span class="chip">12 objeciones resueltas</span></div>
-          <span class="kit-ir">Entrar al kit →</span>
-        </div>
-      </a>
-
-      <a class="kit entrega" href="https://kit-entrega-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 03</span><h3>La Entrega</h3><div class="frase">Vendiste. ¿Y ahora qué?</div></div>
-        <div class="kit-cuerpo">
-          <p>Desde que alguien te paga hasta que termina el programa contigo: 7 pasos que haces una vez antes de la primera sesión, y una herramienta para cada momento del camino.</p>
-          <div class="kit-meta"><span class="chip cuando">Con tu primera venta</span><span class="chip">7 pasos</span><span class="chip">12 herramientas</span><span class="chip">Antes de la sesión 1</span></div>
-          <span class="kit-ir">Entrar al kit →</span>
-        </div>
-      </a>
-
-      <a class="kit contratos" href="https://drive.google.com/drive/folders/1OkJBS-j_CWQpBqJf_xPoy3DzMtsI7I54" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Anexo</span><h3>Kit de Contratos</h3><div class="frase">El papeleo del sí, antes de la sesión 1.</div></div>
-        <div class="kit-cuerpo">
-          <p>Plantilla de contrato, guía de uso por país y un ejemplo completo ya relleno. Para llegar a tu abogado con el 90% del trabajo hecho. Se firma antes de la primera sesión, sin excepciones.</p>
-          <div class="kit-meta"><span class="chip cuando">Se firma antes de la sesión 1</span><span class="chip">3 documentos</span><span class="chip">En Google Drive</span></div>
-          <span class="kit-ir">Abrir en Drive →</span>
+          <p>Tu low ticket abre la puerta; el programa es la casa. La oferta, las ventas, la entrega, los emails, el contenido, los ads, el funnel y la autonomía viven en su propia estantería.</p>
+          <div class="kit-meta"><span class="chip">8 kits + anexo legal</span><span class="chip">El sistema completo</span></div>
+          <span class="kit-ir">Ir a la estantería →</span>
         </div>
       </a>
 
@@ -277,53 +272,121 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 
   <section class="estante">
     <div class="estante-cab">
-      <span class="eyebrow">Los sistemas de apoyo</span>
-      <h2>Lo que alimenta el camino</h2>
-      <p>Contenido que capta, emails que venden solos, tráfico con reglas y la autonomía para regenerarlo todo cuando toque, a tu ritmo.</p>
+      <span class="eyebrow">Las opciones</span>
+      <h2>¿Guía, vídeo, masterclass, audio o plantillas?</h2>
+      <p>El formato se elige en el paso 3 del taller, por cómo consume tu avatar, nunca por moda. Aquí están las cinco opciones con sus números recomendados y sus puntos a vigilar. La regla que manda en todas: <strong>consumo total de 60 minutos (90 como techo), una acción, un resultado</strong>. Y el precio no lo fija el formato: lo fija la escalera, 12-17 € siempre.</p>
     </div>
     <div class="rejilla">
 
-      <a class="kit emails" href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 04</span><h3>Emails</h3><div class="frase">Se escriben una vez. Venden cada día.</div></div>
+      <div class="kit formato">
+        <div class="kit-lomo"><span class="num">Formato · A</span><h3>La guía PDF</h3><div class="frase">La opción por defecto: se crea en una semana y se actualiza en minutos.</div></div>
         <div class="kit-cuerpo">
-          <p>8 secuencias con 31 emails + 1 SMS (welcome, nutrición, venta, post-compra, carrito, winback y más) con los 6 pasos de montaje en GHL, la newsletter semanal y la salud de tu lista.</p>
-          <div class="kit-meta"><span class="chip cuando">Mes 1 · con tu captación viva</span><span class="chip">8 secuencias</span><span class="chip">31 emails + 1 SMS</span><span class="chip">+ newsletter semanal</span></div>
+          <p>Para avatares que leen y victorias que piden entender un proceso. Si dudas, esta: rápida de producir, valiosa si cada página empuja a la acción, y fácil de mejorar con el tiempo.</p>
+          <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
+            <li>Una idea por página, y cada paso cierra con su "haz esto ahora".</li>
+            <li>La plantilla va dentro: es lo que convierte lectura en acción.</li>
+            <li>Se comprueba en el móvil antes de darla por buena: ahí la abrirá la mayoría.</li>
+          </ul></div>
+          <div class="fmt-error">✕ El error común: convertirla en un ensayo. La teoría se recorta; la acción, nunca.</div>
+          <div class="kit-meta"><span class="chip cuando">15-25 páginas</span><span class="chip">Lectura en 45-60 min</span><span class="chip">Plantilla dentro</span></div>
+        </div>
+      </div>
+
+      <div class="kit formato">
+        <div class="kit-lomo"><span class="num">Formato · B</span><h3>El mini curso en vídeo</h3><div class="frase">Para nichos que miran más que leen.</div></div>
+        <div class="kit-cuerpo">
+          <p>Cuando la victoria pide imitar algo que se ve (una pantalla, un gesto, una postura) o tu audiencia vive en el vídeo. Premio extra: las lecciones luego se reutilizan como material de tu programa.</p>
+          <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
+            <li>Grabación sencilla: tu móvil o Loom, luz de frente y subtítulos. La claridad vale más que la producción.</li>
+            <li>Guion de 5 líneas por lección, y cada lección cierra con su acción.</li>
+            <li>Cada lección lleva su hoja de apoyo descargable: sin entregable tangible, un curso no vende en low ticket.</li>
+          </ul></div>
+          <div class="fmt-error">✕ El error común: alargarlo para que "parezca más". Más minutos es menos gente que termina.</div>
+          <div class="kit-meta"><span class="chip cuando">3-5 lecciones</span><span class="chip">5-10 min por lección</span><span class="chip">20-45 min en total</span></div>
+        </div>
+      </div>
+
+      <div class="kit formato">
+        <div class="kit-lomo"><span class="num">Formato · C</span><h3>La masterclass grabada</h3><div class="frase">Una sola clase que entrega la victoria entera.</div></div>
+        <div class="kit-cuerpo">
+          <p>El formato de una pieza: una clase de 45-60 minutos donde resuelves la victoria de principio a fin y, de paso, se ve cómo trabajas. Ideal si explicas mejor hablando que escribiendo y quieres producirla en un solo día.</p>
+          <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
+            <li>Guion por bloques con minutos asignados: sin guion, una clase de 60 se convierte en una de 100.</li>
+            <li>Con capítulos o marcas de tiempo, para poder retomarla.</li>
+            <li>Siempre con su hoja de trabajo: la clase enseña, la hoja ejecuta.</li>
+          </ul></div>
+          <div class="fmt-error">✕ El error común: convertirla en un webinar de venta. Aquí se entrega la victoria, no se hace discurso.</div>
+          <div class="kit-meta"><span class="chip cuando">1 clase</span><span class="chip">45-60 min</span><span class="chip">Con hoja de trabajo</span></div>
+        </div>
+      </div>
+
+      <div class="kit formato">
+        <div class="kit-lomo"><span class="num">Formato · D</span><h3>El audio</h3><div class="frase">Se escucha en el coche. Y casi siempre acompaña, no protagoniza.</div></div>
+        <div class="kit-cuerpo">
+          <p>Para audiencias que van y vienen. Como producto principal rara vez gana; como versión audio de tu guía es el candidato perfecto al extra del checkout (el bump de +19 €).</p>
+          <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
+            <li>Una pista por paso (5-10 min), para retomar donde se quedó.</li>
+            <li>Se graba leyendo tu guía con naturalidad; un micro de auriculares en una habitación silenciosa es suficiente.</li>
+            <li>Siempre junto a la plantilla escrita: el audio inspira; la hoja deja la victoria.</li>
+          </ul></div>
+          <div class="fmt-error">✕ El error común: venderlo solo, sin nada que rellenar.</div>
+          <div class="kit-meta"><span class="chip cuando">20-45 min en total</span><span class="chip">Pistas de 5-10 min</span><span class="chip">Ideal como bump +19 €</span></div>
+        </div>
+      </div>
+
+      <div class="kit formato">
+        <div class="kit-lomo"><span class="num">Formato · E</span><h3>El pack de plantillas</h3><div class="frase">Cuando la victoria es, directamente: usa esto.</div></div>
+        <div class="kit-cuerpo">
+          <p>Hojas de registro, guiones, calculadoras, checklists. Para compradores que no quieren estudiar: quieren rellenar y ver el resultado hoy mismo.</p>
+          <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
+            <li>De 3 a 7 piezas, cada una con su página de instrucciones.</li>
+            <li>Cada pieza funciona sola, y una va marcada como "empieza por esta".</li>
+            <li>Nombres de archivo claros: quien lo compra lo guardará meses.</li>
+          </ul></div>
+          <div class="fmt-error">✕ El error común: 30 plantillas sueltas sin camino. La abundancia sin orden paraliza.</div>
+          <div class="kit-meta"><span class="chip cuando">3-7 piezas</span><span class="chip">Instrucciones de 1 página</span><span class="chip">Usables hoy</span></div>
+        </div>
+      </div>
+
+      <div class="combo">
+        <b class="combo-t">El combo que recomendamos: guía + plantilla + vídeo de bienvenida de 2-5 minutos</b>
+        <p>La guía hace el trabajo, la plantilla convierte la lectura en acción y el vídeo pone tu cara y tu voz en el primer minuto. Tres piezas, una victoria. Y el conjunto sigue cabiendo en la regla de los 60-90 minutos: si no cabe, sobra contenido, no falta tiempo.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="estante">
+    <div class="estante-cab">
+      <span class="eyebrow">Las conexiones</span>
+      <h2>El sistema que lo vende</h2>
+      <p>Tu low ticket no vive solo: estas piezas de la colección high ticket lo venden, lo entregan y le traen compradores.</p>
+    </div>
+    <div class="rejilla">
+
+      <a class="kit funnel" href="https://kit-funnel-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 07</span><h3>Funnel</h3><div class="frase">La página de venta, el checkout y la escalera.</div></div>
+        <div class="kit-cuerpo">
+          <p>Las 7 páginas que venden tu low ticket: captación, venta con checkout embebido, el bump de +19 €, OTOs, downsells y gracias. Aquí se enchufa el producto cuando sale del taller.</p>
+          <div class="kit-meta"><span class="chip">7 páginas</span><span class="chip">Escalera oficial</span></div>
           <span class="kit-ir">Entrar al kit →</span>
         </div>
       </a>
 
-      <a class="kit contenido" href="https://kit-contenido-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 05</span><h3>Contenido</h3><div class="frase">Un mes de contenido, sin folio en blanco.</div></div>
+      <a class="kit emails" href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit 04</span><h3>Emails</h3><div class="frase">Lo vende cada día y lo entrega al instante.</div></div>
         <div class="kit-cuerpo">
-          <p>20 reels y 20 carruseles guionizados en dos versiones, la quincena de stories, el calendario del mes 1 con sus 4 misiones (y una sola venta por semana) y el banco de hooks para cuando las agotes.</p>
-          <div class="kit-meta"><span class="chip cuando">Mes 1 · desde el día 1</span><span class="chip">54 piezas</span><span class="chip">Calendario mes 1</span><span class="chip">20 hooks extra</span></div>
+          <p>La secuencia de venta que ofrece tu low ticket a la lista, y la de post-compra que entrega el acceso en cuanto alguien paga, sin que muevas un dedo.</p>
+          <div class="kit-meta"><span class="chip">8 secuencias</span><span class="chip">Entrega automática</span></div>
           <span class="kit-ir">Entrar al kit →</span>
         </div>
       </a>
 
       <a class="kit ads" href="https://kit-ads-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 06</span><h3>Ads Meta</h3><div class="frase">Tráfico con reglas, no con corazonadas.</div></div>
+        <div class="kit-lomo"><span class="num">Kit 06</span><h3>Ads Meta</h3><div class="frase">Compradores, no clics.</div></div>
         <div class="kit-cuerpo">
-          <p>Las 3 campañas con su orden de encendido, audiencias y exclusiones, creativos por ángulos y las reglas de gestión: presupuesto con suelo real, kill con regla, escalar +20%, decidir cada 3-4 días.</p>
-          <div class="kit-meta"><span class="chip cuando">Cuando el orgánico ruede</span><span class="chip">3 campañas</span><span class="chip">9 ángulos de creativo</span><span class="pill-estado">Se enciende con tu coach de Meta Ads</span></div>
-          <span class="kit-ir">Entrar al kit →</span>
-        </div>
-      </a>
-
-      <a class="kit funnel" href="https://kit-funnel-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 07</span><h3>Funnel</h3><div class="frase">Del clic al cliente, sin fugas.</div></div>
-        <div class="kit-cuerpo">
-          <p>Las 7 páginas del embudo (captación, venta con checkout, OTOs, downsells y gracias) con la escalera oficial de precios, el cableado en GHL, el checklist de lanzamiento y el preview navegable.</p>
-          <div class="kit-meta"><span class="chip cuando">Mes 1-2 · el esqueleto</span><span class="chip">7 páginas</span><span class="chip">Escalera oficial</span><span class="chip">Preview navegable</span></div>
-          <span class="kit-ir">Entrar al kit →</span>
-        </div>
-      </a>
-
-      <a class="kit autonomia" href="https://kit-autonomia-high-ticket.vercel.app" target="_blank" rel="noopener">
-        <div class="kit-lomo"><span class="num">Kit 08</span><h3>Autonomía</h3><div class="frase">Ya lo tienes todo. Y no se agota.</div></div>
-        <div class="kit-cuerpo">
-          <p>Los dos prompts maestros (Contenido Mensual y Secuencias) para que, cuando quieras piezas nuevas, salgan en minutos (a tu ritmo, sin fechas) con tu Claude, en tu voz y con tus datos reales, y la frontera clara de qué cambias tú solo y qué se decide en tu revisión mensual.</p>
-          <div class="kit-meta"><span class="chip cuando">Cuando agotes tu primer pack</span><span class="chip">2 prompts maestros</span><span class="chip">Rutina del siguiente pack</span></div>
+          <p>La campaña de venta directa apunta a tu low ticket: cada compra a 12-17 € es la mejor señal que puedes darle a Meta, y el objetivo es que el tráfico se pague solo.</p>
+          <div class="kit-meta"><span class="chip">3 campañas</span><span class="chip">Con tu coach de Meta Ads</span></div>
           <span class="kit-ir">Entrar al kit →</span>
         </div>
       </a>
@@ -336,9 +399,9 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 
 <footer class="pie">
   <div class="wrap">
-    <p><b>Los Kits del High Ticket</b> · Departamento Disruptivo</p>
+    <p><b>Los Kits del Low Ticket</b> · Departamento Disruptivo</p>
     <p style="margin-top:6px">¿Te trabas? Sistemas con tu coach de GHL los miércoles · Ads con tu coach de Meta Ads los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
-    <p style="margin-top:6px">Tu producto de entrada vive en <a href="https://kits-low-ticket.vercel.app" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px">Los Kits del Low Ticket ↗</a></p>
+    <p style="margin-top:6px">El camino de tu programa principal vive en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">Los Kits del High Ticket ↗</a></p>
   </div>
 </footer>
 
