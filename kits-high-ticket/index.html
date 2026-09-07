@@ -106,6 +106,9 @@ a.kit:hover .kit-ir{color:var(--ambar)}
   background:linear-gradient(#fff,#fff) top center/56px 9px no-repeat,
              linear-gradient(var(--oro),var(--oro)) center/40px 9px no-repeat,
              linear-gradient(var(--oro-claro),var(--oro-claro)) bottom center/24px 9px no-repeat}
+.kit.lowticket .kit-lomo::before{background:repeating-linear-gradient(-45deg,var(--oro) 0 6px,rgba(0,0,0,0) 6px 12px)}
+.kit.lowticket .kit-lomo::after{content:"12-17 €";position:absolute;right:16px;top:26px;background:var(--oro);color:var(--tinta);font-family:'Space Mono',monospace;font-weight:700;font-size:.66rem;padding:6px 9px;border-radius:8px;transform:rotate(4deg);box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.kit.lowticket .kit-lomo .num{background:#fff;color:var(--tinta)}
 .pill-estado{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.09em;text-transform:uppercase;font-weight:700;color:var(--ambar);background:var(--ambar-luz);border:1px solid #F5DCA8;border-radius:999px;padding:4px 11px}
 
 .pie{padding:40px 0 64px;text-align:center;color:var(--texto-2);font-size:.9rem}
@@ -276,7 +279,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
     <div class="estante-cab">
       <span class="eyebrow">Los sistemas de apoyo</span>
       <h2>Lo que alimenta el camino</h2>
-      <p>Contenido que capta, emails que venden solos, tráfico con reglas y la autonomía para regenerarlo todo cuando toque, a tu ritmo.</p>
+      <p>Contenido que capta, emails que venden solos, tráfico con reglas, el taller de tu producto de entrada y la autonomía para regenerarlo todo cuando toque, a tu ritmo.</p>
     </div>
     <div class="rejilla">
 
@@ -304,6 +307,15 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
           <p>Las 3 campañas con su orden de encendido, audiencias y exclusiones, creativos por ángulos y las reglas de gestión: presupuesto con suelo real, kill con regla, escalar +20%, decidir cada 3-4 días.</p>
           <div class="kit-meta"><span class="chip cuando">Cuando el orgánico ruede</span><span class="chip">3 campañas</span><span class="chip">9 ángulos de creativo</span><span class="pill-estado">Se enciende con tu coach de Meta Ads</span></div>
           <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit lowticket" href="https://kit-producto-low-ticket.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Taller</span><h3>Tu Low Ticket</h3><div class="frase">El producto pequeño que abre la puerta grande.</div></div>
+        <div class="kit-cuerpo">
+          <p>El taller para crear desde cero tu producto de entrada de 12-17 €: elegir la primera victoria de tu método, el esqueleto página a página, el borrador con Claude, el checklist de calidad y el diseño en Canva. Sales con el producto que tu funnel vende.</p>
+          <div class="kit-meta"><span class="chip cuando">Antes de montar tu funnel</span><span class="chip">5 pasos</span><span class="chip">Prompt del Borrador</span><span class="chip">Una semana de ratos</span></div>
+          <span class="kit-ir">Entrar al taller →</span>
         </div>
       </a>
 
@@ -471,7 +483,7 @@ function defDe(palabra){
   if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
   return null;
 }
-const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,.hero-insignia,#glTip';
 function glosariza(raiz){
   if(!raiz || !raiz.querySelectorAll) return;
   const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){

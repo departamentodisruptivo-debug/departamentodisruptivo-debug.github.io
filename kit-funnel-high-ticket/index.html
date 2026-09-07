@@ -540,7 +540,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
         <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
         <a href="https://dd-funnel-preview-dwy.vercel.app" target="_blank" rel="noopener" class="btn btn-fantasma">Recorrer el preview ↗</a>
       </div>
-      <p class="hero-cruce">El funnel dispara las secuencias del <a href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 04 ↗</a>, recibe el tráfico del <a href="https://kit-ads-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 06 ↗</a> y siembra la llamada del <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 02 ↗</a></p>
+      <p class="hero-cruce">El funnel vende el producto del <a href="https://kit-producto-low-ticket.vercel.app" target="_blank" rel="noopener">Taller Low Ticket ↗</a>, dispara las secuencias del <a href="https://kit-emails-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 04 ↗</a>, recibe el tráfico del <a href="https://kit-ads-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 06 ↗</a> y siembra la llamada del <a href="https://kit-ventas-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 02 ↗</a></p>
     </div>
 
     <aside class="hero-panel" aria-label="El recorrido del funnel de un vistazo">
@@ -1400,7 +1400,7 @@ function defDe(palabra){
   if(p.endsWith('s') && DEFS[p.slice(0,-1)]) return [p.slice(0,-1), DEFS[p.slice(0,-1)]];
   return null;
 }
-const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,#glTip';
+const NO_TOCAR = 'script,style,a,button,code,summary,nav,h1,.gl,.hueco,.b-copiar,.paso-num,.chip,.eyebrow,.de,.indice,.puntos,.contador,.barra-titulo,.hero-insignia,#glTip';
 function glosariza(raiz){
   if(!raiz || !raiz.querySelectorAll) return;
   const walker = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, { acceptNode(n){
