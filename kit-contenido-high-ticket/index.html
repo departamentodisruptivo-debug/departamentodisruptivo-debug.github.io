@@ -1205,7 +1205,7 @@ refresca();
    Autónomo: se puede copiar tal cual a cualquier página.
    ================================================================== */
 (function(){
-var els = document.querySelectorAll('.dg-caja,.tarjeta,.seccion-cabecera,.aviso-uso,.final,.estante-cab,a.kit');
+var els = document.querySelectorAll('.dg-caja,.tarjeta,.seccion-cabecera,.aviso-uso,.final,.estante-cab,a.kit,.kit.formato,.combo');
 if('IntersectionObserver' in window && els.length){
   var io = new IntersectionObserver(function(entradas){
     entradas.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('rev-in'); io.unobserve(e.target); } });
@@ -1241,9 +1241,19 @@ window.calcAov = function(){
     pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b>, <b style="color:var(--coral)">por debajo del objetivo de ~70 €</b>: monta el pasillo entero y sube las tasas del bump y los OTOs antes de comprar tráfico. Los downsells suman por encima de esta cuenta.');
   }
 };
+window.calcConsumo = function(){
+  var p = num('ltPag'), v = num('ltVid'), a = num('ltAud');
+  var total = Math.round(p * 2 + v + a);
+  if(total <= 0){ pinta('ltOut','Rellena lo que llevará tu producto (páginas y/o minutos) y te digo si cabe en la regla.'); return; }
+  var t = '<b>' + total.toLocaleString('es-ES') + ' minutos</b> de consumo estimado (unos 2 por página, más el vídeo y el audio). ';
+  if(total <= 60){ pinta('ltOut', t + '<b style="color:var(--verde)">Cabe:</b> tu comprador lo termina, y quien termina compra lo siguiente.'); }
+  else if(total <= 90){ pinta('ltOut', t + '<b style="color:var(--ambar)">Al límite:</b> vale, pero si puedes recortar teoría, recórtala. La regla son 60 minutos, con 90 de techo.'); }
+  else { pinta('ltOut', t + '<b style="color:var(--coral)">Se pasa:</b> recorta hacia la acción. Un producto que no se termina no deja victoria, y sin victoria no hay siguiente compra.'); }
+};
 if(document.getElementById('scOut')) calcSuelo();
 if(document.getElementById('caOut')) calcAds();
 if(document.getElementById('cfOut')) calcAov();
+if(document.getElementById('ltOut')) calcConsumo();
 /* los cuadros del diagrama: toca uno y sale su explicación */
 var dgTip = document.createElement('div'); dgTip.id = 'dgTip'; document.body.appendChild(dgTip);
 var dgFijo = null;

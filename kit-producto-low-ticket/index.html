@@ -104,6 +104,35 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 .doc-lista li:nth-child(3){animation-delay:1s}
 .doc-lista li:nth-child(4){animation-delay:1.15s}
 @media (prefers-reduced-motion:reduce){.doc-cuerpo>*,.doc-lista li{animation:none}}
+/* los visuales lúdicos del taller */
+.lt-dos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0}
+@media(max-width:720px){.lt-dos{grid-template-columns:1fr}}
+.lt-col{border-radius:12px;padding:14px 16px;border:1px solid}
+.lt-col.si{background:var(--verde-luz);border-color:#BCE3D2}
+.lt-col.no{background:var(--coral-luz);border-color:#F3CFCA}
+.lt-col b.lt-cab{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1rem;margin-bottom:9px}
+.lt-col.si b.lt-cab{color:var(--verde)}
+.lt-col.no b.lt-cab{color:var(--coral)}
+.lt-col ul{margin:0;padding:0;list-style:none}
+.lt-col li{display:flex;gap:9px;font-size:.9rem;line-height:1.5;margin-bottom:8px;color:var(--texto)}
+.lt-col li:last-child{margin-bottom:0}
+.lt-col .m{font-weight:800;flex-shrink:0}
+.lt-col.si .m{color:var(--verde)}
+.lt-col.no .m{color:var(--coral)}
+.temp{display:inline-block;font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:999px;vertical-align:2px;white-space:nowrap}
+.temp.frio{background:var(--azul-luz);color:var(--azul)}
+.temp.templado{background:var(--ambar-luz);color:var(--ambar)}
+.temp.caliente{background:var(--coral-luz);color:var(--coral)}
+.lt-paginas{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
+.lt-pag{flex:1;min-width:104px;background:#fff;border:1.5px solid var(--papel-3);border-top:5px solid var(--oro);border-radius:8px;padding:10px 10px 12px;text-align:center;box-shadow:var(--sombra)}
+.lt-pag b{display:block;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--texto-2);margin-bottom:4px}
+.lt-pag span{font-size:.84rem;font-weight:700;line-height:1.3;display:block}
+.lt-pag small{font-size:.72rem;color:var(--texto-2);line-height:1.35;display:block;margin-top:3px}
+.lt-pag.fin{border-top-color:var(--verde);background:var(--verde-luz)}
+.lt-precio{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:4px 0 16px}
+.lt-tag{background:var(--oro);color:var(--tinta);font-family:'Space Mono',monospace;font-weight:700;font-size:1.15rem;padding:12px 18px;border-radius:10px;transform:rotate(-2deg);box-shadow:var(--sombra-alta)}
+.lt-tag small{display:block;font-size:.6rem;letter-spacing:.1em;margin-top:3px}
+.lt-tag.mini{background:#fff;border:1.5px dashed var(--oro);transform:rotate(2deg);font-size:.95rem}
 @media(max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:44px}
   .hero-panel{max-width:440px}
@@ -701,22 +730,22 @@ const PASOS = [
     <p style="margin-bottom:0">El dinero que deja es secundario a propósito: con la banda de 12-17 € el objetivo es que el tráfico se pague solo mientras la lista se llena de compradores. Tu facturación de verdad vive en tu programa principal, y ahí es donde este producto empuja.</p>`),
   porQue:H(`<p>Porque casi todos los low ticket fracasan por lo mismo: se diseñan como "mi programa en pequeño". Y eso rompe las dos puntas a la vez: el producto pequeño decepciona (promete el mundo y entrega un resumen) y el programa se devalúa (¿para qué pagar el grande si el pequeño ya lo cuenta?).</p>
     <p style="margin-bottom:0">Un low ticket que funciona hace lo contrario: <strong>da una victoria completa sobre UN problema concreto</strong>, la primera del camino que tu programa recorre entero. Entrega el 100% de algo pequeño, no el 10% de todo. Quien la consigue queda satisfecho Y con ganas del siguiente paso. Esa es toda la ciencia.</p>`),
-  plantilla:H(`<div class="campo"><b>Qué es / qué no es (guárdalo a la vista mientras creas)</b>
-    <p style="margin:10px 0 4px"><strong>SÍ es:</strong></p>
-    <ul style="margin:0 0 10px">
-      <li>UN problema concreto de tu avatar, resuelto de verdad.</li>
-      <li>Una victoria visible en menos de 7 días, con una sola acción central.</li>
-      <li>Consumible entero en 60-90 minutos como máximo.</li>
-      <li>El primer paso del MISMO camino que recorre tu programa: mismo avatar, mismo problema de fondo.</li>
-      <li>Un producto con final: última página con recap y puente a tu mundo.</li>
-    </ul>
-    <p style="margin:0 0 4px"><strong>NO es:</strong></p>
-    <ul style="margin-bottom:0">
-      <li>Un módulo de tu programa sacado y revendido, ni varios módulos con nombre nuevo. Esta es regla tajante: reempaquetar frena las compras futuras.</li>
-      <li>Tu método completo en versión barata. El low ticket enseña el primer paso a fondo; el camino entero vive en tu programa.</li>
-      <li>Un curso gigante. Más horas no es más valor: es menos gente que lo termina, y quien no termina no compra lo siguiente.</li>
-      <li>Tu fuente de ingresos. Se mide en compradores nuevos por semana, no en euros.</li>
-    </ul></div>`),
+  plantilla:H(`<div class="lt-dos">
+    <div class="lt-col si"><b class="lt-cab">Tu low ticket SÍ es...</b><ul>
+      <li><span class="m">✓</span><span>UN problema concreto de tu avatar, resuelto de verdad.</span></li>
+      <li><span class="m">✓</span><span>Una victoria visible en menos de 7 días, con una sola acción central.</span></li>
+      <li><span class="m">✓</span><span>Consumible entero en 60-90 minutos como máximo.</span></li>
+      <li><span class="m">✓</span><span>El primer paso del MISMO camino que recorre tu programa: mismo avatar, mismo problema de fondo.</span></li>
+      <li><span class="m">✓</span><span>Un producto con final: última página con recap y puente a tu mundo.</span></li>
+    </ul></div>
+    <div class="lt-col no"><b class="lt-cab">Y NO es...</b><ul>
+      <li><span class="m">✕</span><span>Un módulo de tu programa sacado y revendido, ni varios módulos con nombre nuevo. Regla tajante: reempaquetar frena las compras futuras.</span></li>
+      <li><span class="m">✕</span><span>Tu método completo en versión barata. Aquí se enseña el primer paso a fondo; el camino entero vive en tu programa.</span></li>
+      <li><span class="m">✕</span><span>Un curso gigante. Más horas no es más valor: es menos gente que lo termina, y quien no termina no compra lo siguiente.</span></li>
+      <li><span class="m">✕</span><span>Tu fuente de ingresos. Se mide en compradores nuevos por semana, no en euros.</span></li>
+    </ul></div>
+    </div>
+    <p style="margin:10px 0 0;font-size:.9rem;color:#6E6B65">Guárdalo a la vista mientras creas: cuando dudes, esta tabla decide.</p>`),
   ejemplo:H(`<p>Valeria (método Energía Propia, acompañamiento 1:1 de 12 semanas) no vendió "el programa en miniatura". Su low ticket, el Sistema Energía Propia a 17 €, resuelve una sola cosa: saber dónde se te va la energía, con un registro guiado de 7 días. Victoria completa, una semana, una acción al día. Y quien lo termina tiene delante, con total naturalidad, la pregunta siguiente: "vale, ya sé dónde se me va... ¿y ahora cómo lo cambio?". Esa pregunta es exactamente lo que responde su programa.</p>`),
   errores:[
     {t:"Empezar por el nombre o el diseño", d:"El nombre y la portada son el paso 5, no el 1. Primero se elige la victoria; lo demás se le pone encima."},
@@ -744,8 +773,11 @@ const PASOS = [
     <span class="hueco">TEMPERATURA</span> frío / templado / caliente, por paso ·
     <span class="hueco">SEÑALES</span> por qué crees que ese paso es caliente: preguntas reales de tus DMs, comentarios, llamadas ·
     <span class="hueco">LA ELEGIDA</span> el paso caliente que pasa el triple filtro, escrito como victoria: "que consigas [resultado] en [plazo real]"</div>
+    <p style="margin:12px 0 0;line-height:2.3">La leyenda del mapa: <span class="temp frio">FRÍO</span> necesario, pero nadie lo busca · <span class="temp templado">TEMPLADO</span> interesa si se lo explicas · <span class="temp caliente">CALIENTE</span> ya lo están buscando</p>
     <p style="margin:12px 0 0"><strong>La prueba del sí obvio:</strong> imagina a tu avatar leyendo solo la victoria elegida. Si su reacción natural no es "lo necesito", vuelve a la lista. Mejor perder otra tarde aquí que tres semanas montando el producto equivocado.</p>`),
-  ejemplo:H(`<p>El camino de Valeria: registro real → sistema a medida → documentar → sostener. Al marcarlo vio que "sistema a medida" y "sostener" son fríos (nadie los busca con esas palabras), pero el primero era caliente al rojo: sus DMs estaban llenos de variantes de "termino el día vacía y no sé por qué". Su victoria: "que en 7 días sepas exactamente dónde se te va la energía, con un registro de 5 minutos al día". Una acción, una semana, y deja la pregunta siguiente servida.</p>`),
+  ejemplo:H(`<p>El camino de Valeria, ya con la temperatura puesta:</p>
+    <p style="line-height:2.3;margin:8px 0 12px">registro real <span class="temp caliente">CALIENTE</span> → sistema a medida <span class="temp frio">FRÍO</span> → documentar <span class="temp templado">TEMPLADO</span> → sostener <span class="temp frio">FRÍO</span></p>
+    <p>Nadie busca "sistema a medida" con esas palabras, pero el primer paso estaba al rojo: sus DMs eran variantes de "termino el día vacía y no sé por qué". Su victoria: "que en 7 días sepas exactamente dónde se te va la energía, con un registro de 5 minutos al día". Una acción, una semana, y deja la pregunta siguiente servida.</p>`),
   errores:[
     {t:"Elegir el paso que a ti te fascina", d:"Tu paso favorito suele ser el más profundo, y el más profundo casi nunca es el que la gente busca. La temperatura la mide tu audiencia, no tu entusiasmo."},
     {t:"Una victoria que depende de fuerza de voluntad", d:"'Que medites 30 días seguidos' no es una victoria, es un régimen. Busca resultados que caigan de UNA acción bien guiada, no de la disciplina del comprador."},
@@ -769,7 +801,23 @@ const PASOS = [
     <span class="hueco">¿CÓMO CONSUME TU AVATAR?</span> lee en el metro / mira vídeos por la noche / quiere rellenar y listo ·
     <span class="hueco">¿QUÉ PIDE LA VICTORIA?</span> entender un proceso → guía · imitar un gesto → vídeo · aplicar ya → plantilla ·
     <span class="hueco">¿QUÉ PUEDES PRODUCIR BIEN EN 1-2 SEMANAS?</span> el mejor formato es el que terminas</div>
-    <p style="margin:12px 0 0">El esqueleto completo, página a página y con su variante de mini curso, está en <strong>la caja de herramientas</strong> (segunda ficha), listo para copiar y rellenar. Rellénalo a mano y en sucio: frases cortas, sin pulir. Es la materia prima del prompt del paso 4.</p>`),
+    <p style="margin:14px 0 0"><strong>Así se ve tu guía, página a página</strong> (el esqueleto completo y copiable está en la caja, segunda ficha):</p>
+    <div class="lt-paginas">
+      <div class="lt-pag"><b>PORTADA</b><span>El nombre</span><small>y la victoria en una línea</small></div>
+      <div class="lt-pag"><b>PÁG. 1</b><span>La promesa</span><small>qué, en cuánto, con qué</small></div>
+      <div class="lt-pag"><b>PÁG. 2</b><span>El problema</span><small>con sus palabras</small></div>
+      <div class="lt-pag"><b>PÁGS. 3-4</b><span>El mapa</span><small>tu método de un vistazo</small></div>
+      <div class="lt-pag"><b>BLOQUE</b><span>3-5 pasos</span><small>cada uno acaba en acción</small></div>
+      <div class="lt-pag"><b>PLANTILLA</b><span>La hoja</span><small>de la lectura a la acción</small></div>
+      <div class="lt-pag fin"><b>ÚLTIMA</b><span>El puente</span><small>sin precio, jamás</small></div>
+    </div>
+    <p style="margin:12px 0 0">Rellénalo a mano y en sucio: frases cortas, sin pulir. Es la materia prima del prompt del paso 4.</p>
+    <div class="calc"><b class="calc-t">¿Cabe en la regla de los 60-90 minutos? Compruébalo</b>
+      <label>Páginas de guía<input id="ltPag" type="number" min="0" value="20" oninput="calcConsumo()"></label>
+      <label>Minutos de vídeo o clase<input id="ltVid" type="number" min="0" value="0" oninput="calcConsumo()"></label>
+      <label>Minutos de audio<input id="ltAud" type="number" min="0" value="0" oninput="calcConsumo()"></label>
+      <div class="calc-r" id="ltOut"></div>
+    </div>`),
   ejemplo:H(`<p>Valeria eligió el combo: guía de 22 páginas + la plantilla del registro + un vídeo de 4 minutos de bienvenida. Su avatar (dueñas de negocio sin tiempo) lee a ratos y quiere papel delante, así que el vídeo solo abre la puerta y la guía hace el trabajo. Consumo total medido con el reloj: 55 minutos la guía y 5 la plantilla. Dentro de la semana de registro, la guía se consulta 5 minutos al día.</p>`),
   errores:[
     {t:"Elegir vídeo 'porque se cobra más caro'", d:"El precio no lo fija el formato sino la escalera (12-17 €). Elegir vídeo sin que tu avatar lo pida solo te añade semanas de producción."},
@@ -818,7 +866,11 @@ const PASOS = [
     <p style="margin-bottom:0"><strong>El precio y las piezas hermanas.</strong> El precio se fija dentro de la banda oficial: <strong>12-17 €</strong>, política del sistema, calibrada con toda la escalera; si dudas del punto exacto, se decide con el equipo. El bump de +19 € del checkout suele salir de este mismo taller (tus plantillas o extras, como pieza aparte). Los OTOs de la escalera no se crean hoy: se definen al montar el funnel, con el equipo.</p>`),
   porQue:H(`<p>Porque el producto no termina en el PDF: termina cuando <strong>cobra y entrega solo</strong>. La venta la hace el funnel del Kit 07 (su página de venta, su checkout y su escalera), la entrega la hace tu secuencia de post-compra del Kit 04 (el acceso llega al momento, sin que muevas un dedo), y el tráfico lo traen tu contenido (Kit 05) y tus ads (Kit 06). Este paso deja tu producto enchufado a ese sistema.</p>
     <p style="margin-bottom:0">Y el test de compra es innegociable por una razón simple: la primera compra rota no te la cuenta nadie, simplemente no vuelven. Se compra en modo test, se recibe el acceso, se comprueba el archivo y se mira en el móvil. Todo, antes del primer comprador real.</p>`),
-  plantilla:H(`<ul style="margin-bottom:0">
+  plantilla:H(`<div class="lt-precio">
+      <div class="lt-tag">12-17 €<small>TU LOW TICKET · BANDA OFICIAL</small></div>
+      <div class="lt-tag mini">+19 €<small>EL BUMP · TUS PLANTILLAS, APARTE</small></div>
+    </div>
+    <ul style="margin-bottom:0">
       <li><strong>1 ·</strong> Tres candidatos de nombre con la fórmula, elige el que tu probador entienda a la primera.</li>
       <li><strong>2 ·</strong> Diseño en Canva con la receta de la caja + mockup 3D de la portada.</li>
       <li><strong>3 ·</strong> Precio dentro de 12-17 € (si dudas, se fija con el equipo, no a ojo).</li>
@@ -1181,7 +1233,7 @@ refresca();
    Autónomo: se puede copiar tal cual a cualquier página.
    ================================================================== */
 (function(){
-var els = document.querySelectorAll('.dg-caja,.tarjeta,.seccion-cabecera,.aviso-uso,.final,.estante-cab,a.kit');
+var els = document.querySelectorAll('.dg-caja,.tarjeta,.seccion-cabecera,.aviso-uso,.final,.estante-cab,a.kit,.kit.formato,.combo');
 if('IntersectionObserver' in window && els.length){
   var io = new IntersectionObserver(function(entradas){
     entradas.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('rev-in'); io.unobserve(e.target); } });
@@ -1217,9 +1269,19 @@ window.calcAov = function(){
     pinta('cfOut','Valor medio de pedido estimado: <b>' + txt + ' €</b>, <b style="color:var(--coral)">por debajo del objetivo de ~70 €</b>: monta el pasillo entero y sube las tasas del bump y los OTOs antes de comprar tráfico. Los downsells suman por encima de esta cuenta.');
   }
 };
+window.calcConsumo = function(){
+  var p = num('ltPag'), v = num('ltVid'), a = num('ltAud');
+  var total = Math.round(p * 2 + v + a);
+  if(total <= 0){ pinta('ltOut','Rellena lo que llevará tu producto (páginas y/o minutos) y te digo si cabe en la regla.'); return; }
+  var t = '<b>' + total.toLocaleString('es-ES') + ' minutos</b> de consumo estimado (unos 2 por página, más el vídeo y el audio). ';
+  if(total <= 60){ pinta('ltOut', t + '<b style="color:var(--verde)">Cabe:</b> tu comprador lo termina, y quien termina compra lo siguiente.'); }
+  else if(total <= 90){ pinta('ltOut', t + '<b style="color:var(--ambar)">Al límite:</b> vale, pero si puedes recortar teoría, recórtala. La regla son 60 minutos, con 90 de techo.'); }
+  else { pinta('ltOut', t + '<b style="color:var(--coral)">Se pasa:</b> recorta hacia la acción. Un producto que no se termina no deja victoria, y sin victoria no hay siguiente compra.'); }
+};
 if(document.getElementById('scOut')) calcSuelo();
 if(document.getElementById('caOut')) calcAds();
 if(document.getElementById('cfOut')) calcAov();
+if(document.getElementById('ltOut')) calcConsumo();
 /* los cuadros del diagrama: toca uno y sale su explicación */
 var dgTip = document.createElement('div'); dgTip.id = 'dgTip'; document.body.appendChild(dgTip);
 var dgFijo = null;
