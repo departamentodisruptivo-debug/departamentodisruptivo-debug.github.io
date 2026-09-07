@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kit del Producto Low Ticket</title>
-<meta name="description" content="La guía o mini curso de 12-17 € que convierte a un desconocido en cliente de pago. 5 pasos para crearlo desde cero: la primera victoria, el esqueleto, el borrador con Claude, el diseño y el precio.">
+<title>Kit del Mini Curso · Low Ticket</title>
+<meta name="description" content="Tu low ticket en vídeo: cuántas lecciones y de cuántos minutos, el guion de cada una, cómo grabarlo sin estudio y la hoja de apoyo que lo hace vender. Con su prompt y su checklist.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="Kit del Producto Low Ticket">
-<meta property="og:description" content="La guía o mini curso de 12-17 € que convierte a un desconocido en cliente de pago. 5 pasos para crearlo desde cero: la primera victoria, el esqueleto, el borrador con Claude, el diseño y el precio.">
+<meta property="og:title" content="Kit del Mini Curso · Low Ticket">
+<meta property="og:description" content="Tu low ticket en vídeo: cuántas lecciones y de cuántos minutos, el guion de cada una, cómo grabarlo sin estudio y la hoja de apoyo que lo hace vender. Con su prompt y su checklist.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kit-producto-low-ticket.vercel.app">
+<meta property="og:url" content="https://kit-lt-minicurso.vercel.app">
 <meta property="og:site_name" content="Departamento Disruptivo">
 <meta name="theme-color" content="#D4AF37">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3ELT%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D4AF37'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='32' font-weight='700' text-anchor='middle' fill='%23111111'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -59,9 +59,8 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 .wrap-estrecho{max-width:1000px;margin:0 auto}
 
 /* ============ HERO ============ */
-/* Portada propia del taller: la guía en construcción sobre la mesa.
-   Es deliberadamente distinta al resto de kits para que se reconozca
-   como el taller del producto, no como un kit más del sistema. */
+/* Portada del kit del Mini Curso: el reproductor con sus lecciones.
+   Familia visual del taller low ticket. */
 .hero{background:var(--tinta);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:var(--oro)}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:100px;background:linear-gradient(to bottom,transparent,var(--papel-2))}
@@ -78,33 +77,34 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 .hero-cruce a{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .hero-cruce a:hover{color:var(--oro)}
 
-/* la mesa del taller: la portada de la guía en construcción */
+/* el reproductor del mini curso, con sus lecciones */
 .hero-panel{background:var(--papel-2);color:var(--texto);border-radius:var(--radio);box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden}
 .doc-cab{display:flex;align-items:center;gap:11px;background:#fff;padding:13px 16px;border-bottom:1px solid var(--papel-3)}
-.doc-cab .avatar{width:34px;height:34px;border-radius:9px;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.78rem;flex-shrink:0}
+.doc-cab .avatar{width:34px;height:34px;border-radius:9px;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.85rem;flex-shrink:0}
 .doc-cab b{font-size:.95rem;display:block;line-height:1.2}
 .doc-cab small{color:var(--texto-2);font-size:.75rem}
-.doc-cuerpo{padding:24px 20px 20px;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.028) 0 12px,transparent 12px 24px),var(--tinta)}
-.doc-mock{background:var(--crema);width:76%;margin:0 auto;border-radius:10px;padding:20px 18px 18px;transform:rotate(-2deg);box-shadow:0 16px 34px rgba(0,0,0,.45);position:relative;border-top:6px solid var(--oro)}
-.doc-marca{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.16em;color:var(--texto-2)}
-.doc-mock b{display:block;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:1.12rem;line-height:1.18;color:var(--tinta);margin:8px 0 6px}
-.doc-mock small{color:var(--texto-2);font-size:.74rem;line-height:1.4;display:block}
-.doc-precio{position:absolute;top:-12px;right:-12px;background:var(--oro);color:var(--tinta);font-family:'Space Mono',monospace;font-weight:700;font-size:.72rem;padding:6px 9px;border-radius:8px;transform:rotate(4deg);box-shadow:0 6px 16px rgba(0,0,0,.35)}
-.doc-lista{list-style:none;margin:18px 2px 0;padding:0;display:flex;flex-direction:column;gap:8px}
-.doc-lista li{font-family:'Space Mono',monospace;font-size:.74rem;line-height:1.45;color:#fff;display:flex;gap:8px;align-items:flex-start}
-.doc-lista li span{color:var(--oro);font-weight:700;flex-shrink:0}
+.mc-cuerpo{padding:20px 18px;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.028) 0 12px,transparent 12px 24px),var(--tinta)}
+.mc-player{position:relative;height:110px;border-radius:10px;background:linear-gradient(135deg,#2A2C29,#191B18);border:1px solid #333;display:grid;place-items:center;margin-bottom:14px;box-shadow:0 12px 28px rgba(0,0,0,.4)}
+.mc-play{width:52px;height:52px;border-radius:50%;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-size:1.2rem;padding-left:4px;box-shadow:0 8px 20px rgba(212,175,55,.35)}
+.mc-dur{position:absolute;bottom:10px;right:12px;font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:.08em;color:var(--crema-mute)}
+.mc-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.mc-lista li{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:9px;padding:8px 12px}
+.mc-lista li i{font-style:normal;color:var(--oro);font-size:.7rem;flex-shrink:0}
+.mc-lista li span{font-family:'Space Mono',monospace;font-size:.7rem;color:#fff;flex:1;line-height:1.35}
+.mc-lista li em{font-style:normal;font-family:'Space Mono',monospace;font-size:.62rem;color:var(--crema-mute);flex-shrink:0}
+.mc-lista li.mc-hoja{border-style:dashed;border-color:rgba(212,175,55,.5)}
 .doc-pie{background:#fff;border-top:1px dashed var(--papel-3);padding:11px 16px;font-size:.8rem;color:var(--texto-2);text-align:center}
 .doc-pie b{color:var(--tinta)}
-.doc-cuerpo>*{animation:dgEntra .55s ease backwards}
-.doc-cuerpo>:nth-child(1){animation-delay:.3s}
-.doc-cuerpo>:nth-child(2){animation-delay:.55s}
-.doc-lista li{animation:dgEntra .45s ease backwards}
-.doc-lista li:nth-child(1){animation-delay:.7s}
-.doc-lista li:nth-child(2){animation-delay:.85s}
-.doc-lista li:nth-child(3){animation-delay:1s}
-.doc-lista li:nth-child(4){animation-delay:1.15s}
-@media (prefers-reduced-motion:reduce){.doc-cuerpo>*,.doc-lista li{animation:none}}
-/* los visuales lúdicos del taller */
+.mc-cuerpo>*{animation:dgEntra .55s ease backwards}
+.mc-cuerpo>:nth-child(1){animation-delay:.3s}
+.mc-lista li{animation:dgEntra .45s ease backwards}
+.mc-lista li:nth-child(1){animation-delay:.6s}
+.mc-lista li:nth-child(2){animation-delay:.72s}
+.mc-lista li:nth-child(3){animation-delay:.84s}
+.mc-lista li:nth-child(4){animation-delay:.96s}
+.mc-lista li:nth-child(5){animation-delay:1.08s}
+@media (prefers-reduced-motion:reduce){.mc-cuerpo>*,.mc-lista li{animation:none}}
+/* comparativas y visuales compartidos del low ticket */
 .lt-dos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 0}
 @media(max-width:720px){.lt-dos{grid-template-columns:1fr}}
 .lt-col{border-radius:12px;padding:14px 16px;border:1px solid}
@@ -119,20 +119,12 @@ h1,h2,h3,h4{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1
 .lt-col .m{font-weight:800;flex-shrink:0}
 .lt-col.si .m{color:var(--verde)}
 .lt-col.no .m{color:var(--coral)}
-.temp{display:inline-block;font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:999px;vertical-align:2px;white-space:nowrap}
-.temp.frio{background:var(--azul-luz);color:var(--azul)}
-.temp.templado{background:var(--ambar-luz);color:var(--ambar)}
-.temp.caliente{background:var(--coral-luz);color:var(--coral)}
 .lt-paginas{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
 .lt-pag{flex:1;min-width:104px;background:#fff;border:1.5px solid var(--papel-3);border-top:5px solid var(--oro);border-radius:8px;padding:10px 10px 12px;text-align:center;box-shadow:var(--sombra)}
 .lt-pag b{display:block;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--texto-2);margin-bottom:4px}
 .lt-pag span{font-size:.84rem;font-weight:700;line-height:1.3;display:block}
 .lt-pag small{font-size:.72rem;color:var(--texto-2);line-height:1.35;display:block;margin-top:3px}
 .lt-pag.fin{border-top-color:var(--verde);background:var(--verde-luz)}
-.lt-precio{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:4px 0 16px}
-.lt-tag{background:var(--oro);color:var(--tinta);font-family:'Space Mono',monospace;font-weight:700;font-size:1.15rem;padding:12px 18px;border-radius:10px;transform:rotate(-2deg);box-shadow:var(--sombra-alta)}
-.lt-tag small{display:block;font-size:.6rem;letter-spacing:.1em;margin-top:3px}
-.lt-tag.mini{background:#fff;border:1.5px dashed var(--oro);transform:rotate(2deg);font-size:.95rem}
 @media(max-width:980px){
   .hero-grid{grid-template-columns:1fr;gap:44px}
   .hero-panel{max-width:440px}
@@ -567,34 +559,30 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="hero-txt">
-      <div class="hero-insignia"><span class="num">Taller · Producto Low Ticket</span><span class="hero-marca">Departamento Disruptivo</span></div>
-      <h1>Tu Low Ticket, <em>de 0 a la venta.</em></h1>
-      <p>Una guía o un mini curso de 12-17 € que resuelve UN problema concreto en menos de una semana. No está para hacerte rico: está para algo mejor, convertir a un desconocido en cliente de pago. Se extrae de tu método; no se inventa.</p>
-      <p class="hero-que-es">Primero, <strong>5 pasos</strong>: qué es (y qué no), tu primera victoria, el esqueleto, el borrador con Claude y el remate con nombre y precio. Después, <strong>la caja</strong>: el prompt del borrador, el esqueleto copiable, el checklist de calidad y la receta de diseño en Canva.</p>
+      <div class="hero-insignia"><span class="num">Low Ticket · Formato B</span><span class="hero-marca">Departamento Disruptivo</span></div>
+      <h1>El Mini Curso: <em>corto, visto, aplicado.</em></h1>
+      <p>De 3 a 5 lecciones de 5-10 minutos, grabadas con tu móvil o Loom, cada una con su hoja de apoyo. Para nichos que miran más que leen, y con un premio extra: las lecciones luego se reutilizan en tu programa.</p>
+      <p class="hero-que-es">Primero, <strong>5 pasos</strong>: cuándo es tu formato, el mapa de lecciones, el guion de cada una, la grabación sin estudio y el remate con hojas y subida. Después, <strong>la caja</strong>: el Prompt de los Guiones, la plantilla de guion, el checklist y la receta técnica.</p>
       <div class="botonera">
         <button class="btn btn-principal" onclick="irAPaso(0)">Empezar por el paso 1 →</button>
         <a href="#caja" class="btn btn-fantasma">Ver las herramientas</a>
       </div>
-      <p class="hero-cruce">Se extrae del método que armaste en el <a href="https://kit-oferta-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 01 ↗</a> y es el producto que vende tu <a href="https://kit-funnel-high-ticket.vercel.app" target="_blank" rel="noopener">Kit 07 · Funnel ↗</a></p>
+      <p class="hero-cruce">Tu victoria se elige en <a href="https://kit-producto-low-ticket.vercel.app" target="_blank" rel="noopener">el Taller ↗</a> y los demás formatos viven en <a href="https://kits-low-ticket.vercel.app" target="_blank" rel="noopener">la estantería ↗</a></p>
     </div>
 
-    <aside class="hero-panel" aria-label="Tu guía, en construcción sobre la mesa del taller">
-      <div class="doc-cab"><span class="avatar">LT</span><div><b>Tu producto de entrada</b><small>taller de creación · de 0 a la venta</small></div></div>
-      <div class="doc-cuerpo">
-        <div class="doc-mock">
-          <span class="doc-marca">TU MARCA</span>
-          <b>La guía de tu primera victoria</b>
-          <small>un problema concreto, resuelto en días</small>
-          <span class="doc-precio">12-17 €</span>
-        </div>
-        <ul class="doc-lista">
-          <li><span>✓</span> El problema, en una página</li>
-          <li><span>✓</span> Tu método, en 3-5 pasos con acción</li>
-          <li><span>✓</span> La plantilla para hacerlo hoy</li>
-          <li><span>✓</span> Última página: el puente a tu programa</li>
+    <aside class="hero-panel" aria-label="El mini curso, lección a lección">
+      <div class="doc-cab"><span class="avatar">B</span><div><b>El Mini Curso</b><small>3-5 lecciones · 5-10 min cada una</small></div></div>
+      <div class="mc-cuerpo">
+        <div class="mc-player"><span class="mc-play">▶</span><span class="mc-dur">20-45 MIN EN TOTAL</span></div>
+        <ul class="mc-lista">
+          <li><i>▶</i><span>Lección 1 · El mapa</span><em>5-7 min</em></li>
+          <li><i>▶</i><span>Lección 2 · Primer paso, en pantalla</span><em>5-10 min</em></li>
+          <li><i>▶</i><span>Lección 3 · Segundo paso, en pantalla</span><em>5-10 min</em></li>
+          <li><i>▶</i><span>Lección final · Tu victoria y el puente</span><em>3-5 min</em></li>
+          <li class="mc-hoja"><i>↓</i><span>Cada lección, con su hoja de apoyo</span><em>PDF</em></li>
         </ul>
       </div>
-      <div class="doc-pie"><b>Claude redacta; tú certificas.</b> En una semana de ratos, a la venta.</div>
+      <div class="doc-pie"><b>Guion de 5 líneas por lección.</b> La claridad vale más que la producción.</div>
     </aside>
   </div>
 </header>
@@ -603,7 +591,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 <!-- ============ BARRA ============ -->
 <div class="barra" id="barra">
   <div class="wrap barra-in">
-    <div class="barra-titulo" id="barraTitulo">Low Ticket</div>
+    <div class="barra-titulo" id="barraTitulo">Mini Curso</div>
     <div class="puntos" id="puntos"></div>
     <div class="contador" id="contador">0/5</div>
   </div>
@@ -615,10 +603,10 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 <div class="wrap">
   <div class="aviso-uso">
     <h3 id="tituloUso">Cómo usar esta guía</h3>
-    <p><strong>Este kit es un taller: sales de él con un producto terminado.</strong> No es teoría sobre el low ticket, es el camino para crear el tuyo desde cero: la guía o el mini curso de 12-17 € que tu funnel (Kit 07) vende y que convierte a un desconocido en cliente de pago. Recorre los 5 pasos en orden; cada uno deja una pieza hecha, y la caja de abajo tiene las herramientas para no empezar nada en blanco.</p>
-    <p><strong>El ritmo lo pones tú, pero el orden no.</strong> La trampa clásica es empezar por el diseño bonito o por el nombre. Aquí el nombre y el diseño van al final, cuando ya sabes exactamente qué victoria vendes. Con una semana de ratos sueltos es suficiente: elegir la victoria es una tarde, el borrador con Claude sale en una sesión, y la revisión y el diseño llevan un par de ratos más.</p>
-    <p><strong>Las reglas duras no se negocian.</strong> El precio vive en la banda oficial de 12-17 € (es política del sistema, calibrada con toda la escalera). El low ticket se extrae de tu método, nunca es un módulo de tu programa reempaquetado. Cero cifras inventadas: donde falte un dato real, se escribe [DATO PENDIENTE] y lo resuelves tú. Y el precio de tu programa principal jamás aparece por escrito, tampoco dentro de tu guía.</p>
-    <p style="margin-bottom:0">Y tiene red: antes de ponerlo a la venta, el producto pasa por tu revisión con el equipo. Crearlo es tuyo; el visto bueno final se da acompañado.</p>
+    <p><strong>Este kit construye tu low ticket en formato mini curso en vídeo, del mapa de lecciones al archivo subido.</strong> Da por hecho que ya elegiste tu primera victoria en el <a href="https://kit-producto-low-ticket.vercel.app" target="_blank" rel="noopener">Taller ↗</a> (paso 2): si no, empieza allí. Aquí tienes los números del formato, el guion de cada lección, la receta de grabación sin estudio y las hojas de apoyo.</p>
+    <p><strong>Los números que mandan:</strong> de 3 a 5 lecciones · de 5 a 10 minutos cada una · de 20 a 45 minutos en total · una hoja de apoyo descargable por lección. Y la regla que viene del sistema entero: sin entregable tangible (hoja, plantilla, checklist), un curso no vende en low ticket.</p>
+    <p><strong>Las reglas duras no se negocian.</strong> Precio en la banda oficial de 12-17 €. El curso enseña el primer paso de tu método a fondo, nunca es un módulo del programa reempaquetado ni sus grabaciones recicladas. Cero cifras inventadas ([DATO PENDIENTE] donde falte un dato real). Y el precio de tu programa jamás aparece, tampoco dicho de pasada en cámara.</p>
+    <p style="margin-bottom:0">Antes de cobrar un euro, el curso pasa por tu revisión con el equipo. Grabarlo es tuyo; el visto bueno final se da acompañado.</p>
   </div>
 </div>
 
@@ -626,21 +614,21 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 <section class="diagrama" aria-label="El sistema de un vistazo">
   <div class="wrap">
     <div class="dg-caja">
-      <div class="dg-cab"><span class="eyebrow">El sistema de un vistazo</span><b>De tu método a un producto a la venta, en 5 paradas</b></div>
-      <p class="dg-nota" style="margin:0 0 16px"><strong>El contexto, en dos frases:</strong> tu programa ya enseña un camino completo (lo armaste en el Kit 01). Este taller corta un trocito de ese camino, el primer paso que la gente ya anda buscando, y lo convierte en una guía o mini curso de 12-17 € que cualquiera puede comprar sin pensárselo dos veces.</p>
+      <div class="dg-cab"><span class="eyebrow">El sistema de un vistazo</span><b>De la victoria elegida al curso subido, en 5 paradas</b></div>
+      <p class="dg-nota" style="margin:0 0 16px"><strong>El contexto, en una frase:</strong> tu primera victoria ya está elegida (Taller, paso 2); este kit la convierte en 3-5 lecciones cortas en vídeo, cada una con su hoja de apoyo, que se ven enteras en menos de 45 minutos.</p>
       <div class="dg-fila">
-        <div class="dg-nodo" tabindex="0" data-mas="Escribes la lista de pasos que un cliente recorre contigo, del punto de partida al resultado. No empiezas de cero: es el camino de tu oferta del Kit 01, puesto en fila."><b>1 · Tu camino</b><small>los pasos que un cliente recorre contigo</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Compruebas que el vídeo es el envase correcto: la victoria pide ver algo (una pantalla, un gesto) o tu audiencia consume vídeo mejor que texto. Si no, la guía PDF suele ganar por rapidez."><b>1 · ¿Es tu formato?</b><small>la victoria se ve, o tu avatar vive en el vídeo</small></div>
         <span class="dg-flecha">→</span>
-        <div class="dg-nodo" tabindex="0" data-mas="De esa lista, solo 2 o 3 pasos son cosas que la gente YA busca resolver por su cuenta. Eliges UNO que se resuelva con una sola acción y dé un resultado visible en menos de una semana. Esa es la primera victoria."><b>2 · La primera victoria</b><small>un paso que la gente ya busca, con resultado en días</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Repartes la victoria en lecciones: la primera da el mapa, las centrales enseñan un paso cada una, y la final recapitula y tiende el puente. Entre 3 y 5, jamás más."><b>2 · El mapa de lecciones</b><small>una lección, un paso; 3 a 5 en total</small></div>
         <span class="dg-flecha">→</span>
-        <div class="dg-nodo" tabindex="0" data-mas="Eliges el formato (guía PDF, mini curso en vídeo o pack de plantillas) y rellenas el esqueleto de la caja: portada, el problema, tu método en 3-5 pasos que acaban en acción, la plantilla y la última página con el puente."><b>3 · El esqueleto</b><small>formato + estructura, página a página</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="El Prompt de los Guiones escribe el guion de cada lección en lenguaje oral: gancho, qué vas a hacer, demostración y el 'haz esto ahora'. Cinco líneas por lección: se graba leyendo el mapa, no un teleprompter."><b>3 · Los guiones</b><small>5 líneas por lección, en tu voz</small></div>
         <span class="dg-flecha">→</span>
-        <div class="dg-nodo" tabindex="0" data-mas="Copias el Prompt del Borrador de la caja, le das tu esqueleto y tus datos, y Claude redacta la guía entera en tu voz. Después la revisas tú con el checklist y la prueba una persona real. La última puerta siempre eres tú."><b>4 · El borrador</b><small>Claude redacta; tú certificas</small></div>
+        <div class="dg-nodo" tabindex="0" data-mas="Tu móvil o Loom, luz de frente, sonido limpio y subtítulos. Grabas por lotes en una mañana y editas lo mínimo: cortar silencios y poco más. La claridad vale más que la producción."><b>4 · La grabación</b><small>sin estudio, en una mañana</small></div>
         <span class="dg-flecha">→</span>
-        <div class="dg-nodo oro" tabindex="0" data-mas="Al final (nunca antes) le pones nombre, lo montas bonito en Canva, le fijas el precio dentro de la banda oficial de 12-17 € y lo entregas al funnel del Kit 07, que es quien lo vende."><b>5 · A la venta</b><small>nombre, diseño, 12-17 € y al funnel</small></div>
+        <div class="dg-nodo oro" tabindex="0" data-mas="Cada lección sube con su hoja de apoyo descargable (sin entregable tangible, un curso no vende). Todo al curso de tu GHL, precio 12-17 €, test de compra completo y a la venta."><b>5 · Hojas y subida</b><small>al GHL, con test, y a la venta</small></div>
       </div>
       <p class="dg-pista">Toca cualquier cuadro y te cuento esa parte en detalle</p>
-      <p class="dg-nota"><strong>La regla que lo protege todo:</strong> el low ticket se extrae de tu método, nunca es un módulo de tu programa reempaquetado. Da una victoria completa y deja con ganas del camino entero.</p>
+      <p class="dg-nota"><strong>La regla del formato:</strong> cada minuto de más es un espectador menos. Lecciones de 5-10 minutos, cero introducciones largas, y el puente en la última lección.</p>
     </div>
   </div>
 </section>
@@ -652,7 +640,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
     <div class="seccion-cabecera">
       <span class="eyebrow">Primera parte</span>
       <h2>Los 5 pasos</h2>
-      <p>Qué es (y qué no es) un low ticket, cómo elegir la victoria que vende, el esqueleto, el borrador con Claude y el remate: nombre, diseño y precio. En orden, sin saltarse ninguno.</p>
+      <p>Cuándo el vídeo es tu formato, el mapa de lecciones, el guion de cada una, la grabación sin estudio y el remate: hojas de apoyo, subida y test.</p>
     </div>
     <div class="camino-grid">
       <aside class="indice" id="indice">
@@ -676,7 +664,7 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
     <div class="seccion-cabecera">
       <span class="eyebrow">Segunda parte</span>
       <h2>La caja de herramientas</h2>
-      <p>El Prompt del Borrador completo y copiable, el esqueleto página a página, el checklist de calidad antes de cobrar y la receta de diseño en Canva con la entrega en GHL.</p>
+      <p>El Prompt de los Guiones completo, la plantilla de guion por lección, el checklist del mini curso y la receta técnica de grabación y subida.</p>
     </div>
     <div class="rejilla" id="rejilla"></div>
   </div>
@@ -686,8 +674,8 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
   <div class="wrap">
     <div class="final">
       <h2>Una cosa antes de empezar</h2>
-      <p>Tu low ticket no es tu programa en pequeño ni una demo recortada: es <strong>una victoria completa</strong>, la primera del camino que tu programa recorre entero. Quien la consigue ya no es un desconocido: es un cliente que te ha pagado, ha ganado algo real contigo y quiere saber qué viene después.</p>
-      <p style="margin-bottom:28px">Por eso el orden de los pasos importa: primero se elige la victoria, luego se construye, y solo al final se bautiza y se viste. Un producto pequeño bien elegido trabaja años; uno bonito pero mal elegido no sobrevive al primer mes.</p>
+      <p>Un mini curso no compite con Netflix: compite con el abandono. <strong>Cada minuto de más es un espectador menos que llega a la última lección</strong>, y la última lección es donde vive tu puente.</p>
+      <p style="margin-bottom:28px">Por eso este kit recorta sin piedad: lecciones de 5-10 minutos, guiones de 5 líneas y cero introducciones largas. La claridad vale más que la producción, y terminar vale más que impresionar.</p>
       <button class="btn btn-principal" onclick="irAPaso(0)">Ir al paso 1 →</button>
     </div>
   </div>
@@ -696,10 +684,10 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 
 <footer class="pie">
   <div class="wrap">
-    <p><b>Kit del Producto Low Ticket</b> · Departamento Disruptivo</p>
-    <p style="margin-top:6px">¿Te trabas? Sistemas con tu coach de GHL los miércoles · Ads con tu coach de Meta Ads los martes · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
+    <p><b>Kit del Mini Curso</b> · Los Kits del Low Ticket · Departamento Disruptivo</p>
+    <p style="margin-top:6px">¿Te trabas? Sistemas con tu coach de GHL los miércoles · Estrategia en el chat de soporte o en una sesión de estrategia.</p>
     <div class="aviso-legal">
-      <b>Sobre el precio y las promesas:</b> la banda de 12-17 € es política del sistema y se decide con el equipo, no a ojo. Y lo que tu guía promete tiene que ser verdad demostrable: cero cifras inventadas, cero resultados adornados. Si tu nicho toca salud, tu producto pasa además el checklist ENCAC antes de venderse. Los formatos con sus números y todo lo del producto de entrada viven en <a href="https://kits-low-ticket.vercel.app" target="_blank" rel="noopener">Los Kits del Low Ticket ↗</a>; el camino del programa principal, en <a href="https://kits-high-ticket.vercel.app" target="_blank" rel="noopener">su estantería ↗</a>.
+      <b>Sobre las promesas:</b> lo que digas a cámara es promesa igual que lo escrito: cero cifras inventadas, cero resultados adornados, y checklist ENCAC si tu nicho toca salud. La colección completa vive en <a href="https://kits-low-ticket.vercel.app" target="_blank" rel="noopener">Los Kits del Low Ticket ↗</a> y el camino empieza en <a href="https://kit-producto-low-ticket.vercel.app" target="_blank" rel="noopener">el Taller ↗</a>.
     </div>
   </div>
 </footer>
@@ -722,276 +710,250 @@ const H = (s) => s; // ayuda para leer mejor el HTML de abajo
 const PASOS = [
 {
   num:"Paso 01", ico:"regla",
-  titulo:"Qué es un low ticket (y qué no)",
-  sub:"El trabajo de este producto no es hacerte rico: es convertir a un desconocido en cliente de pago. Si entiendes esto, todo lo demás sale solo.",
-  chips:["15 minutos de lectura","Cambia cómo miras el producto","La base de todo"],
-  queEs:H(`<p>Tu low ticket es <strong>el producto de entrada de tu escalera</strong>: la guía o el mini curso de 12-17 € que aparece en tu funnel (Kit 07) justo después de que alguien te deje su email. Es un precio de "sí obvio": tan bajo que tu avatar no necesita pensárselo, y a la vez un precio de verdad, porque quien paga (aunque sea poco) presta una atención que ningún regalo consigue.</p>
-    <p><strong>Y aquí la distinción que lo cambia todo:</strong> tu regalo de captación (el lead magnet) te compra leads; tu low ticket te compra CLIENTES. Una persona que ya te ha pagado 15 € es otra especie: abre tus emails, hace lo que la guía le dice, y cuando le hables de tu programa te escucha como cliente, no como curioso. Además le da a Meta la mejor señal posible para tus anuncios (Kit 06): compradores, no clics.</p>
-    <p style="margin-bottom:0">El dinero que deja es secundario a propósito: con la banda de 12-17 € el objetivo es que el tráfico se pague solo mientras la lista se llena de compradores. Tu facturación de verdad vive en tu programa principal, y ahí es donde este producto empuja.</p>`),
-  porQue:H(`<p>Porque casi todos los low ticket fracasan por lo mismo: se diseñan como "mi programa en pequeño". Y eso rompe las dos puntas a la vez: el producto pequeño decepciona (promete el mundo y entrega un resumen) y el programa se devalúa (¿para qué pagar el grande si el pequeño ya lo cuenta?).</p>
-    <p style="margin-bottom:0">Un low ticket que funciona hace lo contrario: <strong>da una victoria completa sobre UN problema concreto</strong>, la primera del camino que tu programa recorre entero. Entrega el 100% de algo pequeño, no el 10% de todo. Quien la consigue queda satisfecho Y con ganas del siguiente paso. Esa es toda la ciencia.</p>`),
-  plantilla:H(`<div class="lt-dos">
-    <div class="lt-col si"><b class="lt-cab">Tu low ticket SÍ es...</b><ul>
-      <li><span class="m">✓</span><span>UN problema concreto de tu avatar, resuelto de verdad.</span></li>
-      <li><span class="m">✓</span><span>Una victoria visible en menos de 7 días, con una sola acción central.</span></li>
-      <li><span class="m">✓</span><span>Consumible entero en 60-90 minutos como máximo.</span></li>
-      <li><span class="m">✓</span><span>El primer paso del MISMO camino que recorre tu programa: mismo avatar, mismo problema de fondo.</span></li>
-      <li><span class="m">✓</span><span>Un producto con final: última página con recap y puente a tu mundo.</span></li>
-    </ul></div>
-    <div class="lt-col no"><b class="lt-cab">Y NO es...</b><ul>
-      <li><span class="m">✕</span><span>Un módulo de tu programa sacado y revendido, ni varios módulos con nombre nuevo. Regla tajante: reempaquetar frena las compras futuras.</span></li>
-      <li><span class="m">✕</span><span>Tu método completo en versión barata. Aquí se enseña el primer paso a fondo; el camino entero vive en tu programa.</span></li>
-      <li><span class="m">✕</span><span>Un curso gigante. Más horas no es más valor: es menos gente que lo termina, y quien no termina no compra lo siguiente.</span></li>
-      <li><span class="m">✕</span><span>Tu fuente de ingresos. Se mide en compradores nuevos por semana, no en euros.</span></li>
-    </ul></div>
-    </div>
-    <p style="margin:10px 0 0;font-size:.9rem;color:#6E6B65">Guárdalo a la vista mientras creas: cuando dudes, esta tabla decide.</p>`),
-  ejemplo:H(`<p>Valeria (método Energía Propia, acompañamiento 1:1 de 12 semanas) no vendió "el programa en miniatura". Su low ticket, el Sistema Energía Propia a 17 €, resuelve una sola cosa: saber dónde se te va la energía, con un registro guiado de 7 días. Victoria completa, una semana, una acción al día. Y quien lo termina tiene delante, con total naturalidad, la pregunta siguiente: "vale, ya sé dónde se me va... ¿y ahora cómo lo cambio?". Esa pregunta es exactamente lo que responde su programa.</p>`),
+  titulo:"¿El vídeo es tu formato?",
+  sub:"El mini curso gana cuando la victoria se ve. Compruébalo en dos minutos, porque el vídeo cuesta más de producir que cualquier otro formato.",
+  chips:["2 minutos","Los números del formato","Se reutiliza en tu programa"],
+  queEs:H(`<p>El mini curso es el formato correcto en dos escenarios: <strong>la victoria pide imitar algo que se ve</strong> (una pantalla compartida, un gesto, una postura, una técnica manual) o <strong>tu audiencia consume vídeo mucho mejor que texto</strong> (lo sabes por tus reels: si tu gente ve y comenta vídeo, compra vídeo).</p>
+    <p><strong>Los números que definen el formato:</strong> de 3 a 5 lecciones · de 5 a 10 minutos cada una · de 20 a 45 minutos en total · una hoja de apoyo descargable por lección · victoria visible en menos de 7 días. La regla de los 60 minutos manda aquí igual que en la guía.</p>
+    <p style="margin-bottom:0"><strong>Y el premio oculto del formato:</strong> las lecciones bien grabadas se reutilizan después como material de tu programa principal. Produces una vez, sirves dos veces.</p>`),
+  porQue:H(`<p>Porque el vídeo tiene un coste que el PDF no tiene: grabar, regrabar y editar. Si tu victoria se entiende perfectamente leyendo, ese coste no compra nada, y la guía te saca una semana de ventaja. <strong>El formato se elige por lo que pide la victoria, no por lo que impresiona.</strong></p>
+    <p style="margin-bottom:0">Pero cuando la victoria se ve, el vídeo es imbatible: nadie aprende a configurar una pantalla leyendo un párrafo, y tu cara y tu voz construyen una confianza que el texto tarda meses en igualar.</p>`),
+  plantilla:H(`<div class="campo"><b>El test de los 2 minutos</b>
+    <span class="hueco">¿LA VICTORIA SE VE?</span> pantallas, gestos, posturas, técnica manual → sí es vídeo ·
+    <span class="hueco">¿TU AVATAR MIRA?</span> si tus reels rinden mejor que tus textos, sí ·
+    <span class="hueco">¿PUEDES GRABAR EN UNA MAÑANA?</span> con los guiones de la caja y tu móvil, sí</div>
+    <p style="margin:12px 0 0">Tres síes: adelante. Si la victoria se entiende leyendo y tu gente lee, la <a href="https://kit-lt-guia.vercel.app" target="_blank" rel="noopener">Guía PDF ↗</a> te da el mismo resultado con la mitad de producción.</p>`),
+  ejemplo:H(`<p>Valeria eligió guía porque su victoria (un registro en papel) se entiende leyendo. Pero si su método pidiera enseñar una técnica de respiración o cómo configurar una app de seguimiento, la cosa cambiaría: eso se imita viendo, no leyendo. Su vídeo de bienvenida de 4 minutos ya le enseñó el patrón: cara, voz y calidez en el primer minuto valen oro; con este kit, esa pieza crecería a curso completo.</p>`),
   errores:[
-    {t:"Empezar por el nombre o el diseño", d:"El nombre y la portada son el paso 5, no el 1. Primero se elige la victoria; lo demás se le pone encima."},
-    {t:"Regalarlo 'para probar'", d:"Sin pago no hay cliente, hay curioso. El regalo ya existe y tiene su papel (tu captación); este producto existe precisamente para cruzar la línea del pago."},
-    {t:"Meterle todo 'para que valga la pena'", d:"El valor no está en la cantidad sino en el resultado. Una guía de 20 páginas que funciona vale más que un curso de 6 horas que nadie termina."},
-    {t:"Diseñarlo aparte de tu programa", d:"Si tu low ticket habla a otro avatar o de otro problema, te llenará la lista de compradores que jamás querrán tu programa. Mismo camino, siempre."}
+    {t:"Elegir vídeo para 'justificar el precio'", d:"El precio lo justifica la victoria, no el formato. Un curso flojo a 15 € decepciona igual que una guía floja, y encima tardaste el triple en producirlo."},
+    {t:"Prometer '2 horas de contenido'", d:"La duración no es un argumento de venta en low ticket: es una amenaza. Se vende la victoria y el poco tiempo que cuesta conseguirla."},
+    {t:"Reciclar grabaciones de tu programa", d:"Regla tajante del sistema: no se reempaqueta. El mini curso se graba para su victoria, con su guion. Lo que sí puedes reutilizar después es al revés: estas lecciones dentro del programa."}
   ],
-  ghl:"Todavía no hay nada que montar en GHL en este paso: es de cabeza, no de clics. El cableado llega en el paso 5 y en el Kit 07.",
-  ayuda:"Si dudas de si tu idea es 'primer paso' o 'programa recortado', llévala al chat de soporte o a una sesión de estrategia antes de invertirle horas."
+  ghl:"Nada que montar todavía. Mira en tus estadísticas qué piezas de vídeo rindieron mejor: los ángulos que funcionaron en reels te dicen cómo hablarle a cámara a tu avatar.",
+  ayuda:"¿Dudas entre guía y curso? Chat de soporte con tu victoria en una frase y tus 3 mejores reels: se decide en dos mensajes."
 },
 {
   num:"Paso 02", ico:"ruta",
-  titulo:"Elige tu primera victoria",
-  sub:"Escribe el camino completo de tu programa, marca qué pasos busca la gente por su cuenta, y elige UNO que se gane en menos de una semana.",
-  chips:["Una tarde","La decisión más importante","Sale de tu Kit 01"],
-  queEs:H(`<p>Aquí se decide el 80% del éxito del producto. El proceso tiene tres movimientos:</p>
-    <p><strong>1 · Tu camino, en fila.</strong> Escribe los 6-10 pasos que un cliente recorre contigo, desde su situación de partida hasta el resultado de tu programa. No lo inventes: es el camino de tu oferta del Kit 01, puesto en lista.</p>
-    <p><strong>2 · Marca la temperatura de cada paso.</strong> FRÍO: necesario, pero nadie se levanta por la mañana buscándolo. TEMPLADO: interesa si se lo explicas. CALIENTE: la gente YA lo está buscando por su cuenta, lo pregunta en tus DMs, lo escribe en Google. En un camino normal solo 2 o 3 pasos son calientes, y casi siempre están al principio.</p>
-    <p style="margin-bottom:0"><strong>3 · Elige UN paso caliente</strong> que pase el triple filtro: se resuelve con una sola acción central (no con un cambio de vida), da un resultado visible en menos de 7 días, y deja a la persona con ganas naturales del paso siguiente. Eso es tu primera victoria.</p>`),
-  porQue:H(`<p>Porque un low ticket no se vende explicando: se vende <strong>reconociendo</strong>. Si eliges un paso caliente, tu avatar lee el título y piensa "esto es exactamente lo que estaba buscando", y 15 € es un sí obvio. Si eliges un paso frío (por muy importante que sea en tu método), tendrás que educar antes de vender, y a 15 € no hay margen para educar a nadie.</p>
-    <p style="margin-bottom:0">Cuando dudes entre varios calientes, estas cuatro puertas ayudan a elegir el ángulo: <strong>simplificar lo complejo</strong> (el paso enredado que tú haces fácil), <strong>tu método en versión concisa</strong> (tu forma distinta de dar ese primer paso), <strong>lo que está sonando en tu nicho</strong> (la conversación del momento, si encaja con tu camino) o <strong>tu pasión personal</strong> (el tema que harías igualmente sin cobrar; se nota y engancha).</p>`),
-  plantilla:H(`<div class="campo"><b>El mapa del camino (rellénalo y guárdalo: lo usa también el prompt)</b>
-    <span class="hueco">PUNTO DE PARTIDA</span> cómo está tu cliente el día que te encuentra ·
-    <span class="hueco">PASO 1...N</span> cada paso del camino, en una frase que empiece por un verbo ·
-    <span class="hueco">TEMPERATURA</span> frío / templado / caliente, por paso ·
-    <span class="hueco">SEÑALES</span> por qué crees que ese paso es caliente: preguntas reales de tus DMs, comentarios, llamadas ·
-    <span class="hueco">LA ELEGIDA</span> el paso caliente que pasa el triple filtro, escrito como victoria: "que consigas [resultado] en [plazo real]"</div>
-    <p style="margin:12px 0 0;line-height:2.3">La leyenda del mapa: <span class="temp frio">FRÍO</span> necesario, pero nadie lo busca · <span class="temp templado">TEMPLADO</span> interesa si se lo explicas · <span class="temp caliente">CALIENTE</span> ya lo están buscando</p>
-    <p style="margin:12px 0 0"><strong>La prueba del sí obvio:</strong> imagina a tu avatar leyendo solo la victoria elegida. Si su reacción natural no es "lo necesito", vuelve a la lista. Mejor perder otra tarde aquí que tres semanas montando el producto equivocado.</p>`),
-  ejemplo:H(`<p>El camino de Valeria, ya con la temperatura puesta:</p>
-    <p style="line-height:2.3;margin:8px 0 12px">registro real <span class="temp caliente">CALIENTE</span> → sistema a medida <span class="temp frio">FRÍO</span> → documentar <span class="temp templado">TEMPLADO</span> → sostener <span class="temp frio">FRÍO</span></p>
-    <p>Nadie busca "sistema a medida" con esas palabras, pero el primer paso estaba al rojo: sus DMs eran variantes de "termino el día vacía y no sé por qué". Su victoria: "que en 7 días sepas exactamente dónde se te va la energía, con un registro de 5 minutos al día". Una acción, una semana, y deja la pregunta siguiente servida.</p>`),
-  errores:[
-    {t:"Elegir el paso que a ti te fascina", d:"Tu paso favorito suele ser el más profundo, y el más profundo casi nunca es el que la gente busca. La temperatura la mide tu audiencia, no tu entusiasmo."},
-    {t:"Una victoria que depende de fuerza de voluntad", d:"'Que medites 30 días seguidos' no es una victoria, es un régimen. Busca resultados que caigan de UNA acción bien guiada, no de la disciplina del comprador."},
-    {t:"Prometer un plazo que no puedes demostrar", d:"El plazo de tu victoria es una cifra, y las cifras se demuestran o no se escriben. Si no tienes datos de tus clientes, promete el mecanismo ('sabrás X al terminar el registro') y no el cronómetro."},
-    {t:"Elegir dos victorias 'porque las dos valen'", d:"Dos victorias son dos productos. Elige una; la otra quedará esperando en tu roadmap para más adelante."}
-  ],
-  ghl:"Las señales de temperatura están en tu GHL: entra en Conversations y relee los últimos 30 días de DMs y respuestas de email. Las frases que se repiten, con sus palabras exactas, son oro para el paso 3.",
-  ayuda:"La victoria elegida se valida en tu revisión con el equipo antes de pasar al paso 3. Es un minuto de conversación que ahorra semanas."
-},
-{
-  num:"Paso 03", ico:"formulario",
-  titulo:"El formato y el esqueleto",
-  sub:"Guía PDF, mini curso o plantillas: eliges el envase por cómo consume tu avatar, y rellenas la estructura página a página antes de escribir nada.",
-  chips:["1-2 horas","El esqueleto está en la caja","Consumo total: 60-90 min"],
-  queEs:H(`<p><strong>Primero el envase.</strong> Tres formatos sirven, y se elige por tu avatar, no por moda:</p>
-    <p><strong>La guía PDF accionable</strong> (nuestra opción por defecto): 15-25 páginas con su plantilla dentro. Se crea en una semana de ratos, se lee en una tarde, se actualiza en minutos y se percibe como un objeto valioso si cada página empuja a la acción. <strong>El mini curso en vídeo</strong>: 3-5 lecciones de 5-10 minutos, si tu nicho consume mejor mirando que leyendo (y tiene un premio extra: esas lecciones luego se reutilizan como material de tu programa). <strong>El pack de plantillas</strong>: cuando la victoria es directamente "usa esto" (hojas de registro, guiones, calculadoras). Y el combo que casi siempre gana: <strong>guía + plantilla + un vídeo corto de "empieza por aquí"</strong>.</p>
-    <p style="margin-bottom:0"><strong>Después, el esqueleto.</strong> Antes de escribir una sola frase, rellenas la estructura completa (la tienes copiable en la caja): portada, promesa, el problema en una página, tu método en 3-5 pasos donde cada uno termina en "haz esto ahora", la plantilla, un caso real y la última página con el puente. Con el esqueleto relleno, el borrador del paso 4 sale a la primera.</p>`),
-  porQue:H(`<p>La regla de los 60-90 minutos manda sobre todo el diseño: si consumir tu producto entero lleva más de hora y media, la mayoría no lo terminará, y <strong>un comprador que no termina no consigue la victoria, y sin victoria no hay siguiente compra</strong>. El low ticket vive de terminarse.</p>
-    <p style="margin-bottom:0">Y el esqueleto antes que la prosa por la misma razón por la que la oferta se diseña antes de bautizarse: escribir sin estructura produce capítulos que crecen sin control y guías que explican mucho y mueven poco. Una página, una idea; un paso, una acción. Lo que no empuje a la victoria, fuera.</p>`),
-  plantilla:H(`<div class="campo"><b>La decisión de formato, en tres preguntas</b>
-    <span class="hueco">¿CÓMO CONSUME TU AVATAR?</span> lee en el metro / mira vídeos por la noche / quiere rellenar y listo ·
-    <span class="hueco">¿QUÉ PIDE LA VICTORIA?</span> entender un proceso → guía · imitar un gesto → vídeo · aplicar ya → plantilla ·
-    <span class="hueco">¿QUÉ PUEDES PRODUCIR BIEN EN 1-2 SEMANAS?</span> el mejor formato es el que terminas</div>
-    <p style="margin:12px 0 0"><strong>Y cada formato tiene su propio kit completo</strong>, con sus números, su estructura, su prompt y su checklist: <a href="https://kit-lt-guia.vercel.app" target="_blank" rel="noopener">La Guía PDF ↗</a> · <a href="https://kit-lt-minicurso.vercel.app" target="_blank" rel="noopener">El Mini Curso ↗</a> · <a href="https://kit-lt-cuadernillo.vercel.app" target="_blank" rel="noopener">El Cuadernillo ↗</a> · <a href="https://kit-lt-masterclass.vercel.app" target="_blank" rel="noopener">La Masterclass ↗</a> · <a href="https://kit-lt-audio.vercel.app" target="_blank" rel="noopener">El Audio ↗</a>. Elige aquí; profundiza allí.</p>
-    <p style="margin:14px 0 0"><strong>Así se ve tu guía, página a página</strong> (el esqueleto completo y copiable está en la caja, segunda ficha):</p>
+  titulo:"El mapa de lecciones",
+  sub:"Una lección, un trabajo. La primera abre el mapa, las centrales enseñan un paso cada una, y la final entrega la victoria y tiende el puente.",
+  chips:["1 hora","3-5 lecciones, jamás más","El orden hace el curso"],
+  queEs:H(`<p>El mapa reparte tu victoria en lecciones con un trabajo cada una:</p>
     <div class="lt-paginas">
-      <div class="lt-pag"><b>PORTADA</b><span>El nombre</span><small>y la victoria en una línea</small></div>
-      <div class="lt-pag"><b>PÁG. 1</b><span>La promesa</span><small>qué, en cuánto, con qué</small></div>
-      <div class="lt-pag"><b>PÁG. 2</b><span>El problema</span><small>con sus palabras</small></div>
-      <div class="lt-pag"><b>PÁGS. 3-4</b><span>El mapa</span><small>tu método de un vistazo</small></div>
-      <div class="lt-pag"><b>BLOQUE</b><span>3-5 pasos</span><small>cada uno acaba en acción</small></div>
-      <div class="lt-pag"><b>PLANTILLA</b><span>La hoja</span><small>de la lectura a la acción</small></div>
-      <div class="lt-pag fin"><b>ÚLTIMA</b><span>El puente</span><small>sin precio, jamás</small></div>
+      <div class="lt-pag"><b>LECCIÓN 1 · 5-7 MIN</b><span>El mapa</span><small>la promesa, el problema y el camino de un vistazo</small></div>
+      <div class="lt-pag"><b>LECCIÓN 2 · 5-10 MIN</b><span>Primer paso</span><small>en pantalla, con su acción</small></div>
+      <div class="lt-pag"><b>LECCIÓN 3 · 5-10 MIN</b><span>Segundo paso</span><small>en pantalla, con su acción</small></div>
+      <div class="lt-pag"><b>LECCIÓN 4 · si existe</b><span>Tercer paso</span><small>solo si el método lo pide de verdad</small></div>
+      <div class="lt-pag fin"><b>FINAL · 3-5 MIN</b><span>El puente</span><small>recap + una invitación, sin precio</small></div>
     </div>
-    <p style="margin:12px 0 0">Rellénalo a mano y en sucio: frases cortas, sin pulir. Es la materia prima del prompt del paso 4.</p>
-    <div class="calc"><b class="calc-t">¿Cabe en la regla de los 60-90 minutos? Compruébalo</b>
-      <label>Páginas de guía<input id="ltPag" type="number" min="0" value="20" oninput="calcConsumo()"></label>
-      <label>Minutos de vídeo o clase<input id="ltVid" type="number" min="0" value="0" oninput="calcConsumo()"></label>
-      <label>Minutos de audio<input id="ltAud" type="number" min="0" value="0" oninput="calcConsumo()"></label>
-      <div class="calc-r" id="ltOut"></div>
+    <p style="margin:12px 0 0;margin-bottom:0"><strong>La regla de reparto:</strong> una lección = un paso de tu método = una acción del espectador. Si una lección intenta enseñar dos cosas, se parte en dos; si te salen más de 5 lecciones, tu victoria es demasiado grande: vuelve al paso 2 del Taller y recorta.</p>`),
+  porQue:H(`<p>Porque en vídeo el abandono es brutal y silencioso: cada lección que no termina en una acción concreta es una pestaña cerrada. <strong>El espectador se queda cuando cada lección le deja algo hecho</strong>, no algo entendido.</p>
+    <p style="margin-bottom:0">Y la lección final es sagrada: ahí el comprador acaba de ganar su victoria, te está viendo la cara y confía. Recap de lo conseguido, la pregunta que le nace ("¿y ahora qué?") y UNA invitación. Sin precio, jamás: el precio de tu programa vive en la llamada.</p>`),
+  plantilla:H(`<div class="lt-dos">
+    <div class="lt-col si"><b class="lt-cab">Cada lección SÍ tiene...</b><ul>
+      <li><span class="m">✓</span><span>UN paso del método y una sola acción al final.</span></li>
+      <li><span class="m">✓</span><span>Demostración en pantalla o en cámara de ese paso, no su teoría.</span></li>
+      <li><span class="m">✓</span><span>Su hoja de apoyo descargable (la plantilla o el resumen de acción).</span></li>
+      <li><span class="m">✓</span><span>Duración de 5-10 minutos, cronometrada en el guion.</span></li>
+    </ul></div>
+    <div class="lt-col no"><b class="lt-cab">Y NO tiene...</b><ul>
+      <li><span class="m">✕</span><span>Introducción de 10 minutos sobre ti: tu historia cabe en 30 segundos de la lección 1.</span></li>
+      <li><span class="m">✕</span><span>Venta del programa entre medias: la invitación vive SOLO en la lección final.</span></li>
+      <li><span class="m">✕</span><span>Los pasos 2 en adelante de tu método desarrollados: se mencionan como camino, no se enseñan.</span></li>
+      <li><span class="m">✕</span><span>"Teoría necesaria para entender lo siguiente": si no cabe en un minuto, va en la hoja de apoyo, no en cámara.</span></li>
+    </ul></div>
     </div>`),
-  ejemplo:H(`<p>Valeria eligió el combo: guía de 22 páginas + la plantilla del registro + un vídeo de 4 minutos de bienvenida. Su avatar (dueñas de negocio sin tiempo) lee a ratos y quiere papel delante, así que el vídeo solo abre la puerta y la guía hace el trabajo. Consumo total medido con el reloj: 55 minutos la guía y 5 la plantilla. Dentro de la semana de registro, la guía se consulta 5 minutos al día.</p>`),
+  ejemplo:H(`<p>El Sistema Energía Propia en versión curso habría sido: Lección 1, el mapa del registro y por qué la energía se fuga sin que la veas (6 min). Lección 2, montar tu registro de 5 minutos diarios, con la plantilla en pantalla (8 min). Lección 3, leer tus primeros 3 días y detectar el patrón (7 min). Final: tus 3 fugas sobre la mesa, y el puente: "comenta ENERGIA y hablamos" (4 min). Total: 25 minutos y una victoria.</p>`),
   errores:[
-    {t:"Elegir vídeo 'porque se cobra más caro'", d:"El precio no lo fija el formato sino la escalera (12-17 €). Elegir vídeo sin que tu avatar lo pida solo te añade semanas de producción."},
-    {t:"Un esqueleto de 12 capítulos", d:"Si te salen más de 5 pasos, tu victoria es demasiado grande: vuelve al paso 2 y recorta. El low ticket enseña el primer paso, no el semestre."},
-    {t:"Páginas de teoría 'para dar contexto'", d:"Una página de contexto está bien; cuatro son un ensayo. Tu comprador no quiere entenderte: quiere su victoria."},
-    {t:"Sin plantilla ni hoja de trabajo", d:"La plantilla es lo que convierte lectura en acción, y además es la semilla de tu bump (+19 €) en el funnel. No la dejes fuera."}
+    {t:"La lección 'contexto' que no enseña nada", d:"Si una lección entera es 'para que entiendas lo que viene', bórrala y pon esa idea en un minuto de la siguiente. Cada lección justifica su existencia con una acción."},
+    {t:"Guardar la mejor lección para el final", d:"Al revés: la lección 2 es la que decide si siguen viendo. El mejor contenido va al principio; el final ya lo sostiene la victoria."},
+    {t:"Cinco lecciones porque 'quedan mejor que tres'", d:"Tres lecciones excelentes ganan a cinco correctas. El número lo decide tu método, no la sensación de abundancia."}
   ],
-  ghl:"Si eliges mini curso, los vídeos vivirán en un curso de GHL (Memberships) o sin coste en un enlace privado; se decide con tu coach de GHL en el paso 5. No grabes nada todavía.",
-  ayuda:"Sistemas con tu coach de GHL los miércoles si dudas del envase técnico; estrategia en el chat de soporte si dudas del contenido."
+  ghl:"Ve pensando dónde vivirá el curso: Memberships de tu GHL (acceso con usuario, más serio) o enlace privado (más simple). Se decide con tu coach de GHL en el paso 5.",
+  ayuda:"El mapa de lecciones se valida en tu revisión con el equipo antes de escribir guiones. Un minuto que ahorra una mañana de grabación."
 },
 {
-  num:"Paso 04", ico:"rayo",
-  titulo:"El borrador con Claude (y tu revisión)",
-  sub:"El Prompt del Borrador convierte tu esqueleto en la guía completa, escrita en tu voz. Después, el checklist y una persona real la ponen a prueba.",
-  chips:["Una sesión + un par de ratos","El prompt está en la caja","Claude redacta; tú certificas"],
-  queEs:H(`<p>Con la victoria elegida (paso 2) y el esqueleto relleno (paso 3), el trabajo pesado lo hace <strong>el Prompt del Borrador</strong> (primera ficha de la caja): le pegas tu esqueleto y tus datos, y te devuelve la guía completa, página a página, en tu voz y con tus reglas. Donde le falte un dato real, dejará <span class="hueco">[DATO PENDIENTE]</span> en vez de inventárselo.</p>
-    <p><strong>Después llega tu parte, y es la que marca la diferencia:</strong> completas o borras cada [DATO PENDIENTE], lees la guía entera en voz alta (donde no suenes a ti, reescribes) y le pasas el checklist de calidad de la caja.</p>
-    <p style="margin-bottom:0"><strong>Y la prueba de fuego:</strong> antes de cobrar un euro, una persona real de tu entorno (que encaje con tu avatar y no seas tú) sigue la guía sin tu ayuda. Si se atasca en una página, esa página se reescribe. Si consigue la victoria, tienes producto.</p>`),
-  porQue:H(`<p>Porque la alternativa clásica (escribirlo tú a pelo durante un mes) es donde mueren la mayoría de los low ticket: entre el folio en blanco y el perfeccionismo, el producto nunca sale. El prompt te da en una sesión el 80% del trabajo; tu revisión pone el 20% que no se puede delegar: la verdad de los datos y tu voz.</p>
-    <p style="margin-bottom:0">Y la prueba con una persona real existe porque tú eres la peor persona del mundo para detectar qué página no se entiende: lo sabes todo de tu método. Tu probador no sabe nada, exactamente igual que tu comprador.</p>`),
-  plantilla:H(`<ul style="margin-bottom:0">
-      <li><strong>1 ·</strong> Copia el Prompt del Borrador de la caja y rellena sus corchetes con tu esqueleto y tus datos.</li>
-      <li><strong>2 ·</strong> Ejecútalo en tu Claude. Sale el borrador completo con su propia pasada de revisión hecha.</li>
-      <li><strong>3 ·</strong> Resuelve cada <span class="hueco">[DATO PENDIENTE]</span>: dato real o frase fuera.</li>
-      <li><strong>4 ·</strong> Léela entera en voz alta y ajusta lo que no suene a ti.</li>
-      <li><strong>5 ·</strong> Pásale el checklist de calidad (tercera ficha de la caja).</li>
-      <li><strong>6 ·</strong> Dásela a tu probador real. Apunta dónde se atasca y qué pregunta. Reescribe esas páginas y solo esas.</li>
-    </ul>`),
-  ejemplo:H(`<p>El borrador del Sistema Energía Propia salió en una sesión con 4 [DATO PENDIENTE]. Valeria resolvió tres con datos reales de sus clientas y borró la frase del cuarto. Su probadora fue una amiga con tienda online: se atascó en la página del registro ("¿lo relleno por la mañana o por la noche?"), y esa duda se convirtió en un recuadro nuevo de la página 9. La victoria llegó al sexto día. Con eso, Valeria supo que tenía producto antes de gastar un euro en venderlo.</p>`),
+  num:"Paso 03", ico:"chat",
+  titulo:"El guion de cada lección",
+  sub:"Cinco líneas por lección: gancho, qué vas a hacer, demostración, haz esto ahora, y puente a la siguiente. Se habla, no se recita.",
+  chips:["Una sesión con el prompt","5 líneas por lección","Lenguaje oral, no de libro"],
+  queEs:H(`<p>Cada lección se graba con un guion de cinco líneas, siempre las mismas:</p>
+    <p><strong>1 · El gancho (15 segundos):</strong> qué va a poder hacer al terminar esta lección. Directo, sin "hola, bienvenidos a".</p>
+    <p><strong>2 · El qué (30 segundos):</strong> el paso de hoy y dónde encaja en el mapa.</p>
+    <p><strong>3 · La demostración (el grueso):</strong> lo haces delante de la cámara o de la pantalla, con un ejemplo real, hablando como hablas.</p>
+    <p><strong>4 · HAZ ESTO AHORA (1 minuto):</strong> la instrucción exacta para que lo haga hoy, con su hoja de apoyo nombrada.</p>
+    <p style="margin-bottom:0"><strong>5 · El puente (15 segundos):</strong> qué gana en la siguiente lección. En la última, este puente es EL puente: recap, pregunta e invitación sin precio.</p>`),
+  porQue:H(`<p>Porque sin guion pasan las dos muertes del vídeo: o improvisas y la lección de 8 minutos se convierte en 25, o escribes un texto de libro y lo recitas como un rehén. <strong>Cinco líneas te dan el rumbo sin robarte la naturalidad</strong>: miras la línea, hablas, y pasas a la siguiente.</p>
+    <p style="margin-bottom:0">El Prompt de los Guiones (primera ficha de la caja) te los escribe todos en lenguaje oral a partir de tu mapa: frases cortas, como hablas tú, con los [DATO PENDIENTE] donde falte un dato real. Tu parte es leerlos en voz alta y ajustar lo que no suene a ti ANTES de grabar.</p>`),
+  plantilla:H(`<div class="campo"><b>La plantilla de guion (una por lección, copiable en la caja)</b>
+    <span class="hueco">GANCHO</span> "Al final de esta lección vas a poder [resultado de la lección]" ·
+    <span class="hueco">EL QUÉ</span> "Hoy toca [paso], que es lo que hace que [beneficio]" ·
+    <span class="hueco">DEMO</span> los 3-5 movimientos que enseñas, en orden, con tu ejemplo real ·
+    <span class="hueco">HAZ ESTO AHORA</span> "Antes de pasar a la siguiente: [instrucción]. Tienes la hoja debajo del vídeo" ·
+    <span class="hueco">PUENTE</span> "En la siguiente, [lo que gana]"</div>
+    <p style="margin:12px 0 0"><strong>La prueba del guion:</strong> léelo en voz alta con cronómetro. Si pasa del tiempo de su lección, recorta la demo, nunca el HAZ ESTO AHORA.</p>`),
+  ejemplo:H(`<p>El guion de la lección 2 de Valeria (versión curso): gancho "Al final de esta lección tu registro estará montado y habrás apuntado tu primer día". El qué: "el registro de 5 minutos, la base de todo el sistema". Demo: la plantilla en pantalla, rellenando su propio día de ayer, en real. Haz esto ahora: "descarga la hoja y apunta tu día de hoy antes de ver la lección 3". Puente: "mañana leerás tu registro y verás tu primer patrón". Cronometrado: 7 minutos y medio.</p>`),
   errores:[
-    {t:"Publicar el borrador tal cual sale", d:"La pasada de revisión de Claude atrapa mucho, pero la voz y la verdad de los datos solo las certificas tú. Ese par de ratos es el producto."},
-    {t:"Dejar un [DATO PENDIENTE] vivo", d:"Un hueco sin resolver en un producto cobrado es una promesa rota. Dato real o frase fuera, sin tercera opción."},
-    {t:"Probarlo con tu pareja fan de todo lo tuyo", d:"Necesitas a alguien que encaje con el avatar y no te deba un cumplido. La prueba vale lo que valga la honestidad del probador."},
-    {t:"Reescribir la guía entera tras la prueba", d:"Se reescriben las páginas donde el probador se atascó, no todo. El perfeccionismo es la otra forma de no terminar nunca."}
+    {t:"Escribir el guion palabra por palabra", d:"Un guion literal se nota a los tres segundos: voz plana, ojos leyendo. Cinco líneas, y el resto sale de que sabes de lo que hablas."},
+    {t:"Demostrar con un ejemplo inventado", d:"La demo se hace con TU caso real o el de un cliente con permiso. Un ejemplo de mentira se nota, y las cifras inventadas están prohibidas también en vídeo."},
+    {t:"Terminar la lección sin acción", d:"'Nos vemos en la siguiente' sin tarea es un espectador que no vuelve. El HAZ ESTO AHORA es lo que convierte ver en hacer, y hacer en volver."},
+    {t:"Decir el precio del programa a cámara", d:"Ni de pasada, ni 'costaría unos...'. La regla es la misma que por escrito: el precio vive en la llamada."}
   ],
-  ghl:"Nada que montar aún. Pero guarda las preguntas de tu probador: son objeciones reales que reaparecerán en tu página de venta (Kit 07) y en tus emails (Kit 04).",
-  ayuda:"El borrador revisado se enseña en tu revisión con el equipo antes del paso 5."
+  ghl:"Los guiones se guardan junto a tu bloque de contexto: cuando regrabes una lección o montes el programa, ahorran la mitad del trabajo.",
+  ayuda:"Guiones listos se enseñan en tu revisión con el equipo antes de grabar. Corregir papel es infinitamente más barato que regrabar."
+},
+{
+  num:"Paso 04", ico:"tablero",
+  titulo:"Grabar sin estudio",
+  sub:"Tu móvil o Loom, luz de frente, sonido limpio y subtítulos. Todo el curso se graba por lotes en una mañana.",
+  chips:["Una mañana","Sin equipo nuevo","La claridad gana a la producción"],
+  queEs:H(`<p><strong>El equipo ya lo tienes:</strong> para lecciones a cámara, tu móvil en horizontal a la altura de los ojos, una ventana de frente (nunca detrás) y el micro de tus auriculares. Para lecciones de pantalla, Loom o la grabación de pantalla de tu ordenador, con tu voz encima.</p>
+    <p><strong>El método de grabación por lotes:</strong> todos los guiones listos, un repaso en voz alta de cada uno, y se graban todas las lecciones seguidas en una mañana. Misma ropa, misma luz, mismo fondo: parecerá grabado el mismo día porque LO ESTÁ, y regrabar una lección suelta en el futuro no desentonará.</p>
+    <p style="margin-bottom:0"><strong>La edición mínima:</strong> cortar el aire del principio y del final, quitar los silencios largos, y subtítulos activados siempre (la mitad de tu audiencia mira sin sonido). Nada de transiciones, música épica ni efectos: cada adorno distrae de la acción.</p>`),
+  porQue:H(`<p>Porque el perfeccionismo audiovisual es el cementerio de los mini cursos: meses eligiendo micrófono para un producto de 25 minutos. <strong>Tu comprador no paga por la producción: paga por la victoria.</strong> Un vídeo claro, con buen sonido y bien guionizado, a 15 € sobra.</p>
+    <p style="margin-bottom:0">Y la regla de re-toma que salva mañanas enteras: si te trabas, no vuelvas al principio. Pausa de dos segundos, repites la frase, y sigues. Ese corte se hace en la edición en cinco segundos.</p>`),
+  plantilla:H(`<ul style="margin-bottom:0">
+      <li><strong>1 ·</strong> Checklist de set: ventana de frente, móvil a la altura de los ojos, auriculares puestos, fondo despejado, móvil en no molestar.</li>
+      <li><strong>2 ·</strong> Prueba de 30 segundos: grábate, mírala, ajusta luz y volumen. Solo entonces, la primera lección.</li>
+      <li><strong>3 ·</strong> Graba todas las lecciones seguidas, con la regla de re-toma (pausa, repite la frase, sigue).</li>
+      <li><strong>4 ·</strong> Edición mínima: recortar aire, quitar silencios, subtítulos automáticos revisados (los nombres propios y tu método suelen salir mal).</li>
+      <li><strong>5 ·</strong> Exporta en 1080p y mira la lección 1 entera en tu móvil, con y sin sonido.</li>
+    </ul>`),
+  ejemplo:H(`<p>El vídeo de bienvenida de Valeria se grabó así: móvil apoyado en una pila de libros frente a la ventana de su cocina, auriculares de cable, dos re-tomas por trabarse y un corte de 10 segundos en la edición. Nadie le ha preguntado jamás por la cámara; dos clientas le escribieron que "se nota que eres tú de verdad". Esa es la producción que convierte.</p>`),
+  errores:[
+    {t:"Comprar equipo antes de grabar", d:"El micrófono nuevo no arregla un guion flojo, y el móvil que ya tienes graba mejor que las cámaras de hace cinco años. Primero el curso; el equipo, si algún día hace falta."},
+    {t:"Regrabar buscando la toma perfecta", d:"La toma 2 con un pequeño tropiezo suena más humana que la toma 14 recitada. Regla: máximo dos tomas por lección, y los tropiezos se cortan, no se repiten."},
+    {t:"Luz por detrás o sonido de eco", d:"Los dos errores que sí se notan: silueta a contraluz y voz de cueva. Ventana de frente y una habitación con cortinas o cojines lo arreglan sin gastar un euro."},
+    {t:"Saltarse los subtítulos", d:"La mitad de los vídeos se miran en silencio. Sin subtítulos, media audiencia fuera. Los automáticos valen si los revisas: tu método y los nombres propios salen mal seguro."}
+  ],
+  ghl:"Aún nada que montar. Guarda los archivos exportados con nombres claros (leccion-01-mapa.mp4) en una carpeta: la subida del paso 5 será cosa de minutos.",
+  ayuda:"Si el resultado de la prueba de 30 segundos no te convence, mándala al chat de soporte: casi siempre es luz o micro, y se arregla en un mensaje."
 },
 {
   num:"Paso 05", ico:"precio",
-  titulo:"Nombre, diseño final y precio",
-  sub:"Ahora sí: se bautiza, se viste en Canva, se le pone el precio de la banda oficial y se conecta al sistema que lo vende y lo entrega.",
-  chips:["1-2 tardes","Se bautiza al final, como la oferta","De aquí, al Kit 07"],
-  queEs:H(`<p><strong>El nombre, ahora que ya existe.</strong> Igual que tu oferta: primero se diseña, luego se bautiza, nunca al revés. La fórmula honesta: un nombre que diga la victoria con tus palabras. "El/La [mecanismo o resultado] de [plazo o ámbito]" funciona casi siempre; el apellido de marca (el nombre de tu método) lo hace tuyo. Sin humo: el nombre promete lo que la guía cumple.</p>
-    <p><strong>El diseño, en Canva.</strong> La receta completa está en la cuarta ficha de la caja: plantilla de eBook, tu línea gráfica (un color principal y dos fuentes, las de tu marca), portada limpia, una idea por página y export a PDF. Con la portada lista, generas el mockup 3D: esa imagen trabajará en tu página de venta (Kit 07) y en tus anuncios (Kit 06).</p>
-    <p style="margin-bottom:0"><strong>El precio y las piezas hermanas.</strong> El precio se fija dentro de la banda oficial: <strong>12-17 €</strong>, política del sistema, calibrada con toda la escalera; si dudas del punto exacto, se decide con el equipo. El bump de +19 € del checkout suele salir de este mismo taller (tus plantillas o extras, como pieza aparte). Los OTOs de la escalera no se crean hoy: se definen al montar el funnel, con el equipo.</p>`),
-  porQue:H(`<p>Porque el producto no termina en el PDF: termina cuando <strong>cobra y entrega solo</strong>. La venta la hace el funnel del Kit 07 (su página de venta, su checkout y su escalera), la entrega la hace tu secuencia de post-compra del Kit 04 (el acceso llega al momento, sin que muevas un dedo), y el tráfico lo traen tu contenido (Kit 05) y tus ads (Kit 06). Este paso deja tu producto enchufado a ese sistema.</p>
-    <p style="margin-bottom:0">Y el test de compra es innegociable por una razón simple: la primera compra rota no te la cuenta nadie, simplemente no vuelven. Se compra en modo test, se recibe el acceso, se comprueba el archivo y se mira en el móvil. Todo, antes del primer comprador real.</p>`),
-  plantilla:H(`<div class="lt-precio">
-      <div class="lt-tag">12-17 €<small>TU LOW TICKET · BANDA OFICIAL</small></div>
-      <div class="lt-tag mini">+19 €<small>EL BUMP · TUS PLANTILLAS, APARTE</small></div>
-    </div>
-    <ul style="margin-bottom:0">
-      <li><strong>1 ·</strong> Tres candidatos de nombre con la fórmula, elige el que tu probador entienda a la primera.</li>
-      <li><strong>2 ·</strong> Diseño en Canva con la receta de la caja + mockup 3D de la portada.</li>
-      <li><strong>3 ·</strong> Precio dentro de 12-17 € (si dudas, se fija con el equipo, no a ojo).</li>
-      <li><strong>4 ·</strong> Sube el archivo: al curso de GHL (Memberships) o a un enlace privado de Drive. Con tu coach de GHL, los miércoles.</li>
-      <li><strong>5 ·</strong> Conecta la entrega: la secuencia de post-compra del Kit 04 envía el acceso al instante del pago.</li>
-      <li><strong>6 ·</strong> Test de compra completo desde tu móvil: pago, acceso, archivo abierto, y el bump aparece desmarcado.</li>
-      <li><strong>7 ·</strong> Enséñalo en tu revisión con el equipo y, con el visto bueno, a la venta.</li>
+  titulo:"Hojas de apoyo, subida y a la venta",
+  sub:"Cada lección con su descargable, el curso en tu GHL, precio de la banda y test de compra completo. Sin entregable tangible, un curso no vende.",
+  chips:["1-2 tardes","Hoja de apoyo por lección","De aquí, al funnel"],
+  queEs:H(`<p><strong>Las hojas de apoyo, primero:</strong> cada lección lleva su descargable de 1-2 páginas: el resumen de la acción, la plantilla que se usa en la demo, o el checklist del paso. Es la regla del sistema: el vídeo enseña, la hoja ejecuta, y <strong>sin entregable tangible el curso se siente humo</strong> por bueno que sea. Se maquetan en Canva con la receta de la caja, todas con la misma línea gráfica.</p>
+    <p><strong>La subida:</strong> el curso vive en Memberships de tu GHL (acceso con usuario tras el pago) o en un enlace privado si prefieres lo simple; se monta con tu coach de GHL los miércoles. Cada lección con su hoja debajo, y la lección 1 visible como muestra si quieres enseñar la calidad.</p>
+    <p style="margin-bottom:0"><strong>Y el remate:</strong> nombre definitivo (el prompt te dejó tres candidatos), precio dentro de la banda oficial de <strong>12-17 €</strong>, la miniatura del curso como imagen de venta (tu cara + el título vale más que cualquier diseño), y el test de compra completo antes del primer comprador real.</p>`),
+  porQue:H(`<p>Porque el curso no termina cuando está grabado: termina cuando <strong>cobra, entrega el acceso solo y se ve bien en un móvil</strong>. La venta la hace el funnel (Kit 07), la entrega tu secuencia de post-compra (Kit 04), y el tráfico tu contenido y tus ads (Kits 05 y 06). Este paso enchufa el curso a ese sistema.</p>`),
+  plantilla:H(`<ul style="margin-bottom:0">
+      <li><strong>1 ·</strong> Maqueta las hojas de apoyo en Canva (receta en la caja) y expórtalas en PDF.</li>
+      <li><strong>2 ·</strong> Sube lecciones y hojas a tu GHL con tu coach de GHL, en orden y con nombres claros.</li>
+      <li><strong>3 ·</strong> Elige el nombre definitivo y fija el precio dentro de 12-17 € (si dudas, con el equipo).</li>
+      <li><strong>4 ·</strong> Conecta la entrega: el pago dispara el email de acceso al instante (Kit 04).</li>
+      <li><strong>5 ·</strong> Test de compra completo desde tu móvil: pago, acceso, lección 1 reproducida, hoja descargada, bump desmarcado.</li>
+      <li><strong>6 ·</strong> Revisión final con el equipo y, con el visto bueno, a la venta.</li>
     </ul>`),
-  ejemplo:H(`<p>La guía de Valeria se llamó Sistema Energía Propia (su método era el apellido perfecto), portada crema con su terracota, mockup 3D en la página de venta, 17 €. Sus plantillas de registro se convirtieron en el bump de +19 €. El test de compra le encontró el único fallo a tiempo: el enlace del PDF llevaba a la versión sin la página 9 corregida. Dos minutos de arreglo que le ahorraron cien compradores confundidos.</p>`),
+  ejemplo:H(`<p>En la versión curso del Sistema Energía Propia, las hojas serían: la plantilla del registro (lección 2), la guía de lectura del patrón (lección 3) y el resumen del sistema completo (final). La plantilla del registro, sacada en limpio, seguiría siendo la candidata perfecta al bump de +19 €: el formato cambia, la escalera no.</p>`),
   errores:[
-    {t:"Un nombre ingenioso que no dice nada", d:"Si hay que explicar el nombre, no es el nombre. La claridad vende; el ingenio decora."},
-    {t:"Salirse de la banda de precio 'por estrategia'", d:"La banda 12-17 € no es una sugerencia: la escalera entera (bump, OTOs, downsells) está calibrada alrededor. Cambiarla por tu cuenta descuadra el sistema; si crees que tu caso es distinto, se decide con el equipo."},
-    {t:"Poner el precio de tu programa dentro de la guía", d:"Jamás por escrito, tampoco aquí. La última página tiende el puente (una invitación, tu keyword o tu enlace de agenda) sin cifra: el precio vive en la llamada (Kit 02)."},
-    {t:"Venderlo sin test de compra", d:"Un checkout roto o un PDF equivocado en la primera semana quema tráfico pagado y confianza a la vez. El test es media hora; el fallo, un mes."}
+    {t:"Subir el curso sin hojas 'de momento'", d:"Ese 'de momento' se hace permanente y el curso se queda en humo bonito. Las hojas son parte del producto, no un extra: sin ellas no se publica."},
+    {t:"Precio fuera de la banda 'porque es vídeo'", d:"El formato no toca la escalera: 12-17 € también en vídeo. La banda está calibrada con el sistema entero; si crees que tu caso es distinto, se decide con el equipo."},
+    {t:"Miniatura de plantilla con rayos y flechas", d:"Tu cara, el título y tu color de marca. Las miniaturas de cursillo genérico gritan producto genérico."},
+    {t:"Saltarse el test de compra", d:"Un vídeo que no carga o un acceso que no llega en la primera semana quema tráfico y confianza. Media hora de test; siempre."}
   ],
-  ghl:"El montaje del checkout, el bump y la entrega automática se hace con las guías del Kit 07 y del Kit 04, y con tu coach de GHL los miércoles. Este kit deja el producto listo; aquellos lo enchufan.",
-  ayuda:"La revisión final del producto (nombre, precio, promesa y legal) se hace con el equipo antes de ponerlo a la venta. Si tu nicho toca salud, pasa además el checklist ENCAC."
+  ghl:"Checkout, bump y entrega se montan con las guías del Kit 07 y el Kit 04, con tu coach de GHL los miércoles. Este kit deja las lecciones y las hojas listas; aquellos las enchufan.",
+  ayuda:"Si tu nicho toca salud, el curso pasa además el checklist ENCAC (también lo dicho a cámara) antes de venderse."
 }
 ];
 
 const CAJA_H = [
 {
-  ico:"rayo", et:"Con la victoria y el esqueleto listos",
-  titulo:"El Prompt del Borrador",
-  resumen:"Convierte tu esqueleto en la guía completa, página a página, en tu voz y con tus reglas. Copiable entero; también genera la variante de mini curso.",
-  cuerpo:H(`<p>Cópialo entero, rellena los corchetes con tu mapa del paso 2 y tu esqueleto del paso 3, y pégalo en tu Claude. Devuelve el borrador completo con su propia pasada de revisión hecha.</p>
-  <div class="bloque b-plantilla"><div class="bloque-cab">El prompt · cópialo entero<button class="b-copiar" onclick="copiar(this,'promptBorrador')">Copiar</button></div><div class="bloque-cont"><div id="promptBorrador" style="white-space:pre-wrap">Eres el redactor de productos digitales de [TU MARCA], en el nicho de [TU NICHO]. Mi método propio es [TU MÉTODO]: úsalo con sus nombres y sus pasos tal cual son, sin inventar pasos nuevos ni rebautizarlo. Mi programa principal es [TU OFERTA, SIN PRECIO]. Mis casos y datos reales son estos (usa SOLO esto como prueba, nada externo): [TUS CASOS REALES].
+  ico:"rayo", et:"Con el mapa de lecciones listo",
+  titulo:"El Prompt de los Guiones",
+  resumen:"Escribe el guion de cada lección en lenguaje oral, con sus cinco líneas, sus hojas de apoyo y su pasada de revisión. Copiable entero.",
+  cuerpo:H(`<p>Cópialo entero, rellena los corchetes con tu victoria, tu mapa de lecciones y tus datos, y pégalo en tu Claude.</p>
+  <div class="bloque b-plantilla"><div class="bloque-cab">El prompt · cópialo entero<button class="b-copiar" onclick="copiar(this,'promptGuiones')">Copiar</button></div><div class="bloque-cont"><div id="promptGuiones" style="white-space:pre-wrap">Eres el guionista de productos digitales de [TU MARCA], en el nicho de [TU NICHO]. Mi método propio es [TU MÉTODO]: úsalo con sus nombres y pasos tal cual son. Mi programa principal es [TU OFERTA, SIN PRECIO]. Mis casos y datos reales (usa SOLO esto como prueba): [TUS CASOS REALES].
 
-Vamos a redactar mi producto de entrada (low ticket). La victoria que promete es exactamente esta: [TU PRIMERA VICTORIA, DEL PASO 2]. El esqueleto que he decidido, página a página, es este y se respeta: [PEGA AQUÍ TU ESQUELETO RELLENO DEL PASO 3].
+Vamos a guionizar mi low ticket en formato MINI CURSO EN VÍDEO. La victoria exacta: [TU PRIMERA VICTORIA]. Mi mapa de lecciones, ya decidido, es este y se respeta: [PEGA AQUÍ TU MAPA: número de lecciones, paso que enseña cada una y su duración objetivo].
 
-Redacta la guía completa siguiendo ese esqueleto, con estas reglas innegociables:
+Escribe el guion de cada lección con estas reglas innegociables:
 
-1. Castellano de España (tú/vosotros; nada de neutro latino) y mi voz: frases cortas, tono de conversación, cero relleno académico.
-2. Una idea por página. Cada paso del método termina en un bloque "HAZ ESTO AHORA" con una instrucción concreta que se pueda ejecutar hoy.
-3. Extensión total: entre 15 y 25 páginas. Si el contenido pide más, recorta teoría, nunca acción.
-4. La guía enseña SOLO el primer paso del camino (la victoria prometida), a fondo y completo. PROHIBIDO desarrollar los pasos posteriores de mi método: se mencionan como camino que existe, sin enseñarlos.
-5. PROHIBIDO inventar cifras, porcentajes, plazos, testimonios o resultados. Si un dato no está en el material que te he dado, escribe [DATO PENDIENTE] y lo resuelvo yo.
-6. PROHIBIDO escribir el precio de mi programa principal en cualquier parte. La última página tiende un puente sin cifra: recapitula la victoria, nombra la pregunta que le nace a quien la consigue, e invita a un único siguiente paso: [TU PUENTE: comentar tu keyword, tu enlace de agenda o responder a tu email].
-7. Nada de promesas de salud, ingresos garantizados ni antes/después. La palabra "lanzamiento" no aparece en ningún CTA y "gratis" se sustituye por "te lo paso" o "sin coste". Cero anglicismos innecesarios.
-8. Incluye, donde el esqueleto lo marca, la plantilla u hoja de trabajo lista para usar, y un caso real contado con mis datos.
-9. Formato de salida: página a página (PÁGINA N · título · contenido), listo para maquetar en Canva, sin comentarios tuyos entre medias.
+1. Castellano de España (tú/vosotros) y LENGUAJE ORAL: frases cortas, como se habla, no como se escribe. Nada de párrafos de libro.
+2. Cada guion sigue las cinco líneas, siempre: GANCHO (15 seg: qué podrá hacer al terminar) · EL QUÉ (30 seg: el paso de hoy y dónde encaja) · DEMO (el grueso: los 3-5 movimientos que enseño, con mi ejemplo real) · HAZ ESTO AHORA (1 min: la instrucción de hoy, nombrando su hoja de apoyo) · PUENTE (15 seg: qué gana en la siguiente).
+3. Duración cronometrable: cada guion, leído en voz alta a ritmo normal, cabe en la duración objetivo de su lección (5-10 minutos). Si no cabe, recorta la demo, nunca el HAZ ESTO AHORA.
+4. La lección final cambia su puente por EL puente: recap de la victoria + la pregunta que le nace a quien la consigue + UNA invitación sin cifra: [TU PUENTE: keyword, agenda o email]. PROHIBIDO decir el precio de mi programa, también de pasada.
+5. El curso enseña SOLO el primer paso de mi método, a fondo. PROHIBIDO desarrollar los pasos posteriores: se mencionan como camino, sin enseñarlos.
+6. PROHIBIDO inventar cifras, plazos, testimonios o resultados. Donde falte un dato real, escribe [DATO PENDIENTE].
+7. Nada de promesas de salud ni ingresos garantizados. "Lanzamiento" no aparece en ningún CTA y "gratis" se sustituye por "te lo paso" o "sin coste". Cero anglicismos innecesarios.
+8. Para cada lección, redacta también el contenido de su HOJA DE APOYO (1-2 páginas): el resumen de la acción, la plantilla usada en la demo o el checklist del paso. Entendible sin ver el vídeo.
+9. Formato de salida: LECCIÓN N · título · duración objetivo · las cinco líneas del guion · HOJA DE APOYO N · su contenido. Sin comentarios tuyos entre medias.
 
-Si mi formato es mini curso en vídeo, genera además: el guion de cada lección (3 a 5 lecciones de 5-10 minutos, lenguaje oral, cada una cerrando con su "haz esto ahora") y la hoja de apoyo descargable de cada lección.
+Paso final obligatorio: haz tu propia pasada de revisión contra las reglas 1 a 9 y corrige lo que incumpla.
 
-Paso final obligatorio antes de entregarme nada: haz tú mismo una pasada de revisión del borrador completo contra las reglas 1 a 9 y corrige lo que incumpla.
-
-Al terminar, dame: (a) la lista de todos los [DATO PENDIENTE] que hayas dejado; (b) una línea confirmando la pasada de revisión y qué corregiste; (c) tres candidatos de nombre para el producto siguiendo la fórmula "El/La [mecanismo o resultado] de [plazo o ámbito]", honestos y sin humo, para elegir yo en el paso 5.</div></div></div>
-  <p style="margin-bottom:0"><strong>Después de ejecutarlo:</strong> resuelve los [DATO PENDIENTE], léelo en voz alta, pásale el checklist de la tercera ficha y dáselo a tu probador real (paso 4).</p>`)
+Al terminar, dame: (a) la lista de [DATO PENDIENTE]; (b) una línea confirmando la revisión y qué corregiste; (c) tres candidatos de nombre para el curso, honestos y sin humo.</div></div></div>
+  <p style="margin-bottom:0"><strong>Después:</strong> lee cada guion en voz alta con cronómetro, ajusta lo que no suene a ti, y a la mañana de grabación (paso 4).</p>`)
 },
 {
-  ico:"documento", et:"Antes de escribir una frase",
-  titulo:"El esqueleto copiable",
-  resumen:"La estructura página a página de la guía (y su variante de mini curso). Se rellena a mano, en sucio, y alimenta el Prompt del Borrador.",
-  cuerpo:H(`<p>Esta es la estructura probada. Cópiala, rellénala con frases cortas y sin pulir (es materia prima, no producto), y pégala en el prompt.</p>
-  <div class="bloque b-plantilla"><div class="bloque-cab">Esqueleto de la guía PDF<button class="b-copiar" onclick="copiar(this,'esqGuia')">Copiar</button></div><div class="bloque-cont"><div id="esqGuia" style="white-space:pre-wrap">PORTADA · nombre provisional + la victoria en una frase + tu marca
+  ico:"documento", et:"Una por lección",
+  titulo:"La plantilla de guion",
+  resumen:"Las cinco líneas en limpio, para rellenar a mano si prefieres escribir tú, o para revisar lo que salga del prompt.",
+  cuerpo:H(`<div class="bloque b-plantilla"><div class="bloque-cab">La plantilla · cópiala por lección<button class="b-copiar" onclick="copiar(this,'plantGuion')">Copiar</button></div><div class="bloque-cont"><div id="plantGuion" style="white-space:pre-wrap">LECCIÓN [N] · [título] · objetivo: [5-10] minutos
 
-PÁGINA 1 · LA PROMESA · qué vas a conseguir, en qué plazo real, y qué necesitas (tiempo, materiales)
+GANCHO (15 seg)
+"Al final de esta lección vas a poder [resultado concreto de ESTA lección]."
 
-PÁGINA 2 · EL PROBLEMA · el dolor con las palabras exactas de tus DMs, y por qué los intentos típicos no funcionan (una página, no cuatro)
+EL QUÉ (30 seg)
+"Hoy toca [el paso], que es lo que hace que [beneficio en una frase]."
 
-PÁGINAS 3-4 · EL MAPA · tu método aplicado a esta victoria, de un vistazo: los 3-5 pasos con una frase cada uno
+DEMO (el grueso)
+1. [primer movimiento, con lo que se ve en pantalla]
+2. [segundo movimiento]
+3. [tercer movimiento]
+Ejemplo real que uso: [tu caso o el de un cliente con permiso]
 
-BLOQUE CENTRAL · UN PASO POR SECCIÓN (3-5 secciones) · para cada paso: qué hacer, por qué funciona (breve), un ejemplo real, y su HAZ ESTO AHORA concreto
+HAZ ESTO AHORA (1 min)
+"Antes de pasar a la siguiente: [instrucción exacta de hoy]. Tienes la hoja debajo del vídeo."
 
-LA PLANTILLA · la hoja de trabajo o registro que convierte la lectura en acción (esta pieza, en limpio, es también la semilla de tu bump)
-
-EL CASO · una historia real de tu método en acción, con datos demostrables o sin cifras
-
-ÚLTIMA PÁGINA · EL PUENTE · recap de la victoria + la pregunta que nace al conseguirla + UNA invitación sin precio (tu keyword, tu agenda o tu email)</div></div></div>
-  <div class="bloque b-neutro"><div class="bloque-cab">Variante mini curso (3-5 lecciones)</div><div class="bloque-cont"><ul style="margin-bottom:0">
-    <li><strong>Lección 1 · El mapa:</strong> la promesa, el problema y el método de un vistazo (5-7 min).</li>
-    <li><strong>Lecciones 2-4 · Un paso por lección:</strong> qué hacer y cómo, con la pantalla o el papel delante, cerrando con su "haz esto ahora" (5-10 min cada una).</li>
-    <li><strong>Lección final · El puente:</strong> recap de la victoria + la invitación única, sin precio (3-5 min).</li>
-    <li><strong>Cada lección lleva su hoja de apoyo</strong> descargable; la plantilla central es la misma que en la guía.</li>
-  </ul></div></div>
-  <p style="margin-bottom:0"><strong>La regla al rellenar:</strong> si una sección te pide más de 5 frases de teoría, está intentando ser un curso. Recorta hacia la acción.</p>`)
+PUENTE (15 seg)
+"En la siguiente lección, [lo que va a ganar]."
+(En la lección FINAL, en su lugar: recap de la victoria + "¿y ahora qué?" + una invitación sin precio.)</div></div></div>
+  <p style="margin-bottom:0"><strong>La prueba:</strong> leído en voz alta a ritmo normal tiene que caber en su duración. Si no cabe, la demo pierde movimientos, no la acción final.</p>`)
 },
 {
   ico:"escudo", et:"Antes de cobrar un euro",
-  titulo:"El checklist de calidad",
-  resumen:"Los 12 puntos que separan un producto listo de un problema con portada. Se pasa completo antes del test de compra.",
-  cuerpo:H(`<p>Cada punto de esta lista es un fallo real que cuesta reembolsos, reputación o compradores que jamás vuelven. Se pasa entero, sin saltarse ninguno.</p>
-  <div class="bloque b-plantilla"><div class="bloque-cab">El checklist<button class="b-copiar" onclick="copiar(this,'chkLT')">Copiar</button></div><div class="bloque-cont" id="chkLT"><ul class="lista-check" style="margin-bottom:0">
-    <li><strong>La victoria es una y concreta:</strong> se puede decir en una frase y se nota en menos de 7 días.</li>
-    <li><strong>Consumo total de 60-90 minutos como máximo</strong>, medido con el reloj, no a ojo.</li>
-    <li><strong>Cada paso termina en acción:</strong> todos los "HAZ ESTO AHORA" son ejecutables hoy, sin comprar nada más.</li>
-    <li><strong>Cero cifras sin demostrar:</strong> ningún [DATO PENDIENTE] vivo, ningún porcentaje adornado, ningún testimonio inventado.</li>
-    <li><strong>No es tu programa recortado:</strong> enseña el primer paso a fondo; no desarrolla el resto del método ni reutiliza módulos del programa.</li>
-    <li><strong>El precio de tu programa no aparece</strong> en ninguna página, tampoco insinuado con rangos.</li>
-    <li><strong>La última página tiene UN puente</strong> (keyword, agenda o email) y ninguna cifra.</li>
-    <li><strong>Suena a ti:</strong> lo has leído en voz alta entero y no hay una frase que no dirías.</li>
-    <li><strong>Lo probó una persona real</strong> que encaja con tu avatar, sin tu ayuda, y consiguió la victoria.</li>
-    <li><strong>La plantilla funciona sola:</strong> se entiende y se usa sin leer la guía entera.</li>
-    <li><strong>Legal al día:</strong> promesas honestas, y si tu nicho toca salud, checklist ENCAC pasado y revisión humana hecha.</li>
-    <li><strong>El archivo final pesa poco y se ve bien en el móvil</strong> (donde lo abrirá la mayoría).</li>
+  titulo:"El checklist del mini curso",
+  resumen:"Los 12 puntos que separan un curso que convierte de un vídeo largo. Se pasa entero antes del test de compra.",
+  cuerpo:H(`<div class="bloque b-plantilla"><div class="bloque-cab">El checklist<button class="b-copiar" onclick="copiar(this,'chkCurso')">Copiar</button></div><div class="bloque-cont" id="chkCurso"><ul class="lista-check" style="margin-bottom:0">
+    <li><strong>Entre 3 y 5 lecciones</strong> y entre 20 y 45 minutos en total, cronometrados.</li>
+    <li><strong>Cada lección enseña UN paso</strong> y termina en un HAZ ESTO AHORA ejecutable hoy.</li>
+    <li><strong>Cada lección tiene su hoja de apoyo</strong> descargable, entendible sin ver el vídeo.</li>
+    <li><strong>La lección 1 no es una introducción:</strong> da el mapa y deja la primera tarea puesta.</li>
+    <li><strong>La lección final tiene EL puente</strong> (recap + pregunta + una invitación) y ninguna cifra.</li>
+    <li><strong>Sonido limpio y luz de frente</strong> en todas las lecciones, comprobado en el móvil.</li>
+    <li><strong>Subtítulos activados y revisados</strong> (tu método y los nombres propios, bien escritos).</li>
+    <li><strong>Cero [DATO PENDIENTE] vivos</strong> y cero cifras sin demostrar, tampoco dichas a cámara.</li>
+    <li><strong>No es material del programa reciclado</strong> ni desarrolla los pasos posteriores del método.</li>
+    <li><strong>El precio del programa no se dice</strong> en ninguna lección, ni de pasada.</li>
+    <li><strong>Tu probador consiguió la victoria</strong> viéndolo sin tu ayuda, y sus atascos ya están regrabados o resueltos en las hojas.</li>
+    <li><strong>Suena a ti:</strong> viste las lecciones enteras y no hay una frase que no dirías. Si tu nicho toca salud, checklist ENCAC pasado.</li>
   </ul>
   <p style="margin:10px 0 0;font-size:.88rem;color:#6E6B65"><em>Las casillas se marcan fuera de la página: cópialas con el botón de arriba a tus notas o a papel, y ve tachando durante la revisión.</em></p></div></div>
-  <p style="margin-bottom:0"><strong>Si un punto falla,</strong> se arregla antes de seguir. El test de compra del paso 5 llega solo cuando esta lista está limpia.</p>`)
+  <p style="margin-bottom:0"><strong>Si un punto falla,</strong> se arregla antes de seguir. El test de compra llega con la lista limpia.</p>`)
 },
 {
-  ico:"ajustes", et:"Para montarlo bonito y entregarlo",
-  titulo:"Diseño en Canva y entrega en GHL",
-  resumen:"La receta de maquetación con tu línea gráfica, el mockup 3D para venderlo, y cómo se entrega solo tras el pago.",
-  cuerpo:H(`<p>El diseño no vende el producto (eso lo hace la victoria), pero un producto bien vestido se comparte más y se reembolsa menos. La receta, en orden:</p>
-  <div class="bloque b-neutro"><div class="bloque-cab">Maquetación en Canva, paso a paso</div><div class="bloque-cont"><ul style="margin-bottom:0">
-    <li><strong>1 · Plantilla:</strong> busca "eBook" o "workbook" en Canva y elige una limpia, de pocas florituras. Vas a sustituir, no a decorar.</li>
-    <li><strong>2 · Tu línea gráfica:</strong> UN color principal (el de tu marca), un neutro y dos fuentes como máximo. Aplícalo a toda la plantilla antes de tocar el texto.</li>
-    <li><strong>3 · Portada:</strong> nombre grande, la victoria en una línea debajo, tu marca abajo. Nada más.</li>
-    <li><strong>4 · Interior:</strong> una idea por página, márgenes generosos, los bloques "HAZ ESTO AHORA" destacados con el color de marca, y las páginas de plantilla con espacio real para escribir.</li>
-    <li><strong>5 · Export:</strong> PDF estándar (no imprenta). Ábrelo en el móvil antes de darlo por bueno: ahí lo leerá la mayoría.</li>
-    <li><strong>6 · El mockup 3D:</strong> con la portada terminada, genera el mockup (en Canva: Apps → Mockups, estilo libro o tablet). Esa imagen es la que trabaja en tu página de venta (Kit 07) y en tus anuncios (Kit 06).</li>
-    <li><strong>Mini curso:</strong> grabación sencilla (tu móvil o Loom), luz de frente, guion de 5 líneas por lección y subtítulos activados. La claridad vale más que la producción.</li>
+  ico:"ajustes", et:"Set, grabación y subida",
+  titulo:"La receta técnica",
+  resumen:"El set sin estudio, la grabación por lotes, la edición mínima y la subida a GHL con la entrega automática.",
+  cuerpo:H(`<div class="bloque b-neutro"><div class="bloque-cab">El set, con lo que ya tienes</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>Cámara:</strong> tu móvil en horizontal, a la altura de los ojos (pila de libros o trípode barato). Para pantalla: Loom o la grabación del sistema.</li>
+    <li><strong>Luz:</strong> una ventana DE FRENTE. Nunca detrás (silueta) ni lateral dura (media cara).</li>
+    <li><strong>Sonido:</strong> el micro de tus auriculares y una habitación con tela (cortinas, sofá, cojines). El eco es el único fallo técnico que espanta compradores.</li>
+    <li><strong>Prueba de 30 segundos</strong> antes de la primera lección: grábate, mírate, ajusta.</li>
   </ul></div></div>
-  <div class="bloque b-neutro"><div class="bloque-cab">La entrega, automática desde el día 1</div><div class="bloque-cont"><ul style="margin-bottom:0">
-    <li><strong>Dónde vive el archivo:</strong> en un curso de GHL (Memberships) si quieres acceso con usuario, o en un enlace privado de Drive si prefieres lo simple. Se decide y monta con tu coach de GHL, los miércoles.</li>
-    <li><strong>Quién lo entrega:</strong> tu secuencia de post-compra (Kit 04): el pago dispara el email de acceso al instante, sin que muevas un dedo.</li>
-    <li><strong>El test de compra completo</strong> (Kit 07, checklist de lanzamiento): pagar en modo test, recibir el acceso, abrir el archivo, y ver el bump desmarcado. Desde el móvil.</li>
-    <li><strong>Al actualizar la guía,</strong> sustituye el archivo en el MISMO enlace: los compradores antiguos reciben la mejora sin que cambies nada más.</li>
+  <div class="bloque b-neutro"><div class="bloque-cab">Grabación por lotes y edición mínima</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>Todas las lecciones en una mañana:</strong> misma ropa, misma luz, mismo fondo. Guiones repasados en voz alta antes.</li>
+    <li><strong>La regla de re-toma:</strong> si te trabas, pausa de dos segundos, repites la frase y sigues. Máximo dos tomas por lección.</li>
+    <li><strong>Edición:</strong> recortar aire de inicio y final, quitar silencios largos, subtítulos automáticos revisados. Nada de música, transiciones ni efectos.</li>
+    <li><strong>Export:</strong> 1080p, nombres claros (leccion-01-mapa.mp4), y la lección 1 vista entera en tu móvil, con y sin sonido.</li>
   </ul></div></div>
-  <p style="margin-bottom:0"><strong>Y el remate del taller:</strong> tus plantillas en limpio, como pieza aparte, son la candidata natural al bump de +19 € del checkout. Se decide con el equipo al montar el funnel.</p>`)
+  <div class="bloque b-neutro"><div class="bloque-cab">Subida y entrega</div><div class="bloque-cont"><ul style="margin-bottom:0">
+    <li><strong>Dónde vive:</strong> Memberships de tu GHL (acceso con usuario tras el pago) o enlace privado. Se monta con tu coach de GHL, los miércoles.</li>
+    <li><strong>Cada lección con su hoja debajo,</strong> en orden y con la numeración a la vista.</li>
+    <li><strong>Quién lo entrega:</strong> tu secuencia de post-compra (Kit 04): el pago dispara el acceso al instante.</li>
+    <li><strong>El test de compra</strong> (Kit 07): pagar en test, recibir acceso, reproducir la lección 1, descargar una hoja, ver el bump desmarcado. Desde el móvil.</li>
+  </ul></div></div>
+  <p style="margin-bottom:0"><strong>Y el remate:</strong> la plantilla que uses en la demo, en limpio y como pieza aparte, es tu candidata al bump de +19 €. Se decide con el equipo al montar el funnel.</p>`)
 }
 ];
 
@@ -1041,12 +1003,12 @@ let hechos = cargar();
 
 function cargar(){
   try{
-    const g = localStorage.getItem('kitLowTicket');
+    const g = localStorage.getItem('kitLtMinicurso');
     return g ? JSON.parse(g) : [];
   }catch(e){ return []; }
 }
 function guardar(){
-  try{ localStorage.setItem('kitLowTicket', JSON.stringify(hechos)); }catch(e){}
+  try{ localStorage.setItem('kitLtMinicurso', JSON.stringify(hechos)); }catch(e){}
 }
 
 /* --- mapa del hero --- */

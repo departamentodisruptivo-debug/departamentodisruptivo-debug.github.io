@@ -205,6 +205,21 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
 .hero::before{background:repeating-linear-gradient(-45deg,var(--oro) 0 12px,#A8862B 12px 24px)}
 .kit.formato .kit-lomo .num{background:#fff;color:var(--tinta)}
 .kit.formato .kit-lomo::before{background:repeating-linear-gradient(-45deg,var(--oro) 0 6px,rgba(0,0,0,0) 6px 12px)}
+.kit.formato.guia .kit-lomo::after{content:"";position:absolute;right:20px;top:22px;width:42px;height:54px;background:#fff;border-radius:6px;opacity:.92;box-shadow:inset 0 6px 0 var(--oro)}
+.kit.formato.minicurso .kit-lomo::after{content:"▶";position:absolute;right:22px;top:26px;width:40px;height:40px;border-radius:50%;background:var(--oro);color:var(--tinta);display:grid;place-items:center;font-size:1rem;padding-left:3px}
+.kit.formato.cuadernillo .kit-lomo::after{content:"";position:absolute;right:18px;top:26px;width:46px;height:44px;
+  background:radial-gradient(circle at 5px 7px, var(--oro) 4px, transparent 5px) 0 0/15px 15px,
+             linear-gradient(#fff,#fff) 14px 2px/32px 8px no-repeat,
+             linear-gradient(#fff,#fff) 14px 17px/32px 8px no-repeat,
+             linear-gradient(#fff,#fff) 14px 32px/32px 8px no-repeat}
+.kit.formato.masterclass .kit-lomo::after{content:"60'";position:absolute;right:18px;top:24px;width:44px;height:44px;border-radius:50%;border:3px solid var(--oro);color:#fff;display:grid;place-items:center;font-family:'Space Mono',monospace;font-weight:700;font-size:.8rem}
+.kit.formato.audio .kit-lomo::after{content:"";position:absolute;right:18px;bottom:20px;width:52px;height:34px;
+  background:linear-gradient(var(--oro),var(--oro)) 0 center/5px 40% no-repeat,
+             linear-gradient(#fff,#fff) 9px center/5px 90% no-repeat,
+             linear-gradient(var(--oro),var(--oro)) 18px center/5px 60% no-repeat,
+             linear-gradient(#fff,#fff) 27px center/5px 100% no-repeat,
+             linear-gradient(var(--oro),var(--oro)) 36px center/5px 50% no-repeat,
+             linear-gradient(#fff,#fff) 45px center/5px 75% no-repeat}
 .fmt-bloque{background:var(--papel-2);border:1px solid var(--papel-3);border-radius:10px;padding:12px 14px}
 .fmt-bloque b{display:block;font-size:.72rem;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--texto-2);margin-bottom:6px}
 .fmt-bloque ul{margin:0;padding-left:18px}
@@ -274,79 +289,84 @@ ul.lista-check li::before{content:"";position:absolute;left:0;top:3px;width:17px
     <div class="estante-cab">
       <span class="eyebrow">Las opciones</span>
       <h2>¿Guía, vídeo, masterclass, audio o plantillas?</h2>
-      <p>El formato se elige en el paso 3 del taller, por cómo consume tu avatar, nunca por moda. Aquí están las cinco opciones con sus números recomendados y sus puntos a vigilar. La regla que manda en todas: <strong>consumo total de 60 minutos (90 como techo), una acción, un resultado</strong>. Y el precio no lo fija el formato: lo fija la escalera, 12-17 € siempre.</p>
+      <p>El formato se elige en el paso 3 del taller, por cómo consume tu avatar, nunca por moda. Cada formato tiene ahora su propio kit completo: entra al tuyo y tendrás sus números, su estructura, su prompt y su checklist. La regla que manda en todas: <strong>consumo total de 60 minutos (90 como techo), una acción, un resultado</strong>. Y el precio no lo fija el formato: lo fija la escalera, 12-17 € siempre.</p>
     </div>
     <div class="rejilla">
 
-      <div class="kit formato">
-        <div class="kit-lomo"><span class="num">Formato · A</span><h3>La guía PDF</h3><div class="frase">La opción por defecto: se crea en una semana y se actualiza en minutos.</div></div>
+      <a class="kit formato guia" href="https://kit-lt-guia.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit · Formato A</span><h3>La Guía PDF</h3><div class="frase">La opción por defecto: se crea en una semana y se actualiza en minutos.</div></div>
         <div class="kit-cuerpo">
-          <p>Para avatares que leen y victorias que piden entender un proceso. Si dudas, esta: rápida de producir, valiosa si cada página empuja a la acción, y fácil de mejorar con el tiempo.</p>
+          <p>Para avatares que leen y victorias que piden entender un proceso. Su kit trae la estructura página a página con recuentos, qué debe decir la portada, qué incluye (y qué no) cada sección, el Prompt de la Guía y la receta de Canva.</p>
           <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
             <li>Una idea por página, y cada paso cierra con su "haz esto ahora".</li>
             <li>La plantilla va dentro: es lo que convierte lectura en acción.</li>
-            <li>Se comprueba en el móvil antes de darla por buena: ahí la abrirá la mayoría.</li>
+            <li>Se comprueba en el móvil antes de darla por buena.</li>
           </ul></div>
           <div class="fmt-error">✕ El error común: convertirla en un ensayo. La teoría se recorta; la acción, nunca.</div>
           <div class="kit-meta"><span class="chip cuando">15-25 páginas</span><span class="chip">Lectura en 45-60 min</span><span class="chip">Plantilla dentro</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
+      </a>
 
-      <div class="kit formato">
-        <div class="kit-lomo"><span class="num">Formato · B</span><h3>El mini curso en vídeo</h3><div class="frase">Para nichos que miran más que leen.</div></div>
+      <a class="kit formato minicurso" href="https://kit-lt-minicurso.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit · Formato B</span><h3>El Mini Curso en vídeo</h3><div class="frase">Para nichos que miran más que leen.</div></div>
         <div class="kit-cuerpo">
-          <p>Cuando la victoria pide imitar algo que se ve (una pantalla, un gesto, una postura) o tu audiencia vive en el vídeo. Premio extra: las lecciones luego se reutilizan como material de tu programa.</p>
+          <p>Cuando la victoria pide imitar algo que se ve, o tu audiencia vive en el vídeo. Su kit trae el mapa de lecciones, el guion de 5 líneas, la grabación sin estudio y las hojas de apoyo. Premio extra: las lecciones se reutilizan en tu programa.</p>
           <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
-            <li>Grabación sencilla: tu móvil o Loom, luz de frente y subtítulos. La claridad vale más que la producción.</li>
-            <li>Guion de 5 líneas por lección, y cada lección cierra con su acción.</li>
-            <li>Cada lección lleva su hoja de apoyo descargable: sin entregable tangible, un curso no vende en low ticket.</li>
+            <li>Grabación sencilla: tu móvil o Loom, luz de frente y subtítulos.</li>
+            <li>Cada lección cierra con su acción y lleva su hoja descargable.</li>
+            <li>Sin entregable tangible, un curso no vende en low ticket.</li>
           </ul></div>
           <div class="fmt-error">✕ El error común: alargarlo para que "parezca más". Más minutos es menos gente que termina.</div>
           <div class="kit-meta"><span class="chip cuando">3-5 lecciones</span><span class="chip">5-10 min por lección</span><span class="chip">20-45 min en total</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
+      </a>
 
-      <div class="kit formato">
-        <div class="kit-lomo"><span class="num">Formato · C</span><h3>La masterclass grabada</h3><div class="frase">Una sola clase que entrega la victoria entera.</div></div>
+      <a class="kit formato cuadernillo" href="https://kit-lt-cuadernillo.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit · Formato C</span><h3>El Cuadernillo</h3><div class="frase">Se rellena, no se lee.</div></div>
         <div class="kit-cuerpo">
-          <p>El formato de una pieza: una clase de 45-60 minutos donde resuelves la victoria de principio a fin y, de paso, se ve cómo trabajas. Ideal si explicas mejor hablando que escribiendo y quieres producirla en un solo día.</p>
+          <p>Cuando la victoria es "rellena esto y verás": registros, tablas de decisión, guiones para completar. Su kit trae los tipos de ejercicio que funcionan, la estructura, la maquetación rellenable y la variante pack de plantillas (piezas sueltas con índice).</p>
           <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
-            <li>Guion por bloques con minutos asignados: sin guion, una clase de 60 se convierte en una de 100.</li>
-            <li>Con capítulos o marcas de tiempo, para poder retomarla.</li>
+            <li>Al menos la mitad del papel es para escribir.</li>
+            <li>Cada ejercicio lleva su ejemplo ya relleno y produce algo visible.</li>
+            <li>Se prueba a boli y en una impresora de casa.</li>
+          </ul></div>
+          <div class="fmt-error">✕ El error común: ejercicios de reflexión sin salida. Una acción, un resultado, siempre.</div>
+          <div class="kit-meta"><span class="chip cuando">10-20 páginas</span><span class="chip">4-8 ejercicios</span><span class="chip">Variante: pack de 3-7 piezas</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
+        </div>
+      </a>
+
+      <a class="kit formato masterclass" href="https://kit-lt-masterclass.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit · Formato D</span><h3>La Masterclass</h3><div class="frase">Una sola clase que entrega la victoria entera.</div></div>
+        <div class="kit-cuerpo">
+          <p>Una clase de 45-60 minutos donde resuelves la victoria de principio a fin y, de paso, se ve cómo trabajas. Su kit trae el guion por bloques con minutos, la grabación en un día (en directo o a cámara) y la hoja de trabajo que la acompaña.</p>
+          <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
+            <li>Guion por bloques con minutos asignados: sin guion, una clase de 60 dura 100.</li>
+            <li>Con capítulos y marcas de tiempo, para poder retomarla.</li>
             <li>Siempre con su hoja de trabajo: la clase enseña, la hoja ejecuta.</li>
           </ul></div>
           <div class="fmt-error">✕ El error común: convertirla en un webinar de venta. Aquí se entrega la victoria, no se hace discurso.</div>
           <div class="kit-meta"><span class="chip cuando">1 clase</span><span class="chip">45-60 min</span><span class="chip">Con hoja de trabajo</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
+      </a>
 
-      <div class="kit formato">
-        <div class="kit-lomo"><span class="num">Formato · D</span><h3>El audio</h3><div class="frase">Se escucha en el coche. Y casi siempre acompaña, no protagoniza.</div></div>
+      <a class="kit formato audio" href="https://kit-lt-audio.vercel.app" target="_blank" rel="noopener">
+        <div class="kit-lomo"><span class="num">Kit · Formato E</span><h3>El Audio</h3><div class="frase">Se escucha en el coche. Y casi siempre acompaña, no protagoniza.</div></div>
         <div class="kit-cuerpo">
-          <p>Para audiencias que van y vienen. Como producto principal rara vez gana; como versión audio de tu guía es el candidato perfecto al extra del checkout (el bump de +19 €).</p>
+          <p>La versión con tu voz de tu pieza escrita. Como producto principal es raro que gane; como bump de +19 € en el checkout es oro con una mañana de trabajo. Su kit trae el guion oral, la grabación casera y la línea del checkout que lo vende.</p>
           <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
             <li>Una pista por paso (5-10 min), para retomar donde se quedó.</li>
-            <li>Se graba leyendo tu guía con naturalidad; un micro de auriculares en una habitación silenciosa es suficiente.</li>
-            <li>Siempre junto a la plantilla escrita: el audio inspira; la hoja deja la victoria.</li>
+            <li>Se graba leyendo tu guía con naturalidad; micro de auriculares y habitación con tela.</li>
+            <li>Siempre junto a la plantilla escrita: el audio inspira, la hoja deja la victoria.</li>
           </ul></div>
           <div class="fmt-error">✕ El error común: venderlo solo, sin nada que rellenar.</div>
           <div class="kit-meta"><span class="chip cuando">20-45 min en total</span><span class="chip">Pistas de 5-10 min</span><span class="chip">Ideal como bump +19 €</span></div>
+          <span class="kit-ir">Entrar al kit →</span>
         </div>
-      </div>
-
-      <div class="kit formato">
-        <div class="kit-lomo"><span class="num">Formato · E</span><h3>El pack de plantillas</h3><div class="frase">Cuando la victoria es, directamente: usa esto.</div></div>
-        <div class="kit-cuerpo">
-          <p>Hojas de registro, guiones, calculadoras, checklists. Para compradores que no quieren estudiar: quieren rellenar y ver el resultado hoy mismo.</p>
-          <div class="fmt-bloque"><b>Toma en cuenta</b><ul>
-            <li>De 3 a 7 piezas, cada una con su página de instrucciones.</li>
-            <li>Cada pieza funciona sola, y una va marcada como "empieza por esta".</li>
-            <li>Nombres de archivo claros: quien lo compra lo guardará meses.</li>
-          </ul></div>
-          <div class="fmt-error">✕ El error común: 30 plantillas sueltas sin camino. La abundancia sin orden paraliza.</div>
-          <div class="kit-meta"><span class="chip cuando">3-7 piezas</span><span class="chip">Instrucciones de 1 página</span><span class="chip">Usables hoy</span></div>
-        </div>
-      </div>
+      </a>
 
       <div class="combo">
         <b class="combo-t">El combo que recomendamos: guía + plantilla + vídeo de bienvenida de 2-5 minutos</b>
