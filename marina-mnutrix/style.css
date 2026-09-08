@@ -367,6 +367,7 @@ th{
 }
 tbody tr{transition:background .15s ease}
 tbody tr:hover{background:var(--surface-2)}
+table.fnc td:nth-child(2){white-space:nowrap;color:var(--fam);font-weight:700}
 td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
 tbody tr:last-child td{border-bottom:0}
 
@@ -382,6 +383,16 @@ tbody tr:last-child td{border-bottom:0}
   display:inline-block;padding:3px 9px;background:var(--surface-2);border-radius:20px;
 }
 .biobox pre{font-family:"Karla",sans-serif;font-size:15px;line-height:1.6;white-space:pre-wrap;margin:0;color:var(--ink)}
+.biobox .count{
+  margin:16px 0 0;padding-top:12px;border-top:1px dashed var(--line-strong);
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;line-height:1.5;
+  color:var(--muted);max-width:none;
+}
+.biobox.new .count{color:var(--fam)}
+h4.sub{
+  font-family:"Fraunces",Georgia,serif;font-size:21px;font-weight:600;
+  letter-spacing:-.015em;margin:38px 0 12px;
+}
 .biobox.new{border-color:var(--fam);box-shadow:var(--shadow-lift)}
 .biobox.new .h{color:var(--fam);background:var(--fam-soft)}
 
