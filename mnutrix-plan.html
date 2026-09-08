@@ -1,0 +1,1191 @@
+<title>Plan de rescate de @mnutrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Karla:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  :root{
+    --ground:#F1F4F1;
+    --surface:#FFFFFF;
+    --surface-2:#E9EEEA;
+    --ink:#16211D;
+    --ink-soft:#3B4B45;
+    --muted:#61706A;
+    --line:#D6DED8;
+    --line-strong:#B9C5BE;
+    --accent:#17715C;
+    --accent-soft:#CDE3DA;
+    --warm:#B0522B;
+    --warm-soft:#F0DACE;
+    --shadow:0 1px 2px rgba(22,33,29,.05), 0 8px 24px -18px rgba(22,33,29,.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0D1211; --surface:#141B18; --surface-2:#1B2420;
+      --ink:#E7EEE9; --ink-soft:#C2CFC8; --muted:#8FA098;
+      --line:#26312C; --line-strong:#3A4740;
+      --accent:#59C4A2; --accent-soft:#1E3A33;
+      --warm:#E39264; --warm-soft:#3A2519;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -20px rgba(0,0,0,.9);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0D1211; --surface:#141B18; --surface-2:#1B2420;
+    --ink:#E7EEE9; --ink-soft:#C2CFC8; --muted:#8FA098;
+    --line:#26312C; --line-strong:#3A4740;
+    --accent:#59C4A2; --accent-soft:#1E3A33;
+    --warm:#E39264; --warm-soft:#3A2519;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -20px rgba(0,0,0,.9);
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:"Karla","Helvetica Neue",Arial,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--surface);color:var(--ink);padding:10px 16px;z-index:20}
+  .skip:focus{left:12px;top:12px}
+
+  .shell{max-width:1300px;margin:0 auto;padding:0 28px 96px;display:grid;grid-template-columns:1fr;gap:0}
+  .wrap{max-width:1080px;min-width:0}
+
+  /* indice */
+  .rail{margin:0 0 8px}
+  .rail .railtitle{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .rail ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:0 24px}
+  .rail li{border-top:1px solid var(--line)}
+  .rail a{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:8px 0;text-decoration:none;color:var(--ink-soft);font-size:14.5px;line-height:1.35}
+  .rail a:hover{color:var(--accent)}
+  .rail a b{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;color:var(--muted);padding-top:3px}
+
+  .mast{padding:60px 0 40px;border-bottom:1px solid var(--line-strong)}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
+  h1{font-family:"Fraunces","Iowan Old Style",Georgia,serif;font-weight:600;font-size:clamp(38px,6vw,64px);line-height:1.03;letter-spacing:-.02em;margin:0 0 20px;text-wrap:balance}
+  h1 .at{color:var(--accent)}
+  .standfirst{font-size:19px;color:var(--ink-soft);margin:0;max-width:60ch}
+
+  .verdict{
+    margin-top:36px;
+    border-left:3px solid var(--warm);
+    background:var(--warm-soft);
+    padding:22px 26px;
+    border-radius:0 3px 3px 0;
+  }
+  .verdict .t{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);display:block;margin-bottom:9px}
+  .verdict p{margin:0;font-size:18px;max-width:58ch;color:var(--ink)}
+
+  section{padding:56px 0 8px;border-top:1px solid var(--line);margin-top:48px;scroll-margin-top:24px}
+  .mast + section{border-top:0;margin-top:0}
+  h2{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:clamp(26px,3.4vw,34px);line-height:1.14;letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance}
+  h3{font-weight:700;font-size:16.5px;margin:34px 0 12px}
+  h4{margin:0}
+  p{margin:0 0 16px;max-width:62ch}
+  .lede{font-size:18.5px;color:var(--ink-soft)}
+
+  /* etiqueta de solidez del dato */
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:2px;white-space:nowrap;display:inline-block;vertical-align:2px}
+  .tag.obs{background:var(--accent-soft);color:var(--accent)}
+  .tag.hyp{background:var(--warm-soft);color:var(--warm)}
+
+  /* causas */
+  .causes{display:flex;flex-direction:column;margin:28px 0}
+  .cause{display:grid;grid-template-columns:38px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line);align-items:start}
+  .cause:last-child{border-bottom:1px solid var(--line)}
+  .cause .n{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--warm);padding-top:4px}
+  .cause h4{margin:0 0 6px;font-size:16.5px;font-weight:700;line-height:1.3}
+  .cause p{margin:0;color:var(--ink-soft);font-size:15.5px;max-width:66ch}
+  .cause .data{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);display:block;margin-top:7px}
+
+  /* comparativa dos columnas */
+  .versus{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:28px 0}
+  .vs-col{background:var(--surface);padding:24px}
+  .vs-tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:12px}
+  .vs-col.good .vs-tag{color:var(--accent)}
+  .vs-col.bad .vs-tag{color:var(--warm)}
+  .vs-num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:34px;font-weight:600;letter-spacing:-.02em;display:block;line-height:1.1}
+  .vs-col.good .vs-num{color:var(--accent)}
+  .vs-col.bad .vs-num{color:var(--warm)}
+  .vs-sub{font-size:13.5px;color:var(--muted);display:block;margin-top:4px;margin-bottom:16px}
+  .vs-col ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-soft)}
+  .vs-col li{margin-bottom:6px}
+
+  /* timeline segundos */
+  .beats{display:flex;flex-direction:column;margin:26px 0}
+  .beat{display:grid;grid-template-columns:74px 1fr;gap:18px;padding:15px 0;border-top:1px solid var(--line);align-items:start}
+  .beat:last-child{border-bottom:1px solid var(--line)}
+  .beat .s{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--accent);font-weight:600;padding-top:3px;font-variant-numeric:tabular-nums}
+  .beat .d{font-size:15.5px;color:var(--ink-soft);max-width:62ch}
+  .beat .d b{color:var(--ink)}
+
+  /* revision publicacion por publicacion */
+  .posts{display:flex;flex-direction:column;margin:26px 0}
+  .post{display:grid;grid-template-columns:92px 1fr;gap:20px;padding:20px 0;border-top:1px solid var(--line);align-items:start}
+  .post:last-child{border-bottom:1px solid var(--line)}
+  .post .when{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--accent);font-weight:600;padding-top:3px;font-variant-numeric:tabular-nums}
+  .post h4{font-size:16.5px;font-weight:700;line-height:1.3;margin:0 0 6px}
+  .post .met{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);display:block;margin-bottom:10px}
+  .post dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:15px;max-width:70ch}
+  .post dt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:5px}
+  .post dd{margin:0;color:var(--ink-soft)}
+  .post dd.fix{color:var(--ink)}
+
+  /* pilares */
+  .pillar{border-top:1px solid var(--line);padding:24px 0}
+  .pillar:last-of-type{border-bottom:1px solid var(--line)}
+  .pillar .pnum{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px}
+  .pillar h4{font-size:19px;font-weight:700;font-family:"Fraunces",Georgia,serif;letter-spacing:-.01em;margin:0 0 10px}
+  .pillar p{font-size:15.5px;color:var(--ink-soft);max-width:68ch}
+  .pillar .serie{border-left:2px solid var(--accent-soft);padding-left:16px;margin-top:14px}
+  .pillar .serie p{margin-bottom:8px}
+  .pillar .serie p:last-child{margin-bottom:0}
+  .pillar .serie b{color:var(--ink)}
+
+  .tablewrap{overflow-x:auto;margin:26px 0}
+  table{border-collapse:collapse;width:100%;min-width:540px;font-size:15px}
+  th,td{text-align:left;padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;border-bottom:1px solid var(--line-strong)}
+  td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;padding-right:0}
+  tbody tr:last-child td{border-bottom:0}
+
+  /* bio antes despues */
+  .bios{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:26px 0}
+  .biobox{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:20px 22px;box-shadow:var(--shadow)}
+  .biobox .h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  .biobox pre{font-family:"Karla",sans-serif;font-size:15px;line-height:1.55;white-space:pre-wrap;margin:0;color:var(--ink)}
+  .biobox.new{border-color:var(--accent)}
+  .biobox.new .h{color:var(--accent)}
+
+  /* banco de ganchos */
+  .hookgroup{margin:26px 0}
+  .hookgroup .gt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+  ol.hooks{list-style:none;counter-reset:h;margin:0 0 26px;padding:0}
+  ol.hooks li{counter-increment:h;display:grid;grid-template-columns:30px 1fr;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+  ol.hooks li:before{content:counter(h,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted);padding-top:4px}
+  ol.hooks li:last-child{border-bottom:0}
+
+  /* guiones */
+  .script{border:1px solid var(--line);border-radius:3px;background:var(--surface);padding:22px 24px;margin:20px 0;box-shadow:var(--shadow)}
+  .script .st{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 4px}
+  .script h4{font-family:"Fraunces",Georgia,serif;font-size:19px;font-weight:600;letter-spacing:-.01em;margin:0 0 14px}
+  .script .beat{border-top:1px solid var(--line);grid-template-columns:66px 1fr;padding:12px 0}
+  .script .beat:last-child{border-bottom:0}
+
+  /* plan semanal */
+  .weeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin:28px 0}
+  .week{background:var(--surface);padding:22px}
+  .week .wt{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:10px}
+  .week h4{margin:0 0 10px;font-size:16px;font-weight:700;line-height:1.3}
+  .week ul{margin:0;padding-left:17px;font-size:14.5px;color:var(--ink-soft)}
+  .week li{margin-bottom:6px}
+
+  ul.plain{padding-left:0;list-style:none;margin:20px 0;max-width:66ch}
+  ul.plain li{padding:11px 0 11px 22px;border-bottom:1px solid var(--line);position:relative}
+  ul.plain li:before{content:"";position:absolute;left:2px;top:21px;width:7px;height:1.5px;background:var(--accent)}
+  ul.plain li:last-child{border-bottom:0}
+
+  .flag{border-left:3px solid var(--accent);background:var(--accent-soft);padding:18px 22px;margin:24px 0;border-radius:0 3px 3px 0}
+  .flag p{margin:0 0 12px;max-width:60ch}
+  .flag p:last-child{margin-bottom:0}
+  .flag .t{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:7px}
+  .flag.caution{border-left-color:var(--warm);background:var(--warm-soft)}
+  .flag.caution .t{color:var(--warm)}
+
+  .msg{border:1px dashed var(--line-strong);border-radius:3px;padding:18px 22px;margin:20px 0;background:var(--surface-2)}
+  .msg .h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  .msg p{margin:0;max-width:64ch}
+
+  footer{margin-top:64px;padding-top:28px;border-top:1px solid var(--line-strong);color:var(--muted);font-size:14px}
+  footer p{max-width:66ch}
+  a{color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  @media (min-width:1180px){
+    .shell{grid-template-columns:232px minmax(0,1fr);gap:0 60px}
+    .rail{position:sticky;top:28px;align-self:start;max-height:calc(100vh - 56px);overflow-y:auto;padding:60px 0 24px;margin:0}
+    .rail ol{grid-template-columns:1fr}
+  }
+
+  @media (max-width:700px){
+    .shell{padding:0 20px 72px}
+    .versus,.bios{grid-template-columns:1fr}
+    .post{grid-template-columns:1fr;gap:8px}
+    .post dl{grid-template-columns:1fr}
+    .post dt{padding-top:8px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<a class="skip" href="#main">Ir al contenido</a>
+
+<div class="shell">
+
+  <nav class="rail" aria-label="Secciones del plan">
+    <p class="railtitle">El plan de Marina</p>
+    <ol>
+      <li><a href="#s1"><b>01</b>Diagnóstico</a></li>
+      <li><a href="#s2"><b>02</b>Práctico frente a inspirador</a></li>
+      <li><a href="#s3"><b>03</b>El reel de 1,4 M</a></li>
+      <li><a href="#s4"><b>04</b>El reel que se hundió</a></li>
+      <li><a href="#s5"><b>05</b>Publicación por publicación</a></li>
+      <li><a href="#s6"><b>06</b>Perfil, bio y fijados</a></li>
+      <li><a href="#s7"><b>07</b>Cinco pilares</a></li>
+      <li><a href="#s8"><b>08</b>Ganchos</a></li>
+      <li><a href="#s9"><b>09</b>Producción y edición</a></li>
+      <li><a href="#s10"><b>10</b>Cinco guiones</a></li>
+      <li><a href="#s11"><b>11</b>De contenido a consulta</a></li>
+      <li><a href="#s12"><b>12</b>Descripciones y cierres</a></li>
+      <li><a href="#s13"><b>13</b>Historias y reserva</a></li>
+      <li><a href="#s14"><b>14</b>Plan de 30 días</a></li>
+      <li><a href="#s15"><b>15</b>Métricas y experimentos</a></li>
+      <li><a href="#s16"><b>16</b>Datos pendientes</a></li>
+      <li><a href="#s17"><b>17</b>Rutina semanal</a></li>
+      <li><a href="#s18"><b>18</b>Primeros siete días</a></li>
+      <li><a href="#s19"><b>19</b>Qué contrastar</a></li>
+    </ol>
+  </nav>
+
+  <main class="wrap" id="main">
+
+  <header class="mast">
+    <p class="eyebrow">Estrategia de contenidos · @mnutrix · 8 septiembre 2026</p>
+    <h1>Plan de rescate de <span class="at">@mnutrix</span></h1>
+    <p class="standfirst">Por qué la cuenta pierde seguidores, qué falla en los videos y en el perfil, y qué hay que cambiar exactamente. Une el análisis de los 35 reels más recientes con sus métricas y la auditoría editorial de 12 publicaciones, sus descripciones y sus comentarios. Dos objetivos: atraer a personas afines y facilitar que reserven una consulta online.</p>
+
+    <div class="verdict">
+      <span class="t">Diagnóstico en una frase</span>
+      <p>La cuenta cambió contenido útil por contenido inspirador, y el contenido inspirador rinde casi tres veces menos, no se guarda, no se comparte y no da ninguna razón para quedarse. Además, el perfil no explica que las consultas son online ni cómo reservarlas.</p>
+    </div>
+
+    <div class="flag caution">
+      <span class="t">Cómo leer este documento</span>
+      <p>Este plan junta dos revisiones hechas el mismo día con material distinto. Cuando una afirmación sale de una métrica pública que se puede verificar, va marcada <span class="tag obs">observado</span>. Cuando es una lectura o una causa probable que necesita los Insights de la cuenta para confirmarse, va marcada <span class="tag hyp">por contrastar</span>.</p>
+      <p>La distinción importa: el crecimiento neto es altas menos bajas, y desde fuera no se ve cuál de las dos se movió. Todo lo que sigue son pruebas de trabajo con un orden de prioridad, no garantías de crecimiento.</p>
+    </div>
+  </header>
+
+  <section id="s1">
+    <p class="eyebrow">01 · La causa</p>
+    <h2>Ocho motivos por los que se está cayendo</h2>
+    <p>Los seis primeros salen de las métricas de los reels. Los dos últimos salen de la revisión editorial del perfil y de las descripciones, y son los que bloquean la conversión aunque el alcance vuelva.</p>
+
+    <div class="causes">
+      <div class="cause">
+        <span class="n">01</span>
+        <div>
+          <h4>Más de la mitad de lo que publica ahora es motivacional <span class="tag obs">observado</span></h4>
+          <p>De los 32 reels recientes revisados, 17 son frases inspiradoras sobre hábitos, constancia y el paso del tiempo. Enseñan cero. Es contenido que no deja nada que recuperar después, y recuperar después es lo que sostiene la distribución.</p>
+          <span class="data">17 de 32 reels recientes · promedio 10.830 reproducciones</span>
+        </div>
+      </div>
+      <div class="cause">
+        <span class="n">02</span>
+        <div>
+          <h4>La conversación se apagó del todo <span class="tag obs">observado</span></h4>
+          <p>Seis reels recientes tienen cero comentarios. Ninguno. Un video que llega a 25.000 personas sin generar una sola respuesta indica que no está conectando con quien lo ve; que eso además reduzca la distribución es una hipótesis razonable, no un hecho comprobado desde fuera.</p>
+          <span class="data">6 reels con 0 comentarios · promedio actual 55 comentarios frente a 319 en primavera</span>
+        </div>
+      </div>
+      <div class="cause">
+        <span class="n">03</span>
+        <div>
+          <h4>El alcance grande puede estar trayendo al público equivocado <span class="tag hyp">por contrastar</span></h4>
+          <p>Su reel de 117.000 reproducciones se llevó 468 me gusta y 8 comentarios. Es un plano de su cuerpo entrenando en el gimnasio. La cifra de interacción es baja y es coherente con una audiencia poco afín, pero para afirmarlo hace falta ver audiencia alcanzada, seguimientos atribuidos y consultas por origen.</p>
+          <span class="data">117.000 reproducciones · 0,4 % de me gusta · 8 comentarios</span>
+        </div>
+      </div>
+      <div class="cause">
+        <span class="n">04</span>
+        <div>
+          <h4>Los tres videos fijados son casi el mismo video <span class="tag obs">observado</span></h4>
+          <p>En la pestaña de reels tiene fijados tres videos con la misma portada, la misma pose y el mismo rótulo. El visitante nuevo ve tres veces lo mismo en la primera pantalla y no encuentra ni el servicio ni un caso real.</p>
+          <span class="data">Portadas fijadas idénticas · mismo rótulo en las tres</span>
+        </div>
+      </div>
+      <div class="cause">
+        <span class="n">05</span>
+        <div>
+          <h4>Las portadas nuevas no se leen <span class="tag obs">observado</span></h4>
+          <p>Cambió los rótulos gruesos en mayúsculas por texto blanco fino sobre paredes claras. En la cuadrícula del perfil y en el feed pequeño no se distingue nada. La portada es el titular del video y ahora mismo no cumple esa función.</p>
+          <span class="data">Texto fino blanco sobre fondo claro en la mayoría de los reels recientes</span>
+        </div>
+      </div>
+      <div class="cause">
+        <span class="n">06</span>
+        <div>
+          <h4>El perfil no da una razón para seguirla <span class="tag obs">observado</span></h4>
+          <p>La biografía dice lo que ella hace, no lo que la persona va a recibir cada semana. No hay enlace, no hay recurso gratis, no hay serie reconocible. Alguien que llega desde un reel viral no encuentra ningún motivo concreto para tocar el botón de seguir.</p>
+          <span class="data">Sin enlace en biografía · sin imán de captación · sin formato recurrente</span>
+        </div>
+      </div>
+      <div class="cause">
+        <span class="n">07</span>
+        <div>
+          <h4>La primera publicación visible caducó hace más de un año <span class="tag obs">observado</span></h4>
+          <p>El primer reel de la cuadrícula es una invitación comercial de febrero de 2025 que habla de abril. Quien entra hoy no puede saber si el servicio sigue vigente. Es el arreglo más barato de todo el documento y el que más rápido se hace.</p>
+          <span class="data">Publicación del 3 feb 2025 en primera posición · referencia temporal a abril</span>
+        </div>
+      </div>
+      <div class="cause">
+        <span class="n">08</span>
+        <div>
+          <h4>En ningún sitio se explica que la consulta es online, qué incluye ni cuánto cuesta <span class="tag obs">observado</span></h4>
+          <p>La bio y varias descripciones piden escribir una palabra, pero el paso siguiente nunca se concreta. Además se mezclan dos intenciones muy distintas: pedir una guía gratuita y querer contratar. Hay que separarlas, porque no son la misma persona ni el mismo recorrido.</p>
+          <span class="data">Sin modalidad, sin contenido del servicio, sin precio, sin vía de reserva</span>
+        </div>
+      </div>
+    </div>
+
+    <h3>Qué conservar tal como está</h3>
+    <p>El diagnóstico no dice que la cuenta esté mal hecha. Hay material que funciona y que sería un error tocar: su presencia personal a cámara, los ejemplos cotidianos, los carruseles de soluciones, los casos que explican resultados reales y la especialidad ya reconocible. El trabajo es conectar mejor tres cosas que hoy están sueltas: lo que atrae a alguien nuevo, el motivo para quedarse y la información necesaria para pedir una consulta.</p>
+  </section>
+
+  <section id="s2">
+    <p class="eyebrow">02 · La prueba</p>
+    <h2>Lo práctico rinde casi tres veces más que lo inspirador</h2>
+    <p>Clasifiqué los 32 reels recientes en dos grupos. Práctico incluye comparaciones, recetas, técnica, desmontar mitos y llamadas a comentar. Inspirador incluye reflexiones, frases de constancia y mensajes sobre el paso del tiempo.</p>
+
+    <div class="versus">
+      <div class="vs-col good">
+        <span class="vs-tag">Práctico y visual · 15 reels</span>
+        <span class="vs-num">28.800</span>
+        <span class="vs-sub">reproducciones promedio</span>
+        <ul>
+          <li>Entre 87 y 218 comentarios cuando pide una palabra</li>
+          <li>Comparaciones de platos, porciones en la mano, errores concretos</li>
+          <li>Contenido que sirve después de verlo</li>
+        </ul>
+      </div>
+      <div class="vs-col bad">
+        <span class="vs-tag">Inspirador · 17 reels</span>
+        <span class="vs-num">10.830</span>
+        <span class="vs-sub">reproducciones promedio</span>
+        <ul>
+          <li>Entre 0 y 13 comentarios</li>
+          <li>Plano selfie hablando, sin ningún elemento visual</li>
+          <li>No queda nada que recuperar</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Aunque saques de la cuenta el reel de 117.000 que infla el promedio del grupo práctico, la diferencia sigue siendo del doble, 22.500 frente a 10.830.</p>
+
+    <div class="flag caution">
+      <span class="t">Hasta dónde llega esta prueba</span>
+      <p>La relación de 2,66 es una diferencia descriptiva entre dos grupos de reels de la misma cuenta. Es suficiente para decidir qué grabar el lunes; no es suficiente para prometer que cambiar de formato multiplicará el alcance ni recuperará seguidores.</p>
+      <p>Los guardados y los compartidos no son públicos, así que la afirmación de que lo inspirador «no se guarda» es una hipótesis, no un dato. Se confirma en dos minutos abriendo Insights. Antes de dar por buena la comparación conviene igualar las ventanas de antigüedad, separar los fijados y calcular medianas además de promedios.</p>
+    </div>
+  </section>
+
+  <section id="s3">
+    <p class="eyebrow">03 · El video que funcionó</p>
+    <h2>Anatomía del reel de 1,4 millones</h2>
+    <p class="lede">Veintidós segundos, sin voz, sin guion hablado, grabado contra una pared blanca. Es su video más visto de la historia y se puede replicar el lunes que viene.</p>
+
+    <div class="beats">
+      <div class="beat"><span class="s">0 a 2 s</span><span class="d"><b>Ella duplicada en el mismo plano.</b> A la izquierda con top deportivo, a la derecha con camiseta ancha. Arriba dos rótulos gruesos con contorno, Pierde grasa y Engorda. La promesa se entiende sin leer nada más y sin sonido.</span></div>
+      <div class="beat"><span class="s">2 a 8 s</span><span class="d"><b>Primera comparación con foto real de comida.</b> Aparece un plato flotando sobre cada versión. Debajo, tres líneas cortas explicando el error. Plato grande porque es integral, salsa de tomate frito, queso rallado a ojo.</span></div>
+      <div class="beat"><span class="s">8 a 14 s</span><span class="d"><b>Segunda comparación.</b> Hidratos con estrategia frente a hidratos sin estrategia. Mismo alimento, distinta ejecución. Aquí es donde la espectadora se ve retratada.</span></div>
+      <div class="beat"><span class="s">14 a 20 s</span><span class="d"><b>Tercera comparación.</b> Cena sencilla y completa, más volumen y nutrientes, frente a demasiado ligero, falta fibra, proteína y grasa.</span></div>
+      <div class="beat"><span class="s">20 a 22 s</span><span class="d"><b>Cierre y bucle.</b> El video vuelve a empezar sin corte perceptible, lo que multiplica las reproducciones repetidas.</span></div>
+    </div>
+
+    <div class="flag">
+      <span class="t">Por qué funciona</span>
+      <p>No hay juicio. No dice que estés haciendo el ridículo, dice que hay dos versiones del mismo plato. La espectadora se reconoce en la columna derecha sin sentirse atacada, y la columna izquierda es exactamente lo que Marina vende. Además funciona con el sonido apagado, que es como se ve la mayoría del contenido.</p>
+      <p>Al replicarlo, un matiz profesional que sí conviene cuidar: la comparación debe enseñar decisiones observables, no clasificar alimentos en buenos y malos. Una comida aislada no determina por sí sola perder o ganar grasa, y el formato es lo bastante contundente como para que parezca que sí.</p>
+    </div>
+  </section>
+
+  <section id="s4">
+    <p class="eyebrow">04 · El video que se hundió</p>
+    <h2>Y el mismo perfil publicando esto sacó 3.740</h2>
+    <p>Veinticuatro segundos caminando por la calle con una gorra, sujetando un gato, hablando a cámara. Los subtítulos son los automáticos de Instagram, letra fina blanca sobre árboles y cielo. En la portada se lee <em>Te prometo que hay</em>. El mensaje es que algún día mirará atrás y se dará cuenta.</p>
+
+    <ul class="plain">
+      <li><strong>No hay promesa en el primer segundo.</strong> Quien la ve no sabe qué va a ganar por quedarse.</li>
+      <li><strong>No hay nada visual que sostenga la atención.</strong> Cara, cielo y gato. Ningún plato, ninguna cifra, ningún antes y después.</li>
+      <li><strong>Los subtítulos automáticos no se leen.</strong> Blanco fino sobre fondo claro y en movimiento.</li>
+      <li><strong>No hay nada que hacer al terminar.</strong> Ni comentario, ni guardado, ni siguiente paso.</li>
+      <li><strong>Cero comentarios.</strong> Ni uno.</li>
+    </ul>
+    <p>Este video no es una excepción. Es el modelo de más de la mitad de lo que ha publicado en los últimos cuatro meses.</p>
+
+    <div class="flag">
+      <span class="t">Matiz importante</span>
+      <p>Esto no significa borrar el contenido personal ni prohibir a Marina aparecer con su gato. Significa pedirle a esa pieza lo que sí puede dar. Una reflexión conectada con una decisión real de su trabajo aporta cercanía y es material del pilar de marca personal; lo que no puede es ocupar la mitad del calendario ni sostener sola la captación.</p>
+    </div>
+  </section>
+
+  <section id="s5">
+    <p class="eyebrow">05 · La evidencia</p>
+    <h2>Revisión publicación por publicación</h2>
+    <p>Doce publicaciones públicas con sus descripciones y sus comentarios cargados: diez reels y dos carruseles. Las métricas son una fotografía del día de la revisión, no comparaciones normalizadas. «No visible» nunca equivale a cero, y los comentarios cargados son una muestra.</p>
+
+    <div class="posts">
+
+      <div class="post">
+        <span class="when">3 feb 2025</span>
+        <div>
+          <h4>Inicio de pérdida de grasa</h4>
+          <span class="met">Descripción con referencia a abril y palabra TRANSFORMACIÓN</span>
+          <dl>
+            <dt>Lectura</dt><dd>Buena intención de bienvenida, pero mensaje temporal caducado en la primera posición visible del perfil.</dd>
+            <dt>Cambio</dt><dd class="fix">Actualizar la descripción y preparar una bienvenida vigente con la secuencia destinatario → problema → método → siguiente paso.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">3 jun 2025</span>
+        <div>
+          <h4>El caso de Elena</h4>
+          <span class="met">141 me gusta · 235 comentarios visibles</span>
+          <dl>
+            <dt>Lectura</dt><dd>Ofrece prueba social real y sigue siendo útil. Su antigüedad por sí sola no obliga a reemplazarlo; esos comentarios tampoco equivalen a consultas.</dd>
+            <dt>Cambio</dt><dd class="fix">Explicar el proceso documentado y las decisiones concretas, sin generalizar el resultado. Añadir un caso reciente si existe autorización.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">1 sep</span>
+        <div>
+          <h4>Comparación entre dos conductas</h4>
+          <span class="met">Pantalla dividida · contraste corporal en titular · CTA «Quiero»</span>
+          <dl>
+            <dt>Lectura</dt><dd>Formato fácil de reconocer, pero obliga a leer dos lados con imágenes pequeñas y el contraste simplifica demasiado la explicación.</dd>
+            <dt>Cambio</dt><dd class="fix">Comparar decisiones observables (improvisar sin opciones frente a tener alternativas). Mostrar primero la situación y después el cambio, con menos texto.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">3 sep</span>
+        <div>
+          <h4>Carrusel de organización, seis diapositivas</h4>
+          <span class="met">154 me gusta · 2 comentarios</span>
+          <dl>
+            <dt>Lectura</dt><dd>Utilidad concreta y buena oportunidad de guardado. Una lectora objeta la palabra «pereza» y distingue cansancio de pereza: es una señal cualitativa que conviene atender.</dd>
+            <dt>Cambio</dt><dd class="fix">Portada que anuncie el beneficio global: «5 soluciones para comer cuando vas con prisa». Sustituir pereza por tiempo o energía disponible. Mantener ejemplos y cierre de guardado.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">31 ago</span>
+        <div>
+          <h4>Comer sano sin perder grasa</h4>
+          <span class="met">31,83 s · comparación de porciones sobre báscula · cierre pide seguir y comentar PLAN</span>
+          <dl>
+            <dt>Lectura</dt><dd>Hay demostración visual, que es lo bueno. La descripción casi repite la del 1 sep y el cierre mezcla dos acciones distintas.</dd>
+            <dt>Cambio</dt><dd class="fix">Un solo problema por pieza, más detalle visual y una única acción final elegida según el objetivo.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">25 ago</span>
+        <div>
+          <h4>Desayuno que parece sano</h4>
+          <span class="met">287 me gusta · 150 comentarios</span>
+          <dl>
+            <dt>Lectura</dt><dd>Activa identificación y pedidos de PLAN. El bloque de texto exige bastante lectura y mezcla aprendizaje, producto de afiliación y solicitud.</dd>
+            <dt>Cambio</dt><dd class="fix">Convertir el ejemplo en una secuencia de decisiones con menos texto por pantalla y separar visualmente las tres cosas.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">24 ago</span>
+        <div>
+          <h4>Cómo valorar una dieta</h4>
+          <span class="met">Plano a cámara · título largo · subtítulos por fragmentos breves</span>
+          <dl>
+            <dt>Lectura</dt><dd>Es de las piezas con más criterio profesional y por tanto de las más diferenciadoras. Los subtítulos troceados dificultan seguirla sin sonido.</dd>
+            <dt>Cambio</dt><dd class="fix">Abrir con una pregunta concreta, estructurar tres criterios numerados y poner subtítulos en unidades de sentido, no en trozos de dos palabras.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">23 ago</span>
+        <div>
+          <h4>Cuerpo y hábitos personales</h4>
+          <span class="met">272 me gusta · 86 comentarios</span>
+          <dl>
+            <dt>Lectura</dt><dd>Genera interés y cercanía, pero falta comprobar qué audiencia capta y cuántas consultas produce.</dd>
+            <dt>Cambio</dt><dd class="fix">Mostrar la decisión cotidiana detrás del hábito y añadir qué se adapta de una persona a otra, para que el cuerpo de Marina no se lea como resultado esperado.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">22 ago</span>
+        <div>
+          <h4>Carrusel de obstáculos, siete diapositivas</h4>
+          <span class="met">333 me gusta · sin comentarios en la vista cargada</span>
+          <dl>
+            <dt>Lectura</dt><dd>Plantilla clara y repetible de problema → acción. La descripción no desarrolla el servicio ni propone acción explícita. La ausencia de comentarios no lo convierte en un fracaso.</dd>
+            <dt>Cambio</dt><dd class="fix">Elegir objetivo: guardado o consulta. Si es consulta, explicar qué personaliza Marina frente a los consejos generales.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">21 ago</span>
+        <div>
+          <h4>Comportamientos al intentar adelgazar</h4>
+          <span class="met">202 me gusta · 109 comentarios · ofrece documento con la palabra GUÍA</span>
+          <dl>
+            <dt>Lectura</dt><dd>La recompensa por comentar es más concreta que en otras piezas, y eso se nota en la respuesta.</dd>
+            <dt>Cambio</dt><dd class="fix">Definir el contenido exacto de la guía y medir por separado entregas, conversaciones y reservas. No prometer un documento que resuelva el objetivo universalmente.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">18 ago</span>
+        <div>
+          <h4>Poco tiempo para cocinar</h4>
+          <span class="met">12,10 s · 111 me gusta · 2 comentarios</span>
+          <dl>
+            <dt>Lectura</dt><dd>El beneficio más concreto (tres combinaciones de comida) está enterrado en la descripción, mientras el video solo presenta el problema.</dd>
+            <dt>Cambio</dt><dd class="fix">Llevar las opciones a pantalla: resultado primero, ingredientes después. Cambiar el cierre sobre excusas por una invitación práctica.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="post">
+        <span class="when">10 ago</span>
+        <div>
+          <h4>Motivación, escena con el gato</h4>
+          <span class="met">187 me gusta</span>
+          <dl>
+            <dt>Lectura</dt><dd>Aporta humanidad, pero por sí sola explica poco de la especialidad o del servicio.</dd>
+            <dt>Cambio</dt><dd class="fix">Conectar la reflexión con una experiencia real o una decisión cotidiana de su trabajo. Mantenerla como pieza de vínculo, sin exigirle captación comercial.</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="s6">
+    <p class="eyebrow">06 · Perfil</p>
+    <h2>Cómo dejar el perfil listo para convertir visitas en consultas</h2>
+
+    <h3>Nombre visible</h3>
+    <p>Instagram busca por el campo del nombre, no por la biografía. «Recomposición corporal» casi nadie lo escribe en el buscador; «nutricionista» y «perder grasa» sí. La palabra recomposición se conserva dentro de los contenidos y de la presentación del servicio, donde sí aporta.</p>
+    <div class="bios">
+      <div class="biobox">
+        <p class="h">Ahora</p>
+        <pre>Marina de Lorenzo | Recomposición corporal 🍓</pre>
+      </div>
+      <div class="biobox new">
+        <p class="h">Propuesta</p>
+        <pre>Marina · Nutricionista online</pre>
+      </div>
+    </div>
+
+    <h3>Biografía</h3>
+    <p>La versión actual describe a Marina. La nueva describe a quién ayuda, qué resultado da, que la consulta es online y qué se lleva la persona hoy mismo. El código de afiliación baja de la última línea porque ahí va la llamada.</p>
+    <div class="bios">
+      <div class="biobox">
+        <p class="h">Ahora</p>
+<pre>Nutricionista
+🫶 Aquí entiendes lo que necesita tu cuerpo y consigues tu versión más fuerte y sana
+👩‍⚕️ Colegiada MAD01244
+💌 Escribe "YO" 🚀
+🍒 @prozis | 10% MNUTRIX</pre>
+      </div>
+      <div class="biobox new">
+        <p class="h">Propuesta</p>
+<pre>Pierde grasa comiendo lo que te gusta
+Para mujeres que ya comen sano y no ven cambios
+Nutricionista colegiada MAD01244
+Consultas online: escribe CONSULTA y te explico cómo trabajo
+👇 20 cenas para perder grasa, gratis</pre>
+      </div>
+    </div>
+
+    <div class="flag caution">
+      <span class="t">Dos decisiones que son pruebas, no certezas</span>
+      <p>Mover el código de afiliación a una destacada es una prueba de jerarquía comercial: sirve para que la primera decisión del visitante sea conocer el acompañamiento, no comprar suplementos. No afirma que la afiliación perjudique la cuenta, y hay que respetar los acuerdos vigentes.</p>
+      <p>Segmentar hacia mujeres con poco tiempo es una hipótesis coherente con el lenguaje que ya usa, y debe contrastarse con quién pide consulta de verdad.</p>
+    </div>
+
+    <h3>Las tres publicaciones fijadas</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Pieza</th><th>Qué contiene</th><th>Acción final</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Empieza aquí</strong></td><td>A quién ayuda Marina, qué problemas trabaja y qué va a aprender quien la siga</td><td>Seguir una serie concreta</td></tr>
+          <tr><td><strong>Cómo es una consulta</strong></td><td>Qué se hace antes, durante y después; modalidad online, seguimiento y precio o acceso claro a él</td><td>Escribir CONSULTA o reservar</td></tr>
+          <tr><td><strong>Un caso explicado</strong></td><td>Situación inicial, decisiones del proceso, dificultades y resultados documentados</td><td>Conocer el acompañamiento</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Tres portadas distintas, nunca tres iguales. El caso de Elena puede ocupar la tercera posición actualizando el contexto comercial. No archivar contenido solo por tener pocas interacciones.</p>
+
+    <h3>Destacadas</h3>
+    <p>Hoy hay tres. El orden propuesto es <strong>Empieza aquí · Consultas online · Casos · Dudas · Sobre mí</strong>, dejando entrenamiento y colaboraciones después. En «Consultas online», de cinco a siete pantallas: destinatario, problemas habituales, modalidad, primera consulta, seguimiento real, precio o cómo obtenerlo, y reserva. Sin inventar servicios ni tiempos de respuesta.</p>
+    <p>La pantalla de «Sobre mí» menciona experiencia en colegios, clínicas y hospitales: es material valioso, pero hoy está contado con demasiada densidad. Una idea principal por historia, con texto grande.</p>
+
+    <h3>Los seis arreglos, en orden</h3>
+    <ul class="plain">
+      <li><strong>Actualizar la referencia a abril</strong> de la primera publicación visible. Diez minutos, y quita la duda de si el servicio existe.</li>
+      <li><strong>Poner enlace.</strong> Hoy no hay ninguno. Una página simple con la información de la consulta y, si se quiere, la guía a cambio del correo. Eso convierte alcance prestado en lista propia.</li>
+      <li><strong>Cambiar los tres fijados</strong> por las tres piezas de la tabla anterior.</li>
+      <li><strong>Reordenar las destacadas</strong> con portadas del mismo estilo.</li>
+      <li><strong>Recuperar la palabra en comentarios,</strong> con una palabra por campaña y automatizada. Sus dos mejores reels con esta mecánica sacaron 2.854 y 2.983 comentarios.</li>
+      <li><strong>Fijar un formato con nombre.</strong> «Pierde grasa o Engorda» ya es reconocible. Convertirlo en serie semanal da una razón para seguirla que hoy no existe.</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <p class="eyebrow">07 · Estructura</p>
+    <h2>Cinco pilares para organizar el contenido</h2>
+    <p class="lede">Un pilar es un territorio temático que se puede desarrollar de forma recurrente. El formato es cómo se presenta: reel, carrusel o historia. La función es lo que esperas que consiga: descubrimiento, confianza o consulta. Los temas se mantienen reconocibles y lo que cambia son los ejemplos.</p>
+
+    <div class="pillar">
+      <span class="pnum">Pilar 1 · Descubrimiento</span>
+      <h4>Alimentación práctica para semanas reales</h4>
+      <p><strong>Función:</strong> llegar a personas nuevas con soluciones que puedan usar y compartir. Encaja con los carruseles prácticos que ya funcionan en el perfil.</p>
+      <p><strong>Temas:</strong> cenas sin cocinar; desayunos para llevar; una compra con varias combinaciones; alternativas para días con poca energía; organización antes de una semana complicada; comer fuera manteniendo flexibilidad.</p>
+      <div class="serie">
+        <p><b>Serie:</b> «Comer cuando vas con prisa». Cada episodio resuelve una situación distinta. La solución se ve en los primeros segundos y después se explica cómo prepararla.</p>
+        <p><b>Ejemplo:</b> «Abres la nevera y no sabes qué cenar: tres opciones con lo que ya tienes». Cierre: «Guárdalo para el día que llegues tarde».</p>
+        <p><b>Qué mirar:</b> guardados y compartidos sobre alcance, y seguidores atribuidos cuando el dato esté disponible.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <span class="pnum">Pilar 2 · Confianza</span>
+      <h4>Criterio profesional para entender el proceso</h4>
+      <p><strong>Función:</strong> mostrar cómo piensa como nutricionista y por qué una consulta aporta más que una lista de consejos. Este es el pilar que hoy falta y el que más la diferencia.</p>
+      <p><strong>Temas:</strong> qué información necesita antes de ajustar un plan; cómo se revisa un objetivo; diferencia entre pauta general e individual; preguntas para valorar un plan; qué señales revisa además del peso.</p>
+      <div class="serie">
+        <p><b>Serie:</b> «Lo que reviso en consulta». Una pregunta real anonimizada, un criterio explicado y un ejemplo.</p>
+        <p><b>Ejemplo:</b> «Dos personas te enseñan el mismo desayuno. Esto es lo que aún necesitaría saber». Cierre: «Sígueme para entender cómo se adapta la alimentación a cada contexto».</p>
+        <p><b>Qué mirar:</b> visitas al perfil y seguimientos atribuidos.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <span class="pnum">Pilar 3 · Afinidad</span>
+      <h4>Hábitos y vida cotidiana</h4>
+      <p><strong>Función:</strong> que la audiencia se reconozca en las situaciones y quiera seguir aprendiendo. Aquí se hace visible la flexibilidad que promete.</p>
+      <p><strong>Temas:</strong> retomar después de una semana difícil; reorganizarse cuando cambia el horario; manejar expectativas; diferencia entre falta de tiempo y falta de energía; cómo explicar los ajustes sin culpabilizar.</p>
+      <div class="serie">
+        <p><b>Serie:</b> «Cuando la semana se complica». Evitar que todas las respuestas sean disciplina o motivación: enseñar una alternativa concreta.</p>
+        <p><b>Ejemplo:</b> «Tu plan tiene que contemplar el día que llegas agotada». Cierre: «¿Qué momento del día se te hace más difícil?».</p>
+        <p><b>Qué mirar:</b> respuestas útiles, conversaciones y temas que se repiten.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <span class="pnum">Pilar 4 · Consulta</span>
+      <h4>Casos y funcionamiento de las consultas online</h4>
+      <p><strong>Función:</strong> reducir dudas antes de reservar. Mostrar el proceso y los resultados documentados explica qué compra la persona.</p>
+      <p><strong>Temas:</strong> primera consulta online; preparación previa; qué recibe la persona; seguimiento real; un ajuste explicado; casos con contexto y duración; preguntas sobre horarios, precio y herramientas.</p>
+      <div class="serie">
+        <p><b>Serie:</b> «Así trabajamos online». Explicar solo lo que se ofrece hoy, con pantallas de demostración y casos con autorización de publicación.</p>
+        <p><b>Ejemplo:</b> «Esto ocurre después de reservar una consulta online conmigo». Cierre: «Escribe CONSULTA y te envío cómo funciona y el precio».</p>
+        <p><b>Qué mirar:</b> reservas y consultas realizadas por origen. Los comentarios son un paso intermedio, no el resultado.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <span class="pnum">Pilar 5 · Marca</span>
+      <h4>Marina y su forma de acompañar</h4>
+      <p><strong>Función:</strong> crear una relación reconocible con la persona que está detrás del servicio. Su presencia y su experiencia ya son recursos del perfil.</p>
+      <p><strong>Temas:</strong> qué aprendió trabajando en colegios, clínicas y hospitales; una decisión que cambió su manera de acompañar; cómo prepara una jornada online; qué adapta aunque a ella le funcione otra cosa; sus propios días de organización imperfecta.</p>
+      <div class="serie">
+        <p><b>Serie:</b> «Detrás de la consulta». Historias espontáneas, y reel solo cuando haya una idea que interese también a quien no la conoce.</p>
+        <p><b>Ejemplo:</b> «Algo que aprendí trabajando como nutricionista y que hoy aplico online». Cierre: una pregunta o una invitación a la destacada de presentación.</p>
+        <p><b>Qué mirar:</b> respuestas y visitas al perfil. Aquí es donde encaja el contenido personal que hoy está desubicado.</p>
+      </div>
+    </div>
+
+    <h3>Reparto inicial</h3>
+    <p>Para 16 publicaciones al mes: cinco de alimentación práctica, cuatro de criterio profesional, dos de hábitos, tres de consultas y casos, y dos de marca personal. Es una hipótesis de planificación, no una proporción óptima demostrada, y la función puede cruzarse: una pieza de criterio profesional puede cerrar invitando a consulta y una de marca personal puede atraer público nuevo. No hace falta publicar los cinco pilares cada semana.</p>
+  </section>
+
+  <section id="s8">
+    <p class="eyebrow">08 · Ganchos</p>
+    <h2>Las seis reglas del gancho que sí para en seco</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Regla</th><th>Qué significa en su cuenta</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Se lee en la portada</strong></td><td>Máximo seis palabras, mayúsculas, con contorno o con una franja oscura detrás. Si no se lee en miniatura, no existe. Las seis palabras son una guía de diseño, no una regla de rendimiento.</td></tr>
+          <tr><td><strong>Nombra a la persona, no al tema</strong></td><td>«Comes sano y no pierdes grasa» funciona. «Los hábitos siempre ganan» no funciona.</td></tr>
+          <tr><td><strong>Usa la frase literal de la clienta</strong></td><td>«Yo no sé por qué engordo si desayuno súper sano» sacó 49.200. Es la queja tal cual, entre comillas.</td></tr>
+          <tr><td><strong>Promete algo concreto y pequeño</strong></td><td>Una cena, un desayuno, una porción, un error. Nada de transformar tu vida.</td></tr>
+          <tr><td><strong>Enseña el objeto</strong></td><td>El plato, la báscula, la porción en la mano. Cuando el gancho se ve, no hace falta explicarlo.</td></tr>
+          <tr><td><strong>Valida antes de corregir</strong></td><td>«Comer sano fue tu primer paso». Es la fórmula que le dio 2,7 millones de reproducciones entre dos videos.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Los temas que ya publica, con un gancho más específico</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tema actual</th><th>Gancho propuesto</th><th>Primera imagen</th></tr></thead>
+        <tbody>
+          <tr><td>Falta de tiempo</td><td>«Tres cenas que puedes montar sin encender los fogones»</td><td>Los tres platos ya terminados</td></tr>
+          <tr><td>Comer sano y estancarse</td><td>«¿Comes sano y no ves cambios? Esto es lo que revisaría contigo»</td><td>Marina y tres tarjetas de revisión</td></tr>
+          <tr><td>Elegir dieta</td><td>«Antes de empezar otra dieta, haz estas tres preguntas»</td><td>La primera pregunta ya visible</td></tr>
+          <tr><td>Organización</td><td>«Llegas cansada: deja resueltas estas tres decisiones»</td><td>Nevera y opciones disponibles</td></tr>
+          <tr><td>Caso de éxito</td><td>«Qué cambiamos en el plan de Elena para que encajara en su semana»</td><td>Contexto del caso y primer cambio</td></tr>
+          <tr><td>Marca personal</td><td>«Lo que adapto en consulta aunque a mí me funcione otra cosa»</td><td>Dos contextos cotidianos distintos</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Banco de ganchos listos para grabar</h3>
+    <p>Los veinte caben en portada, salen de temas que ya le funcionaron y no repiten estructura entre ellos.</p>
+
+    <div class="hookgroup">
+      <p class="gt">Comparación en pantalla partida</p>
+      <ol class="hooks">
+        <li>Mismo desayuno, dos formas de completarlo.</li>
+        <li>Cena que parece ligera frente a cena que de verdad lo es.</li>
+        <li>Ensalada que te deja con hambre frente a ensalada que sacia.</li>
+        <li>Lo que yo comía cuando no bajaba de peso y lo que como ahora.</li>
+      </ol>
+    </div>
+
+    <div class="hookgroup">
+      <p class="gt">La objeción literal de la clienta</p>
+      <ol class="hooks">
+        <li>Como sano pero no bajo de peso.</li>
+        <li>Llegas a cenar con mucha hambre: qué revisaría.</li>
+        <li>Es que no tengo tiempo de cocinar todos los días.</li>
+        <li>Se me va todo el fin de semana.</li>
+      </ol>
+    </div>
+
+    <div class="hookgroup">
+      <p class="gt">El error concreto</p>
+      <ol class="hooks">
+        <li>Esto que haces con el aceite te suma 300 kilocalorías al día.</li>
+        <li>El error al comer fruta cuando estás perdiendo grasa.</li>
+        <li>Tu yogur proteico no lleva la proteína que crees.</li>
+        <li>Por qué tu ensalada no te quita el hambre.</li>
+      </ol>
+    </div>
+
+    <div class="hookgroup">
+      <p class="gt">Demostración visual, sin hablar</p>
+      <ol class="hooks">
+        <li>Así se ve un plato con 30 gramos de proteína.</li>
+        <li>150 kilocalorías de queso, medidas en la mano.</li>
+        <li>Tres cenas para días sin tiempo.</li>
+        <li>Un día entero de comidas sin cocinar dos veces.</li>
+      </ol>
+    </div>
+
+    <div class="hookgroup">
+      <p class="gt">Prueba y método, lo que hoy no existe en la cuenta</p>
+      <ol class="hooks">
+        <li>Así trabajamos una semana complicada en consulta online.</li>
+        <li>Lo primero que reviso cuando una clienta no baja de peso.</li>
+        <li>Las tres cosas que cambio la primera semana con cada clienta.</li>
+        <li>Qué cambiamos en el plan de Elena para que encajara en su semana.</li>
+      </ol>
+    </div>
+
+    <div class="flag caution">
+      <span class="t">Dos límites al escribir ganchos</span>
+      <p>No usar cifras que no se puedan respaldar con un registro propio, del tipo «el 80 % de mis clientas». Y no prometer efectos universales, del tipo «sacia hasta la comida», porque depende de cada persona. Los casos reales necesitan autorización y contexto.</p>
+      <p>Ninguno de estos titulares está demostrado. Se prueban con piezas comparables y se revisa también la calidad de las consultas que traen, no solo las reproducciones.</p>
+    </div>
+  </section>
+
+  <section id="s9">
+    <p class="eyebrow">09 · Producción</p>
+    <h2>Qué cambiar al grabar y al montar</h2>
+
+    <h3>Plantilla de trabajo, 25 a 35 segundos</h3>
+    <div class="beats">
+      <div class="beat"><span class="s">0 a 3 s</span><span class="d"><b>Problema y resultado visual.</b> El plato terminado, la comparación montada, la pregunta escrita. Nunca la cara hablando sola.</span></div>
+      <div class="beat"><span class="s">3 a 8 s</span><span class="d"><b>Contexto.</b> A quién le pasa esto y en qué momento del día.</span></div>
+      <div class="beat"><span class="s">8 a 24 s</span><span class="d"><b>Demostración de una solución o de un criterio.</b> Una sola, con detalle suficiente para que se pueda repetir.</span></div>
+      <div class="beat"><span class="s">24 a 30 s</span><span class="d"><b>Matiz y cierre.</b> Qué se adapta según la persona, para no convertir el ejemplo en una pauta universal.</span></div>
+      <div class="beat"><span class="s">Últimos s</span><span class="d"><b>Una sola acción.</b> Guardar, comentar una palabra, seguir o escribir CONSULTA. Una, no dos.</span></div>
+    </div>
+    <p>La duración se adapta al contenido. Estos tiempos son una plantilla de trabajo, no una regla del algoritmo.</p>
+
+    <h3>Edición</h3>
+    <ul class="plain">
+      <li><strong>Recortar las pausas que no aportan</strong> y conservar las que hacen falta para entender. No cambiar de plano por obligación cada dos segundos.</li>
+      <li><strong>En pantalla partida, una comparación breve.</strong> Si exige varias frases, mostrar los lados de forma sucesiva en vez de simultánea.</li>
+      <li><strong>Subtítulos por frases cortas completas.</strong> Los fragmentos de dos palabras aisladas hacen imposible seguir el argumento sin sonido.</li>
+      <li><strong>Textos sobre una zona de contraste estable,</strong> sin tapar manos, alimentos ni rostros. Revisar en móvil y en el recorte real de la portada.</li>
+      <li><strong>Luz frontal en las escenas de cocina,</strong> para que manos y objetos destaquen frente al fondo iluminado.</li>
+      <li><strong>Que siempre haya algo que ver:</strong> abrir la nevera, montar una opción, comparar alternativas. No dejar toda la utilidad en el pie de foto.</li>
+      <li><strong>Mantener el estilo personal.</strong> No hace falta que todas las publicaciones parezcan la misma plantilla; sí que se lean.</li>
+      <li><strong>Sistema de portadas:</strong> rótulo en mayúsculas, franja oscura en el tercio inferior, máximo seis palabras, siempre la misma tipografía.</li>
+    </ul>
+
+    <div class="flag caution">
+      <span class="t">Pendiente de revisar</span>
+      <p>El audio no se ha podido juzgar con el material disponible. Antes de aprobar una edición conviene escuchar claridad de voz, ruido de fondo, nivel de música, cortes y sincronía con los subtítulos. Para eso hacen falta los archivos de los reels o grabaciones completas con sonido.</p>
+    </div>
+  </section>
+
+  <section id="s10">
+    <p class="eyebrow">10 · Guiones</p>
+    <h2>Cinco guiones listos para grabar</h2>
+    <p>Son borradores editoriales. Marina valida el contenido profesional y completa cualquier detalle del servicio o del caso antes de publicarlos.</p>
+
+    <div class="script">
+      <p class="st">Guion 1 · Captación</p>
+      <h4>Cenas sin cocinar</h4>
+      <div class="beats">
+        <div class="beat"><span class="s">0 a 3 s</span><span class="d">Los tres platos ya montados en pantalla. «Llegas tarde y no quieres cocinar: aquí tienes tres ideas para resolver la cena».</span></div>
+        <div class="beat"><span class="s">3 a 20 s</span><span class="d">Preparar visualmente las tres alternativas. Ingredientes rotulados en cada plano, nada de párrafos. Las opciones ilustran ideas, no se presentan como pauta individual.</span></div>
+        <div class="beat"><span class="s">20 a 27 s</span><span class="d">«Lo útil es tener alternativas que encajen en tu tiempo y en tus necesidades».</span></div>
+        <div class="beat"><span class="s">Cierre</span><span class="d">«Guárdalo para tu próxima compra». El siguiente episodio de la serie enseña cómo organizar esa compra.</span></div>
+      </div>
+    </div>
+
+    <div class="script">
+      <p class="st">Guion 2 · Autoridad</p>
+      <h4>Qué reviso en consulta</h4>
+      <div class="beats">
+        <div class="beat"><span class="s">0 a 3 s</span><span class="d">«¿Comes sano y no ves cambios? Esto es lo que revisaría contigo».</span></div>
+        <div class="beat"><span class="s">3 a 20 s</span><span class="d">Tres aspectos que evalúa de verdad en su práctica. En cada uno, qué información necesita y por qué la foto de un plato no basta para individualizar un plan.</span></div>
+        <div class="beat"><span class="s">20 a 30 s</span><span class="d">«En consulta trabajamos con tu contexto para decidir qué ajustar», con una descripción verdadera del procedimiento.</span></div>
+        <div class="beat"><span class="s">Cierre</span><span class="d">«Escribe CONSULTA y te explico cómo trabajo». Nunca pedir datos clínicos en comentarios públicos.</span></div>
+      </div>
+    </div>
+
+    <div class="script">
+      <p class="st">Guion 3 · Afinidad</p>
+      <h4>Energía disponible</h4>
+      <div class="beats">
+        <div class="beat"><span class="s">0 a 3 s</span><span class="d">«Hay días en los que necesitas comer con el mínimo esfuerzo».</span></div>
+        <div class="beat"><span class="s">3 a 18 s</span><span class="d">Dos escenas: un día con tiempo y un día de cansancio. Cómo cambia la organización, con una alternativa concreta en cada caso.</span></div>
+        <div class="beat"><span class="s">18 a 25 s</span><span class="d">«Un plan útil también contempla esos días».</span></div>
+        <div class="beat"><span class="s">Cierre</span><span class="d">«¿Qué se te complica más, el desayuno o la cena?». Las respuestas eligen la siguiente pieza.</span></div>
+      </div>
+    </div>
+
+    <div class="script">
+      <p class="st">Guion 4 · Consulta</p>
+      <h4>Así es trabajar conmigo</h4>
+      <div class="beats">
+        <div class="beat"><span class="s">0 a 3 s</span><span class="d">«Esto es lo que hacemos en tu primera consulta conmigo».</span></div>
+        <div class="beat"><span class="s">3 a 22 s</span><span class="d">Tres pasos reales del servicio, con material de demostración y sin información de pacientes. Qué recibe la persona y qué seguimiento existe.</span></div>
+        <div class="beat"><span class="s">22 a 30 s</span><span class="d">Modalidad online y destinatario. Si hay criterios de derivación o casos fuera del servicio, explicarlos en la página informativa.</span></div>
+        <div class="beat"><span class="s">Cierre</span><span class="d">«Escribe CONSULTA para recibir modalidad, precio y cómo reservar».</span></div>
+      </div>
+    </div>
+
+    <div class="script">
+      <p class="st">Guion 5 · Caso</p>
+      <h4>Explicar el proceso</h4>
+      <div class="beats">
+        <div class="beat"><span class="s">0 a 3 s</span><span class="d">«Qué cambiamos en el plan de Elena para que encajara en su semana».</span></div>
+        <div class="beat"><span class="s">3 a 10 s</span><span class="d">Una dificultad inicial documentada.</span></div>
+        <div class="beat"><span class="s">10 a 24 s</span><span class="d">Dos decisiones reales y cómo se revisaron. Si no existen esos datos, se recaban; no se reconstruye una historia ficticia.</span></div>
+        <div class="beat"><span class="s">24 a 32 s</span><span class="d">Resultados observados y período real, con contexto y señalando que pertenecen a ese caso.</span></div>
+        <div class="beat"><span class="s">Cierre</span><span class="d">«Si quieres conocer cómo sería tu acompañamiento, escribe CONSULTA».</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s11">
+    <p class="eyebrow">11 · Conversión</p>
+    <h2>Del contenido a la consulta, dos caminos separados</h2>
+    <p>Pedir una guía y querer contratar son intenciones distintas y hoy están mezcladas en la misma palabra. Separarlas es lo que permite saber qué funciona.</p>
+
+    <div class="versus">
+      <div class="vs-col good">
+        <span class="vs-tag">Camino A · Recurso educativo</span>
+        <ul>
+          <li>Publicación → palabra GUÍA</li>
+          <li>Entrega del recurso prometido, sin condiciones</li>
+          <li>Conversación opcional</li>
+          <li>Información de consulta solo si hay interés</li>
+        </ul>
+      </div>
+      <div class="vs-col bad">
+        <span class="vs-tag">Camino B · Consulta</span>
+        <ul>
+          <li>Publicación o perfil → palabra CONSULTA</li>
+          <li>Modalidad, precio, disponibilidad y qué incluye</li>
+          <li>Reserva</li>
+          <li>Consulta realizada</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>No hace falta eliminar las palabras antiguas si ya activan procesos que funcionan: se mantienen y se etiqueta el origen. Para campañas nuevas, vocabulario estable y explicación clara de la diferencia entre guía y servicio.</p>
+
+    <div class="msg">
+      <p class="h">Mensaje inicial para quien escribe CONSULTA</p>
+      <p>Gracias por escribir. Te cuento cómo trabajo: modalidad online, [qué incluye] y [precio]. Puedes consultar disponibilidad aquí: [enlace]. Si antes necesitas aclarar algo sobre el acompañamiento, dime qué información te falta.</p>
+    </div>
+
+    <div class="flag caution">
+      <span class="t">Un patrón que conviene cambiar</span>
+      <p>Varias descripciones exigen compromiso e inversión antes de explicar el servicio. Merece la pena probar una versión informativa como la anterior, pero quitar esa frase no garantiza más ventas: lo que hay que evaluar son las reservas y la adecuación de quien escribe, no el número de respuestas.</p>
+      <p>Un recurso gratuito se entrega con claridad antes de plantear contratar. Pedir un documento no es aceptar un proceso comercial largo.</p>
+    </div>
+  </section>
+
+  <section id="s12">
+    <p class="eyebrow">12 · Textos</p>
+    <h2>Descripciones y cierres</h2>
+    <p>La descripción completa lo que enseña el video. Nada de repetir el mismo párrafo genérico en temas distintos, como ocurre hoy entre el 31 de agosto y el 1 de septiembre. Una primera frase específica, un ejemplo o matiz útil, y una acción clara.</p>
+
+    <div class="msg">
+      <p class="h">Para una pieza práctica</p>
+      <p>Tres ideas para resolver la cena cuando llegas tarde. La clave es tener opciones preparadas en la despensa y elegir la que encaje ese día. En el video te enseño cómo montarlas; adapta ingredientes y cantidades a tus necesidades. Guárdalo para organizar tu próxima compra.</p>
+    </div>
+
+    <div class="msg">
+      <p class="h">Para explicar el servicio</p>
+      <p>Mis consultas son online. Si quieres saber cómo puedo ayudarte, escríbeme CONSULTA y te explico cómo trabajo, qué incluye el servicio y su precio. Así puedes decidir con información si encaja contigo.</p>
+    </div>
+
+    <div class="msg">
+      <p class="h">Para un caso</p>
+      <p>En este caso trabajamos una dificultad concreta: [dificultad documentada]. Ajustamos [decisión real] durante [período real]. Estos fueron los cambios observados: [resultados documentados]. Si quieres conocer cómo sería un acompañamiento adaptado a tu situación, escribe CONSULTA.</p>
+    </div>
+
+    <p>Los corchetes son datos que hay que completar, no frases listas para publicar. Y nunca prometer que otra persona tendrá el mismo resultado.</p>
+
+    <h3>Cómo elegir el cierre</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Cierre</th><th>Cuándo usarlo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Guardar</strong></td><td>Cuando hay pasos, opciones o una referencia que se usará más tarde.</td></tr>
+          <tr><td><strong>Compartir</strong></td><td>Cuando la pieza ayuda a otra persona en una situación reconocible. Decir para quién puede ser útil.</td></tr>
+          <tr><td><strong>Seguir</strong></td><td>Cuando puedes prometer una serie concreta que vas a continuar de verdad.</td></tr>
+          <tr><td><strong>Conversar</strong></td><td>Cuando la respuesta sirve para entender mejor a tu audiencia.</td></tr>
+          <tr><td><strong>Consultar</strong></td><td>Cuando ya has mostrado cómo ayudas o qué incluye el servicio online.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>No existe una cantidad de hashtags que garantice crecimiento. Etiquetas pertinentes si ayudan a contextualizar, pero el esfuerzo va primero a la idea, la claridad y el recorrido hasta la consulta. Nada de tendencias ajenas al servicio para buscar visitas.</p>
+  </section>
+
+  <section id="s13">
+    <p class="eyebrow">13 · Historias</p>
+    <h2>Historias, destacadas y recorrido de reserva</h2>
+
+    <h3>Una secuencia de seis historias para presentar el servicio</h3>
+    <ul class="plain">
+      <li><strong>Historia 1.</strong> «¿Cómo es una consulta online conmigo?». Marina a cámara, pregunta directa.</li>
+      <li><strong>Historia 2.</strong> Para quién está pensado el servicio y qué situaciones trabaja.</li>
+      <li><strong>Historia 3.</strong> Qué ocurre antes y durante la primera consulta, con un ejemplo de demostración.</li>
+      <li><strong>Historia 4.</strong> Qué recibe la persona después y qué seguimiento está incluido, si lo hay.</li>
+      <li><strong>Historia 5.</strong> Una duda frecuente sobre el formato online, los horarios o el procedimiento.</li>
+      <li><strong>Historia 6.</strong> «Escribe CONSULTA para recibir los detalles y el precio», o el enlace de reserva.</li>
+    </ul>
+    <p>La secuencia se guarda en la destacada «Consultas online». Frecuencia de historias: cuatro o cinco días por semana, en secuencias breves de situación cotidiana → criterio profesional → ejemplo → pregunta. Mostrar el trabajo, no solo resultados corporales. Más historias no es automáticamente mejor: se ajusta según respuestas y salidas.</p>
+
+    <h3>Qué debe explicar la página o el mensaje de reserva</h3>
+    <p>Destinatario, modalidad online, contenido y duración real de la consulta, seguimiento incluido, precio, horarios con zona horaria y pasos para reservar. Si atiende a distintos países, aclarar dónde ofrece el servicio y cómo organiza los horarios: que sea online no implica por sí solo que atienda en cualquier país.</p>
+    <p>El primer botón necesita un propósito explícito, «Información de consulta online» o «Reservar consulta». Comprobar en móvil que el enlace abre, que el precio se encuentra y que la confirmación se entiende. Esto es una propuesta de recorrido: no se ha auditado ninguna web de contratación.</p>
+
+    <div class="msg">
+      <p class="h">Respuesta inicial para personas interesadas</p>
+      <p>Gracias por escribir, te cuento cómo son mis consultas online. Incluyen [contenido real] y el precio es [precio]. Puedes ver los detalles y la disponibilidad en [enlace]. Si necesitas aclarar algo antes de reservar, dime qué información te falta.</p>
+    </div>
+    <p>Registrar el origen de cada conversación y si termina en reserva. Si la persona pidió una guía, se entrega primero lo anunciado y se diferencia ese recurso de la información comercial.</p>
+  </section>
+
+  <section id="s14">
+    <p class="eyebrow">14 · Ejecución</p>
+    <h2>Los primeros 30 días</h2>
+    <p>Cuatro publicaciones por semana, la misma cadencia que ya lleva, ajustable a su capacidad real. Lo que cambia es el reparto: de 16 piezas, ocho de utilidad y descubrimiento, cuatro de criterio o vínculo, y cuatro de servicio o casos. Nada de reels inspiradores sueltos: la parte emocional va dentro de un video que además enseña algo.</p>
+
+    <div class="weeks">
+      <div class="week">
+        <span class="wt">Semana 1</span>
+        <h4>Arreglar la casa</h4>
+        <ul>
+          <li>Nombre, biografía y enlace nuevos</li>
+          <li>Actualizar la referencia a abril</li>
+          <li>Cambiar los tres fijados</li>
+          <li>Reel: tres cenas sin cocinar</li>
+          <li>Carrusel: compra para días con prisa</li>
+          <li>Reel: tres preguntas antes de elegir plan</li>
+          <li>Reel fijable: la primera consulta</li>
+        </ul>
+      </div>
+      <div class="week">
+        <span class="wt">Semana 2</span>
+        <h4>Reactivar la conversación</h4>
+        <ul>
+          <li>Reel: desayuno para llevar</li>
+          <li>Carrusel: organizarse con poca energía</li>
+          <li>Reel: aprendizaje de su experiencia profesional</li>
+          <li>Caso real con proceso documentado</li>
+          <li>Una pieza con palabra en comentario hacia la guía</li>
+        </ul>
+      </div>
+      <div class="week">
+        <span class="wt">Semana 3</span>
+        <h4>Construir la serie</h4>
+        <ul>
+          <li>Reel: montar opciones con la despensa</li>
+          <li>Carrusel: adaptar una semana difícil</li>
+          <li>Reel: qué revisa ante un estancamiento</li>
+          <li>Preguntas sobre modalidad, precio y seguimiento</li>
+          <li>Primer capítulo con el nombre fijo de la serie</li>
+        </ul>
+      </div>
+      <div class="week">
+        <span class="wt">Semana 4</span>
+        <h4>Medir y doblar</h4>
+        <ul>
+          <li>Nueva ejecución del tema que mejor rindió</li>
+          <li>Carrusel: planificar el fin de semana</li>
+          <li>Reel: responder una duda frecuente</li>
+          <li>Caso o explicación del acompañamiento</li>
+          <li>Segundo capítulo de la serie</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Series propuestas: «Comer cuando vas con prisa», «Lo que reviso en consulta» y «Un plan que cabe en tu semana». Cada publicación debe entenderse sola, y solo se anuncia continuidad cuando esa continuidad se va a publicar de verdad.</p>
+    <p>Si hay ocasión, preparar una colaboración con una profesional complementaria que atienda a un público compatible: resolver juntas una pregunta concreta. Elegir por afinidad de audiencia y servicio, no por número de seguidores.</p>
+  </section>
+
+  <section id="s15">
+    <p class="eyebrow">15 · Medición</p>
+    <h2>Qué mirar cada lunes</h2>
+    <p>Antes de cambiar nada, guardar una referencia del período anterior. Comparar aproximadamente el 10 de agosto–8 de septiembre con el 11 de julio–9 de agosto, ajustando a los datos disponibles, la zona horaria y los días completos. Añadir una vista de 90 días para contextualizar.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Métrica</th><th>Punto de partida</th><th>Objetivo a 30 días</th></tr></thead>
+        <tbody>
+          <tr><td>Seguidores netos por semana</td><td>Negativo</td><td>Positivo, aunque sea poco</td></tr>
+          <tr><td>Comentarios por reel</td><td class="num">55</td><td class="num">150</td></tr>
+          <tr><td>Reels con cero comentarios</td><td class="num">6 de 32</td><td class="num">0</td></tr>
+          <tr><td>Guardados por reel</td><td>Sin medir</td><td>Medirlo y usarlo como métrica principal</td></tr>
+          <tr><td>Mensajes por reel con palabra</td><td>Sin medir</td><td>Medirlo, separando guía de consulta</td></tr>
+          <tr><td>Reproducciones medianas</td><td class="num">16.000</td><td class="num">25.000</td></tr>
+          <tr><td>Consultas reservadas y realizadas</td><td>Sin registrar</td><td>Registro semanal por origen</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Estas cifras objetivo son una intención de trabajo, no un pronóstico. Fijar metas firmes exige antes tener la línea base propia, la capacidad de atención de Marina y su tasa actual de reserva.</p>
+
+    <h3>Siete preguntas y el dato que las responde</h3>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Pregunta</th><th>Dato</th><th>Qué permite decidir</th></tr></thead>
+        <tbody>
+          <tr><td>¿Bajan las altas o suben las bajas?</td><td>Nuevos seguidores y bajas diarias, no solo el neto</td><td>Enfocar en captación, permanencia o ambas</td></tr>
+          <tr><td>¿Llega gente nueva?</td><td>Alcance de no seguidores por pieza y período</td><td>Revisar distribución y temática</td></tr>
+          <tr><td>¿Se quedan mirando?</td><td>Duración, tiempo medio y curva de retención</td><td>Revisar la apertura y el punto exacto de abandono</td></tr>
+          <tr><td>¿Se recomienda entre personas?</td><td>Compartidos y guardados sobre alcance</td><td>Elegir qué utilidad y qué formatos repetir</td></tr>
+          <tr><td>¿Convierte en seguidores?</td><td>Seguimientos atribuidos y alcance</td><td>Estimar captación por cada 1.000 cuentas alcanzadas</td></tr>
+          <tr><td>¿El perfil ayuda?</td><td>Visitas, toques al enlace y evolución de seguimientos</td><td>Evaluar la bio y las publicaciones fijadas</td></tr>
+          <tr><td>¿Se consiguen consultas?</td><td>Interesados nuevos, reservas y consultas por origen</td><td>Evaluar la oferta y el recorrido de reserva</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Fórmulas</h3>
+    <p>Compartidos ÷ alcance × 1.000 · guardados ÷ alcance × 1.000 · seguimientos atribuidos ÷ alcance × 1.000 · reservas ÷ interesados · consultas realizadas ÷ reservas. Un denominador cero o un dato ausente se deja como no calculable, nunca como cero. No sumar alcances de varias publicaciones como si fueran personas distintas del mes, y recordar que visitas al perfil frente a seguidores del mismo período es un indicador aproximado, no una conversión atribuida.</p>
+
+    <h3>Tres experimentos concretos</h3>
+    <ul class="plain">
+      <li><strong>Resultado visual primero.</strong> Tres piezas prácticas con el plato o la solución al inicio, comparadas con piezas parecidas en duración y tema.</li>
+      <li><strong>Gancho específico.</strong> Tres piezas con una situación concreta frente a aperturas amplias. Mirar retención inicial y seguidores atribuidos.</li>
+      <li><strong>CTA comercial transparente.</strong> Al menos tres piezas que expliquen qué recibe quien escribe CONSULTA. Medir interesados cualificados y reservas.</li>
+    </ul>
+    <p>Registrar resultados a 48 horas y a 7 días. Comparar medianas entre piezas equivalentes y no proclamar un ganador por un solo reel: los cambios de tema, fecha y audiencia impiden atribuir causalidad perfecta.</p>
+
+    <div class="flag">
+      <span class="t">Lo primero de todo</span>
+      <p>Si solo se puede hacer una cosa esta semana, es dejar de publicar reels inspiradores y volver a las comparaciones de platos con la fórmula que validó ella misma. Y si se pueden hacer dos, la segunda es escribir en la bio que las consultas son online y cómo se reservan.</p>
+    </div>
+  </section>
+
+  <section id="s16">
+    <p class="eyebrow">16 · Pendiente</p>
+    <h2>Lo que hace falta pedir para cerrar el diagnóstico</h2>
+    <ul class="plain">
+      <li><strong>Insights de 30 y 90 días,</strong> en capturas o exportación: altas y bajas, alcance a no seguidores, visitas al perfil, toques al enlace y datos por reel.</li>
+      <li><strong>Registro de reservas y consultas por semana,</strong> sin ningún dato personal de pacientes.</li>
+      <li><strong>Archivos de los reels o grabaciones completas con sonido,</strong> para poder juzgar audio y edición íntegra.</li>
+      <li><strong>La tabla de reels con enlace, fecha, reproducciones, comentarios y categoría,</strong> para reproducir los cálculos de la comparación práctico frente a inspirador con medianas y ventanas equivalentes.</li>
+      <li><strong>Estado de la cuenta,</strong> una revisión única para comprobar elegibilidad de recomendaciones. Meta distingue contenido permitido de contenido elegible para recomendar y ofrece esa sección para revisar incidencias. Esto no supone que @mnutrix tenga ninguna restricción.</li>
+    </ul>
+    <p>Orden de ejecución: actualizar la referencia temporal y la oferta; aclarar bio y fijados; preparar las primeras cuatro piezas; registrar conversaciones y reservas; revisar resultados comparables; ajustar producción. No comprar seguidores, y no usar el número de me gusta como sustituto del resultado comercial.</p>
+  </section>
+
+  <section id="s17">
+    <p class="eyebrow">17 · Sistema</p>
+    <h2>La rutina semanal</h2>
+
+    <h3>Preparación</h3>
+    <p>Un bloque semanal para elegir cuatro preguntas o situaciones reales de su audiencia. Para cada pieza se escribe: a quién le habla, qué problema resuelve, qué va a demostrar y cuál es el cierre. Si no puede explicar qué aporta de nuevo respecto de otra publicación reciente, cambia el ejemplo o profundiza el criterio.</p>
+    <p>Grabar juntas las escenas que comparten ubicación. Preparar primeros planos de ingredientes, manos y ejemplos, además de las tomas a cámara. Mantener una lista de dudas recibidas para no depender de las tendencias.</p>
+
+    <h3>Revisión antes de publicar</h3>
+    <ul class="plain">
+      <li>El primer plano comunica de qué trata la pieza.</li>
+      <li>El gancho promete algo que el contenido entrega.</li>
+      <li>Los subtítulos se entienden sin sonido y no tapan la demostración.</li>
+      <li>El consejo tiene el contexto necesario y está validado por ella.</li>
+      <li>La portada sigue siendo legible en la cuadrícula, en miniatura.</li>
+      <li>La descripción añade información y el cierre es uno solo.</li>
+      <li>Si hay una oferta o un recurso, el siguiente paso funciona de verdad.</li>
+    </ul>
+
+    <h3>Decisiones al revisar resultados</h3>
+    <p>Si una pieza llega a mucha gente pero no produce visitas ni seguimientos, el problema es el encaje de audiencia o la promesa de continuidad. Si hay visitas al perfil pero pocas solicitudes, el problema es la claridad del servicio. Si hay solicitudes y pocas reservas, hay que revisar información, adecuación del interesado, precio y facilidad de reserva antes de culpar al video.</p>
+    <p>Si cae la retención en un punto concreto, mirar ese momento exacto: puede haber demasiada lectura, una explicación confusa o un cambio que no aporta. Una caída no prueba por sí sola cuál es la causa; hay que preparar una versión nueva que permita contrastarlo.</p>
+  </section>
+
+  <section id="s18">
+    <p class="eyebrow">18 · Arranque</p>
+    <h2>Los primeros siete días</h2>
+    <div class="beats">
+      <div class="beat"><span class="s">Día 1–2</span><span class="d"><b>Guardar los datos de referencia</b> de Insights, actualizar la mención a abril y cambiar la bio para hacer explícitas las consultas online. Revisar el enlace o el mensaje de reserva.</span></div>
+      <div class="beat"><span class="s">Día 3–4</span><span class="d"><b>Preparar la destacada de consultas</b> y los guiones de bienvenida, servicio y caso. Confirmar que cada llamada a la acción recibe la respuesta prometida.</span></div>
+      <div class="beat"><span class="s">Día 5–6</span><span class="d"><b>Grabar las primeras piezas prácticas</b> con demostración visual y subtítulos legibles. Revisar el lenguaje para que no culpabilice a quien llega cansada.</span></div>
+      <div class="beat"><span class="s">Día 7</span><span class="d"><b>Publicar o dejar programado</b> según capacidad, y activar un registro sencillo de consultas. Revisar cada publicación a las 48 horas y a los siete días, sin cambiar toda la estrategia por un resultado aislado.</span></div>
+    </div>
+    <p>El objetivo de esta primera semana no es recuperar seguidores. Es que el perfil explique el servicio actual y que lo que se publique después se pueda medir. La recuperación se evalúa con los datos del mes.</p>
+  </section>
+
+  <section id="s19">
+    <p class="eyebrow">19 · Rigor</p>
+    <h2>Qué contrastar antes de decidir</h2>
+    <p class="lede">Este documento junta un análisis de métricas con una auditoría editorial. Donde las dos lecturas no coinciden del todo, gana la más prudente, y aquí queda anotado por qué.</p>
+
+    <ul class="plain">
+      <li><strong>La comparación de formatos es descriptiva.</strong> 28.800 frente a 10.830 reproducciones da una relación de 2,66 si los datos son correctos. Describe dos grupos de reels; no demuestra que cambiar el formato multiplique el alcance ni recupere seguidores. Para sostenerla hace falta la tabla completa, ventanas de antigüedad semejantes, los fijados separados y medianas además de promedios. La cifra de partida se cita como 35 reels en la introducción y 32 en el método, donde se excluyen los tres fijados: conviene mantener explícito ese alcance.</li>
+      <li><strong>Guardados y compartidos no son públicos.</strong> Por tanto no se puede afirmar que los reels inspiradores no se guardan ni se comparten sin abrir Insights. Tampoco está demostrado que seis reels sin comentarios reduzcan la distribución o provoquen bajas.</li>
+      <li><strong>Quién llega y quién compra son cosas distintas.</strong> Las reproducciones, los me gusta y la imagen de un reel no permiten concluir que atrae a personas que nunca contratarán o que se irán en dos semanas. Eso se ve en audiencia, seguimientos atribuidos, interesados y reservas por origen.</li>
+      <li><strong>Las metas son intenciones, no pronósticos.</strong> Duplicar el alcance, llegar a 150 comentarios o a 25.000 reproducciones son objetivos de trabajo. Se fijan de verdad después de medir la línea base propia. Y un comentario con una palabra puede reflejar interés por un recurso sin ninguna intención de contratar.</li>
+      <li><strong>La caída de seguidores es información facilitada,</strong> no medida desde fuera. Sus causas deben contrastarse con Insights: la cuenta puede estar perdiendo captación, aumentando bajas o las dos cosas a la vez.</li>
+      <li><strong>No hace falta producir la guía de veinte cenas antes de empezar.</strong> Un recurso gratuito se ensaya después de explicar bien las consultas online, y se elige uno manejable y alineado con el servicio. Entregar una guía no equivale a conseguir una consulta.</li>
+    </ul>
+
+    <div class="flag">
+      <span class="t">Lo que sí sostienen las dos revisiones a la vez</span>
+      <p>Que el contenido práctico y demostrativo rinde mejor que el inspirador en esta cuenta. Que las portadas actuales no se leen. Que los tres fijados desaprovechan la primera pantalla. Que la primera publicación visible está caducada. Y que en ningún sitio se explica que la consulta es online, qué incluye y cómo reservarla. Esos cinco puntos se pueden ejecutar mañana sin esperar a ningún dato adicional.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="eyebrow">Método</p>
+    <p>Datos tomados del perfil público el 8 de septiembre de 2026. Se revisaron las 185 publicaciones y sus pies de foto, las métricas de 161 reels, y se entró a los videos concretos para analizar duración, estructura, rótulos y legibilidad. La clasificación entre práctico e inspirador se hizo sobre los 32 reels más recientes con métrica disponible, dejando fuera los tres fijados por ser publicaciones antiguas.</p>
+    <p>La revisión editorial se hizo sobre 12 publicaciones públicas con sus descripciones y sus comentarios cargados: diez reels y dos carruseles, diez fechados entre el 10 de agosto y el 3 de septiembre de 2026 y dos de 2025 que aparecen al inicio de la cuadrícula. Se recorrieron ambos carruseles, fragmentos visuales de los reels y parte de las destacadas.</p>
+    <p>Los datos de guardados, compartidos y mensajes directos no son visibles desde fuera, y las métricas públicas no miden reservas. Para esas cifras hace falta el panel de la propia cuenta. Las propuestas de este documento son pruebas de trabajo, no garantías de crecimiento.</p>
+  </footer>
+
+  </main>
+</div>
